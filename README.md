@@ -8,3 +8,7 @@ Static pages for https://fuidzy.com/vocalforge, served by the `vocalforge-pages`
 - output: `vocalforge/` (pages + `img/`), `vocalforge-sitemap.xml`, `worker-pages.json` (the slug whitelist the Worker serves)
 - photos: free-licence Pexels / Unsplash, credited in the footer (originals in `assets/src/`)
 - support address: fuidzy@outlook.com (also the Mac-version request address)
+
+## Short tool links
+`fuidzy.com/bpm-finder`, `/key-finder`, `/song-key-finder`, `/chord-finder`, `/lufs-meter`, `/vocal-checker` 301-redirect to the real tool pages under `/vocalforge/tools/`.
+They live in the `vocalforge-pages` Worker (the `ALIAS` map) plus one exact-match route per alias on the fuidzy.com zone. To add one, add it to `ALIAS` and add the route.
