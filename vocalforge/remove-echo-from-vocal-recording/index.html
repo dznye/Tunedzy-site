@@ -9,7 +9,7 @@
 <meta property="og:type" content="article"><meta property="og:site_name" content="VocalForge by Fuidzy"><meta property="og:title" content="Remove Echo From Vocals: AI De-Reverb &amp; Manual Tips">
 <meta property="og:description" content="Roomy vocal? Learn what reduces echo and reverb, how AI de-reverb compares with manual fixes, how to avoid watery artifacts, and when to re-record."><meta property="og:url" content="https://fuidzy.com/vocalforge/remove-echo-from-vocal-recording"><meta property="og:image" content="https://fuidzy.com/vocalforge/og.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Remove Echo From Vocals: AI De-Reverb &amp; Manual Tips"><meta name="twitter:description" content="Roomy vocal? Learn what reduces echo and reverb, how AI de-reverb compares with manual fixes, how to avoid watery artifacts, and when to re-record."><meta name="twitter:image" content="https://fuidzy.com/vocalforge/og.png">
-<style>:root{--bg:#080713;--bg2:#0e0c1d;--card:rgba(255,255,255,.05);--card2:rgba(255,255,255,.08);--line:rgba(255,255,255,.11);--text:#f4f2fc;--mute:#a9a5c4;--faint:#7c7899;
+<style>:root{--glass:22px;--bg:#080713;--bg2:#0e0c1d;--card:rgba(255,255,255,.05);--card2:rgba(255,255,255,.08);--line:rgba(255,255,255,.11);--text:#f4f2fc;--mute:#a9a5c4;--faint:#7c7899;
 --amber:#ffb347;--orange:#ff7a3d;--pink:#ff4fa0;--violet:#8b5cf6;--teal:#2ee6c5;--blue:#4ea8ff;--grad:linear-gradient(100deg,#ffb347,#ff4fa0 55%,#8b5cf6)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;color:var(--text);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);overflow-x:hidden;
@@ -44,6 +44,7 @@ em.grad{font-style:normal}
 /* decorative shapes */
 .shapes{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
 .shapes>*{position:absolute;display:block}
+.shapes:after{content:"";position:absolute;inset:0;z-index:1;-webkit-backdrop-filter:blur(var(--glass)) saturate(1.25);backdrop-filter:blur(var(--glass)) saturate(1.25);background:rgba(255,255,255,.025)}
 .blob{border-radius:50%;filter:blur(70px);opacity:.5}
 .b1{width:520px;height:520px;background:radial-gradient(circle,#ff4fa0,transparent 68%);right:-140px;top:-120px}
 .b2{width:460px;height:460px;background:radial-gradient(circle,#8b5cf6,transparent 68%);left:-160px;top:120px;opacity:.55}
