@@ -1,9 +1,6 @@
 """Copy for the free in-browser tools (each tool is its own page) and the tools hub.
 Honesty rules: the tools run in the visitor's browser, nothing is uploaded; accuracy limits are stated plainly."""
 
-TOOL_ORDER = ['bpm-finder', 'song-key-finder', 'chord-finder', 'lufs-meter', 'vocal-checker']
-
-
 def delay_table(bpms=(80, 90, 120, 140)):
     rows = ''
     for b in bpms:
@@ -292,3 +289,84 @@ AI_GUIDE = dict(
     ai=None,
     related=['fix-vocals-recorded-on-phone', 'remove-echo-from-vocal-recording', 'vocal-cleanup-software-compared'],
 )
+
+
+# ------------------------------------------------------------------------------------------------- live tools (microphone in the browser)
+TOOLS['live-autotune'] = dict(
+    title='Live Autotune Recorder: Sing With Autotune Online (Free)',
+    desc='Free live autotune in your browser. Turn on your mic, pick a key, hear yourself autotuned in real time and record the take. Private: nothing is uploaded.',
+    h1='Live Autotune Recorder: Sing With Autotune Online, Free',
+    short='Live Autotune', blurb='Sing with real-time autotune and record the take.', icon='mic', color='pink',
+    kind='live', focus='all', tap=False, kw='live autotune online',
+    lead=('Turn on your microphone, pick a key, and hear yourself with autotune in real time. Record the take and download it as a WAV. '
+          'It runs in your browser with no install and no sign-up, and your voice is never uploaded.'),
+    how=['Put on headphones, then click <strong>Turn on microphone</strong> and allow access.',
+         'Pick the key of your beat (or let the <a href="/vocalforge/tools/song-key-finder">key finder</a> tell you), then choose Natural, Pop or Hard-tune.',
+         'Press <strong>Record</strong>, sing, press <strong>Stop and save</strong>, then play it back or download the WAV.'],
+    body='''
+<h2>How the live autotune works</h2>
+<p>Your microphone goes into a small pitch detector that finds the note you are singing about two hundred times a second. Each time, it picks the nearest note in the scale you chose and shifts your voice there. <strong>Retune speed</strong> sets how fast it moves: instant gives the hard, robotic effect, and slower gives a natural correction. <strong>Strength</strong> sets how much of the correction you hear. The grey line in the picture is what you sang; the pink line is what you hear.</p>
+<h2>Which setting should I use?</h2>
+<table><tr><th>Preset</th><th>Strength</th><th>Retune speed</th><th>Good for</th></tr>
+<tr><td>Natural</td><td>55%</td><td>120 ms</td><td>Gentle polish on ballads and soft vocals</td></tr>
+<tr><td>Pop</td><td>80%</td><td>50 ms</td><td>Modern melodic rap and pop</td></tr>
+<tr><td>Hard-tune</td><td>100%</td><td>instant</td><td>The T-Pain / trap robotic sound</td></tr></table>
+<h2>Set the right key first</h2>
+<p>Autotune pulls every note toward the scale you pick, so a wrong key makes things sound worse, not better. If you do not know the key of your beat, drop it into the <a href="/vocalforge/tools/song-key-finder">song key finder</a>. If you are unsure between major and minor, try the relative key it shows.</p>
+<h2>Tips for a clean result</h2>
+<ul>
+<li><strong>Use headphones.</strong> Speakers feed your voice back into the mic and cause howling.</li>
+<li><strong>Sing close and steady.</strong> The detector works best on one clear note at a time. Loud background sound confuses it.</li>
+<li><strong>Expect a little delay.</strong> A browser adds some latency, which depends on your computer and audio device. A wired headset and Chrome or Edge on desktop give the smallest delay.</li>
+<li><strong>Keep the dry take if it matters.</strong> This tool records the autotuned sound. For a final track, record clean and tune it afterwards with better settings.</li>
+</ul>
+<h2>Browser versus a full studio tool</h2>
+<p>This is a fast, free, real-time effect, great for practising, writing and trying ideas. The VocalForge desktop app does the same job offline with higher quality: it analyses the whole take, tunes it to the key of your beat, cleans noise and echo, fits the timing and masters the result.</p>
+''',
+    faq=[('Is the live autotune free?', 'Yes. No sign-up, no time limit and no watermark.'),
+         ('Does it upload my voice?', 'No. The microphone is processed inside your browser and recordings stay on your device until you download them.'),
+         ('Why do I hear a delay?', 'Every browser and audio device adds some latency. Use wired headphones, close other audio apps, and use Chrome or Edge on a computer for the lowest delay. Wireless headphones add noticeably more.'),
+         ('Can I use a beat with it?', 'Yes. Use the karaoke autotune page: it plays your backing track, sets the key automatically, and records your voice and the mix.'),
+         ('Why does it sound robotic?', 'Retune speed is set to instant on Hard-tune. Pick Natural or Pop, lower the strength, or slow the retune speed for a more natural sound.')],
+    related=['karaoke-autotune', 'song-key-finder', 'vocal-checker'],
+    guide_links=['autotune-for-rap-vocals', 'fix-vocals-recorded-on-phone'],
+)
+
+TOOLS['karaoke-autotune'] = dict(
+    title='Online Karaoke With Autotune (Free): Sing Along to Any Song',
+    desc='Free online karaoke with live autotune. Add any song or backing track, sing along with autotune on, and record your voice and the mix. Private, in your browser.',
+    h1='Online Karaoke With Autotune: Sing Along to Any Track, Free',
+    short='Karaoke Autotune', blurb='Sing along to any track with live autotune and record the mix.', icon='karaoke', color='violet',
+    kind='karaoke', focus='all', tap=False, kw='online karaoke with autotune',
+    lead=('Add a backing track, sing along with live autotune, and record your voice and the mix. '
+          'It finds the key of the track for you, can reduce the original vocals, shows the lyrics, and everything stays in your browser.'),
+    how=['Add your backing track (an instrumental works best). The key is detected and autotune is set to it.',
+         'Put on headphones, click <strong>Turn on microphone</strong>, and paste your lyrics if you want them on screen.',
+         'Press <strong>Record</strong>. After a 3-2-1 count the track plays and you sing. Stop to get your voice and the mix as WAV files.'],
+    body='''
+<h2>How online karaoke with autotune works</h2>
+<p>Your backing track plays through the browser and your microphone goes through live autotune that is tuned to the track&rsquo;s key. You hear both in your headphones. When you record, you get two files: your autotuned voice on its own, and your voice mixed with the track, lined up to compensate for the audio delay of your device.</p>
+<h2>Using a full song instead of an instrumental</h2>
+<p>If you only have the original song, tick <strong>Reduce original vocals</strong>. It removes whatever is mixed in the centre of the stereo picture, which is where the lead vocal usually sits. This works on many songs but not all, and it also takes some bass and snare with it, so it is a quick karaoke trick, not a studio separation. For a clean vocal-free version, VocalForge uses an AI separation model on your own PC.</p>
+<h2>Get the best sound</h2>
+<ul>
+<li><strong>Headphones are essential.</strong> Otherwise the track leaks into your mic and the recording gets messy.</li>
+<li><strong>Check the key.</strong> The detected key is shown. If notes feel pulled the wrong way, try the relative major or minor.</li>
+<li><strong>Use the sync slider.</strong> If your voice feels slightly early or late against the track in the saved mix, nudge it a few milliseconds and record again.</li>
+<li><strong>Balance the mix.</strong> Use the voice and track sliders so you can hear yourself clearly without shouting.</li>
+</ul>
+<h2>Use music you have the right to use</h2>
+<p>Your files never leave your device, but copyright still applies to what you publish. For videos you plan to post, use your own beat, licensed instrumentals or royalty-free music.</p>
+<h2>Want a studio version of your take?</h2>
+<p>Record here for fun, then run a clean take through the <a href="/vocalforge">VocalForge</a> desktop app: it removes noise and echo, tunes to the key of your beat, fits the timing and masters the result.</p>
+''',
+    faq=[('Is the karaoke free?', 'Yes. No account, no limits and no watermark.'),
+         ('Are my songs or my voice uploaded?', 'No. The track, your microphone and the recordings all stay in your browser unless you download them.'),
+         ('Can I sing along to any song?', 'Yes, any audio file your browser can play. Instrumentals work best. For a full song, tick Reduce original vocals.'),
+         ('Why is my voice slightly off from the track in the recording?', 'Different devices add different delay. Use the sync slider to nudge the voice earlier or later, and record again.'),
+         ('Does it work on a phone?', 'It can, but phones have more audio delay and fewer controls. A computer with wired headphones works best.')],
+    related=['live-autotune', 'bpm-finder', 'song-key-finder'],
+    guide_links=['autotune-for-rap-vocals', 'mix-vocals-on-a-beat'],
+)
+
+TOOL_ORDER = ['live-autotune', 'karaoke-autotune', 'bpm-finder', 'song-key-finder', 'chord-finder', 'lufs-meter', 'vocal-checker']

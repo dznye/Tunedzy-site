@@ -32,6 +32,8 @@ e = html.escape
 CSS = (ROOT / 'assets' / 'site.css').read_text(encoding='utf-8')
 CORE_JS = (ROOT / 'assets' / 'vf-core.js').read_text(encoding='utf-8')
 UI_JS = (ROOT / 'assets' / 'vf-ui.js').read_text(encoding='utf-8')
+LIVE_JS = (ROOT / 'assets' / 'vf-live.js').read_text(encoding='utf-8')
+LIVE_UI_JS = (ROOT / 'assets' / 'vf-live-ui.js').read_text(encoding='utf-8')
 
 # ---------------------------------------------------------------------------------------------------- photos (free licence, hosted by us)
 # name -> (source file, width, height, focus x, focus y, alt text)
@@ -99,6 +101,8 @@ ICONS = {
     'check': '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
     'upload': '<path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>',
     'lock': '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+    'mic': '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/>',
+    'karaoke': '<path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2.5"/><circle cx="17" cy="16" r="2.5"/>',
 }
 TOOL_COLOR = {'amber': 'cA', 'violet': 'cV', 'pink': 'cP', 'teal': 'cT', 'blue': 'cB'}
 
@@ -219,6 +223,54 @@ def tool_widget(focus='all', tap=False, noscroll=False):
             f'<div id="results" hidden aria-live="polite"></div>{tapbox}</div></div>')
 
 
+def live_scripts(kind):
+    core = f'<script id="vfcore">{CORE_JS}</script>' if kind == 'karaoke' else ''
+    return f'{core}<script>{LIVE_JS}</script><script>{LIVE_UI_JS}</script>'
+
+
+def live_widget(kind):
+    karaoke = kind == 'karaoke'
+    load = ''
+    if karaoke:
+        load = (f'<div class="drop small" id="kdrop" tabindex="0" role="button" aria-label="Choose a backing track"><div class="ic">{svg_icon("upload")}</div>'
+                '<b>Add your backing track</b><span>MP3, WAV, FLAC or OGG &middot; an instrumental works best &middot; the key is found for you</span></div>'
+                '<input type="file" id="kfile" accept="audio/*,.mp3,.wav,.flac,.ogg,.m4a" hidden>'
+                f'<div class="toolrow"><span class="priv">{svg_icon("lock")}Your files and your voice stay on your device.</span><button class="btn small" id="kdemo" type="button">Try a demo backing</button></div>'
+                '<div class="backinfo" id="backinfo" hidden></div>')
+    transport = ''
+    lyrics = ''
+    if karaoke:
+        transport = ('<div class="cbox" style="margin-top:16px"><h3>Backing track</h3><div id="transport" hidden>'
+                     '<div class="fl"><button class="btn small" id="play" type="button">Play</button><button class="btn small" id="stop" type="button">Stop</button><button class="btn small" id="restart" type="button">Restart</button>'
+                     '<span class="v" id="pos">0:00</span><input type="range" id="seek" min="0" max="100" value="0"><span class="v" id="dur">0:00</span></div>'
+                     '<div class="fl"><label for="bvol">Track volume</label><input type="range" id="bvol" min="0" max="150" value="80"></div>'
+                     '<div class="fl"><label for="vvol">Your voice</label><input type="range" id="vvol" min="0" max="200" value="100"></div>'
+                     '<div class="fl"><label><input type="checkbox" id="reduce"> Reduce original vocals</label><span class="v" style="text-align:left;min-width:0">for full songs: removes the centre vocal (and some bass)</span></div>'
+                     '<div class="fl"><label for="nudge">Recording sync</label><input type="range" id="nudge" min="-150" max="150" value="0"><output class="v" id="nudgev">0 ms</output></div></div>'
+                     '<p class="small mute" id="notrack">Add a backing track above to play along. You can also just sing and record without one.</p></div>')
+        lyrics = ('<div class="cbox" style="margin-top:16px"><h3>Lyrics</h3><textarea id="lyr" placeholder="Paste your lyrics here"></textarea>'
+                  '<div class="fl" style="margin-top:10px"><label><input type="checkbox" id="showlyr"> Show lyrics</label><label for="lyrsize" style="min-width:0">Size</label><input type="range" id="lyrsize" min="18" max="56" value="28">'
+                  '<label for="lyrspeed" style="min-width:0">Auto-scroll</label><input type="range" id="lyrspeed" min="0" max="30" value="8"></div><div id="lyrview" hidden></div></div>')
+    return (f'<div class="live" id="live" data-mode="{kind if karaoke else "tune"}" data-base="{C.BASE}"><div class="inner">{load}'
+            '<div class="startrow"><button class="btn primary" id="start" type="button">Turn on microphone</button>'
+            '<span class="small">Wear headphones so the music and your voice do not feed back into the mic.</span></div>'
+            '<div class="livemsg" id="msg" hidden></div>'
+            '<div class="livepanel" id="panel" hidden>'
+            '<div class="pitchbox"><canvas id="pcv" width="900" height="210"></canvas><div class="pitchread"><b id="note">--</b><span id="cents">sing a note</span></div></div>'
+            '<div class="lvlbar" title="Mic level"><i id="lvl"></i></div>'
+            '<div class="ctrlgrid" style="margin-top:16px"><div class="cbox"><h3>Autotune</h3>'
+            '<div class="fl"><label for="key">Key</label><select id="key"></select><select id="scale"><option value="major">major</option><option value="minor">minor</option><option value="chromatic">every note</option></select><span class="small mute" id="keylabel"></span></div>'
+            '<div class="presets"><button type="button" data-preset="natural">Natural</button><button type="button" data-preset="pop">Pop</button><button type="button" data-preset="hard">Hard-tune</button><button type="button" data-preset="off">Off (compare)</button></div>'
+            '<div class="fl"><label for="amount">Strength</label><input type="range" id="amount" min="0" max="100" value="80"><output class="v" id="amountv">80%</output></div>'
+            '<div class="fl"><label for="speed">Retune speed</label><input type="range" id="speed" min="0" max="250" value="50"><output class="v" id="speedv">50 ms</output></div>'
+            '<div class="fl"><label for="reverb">Reverb</label><input type="range" id="reverb" min="0" max="60" value="18"><output class="v" id="reverbv">18%</output></div></div>'
+            f'<div>{transport if karaoke else ""}'
+            '<div class="warnrow">Tip: this is a real-time browser effect with a small delay. For a final, studio-clean vocal, record dry and tune it afterwards in VocalForge.</div></div></div>'
+            f'{lyrics}'
+            '<div class="recrow"><button id="rec" type="button">Record</button><span id="timer">0:00</span><button class="btn small ghost" id="micoff" type="button">Turn off microphone</button><span class="small mute" id="lat"></span></div>'
+            '<div id="takes"></div></div></div></div>')
+
+
 # ---------------------------------------------------------------------------------------------------- rack mock (hero)
 def rack():
     mods = [('CLEAN', 'var(--amber)', .72), ('TUNE', 'var(--pink)', .88), ('FIT', 'var(--teal)', .56), ('STYLE', 'var(--violet)', .66), ('MIX', 'var(--blue)', .8), ('MASTER', 'var(--orange)', .92)]
@@ -325,17 +377,20 @@ def tool_page(slug):
     how = ''.join(f'<div>{h}</div>' for h in t['how'])
     rel = ''.join(f'<a class="card {TOOL_COLOR[T.TOOLS[r]["color"]]}" href="{C.BASE}/tools/{r}" style="padding:18px">{ico(T.TOOLS[r]["icon"], TOOL_COLOR[T.TOOLS[r]["color"]])}<h3>{e(T.TOOLS[r]["short"])}</h3><p>{e(T.TOOLS[r]["blurb"])}</p></a>' for r in t['related'])
     gl = ''.join(f'<a href="{C.BASE}/{g}"><b>{e(C.GUIDES[g]["h1"])}</b></a>' for g in t['guide_links'])
+    kind = t.get('kind')
+    widget = live_widget(kind) if kind in ('live', 'karaoke') else tool_widget(t['focus'], tap=t['tap'])
+    scripts = live_scripts(kind) if kind in ('live', 'karaoke') else tool_scripts()
     action = (f'<a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download the free trial</a>' if LAUNCHED
               else f'<a class="btn primary" href="{C.BASE}">See VocalForge</a>')
     body = f'''<main><div class="hero" style="padding:0 0 30px">{shapes('soft')}<div class="wrap">{crumbs_html}<div class="toolhead"><h1>{t['h1']}</h1><p class="lead">{t['lead']}</p></div>
-<div style="max-width:900px">{tool_widget(t['focus'], tap=t['tap'])}</div><div class="howto" style="max-width:900px">{how}</div></div></div>
+<div style="max-width:900px">{widget}</div><div class="howto" style="max-width:900px">{how}</div></div></div>
 <div class="narrow"><article>{t['body']}
 <div class="vf"><h2>Like this? Let VocalForge do the fixing.</h2><p>These tools tell you what is going on. VocalForge acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Free to try for 7 days, then $29 once.</p><div class="cta">{action}<a class="btn" href="{e(C.HELP_MAIL)}">Ask us a question</a></div></div>
 <h2>Frequently asked questions</h2>{faq_html(t['faq'])}
 <h2>More free tools</h2><div class="tcards">{rel}</div>
 <h2>Related guides</h2><div class="related">{gl}</div></article></div></main>'''
     return layout(title=t['title'], desc=t['desc'], path=f'{C.BASE}/tools/{slug}', body=body,
-                  lds=[webapp_ld(slug, t['short'], t['desc']), faq_ld(t['faq']), crumbs_ld], scripts=tool_scripts())
+                  lds=[webapp_ld(slug, t['short'], t['desc']), faq_ld(t['faq']), crumbs_ld], scripts=scripts)
 
 
 def guide(slug):

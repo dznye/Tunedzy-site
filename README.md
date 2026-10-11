@@ -10,5 +10,8 @@ Static pages for https://fuidzy.com/vocalforge, served by the `vocalforge-pages`
 - support address: fuidzy@outlook.com (also the Mac-version request address)
 
 ## Short tool links
-`fuidzy.com/bpm-finder`, `/key-finder`, `/song-key-finder`, `/chord-finder`, `/lufs-meter`, `/vocal-checker` 301-redirect to the real tool pages under `/vocalforge/tools/`.
+`fuidzy.com/bpm-finder`, `/key-finder`, `/song-key-finder`, `/chord-finder`, `/lufs-meter`, `/vocal-checker`, `/live-autotune`, `/autotune-online`, `/karaoke-autotune`, `/online-karaoke` 301-redirect to the real tool pages under `/vocalforge/tools/`.
 They live in the `vocalforge-pages` Worker (the `ALIAS` map) plus one exact-match route per alias on the fuidzy.com zone. To add one, add it to `ALIAS` and add the route.
+
+## Live tools
+`assets/vf-live.js` (Web Audio engine: YIN pitch detection + delay-line shifter in an AudioWorklet, limiter, reverb, recording taps) and `assets/vf-live-ui.js` power `/tools/live-autotune` and `/tools/karaoke-autotune`. Same shifter as the desktop app's live monitor. Tested with a synthetic mic (override `navigator.mediaDevices.getUserMedia`).

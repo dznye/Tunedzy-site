@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Autotune Recorder: Sing With Autotune Online (Free)</title>
+<meta name="description" content="Free live autotune in your browser. Turn on your mic, pick a key, hear yourself autotuned in real time and record the take. Private: nothing is uploaded.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://fuidzy.com/vocalforge/tools/live-autotune">
+<link rel="icon" href="/vocalforge/favicon.png">
+<meta name="theme-color" content="#080713">
+<meta property="og:type" content="website"><meta property="og:site_name" content="VocalForge by Fuidzy"><meta property="og:title" content="Live Autotune Recorder: Sing With Autotune Online (Free)">
+<meta property="og:description" content="Free live autotune in your browser. Turn on your mic, pick a key, hear yourself autotuned in real time and record the take. Private: nothing is uploaded."><meta property="og:url" content="https://fuidzy.com/vocalforge/tools/live-autotune"><meta property="og:image" content="https://fuidzy.com/vocalforge/og.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Live Autotune Recorder: Sing With Autotune Online (Free)"><meta name="twitter:description" content="Free live autotune in your browser. Turn on your mic, pick a key, hear yourself autotuned in real time and record the take. Private: nothing is uploaded."><meta name="twitter:image" content="https://fuidzy.com/vocalforge/og.png">
+<style>:root{--glass:22px;--bg:#080713;--bg2:#0e0c1d;--card:rgba(255,255,255,.05);--card2:rgba(255,255,255,.08);--line:rgba(255,255,255,.11);--text:#f4f2fc;--mute:#a9a5c4;--faint:#7c7899;
+--amber:#ffb347;--orange:#ff7a3d;--pink:#ff4fa0;--violet:#8b5cf6;--teal:#2ee6c5;--blue:#4ea8ff;--grad:linear-gradient(100deg,#ffb347,#ff4fa0 55%,#8b5cf6)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);overflow-x:hidden;
+background-image:radial-gradient(900px 600px at 8% -4%,rgba(139,92,246,.30),transparent 60%),radial-gradient(800px 520px at 100% 6%,rgba(255,79,160,.22),transparent 60%),radial-gradient(900px 700px at 50% 108%,rgba(46,230,197,.14),transparent 60%);background-attachment:fixed}
+a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
+img{max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px;position:relative}.narrow{max-width:780px;margin:0 auto;padding:0 22px;position:relative}
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(8,7,19,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:20px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text);font-size:19px;letter-spacing:-.01em}.logo:hover{text-decoration:none}.logo img{width:30px;height:30px;border-radius:9px}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav.main{display:flex;gap:22px;margin-left:auto;font-size:15px}nav.main a{color:var(--mute)}nav.main a:hover{color:var(--text);text-decoration:none}
+.hbtn{font-size:14px;padding:8px 16px;border-radius:99px;background:var(--grad);color:#1a0b16;font-weight:700}.hbtn:hover{text-decoration:none;filter:brightness(1.08)}
+@media(max-width:820px){nav.main a:nth-child(n+3){display:none}nav.main{gap:16px}}
+@media(max-width:520px){nav.main{display:none}.hbtn{margin-left:auto}}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:14px;padding:13px 24px;font-weight:700;font-size:16px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:pointer;font-family:inherit;line-height:1.2;transition:transform .15s,box-shadow .15s,filter .15s}
+.btn:hover{text-decoration:none;transform:translateY(-1px);border-color:rgba(255,255,255,.3)}
+.btn.primary{background:linear-gradient(100deg,#ffb347,#ff5f8d 60%,#c24bd6);color:#1b0a14;border-color:transparent;box-shadow:0 12px 36px rgba(255,79,160,.34)}
+.btn.primary:hover{filter:brightness(1.07);box-shadow:0 16px 44px rgba(255,79,160,.46)}
+.btn.ghost{background:transparent}.btn.small{padding:8px 14px;font-size:14px;border-radius:10px}.btn.off{opacity:.6;cursor:default;box-shadow:none}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.small{font-size:14px;color:var(--mute)}
+/* type */
+h1,h2,h3{letter-spacing:-.025em}
+section{padding:70px 0;position:relative}
+h2{font-size:clamp(28px,4vw,42px);margin:0 0 14px;line-height:1.12}h3{margin:0 0 6px;font-size:19px;line-height:1.25}
+h2.c,.sub2,.eyebrow.c{text-align:center}.sub2{color:var(--mute);margin:0 auto 34px;max-width:640px;font-size:18px}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:800;margin:0 0 12px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+em.grad{font-style:normal}
+/* decorative shapes */
+.shapes{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.shapes>*{position:absolute;display:block}
+.shapes:after{content:"";position:absolute;inset:0;z-index:1;-webkit-backdrop-filter:blur(var(--glass)) saturate(1.25);backdrop-filter:blur(var(--glass)) saturate(1.25);background:rgba(255,255,255,.025)}
+.blob{border-radius:50%;filter:blur(70px);opacity:.5}
+.b1{width:520px;height:520px;background:radial-gradient(circle,#ff4fa0,transparent 68%);right:-140px;top:-120px}
+.b2{width:460px;height:460px;background:radial-gradient(circle,#8b5cf6,transparent 68%);left:-160px;top:120px;opacity:.55}
+.b3{width:380px;height:380px;background:radial-gradient(circle,#2ee6c5,transparent 68%);right:28%;bottom:-160px;opacity:.28}
+.ring{border-radius:50%;border:2px solid rgba(255,255,255,.14)}
+.r1{width:340px;height:340px;right:-90px;top:70px;border-color:rgba(255,179,71,.35)}
+.r2{width:120px;height:120px;left:46%;top:30px;border:14px solid rgba(139,92,246,.28)}
+.r3{width:220px;height:220px;left:-70px;bottom:20px;border-color:rgba(46,230,197,.28)}
+.sq{border-radius:26px;transform:rotate(18deg)}
+.s1{width:110px;height:110px;left:6%;top:56%;background:linear-gradient(135deg,rgba(255,79,160,.5),rgba(139,92,246,.15));border:1px solid rgba(255,255,255,.18)}
+.s2{width:70px;height:70px;right:7%;bottom:12%;background:linear-gradient(135deg,rgba(255,179,71,.6),rgba(255,79,160,.15));transform:rotate(-14deg)}
+.s3{width:54px;height:54px;left:44%;bottom:6%;border:2px solid rgba(78,168,255,.5);border-radius:14px;transform:rotate(30deg)}
+.tri{width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:52px solid rgba(46,230,197,.35);transform:rotate(14deg)}
+.t1{left:38%;top:7%}
+.dots{width:210px;height:140px;opacity:.22}.d1{right:6%;top:46%}.d2{left:3%;top:8%}
+.squig{width:210px;height:40px;fill:none;stroke:var(--teal);stroke-width:5;stroke-linecap:round;opacity:.3}.q1{left:2%;bottom:14%}.q2{right:5%;top:12%;stroke:var(--amber)}
+.pbars{display:flex;gap:7px;align-items:flex-end;height:90px;opacity:.55}.pbars i{display:block;width:9px;border-radius:5px;background:linear-gradient(180deg,var(--pink),var(--violet))}.p1{left:50%;bottom:4%}
+.cross{width:28px;height:28px;opacity:.7}.cross:before,.cross:after{content:"";position:absolute;background:var(--amber);border-radius:3px}.cross:before{left:12px;top:0;width:4px;height:28px}.cross:after{top:12px;left:0;width:28px;height:4px}
+.x1{left:47%;top:80%}.x2{right:16%;top:6%;transform:rotate(20deg)}
+@media(prefers-reduced-motion:no-preference){.fl1{animation:fl 9s ease-in-out infinite}.fl2{animation:fl 12s ease-in-out -3s infinite}.fl3{animation:fl 7s ease-in-out -2s infinite}.spin{animation:sp 40s linear infinite}
+@keyframes fl{0%,100%{translate:0 0}50%{translate:0 -18px}}@keyframes sp{to{rotate:360deg}}
+.pbars i{animation:eq 1.8s ease-in-out infinite}.pbars i:nth-child(2n){animation-delay:-.6s}.pbars i:nth-child(3n){animation-delay:-1.1s}@keyframes eq{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}}
+.pbars i{transform-origin:bottom}
+section.alt{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* hero */
+.hero{padding:56px 0 70px;position:relative}.hero .wrap{z-index:1}
+.herogrid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}@media(max-width:940px){.herogrid{grid-template-columns:1fr}}
+.pill{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 14px 6px 10px;font-size:13.5px;color:var(--text);margin-bottom:20px}
+.pill i{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(46,230,197,.2)}
+.hero h1{font-size:clamp(38px,5.6vw,66px);line-height:1.02;letter-spacing:-.04em;margin:0 0 20px;font-weight:850}
+.hero p.sub{font-size:20px;color:#cfcce6;max-width:560px;margin:0 0 28px}
+.trust{display:flex;gap:10px 18px;flex-wrap:wrap;margin-top:22px;color:var(--mute);font-size:14.5px}.trust span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);margin-right:8px;vertical-align:middle}
+/* rack */
+.rackwrap{position:relative}
+.rack{position:relative;border-radius:24px;background:linear-gradient(180deg,rgba(26,22,52,.92),rgba(14,12,30,.94));border:1px solid rgba(255,255,255,.16);box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 0 8px rgba(255,255,255,.03),0 0 80px rgba(139,92,246,.25);overflow:hidden}
+.rackbar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.03)}
+.rackbar .dts{display:flex;gap:6px}.rackbar .dts i{width:10px;height:10px;border-radius:50%;background:#ff6b6b}.rackbar .dts i:nth-child(2){background:#ffb347}.rackbar .dts i:nth-child(3){background:#2ee6c5}
+.rackbar b{font-size:14px;letter-spacing:.04em}.rackbar em{font-style:normal;font-size:12px;color:var(--faint);margin-left:auto;letter-spacing:.14em;text-transform:uppercase}
+.rwave{padding:14px 16px 4px}.rwave svg{display:block;width:100%;height:auto}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:10px 14px 16px}
+.mod{border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);padding:12px 10px 10px;text-align:center;position:relative}
+.mod:before{content:"";position:absolute;left:12px;right:12px;top:0;height:2px;background:var(--c);border-radius:2px;box-shadow:0 0 12px var(--c)}
+.mn{display:block;font-size:11px;letter-spacing:.2em;color:var(--mute);font-weight:700;margin-bottom:8px}
+.knob{position:relative;display:block;width:46px;height:46px;border-radius:50%;margin:0 auto 9px;background:radial-gradient(circle at 35% 30%,#3a3560,#17142e);border:2px solid rgba(255,255,255,.14);box-shadow:inset 0 2px 6px rgba(255,255,255,.1),0 6px 14px rgba(0,0,0,.4)}
+.knob:after{content:"";position:absolute;left:50%;top:5px;width:3px;height:14px;margin-left:-1.5px;border-radius:2px;background:var(--c);box-shadow:0 0 8px var(--c);transform-origin:50% 18px;transform:rotate(calc(-135deg + var(--v)*270deg))}
+.leds{display:flex;gap:3px;justify-content:center}.leds i{width:7px;height:12px;border-radius:2px;background:rgba(255,255,255,.1)}.leds i.on{background:var(--c);box-shadow:0 0 8px var(--c)}
+.fchip{position:absolute;z-index:3;border-radius:14px;padding:9px 14px;font-size:13.5px;font-weight:650;background:rgba(14,12,30,.86);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);box-shadow:0 14px 40px rgba(0,0,0,.5);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.fchip i{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(46,230,197,.22)}
+.fc1{left:-26px;top:22%}.fc2{right:-16px;top:8%}.fc3{right:-22px;bottom:18%}.fc4{left:-14px;bottom:-14px}
+@media(max-width:600px){.fc1,.fc4{left:-6px}.fc2,.fc3{right:-4px}.fchip{font-size:12px;padding:7px 11px}}
+.rcap{font-size:12.5px;color:var(--faint);text-align:center;margin-top:16px}
+/* tool widget */
+.tool{position:relative;border-radius:28px;padding:2px;background:linear-gradient(135deg,rgba(255,179,71,.7),rgba(255,79,160,.6) 45%,rgba(139,92,246,.7));box-shadow:0 30px 90px rgba(139,92,246,.28)}
+.tool .inner{border-radius:26px;background:linear-gradient(180deg,#14112a,#0d0b1d);padding:26px}
+.drop{display:grid;place-items:center;text-align:center;gap:10px;border:2px dashed rgba(255,255,255,.24);border-radius:20px;padding:42px 20px;cursor:pointer;background:radial-gradient(500px 200px at 50% 0,rgba(255,79,160,.12),transparent 70%);transition:border-color .2s,background .2s,transform .2s}
+.drop:hover,.drop:focus-visible,.drop.over{border-color:var(--amber);outline:none;transform:scale(1.01);background:radial-gradient(500px 220px at 50% 0,rgba(255,179,71,.2),transparent 70%)}
+.drop .ic{width:66px;height:66px;border-radius:20px;display:grid;place-items:center;background:var(--grad);color:#1a0b16;box-shadow:0 12px 34px rgba(255,79,160,.4)}
+.drop .ic svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.drop b{font-size:22px;letter-spacing:-.02em}.drop span{color:var(--mute);font-size:15px}
+@media(prefers-reduced-motion:no-preference){.drop .ic{animation:pulse 2.8s ease-in-out infinite}@keyframes pulse{0%,100%{box-shadow:0 12px 34px rgba(255,79,160,.4),0 0 0 0 rgba(255,79,160,.35)}50%{box-shadow:0 12px 34px rgba(255,79,160,.4),0 0 0 16px rgba(255,79,160,0)}}}
+.toolrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:14px;color:var(--mute);font-size:14px}
+.priv{display:inline-flex;align-items:center;gap:8px}.priv svg{width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:2}
+.tool.busy .drop{opacity:.45;pointer-events:none}
+.prog{margin-top:16px;border-radius:14px;background:var(--card);border:1px solid var(--line);padding:14px 16px}.prog[hidden]{display:none}
+.prog .t{font-size:15px;margin-bottom:9px;color:var(--text)}.prog .tr{height:8px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden}.prog .tr i{display:block;height:100%;width:0;background:var(--grad);border-radius:5px;transition:width .35s}
+#results{margin-top:20px}#results[hidden]{display:none}
+.resbar{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:14px}.resbar b{display:block;word-break:break-all}.resbar span{font-size:13.5px;color:var(--mute)}
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}@media(max-width:760px){.tgrid{grid-template-columns:1fr}}
+.tcard{border-radius:20px;padding:20px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.tcard.primary{grid-column:1/-1;background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.04));border-color:rgba(255,255,255,.22)}
+.tcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ac,var(--amber))}
+.tcard.key{--ac:var(--violet)}.tcard.chords{--ac:var(--pink)}.tcard.loud{--ac:var(--teal)}.tcard.check{--ac:var(--blue)}.tcard.bad{--ac:#ff6b6b}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:800;margin-bottom:6px}
+.big{font-size:clamp(42px,7vw,68px);font-weight:850;letter-spacing:-.04em;line-height:1.05;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;word-break:break-word}
+.big small{font-size:.36em;letter-spacing:0;font-weight:700;color:var(--mute);-webkit-text-fill-color:var(--mute)}.big.sm2{font-size:clamp(28px,4.4vw,40px)}
+.tcard p{margin:8px 0 0}.mute{color:var(--mute)}.sm{font-size:13.5px}
+.meter{height:7px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden;margin:12px 0 4px;max-width:340px}.meter i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--amber),var(--pink))}.meter.violet i{background:linear-gradient(90deg,var(--violet),var(--pink))}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.chip{font:inherit;font-size:13.5px;border-radius:99px;padding:5px 13px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:default}button.chip{cursor:pointer}button.chip:hover{border-color:var(--amber);color:var(--amber)}
+.chip.solid{background:var(--violet);border-color:transparent;color:#fff;font-weight:700}.chip.ghost{background:transparent}
+.chordline{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chord{display:flex;flex-direction:column;align-items:center;min-width:62px;padding:8px 10px;border-radius:12px;background:rgba(255,79,160,.1);border:1px solid rgba(255,79,160,.35)}.chord b{font-size:18px}.chord i{font-style:normal;font-size:11.5px;color:var(--mute);min-height:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.stats div{border-radius:12px;background:rgba(255,255,255,.05);padding:10px 12px}.stats b{display:block;font-size:18px}.stats span{font-size:12px;color:var(--mute)}
+table.mini{width:100%;font-size:14px;border-collapse:collapse;display:table}table.mini th,table.mini td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left}table.mini th{color:var(--mute);font-weight:600}
+ul.rows{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}ul.rows li{display:flex;gap:12px;align-items:flex-start}ul.rows i{flex:none;width:12px;height:12px;border-radius:50%;margin-top:6px;background:var(--teal);box-shadow:0 0 0 4px rgba(46,230,197,.2)}
+ul.rows li.warn i{background:var(--amber);box-shadow:0 0 0 4px rgba(255,179,71,.2)}ul.rows li.bad i{background:#ff6b6b;box-shadow:0 0 0 4px rgba(255,107,107,.2)}ul.rows b{display:block}ul.rows span{color:var(--mute);font-size:15px}
+.tcard.check.ok .big{background:linear-gradient(100deg,#2ee6c5,#4ea8ff);-webkit-background-clip:text;background-clip:text}
+.ctabox{margin-top:18px;border-radius:20px;padding:22px;background:linear-gradient(135deg,rgba(255,179,71,.14),rgba(255,79,160,.14) 55%,rgba(139,92,246,.16));border:1px solid rgba(255,255,255,.2)}.ctabox h3{font-size:21px}.ctabox p{margin:0 0 14px;color:#dcd9ef}
+/* tap tempo */
+.tapbox{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-top:20px;padding:20px;border-radius:20px;background:var(--card);border:1px solid var(--line)}@media(max-width:560px){.tapbox{grid-template-columns:1fr;text-align:center}}
+#tap{width:140px;height:140px;border-radius:50%;border:0;cursor:pointer;font-weight:800;font-size:24px;letter-spacing:.08em;font-family:inherit;color:#1a0b16;background:radial-gradient(circle at 35% 30%,#ffd37a,#ff5f8d 70%);box-shadow:0 14px 40px rgba(255,79,160,.45),inset 0 -6px 14px rgba(0,0,0,.15);transition:transform .08s;touch-action:manipulation;margin:0 auto;user-select:none}
+#tap.hit,#tap:active{transform:scale(.93)}
+.tapout b{font-size:46px;letter-spacing:-.03em;display:block;line-height:1}.tapout span{color:var(--mute);font-size:14.5px}
+/* cards, grids */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.3);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.card p{margin:0;color:var(--mute);font-size:16px}
+.card:before{content:"";position:absolute;right:-50px;top:-50px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,var(--c,var(--pink)),transparent 70%);opacity:.22}
+.ico{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:color-mix(in srgb,var(--c,var(--amber)) 22%,transparent);border:1px solid color-mix(in srgb,var(--c,var(--amber)) 55%,transparent);margin-bottom:16px;color:var(--c,var(--amber));position:relative}
+.ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.cA{--c:var(--amber)}.cP{--c:var(--pink)}.cV{--c:var(--violet)}.cT{--c:var(--teal)}.cB{--c:var(--blue)}.cO{--c:var(--orange)}
+.tcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.tcards a.card{display:block;color:var(--text)}.tcards a.card:hover{text-decoration:none}.tcards a.card h3{margin-bottom:4px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;counter-reset:s}
+.steps .card:after{counter-increment:s;content:counter(s);position:absolute;right:18px;top:6px;font-size:76px;font-weight:900;color:rgba(255,255,255,.07);letter-spacing:-.05em}
+/* report mock */
+.spot{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}@media(max-width:900px){.spot{grid-template-columns:1fr}}
+.report{border-radius:22px;background:linear-gradient(180deg,#17132f,#0d0b1d);border:1px solid rgba(255,255,255,.16);padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.report .rh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.report .rh b{font-size:17px}.report .rh span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:800}
+.report .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}.report .row i{width:22px;height:22px;border-radius:50%;background:rgba(46,230,197,.18);display:grid;place-items:center;flex:none}.report .row i:after{content:"";width:5px;height:10px;border:solid var(--teal);border-width:0 2.4px 2.4px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.report .row span{color:var(--mute);margin-left:auto;font-variant-numeric:tabular-nums;font-size:15px}.report .rn{font-size:12px;color:var(--faint);margin-top:12px}
+.photo{position:relative;border-radius:26px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 40px 90px rgba(0,0,0,.55)}.photo img{display:block;width:100%;height:auto}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,7,19,.6));pointer-events:none}
+.spot ul{padding-left:20px;color:#d8d5ee}.spot li{margin:9px 0}.note{font-size:14px;color:var(--mute)}
+.band{position:relative;border-radius:30px;overflow:hidden;min-height:340px;display:grid;align-items:center;border:1px solid var(--line)}
+.band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(.6)}
+.band:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(8,7,19,.94) 8%,rgba(60,20,90,.55) 60%,rgba(255,79,160,.2))}
+.band .in{position:relative;z-index:2;padding:48px;max-width:640px}.band p{color:#dedbf0;margin:0 0 12px}
+.pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.pcard{border-radius:24px;overflow:hidden;background:var(--card);border:1px solid var(--line);transition:transform .2s,border-color .2s}
+.pcard:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.3)}.pcard img{display:block;width:100%;height:210px;object-fit:cover}.pcard div{padding:18px 22px 22px}.pcard p{margin:0;color:var(--mute);font-size:16px}
+/* pricing */
+.pricegrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:880px;margin:0 auto}@media(max-width:760px){.pricegrid{grid-template-columns:1fr}}
+.plan{border-radius:26px;padding:30px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.plan.hot{background:linear-gradient(160deg,rgba(255,179,71,.16),rgba(255,79,160,.16) 55%,rgba(139,92,246,.2));border-color:rgba(255,255,255,.3);box-shadow:0 30px 80px rgba(255,79,160,.2)}
+.plan .tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--teal);margin-bottom:8px}.plan .pr{font-size:60px;font-weight:850;letter-spacing:-.04em;line-height:1}.plan .pr small{font-size:16px;color:var(--mute);letter-spacing:0;font-weight:600}
+.plan ul{list-style:none;padding:0;margin:18px 0 22px;color:#d8d5ee}.plan li{padding:6px 0 6px 28px;position:relative}.plan li:before{content:"";position:absolute;left:4px;top:13px;width:11px;height:6px;border:solid var(--teal);border-width:0 0 2.5px 2.5px;transform:rotate(-45deg)}
+/* support */
+.supportband{border-radius:30px;padding:44px;background:linear-gradient(135deg,rgba(78,168,255,.16),rgba(139,92,246,.2));border:1px solid rgba(255,255,255,.2);display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;position:relative;overflow:hidden}@media(max-width:820px){.supportband{grid-template-columns:1fr;padding:30px}}
+.supportband h2{margin-bottom:10px}.supportband p{color:#dcd9ef;margin:0 0 12px}.mailbig{font-size:clamp(18px,3vw,26px);font-weight:800;word-break:break-all}
+/* articles */
+.crumbs{font-size:14px;color:var(--mute);padding-top:22px}.crumbs a{color:var(--mute)}
+article h1{font-size:clamp(32px,5vw,50px);line-height:1.08;letter-spacing:-.035em;margin:30px 0 14px}article h2{margin-top:44px;font-size:clamp(24px,3.4vw,32px)}
+article p,article li{color:#dcd9ee}article ul,article ol{padding-left:22px}article li{margin:7px 0}
+.lead{font-size:20px;color:#e6e3f7}
+.tldr{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:16px;padding:8px 22px 10px;margin:24px 0}.tldr b{display:block;margin:10px 0 2px}
+.vf{background:linear-gradient(135deg,rgba(255,179,71,.14),rgba(255,79,160,.12) 60%,rgba(139,92,246,.16));border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:26px;margin:44px 0}.vf h2{margin-top:0;font-size:24px}
+.aibox{background:var(--card);border:1px solid rgba(139,92,246,.5);border-radius:18px;padding:6px 22px 8px;margin:34px 0}.aibox h2{font-size:23px;margin:16px 0 8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 20px;margin:10px 0}summary{cursor:pointer;font-weight:650}details p{margin:10px 0 2px;color:var(--mute)}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;display:block;overflow-x:auto}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mute);font-weight:600;white-space:nowrap}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--text);transition:transform .2s,border-color .2s}.related a:hover{border-color:rgba(255,255,255,.35);text-decoration:none;transform:translateY(-3px)}
+.related a.th{padding:0;overflow:hidden}.related a.th img{display:block;width:100%;height:130px;object-fit:cover}.related a.th span{display:block;padding:14px 18px}
+.banner{margin:22px 0 8px;border-radius:24px;overflow:hidden;border:1px solid var(--line)}.banner img{display:block;width:100%;height:auto}
+.guides .related{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.toolhead{padding:6px 0 26px}
+.toolhead h1{font-size:clamp(34px,5.4vw,58px);line-height:1.04;letter-spacing:-.04em;margin:26px 0 14px;font-weight:850}.toolhead .lead{max-width:760px}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:26px 0 8px;counter-reset:h}.howto div{border-radius:16px;padding:14px 16px 14px 56px;background:var(--card);border:1px solid var(--line);position:relative;font-size:15px;color:#d8d5ee}
+.howto div:before{counter-increment:h;content:counter(h);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--grad);color:#1a0b16}
+footer{border-top:1px solid var(--line);margin-top:30px;padding:46px 0 34px;color:var(--mute);font-size:14.5px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.25))}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:30px}footer a{color:var(--mute)}footer a:hover{color:var(--text)}footer h4{margin:0 0 10px;color:var(--text);font-size:14px}
+.credit{font-size:12.5px;color:var(--faint);margin:8px 2px 0}.credit a{color:var(--mute)}
+@media(max-width:600px){section{padding:52px 0}.band .in{padding:30px}.hero{padding-top:34px}}
+
+@media(max-width:760px){.pbars,.squig,.cross{display:none}}
+/* live autotune + karaoke */
+.live{position:relative;border-radius:28px;padding:2px;background:linear-gradient(135deg,rgba(255,79,160,.75),rgba(139,92,246,.7) 50%,rgba(46,230,197,.6));box-shadow:0 30px 90px rgba(255,79,160,.22)}
+.live .inner{border-radius:26px;background:linear-gradient(180deg,#14112a,#0d0b1d);padding:24px}
+.drop.small{padding:26px 16px}.drop.small .ic{width:52px;height:52px;border-radius:16px}.drop.small .ic svg{width:26px;height:26px}.drop.small b{font-size:19px}
+.backinfo{margin-top:12px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:15px}.backinfo[hidden]{display:none}
+.startrow{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:18px 0 6px}.startrow .btn{font-size:18px;padding:15px 28px}
+.livemsg{margin:12px 0;padding:12px 14px;border-radius:14px;background:rgba(46,230,197,.1);border:1px solid rgba(46,230,197,.4)}.livemsg.bad{background:rgba(255,107,107,.1);border-color:rgba(255,107,107,.5)}.livemsg[hidden]{display:none}
+.livepanel[hidden],#transport[hidden],#lyrview[hidden]{display:none}
+.pitchbox{position:relative;border-radius:18px;background:rgba(0,0,0,.35);border:1px solid var(--line);overflow:hidden;margin:16px 0}
+.pitchbox canvas{display:block;width:100%;height:auto}
+.pitchread{position:absolute;right:14px;top:10px;text-align:right}.pitchread b{display:block;font-size:42px;line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.pitchread span{font-size:13px;color:var(--mute)}
+.lvlbar{height:6px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden}.lvlbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));border-radius:4px;transition:width .06s}.lvlbar i.hot{background:#ff6b6b}
+.ctrlgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:820px){.ctrlgrid{grid-template-columns:1fr}}
+.cbox{border-radius:18px;padding:16px;background:var(--card);border:1px solid var(--line)}.cbox h3{font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+.fl{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.fl label{font-size:14px;color:var(--mute);min-width:84px}
+.live select,.live textarea{background:#0b0a18;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font:inherit;font-size:15px}.live textarea{width:100%;min-height:90px}
+.live input[type=range]{flex:1;min-width:120px;accent-color:#ff4fa0}.fl output,.fl .v{font-size:13px;color:var(--mute);min-width:56px;text-align:right}
+.presets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.presets button{font:inherit;font-size:14px;border-radius:99px;padding:6px 14px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:pointer}.presets button.on{background:var(--grad);color:#1a0b16;border-color:transparent;font-weight:700}
+.recrow{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:18px 0 6px}
+#rec{font:inherit;font-weight:800;font-size:18px;border:0;border-radius:99px;padding:14px 30px;cursor:pointer;background:#ff4f5e;color:#fff;box-shadow:0 10px 30px rgba(255,79,94,.4)}#rec.live{background:#fff;color:#c4162a;animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{50%{box-shadow:0 0 0 10px rgba(255,79,94,.25)}}
+#timer{font-variant-numeric:tabular-nums;font-size:20px}
+.take{margin-top:14px;border-radius:16px;padding:14px;background:var(--card);border:1px solid var(--line)}.takerow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:10px 0}.takerow span{min-width:170px;font-size:14px;color:var(--mute)}.takerow audio{flex:1;min-width:200px;max-width:100%}
+#lyrview{margin-top:10px;max-height:240px;overflow:auto;white-space:pre-wrap;font-size:28px;line-height:1.5;text-align:center;padding:14px;border-radius:14px;background:rgba(0,0,0,.35);border:1px solid var(--line)}
+.warnrow{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:rgba(255,179,71,.1);border:1px solid rgba(255,179,71,.4);font-size:14.5px;margin-top:12px}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Live Autotune", "url": "https://fuidzy.com/vocalforge/tools/live-autotune", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (web browser)", "description": "Free live autotune in your browser. Turn on your mic, pick a key, hear yourself autotuned in real time and record the take. Private: nothing is uploaded.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Fuidzy", "url": "https://fuidzy.com"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is the live autotune free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No sign-up, no time limit and no watermark."}}, {"@type": "Question", "name": "Does it upload my voice?", "acceptedAnswer": {"@type": "Answer", "text": "No. The microphone is processed inside your browser and recordings stay on your device until you download them."}}, {"@type": "Question", "name": "Why do I hear a delay?", "acceptedAnswer": {"@type": "Answer", "text": "Every browser and audio device adds some latency. Use wired headphones, close other audio apps, and use Chrome or Edge on a computer for the lowest delay. Wireless headphones add noticeably more."}}, {"@type": "Question", "name": "Can I use a beat with it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use the karaoke autotune page: it plays your backing track, sets the key automatically, and records your voice and the mix."}}, {"@type": "Question", "name": "Why does it sound robotic?", "acceptedAnswer": {"@type": "Answer", "text": "Retune speed is set to instant on Hard-tune. Pick Natural or Pop, lower the strength, or slow the retune speed for a more natural sound."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fuidzy", "item": "https://fuidzy.com/"}, {"@type": "ListItem", "position": 2, "name": "VocalForge", "item": "https://fuidzy.com/vocalforge"}, {"@type": "ListItem", "position": 3, "name": "Free tools", "item": "https://fuidzy.com/vocalforge/tools"}, {"@type": "ListItem", "position": 4, "name": "Live Autotune", "item": "https://fuidzy.com/vocalforge/tools/live-autotune"}]}</script></head><body>
+<header class="top"><div class="wrap"><a class="logo" href="/vocalforge"><img src="/vocalforge/favicon.png" alt="" width="30" height="30"><span>Vocal<b>Forge</b></span></a>
+<nav class="main" aria-label="Main"><a href="/vocalforge/tools">Free tools</a><a href="/vocalforge#features">Features</a><a href="/vocalforge#guides">Guides</a><a href="/vocalforge#pricing">Pricing</a><a href="/vocalforge#support">Support</a></nav><a class="hbtn" href="/vocalforge#pricing">Download free</a></div></header>
+<main><div class="hero" style="padding:0 0 30px"><div class="shapes" aria-hidden="true"><span class="blob b2 fl2"></span><span class="ring r3 fl3"></span><span class="sq s3 fl1"></span><svg class="dots d2" viewBox="0 0 210 140"><defs><pattern id="dpd2" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.8" fill="#fff"/></pattern></defs><rect width="210" height="140" fill="url(#dpd2)"/></svg><svg class="squig q2" viewBox="0 0 210 40"><path d="M3 20 C 20 -2, 36 -2, 52 20 S 84 42, 100 20 S 132 -2, 148 20 S 180 42, 207 20"/></svg></div><div class="wrap"><div class="crumbs"><a href="/">Fuidzy</a> / <a href="/vocalforge">VocalForge</a> / <a href="/vocalforge/tools">Free tools</a> / Live Autotune</div><div class="toolhead"><h1>Live Autotune Recorder: Sing With Autotune Online, Free</h1><p class="lead">Turn on your microphone, pick a key, and hear yourself with autotune in real time. Record the take and download it as a WAV. It runs in your browser with no install and no sign-up, and your voice is never uploaded.</p></div>
+<div style="max-width:900px"><div class="live" id="live" data-mode="tune" data-base="/vocalforge"><div class="inner"><div class="startrow"><button class="btn primary" id="start" type="button">Turn on microphone</button><span class="small">Wear headphones so the music and your voice do not feed back into the mic.</span></div><div class="livemsg" id="msg" hidden></div><div class="livepanel" id="panel" hidden><div class="pitchbox"><canvas id="pcv" width="900" height="210"></canvas><div class="pitchread"><b id="note">--</b><span id="cents">sing a note</span></div></div><div class="lvlbar" title="Mic level"><i id="lvl"></i></div><div class="ctrlgrid" style="margin-top:16px"><div class="cbox"><h3>Autotune</h3><div class="fl"><label for="key">Key</label><select id="key"></select><select id="scale"><option value="major">major</option><option value="minor">minor</option><option value="chromatic">every note</option></select><span class="small mute" id="keylabel"></span></div><div class="presets"><button type="button" data-preset="natural">Natural</button><button type="button" data-preset="pop">Pop</button><button type="button" data-preset="hard">Hard-tune</button><button type="button" data-preset="off">Off (compare)</button></div><div class="fl"><label for="amount">Strength</label><input type="range" id="amount" min="0" max="100" value="80"><output class="v" id="amountv">80%</output></div><div class="fl"><label for="speed">Retune speed</label><input type="range" id="speed" min="0" max="250" value="50"><output class="v" id="speedv">50 ms</output></div><div class="fl"><label for="reverb">Reverb</label><input type="range" id="reverb" min="0" max="60" value="18"><output class="v" id="reverbv">18%</output></div></div><div><div class="warnrow">Tip: this is a real-time browser effect with a small delay. For a final, studio-clean vocal, record dry and tune it afterwards in VocalForge.</div></div></div><div class="recrow"><button id="rec" type="button">Record</button><span id="timer">0:00</span><button class="btn small ghost" id="micoff" type="button">Turn off microphone</button><span class="small mute" id="lat"></span></div><div id="takes"></div></div></div></div></div><div class="howto" style="max-width:900px"><div>Put on headphones, then click <strong>Turn on microphone</strong> and allow access.</div><div>Pick the key of your beat (or let the <a href="/vocalforge/tools/song-key-finder">key finder</a> tell you), then choose Natural, Pop or Hard-tune.</div><div>Press <strong>Record</strong>, sing, press <strong>Stop and save</strong>, then play it back or download the WAV.</div></div></div></div>
+<div class="narrow"><article>
+<h2>How the live autotune works</h2>
+<p>Your microphone goes into a small pitch detector that finds the note you are singing about two hundred times a second. Each time, it picks the nearest note in the scale you chose and shifts your voice there. <strong>Retune speed</strong> sets how fast it moves: instant gives the hard, robotic effect, and slower gives a natural correction. <strong>Strength</strong> sets how much of the correction you hear. The grey line in the picture is what you sang; the pink line is what you hear.</p>
+<h2>Which setting should I use?</h2>
+<table><tr><th>Preset</th><th>Strength</th><th>Retune speed</th><th>Good for</th></tr>
+<tr><td>Natural</td><td>55%</td><td>120 ms</td><td>Gentle polish on ballads and soft vocals</td></tr>
+<tr><td>Pop</td><td>80%</td><td>50 ms</td><td>Modern melodic rap and pop</td></tr>
+<tr><td>Hard-tune</td><td>100%</td><td>instant</td><td>The T-Pain / trap robotic sound</td></tr></table>
+<h2>Set the right key first</h2>
+<p>Autotune pulls every note toward the scale you pick, so a wrong key makes things sound worse, not better. If you do not know the key of your beat, drop it into the <a href="/vocalforge/tools/song-key-finder">song key finder</a>. If you are unsure between major and minor, try the relative key it shows.</p>
+<h2>Tips for a clean result</h2>
+<ul>
+<li><strong>Use headphones.</strong> Speakers feed your voice back into the mic and cause howling.</li>
+<li><strong>Sing close and steady.</strong> The detector works best on one clear note at a time. Loud background sound confuses it.</li>
+<li><strong>Expect a little delay.</strong> A browser adds some latency, which depends on your computer and audio device. A wired headset and Chrome or Edge on desktop give the smallest delay.</li>
+<li><strong>Keep the dry take if it matters.</strong> This tool records the autotuned sound. For a final track, record clean and tune it afterwards with better settings.</li>
+</ul>
+<h2>Browser versus a full studio tool</h2>
+<p>This is a fast, free, real-time effect, great for practising, writing and trying ideas. The VocalForge desktop app does the same job offline with higher quality: it analyses the whole take, tunes it to the key of your beat, cleans noise and echo, fits the timing and masters the result.</p>
+
+<div class="vf"><h2>Like this? Let VocalForge do the fixing.</h2><p>These tools tell you what is going on. VocalForge acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Free to try for 7 days, then $29 once.</p><div class="cta"><a class="btn primary" href="https://downloads.fuidzy.com/vocalforge/VocalForge-Setup-1.0.0.exe" rel="noopener">Download the free trial</a><a class="btn" href="mailto:fuidzy@outlook.com?subject=VocalForge%20support">Ask us a question</a></div></div>
+<h2>Frequently asked questions</h2><details><summary>Is the live autotune free?</summary><p>Yes. No sign-up, no time limit and no watermark.</p></details><details><summary>Does it upload my voice?</summary><p>No. The microphone is processed inside your browser and recordings stay on your device until you download them.</p></details><details><summary>Why do I hear a delay?</summary><p>Every browser and audio device adds some latency. Use wired headphones, close other audio apps, and use Chrome or Edge on a computer for the lowest delay. Wireless headphones add noticeably more.</p></details><details><summary>Can I use a beat with it?</summary><p>Yes. Use the karaoke autotune page: it plays your backing track, sets the key automatically, and records your voice and the mix.</p></details><details><summary>Why does it sound robotic?</summary><p>Retune speed is set to instant on Hard-tune. Pick Natural or Pop, lower the strength, or slow the retune speed for a more natural sound.</p></details>
+<h2>More free tools</h2><div class="tcards"><a class="card cV" href="/vocalforge/tools/karaoke-autotune" style="padding:18px"><div class="ico cV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2.5"/><circle cx="17" cy="16" r="2.5"/></svg></div><h3>Karaoke Autotune</h3><p>Sing along to any track with live autotune and record the mix.</p></a><a class="card cV" href="/vocalforge/tools/song-key-finder" style="padding:18px"><div class="ico cV"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></svg></div><h3>Key Finder</h3><p>Find the key and Camelot code of any song or beat.</p></a><a class="card cB" href="/vocalforge/tools/vocal-checker" style="padding:18px"><div class="ico cB"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Vocal Checker</h3><p>Spot clipping, noise, rumble and level problems.</p></a></div>
+<h2>Related guides</h2><div class="related"><a href="/vocalforge/autotune-for-rap-vocals"><b>Autotune for Rap and Melodic Vocals: Settings That Work</b></a><a href="/vocalforge/fix-vocals-recorded-on-phone"><b>How to Make Vocals Recorded on a Phone Sound Professional</b></a></div></article></div></main>
+<footer><div class="wrap"><div class="cols">
+<div><h4>VocalForge</h4><a href="/vocalforge">Overview</a><br><a href="/vocalforge#features">Features</a><br><a href="/vocalforge#pricing">Pricing</a><br><a href="/vocalforge#faq">FAQ</a></div>
+<div><h4>Free tools</h4><a href="/vocalforge/tools/live-autotune">Live Autotune</a><br><a href="/vocalforge/tools/karaoke-autotune">Karaoke Autotune</a><br><a href="/vocalforge/tools/bpm-finder">BPM Finder</a><br><a href="/vocalforge/tools/song-key-finder">Key Finder</a><br><a href="/vocalforge/tools/chord-finder">Chord Finder</a><br><a href="/vocalforge/tools/lufs-meter">LUFS Meter</a><br><a href="/vocalforge/tools/vocal-checker">Vocal Checker</a><br></div>
+<div><h4>Guides</h4><a href="/vocalforge/fix-vocals-recorded-on-phone">How to Make Vocals Recorded on a Phone Sound P</a><br><a href="/vocalforge/ai-vocal-cleanup-explained">AI Vocal Cleanup</a><br><a href="/vocalforge/remove-echo-from-vocal-recording">How to Remove Echo and Room Reverb From a Voca</a><br><a href="/vocalforge/autotune-for-rap-vocals">Autotune for Rap and Melodic Vocals</a><br><a href="/vocalforge/mix-vocals-on-a-beat">How to Mix Vocals on a Beat So They Sit in the</a><br></div>
+<div><h4>Support</h4><a href="mailto:fuidzy@outlook.com?subject=VocalForge%20support">fuidzy@outlook.com</a><br><a href="mailto:fuidzy@outlook.com?subject=VocalForge%20for%20Mac&amp;body=Hi%2C%20I%27d%20like%20a%20Mac%20version%20of%20VocalForge.">Request a Mac version</a><br><a href="/vocalforge/privacy">Privacy</a><br><a href="/vocalforge/terms">Terms</a><br><a href="/vocalforge/refund-policy">Refunds</a></div>
+</div><p class="credit" style="margin-top:26px">VocalForge is a Fuidzy product. It is not affiliated with or endorsed by any artist or plugin company mentioned on this site.</p>
+<p class="credit">Photos: <a href="https://www.pexels.com/photo/a-man-singing-in-front-of-the-microphone-8132797/" rel="noopener">Anna Pou / Pexels</a>, <a href="https://www.pexels.com/photo/a-man-singing-in-the-studio-8133004/" rel="noopener">Anna Pou / Pexels</a>, <a href="https://www.pexels.com/photo/man-singing-into-the-mic-18259198/" rel="noopener">Eduardo López / Pexels</a>, <a href="https://unsplash.com/photos/grayscale-photo-of-condenser-microphone-beside-pop-filter-bG8U3kaZltE" rel="noopener">Leo Wieling / Unsplash</a>, <a href="https://unsplash.com/photos/a-pair-of-headphones-sitting-next-to-a-laptop-Q-raIe-gAOo" rel="noopener">Project 290 / Unsplash</a>. Free to use under the Pexels and Unsplash licenses.</p></div></footer><script>/* VocalForge free tools: live autotune + karaoke engine. Runs entirely in the visitor's browser (Web Audio + AudioWorklet).
+   Mic -> pitch detection (YIN) -> delay-line pitch shifter -> light studio tone + reverb -> headphones, with recording.
+   The same shifter as the VocalForge desktop app's live monitor. Nothing is uploaded. */
+(function (root) {
+  'use strict';
+
+  var WORKLETS = [
+    '// live autotune: YIN pitch detection (decimated) + two-head delay-line pitch shifter',
+    'class LiveTune extends AudioWorkletProcessor {',
+    "  static get parameterDescriptors(){ return [{name:'amount', defaultValue:1, minValue:0, maxValue:1}, {name:'speed', defaultValue:.02, minValue:0, maxValue:.3}]; }",
+    '  constructor(){ super();',
+    '    this.scale = null; this.tonic = 0; this.report = 0;',
+    '    this.port.onmessage = e => { this.scale = e.data.scale; this.tonic = e.data.tonic || 0; };',
+    '    this.dec = 4; this.N = 512; this.ring = new Float32Array(this.N); this.ri = 0; this.acc = 0; this.accN = 0;',
+    '    this.x = new Float32Array(this.N); this.d = new Float32Array(this.N / 2);',
+    '    this.ratio = 1; this.target = 1; this.hop = 0;',
+    '    this.L = 8192; this.dl = new Float32Array(this.L); this.w = 0; this.win = Math.round(.03 * sampleRate); this.ph = 0;',
+    '  }',
+    '  detect(){',
+    '    const N = this.N, W = N / 2, fs = sampleRate / this.dec, x = this.x, d = this.d;',
+    '    let en = 0; for (let i = 0; i < N; i++){ x[i] = this.ring[(this.ri + i) % N]; en += x[i] * x[i]; }',
+    '    if (en / N < 2e-6) return 0;',
+    '    const lo = Math.floor(fs / 1000), hi = Math.min(W - 2, Math.floor(fs / 70)); let run = 0; d[0] = 1;',
+    '    for (let t = 1; t <= hi; t++){ let s = 0; for (let i = 0; i < W; i++){ const v = x[i] - x[i + t]; s += v * v; } run += s; d[t] = run ? s * t / run : 1; }',
+    '    for (let t = Math.max(2, lo); t <= hi; t++){',
+    '      if (d[t] < .15){ while (t + 1 <= hi && d[t + 1] < d[t]) t++;',
+    '        const a = d[t - 1], b = d[t], c = d[t + 1], den = a - 2 * b + c; return fs / (t + (den ? (a - c) / (2 * den) : 0)); }',
+    '    }',
+    '    return 0;',
+    '  }',
+    '  snap(f){',
+    '    const m = 69 + 12 * Math.log2(f / 440); let best = Math.round(m), bd = 99;',
+    '    if (this.scale) for (let n = Math.floor(m) - 2; n <= Math.ceil(m) + 2; n++){',
+    '      if (this.scale.includes(((n - this.tonic) % 12 + 12) % 12) && Math.abs(n - m) < bd){ bd = Math.abs(n - m); best = n; } }',
+    '    return 440 * Math.pow(2, (best - 69) / 12);',
+    '  }',
+    '  process(inputs, outputs, params){',
+    '    const inp = inputs[0] && inputs[0][0], out = outputs[0][0];',
+    '    if (!inp){ out.fill(0); return true; }',
+    '    for (let i = 0; i < inp.length; i++){ this.acc += inp[i]; if (++this.accN === this.dec){ this.ring[this.ri] = this.acc / this.dec; this.ri = (this.ri + 1) % this.N; this.acc = 0; this.accN = 0; } }',
+    '    if ((this.hop += inp.length) >= 256){ this.hop = 0; const f = this.detect(); this.target = f > 70 && f < 1000 ? this.snap(f) / f : 1;',
+    '      if ((this.report++ & 1) === 0) this.port.postMessage({f: f, t: f > 0 ? f * this.target : 0}); }',
+    '    const sp = params.speed[0], k = sp <= .001 ? 1 : 1 - Math.exp(-inp.length / sampleRate / sp);',
+    '    this.ratio += k * ((1 + (this.target - 1) * params.amount[0]) - this.ratio);',
+    '    const L = this.L, W = this.win;',
+    '    for (let i = 0; i < inp.length; i++){',
+    '      this.dl[this.w] = inp[i];',
+    '      this.ph += 1 - this.ratio; if (this.ph >= W) this.ph -= W; if (this.ph < 0) this.ph += W;',
+    '      let y = 0;',
+    '      for (let h = 0; h < 2; h++){',
+    '        let dly = this.ph + h * W / 2; if (dly >= W) dly -= W;',
+    '        const g = Math.sin(Math.PI * dly / W); let r = this.w - dly - 2; while (r < 0) r += L;',
+    '        const r0 = Math.floor(r), fr = r - r0, s0 = this.dl[r0 % L], s1 = this.dl[(r0 + 1) % L];',
+    '        y += g * g * (s0 + (s1 - s0) * fr);',
+    '      }',
+    '      out[i] = y; this.w = (this.w + 1) % L;',
+    '    }',
+    '    return true;',
+    '  }',
+    '}',
+    "registerProcessor('live-tune', LiveTune);",
+    '// recorder tap: hands raw blocks (all input channels) to the page while recording',
+    'class RecTap extends AudioWorkletProcessor {',
+    '  constructor(){ super(); this.on = false; this.port.onmessage = e => { this.on = e.data.on; }; }',
+    '  process(inputs){ const i = inputs[0]; if (this.on && i && i.length){ this.port.postMessage(i.map(c => c.slice(0))); } return true; }',
+    '}',
+    "registerProcessor('rec-tap', RecTap);"
+  ].join('\n');
+
+  function biq(c, type, f, q, gain) { var n = c.createBiquadFilter(); n.type = type; n.frequency.value = f; if (q != null) n.Q.value = q; if (gain != null) n.gain.value = gain; return n; }
+  function makeIR(c, sec) {
+    var n = Math.floor(c.sampleRate * sec), b = c.createBuffer(2, n, c.sampleRate);
+    for (var ch = 0; ch < 2; ch++) {
+      var d = b.getChannelData(ch), e = 0, i;
+      for (i = 0; i < n; i++) { d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / n, 2.6); e += d[i] * d[i]; }
+      var k = 1 / Math.sqrt(e || 1); for (i = 0; i < n; i++) d[i] *= k;               // unit energy: reverb return stays at the send level
+    }
+    return b;
+  }
+  function wav16(chans, sr) {
+    var nch = chans.length, n = chans[0].length, b = new ArrayBuffer(44 + n * nch * 2), v = new DataView(b);
+    function w(o, s) { for (var i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); }
+    w(0, 'RIFF'); v.setUint32(4, 36 + n * nch * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true);
+    v.setUint16(22, nch, true); v.setUint32(24, sr, true); v.setUint32(28, sr * nch * 2, true); v.setUint16(32, nch * 2, true); v.setUint16(34, 16, true);
+    w(36, 'data'); v.setUint32(40, n * nch * 2, true);
+    var o = 44;
+    for (var i = 0; i < n; i++) for (var c = 0; c < nch; c++) { var s = Math.max(-1, Math.min(1, chans[c][i])); v.setInt16(o, s < 0 ? s * 32768 : s * 32767, true); o += 2; }
+    return new Blob([b], { type: 'audio/wav' });
+  }
+  function join(chunks, ch) { var n = 0, i; for (i = 0; i < chunks.length; i++) n += chunks[i][ch] ? chunks[i][ch].length : 0; var o = new Float32Array(n), p = 0; for (i = 0; i < chunks.length; i++) { var a = chunks[i][ch]; if (a) { o.set(a, p); p += a.length; } } return o; }
+
+  var SCALES = { major: [0, 2, 4, 5, 7, 9, 11], minor: [0, 2, 3, 5, 7, 8, 10], chromatic: null };
+
+  function Live() {
+    this.ctx = null; this.stream = null; this.recording = false; this.vchunks = []; this.mchunks = [];
+    this.tuneOn = true; this.reverb = 0.18; this.backing = null; this.src = null; this.startedAt = 0; this.offset = 0; this.playing = false;
+    this.onPitch = function () {}; this.nudgeMs = 0;
+  }
+  // opts.mic (default true) asks for the microphone; opts.source(ctx) is a test hook that supplies an AudioNode instead.
+  Live.prototype.open = async function (opts) {
+    opts = opts || {};
+    if (this.ctx) return;
+    var AC = root.AudioContext || root.webkitAudioContext;
+    this.ctx = new AC({ latencyHint: 'interactive' });
+    var c = this.ctx;
+    await c.audioWorklet.addModule(URL.createObjectURL(new Blob([WORKLETS], { type: 'application/javascript' })));
+    var input;
+    if (opts.source) input = opts.source(c);
+    else {
+      this.stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 } });
+      input = c.createMediaStreamSource(this.stream);
+    }
+    var self = this;
+    this.meter = c.createAnalyser(); this.meter.fftSize = 1024; input.connect(this.meter);
+    var hp0 = biq(c, 'highpass', 80, 0.7); input.connect(hp0);
+    this.tune = new AudioWorkletNode(c, 'live-tune', { outputChannelCount: [1] });
+    this.tune.port.onmessage = function (e) { self.onPitch(e.data); };
+    this.tuned = c.createGain(); this.dry = c.createGain();
+    hp0.connect(this.tune); this.tune.connect(this.tuned); hp0.connect(this.dry);
+    var pres = biq(c, 'peaking', 5500, 0.7, 2), air = biq(c, 'highshelf', 11000, null, 3);
+    var comp = c.createDynamicsCompressor(); comp.threshold.value = -22; comp.ratio.value = 3; comp.attack.value = 0.005; comp.release.value = 0.1;
+    this.tuned.connect(pres); this.dry.connect(pres); pres.connect(air).connect(comp);
+    this.voice = c.createGain(); comp.connect(this.voice);                         // dry-tone voice
+    var conv = c.createConvolver(); conv.normalize = false; conv.buffer = makeIR(c, 0.5);
+    this.revSend = c.createGain(); this.revRet = c.createGain(); this.revRet.gain.value = 1;
+    comp.connect(this.revSend); this.revSend.connect(biq(c, 'highpass', 300, 0.7)).connect(conv).connect(this.revRet);
+    var vb = c.createGain(); this.voice.connect(vb); this.revRet.connect(vb);
+    this.voiceBus = c.createDynamicsCompressor(); this.voiceBus.threshold.value = -3; this.voiceBus.knee.value = 0; this.voiceBus.ratio.value = 20; this.voiceBus.attack.value = 0.002; this.voiceBus.release.value = 0.12;
+    vb.connect(this.voiceBus);                                                       // safety limiter: no clipped recordings
+    // master -> speakers
+    this.master = c.createGain(); this.master.channelCount = 2; this.master.channelCountMode = 'explicit';
+    this.voiceBus.connect(this.master); this.master.connect(c.destination);
+    // backing track path (optional)
+    this.backGain = c.createGain(); this.backGain.gain.value = 0.8;
+    this.backGain.channelCount = 2; this.backGain.channelCountMode = 'explicit';
+    this.direct = c.createGain(); this.reduced = c.createGain(); this.reduced.gain.value = 0;
+    this.backIn = c.createGain(); this.backIn.channelCount = 2; this.backIn.channelCountMode = 'explicit';
+    this.backIn.connect(this.direct).connect(this.backGain);
+    var sp = c.createChannelSplitter(2), sideSum = c.createGain(), bassSum = c.createGain(), mg = c.createChannelMerger(2);
+    var lS = c.createGain(), rS = c.createGain(), lB = c.createGain(), rB = c.createGain();
+    lS.gain.value = 0.5; rS.gain.value = -0.5; lB.gain.value = 0.5; rB.gain.value = 0.5;
+    this.backIn.connect(sp); sp.connect(lS, 0); sp.connect(rS, 1); sp.connect(lB, 0); sp.connect(rB, 1);
+    lS.connect(sideSum); rS.connect(sideSum); lB.connect(bassSum); rB.connect(bassSum);
+    var sideHp = biq(c, 'highpass', 140, 0.7), bassLp = biq(c, 'lowpass', 140, 0.7);
+    sideSum.connect(sideHp); bassSum.connect(bassLp);
+    sideHp.connect(mg, 0, 0); sideHp.connect(mg, 0, 1); bassLp.connect(mg, 0, 0); bassLp.connect(mg, 0, 1);
+    mg.connect(this.reduced).connect(this.backGain);
+    this.backGain.connect(this.master);
+    // recorder taps (kept alive through a silent gain)
+    var silent = c.createGain(); silent.gain.value = 0; silent.connect(c.destination);
+    this.voiceTap = new AudioWorkletNode(c, 'rec-tap', { numberOfInputs: 1, numberOfOutputs: 1, channelCount: 1, channelCountMode: 'explicit' });
+    this.voiceBus.connect(this.voiceTap); this.voiceTap.connect(silent);
+    this.voiceTap.port.onmessage = function (e) { if (self.recording) self.vchunks.push(e.data); };
+    this.mixRec = c.createGain(); this.mixRec.channelCount = 2; this.mixRec.channelCountMode = 'explicit';
+    this.voiceBus.connect(this.mixRec);
+    this.backDelay = c.createDelay(1.0); this.backGain.connect(this.backDelay); this.backDelay.connect(this.mixRec);
+    this.mixTap = new AudioWorkletNode(c, 'rec-tap', { numberOfInputs: 1, numberOfOutputs: 1, channelCount: 2, channelCountMode: 'explicit' });
+    var mixLim = c.createDynamicsCompressor(); mixLim.threshold.value = -3; mixLim.knee.value = 0; mixLim.ratio.value = 20; mixLim.attack.value = 0.002; mixLim.release.value = 0.12;
+    this.mixRec.connect(mixLim); mixLim.connect(this.mixTap); this.mixTap.connect(silent);
+    this.mixTap.port.onmessage = function (e) { if (self.recording) self.mchunks.push(e.data); };
+    this.setKey(0, 'major'); this.setTune(0.8, 0.05); this.setReverb(this.reverb); this.setNudge(0); this.apply();
+    await c.resume();
+  };
+  Live.prototype.estLatencyMs = function () { var c = this.ctx; if (!c) return 0; return Math.round(((c.baseLatency || 0.01) + (c.outputLatency || 0.02) + 0.015) * 1000); };
+  Live.prototype.apply = function () { this.tuned.gain.value = this.tuneOn ? 1 : 0; this.dry.gain.value = this.tuneOn ? 0 : 1; };
+  Live.prototype.setKey = function (tonic, scale) { if (!this.tune) return; this.tune.port.postMessage({ tonic: tonic, scale: SCALES[scale] === undefined ? SCALES.major : SCALES[scale] }); };
+  Live.prototype.setTune = function (amount, speed) { if (!this.tune) return; this.tune.parameters.get('amount').value = amount; this.tune.parameters.get('speed').value = speed; };
+  Live.prototype.setTuneOn = function (on) { this.tuneOn = !!on; if (this.ctx) this.apply(); };
+  Live.prototype.setReverb = function (v) { this.reverb = v; if (this.revSend) this.revSend.gain.value = v; };
+  Live.prototype.setVoiceGain = function (v) { if (this.voice) this.voice.gain.value = v; };
+  Live.prototype.setBackGain = function (v) { if (this.backGain) this.backGain.gain.value = v; };
+  Live.prototype.setReduce = function (on) { if (!this.ctx) return; this.direct.gain.value = on ? 0 : 1; this.reduced.gain.value = on ? 1 : 0; };
+  Live.prototype.setNudge = function (ms) { this.nudgeMs = ms; if (this.backDelay) this.backDelay.delayTime.value = Math.max(0, Math.min(0.9, (this.estLatencyMs() + ms) / 1000)); };
+  Live.prototype.level = function () { if (!this.meter) return 0; var a = new Float32Array(this.meter.fftSize), m = 0; this.meter.getFloatTimeDomainData(a); for (var i = 0; i < a.length; i++) m = Math.max(m, Math.abs(a[i])); return m; };
+
+  // ---- backing track
+  Live.prototype.loadBacking = async function (arrayBuffer) {
+    var c = this.ctx; this.stopBacking(); this.offset = 0;
+    this.backing = await c.decodeAudioData(arrayBuffer); return this.backing;
+  };
+  Live.prototype.setBacking = function (buffer) { this.stopBacking(); this.offset = 0; this.backing = buffer; };
+  Live.prototype.position = function () { if (!this.backing) return 0; var p = this.playing ? this.offset + (this.ctx.currentTime - this.startedAt) : this.offset; return Math.min(p, this.backing.duration); };
+  Live.prototype.play = function (from) {
+    if (!this.backing) return; var c = this.ctx; this.stopBacking();
+    if (typeof from === 'number') this.offset = Math.max(0, Math.min(from, this.backing.duration - 0.05));
+    var s = c.createBufferSource(); s.buffer = this.backing; s.connect(this.backIn);
+    var self = this; s.onended = function () { if (self.src === s && self.playing) { self.playing = false; self.offset = 0; self.src = null; if (self.onEnd) self.onEnd(); } };
+    s.start(0, this.offset); this.src = s; this.startedAt = c.currentTime; this.playing = true;
+  };
+  Live.prototype.pause = function () { if (!this.playing) return; this.offset = this.position(); this.stopBacking(true); };
+  Live.prototype.stopBacking = function (keepOffset) { if (this.src) { var s = this.src; this.src = null; this.playing = false; s.onended = null; try { s.stop(); } catch (e) {} } this.playing = false; if (!keepOffset) { /* offset kept by caller */ } };
+
+  // ---- recording
+  Live.prototype.startRecording = function () { this.vchunks = []; this.mchunks = []; this.recording = true; this.voiceTap.port.postMessage({ on: true }); this.mixTap.port.postMessage({ on: true }); this.recStart = this.ctx.currentTime; };
+  Live.prototype.stopRecording = function () {
+    this.recording = false; this.voiceTap.port.postMessage({ on: false }); this.mixTap.port.postMessage({ on: false });
+    var sr = this.ctx.sampleRate, v = join(this.vchunks, 0), out = { seconds: v.length / sr, voice: v.length ? wav16([v], sr) : null, mix: null };
+    if (this.mchunks.length) { var l = join(this.mchunks, 0), r = join(this.mchunks, 1); if (!r.length) r = l; out.mix = wav16([l, r], sr); }
+    return out;
+  };
+  Live.prototype.close = function () { if (this.stream) this.stream.getTracks().forEach(function (t) { t.stop(); }); this.stopBacking(); if (this.ctx) { try { this.ctx.close(); } catch (e) {} } this.ctx = null; this.stream = null; this.tune = null; this.meter = null; this.recording = false; this.playing = false; };
+
+  var NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+  function noteName(f) { var m = 69 + 12 * Math.log2(f / 440), r = Math.round(m); return { name: NOTES[((r % 12) + 12) % 12] + (Math.floor(r / 12) - 1), midi: m, cents: Math.round((m - r) * 100) }; }
+  var api = { Live: Live, SCALES: SCALES, noteName: noteName, NOTES: NOTES, wav16: wav16 };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.VFLive = api;
+})(typeof window !== 'undefined' ? window : globalThis);
+</script><script>/* VocalForge free tools: live autotune + karaoke page glue. Nothing is uploaded; there is no network code here. */
+(function () {
+  'use strict';
+  var root = document.getElementById('live');
+  if (!root) return;
+  var mode = root.getAttribute('data-mode') || 'tune', BASE = root.getAttribute('data-base') || '/vocalforge';
+  var $ = function (s) { return root.querySelector(s); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var live = new VFLive.Live(); window.__vfLive = live;
+  var NOTES = VFLive.NOTES;
+  var state = { key: 0, scale: 'major', preset: 'pop', tuneOn: true, takes: 0, pitch: [], recTimer: null, recStart: 0 };
+
+  function mmss(t) { t = Math.max(0, Math.floor(t)); return Math.floor(t / 60) + ':' + ('0' + (t % 60)).slice(-2); }
+  function toast(msg, bad) { var t = $('#msg'); t.textContent = msg; t.className = 'livemsg' + (bad ? ' bad' : ''); t.hidden = !msg; }
+
+  // ------------------------------------------------------------------ analysis (karaoke: set the key from the backing track)
+  function analyse(buf) {
+    return new Promise(function (resolve, reject) {
+      var chs = []; for (var c = 0; c < Math.min(2, buf.numberOfChannels); c++) chs.push(new Float32Array(buf.getChannelData(c)));
+      var w;
+      try {
+        var src = document.getElementById('vfcore').textContent + ';self.onmessage=function(e){try{var d=e.data;self.postMessage({res:VFCore.analyzeAll(d.chs,d.sr,{})})}catch(err){self.postMessage({err:String(err)})}}';
+        w = new Worker(URL.createObjectURL(new Blob([src], { type: 'text/javascript' })));
+      } catch (e) { try { resolve(VFCore.analyzeAll(chs, buf.sampleRate, {})); } catch (e2) { reject(e2); } return; }
+      w.onmessage = function (m) { w.terminate(); if (m.data.res) resolve(m.data.res); else reject(new Error(m.data.err)); };
+      w.onerror = function (e) { w.terminate(); reject(new Error(e.message || 'analysis failed')); };
+      w.postMessage({ chs: chs, sr: buf.sampleRate }, chs.map(function (x) { return x.buffer; }));
+    });
+  }
+
+  // ------------------------------------------------------------------ controls
+  function applyKey() { live.setKey(state.key, state.scale); drawKeyLabel(); }
+  function drawKeyLabel() { var k = $('#keylabel'); if (k) k.textContent = state.scale === 'chromatic' ? 'Every note (chromatic)' : NOTES[state.key] + ' ' + state.scale; }
+  var PRESETS = { natural: { a: 0.55, s: 0.12 }, pop: { a: 0.8, s: 0.05 }, hard: { a: 1, s: 0 }, off: null };
+  function setPreset(name) {
+    state.preset = name; var p = PRESETS[name];
+    root.querySelectorAll('[data-preset]').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-preset') === name); });
+    if (!p) { state.tuneOn = false; live.setTuneOn(false); return; }
+    state.tuneOn = true; live.setTuneOn(true);
+    $('#amount').value = Math.round(p.a * 100); $('#speed').value = Math.round(p.s * 1000); applyTune();
+  }
+  function applyTune() { var a = $('#amount').value / 100, s = $('#speed').value / 1000; live.setTune(a, s); $('#amountv').textContent = $('#amount').value + '%'; $('#speedv').textContent = $('#speed').value === '0' ? 'instant' : $('#speed').value + ' ms'; }
+
+  // ------------------------------------------------------------------ pitch picture
+  var cv = $('#pcv'), g = cv.getContext('2d'), midiCenter = 60;
+  live.onPitch = function (m) {
+    var now = performance.now(); state.pitch.push({ t: now, f: m.f, g: m.t });
+    while (state.pitch.length && now - state.pitch[0].t > 6000) state.pitch.shift();
+    if (m.f > 0) { var n = VFLive.noteName(m.f); $('#note').textContent = n.name; $('#cents').textContent = (n.cents > 0 ? '+' : '') + n.cents + ' cents' + (state.tuneOn && m.t ? ' > ' + VFLive.noteName(m.t).name : ''); }
+  };
+  var drawing = false;
+  function draw() {
+    if (!live.ctx) { drawing = false; return; }
+    var W = cv.width, H = cv.height, now = performance.now(); g.clearRect(0, 0, W, H);
+    var mids = state.pitch.filter(function (p) { return p.f > 0; }).map(function (p) { return 69 + 12 * Math.log2(p.f / 440); });
+    if (mids.length) { mids.sort(function (a, b) { return a - b; }); var med = mids[Math.floor(mids.length / 2)]; midiCenter += (med - midiCenter) * 0.05; }
+    var lo = midiCenter - 9, hi = midiCenter + 9, y = function (m) { return H - (m - lo) / (hi - lo) * H; };
+    var sc = VFLive.SCALES[state.scale];
+    g.font = '11px system-ui'; g.textBaseline = 'middle';
+    for (var n = Math.floor(lo); n <= Math.ceil(hi); n++) {
+      var inScale = !sc || sc.indexOf(((n - state.key) % 12 + 12) % 12) >= 0; if (!inScale) continue;
+      g.strokeStyle = (((n - state.key) % 12 + 12) % 12 === 0) ? 'rgba(255,179,71,.55)' : 'rgba(255,255,255,.12)'; g.lineWidth = 1;
+      g.beginPath(); g.moveTo(34, y(n)); g.lineTo(W, y(n)); g.stroke(); g.fillStyle = 'rgba(255,255,255,.55)'; g.fillText(NOTES[((n % 12) + 12) % 12], 4, y(n));
+    }
+    function trace(key, color, w) {
+      g.strokeStyle = color; g.lineWidth = w; g.beginPath(); var started = false;
+      state.pitch.forEach(function (p) { var f = p[key]; if (!(f > 0)) { started = false; return; } var x = 40 + (W - 40) * (1 - (now - p.t) / 6000), yy = y(69 + 12 * Math.log2(f / 440)); if (!started) { g.moveTo(x, yy); started = true; } else g.lineTo(x, yy); });
+      g.stroke();
+    }
+    trace('f', 'rgba(255,255,255,.55)', 2); if (state.tuneOn) trace('g', '#ff4fa0', 3);
+    var l = live.level(); $('#lvl').style.width = Math.min(100, Math.round(l * 140)) + '%'; $('#lvl').className = l > 0.95 ? 'hot' : '';
+    requestAnimationFrame(draw);
+  }
+
+  // ------------------------------------------------------------------ recording + takes
+  function addTake(res) {
+    state.takes++;
+    var html = '<div class="take"><b>Take ' + state.takes + ' <small>' + mmss(res.seconds) + '</small></b>';
+    function row(label, blob, name) { var url = URL.createObjectURL(blob); return '<div class="takerow"><span>' + label + '</span><audio controls preload="metadata" src="' + url + '"></audio><a class="btn small" download="' + name + '" href="' + url + '">Download WAV</a></div>'; }
+    if (res.voice) html += row('Your voice (autotuned)', res.voice, 'vocalforge-take' + state.takes + '-voice.wav');
+    if (res.mix && mode === 'karaoke' && backingBuf) html += row('Voice + backing track', res.mix, 'vocalforge-take' + state.takes + '-mix.wav');
+    html += '<p class="small mute">Want it studio-clean? <a href="' + BASE + '#pricing">VocalForge</a> cleans, tunes and masters a take like this in one pass.</p></div>';
+    var box = $('#takes'); box.insertAdjacentHTML('afterbegin', html);
+  }
+  function timerOn() { state.recStart = performance.now(); state.recTimer = setInterval(function () { $('#timer').textContent = mmss((performance.now() - state.recStart) / 1000); }, 250); }
+  async function record() {
+    var btn = $('#rec');
+    if (live.recording) { stopRec(); return; }
+    btn.disabled = true;
+    if (mode === 'karaoke' && live.backing) {
+      for (var i = 3; i >= 1; i--) { $('#timer').textContent = 'Starting in ' + i; await new Promise(function (r) { setTimeout(r, 900); }); }
+      live.play(0); $('#play').textContent = 'Pause';
+    }
+    live.startRecording(); btn.disabled = false; btn.textContent = 'Stop and save'; btn.classList.add('live'); timerOn(); root.classList.add('rec');
+    if (mode === 'karaoke') startLyrics();
+  }
+  function stopRec() {
+    var btn = $('#rec'); clearInterval(state.recTimer); var res = live.stopRecording();
+    if (mode === 'karaoke') { live.pause(); $('#play').textContent = 'Play'; stopLyrics(); }
+    btn.textContent = 'Record'; btn.classList.remove('live'); root.classList.remove('rec'); $('#timer').textContent = '0:00';
+    if (res.voice) addTake(res); else toast('Nothing was recorded. Sing something first.', true);
+  }
+
+  // ------------------------------------------------------------------ karaoke bits
+  var lyricTimer = null;
+  function startLyrics() { stopLyrics(); var v = $('#lyrview'); if (!v || v.hidden) return; var sp = function () { return $('#lyrspeed').value / 10; }; v.scrollTop = 0; lyricTimer = setInterval(function () { v.scrollTop += sp() / 4; }, 250); }
+  function stopLyrics() { clearInterval(lyricTimer); lyricTimer = null; }
+  async function loadFile(file) {
+    if (!file) return; var info = $('#backinfo'); info.hidden = false; info.innerHTML = 'Loading <b>' + esc(file.name) + '</b>...';
+    try {
+      var ab = await file.arrayBuffer(), AC = window.AudioContext || window.webkitAudioContext, tmp = new AC();
+      var buf = await tmp.decodeAudioData(ab); try { tmp.close(); } catch (e) {}
+      useBacking(buf, file.name);
+    } catch (e) { info.innerHTML = 'That file could not be decoded. Try an MP3 or WAV.'; }
+  }
+  var backingBuf = null;
+  async function useBacking(buf, name) {
+    backingBuf = buf; var info = $('#backinfo'); info.hidden = false;
+    info.innerHTML = '<b>' + esc(name) + '</b> &middot; ' + mmss(buf.duration) + ' &middot; finding its key...';
+    $('#seek').max = Math.floor(buf.duration); $('#dur').textContent = mmss(buf.duration);
+    if (live.ctx) live.setBacking(buf);
+    try {
+      var r = await analyse(buf);
+      if (r.key) {
+        state.key = r.key.tonic; state.scale = r.key.mode; $('#key').value = state.key; $('#scale').value = state.scale; if (live.ctx) applyKey(); else drawKeyLabel();
+        info.innerHTML = '<b>' + esc(name) + '</b> &middot; ' + mmss(buf.duration) + ' &middot; key <b>' + esc(r.key.name) + '</b>' + (r.tempo ? ' &middot; ' + Math.round(r.tempo.bpm) + ' BPM' : '') + ' <span class="mute">(autotune set to this key; change it below if it sounds off)</span>';
+      } else info.innerHTML = '<b>' + esc(name) + '</b> &middot; ' + mmss(buf.duration) + ' &middot; could not find a clear key, pick one below.';
+    } catch (e) { info.innerHTML = '<b>' + esc(name) + '</b> &middot; ' + mmss(buf.duration) + ' &middot; loaded.'; }
+    $('#transport').hidden = false;
+  }
+  var ticking = false;
+  function seekTick() {
+    if (!live.ctx) { ticking = false; return; } if (live.backing) { var p = live.position(); if (!$('#seek').matches(':active')) $('#seek').value = Math.floor(p); $('#pos').textContent = mmss(p); } requestAnimationFrame(function () { setTimeout(seekTick, 250); }); }
+
+  // ------------------------------------------------------------------ start
+  async function start() {
+    var b = $('#start'); b.disabled = true; b.textContent = 'Turning on...';
+    try { await live.open({}); }
+    catch (e) { b.disabled = false; b.textContent = 'Turn on microphone'; toast(e && e.name === 'NotAllowedError' ? 'The browser blocked the microphone. Click the lock icon in the address bar, allow the microphone, and try again.' : 'Could not start the microphone (' + (e && e.message || e) + '). Check that a microphone is connected and that no other app is using it.', true); return; }
+    toast(''); b.hidden = true; $('#panel').hidden = false; $('#lat').textContent = 'Estimated delay: about ' + live.estLatencyMs() + ' ms. Use headphones to avoid feedback.';
+    applyKey(); setPreset(state.preset); live.setReverb($('#reverb').value / 100); if (backingBuf) live.setBacking(backingBuf);
+    live.onEnd = function () { if (live.recording) stopRec(); else $('#play').textContent = 'Play'; };
+    if (!drawing) { drawing = true; requestAnimationFrame(draw); } if (mode === 'karaoke' && !ticking) { ticking = true; seekTick(); }
+  }
+
+  // ------------------------------------------------------------------ events
+  var kSel = $('#key'); NOTES.forEach(function (n, i) { var o = document.createElement('option'); o.value = i; o.textContent = n; kSel.appendChild(o); });
+  $('#start').onclick = start;
+  $('#key').onchange = function () { state.key = +this.value; applyKey(); };
+  $('#scale').onchange = function () { state.scale = this.value; applyKey(); };
+  root.querySelectorAll('[data-preset]').forEach(function (b) { b.onclick = function () { setPreset(this.getAttribute('data-preset')); }; });
+  $('#amount').oninput = applyTune; $('#speed').oninput = applyTune;
+  $('#reverb').oninput = function () { live.setReverb(this.value / 100); $('#reverbv').textContent = this.value + '%'; };
+  $('#rec').onclick = record;
+  $('#micoff').onclick = function () {
+    if (live.recording) stopRec();
+    live.close(); state.pitch = []; $('#panel').hidden = true; $('#note').textContent = '--';
+    var b = $('#start'); b.hidden = false; b.disabled = false; b.textContent = 'Turn on microphone'; toast('Microphone off. Nothing is being recorded.');
+  };
+  if (mode === 'karaoke') {
+    var drop = $('#kdrop'), inp = $('#kfile');
+    drop.onclick = function () { inp.click(); };
+    drop.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); inp.click(); } };
+    inp.onchange = function () { loadFile(inp.files[0]); inp.value = ''; };
+    ['dragenter', 'dragover'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add('over'); }); });
+    ['dragleave', 'drop'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove('over'); }); });
+    drop.addEventListener('drop', function (e) { loadFile(e.dataTransfer && e.dataTransfer.files[0]); });
+    $('#kdemo').onclick = function () { var d = VFCore.demoLoop(44100), AC = window.AudioContext || window.webkitAudioContext, c = new AC(), b = c.createBuffer(1, d.channels[0].length, d.sampleRate); b.getChannelData(0).set(d.channels[0]); try { c.close(); } catch (e) {} useBacking(b, 'Demo loop (made in your browser)'); };
+    $('#play').onclick = function () { if (!live.ctx) { toast('Turn on the microphone first.', true); return; } if (live.playing) { live.pause(); this.textContent = 'Play'; } else { live.play(+$('#seek').value); this.textContent = 'Pause'; } };
+    $('#stop').onclick = function () {
+      if (!live.ctx) return;
+      if (live.recording) stopRec();
+      live.pause(); live.offset = 0; $('#seek').value = 0; $('#pos').textContent = '0:00'; $('#play').textContent = 'Play'; stopLyrics();
+    };
+    $('#restart').onclick = function () { if (!live.ctx) return; live.play(0); $('#play').textContent = 'Pause'; };
+    $('#seek').oninput = function () { if (live.playing) live.play(+this.value); else live.offset = +this.value; };
+    $('#bvol').oninput = function () { live.setBackGain(this.value / 100); };
+    $('#vvol').oninput = function () { live.setVoiceGain(this.value / 100); };
+    $('#reduce').onchange = function () { live.setReduce(this.checked); };
+    $('#nudge').oninput = function () { live.setNudge(+this.value); $('#nudgev').textContent = (this.value > 0 ? '+' : '') + this.value + ' ms'; };
+    $('#showlyr').onchange = function () { var v = $('#lyrview'); v.hidden = !this.checked; v.textContent = $('#lyr').value || 'Paste your lyrics above, then tick "Show lyrics".'; };
+    $('#lyr').oninput = function () { if (!$('#lyrview').hidden) $('#lyrview').textContent = this.value; };
+    $('#lyrsize').oninput = function () { $('#lyrview').style.fontSize = this.value + 'px'; };
+  }
+  drawKeyLabel();
+})();
+</script></body></html>
