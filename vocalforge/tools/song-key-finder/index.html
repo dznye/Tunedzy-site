@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Song Key Finder: What Key Is This Song In? (Free)</title>
+<meta name="description" content="Free song key finder. Drop in a song or beat and see its key, the Camelot code and the relative key. Runs in your browser, nothing uploaded.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://fuidzy.com/vocalforge/tools/song-key-finder">
+<link rel="icon" href="/vocalforge/favicon.png">
+<meta name="theme-color" content="#080713">
+<meta property="og:type" content="website"><meta property="og:site_name" content="VocalForge by Fuidzy"><meta property="og:title" content="Song Key Finder: What Key Is This Song In? (Free)">
+<meta property="og:description" content="Free song key finder. Drop in a song or beat and see its key, the Camelot code and the relative key. Runs in your browser, nothing uploaded."><meta property="og:url" content="https://fuidzy.com/vocalforge/tools/song-key-finder"><meta property="og:image" content="https://fuidzy.com/vocalforge/og.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Song Key Finder: What Key Is This Song In? (Free)"><meta name="twitter:description" content="Free song key finder. Drop in a song or beat and see its key, the Camelot code and the relative key. Runs in your browser, nothing uploaded."><meta name="twitter:image" content="https://fuidzy.com/vocalforge/og.png">
+<style>:root{--bg:#080713;--bg2:#0e0c1d;--card:rgba(255,255,255,.05);--card2:rgba(255,255,255,.08);--line:rgba(255,255,255,.11);--text:#f4f2fc;--mute:#a9a5c4;--faint:#7c7899;
+--amber:#ffb347;--orange:#ff7a3d;--pink:#ff4fa0;--violet:#8b5cf6;--teal:#2ee6c5;--blue:#4ea8ff;--grad:linear-gradient(100deg,#ffb347,#ff4fa0 55%,#8b5cf6)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);overflow-x:hidden;
+background-image:radial-gradient(900px 600px at 8% -4%,rgba(139,92,246,.30),transparent 60%),radial-gradient(800px 520px at 100% 6%,rgba(255,79,160,.22),transparent 60%),radial-gradient(900px 700px at 50% 108%,rgba(46,230,197,.14),transparent 60%);background-attachment:fixed}
+a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
+img{max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px;position:relative}.narrow{max-width:780px;margin:0 auto;padding:0 22px;position:relative}
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(8,7,19,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:20px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text);font-size:19px;letter-spacing:-.01em}.logo:hover{text-decoration:none}.logo img{width:30px;height:30px;border-radius:9px}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav.main{display:flex;gap:22px;margin-left:auto;font-size:15px}nav.main a{color:var(--mute)}nav.main a:hover{color:var(--text);text-decoration:none}
+.hbtn{font-size:14px;padding:8px 16px;border-radius:99px;background:var(--grad);color:#1a0b16;font-weight:700}.hbtn:hover{text-decoration:none;filter:brightness(1.08)}
+@media(max-width:820px){nav.main a:nth-child(n+3){display:none}nav.main{gap:16px}}
+@media(max-width:520px){nav.main{display:none}.hbtn{margin-left:auto}}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:14px;padding:13px 24px;font-weight:700;font-size:16px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:pointer;font-family:inherit;line-height:1.2;transition:transform .15s,box-shadow .15s,filter .15s}
+.btn:hover{text-decoration:none;transform:translateY(-1px);border-color:rgba(255,255,255,.3)}
+.btn.primary{background:linear-gradient(100deg,#ffb347,#ff5f8d 60%,#c24bd6);color:#1b0a14;border-color:transparent;box-shadow:0 12px 36px rgba(255,79,160,.34)}
+.btn.primary:hover{filter:brightness(1.07);box-shadow:0 16px 44px rgba(255,79,160,.46)}
+.btn.ghost{background:transparent}.btn.small{padding:8px 14px;font-size:14px;border-radius:10px}.btn.off{opacity:.6;cursor:default;box-shadow:none}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.small{font-size:14px;color:var(--mute)}
+/* type */
+h1,h2,h3{letter-spacing:-.025em}
+section{padding:70px 0;position:relative}
+h2{font-size:clamp(28px,4vw,42px);margin:0 0 14px;line-height:1.12}h3{margin:0 0 6px;font-size:19px;line-height:1.25}
+h2.c,.sub2,.eyebrow.c{text-align:center}.sub2{color:var(--mute);margin:0 auto 34px;max-width:640px;font-size:18px}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:800;margin:0 0 12px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+em.grad{font-style:normal}
+/* decorative shapes */
+.shapes{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.shapes>*{position:absolute;display:block}
+.blob{border-radius:50%;filter:blur(70px);opacity:.5}
+.b1{width:520px;height:520px;background:radial-gradient(circle,#ff4fa0,transparent 68%);right:-140px;top:-120px}
+.b2{width:460px;height:460px;background:radial-gradient(circle,#8b5cf6,transparent 68%);left:-160px;top:120px;opacity:.55}
+.b3{width:380px;height:380px;background:radial-gradient(circle,#2ee6c5,transparent 68%);right:28%;bottom:-160px;opacity:.28}
+.ring{border-radius:50%;border:2px solid rgba(255,255,255,.14)}
+.r1{width:340px;height:340px;right:-90px;top:70px;border-color:rgba(255,179,71,.35)}
+.r2{width:120px;height:120px;left:46%;top:30px;border:14px solid rgba(139,92,246,.28)}
+.r3{width:220px;height:220px;left:-70px;bottom:20px;border-color:rgba(46,230,197,.28)}
+.sq{border-radius:26px;transform:rotate(18deg)}
+.s1{width:110px;height:110px;left:6%;top:56%;background:linear-gradient(135deg,rgba(255,79,160,.5),rgba(139,92,246,.15));border:1px solid rgba(255,255,255,.18)}
+.s2{width:70px;height:70px;right:7%;bottom:12%;background:linear-gradient(135deg,rgba(255,179,71,.6),rgba(255,79,160,.15));transform:rotate(-14deg)}
+.s3{width:54px;height:54px;left:44%;bottom:6%;border:2px solid rgba(78,168,255,.5);border-radius:14px;transform:rotate(30deg)}
+.tri{width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:52px solid rgba(46,230,197,.35);transform:rotate(14deg)}
+.t1{left:38%;top:7%}
+.dots{width:210px;height:140px;opacity:.22}.d1{right:6%;top:46%}.d2{left:3%;top:8%}
+.squig{width:210px;height:40px;fill:none;stroke:var(--teal);stroke-width:5;stroke-linecap:round;opacity:.3}.q1{left:2%;bottom:14%}.q2{right:5%;top:12%;stroke:var(--amber)}
+.pbars{display:flex;gap:7px;align-items:flex-end;height:90px;opacity:.55}.pbars i{display:block;width:9px;border-radius:5px;background:linear-gradient(180deg,var(--pink),var(--violet))}.p1{left:50%;bottom:4%}
+.cross{width:28px;height:28px;opacity:.7}.cross:before,.cross:after{content:"";position:absolute;background:var(--amber);border-radius:3px}.cross:before{left:12px;top:0;width:4px;height:28px}.cross:after{top:12px;left:0;width:28px;height:4px}
+.x1{left:47%;top:80%}.x2{right:16%;top:6%;transform:rotate(20deg)}
+@media(prefers-reduced-motion:no-preference){.fl1{animation:fl 9s ease-in-out infinite}.fl2{animation:fl 12s ease-in-out -3s infinite}.fl3{animation:fl 7s ease-in-out -2s infinite}.spin{animation:sp 40s linear infinite}
+@keyframes fl{0%,100%{translate:0 0}50%{translate:0 -18px}}@keyframes sp{to{rotate:360deg}}
+.pbars i{animation:eq 1.8s ease-in-out infinite}.pbars i:nth-child(2n){animation-delay:-.6s}.pbars i:nth-child(3n){animation-delay:-1.1s}@keyframes eq{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}}
+.pbars i{transform-origin:bottom}
+section.alt{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* hero */
+.hero{padding:56px 0 70px;position:relative}.hero .wrap{z-index:1}
+.herogrid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}@media(max-width:940px){.herogrid{grid-template-columns:1fr}}
+.pill{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 14px 6px 10px;font-size:13.5px;color:var(--text);margin-bottom:20px}
+.pill i{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(46,230,197,.2)}
+.hero h1{font-size:clamp(38px,5.6vw,66px);line-height:1.02;letter-spacing:-.04em;margin:0 0 20px;font-weight:850}
+.hero p.sub{font-size:20px;color:#cfcce6;max-width:560px;margin:0 0 28px}
+.trust{display:flex;gap:10px 18px;flex-wrap:wrap;margin-top:22px;color:var(--mute);font-size:14.5px}.trust span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);margin-right:8px;vertical-align:middle}
+/* rack */
+.rackwrap{position:relative}
+.rack{position:relative;border-radius:24px;background:linear-gradient(180deg,rgba(26,22,52,.92),rgba(14,12,30,.94));border:1px solid rgba(255,255,255,.16);box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 0 8px rgba(255,255,255,.03),0 0 80px rgba(139,92,246,.25);overflow:hidden}
+.rackbar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.03)}
+.rackbar .dts{display:flex;gap:6px}.rackbar .dts i{width:10px;height:10px;border-radius:50%;background:#ff6b6b}.rackbar .dts i:nth-child(2){background:#ffb347}.rackbar .dts i:nth-child(3){background:#2ee6c5}
+.rackbar b{font-size:14px;letter-spacing:.04em}.rackbar em{font-style:normal;font-size:12px;color:var(--faint);margin-left:auto;letter-spacing:.14em;text-transform:uppercase}
+.rwave{padding:14px 16px 4px}.rwave svg{display:block;width:100%;height:auto}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:10px 14px 16px}
+.mod{border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);padding:12px 10px 10px;text-align:center;position:relative}
+.mod:before{content:"";position:absolute;left:12px;right:12px;top:0;height:2px;background:var(--c);border-radius:2px;box-shadow:0 0 12px var(--c)}
+.mn{display:block;font-size:11px;letter-spacing:.2em;color:var(--mute);font-weight:700;margin-bottom:8px}
+.knob{position:relative;display:block;width:46px;height:46px;border-radius:50%;margin:0 auto 9px;background:radial-gradient(circle at 35% 30%,#3a3560,#17142e);border:2px solid rgba(255,255,255,.14);box-shadow:inset 0 2px 6px rgba(255,255,255,.1),0 6px 14px rgba(0,0,0,.4)}
+.knob:after{content:"";position:absolute;left:50%;top:5px;width:3px;height:14px;margin-left:-1.5px;border-radius:2px;background:var(--c);box-shadow:0 0 8px var(--c);transform-origin:50% 18px;transform:rotate(calc(-135deg + var(--v)*270deg))}
+.leds{display:flex;gap:3px;justify-content:center}.leds i{width:7px;height:12px;border-radius:2px;background:rgba(255,255,255,.1)}.leds i.on{background:var(--c);box-shadow:0 0 8px var(--c)}
+.fchip{position:absolute;z-index:3;border-radius:14px;padding:9px 14px;font-size:13.5px;font-weight:650;background:rgba(14,12,30,.86);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);box-shadow:0 14px 40px rgba(0,0,0,.5);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.fchip i{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(46,230,197,.22)}
+.fc1{left:-26px;top:22%}.fc2{right:-16px;top:8%}.fc3{right:-22px;bottom:18%}.fc4{left:-14px;bottom:-14px}
+@media(max-width:600px){.fc1,.fc4{left:-6px}.fc2,.fc3{right:-4px}.fchip{font-size:12px;padding:7px 11px}}
+.rcap{font-size:12.5px;color:var(--faint);text-align:center;margin-top:16px}
+/* tool widget */
+.tool{position:relative;border-radius:28px;padding:2px;background:linear-gradient(135deg,rgba(255,179,71,.7),rgba(255,79,160,.6) 45%,rgba(139,92,246,.7));box-shadow:0 30px 90px rgba(139,92,246,.28)}
+.tool .inner{border-radius:26px;background:linear-gradient(180deg,#14112a,#0d0b1d);padding:26px}
+.drop{display:grid;place-items:center;text-align:center;gap:10px;border:2px dashed rgba(255,255,255,.24);border-radius:20px;padding:42px 20px;cursor:pointer;background:radial-gradient(500px 200px at 50% 0,rgba(255,79,160,.12),transparent 70%);transition:border-color .2s,background .2s,transform .2s}
+.drop:hover,.drop:focus-visible,.drop.over{border-color:var(--amber);outline:none;transform:scale(1.01);background:radial-gradient(500px 220px at 50% 0,rgba(255,179,71,.2),transparent 70%)}
+.drop .ic{width:66px;height:66px;border-radius:20px;display:grid;place-items:center;background:var(--grad);color:#1a0b16;box-shadow:0 12px 34px rgba(255,79,160,.4)}
+.drop .ic svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.drop b{font-size:22px;letter-spacing:-.02em}.drop span{color:var(--mute);font-size:15px}
+@media(prefers-reduced-motion:no-preference){.drop .ic{animation:pulse 2.8s ease-in-out infinite}@keyframes pulse{0%,100%{box-shadow:0 12px 34px rgba(255,79,160,.4),0 0 0 0 rgba(255,79,160,.35)}50%{box-shadow:0 12px 34px rgba(255,79,160,.4),0 0 0 16px rgba(255,79,160,0)}}}
+.toolrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:14px;color:var(--mute);font-size:14px}
+.priv{display:inline-flex;align-items:center;gap:8px}.priv svg{width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:2}
+.tool.busy .drop{opacity:.45;pointer-events:none}
+.prog{margin-top:16px;border-radius:14px;background:var(--card);border:1px solid var(--line);padding:14px 16px}.prog[hidden]{display:none}
+.prog .t{font-size:15px;margin-bottom:9px;color:var(--text)}.prog .tr{height:8px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden}.prog .tr i{display:block;height:100%;width:0;background:var(--grad);border-radius:5px;transition:width .35s}
+#results{margin-top:20px}#results[hidden]{display:none}
+.resbar{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:14px}.resbar b{display:block;word-break:break-all}.resbar span{font-size:13.5px;color:var(--mute)}
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}@media(max-width:760px){.tgrid{grid-template-columns:1fr}}
+.tcard{border-radius:20px;padding:20px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.tcard.primary{grid-column:1/-1;background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.04));border-color:rgba(255,255,255,.22)}
+.tcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ac,var(--amber))}
+.tcard.key{--ac:var(--violet)}.tcard.chords{--ac:var(--pink)}.tcard.loud{--ac:var(--teal)}.tcard.check{--ac:var(--blue)}.tcard.bad{--ac:#ff6b6b}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:800;margin-bottom:6px}
+.big{font-size:clamp(42px,7vw,68px);font-weight:850;letter-spacing:-.04em;line-height:1.05;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;word-break:break-word}
+.big small{font-size:.36em;letter-spacing:0;font-weight:700;color:var(--mute);-webkit-text-fill-color:var(--mute)}.big.sm2{font-size:clamp(28px,4.4vw,40px)}
+.tcard p{margin:8px 0 0}.mute{color:var(--mute)}.sm{font-size:13.5px}
+.meter{height:7px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden;margin:12px 0 4px;max-width:340px}.meter i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--amber),var(--pink))}.meter.violet i{background:linear-gradient(90deg,var(--violet),var(--pink))}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.chip{font:inherit;font-size:13.5px;border-radius:99px;padding:5px 13px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:default}button.chip{cursor:pointer}button.chip:hover{border-color:var(--amber);color:var(--amber)}
+.chip.solid{background:var(--violet);border-color:transparent;color:#fff;font-weight:700}.chip.ghost{background:transparent}
+.chordline{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chord{display:flex;flex-direction:column;align-items:center;min-width:62px;padding:8px 10px;border-radius:12px;background:rgba(255,79,160,.1);border:1px solid rgba(255,79,160,.35)}.chord b{font-size:18px}.chord i{font-style:normal;font-size:11.5px;color:var(--mute);min-height:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.stats div{border-radius:12px;background:rgba(255,255,255,.05);padding:10px 12px}.stats b{display:block;font-size:18px}.stats span{font-size:12px;color:var(--mute)}
+table.mini{width:100%;font-size:14px;border-collapse:collapse;display:table}table.mini th,table.mini td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left}table.mini th{color:var(--mute);font-weight:600}
+ul.rows{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}ul.rows li{display:flex;gap:12px;align-items:flex-start}ul.rows i{flex:none;width:12px;height:12px;border-radius:50%;margin-top:6px;background:var(--teal);box-shadow:0 0 0 4px rgba(46,230,197,.2)}
+ul.rows li.warn i{background:var(--amber);box-shadow:0 0 0 4px rgba(255,179,71,.2)}ul.rows li.bad i{background:#ff6b6b;box-shadow:0 0 0 4px rgba(255,107,107,.2)}ul.rows b{display:block}ul.rows span{color:var(--mute);font-size:15px}
+.tcard.check.ok .big{background:linear-gradient(100deg,#2ee6c5,#4ea8ff);-webkit-background-clip:text;background-clip:text}
+.ctabox{margin-top:18px;border-radius:20px;padding:22px;background:linear-gradient(135deg,rgba(255,179,71,.14),rgba(255,79,160,.14) 55%,rgba(139,92,246,.16));border:1px solid rgba(255,255,255,.2)}.ctabox h3{font-size:21px}.ctabox p{margin:0 0 14px;color:#dcd9ef}
+/* tap tempo */
+.tapbox{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-top:20px;padding:20px;border-radius:20px;background:var(--card);border:1px solid var(--line)}@media(max-width:560px){.tapbox{grid-template-columns:1fr;text-align:center}}
+#tap{width:140px;height:140px;border-radius:50%;border:0;cursor:pointer;font-weight:800;font-size:24px;letter-spacing:.08em;font-family:inherit;color:#1a0b16;background:radial-gradient(circle at 35% 30%,#ffd37a,#ff5f8d 70%);box-shadow:0 14px 40px rgba(255,79,160,.45),inset 0 -6px 14px rgba(0,0,0,.15);transition:transform .08s;touch-action:manipulation;margin:0 auto;user-select:none}
+#tap.hit,#tap:active{transform:scale(.93)}
+.tapout b{font-size:46px;letter-spacing:-.03em;display:block;line-height:1}.tapout span{color:var(--mute);font-size:14.5px}
+/* cards, grids */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.3);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.card p{margin:0;color:var(--mute);font-size:16px}
+.card:before{content:"";position:absolute;right:-50px;top:-50px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,var(--c,var(--pink)),transparent 70%);opacity:.22}
+.ico{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:color-mix(in srgb,var(--c,var(--amber)) 22%,transparent);border:1px solid color-mix(in srgb,var(--c,var(--amber)) 55%,transparent);margin-bottom:16px;color:var(--c,var(--amber));position:relative}
+.ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.cA{--c:var(--amber)}.cP{--c:var(--pink)}.cV{--c:var(--violet)}.cT{--c:var(--teal)}.cB{--c:var(--blue)}.cO{--c:var(--orange)}
+.tcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.tcards a.card{display:block;color:var(--text)}.tcards a.card:hover{text-decoration:none}.tcards a.card h3{margin-bottom:4px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;counter-reset:s}
+.steps .card:after{counter-increment:s;content:counter(s);position:absolute;right:18px;top:6px;font-size:76px;font-weight:900;color:rgba(255,255,255,.07);letter-spacing:-.05em}
+/* report mock */
+.spot{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}@media(max-width:900px){.spot{grid-template-columns:1fr}}
+.report{border-radius:22px;background:linear-gradient(180deg,#17132f,#0d0b1d);border:1px solid rgba(255,255,255,.16);padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.report .rh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.report .rh b{font-size:17px}.report .rh span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:800}
+.report .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}.report .row i{width:22px;height:22px;border-radius:50%;background:rgba(46,230,197,.18);display:grid;place-items:center;flex:none}.report .row i:after{content:"";width:5px;height:10px;border:solid var(--teal);border-width:0 2.4px 2.4px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.report .row span{color:var(--mute);margin-left:auto;font-variant-numeric:tabular-nums;font-size:15px}.report .rn{font-size:12px;color:var(--faint);margin-top:12px}
+.photo{position:relative;border-radius:26px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 40px 90px rgba(0,0,0,.55)}.photo img{display:block;width:100%;height:auto}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,7,19,.6));pointer-events:none}
+.spot ul{padding-left:20px;color:#d8d5ee}.spot li{margin:9px 0}.note{font-size:14px;color:var(--mute)}
+.band{position:relative;border-radius:30px;overflow:hidden;min-height:340px;display:grid;align-items:center;border:1px solid var(--line)}
+.band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(.6)}
+.band:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(8,7,19,.94) 8%,rgba(60,20,90,.55) 60%,rgba(255,79,160,.2))}
+.band .in{position:relative;z-index:2;padding:48px;max-width:640px}.band p{color:#dedbf0;margin:0 0 12px}
+.pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.pcard{border-radius:24px;overflow:hidden;background:var(--card);border:1px solid var(--line);transition:transform .2s,border-color .2s}
+.pcard:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.3)}.pcard img{display:block;width:100%;height:210px;object-fit:cover}.pcard div{padding:18px 22px 22px}.pcard p{margin:0;color:var(--mute);font-size:16px}
+/* pricing */
+.pricegrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:880px;margin:0 auto}@media(max-width:760px){.pricegrid{grid-template-columns:1fr}}
+.plan{border-radius:26px;padding:30px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.plan.hot{background:linear-gradient(160deg,rgba(255,179,71,.16),rgba(255,79,160,.16) 55%,rgba(139,92,246,.2));border-color:rgba(255,255,255,.3);box-shadow:0 30px 80px rgba(255,79,160,.2)}
+.plan .tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--teal);margin-bottom:8px}.plan .pr{font-size:60px;font-weight:850;letter-spacing:-.04em;line-height:1}.plan .pr small{font-size:16px;color:var(--mute);letter-spacing:0;font-weight:600}
+.plan ul{list-style:none;padding:0;margin:18px 0 22px;color:#d8d5ee}.plan li{padding:6px 0 6px 28px;position:relative}.plan li:before{content:"";position:absolute;left:4px;top:13px;width:11px;height:6px;border:solid var(--teal);border-width:0 0 2.5px 2.5px;transform:rotate(-45deg)}
+/* support */
+.supportband{border-radius:30px;padding:44px;background:linear-gradient(135deg,rgba(78,168,255,.16),rgba(139,92,246,.2));border:1px solid rgba(255,255,255,.2);display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;position:relative;overflow:hidden}@media(max-width:820px){.supportband{grid-template-columns:1fr;padding:30px}}
+.supportband h2{margin-bottom:10px}.supportband p{color:#dcd9ef;margin:0 0 12px}.mailbig{font-size:clamp(18px,3vw,26px);font-weight:800;word-break:break-all}
+/* articles */
+.crumbs{font-size:14px;color:var(--mute);padding-top:22px}.crumbs a{color:var(--mute)}
+article h1{font-size:clamp(32px,5vw,50px);line-height:1.08;letter-spacing:-.035em;margin:30px 0 14px}article h2{margin-top:44px;font-size:clamp(24px,3.4vw,32px)}
+article p,article li{color:#dcd9ee}article ul,article ol{padding-left:22px}article li{margin:7px 0}
+.lead{font-size:20px;color:#e6e3f7}
+.tldr{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:16px;padding:8px 22px 10px;margin:24px 0}.tldr b{display:block;margin:10px 0 2px}
+.vf{background:linear-gradient(135deg,rgba(255,179,71,.14),rgba(255,79,160,.12) 60%,rgba(139,92,246,.16));border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:26px;margin:44px 0}.vf h2{margin-top:0;font-size:24px}
+.aibox{background:var(--card);border:1px solid rgba(139,92,246,.5);border-radius:18px;padding:6px 22px 8px;margin:34px 0}.aibox h2{font-size:23px;margin:16px 0 8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 20px;margin:10px 0}summary{cursor:pointer;font-weight:650}details p{margin:10px 0 2px;color:var(--mute)}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;display:block;overflow-x:auto}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mute);font-weight:600;white-space:nowrap}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--text);transition:transform .2s,border-color .2s}.related a:hover{border-color:rgba(255,255,255,.35);text-decoration:none;transform:translateY(-3px)}
+.related a.th{padding:0;overflow:hidden}.related a.th img{display:block;width:100%;height:130px;object-fit:cover}.related a.th span{display:block;padding:14px 18px}
+.banner{margin:22px 0 8px;border-radius:24px;overflow:hidden;border:1px solid var(--line)}.banner img{display:block;width:100%;height:auto}
+.guides .related{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.toolhead{padding:6px 0 26px}
+.toolhead h1{font-size:clamp(34px,5.4vw,58px);line-height:1.04;letter-spacing:-.04em;margin:26px 0 14px;font-weight:850}.toolhead .lead{max-width:760px}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:26px 0 8px;counter-reset:h}.howto div{border-radius:16px;padding:14px 16px 14px 56px;background:var(--card);border:1px solid var(--line);position:relative;font-size:15px;color:#d8d5ee}
+.howto div:before{counter-increment:h;content:counter(h);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--grad);color:#1a0b16}
+footer{border-top:1px solid var(--line);margin-top:30px;padding:46px 0 34px;color:var(--mute);font-size:14.5px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.25))}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:30px}footer a{color:var(--mute)}footer a:hover{color:var(--text)}footer h4{margin:0 0 10px;color:var(--text);font-size:14px}
+.credit{font-size:12.5px;color:var(--faint);margin:8px 2px 0}.credit a{color:var(--mute)}
+@media(max-width:600px){section{padding:52px 0}.band .in{padding:30px}.hero{padding-top:34px}}
+
+@media(max-width:760px){.pbars,.squig,.cross{display:none}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Key Finder", "url": "https://fuidzy.com/vocalforge/tools/song-key-finder", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (web browser)", "description": "Free song key finder. Drop in a song or beat and see its key, the Camelot code and the relative key. Runs in your browser, nothing uploaded.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Fuidzy", "url": "https://fuidzy.com"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How accurate is the key finder?", "acceptedAnswer": {"@type": "Answer", "text": "On music with a clear melody or chords it usually agrees with other key detectors, including picking the relative key. It is weaker on drum-heavy beats with little melody, and it shows its confidence so you know."}}, {"@type": "Question", "name": "Can it find the key of an acapella vocal?", "acceptedAnswer": {"@type": "Answer", "text": "It can give a rough answer from the notes sung, but a full beat or chord part is far more reliable."}}, {"@type": "Question", "name": "What if my vocal sounds off after tuning to this key?", "acceptedAnswer": {"@type": "Answer", "text": "Try the relative key, or turn the amount of correction down. If the beat itself changes key, tune each section separately."}}, {"@type": "Question", "name": "Is my audio uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs in your browser."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fuidzy", "item": "https://fuidzy.com/"}, {"@type": "ListItem", "position": 2, "name": "VocalForge", "item": "https://fuidzy.com/vocalforge"}, {"@type": "ListItem", "position": 3, "name": "Free tools", "item": "https://fuidzy.com/vocalforge/tools"}, {"@type": "ListItem", "position": 4, "name": "Key Finder", "item": "https://fuidzy.com/vocalforge/tools/song-key-finder"}]}</script></head><body>
+<header class="top"><div class="wrap"><a class="logo" href="/vocalforge"><img src="/vocalforge/favicon.png" alt="" width="30" height="30"><span>Vocal<b>Forge</b></span></a>
+<nav class="main" aria-label="Main"><a href="/vocalforge/tools">Free tools</a><a href="/vocalforge#features">Features</a><a href="/vocalforge#guides">Guides</a><a href="/vocalforge#pricing">Pricing</a><a href="/vocalforge#support">Support</a></nav><a class="hbtn" href="/vocalforge#pricing">Free to try</a></div></header>
+<main><div class="hero" style="padding:0 0 30px"><div class="shapes" aria-hidden="true"><span class="blob b2 fl2"></span><span class="ring r3 fl3"></span><span class="sq s3 fl1"></span><svg class="dots d2" viewBox="0 0 210 140"><defs><pattern id="dpd2" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.8" fill="#fff"/></pattern></defs><rect width="210" height="140" fill="url(#dpd2)"/></svg><svg class="squig q2" viewBox="0 0 210 40"><path d="M3 20 C 20 -2, 36 -2, 52 20 S 84 42, 100 20 S 132 -2, 148 20 S 180 42, 207 20"/></svg></div><div class="wrap"><div class="crumbs"><a href="/">Fuidzy</a> / <a href="/vocalforge">VocalForge</a> / <a href="/vocalforge/tools">Free tools</a> / Key Finder</div><div class="toolhead"><h1>Free Song Key Finder: Find the Key of Any Song or Beat</h1><p class="lead">Drop in a song or beat and see what key it is in, with the Camelot code for DJ mixing and the relative key. Use it to set your autotune, write a topline, or match a vocal to a beat you downloaded. It runs in your browser and nothing is uploaded.</p></div>
+<div style="max-width:900px"><div class="tool" id="tool" data-focus="key" data-base="/vocalforge"><div class="inner"><div class="drop" id="drop" tabindex="0" role="button" aria-label="Choose or drop an audio file"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg></div><b>Drop a song, beat or vocal here</b><span>or click to choose a file &middot; MP3, WAV, FLAC, OGG</span></div><input type="file" id="file" accept="audio/*,.mp3,.wav,.flac,.ogg,.m4a,.aac" hidden><div class="toolrow"><span class="priv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Stays on your device. Nothing is uploaded.</span><button class="btn small" id="demo" type="button">Try a demo loop</button></div><div class="prog" id="prog" hidden><div class="t" id="progmsg">Starting</div><div class="tr"><i id="progbar"></i></div></div><div id="results" hidden aria-live="polite"></div></div></div></div><div class="howto" style="max-width:900px"><div>Drop in the full beat or song (a beat with its melody gives the best result).</div><div>Read the key and the Camelot code. The &ldquo;same notes as&rdquo; line shows the relative major or minor.</div><div>Set your autotune or your keyboard to that key and record.</div></div></div></div>
+<div class="narrow"><article>
+<h2>How the key finder works</h2>
+<p>It measures how much energy the track has at each of the 12 musical notes over time, ignoring which octave they are in, to build a fingerprint of the notes the music uses most. It then compares that fingerprint to the typical pattern of every major and minor key and shows the best match, plus the runners-up so you can see when it is a close call.</p>
+<h2>Relative keys: why &ldquo;C major&rdquo; and &ldquo;A minor&rdquo; are the same notes</h2>
+<p>Every major key shares its seven notes with a minor key three semitones down. C major and A minor use exactly the same white keys. A song can feel major or minor depending on which note feels like home, and a detector can only guess from the balance of the notes. If the result is a close call, try the relative key too. For autotune, either one works, because the note set is identical.</p>
+<h2>What the Camelot code is for</h2>
+<p>DJs label keys on a wheel (1A to 12B) so they can see which songs mix harmonically. Neighbouring numbers, or the same number with the other letter, sound good together. The finder shows the code next to the key so you can sort a crate or a beat folder by it.</p>
+<h2>Using the key with your vocal</h2>
+<ul>
+<li><strong>Autotune:</strong> set the scale to the detected key. Notes outside the scale get pulled to the nearest note inside it. See <a href="/vocalforge/autotune-for-rap-vocals">autotune for rap vocals</a> for settings.</li>
+<li><strong>Toplines and ad-libs:</strong> sing or hum notes from the key, and use the <a href="/vocalforge/tools/chord-finder">chord finder</a> to see what chords the beat plays.</li>
+<li><strong>Harmonies:</strong> stack thirds and fifths above your lead using the same scale.</li>
+</ul>
+<h2>When the result can be wrong</h2>
+<ul>
+<li>Beats that are mostly drums and 808 with no melody give little to work with.</li>
+<li>Tracks that change key part-way (modulations) are summarised as one key.</li>
+<li>Heavily detuned or atonal sounds, and some blues-style tracks that mix major and minor, are ambiguous by nature.</li>
+</ul>
+
+<div class="vf"><h2>Like this? Let VocalForge do the fixing.</h2><p>These tools tell you what is going on. VocalForge acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Free to try for 7 days, then $29 once.</p><div class="cta"><a class="btn primary" href="/vocalforge">See VocalForge</a><a class="btn" href="mailto:fuidzy@outlook.com?subject=VocalForge%20support">Ask us a question</a></div></div>
+<h2>Frequently asked questions</h2><details><summary>How accurate is the key finder?</summary><p>On music with a clear melody or chords it usually agrees with other key detectors, including picking the relative key. It is weaker on drum-heavy beats with little melody, and it shows its confidence so you know.</p></details><details><summary>Can it find the key of an acapella vocal?</summary><p>It can give a rough answer from the notes sung, but a full beat or chord part is far more reliable.</p></details><details><summary>What if my vocal sounds off after tuning to this key?</summary><p>Try the relative key, or turn the amount of correction down. If the beat itself changes key, tune each section separately.</p></details><details><summary>Is my audio uploaded anywhere?</summary><p>No. Everything runs in your browser.</p></details>
+<h2>More free tools</h2><div class="tcards"><a class="card cA" href="/vocalforge/tools/bpm-finder" style="padding:18px"><div class="ico cA"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l5 18H7z"/><path d="M12 15l4-7"/></svg></div><h3>BPM Finder</h3><p>Drop in a song or beat, get the tempo. Includes tap tempo.</p></a><a class="card cP" href="/vocalforge/tools/chord-finder" style="padding:18px"><div class="ico cP"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M10 4v16M15 4v16M20 4v16"/><path d="M3 9h18"/></svg></div><h3>Chord Finder</h3><p>See the chord progression and the loop it repeats.</p></a><a class="card cB" href="/vocalforge/tools/vocal-checker" style="padding:18px"><div class="ico cB"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Vocal Checker</h3><p>Spot clipping, noise, rumble and level problems.</p></a></div>
+<h2>Related guides</h2><div class="related"><a href="/vocalforge/autotune-for-rap-vocals"><b>Autotune for Rap and Melodic Vocals: Settings That Work</b></a><a href="/vocalforge/fix-vocals-recorded-on-phone"><b>How to Make Vocals Recorded on a Phone Sound Professional</b></a></div></article></div></main>
+<footer><div class="wrap"><div class="cols">
+<div><h4>VocalForge</h4><a href="/vocalforge">Overview</a><br><a href="/vocalforge#features">Features</a><br><a href="/vocalforge#pricing">Pricing</a><br><a href="/vocalforge#faq">FAQ</a></div>
+<div><h4>Free tools</h4><a href="/vocalforge/tools/bpm-finder">BPM Finder</a><br><a href="/vocalforge/tools/song-key-finder">Key Finder</a><br><a href="/vocalforge/tools/chord-finder">Chord Finder</a><br><a href="/vocalforge/tools/lufs-meter">LUFS Meter</a><br><a href="/vocalforge/tools/vocal-checker">Vocal Checker</a><br></div>
+<div><h4>Guides</h4><a href="/vocalforge/fix-vocals-recorded-on-phone">How to Make Vocals Recorded on a Phone Sound P</a><br><a href="/vocalforge/ai-vocal-cleanup-explained">AI Vocal Cleanup</a><br><a href="/vocalforge/remove-echo-from-vocal-recording">How to Remove Echo and Room Reverb From a Voca</a><br><a href="/vocalforge/autotune-for-rap-vocals">Autotune for Rap and Melodic Vocals</a><br><a href="/vocalforge/mix-vocals-on-a-beat">How to Mix Vocals on a Beat So They Sit in the</a><br></div>
+<div><h4>Support</h4><a href="mailto:fuidzy@outlook.com?subject=VocalForge%20support">fuidzy@outlook.com</a><br><a href="mailto:fuidzy@outlook.com?subject=VocalForge%20for%20Mac&amp;body=Hi%2C%20I%27d%20like%20a%20Mac%20version%20of%20VocalForge.">Request a Mac version</a><br><a href="/vocalforge/privacy">Privacy</a><br><a href="/vocalforge/terms">Terms</a><br><a href="/vocalforge/refund-policy">Refunds</a></div>
+</div><p class="credit" style="margin-top:26px">VocalForge is a Fuidzy product. It is not affiliated with or endorsed by any artist or plugin company mentioned on this site.</p>
+<p class="credit">Photos: <a href="https://www.pexels.com/photo/a-man-singing-in-front-of-the-microphone-8132797/" rel="noopener">Anna Pou / Pexels</a>, <a href="https://www.pexels.com/photo/a-man-singing-in-the-studio-8133004/" rel="noopener">Anna Pou / Pexels</a>, <a href="https://www.pexels.com/photo/man-singing-into-the-mic-18259198/" rel="noopener">Eduardo López / Pexels</a>, <a href="https://unsplash.com/photos/grayscale-photo-of-condenser-microphone-beside-pop-filter-bG8U3kaZltE" rel="noopener">Leo Wieling / Unsplash</a>, <a href="https://unsplash.com/photos/a-pair-of-headphones-sitting-next-to-a-laptop-Q-raIe-gAOo" rel="noopener">Project 290 / Unsplash</a>. Free to use under the Pexels and Unsplash licenses.</p></div></footer><script id="vfcore">/* VocalForge free tools: audio analysis that runs entirely in the visitor's browser (nothing is uploaded).
+   Pure functions on Float32Array so the same code is tested in Node. */
+(function (root) {
+  'use strict';
+
+  // ---------------------------------------------------------------- basics
+  function fft(re, im) {                      // in-place radix-2
+    var n = re.length, i, j, k, m, t;
+    for (i = 1, j = 0; i < n; i++) {
+      var bit = n >> 1;
+      for (; j & bit; bit >>= 1) j ^= bit;
+      j ^= bit;
+      if (i < j) { t = re[i]; re[i] = re[j]; re[j] = t; t = im[i]; im[i] = im[j]; im[j] = t; }
+    }
+    for (var len = 2; len <= n; len <<= 1) {
+      var ang = -2 * Math.PI / len, wr = Math.cos(ang), wi = Math.sin(ang), half = len >> 1;
+      for (i = 0; i < n; i += len) {
+        var cr = 1, ci = 0;
+        for (k = 0; k < half; k++) {
+          var a = i + k, b = a + half;
+          var xr = re[b] * cr - im[b] * ci, xi = re[b] * ci + im[b] * cr;
+          re[b] = re[a] - xr; im[b] = im[a] - xi; re[a] += xr; im[a] += xi;
+          m = cr * wr - ci * wi; ci = cr * wi + ci * wr; cr = m;
+        }
+      }
+    }
+  }
+  function hann(n) { var w = new Float32Array(n); for (var i = 0; i < n; i++) w[i] = 0.5 - 0.5 * Math.cos(2 * Math.PI * i / n); return w; }
+
+  function mixMono(chs) {
+    if (chs.length === 1) return chs[0];
+    var n = chs[0].length, out = new Float32Array(n), c = chs.length;
+    for (var i = 0; i < n; i++) { var s = 0; for (var k = 0; k < c; k++) s += chs[k][i]; out[i] = s / c; }
+    return out;
+  }
+  function decimate(x, sr, target) {          // box-average decimation (cheap low-pass), returns {x, sr}
+    var f = Math.max(1, Math.floor(sr / target));
+    if (f === 1) return { x: x, sr: sr };
+    var n = Math.floor(x.length / f), out = new Float32Array(n);
+    for (var i = 0; i < n; i++) { var s = 0, o = i * f; for (var k = 0; k < f; k++) s += x[o + k]; out[i] = s / f; }
+    return { x: out, sr: sr / f };
+  }
+  function window_(x, sr, maxSec) {           // take up to maxSec from the middle of the file
+    var max = Math.floor(maxSec * sr);
+    if (x.length <= max) return x;
+    var start = Math.floor((x.length - max) / 2);
+    return x.subarray(start, start + max);
+  }
+  function percentile(arr, p) {
+    var a = Array.prototype.slice.call(arr).sort(function (u, v) { return u - v; });
+    if (!a.length) return 0;
+    return a[Math.min(a.length - 1, Math.max(0, Math.round(p * (a.length - 1))))];
+  }
+  var db = function (v) { return 20 * Math.log10(Math.max(v, 1e-10)); };
+
+  // ---------------------------------------------------------------- tempo
+  function onsetEnvelope(x, sr) {
+    var N = 1024, hop = 128, w = hann(N), bins = N / 2, nF = Math.max(0, Math.floor((x.length - N) / hop));
+    var re = new Float32Array(N), im = new Float32Array(N), prev = new Float32Array(bins), env = new Float32Array(nF);
+    var top = Math.min(bins, Math.floor(6000 / (sr / N)));
+    for (var f = 0; f < nF; f++) {
+      var o = f * hop;
+      for (var i = 0; i < N; i++) { re[i] = x[o + i] * w[i]; im[i] = 0; }
+      fft(re, im);
+      var flux = 0;
+      for (var b = 1; b < top; b++) {
+        var m = Math.log(1 + 100 * Math.sqrt(re[b] * re[b] + im[b] * im[b]) / N * 2);
+        var d = m - prev[b]; if (d > 0) flux += d; prev[b] = m;
+      }
+      env[f] = flux;
+    }
+    var fps = sr / hop, win = Math.max(3, Math.round(fps * 0.4)), out = new Float32Array(nF), run = 0;
+    for (var t = 0; t < nF; t++) {              // subtract moving average, half-wave rectify
+      run += env[t]; if (t >= win) run -= env[t - win];
+      var mean = run / Math.min(t + 1, win), v = env[t] - mean;
+      out[t] = v > 0 ? v : 0;
+    }
+    return { env: out, fps: fps };
+  }
+
+  function autocorr(env, maxLag) {
+    var n = env.length, ac = new Float32Array(maxLag + 2), mean = 0, i, l;
+    for (i = 0; i < n; i++) mean += env[i]; mean /= n;
+    var e = new Float32Array(n); for (i = 0; i < n; i++) e[i] = env[i] - mean;
+    for (l = 0; l <= maxLag + 1; l++) { var s = 0; for (i = l; i < n; i++) s += e[i] * e[i - l]; ac[l] = s / (n - l); }
+    var z = ac[0] || 1; for (l = 0; l < ac.length; l++) ac[l] /= z;
+    return ac;
+  }
+  function acAt(ac, lag) {                    // linear interpolation
+    var i = Math.floor(lag), fr = lag - i;
+    if (i + 1 >= ac.length || i < 0) return 0;
+    return ac[i] * (1 - fr) + ac[i + 1] * fr;
+  }
+  function tempoScore(ac, fps, bpm) {
+    var L = fps * 60 / bpm, s = 0, w = 0, mult = [1, 2, 3, 4];
+    for (var k = 0; k < mult.length; k++) { if (L * mult[k] < ac.length - 2) { s += acAt(ac, L * mult[k]) / Math.sqrt(mult[k]); w += 1 / Math.sqrt(mult[k]); } }
+    return w ? s / w : 0;
+  }
+  function estimateTempo(x, sr) {
+    var o = onsetEnvelope(x, sr), fps = o.fps;
+    if (o.env.length < fps * 6) return null;
+    var maxLag = Math.ceil(fps * 60 / 55 * 4) + 4, ac = autocorr(o.env, maxLag), cand = [], bpm;
+    for (bpm = 60; bpm <= 200; bpm += 0.5) {
+      var prior = Math.exp(-0.5 * Math.pow(Math.log2(bpm / 112) / 0.85, 2));
+      cand.push({ bpm: bpm, raw: tempoScore(ac, fps, bpm), score: tempoScore(ac, fps, bpm) * (0.55 + 0.45 * prior) });
+    }
+    var best = cand[0], i;
+    for (i = 1; i < cand.length; i++) if (cand[i].score > best.score) best = cand[i];
+    var fine = best, b;                        // refine in 0.05 steps
+    for (b = best.bpm - 1.5; b <= best.bpm + 1.5; b += 0.05) { var sc = tempoScore(ac, fps, b); if (sc > fine.raw) fine = { bpm: b, raw: sc }; }
+    var tempo = Math.round(fine.bpm * 10) / 10;
+    // downbeat grid phase: the offset (in frames) whose comb sum is largest
+    var period = fps * 60 / fine.bpm, bestPh = 0, bestV = -1, ph;
+    for (ph = 0; ph < period; ph += 0.5) { var v = 0, p = ph, cnt = 0; while (p < o.env.length - 1) { v += o.env[Math.round(p)]; p += period; cnt++; } v /= cnt; if (v > bestV) { bestV = v; bestPh = ph; } }
+    // confidence: how much the peak stands out from the rest of the tempogram
+    var raws = cand.map(function (c) { return c.raw; }), med = percentile(raws, 0.5), top = fine.raw;
+    var conf = Math.max(0, Math.min(1, (top - med) / (Math.abs(top) + 0.2)));
+    var alt = [];
+    [[0.5, 'half'], [2, 'double'], [4 / 3, 'x4/3'], [0.75, 'x3/4'], [1.5, 'x3/2'], [2 / 3, 'x2/3']].forEach(function (m) {
+      var t2 = tempo * m[0]; if (t2 < 55 || t2 > 200) return;
+      var sc2 = tempoScore(ac, fps, t2); if (m[1].charAt(0) === 'x' && sc2 < fine.raw * 0.8) return;
+      alt.push(Math.round(t2 * 10) / 10);
+    });
+    return { bpm: tempo, alt: alt, confidence: conf, beatOffsetSec: bestPh / fps };
+  }
+
+  // ---------------------------------------------------------------- key + chords
+  var NOTES_MAJ = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'];
+  var NOTES_MIN = ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'G#', 'A', 'Bb', 'B'];
+  var CAM_MAJ = [8, 3, 10, 5, 12, 7, 2, 9, 4, 11, 6, 1];
+  var KK_MAJ = [6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88];
+  var KK_MIN = [6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17];
+
+  function chromaFrames(x, sr, N, hop) {
+    var w = hann(N), re = new Float32Array(N), im = new Float32Array(N), frames = [], bw = sr / N;
+    var lo = Math.ceil(65 / bw), hi = Math.min(N / 2 - 1, Math.floor(2000 / bw));
+    var pcOf = new Int8Array(hi + 1), wt = new Float32Array(hi + 1);
+    for (var b = lo; b <= hi; b++) {
+      var midi = 69 + 12 * Math.log2((b * bw) / 440), r = Math.round(midi), dist = Math.abs(midi - r);
+      pcOf[b] = ((r % 12) + 12) % 12; wt[b] = Math.max(0, Math.cos(dist * Math.PI)) ;   // 1 on a note, 0 halfway between
+    }
+    for (var o = 0; o + N <= x.length; o += hop) {
+      for (var i = 0; i < N; i++) { re[i] = x[o + i] * w[i]; im[i] = 0; }
+      fft(re, im);
+      var ch = new Float32Array(12), tot = 0;
+      for (b = lo; b <= hi; b++) { var mag = Math.sqrt(re[b] * re[b] + im[b] * im[b]); var v = Math.sqrt(mag) * wt[b] * (1 / (1 + b * bw / 1500)); ch[pcOf[b]] += v; tot += v; }
+      if (tot > 1e-6) for (var k = 0; k < 12; k++) ch[k] /= tot;
+      frames.push({ t: o / sr, ch: ch, ok: tot > 1e-6 });
+    }
+    return frames;
+  }
+  function pearson(a, b) {
+    var n = a.length, ma = 0, mb = 0, i; for (i = 0; i < n; i++) { ma += a[i]; mb += b[i]; } ma /= n; mb /= n;
+    var s = 0, va = 0, vb = 0; for (i = 0; i < n; i++) { var da = a[i] - ma, db_ = b[i] - mb; s += da * db_; va += da * da; vb += db_ * db_; }
+    return s / Math.sqrt((va * vb) || 1);
+  }
+  function estimateKey(frames) {
+    var sum = new Float32Array(12), n = 0;
+    frames.forEach(function (f) { if (f.ok) { for (var k = 0; k < 12; k++) sum[k] += f.ch[k]; n++; } });
+    if (n < 4) return null;
+    var res = [];
+    for (var tonic = 0; tonic < 12; tonic++) {
+      var maj = [], min = [];
+      for (var k = 0; k < 12; k++) { maj.push(KK_MAJ[(k - tonic + 12) % 12]); min.push(KK_MIN[(k - tonic + 12) % 12]); }
+      res.push({ tonic: tonic, mode: 'major', r: pearson(sum, maj) });
+      res.push({ tonic: tonic, mode: 'minor', r: pearson(sum, min) });
+    }
+    res.sort(function (a, b) { return b.r - a.r; });
+    function label(k) { return k.mode === 'major' ? NOTES_MAJ[k.tonic] + ' major' : NOTES_MIN[k.tonic] + ' minor'; }
+    function camelot(k) { return k.mode === 'major' ? CAM_MAJ[k.tonic] + 'B' : CAM_MAJ[(k.tonic + 3) % 12] + 'A'; }
+    function relative(k) { return k.mode === 'major' ? { tonic: (k.tonic + 9) % 12, mode: 'minor' } : { tonic: (k.tonic + 3) % 12, mode: 'major' }; }
+    var best = res[0], rel = relative(best);
+    var distinct = res.filter(function (k) { return !(k.tonic === rel.tonic && k.mode === rel.mode) && !(k === best); });
+    var second = distinct[0];
+    return { tonic: best.tonic, mode: best.mode, name: label(best), camelot: camelot(best), relative: label(rel), r: best.r,
+             confidence: Math.max(0, Math.min(1, (best.r - second.r) * 8 + (best.r - 0.5))),
+             others: distinct.slice(0, 3).map(function (k) { return { name: label(k), r: k.r }; }), profile: Array.prototype.slice.call(sum) };
+  }
+
+  var TRIADS = (function () {
+    var t = [];
+    for (var root = 0; root < 12; root++) {
+      var maj = new Float32Array(12), min = new Float32Array(12);
+      maj[root] = 1; maj[(root + 4) % 12] = 0.9; maj[(root + 7) % 12] = 0.95;
+      min[root] = 1; min[(root + 3) % 12] = 0.9; min[(root + 7) % 12] = 0.95;
+      t.push({ root: root, q: '', v: maj }); t.push({ root: root, q: 'm', v: min });
+    }
+    return t;
+  })();
+  function cosine(a, b) { var s = 0, na = 0, nb = 0; for (var i = 0; i < 12; i++) { s += a[i] * b[i]; na += a[i] * a[i]; nb += b[i] * b[i]; } return s / Math.sqrt((na * nb) || 1); }
+  function degreeLabel(ch, key) {
+    var iv = (ch.root - key.tonic + 12) % 12, maj = { 0: 'I', 2: 'ii', 4: 'iii', 5: 'IV', 7: 'V', 9: 'vi' }, min = { 0: 'i', 3: 'III', 5: 'iv', 7: 'v', 8: 'VI', 10: 'VII' };
+    var tbl = key.mode === 'major' ? maj : min, s = tbl[iv];
+    if (!s) return '';
+    var isMin = s === s.toLowerCase(); return ((ch.q === 'm') === isMin) ? s : '';
+  }
+  function inKey(ch, key) {
+    var iv = (ch.root - key.tonic + 12) % 12;
+    var tbl = key.mode === 'major' ? { 0: '', 2: 'm', 4: 'm', 5: '', 7: '', 9: 'm' } : { 0: 'm', 3: '', 5: 'm', 7: 'm', 8: '', 10: '' };
+    return tbl[iv] !== undefined && tbl[iv] === ch.q;
+  }
+  function estimateChords(x, sr, tempo, key) {
+    var N = 4096, hop = 1024, frames = chromaFrames(x, sr, N, hop);
+    if (frames.length < 8 || !tempo || !key) return null;
+    var beat = 60 / tempo.bpm, seg = beat * 2, dur = x.length / sr;
+    function run(off) {
+      var out = [], total = 0, t;
+      for (t = off; t + seg * 0.5 < dur; t += seg) {
+        var ch = new Float32Array(12), n = 0;
+        for (var fi = 0; fi < frames.length; fi++) { var f = frames[fi], c = f.t + N / sr / 2; if (f.ok && c >= t && c < t + seg) { for (var k = 0; k < 12; k++) ch[k] += f.ch[k]; n++; } }
+        if (!n) continue;
+        var best = null, bestS = -1;
+        TRIADS.forEach(function (tr) { var sc = cosine(ch, tr.v) * (inKey(tr, key) ? 1 : 0.86); if (sc > bestS) { bestS = sc; best = tr; } });
+        out.push({ t: t, root: best.root, q: best.q, score: bestS, chord: NOTES_MAJ[best.root] + best.q }); total += bestS;
+      }
+      return { out: out, avg: out.length ? total / out.length : 0 };
+    }
+    var bestRun = null, o0 = tempo.beatOffsetSec % seg;
+    for (var j = 0; j < 4; j++) { var r = run((o0 + j * beat / 2) % seg); if (!bestRun || r.avg > bestRun.avg + 0.005) bestRun = r; }
+    var out = bestRun.out;
+    for (var i = 1; i < out.length - 1; i++) if (out[i - 1].chord === out[i + 1].chord && out[i].chord !== out[i - 1].chord && out[i].score < 0.82) { out[i].chord = out[i - 1].chord; out[i].root = out[i - 1].root; out[i].q = out[i - 1].q; }
+    var merged = [];
+    out.forEach(function (c) {
+      var last = merged[merged.length - 1];
+      if (last && last.chord === c.chord) last.len += seg; else merged.push({ t: c.t, chord: c.chord, root: c.root, q: c.q, deg: degreeLabel(c, key), len: seg });
+    });
+    var counts = {}; out.forEach(function (c) { counts[c.chord] = (counts[c.chord] || 0) + 1; });
+    var top = Object.keys(counts).sort(function (u, v) { return counts[v] - counts[u]; }).slice(0, 6).map(function (c) { return { chord: c, n: counts[c] }; });
+    var seq = merged.map(function (c) { return c.chord; }), loops = {}, first = {}, L;
+    for (L = 2; L <= 4; L++) for (i = 0; i + L <= seq.length; i++) {
+      var sl = seq.slice(i, i + L); if (new Set(sl).size < 2) continue;
+      var k2 = sl.join(' '); loops[k2] = (loops[k2] || 0) + L; if (first[k2] === undefined) first[k2] = i;
+    }
+    var loop = Object.keys(loops).sort(function (u, v) { return (loops[v] - loops[u]) || (first[u] - first[v]); })[0] || '';
+    return { timeline: merged, top: top, loop: loop, segment: seg };
+  }
+
+  // ---------------------------------------------------------------- loudness (ITU-R BS.1770 / EBU R128)
+  function biquad(b, a, x) {
+    var y = new Float64Array(x.length), x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+    for (var i = 0; i < x.length; i++) {
+      var xi = x[i], yi = b[0] * xi + b[1] * x1 + b[2] * x2 - a[1] * y1 - a[2] * y2;
+      y[i] = yi; x2 = x1; x1 = xi; y2 = y1; y1 = yi;
+    }
+    return y;
+  }
+  function kCoefs(fs) {
+    var G = 3.999843853973347, f0 = 1681.974450955533, Q = 0.7071752369554196;
+    var A = Math.pow(10, G / 40), w0 = 2 * Math.PI * f0 / fs, al = Math.sin(w0) / (2 * Q), c = Math.cos(w0), sA = 2 * Math.sqrt(A) * al;
+    var a0 = (A + 1) - (A - 1) * c + sA;
+    var s1 = { b: [A * ((A + 1) + (A - 1) * c + sA) / a0, -2 * A * ((A - 1) + (A + 1) * c) / a0, A * ((A + 1) + (A - 1) * c - sA) / a0],
+               a: [1, 2 * ((A - 1) - (A + 1) * c) / a0, ((A + 1) - (A - 1) * c - sA) / a0] };
+    var f1 = 38.13547087602444, Q1 = 0.5003270373238773, w1 = 2 * Math.PI * f1 / fs, al1 = Math.sin(w1) / (2 * Q1), c1 = Math.cos(w1), a01 = 1 + al1;
+    var s2 = { b: [(1 + c1) / 2 / a01, -(1 + c1) / a01, (1 + c1) / 2 / a01], a: [1, -2 * c1 / a01, (1 - al1) / a01] };
+    return [s1, s2];
+  }
+  function measureLoudness(chs, sr) {
+    var co = kCoefs(sr), filt = chs.map(function (c) { var y = c; co.forEach(function (s) { y = biquad(s.b, s.a, y); }); return y; });
+    var blk = Math.round(0.4 * sr), step = Math.round(0.1 * sr), n = chs[0].length, ms = [];
+    for (var s = 0; s + blk <= n; s += step) {
+      var tot = 0; for (var c = 0; c < filt.length; c++) { var acc = 0, f = filt[c]; for (var i = s; i < s + blk; i++) acc += f[i] * f[i]; tot += acc / blk; }
+      ms.push(tot);
+    }
+    var lk = function (z) { return -0.691 + 10 * Math.log10(Math.max(z, 1e-12)); };
+    if (!ms.length) return null;
+    var abs = ms.filter(function (z) { return lk(z) > -70; });
+    if (!abs.length) return { lufs: -Infinity, momentaryMax: -Infinity, shortTermMax: -Infinity, lra: 0 };
+    var mean = abs.reduce(function (a, b) { return a + b; }, 0) / abs.length, rel = lk(mean) - 10;
+    var gated = ms.filter(function (z) { return lk(z) > -70 && lk(z) > rel; });
+    var integ = lk(gated.reduce(function (a, b) { return a + b; }, 0) / gated.length);
+    var mMax = lk(Math.max.apply(null, ms));
+    var st = [], w = 30;                       // short-term = 3 s = 30 steps of 100 ms (mean of block powers)
+    for (var j = 0; j + w <= ms.length; j += 5) { var q = 0; for (var u = j; u < j + w; u++) q += ms[u]; st.push(lk(q / w)); }
+    var stg = st.filter(function (v) { return v > -70; }), lra = 0;
+    if (stg.length > 4) { var m2 = stg.map(function (v) { return Math.pow(10, v / 10); }).reduce(function (a, b) { return a + b; }, 0) / stg.length; var g2 = stg.filter(function (v) { return v > 10 * Math.log10(m2) - 20; }); if (g2.length > 2) lra = percentile(g2, 0.95) - percentile(g2, 0.10); }
+    return { lufs: integ, momentaryMax: mMax, shortTermMax: st.length ? Math.max.apply(null, st) : integ, lra: lra };
+  }
+  function peaks(chs) {
+    var pk = 0, clipRuns = 0, i, c, run;
+    chs.forEach(function (x) {
+      run = 0;
+      for (i = 0; i < x.length; i++) {
+        var a = Math.abs(x[i]); if (a > pk) pk = a;
+        if (a >= 0.995) { run++; if (run === 3) clipRuns++; } else run = 0;
+      }
+    });
+    // true peak estimate: 4x linear-phase sinc interpolation around the loudest samples
+    var tp = pk, thr = pk * 0.7;
+    chs.forEach(function (x) {
+      for (i = 8; i < x.length - 8; i++) {
+        if (Math.abs(x[i]) < thr) continue;
+        for (var ph = 1; ph < 4; ph++) {
+          var t = ph / 4, s = 0;
+          for (var k = -7; k <= 8; k++) { var d = k - t, sinc = Math.abs(d) < 1e-9 ? 1 : Math.sin(Math.PI * d) / (Math.PI * d), win = 0.5 + 0.5 * Math.cos(Math.PI * d / 8.5); s += x[i + k] * sinc * win; }
+          if (Math.abs(s) > tp) tp = Math.abs(s);
+        }
+      }
+    });
+    return { samplePeak: pk, truePeak: tp, clipRuns: clipRuns };
+  }
+
+  // ---------------------------------------------------------------- vocal check-up
+  function frameLevels(x, sr) {
+    var f = Math.round(sr * 0.02), n = Math.floor(x.length / f), out = [];
+    for (var i = 0; i < n; i++) { var s = 0, o = i * f; for (var k = 0; k < f; k++) s += x[o + k] * x[o + k]; out.push(db(Math.sqrt(s / f))); }
+    return out;
+  }
+  function spectrumBands(x, sr) {
+    var N = 4096, w = hann(N), re = new Float32Array(N), im = new Float32Array(N), acc = new Float64Array(N / 2), cnt = 0, bw = sr / N;
+    var step = Math.max(N, Math.floor(x.length / 120));
+    for (var o = 0; o + N <= x.length; o += step) {
+      for (var i = 0; i < N; i++) { re[i] = x[o + i] * w[i]; im[i] = 0; }
+      fft(re, im); for (var b = 1; b < N / 2; b++) acc[b] += re[b] * re[b] + im[b] * im[b]; cnt++;
+    }
+    function band(lo, hi) { var s = 0; for (var b = Math.ceil(lo / bw); b <= Math.min(N / 2 - 1, Math.floor(hi / bw)); b++) s += acc[b]; return s; }
+    var total = band(20, sr / 2 - 1) || 1;
+    return { rumble: band(20, 80) / total, low: band(80, 300) / total, mid: band(300, 3000) / total, presence: band(3000, 8000) / total, air: band(8000, sr / 2 - 1) / total, sibRatio: band(5000, 9500) / (band(500, 5000) || 1) };
+  }
+  function checkVocal(chs, sr, lu) {
+    var mono = mixMono(chs), lv = frameLevels(mono, sr).filter(function (v) { return v > -90; });
+    var pk = peaks(chs), res = {}, loud = percentile(lv, 0.9), floor = percentile(lv, 0.05);
+    res.peakDb = db(pk.samplePeak); res.truePeakDb = db(pk.truePeak); res.clipEvents = pk.clipRuns;
+    res.loudDb = loud; res.noiseFloorDb = floor; res.snr = loud - floor; res.lufs = lu ? lu.lufs : null;
+    var spec = spectrumBands(mono, sr); res.spec = spec;
+    var silent = lv.filter(function (v) { return v < floor + 6; }).length / (lv.length || 1); res.quietShare = silent;
+    return res;
+  }
+
+  // ---------------------------------------------------------------- one call for everything
+  function analyzeAll(chs, sr, opts) {
+    opts = opts || {}; var prog = opts.progress || function () {};
+    var mono = mixMono(chs), seconds = mono.length / sr, r = { seconds: seconds, sampleRate: sr };
+    var d = decimate(window_(mono, sr, 150), sr, 12000);
+    prog('Finding the tempo', 0.15); r.tempo = estimateTempo(d.x, d.sr);
+    prog('Listening for the key', 0.5); var frames = chromaFrames(d.x, d.sr, 8192, 4096); r.key = estimateKey(frames);
+    prog('Reading the chords', 0.7); r.chords = estimateChords(d.x, d.sr, r.tempo, r.key);
+    prog('Measuring loudness', 0.85); r.loudness = measureLoudness(chs, sr);
+    r.check = checkVocal(chs, sr, r.loudness);
+    prog('Done', 1);
+    return r;
+  }
+
+  // ---------------------------------------------------------------- demo loop (synthesised, no copyright)
+  function demoLoop(sr) {
+    sr = sr || 44100; var bpm = 92, beat = 60 / bpm, bars = 16, dur = bars * 4 * beat, n = Math.floor(dur * sr), x = new Float32Array(n);
+    var prog = [[9, 'min'], [5, 'maj'], [0, 'maj'], [7, 'maj']];   // Am F C G
+    var sem = function (m) { return 440 * Math.pow(2, (m - 69) / 12); };
+    for (var bar = 0; bar < bars; bar++) {
+      var ch = prog[bar % 4], root = 48 + ((ch[0] + 12 - 0) % 12), tri = ch[1] === 'min' ? [0, 3, 7] : [0, 4, 7], t0 = bar * 4 * beat;
+      tri.forEach(function (iv) {
+        var f = sem(root + iv + 12), s = Math.floor(t0 * sr), len = Math.floor(4 * beat * sr);
+        for (var i = 0; i < len && s + i < n; i++) { var tt = i / sr, env = Math.min(1, tt * 20) * Math.exp(-tt * 0.5); x[s + i] += 0.07 * env * (Math.sin(2 * Math.PI * f * tt) + 0.4 * Math.sin(4 * Math.PI * f * tt) + 0.2 * Math.sin(6 * Math.PI * f * tt)); }
+      });
+      var bf = sem(root - 12), bs = Math.floor(t0 * sr), bl = Math.floor(4 * beat * sr);
+      for (var j = 0; j < bl && bs + j < n; j++) { var q = j / sr; x[bs + j] += 0.18 * Math.sin(2 * Math.PI * bf * q) * Math.exp(-(q % beat) * 2.5); }
+      for (var b = 0; b < 4; b++) {
+        var st = Math.floor((t0 + b * beat) * sr);
+        if (b % 2 === 0) for (var i2 = 0; i2 < 9000 && st + i2 < n; i2++) { var u = i2 / sr; x[st + i2] += 0.55 * Math.sin(2 * Math.PI * (48 + 90 * Math.exp(-u * 40)) * u) * Math.exp(-u * 14); }
+        else for (var i3 = 0; i3 < 7000 && st + i3 < n; i3++) { var v = i3 / sr; x[st + i3] += 0.3 * (Math.random() * 2 - 1) * Math.exp(-v * 22); }
+        for (var h = 0; h < 2; h++) { var hs = Math.floor((t0 + b * beat + h * beat / 2) * sr); for (var i4 = 0; i4 < 1800 && hs + i4 < n; i4++) x[hs + i4] += 0.08 * (Math.random() * 2 - 1) * Math.exp(-(i4 / sr) * 90); }
+      }
+    }
+    return { channels: [x], sampleRate: sr };
+  }
+
+  var api = { fft: fft, mixMono: mixMono, decimate: decimate, estimateTempo: estimateTempo, chromaFrames: chromaFrames, estimateKey: estimateKey,
+              estimateChords: estimateChords, measureLoudness: measureLoudness, peaks: peaks, checkVocal: checkVocal, analyzeAll: analyzeAll, demoLoop: demoLoop };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.VFCore = api;
+})(typeof window !== 'undefined' ? window : globalThis);
+</script><script>/* VocalForge free tools: page glue. Decodes the dropped file in the browser, analyses it in a Web Worker, renders the cards.
+   Nothing is uploaded: there is no network code in this file. */
+(function () {
+  'use strict';
+  var root = document.getElementById('tool');
+  if (!root) return;
+  var focus = root.getAttribute('data-focus') || 'all';
+  var $ = function (s, r) { return (r || root).querySelector(s); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var drop = $('#drop'), input = $('#file'), prog = $('#prog'), out = $('#results'), demoBtn = $('#demo');
+  var supportMail = 'fuidzy@outlook.com', BASE = root.getAttribute('data-base') || '/vocalforge';
+
+  function mmss(t) { t = Math.max(0, Math.round(t)); return Math.floor(t / 60) + ':' + ('0' + (t % 60)).slice(-2); }
+  function f1(v) { return (Math.round(v * 10) / 10).toFixed(1); }
+  function setProg(msg, p) { prog.hidden = false; $('#progmsg').textContent = msg; $('#progbar').style.width = Math.round(p * 100) + '%'; }
+
+  // ------------------------------------------------------------------ analysis in a worker (falls back to the page thread)
+  function analyse(chs, sr, onProg) {
+    return new Promise(function (resolve, reject) {
+      var core = document.getElementById('vfcore').textContent, w;
+      try {
+        var src = core + ';self.onmessage=function(e){try{var d=e.data;var r=VFCore.analyzeAll(d.chs,d.sr,{progress:function(m,p){self.postMessage({prog:[m,p]})}});self.postMessage({res:r})}catch(err){self.postMessage({err:String(err&&err.message||err)})}}';
+        w = new Worker(URL.createObjectURL(new Blob([src], { type: 'text/javascript' })));
+      } catch (e) { w = null; }
+      if (!w) { try { resolve(VFCore.analyzeAll(chs, sr, { progress: onProg })); } catch (e2) { reject(e2); } return; }
+      w.onmessage = function (m) {
+        var d = m.data;
+        if (d.prog) onProg(d.prog[0], d.prog[1]); else if (d.res) { w.terminate(); resolve(d.res); } else if (d.err) { w.terminate(); reject(new Error(d.err)); }
+      };
+      w.onerror = function (e) { w.terminate(); reject(new Error(e.message || 'analysis failed')); };
+      w.postMessage({ chs: chs.slice(0, 2), sr: sr }, chs.slice(0, 2).map(function (c) { return c.buffer; }));
+    });
+  }
+
+  function run(chs, sr, name, seconds) {
+    out.hidden = true; out.innerHTML = ''; setProg('Starting', 0.03); root.classList.add('busy');
+    return analyse(chs, sr, setProg).then(function (r) {
+      r.name = name; render(r); prog.hidden = true; root.classList.remove('busy');
+      var t = $('#results'); if (t && t.scrollIntoView && !root.hasAttribute('data-noscroll')) t.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }).catch(function (e) { root.classList.remove('busy'); fail('Something went wrong while analysing this file (' + (e.message || e) + '). Try a WAV or MP3.'); });
+  }
+  function fail(msg) { prog.hidden = true; out.hidden = false; out.innerHTML = '<div class="tcard bad"><p>' + esc(msg) + '</p></div>'; }
+
+  function handleFile(file) {
+    if (!file) return;
+    if (file.size > 400 * 1024 * 1024) { fail('That file is very large (over 400 MB). Try an MP3 or a shorter WAV.'); return; }
+    setProg('Reading ' + file.name, 0.02); root.classList.add('busy');
+    var fr = new FileReader();
+    fr.onerror = function () { fail('Could not read that file.'); };
+    fr.onload = function () {
+      setProg('Decoding audio', 0.06);
+      var AC = window.AudioContext || window.webkitAudioContext, ctx = new AC();
+      var done = function (buf) {
+        var chs = []; for (var c = 0; c < Math.min(2, buf.numberOfChannels); c++) chs.push(new Float32Array(buf.getChannelData(c)));
+        try { ctx.close(); } catch (e) {}
+        run(chs, buf.sampleRate, file.name, buf.duration);
+      };
+      var bad = function () { fail('Your browser could not decode that file. MP3, WAV, FLAC, OGG and (on most browsers) M4A work.'); };
+      var p = ctx.decodeAudioData(fr.result, done, bad); if (p && p.catch) p.catch(bad);
+    };
+    fr.readAsArrayBuffer(file);
+  }
+
+  // ------------------------------------------------------------------ cards
+  function bar(p, cls) { return '<div class="meter ' + (cls || '') + '"><i style="width:' + Math.round(Math.max(0, Math.min(1, p)) * 100) + '%"></i></div>'; }
+  function card(id, cls, body) { return '<div class="tcard ' + cls + (focus === id ? ' primary' : '') + '" id="c-' + id + '" data-id="' + id + '">' + body + '</div>'; }
+
+  function bpmCard(r) {
+    var t = r.tempo; if (!t) return card('bpm', 'idle', '<h3>Tempo</h3><p>This file is too short to find a steady tempo (needs about 6 seconds of music).</p>');
+    var alts = t.alt.map(function (a) { return '<button class="chip" data-bpm="' + a + '" title="Use this tempo instead">' + (Math.abs(a / t.bpm - 2) < 0.02 ? 'double-time ' : Math.abs(a / t.bpm - 0.5) < 0.02 ? 'half-time ' : '') + a + '</button>'; }).join('');
+    return card('bpm', 'bpm', '<div class="kicker">Tempo</div><div class="big"><span id="bpmval">' + f1(t.bpm) + '</span><small> BPM</small></div>' +
+      bar(t.confidence, 'amber') + '<p class="mute">' + (t.confidence > 0.55 ? 'Steady, clear pulse.' : 'Weaker pulse. Use tap tempo to double-check.') + '</p>' +
+      (alts ? '<div class="chips"><span class="mute">Could also be read as</span>' + alts + '</div>' : '') +
+      '<p class="mute sm">Rhythm detection often lands on half-time or double-time in rap and trap. Pick whichever matches how you count it.</p>');
+  }
+  function keyCard(r) {
+    var k = r.key; if (!k) return card('key', 'idle', '<h3>Key</h3><p>Not enough pitched music in this file to name a key.</p>');
+    var others = k.others.slice(0, 2).map(function (o) { return '<span class="chip ghost">' + esc(o.name) + '</span>'; }).join('');
+    return card('key', 'key', '<div class="kicker">Key</div><div class="big">' + esc(k.name) + '</div>' +
+      '<div class="chips"><span class="chip solid">Camelot ' + k.camelot + '</span><span class="chip ghost">same notes as ' + esc(k.relative) + '</span></div>' + bar(k.confidence, 'violet') +
+      '<p class="mute">' + (k.confidence > 0.5 ? 'Strong match.' : 'Close call between a few keys.') + (others ? ' Next closest:' : '') + '</p><div class="chips">' + others + '</div>' +
+      '<p class="mute sm">Set your autotune or your producer\'s scale to this key. If vocals sound off, try the relative key shown above.</p>');
+  }
+  function chordCard(r) {
+    var c = r.chords; if (!c || !c.timeline.length) return card('chords', 'idle', '<h3>Chords</h3><p>No clear chords found (works best on music with guitar, piano, synth or pads).</p>');
+    var shown = c.timeline.slice(0, 48).map(function (x) { return '<span class="chord" title="' + mmss(x.t) + '"><b>' + esc(x.chord) + '</b><i>' + (x.deg ? esc(x.deg) : '') + '</i></span>'; }).join('');
+    var top = c.top.slice(0, 4).map(function (x) { return '<span class="chip ghost">' + esc(x.chord) + '</span>'; }).join('');
+    return card('chords', 'chords', '<div class="kicker">Chords</div>' + (c.loop ? '<div class="big sm2">' + esc(c.loop) + '</div><p class="mute">Most repeated progression</p>' : '') +
+      '<div class="chordline">' + shown + '</div><div class="chips"><span class="mute">Most used</span>' + top + '</div>' +
+      '<p class="mute sm">Approximate triads (major and minor) every two beats, starting from the first beat found. Great for a starting point; check by ear for 7ths and extended chords.</p>');
+  }
+  function loudCard(r) {
+    var l = r.loudness, k = r.check; if (!l || !isFinite(l.lufs)) return card('loud', 'idle', '<h3>Loudness</h3><p>This file is silent or too short to measure.</p>');
+    var rows = [['Spotify', -14], ['YouTube', -14], ['Apple Music', -16]].map(function (p) {
+      var g = p[1] - l.lufs, txt = g > 0.4 ? (p[0] === 'YouTube' ? 'left as is (no boost)' : 'turned up ' + f1(g) + ' dB') : g < -0.4 ? 'turned down ' + f1(-g) + ' dB' : 'about right';
+      return '<tr><td>' + p[0] + '</td><td>' + p[1] + ' LUFS</td><td>' + txt + '</td></tr>';
+    }).join('');
+    return card('loud', 'loud', '<div class="kicker">Loudness</div><div class="big">' + f1(l.lufs) + '<small> LUFS</small></div>' +
+      '<div class="stats"><div><b>' + f1(k.truePeakDb) + ' dB</b><span>true peak (est.)</span></div><div><b>' + f1(l.lra) + ' LU</b><span>loudness range</span></div><div><b>' + f1(l.shortTermMax) + '</b><span>loudest 3 s</span></div></div>' +
+      '<table class="mini"><tr><th>Platform</th><th>Target</th><th>What happens</th></tr>' + rows + '</table>' +
+      '<p class="mute sm">Integrated loudness per ITU-R BS.1770 / EBU R128, measured on your file in this browser. Platforms change their targets sometimes, so treat these as a guide.</p>');
+  }
+  function status(v, good, warn) { return v <= good ? 'ok' : v <= warn ? 'warn' : 'bad'; }
+  function checkCard(r) {
+    var k = r.check; if (!k) return '';
+    var rows = [];
+    var peakS = k.peakDb > -0.1 ? 'bad' : k.peakDb > -1 ? 'warn' : 'ok';
+    rows.push([k.clipEvents > 0 ? 'bad' : 'ok', 'Clipping', k.clipEvents > 0 ? k.clipEvents + ' clipped spot' + (k.clipEvents > 1 ? 's' : '') + ' found. Clipped peaks sound harsh and are hard to repair.' : 'No clipped peaks found.']);
+    rows.push([peakS, 'Peak level', f1(k.peakDb) + ' dBFS. ' + (peakS === 'ok' ? 'Healthy headroom.' : 'Very close to full scale. Leave room for processing and conversion.')]);
+    var nS = k.noiseFloorDb > -40 ? 'bad' : k.noiseFloorDb > -50 ? 'warn' : 'ok';
+    rows.push([nS, 'Background noise', f1(k.noiseFloorDb) + ' dBFS in the quietest moments' + (k.snr ? ' (' + Math.round(k.snr) + ' dB below the loud parts)' : '') + '. ' +
+      (nS === 'ok' ? 'Clean gaps.' : nS === 'warn' ? 'The quiet moments sit fairly high. That can be hiss or room tone, or just a take with no pauses. Listen to a gap between phrases.' : 'A lot of noise or room sound under the voice. Light noise reduction will help.')]);
+    var rS = k.spec.rumble > 0.15 ? 'bad' : k.spec.rumble > 0.06 ? 'warn' : 'ok';
+    rows.push([rS, 'Low rumble', Math.round(k.spec.rumble * 100) + '% of the energy sits below 80 Hz. ' + (rS === 'ok' ? 'Nothing to fix.' : 'Rumble, handling or desk noise. A high-pass filter around 80 to 100 Hz removes it.')]);
+    var lv = k.lufs, lS = (lv === null || !isFinite(lv)) ? 'ok' : (lv < -30 ? 'warn' : lv > -9 ? 'warn' : 'ok');
+    rows.push([lS, 'Overall level', (lv !== null && isFinite(lv)) ? f1(lv) + ' LUFS. ' + (lv < -30 ? 'Quiet. Raise the level before processing so noise is not boosted later.' : lv > -9 ? 'Very loud for a solo vocal. Check for clipping and leave room to mix.' : 'A healthy working level.') : 'Could not measure.']);
+    var bad = rows.filter(function (x) { return x[0] === 'bad'; }).length, warn = rows.filter(function (x) { return x[0] === 'warn'; }).length;
+    var verdict = bad ? 'Needs work before you post' : warn ? 'Nearly there' : 'Looks ready';
+    return card('check', 'check ' + (bad ? 'bad' : warn ? 'warn' : 'ok'), '<div class="kicker">Vocal check-up</div><div class="big sm2">' + verdict + '</div>' +
+      '<ul class="rows">' + rows.map(function (x) { return '<li class="' + x[0] + '"><i></i><div><b>' + x[1] + '</b><span>' + esc(x[2]) + '</span></div></li>'; }).join('') + '</ul>' +
+      '<p class="mute sm">These checks look at the whole file. They are a quick health check, not a replacement for listening.</p>');
+  }
+
+  function render(r) {
+    var order = { bpm: ['bpm', 'key', 'chords', 'loud', 'check'], key: ['key', 'bpm', 'chords', 'loud', 'check'], chords: ['chords', 'key', 'bpm', 'loud', 'check'],
+                  loud: ['loud', 'check', 'bpm', 'key', 'chords'], check: ['check', 'loud', 'bpm', 'key', 'chords'], all: ['bpm', 'key', 'chords', 'loud', 'check'] }[focus] || ['bpm', 'key', 'chords', 'loud', 'check'];
+    var make = { bpm: bpmCard, key: keyCard, chords: chordCard, loud: loudCard, check: checkCard };
+    var summary = '';
+    if (r.tempo) summary += f1(r.tempo.bpm) + ' BPM';
+    if (r.key) summary += (summary ? ' | ' : '') + r.key.name + ' (' + r.key.camelot + ')';
+    if (r.chords && r.chords.loop) summary += ' | ' + r.chords.loop;
+    if (r.loudness && isFinite(r.loudness.lufs)) summary += ' | ' + f1(r.loudness.lufs) + ' LUFS';
+    var cta = (r.check && (r.check.clipEvents > 0 || r.check.noiseFloorDb > -55 || r.check.spec.rumble > 0.05))
+      ? '<h3>Want that vocal fixed in one pass?</h3><p>VocalForge removes noise, rumble, clicks and harsh S sounds, repairs clipping, tunes to the key above and masters the result. Free 7-day trial.</p>'
+      : '<h3>Make the vocal match this track</h3><p>VocalForge tunes your vocal to this key and tempo, sets its level against the beat and masters the result. Free 7-day trial.</p>';
+    out.hidden = false;
+    out.innerHTML = '<div class="resbar"><div><b>' + esc(r.name) + '</b><span>' + mmss(r.seconds) + ' &middot; ' + Math.round(r.sampleRate / 100) / 10 + ' kHz &middot; analysed on your device</span></div>' +
+      '<button class="btn small" id="copy" type="button">Copy results</button></div><div class="tgrid">' + order.map(function (id) { return make[id](r); }).join('') + '</div>' +
+      '<div class="ctabox">' + cta + '<div class="cta"><a class="btn primary" href="' + BASE + '#try">Try VocalForge free</a><a class="btn ghost" href="mailto:' + supportMail + '?subject=VocalForge%20question">Ask us anything</a></div></div>';
+    var cp = $('#copy'); if (cp) cp.onclick = function () { try { navigator.clipboard.writeText(summary); cp.textContent = 'Copied'; setTimeout(function () { cp.textContent = 'Copy results'; }, 1600); } catch (e) { cp.textContent = summary; } };
+    out.onclick = function (e) {
+      var b = e.target.closest ? e.target.closest('[data-bpm]') : null; if (!b) return;
+      var v = $('#bpmval'); if (v) v.textContent = f1(parseFloat(b.getAttribute('data-bpm')));
+    };
+  }
+
+  // ------------------------------------------------------------------ events
+  drop.addEventListener('click', function () { input.click(); });
+  drop.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } });
+  input.addEventListener('change', function () { handleFile(input.files[0]); input.value = ''; });
+  ['dragenter', 'dragover'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add('over'); }); });
+  ['dragleave', 'drop'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove('over'); }); });
+  drop.addEventListener('drop', function (e) { var f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]; handleFile(f); });
+  document.addEventListener('dragover', function (e) { e.preventDefault(); });
+  document.addEventListener('drop', function (e) { if (!root.contains(e.target)) e.preventDefault(); });
+  if (demoBtn) demoBtn.addEventListener('click', function () { var d = VFCore.demoLoop(44100); run(d.channels, d.sampleRate, 'Demo loop (made in your browser)', d.channels[0].length / d.sampleRate); });
+
+  // ------------------------------------------------------------------ tap tempo
+  var tap = $('#tap');
+  if (tap) {
+    var taps = [], tbpm = $('#tapbpm'), tinfo = $('#tapinfo'), idle;
+    var hit = function () {
+      var now = performance.now(); if (taps.length && now - taps[taps.length - 1] > 2500) taps = [];
+      taps.push(now); taps = taps.slice(-10); clearTimeout(idle); idle = setTimeout(function () { taps = []; }, 2600);
+      tap.classList.add('hit'); setTimeout(function () { tap.classList.remove('hit'); }, 90);
+      if (taps.length < 2) { tbpm.textContent = '--'; tinfo.textContent = 'Keep tapping on the beat'; return; }
+      var iv = []; for (var i = 1; i < taps.length; i++) iv.push(taps[i] - taps[i - 1]); iv.sort(function (a, b) { return a - b; });
+      var med = iv[Math.floor(iv.length / 2)], bpm = 60000 / med;
+      tbpm.textContent = f1(bpm); tinfo.textContent = taps.length + ' taps. Half-time ' + f1(bpm / 2) + ' / double-time ' + f1(bpm * 2);
+    };
+    tap.addEventListener('pointerdown', function (e) { e.preventDefault(); hit(); });
+    tap.addEventListener('keydown', function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); hit(); } });
+    $('#tapreset').addEventListener('click', function () { taps = []; tbpm.textContent = '--'; tinfo.textContent = 'Tap the big button on the beat, at least four times'; });
+  }
+})();
+</script></body></html>

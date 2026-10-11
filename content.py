@@ -9,19 +9,26 @@ BASE = '/vocalforge'
 PRODUCT_ID = 'pdt_0NpUhQriM4NqB6qcQZp3d'
 BUY_URL = f'https://checkout.dodopayments.com/buy/{PRODUCT_ID}?quantity=1&redirect_url=https%3A%2F%2Ffuidzy.com%2Fvocalforge%2Fthanks'
 DATE = '2026-10-11'
+SUPPORT_EMAIL = 'fuidzy@outlook.com'
+MAC_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=VocalForge%20for%20Mac&body=Hi%2C%20I%27d%20like%20a%20Mac%20version%20of%20VocalForge.'
+HELP_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=VocalForge%20support'
+LAUNCH_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Notify%20me%20when%20VocalForge%20launches&body=Please%20email%20me%20when%20the%20VocalForge%20download%20opens.'
 
-NAV = [('Features', f'{BASE}#features'), ('Guides', f'{BASE}#guides'), ('Pricing', f'{BASE}#pricing'), ('FAQ', f'{BASE}#faq')]
+NAV = [('Free tools', f'{BASE}/tools'), ('Features', f'{BASE}#features'), ('Guides', f'{BASE}#guides'), ('Pricing', f'{BASE}#pricing'), ('Support', f'{BASE}#support')]
 
 # --------------------------------------------------------------------------------------------- shared FAQ
 HUB_FAQ = [
-    ('Is VocalForge a plugin or a standalone app?',
-     'A standalone Windows app. You drop in your recording and your beat, and it exports finished WAV or FLAC files you can use anywhere, '
-     'including inside your DAW. It is not a VST plugin yet, and it is not a DAW: think of it as the finishing step before you post.'),
+    ('Is VocalForge free?',
+     'You can download it and use everything free for 7 days. After the trial it is a one-time $29 for a lifetime license on up to two of your PCs. No subscription. '
+     'The tools on this site (BPM finder, key finder, chord finder, LUFS meter and vocal checker) are free forever and run in your browser.'),
+    ('Is VocalForge a plugin, a DAW or a standalone app?',
+     'It is a standalone vocal workstation: the whole vocal chain (clean, tune, fit to the beat, style, mix and master) in one window, with live sliders and a painted-sections timeline. '
+     'It exports 24-bit WAV or FLAC that you can drop into any DAW. It is not a DAW replacement and it is not a VST/AU plugin yet; it is the finishing station before you post.'),
     ('Does it need an internet connection?',
      'Your audio is processed on your own PC, so your unreleased songs are not uploaded anywhere. The app checks your license online and '
      'works offline for up to 14 days after a successful check. The optional AI vocal-separation add-on is a one-time download.'),
-    ('What does the free trial include?',
-     'Seven days with everything unlocked. After the trial you can still open and listen to projects, but processing and exporting need a license key.'),
+    ('What happens when the free trial ends?',
+     'You can still open projects and listen. Processing and exporting need a license key.'),
     ('How many computers can I use one license on?',
      'Two. If you get a new PC, deactivate the old one from the License screen to free the slot.'),
     ('Do I need a powerful computer or a GPU?',
@@ -33,20 +40,23 @@ HUB_FAQ = [
      'VocalForge can repair a lot (noise, clicks, mic pops, harsh S sounds, clipped peaks, level swings, room echo), but it is not magic. A vocal buried in '
      'reverb, heavily distorted, or recorded far from the mic will improve but not become a studio take. Re-recording closer to the mic is always the best fix.'),
     ('Is this AI?',
-     'Mostly classic signal processing that runs locally. An optional AI model is used for one job: separating vocals from a full song, for example to remove the '
-     'vocal from a beat you downloaded or to study a reference track.'),
+     'It uses automatic analysis, so it listens to your recording and picks the settings for you, on top of signal processing that runs locally. '
+     'An optional AI model (Demucs) handles one job: separating vocals from a full song, for example to study a reference track or pull a vocal out of a beat you downloaded.'),
     ('Can it make me sound like a specific artist?',
      'You can drop in any song by an artist whose sound you like. VocalForge measures how that record was tuned, EQ-ed, spaced and mixed and applies a similar '
      'treatment to your own voice. It changes the processing, not your voice, so you will still sound like you. VocalForge is not affiliated with any artist.'),
-    ('Is there a Mac version?', 'Not yet. Windows 10 and 11 (64-bit) only for now.'),
+    ('Is there a Mac version?',
+     'Not yet: Windows 10 and 11 (64-bit) only for now. Want one? Email fuidzy@outlook.com with the subject "VocalForge for Mac". Requests decide what we build next.'),
+    ('How do I get help?',
+     'Email fuidzy@outlook.com. Include what you were doing and, if you can, a screenshot. We read every message.'),
 ]
 
 # --------------------------------------------------------------------------------------------- guides
 GUIDES = {}
 
 GUIDES['fix-vocals-recorded-on-phone'] = dict(
-    title='How to Make Phone Vocals Sound Professional (2026 Guide)',
-    desc='Recorded vocals on your phone? Here is exactly how to clean, tune and mix them so they sit on a beat, step by step, plus how to automate it.',
+    title='Make Phone Vocals Sound Professional: Manual + AI Fixes',
+    desc='Recorded vocals on your phone? Clean, tune and mix them step by step so they sit on a beat, plus how AI vocal cleanup can automate the boring parts.',
     h1='How to Make Vocals Recorded on a Phone Sound Professional',
     kw='phone vocals sound professional',
     lead=('A phone can capture a usable vocal. What makes it sound amateur is usually the room, the distance to the mic, and what happens after: '
@@ -96,12 +106,13 @@ GUIDES['fix-vocals-recorded-on-phone'] = dict(
           'Use any app that lets you record uncompressed (WAV) and turn off noise suppression and auto-gain. Voice memos are fine on iPhone if you set the quality to lossless.'),
          ('What is the biggest mistake with phone vocals?',
           'Recording in a hard-walled room or too far from the phone. Echo and distance cannot be fully fixed afterwards.')],
+    ai=('Can AI fix phone vocals automatically?', '<p>Partly, and that is useful. &ldquo;AI vocal cleanup&rdquo; tools listen to your recording and choose the settings for you: how much noise to remove, where the harsh S sounds are, which key to tune to. That removes the guesswork, which is where most beginners go wrong. The repair itself is mostly classic signal processing, with AI models doing the heavy lifting in a few places, such as splitting a voice from music.</p><p>Whatever you use, the order in this guide still applies, and a closer, drier recording beats any AI. If you want the automatic route, VocalForge&rsquo;s analysis picks the settings and its optional AI add-on handles vocal separation.</p>'),
     related=['remove-echo-from-vocal-recording', 'mix-vocals-on-a-beat', 'autotune-for-rap-vocals'],
 )
 
 GUIDES['remove-echo-from-vocal-recording'] = dict(
-    title='How to Remove Echo & Room Reverb From a Vocal Recording',
-    desc='Roomy vocal? Learn what actually reduces echo and reverb in a recording, how to avoid the watery artifacts, and when to just re-record.',
+    title='Remove Echo From Vocals: AI De-Reverb & Manual Tips',
+    desc='Roomy vocal? Learn what reduces echo and reverb, how AI de-reverb compares with manual fixes, how to avoid watery artifacts, and when to re-record.',
     h1='How to Remove Echo and Room Reverb From a Vocal Recording',
     kw='remove echo from vocal recording',
     lead=('Echo and noise are two different problems. Noise sits underneath the voice (hiss, fans, traffic). Echo is the voice itself bouncing back from the walls. '
@@ -139,12 +150,13 @@ GUIDES['remove-echo-from-vocal-recording'] = dict(
           'De-reverb removes some of the body along with the tail. Restore it with a gentle EQ boost in the low-mids and add your own short reverb after.'),
          ('Is noise reduction the same as removing echo?',
           'No. Noise reduction removes steady background sounds. Echo follows your voice, so it needs de-reverb.')],
+    ai=('Does AI echo removal work better?', '<p>AI and machine-learning de-reverb models can sound cleaner than old gate-and-EQ tricks, especially on speech, but they can also introduce their own artifacts: a thin, phasey or &ldquo;underwater&rdquo; tone when pushed hard. The rule is the same as for manual tools: reduce the room, do not try to erase it, then put a pleasant reverb back.</p><p>Free online &ldquo;AI echo remover&rdquo; sites are fine for experiments, but they mean uploading your audio. If the song is unreleased, a tool that runs on your own PC keeps it private.</p>'),
     related=['fix-vocals-recorded-on-phone', 'mix-vocals-on-a-beat', 'vocal-cleanup-software-compared'],
 )
 
 GUIDES['autotune-for-rap-vocals'] = dict(
-    title='Autotune for Rap Vocals: Settings, Free Tools & Tips',
-    desc='How to use autotune on rap and melodic vocals: key, retune speed, natural versus hard-tune settings, free online options and mistakes to avoid.',
+    title='Autotune for Rap Vocals: Settings & AI Autotune Tips',
+    desc='Use autotune on rap and melodic vocals: key, retune speed, natural versus hard-tune, what "AI autotune" really means, free options and mistakes.',
     h1='Autotune for Rap and Melodic Vocals: Settings That Work',
     kw='autotune for rap vocals',
     lead=('The &ldquo;autotune sound&rdquo; is not one setting. It is two choices: which notes the voice is allowed to hit (the key and scale), and how fast it is pulled onto them (retune speed). '
@@ -184,12 +196,13 @@ GUIDES['autotune-for-rap-vocals'] = dict(
           'Yes for the best result. If you do not know it, detect it from the instrumental, or use a chromatic setting as a fallback.'),
          ('Is there a free autotune that works for rap?',
           'Several online tools and free plugins can give a basic melodic effect. Check limits and privacy; they are fine for experiments but may not hold up for a release.')],
+    ai=('Autotune versus &ldquo;AI autotune&rdquo;: what is the difference?', '<p>Classic autotune is pitch correction: detect the note you sang and move it to the nearest note of a scale. It is not generative AI. When people search for &ldquo;AI autotune&rdquo; they usually mean one of two things: pitch correction that picks the key and settings for you automatically, or voice-conversion tools that replace your voice with another one.</p><p>For rap and melodic vocals, automatic key detection plus fast, key-locked pitch correction is what gives the modern sound. Use the free <a href="/vocalforge/tools/song-key-finder">song key finder</a> to get the key from your beat, then set it in your tuner.</p>'),
     related=['future-vocal-effect-settings', 'mix-vocals-on-a-beat', 'fix-vocals-recorded-on-phone'],
 )
 
 GUIDES['mix-vocals-on-a-beat'] = dict(
-    title='How to Mix Vocals on a Beat (Make Them Sit in the Mix)',
-    desc='A step-by-step way to mix a vocal on a stereo beat: level, EQ, compression, reverb and delay, ducking, and how to check it before you release.',
+    title='How to Mix Vocals on a Beat (+ AI Auto-Mix Option)',
+    desc='Mix a vocal on a stereo beat step by step: level, EQ, compression, reverb, delay and ducking, plus where AI auto-mixing helps and where it does not.',
     h1='How to Mix Vocals on a Beat So They Sit in the Mix',
     kw='mix vocals on a beat',
     lead=('Most vocals get buried because they compete with the beat for the same frequencies, not because the fader is too low. '
@@ -231,12 +244,13 @@ GUIDES['mix-vocals-on-a-beat'] = dict(
           'Usually too much reverb or too bright without matching compression and EQ. Gentle compression, a touch of shared reverb, and carving space in the beat help them blend.'),
          ('What loudness should I master to?',
           'Streaming services normalise around &minus;14 LUFS, but many hip-hop and pop releases are mastered louder. Keep true peaks below &minus;1&nbsp;dBTP either way.')],
+    ai=('Where AI auto-mixing helps (and where it does not)', '<p>Automatic mixing tools are good at starting points: a sensible vocal level against the beat, a first EQ and a first compression setting. They are less good at taste, such as how bright, how wet or how forward the vocal should sit for your song. Treat the AI result as a first draft and finish by ear, in mono and at low volume.</p><p>Use the free <a href="/vocalforge/tools/lufs-meter">LUFS meter</a> to check your final loudness and the <a href="/vocalforge/tools/vocal-checker">vocal checker</a> to catch clipping and noise before you export.</p>'),
     related=['fix-vocals-recorded-on-phone', 'future-vocal-effect-settings', 'vocal-cleanup-software-compared'],
 )
 
 GUIDES['future-vocal-effect-settings'] = dict(
-    title='Future Vocal Effect: Autotune, Reverb & Delay Settings',
-    desc='How to get a Future-style melodic trap vocal: key-locked autotune, light saturation, big dark reverb and tempo delay, with starting settings.',
+    title='Future Vocal Effect Settings + AI Style Matching',
+    desc='Get a Future-style melodic trap vocal: key-locked autotune, light saturation, dark reverb and tempo delay, plus AI style matching from a reference song.',
     h1='How to Get a Future-Style Vocal: Autotune, Reverb and Delay Settings',
     kw='future vocal effect',
     lead=('The melodic-trap vocal sound is a short chain: heavy pitch correction on a dry vocal, a touch of saturation, then a big dark reverb and a tempo delay on sends. '
@@ -271,12 +285,13 @@ GUIDES['future-vocal-effect-settings'] = dict(
           'No. The effect comes from fast, key-locked pitch correction, which several tools can do. The key and the clean vocal matter more than the brand.'),
          ('Why does my version sound thin?',
           'Usually a single vocal with no doubles, no saturation and too little reverb. Add a few detuned doubles, light saturation and a long dark reverb on a send.')],
+    ai=('Presets versus AI style matching', '<p>Preset packs give you someone else&rsquo;s settings for someone else&rsquo;s voice. Style matching works the other way round: you point a tool at a finished record, it measures how that vocal was tuned, equalised, spaced and compressed, and applies a similar treatment to your recording. That is the idea behind VocalForge&rsquo;s &ldquo;sound like an artist&rdquo; feature. It changes the processing, not your voice, and it is not affiliated with any artist.</p>'),
     related=['autotune-for-rap-vocals', 'mix-vocals-on-a-beat', 'fix-vocals-recorded-on-phone'],
 )
 
 GUIDES['vocal-cleanup-software-compared'] = dict(
-    title='Best Vocal Cleanup & Autotune Software Compared (2026)',
-    desc='Compare vocal cleanup, pitch and finishing tools: prices, what each does, and who it is for, from plugins to one-click apps. Updated October 2026.',
+    title='Best AI Vocal Cleanup & Autotune Software (2026)',
+    desc='Compare AI vocal cleanup, pitch and finishing tools: prices, what each does and who it is for, from plugins to one-click apps. Updated October 2026.',
     h1='Vocal Cleanup, Tuning and Finishing Software Compared',
     kw='vocal cleanup software',
     lead=('The right tool depends on the job. Some fix one problem very well (pitch, noise), some are full mixing plugins, and some finish a whole track. '
@@ -315,6 +330,7 @@ GUIDES['vocal-cleanup-software-compared'] = dict(
           'If you work inside a DAW and want hands-on control, plugins. If you want a finished result quickly, a standalone finishing app is faster.'),
          ('Is VocalForge better than Auto-Tune?',
           'They do different jobs. Auto-Tune is a specialist pitch tool; VocalForge handles cleanup, tuning, levelling, style-matching and mastering together, with less manual control.')],
+    ai=('Where AI fits in this list', '<p>&ldquo;AI&rdquo; appears on almost every product page now, but it covers very different things: automatic setting selection, learned noise and reverb removal, vocal separation, and generative voice tools. When you compare, ask what the AI actually does, whether it runs on your PC or in the cloud, and what happens to your audio.</p>'),
     related=['fix-vocals-recorded-on-phone', 'autotune-for-rap-vocals', 'remove-echo-from-vocal-recording'],
 )
 
@@ -350,3 +366,10 @@ POLICIES = {
 <p>VocalForge includes a 7-day free trial so you can try it on your own recordings before you buy. If you buy and it does not work for you, contact us within 30 days of purchase and we will refund you.</p>
 <p>Refunds are issued to the original payment method through our payment provider.</p>'''),
 }
+
+
+# --------------------------------------------------------------------------------------------- tools + extra guide
+import content_tools as T  # noqa: E402
+
+GUIDES['ai-vocal-cleanup-explained'] = T.AI_GUIDE
+GUIDE_ORDER.insert(1, 'ai-vocal-cleanup-explained')
