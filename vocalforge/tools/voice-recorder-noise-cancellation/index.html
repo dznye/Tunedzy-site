@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voice Recorder With Noise Cancellation (Free, Online)</title>
+<meta name="description" content="Free online voice recorder with noise cancellation. Record voice-overs and content with live noise removal, or clean an existing recording. Private, in your browser.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://fuidzy.com/vocalforge/tools/voice-recorder-noise-cancellation">
+<link rel="icon" href="/vocalforge/favicon.png">
+<meta name="theme-color" content="#080713">
+<meta property="og:type" content="website"><meta property="og:site_name" content="VocalForge by Fuidzy"><meta property="og:title" content="Voice Recorder With Noise Cancellation (Free, Online)">
+<meta property="og:description" content="Free online voice recorder with noise cancellation. Record voice-overs and content with live noise removal, or clean an existing recording. Private, in your browser."><meta property="og:url" content="https://fuidzy.com/vocalforge/tools/voice-recorder-noise-cancellation"><meta property="og:image" content="https://fuidzy.com/vocalforge/og.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Voice Recorder With Noise Cancellation (Free, Online)"><meta name="twitter:description" content="Free online voice recorder with noise cancellation. Record voice-overs and content with live noise removal, or clean an existing recording. Private, in your browser."><meta name="twitter:image" content="https://fuidzy.com/vocalforge/og.png">
+<style>:root{--glass:22px;--bg:#080713;--bg2:#0e0c1d;--card:rgba(255,255,255,.05);--card2:rgba(255,255,255,.08);--line:rgba(255,255,255,.11);--text:#f4f2fc;--mute:#a9a5c4;--faint:#7c7899;
+--amber:#ffb347;--orange:#ff7a3d;--pink:#ff4fa0;--violet:#8b5cf6;--teal:#2ee6c5;--blue:#4ea8ff;--grad:linear-gradient(100deg,#ffb347,#ff4fa0 55%,#8b5cf6)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);overflow-x:hidden;
+background-image:radial-gradient(900px 600px at 8% -4%,rgba(139,92,246,.30),transparent 60%),radial-gradient(800px 520px at 100% 6%,rgba(255,79,160,.22),transparent 60%),radial-gradient(900px 700px at 50% 108%,rgba(46,230,197,.14),transparent 60%);background-attachment:fixed}
+a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
+img{max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px;position:relative}.narrow{max-width:780px;margin:0 auto;padding:0 22px;position:relative}
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(8,7,19,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:20px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text);font-size:19px;letter-spacing:-.01em}.logo:hover{text-decoration:none}.logo img{width:30px;height:30px;border-radius:9px}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav.main{display:flex;gap:22px;margin-left:auto;font-size:15px}nav.main a{color:var(--mute)}nav.main a:hover{color:var(--text);text-decoration:none}
+.hbtn{font-size:14px;padding:8px 16px;border-radius:99px;background:var(--grad);color:#1a0b16;font-weight:700}.hbtn:hover{text-decoration:none;filter:brightness(1.08)}
+@media(max-width:820px){nav.main a:nth-child(n+3){display:none}nav.main{gap:16px}}
+@media(max-width:520px){nav.main{display:none}.hbtn{margin-left:auto}}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:14px;padding:13px 24px;font-weight:700;font-size:16px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:pointer;font-family:inherit;line-height:1.2;transition:transform .15s,box-shadow .15s,filter .15s}
+.btn:hover{text-decoration:none;transform:translateY(-1px);border-color:rgba(255,255,255,.3)}
+.btn.primary{background:linear-gradient(100deg,#ffb347,#ff5f8d 60%,#c24bd6);color:#1b0a14;border-color:transparent;box-shadow:0 12px 36px rgba(255,79,160,.34)}
+.btn.primary:hover{filter:brightness(1.07);box-shadow:0 16px 44px rgba(255,79,160,.46)}
+.btn.ghost{background:transparent}.btn.small{padding:8px 14px;font-size:14px;border-radius:10px}.btn.off{opacity:.6;cursor:default;box-shadow:none}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.small{font-size:14px;color:var(--mute)}
+/* type */
+h1,h2,h3{letter-spacing:-.025em}
+section{padding:70px 0;position:relative}
+h2{font-size:clamp(28px,4vw,42px);margin:0 0 14px;line-height:1.12}h3{margin:0 0 6px;font-size:19px;line-height:1.25}
+h2.c,.sub2,.eyebrow.c{text-align:center}.sub2{color:var(--mute);margin:0 auto 34px;max-width:640px;font-size:18px}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:800;margin:0 0 12px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+em.grad{font-style:normal}
+/* decorative shapes */
+.shapes{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.shapes>*{position:absolute;display:block}
+.shapes:after{content:"";position:absolute;inset:0;z-index:1;-webkit-backdrop-filter:blur(var(--glass)) saturate(1.25);backdrop-filter:blur(var(--glass)) saturate(1.25);background:rgba(255,255,255,.025)}
+.blob{border-radius:50%;filter:blur(70px);opacity:.5}
+.b1{width:520px;height:520px;background:radial-gradient(circle,#ff4fa0,transparent 68%);right:-140px;top:-120px}
+.b2{width:460px;height:460px;background:radial-gradient(circle,#8b5cf6,transparent 68%);left:-160px;top:120px;opacity:.55}
+.b3{width:380px;height:380px;background:radial-gradient(circle,#2ee6c5,transparent 68%);right:28%;bottom:-160px;opacity:.28}
+.ring{border-radius:50%;border:2px solid rgba(255,255,255,.14)}
+.r1{width:340px;height:340px;right:-90px;top:70px;border-color:rgba(255,179,71,.35)}
+.r2{width:120px;height:120px;left:46%;top:30px;border:14px solid rgba(139,92,246,.28)}
+.r3{width:220px;height:220px;left:-70px;bottom:20px;border-color:rgba(46,230,197,.28)}
+.sq{border-radius:26px;transform:rotate(18deg)}
+.s1{width:110px;height:110px;left:6%;top:56%;background:linear-gradient(135deg,rgba(255,79,160,.5),rgba(139,92,246,.15));border:1px solid rgba(255,255,255,.18)}
+.s2{width:70px;height:70px;right:7%;bottom:12%;background:linear-gradient(135deg,rgba(255,179,71,.6),rgba(255,79,160,.15));transform:rotate(-14deg)}
+.s3{width:54px;height:54px;left:44%;bottom:6%;border:2px solid rgba(78,168,255,.5);border-radius:14px;transform:rotate(30deg)}
+.tri{width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:52px solid rgba(46,230,197,.35);transform:rotate(14deg)}
+.t1{left:38%;top:7%}
+.dots{width:210px;height:140px;opacity:.22}.d1{right:6%;top:46%}.d2{left:3%;top:8%}
+.squig{width:210px;height:40px;fill:none;stroke:var(--teal);stroke-width:5;stroke-linecap:round;opacity:.3}.q1{left:2%;bottom:14%}.q2{right:5%;top:12%;stroke:var(--amber)}
+.pbars{display:flex;gap:7px;align-items:flex-end;height:90px;opacity:.55}.pbars i{display:block;width:9px;border-radius:5px;background:linear-gradient(180deg,var(--pink),var(--violet))}.p1{left:50%;bottom:4%}
+.cross{width:28px;height:28px;opacity:.7}.cross:before,.cross:after{content:"";position:absolute;background:var(--amber);border-radius:3px}.cross:before{left:12px;top:0;width:4px;height:28px}.cross:after{top:12px;left:0;width:28px;height:4px}
+.x1{left:47%;top:80%}.x2{right:16%;top:6%;transform:rotate(20deg)}
+@media(prefers-reduced-motion:no-preference){.fl1{animation:fl 9s ease-in-out infinite}.fl2{animation:fl 12s ease-in-out -3s infinite}.fl3{animation:fl 7s ease-in-out -2s infinite}.spin{animation:sp 40s linear infinite}
+@keyframes fl{0%,100%{translate:0 0}50%{translate:0 -18px}}@keyframes sp{to{rotate:360deg}}
+.pbars i{animation:eq 1.8s ease-in-out infinite}.pbars i:nth-child(2n){animation-delay:-.6s}.pbars i:nth-child(3n){animation-delay:-1.1s}@keyframes eq{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}}
+.pbars i{transform-origin:bottom}
+section.alt{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* hero */
+.hero{padding:56px 0 70px;position:relative}.hero .wrap{z-index:1}
+.herogrid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}@media(max-width:940px){.herogrid{grid-template-columns:1fr}}
+.pill{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 14px 6px 10px;font-size:13.5px;color:var(--text);margin-bottom:20px}
+.pill i{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(46,230,197,.2)}
+.hero h1{font-size:clamp(38px,5.6vw,66px);line-height:1.02;letter-spacing:-.04em;margin:0 0 20px;font-weight:850}
+.hero p.sub{font-size:20px;color:#cfcce6;max-width:560px;margin:0 0 28px}
+.trust{display:flex;gap:10px 18px;flex-wrap:wrap;margin-top:22px;color:var(--mute);font-size:14.5px}.trust span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);margin-right:8px;vertical-align:middle}
+/* rack */
+.rackwrap{position:relative}
+.rack{position:relative;border-radius:24px;background:linear-gradient(180deg,rgba(26,22,52,.92),rgba(14,12,30,.94));border:1px solid rgba(255,255,255,.16);box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 0 8px rgba(255,255,255,.03),0 0 80px rgba(139,92,246,.25);overflow:hidden}
+.rackbar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.03)}
+.rackbar .dts{display:flex;gap:6px}.rackbar .dts i{width:10px;height:10px;border-radius:50%;background:#ff6b6b}.rackbar .dts i:nth-child(2){background:#ffb347}.rackbar .dts i:nth-child(3){background:#2ee6c5}
+.rackbar b{font-size:14px;letter-spacing:.04em}.rackbar em{font-style:normal;font-size:12px;color:var(--faint);margin-left:auto;letter-spacing:.14em;text-transform:uppercase}
+.rwave{padding:14px 16px 4px}.rwave svg{display:block;width:100%;height:auto}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:10px 14px 16px}
+.mod{border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);padding:12px 10px 10px;text-align:center;position:relative}
+.mod:before{content:"";position:absolute;left:12px;right:12px;top:0;height:2px;background:var(--c);border-radius:2px;box-shadow:0 0 12px var(--c)}
+.mn{display:block;font-size:11px;letter-spacing:.2em;color:var(--mute);font-weight:700;margin-bottom:8px}
+.knob{position:relative;display:block;width:46px;height:46px;border-radius:50%;margin:0 auto 9px;background:radial-gradient(circle at 35% 30%,#3a3560,#17142e);border:2px solid rgba(255,255,255,.14);box-shadow:inset 0 2px 6px rgba(255,255,255,.1),0 6px 14px rgba(0,0,0,.4)}
+.knob:after{content:"";position:absolute;left:50%;top:5px;width:3px;height:14px;margin-left:-1.5px;border-radius:2px;background:var(--c);box-shadow:0 0 8px var(--c);transform-origin:50% 18px;transform:rotate(calc(-135deg + var(--v)*270deg))}
+.leds{display:flex;gap:3px;justify-content:center}.leds i{width:7px;height:12px;border-radius:2px;background:rgba(255,255,255,.1)}.leds i.on{background:var(--c);box-shadow:0 0 8px var(--c)}
+.fchip{position:absolute;z-index:3;border-radius:14px;padding:9px 14px;font-size:13.5px;font-weight:650;background:rgba(14,12,30,.86);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);box-shadow:0 14px 40px rgba(0,0,0,.5);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.fchip i{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(46,230,197,.22)}
+.fc1{left:-26px;top:22%}.fc2{right:-16px;top:8%}.fc3{right:-22px;bottom:18%}.fc4{left:-14px;bottom:-14px}
+@media(max-width:600px){.fc1,.fc4{left:-6px}.fc2,.fc3{right:-4px}.fchip{font-size:12px;padding:7px 11px}}
+.rcap{font-size:12.5px;color:var(--faint);text-align:center;margin-top:16px}
+/* tool widget */
+.tool{position:relative;border-radius:28px;padding:2px;background:linear-gradient(135deg,rgba(255,179,71,.7),rgba(255,79,160,.6) 45%,rgba(139,92,246,.7));box-shadow:0 30px 90px rgba(139,92,246,.28)}
+.tool .inner{border-radius:26px;background:linear-gradient(180deg,#14112a,#0d0b1d);padding:26px}
+.drop{display:grid;place-items:center;text-align:center;gap:10px;border:2px dashed rgba(255,255,255,.24);border-radius:20px;padding:42px 20px;cursor:pointer;background:radial-gradient(500px 200px at 50% 0,rgba(255,79,160,.12),transparent 70%);transition:border-color .2s,background .2s,transform .2s}
+.drop:hover,.drop:focus-visible,.drop.over{border-color:var(--amber);outline:none;transform:scale(1.01);background:radial-gradient(500px 220px at 50% 0,rgba(255,179,71,.2),transparent 70%)}
+.drop .ic{width:66px;height:66px;border-radius:20px;display:grid;place-items:center;background:var(--grad);color:#1a0b16;box-shadow:0 12px 34px rgba(255,79,160,.4)}
+.drop .ic svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.drop b{font-size:22px;letter-spacing:-.02em}.drop span{color:var(--mute);font-size:15px}
+@media(prefers-reduced-motion:no-preference){.drop .ic{animation:pulse 2.8s ease-in-out infinite}@keyframes pulse{0%,100%{box-shadow:0 12px 34px rgba(255,79,160,.4),0 0 0 0 rgba(255,79,160,.35)}50%{box-shadow:0 12px 34px rgba(255,79,160,.4),0 0 0 16px rgba(255,79,160,0)}}}
+.toolrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:14px;color:var(--mute);font-size:14px}
+.priv{display:inline-flex;align-items:center;gap:8px}.priv svg{width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:2}
+.tool.busy .drop{opacity:.45;pointer-events:none}
+.prog{margin-top:16px;border-radius:14px;background:var(--card);border:1px solid var(--line);padding:14px 16px}.prog[hidden]{display:none}
+.prog .t{font-size:15px;margin-bottom:9px;color:var(--text)}.prog .tr{height:8px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden}.prog .tr i{display:block;height:100%;width:0;background:var(--grad);border-radius:5px;transition:width .35s}
+#results{margin-top:20px}#results[hidden]{display:none}
+.resbar{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:14px}.resbar b{display:block;word-break:break-all}.resbar span{font-size:13.5px;color:var(--mute)}
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}@media(max-width:760px){.tgrid{grid-template-columns:1fr}}
+.tcard{border-radius:20px;padding:20px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.tcard.primary{grid-column:1/-1;background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.04));border-color:rgba(255,255,255,.22)}
+.tcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ac,var(--amber))}
+.tcard.key{--ac:var(--violet)}.tcard.chords{--ac:var(--pink)}.tcard.loud{--ac:var(--teal)}.tcard.check{--ac:var(--blue)}.tcard.bad{--ac:#ff6b6b}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:800;margin-bottom:6px}
+.big{font-size:clamp(42px,7vw,68px);font-weight:850;letter-spacing:-.04em;line-height:1.05;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;word-break:break-word}
+.big small{font-size:.36em;letter-spacing:0;font-weight:700;color:var(--mute);-webkit-text-fill-color:var(--mute)}.big.sm2{font-size:clamp(28px,4.4vw,40px)}
+.tcard p{margin:8px 0 0}.mute{color:var(--mute)}.sm{font-size:13.5px}
+.meter{height:7px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden;margin:12px 0 4px;max-width:340px}.meter i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--amber),var(--pink))}.meter.violet i{background:linear-gradient(90deg,var(--violet),var(--pink))}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.chip{font:inherit;font-size:13.5px;border-radius:99px;padding:5px 13px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:default}button.chip{cursor:pointer}button.chip:hover{border-color:var(--amber);color:var(--amber)}
+.chip.solid{background:var(--violet);border-color:transparent;color:#fff;font-weight:700}.chip.ghost{background:transparent}
+.chordline{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chord{display:flex;flex-direction:column;align-items:center;min-width:62px;padding:8px 10px;border-radius:12px;background:rgba(255,79,160,.1);border:1px solid rgba(255,79,160,.35)}.chord b{font-size:18px}.chord i{font-style:normal;font-size:11.5px;color:var(--mute);min-height:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.stats div{border-radius:12px;background:rgba(255,255,255,.05);padding:10px 12px}.stats b{display:block;font-size:18px}.stats span{font-size:12px;color:var(--mute)}
+table.mini{width:100%;font-size:14px;border-collapse:collapse;display:table}table.mini th,table.mini td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left}table.mini th{color:var(--mute);font-weight:600}
+ul.rows{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}ul.rows li{display:flex;gap:12px;align-items:flex-start}ul.rows i{flex:none;width:12px;height:12px;border-radius:50%;margin-top:6px;background:var(--teal);box-shadow:0 0 0 4px rgba(46,230,197,.2)}
+ul.rows li.warn i{background:var(--amber);box-shadow:0 0 0 4px rgba(255,179,71,.2)}ul.rows li.bad i{background:#ff6b6b;box-shadow:0 0 0 4px rgba(255,107,107,.2)}ul.rows b{display:block}ul.rows span{color:var(--mute);font-size:15px}
+.tcard.check.ok .big{background:linear-gradient(100deg,#2ee6c5,#4ea8ff);-webkit-background-clip:text;background-clip:text}
+.ctabox{margin-top:18px;border-radius:20px;padding:22px;background:linear-gradient(135deg,rgba(255,179,71,.14),rgba(255,79,160,.14) 55%,rgba(139,92,246,.16));border:1px solid rgba(255,255,255,.2)}.ctabox h3{font-size:21px}.ctabox p{margin:0 0 14px;color:#dcd9ef}
+/* tap tempo */
+.tapbox{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-top:20px;padding:20px;border-radius:20px;background:var(--card);border:1px solid var(--line)}@media(max-width:560px){.tapbox{grid-template-columns:1fr;text-align:center}}
+#tap{width:140px;height:140px;border-radius:50%;border:0;cursor:pointer;font-weight:800;font-size:24px;letter-spacing:.08em;font-family:inherit;color:#1a0b16;background:radial-gradient(circle at 35% 30%,#ffd37a,#ff5f8d 70%);box-shadow:0 14px 40px rgba(255,79,160,.45),inset 0 -6px 14px rgba(0,0,0,.15);transition:transform .08s;touch-action:manipulation;margin:0 auto;user-select:none}
+#tap.hit,#tap:active{transform:scale(.93)}
+.tapout b{font-size:46px;letter-spacing:-.03em;display:block;line-height:1}.tapout span{color:var(--mute);font-size:14.5px}
+/* cards, grids */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.3);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.card p{margin:0;color:var(--mute);font-size:16px}
+.card:before{content:"";position:absolute;right:-50px;top:-50px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,var(--c,var(--pink)),transparent 70%);opacity:.22}
+.ico{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:color-mix(in srgb,var(--c,var(--amber)) 22%,transparent);border:1px solid color-mix(in srgb,var(--c,var(--amber)) 55%,transparent);margin-bottom:16px;color:var(--c,var(--amber));position:relative}
+.ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.cA{--c:var(--amber)}.cP{--c:var(--pink)}.cV{--c:var(--violet)}.cT{--c:var(--teal)}.cB{--c:var(--blue)}.cO{--c:var(--orange)}
+.tcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.tcards a.card{display:block;color:var(--text)}.tcards a.card:hover{text-decoration:none}.tcards a.card h3{margin-bottom:4px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;counter-reset:s}
+.steps .card:after{counter-increment:s;content:counter(s);position:absolute;right:18px;top:6px;font-size:76px;font-weight:900;color:rgba(255,255,255,.07);letter-spacing:-.05em}
+/* report mock */
+.spot{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}@media(max-width:900px){.spot{grid-template-columns:1fr}}
+.report{border-radius:22px;background:linear-gradient(180deg,#17132f,#0d0b1d);border:1px solid rgba(255,255,255,.16);padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.report .rh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.report .rh b{font-size:17px}.report .rh span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:800}
+.report .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}.report .row i{width:22px;height:22px;border-radius:50%;background:rgba(46,230,197,.18);display:grid;place-items:center;flex:none}.report .row i:after{content:"";width:5px;height:10px;border:solid var(--teal);border-width:0 2.4px 2.4px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.report .row span{color:var(--mute);margin-left:auto;font-variant-numeric:tabular-nums;font-size:15px}.report .rn{font-size:12px;color:var(--faint);margin-top:12px}
+.photo{position:relative;border-radius:26px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 40px 90px rgba(0,0,0,.55)}.photo img{display:block;width:100%;height:auto}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,7,19,.6));pointer-events:none}
+.spot ul{padding-left:20px;color:#d8d5ee}.spot li{margin:9px 0}.note{font-size:14px;color:var(--mute)}
+.band{position:relative;border-radius:30px;overflow:hidden;min-height:340px;display:grid;align-items:center;border:1px solid var(--line)}
+.band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(.6)}
+.band:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(8,7,19,.94) 8%,rgba(60,20,90,.55) 60%,rgba(255,79,160,.2))}
+.band .in{position:relative;z-index:2;padding:48px;max-width:640px}.band p{color:#dedbf0;margin:0 0 12px}
+.pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.pcard{border-radius:24px;overflow:hidden;background:var(--card);border:1px solid var(--line);transition:transform .2s,border-color .2s}
+.pcard:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.3)}.pcard img{display:block;width:100%;height:210px;object-fit:cover}.pcard div{padding:18px 22px 22px}.pcard p{margin:0;color:var(--mute);font-size:16px}
+/* pricing */
+.pricegrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:880px;margin:0 auto}@media(max-width:760px){.pricegrid{grid-template-columns:1fr}}
+.plan{border-radius:26px;padding:30px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.plan.hot{background:linear-gradient(160deg,rgba(255,179,71,.16),rgba(255,79,160,.16) 55%,rgba(139,92,246,.2));border-color:rgba(255,255,255,.3);box-shadow:0 30px 80px rgba(255,79,160,.2)}
+.plan .tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--teal);margin-bottom:8px}.plan .pr{font-size:60px;font-weight:850;letter-spacing:-.04em;line-height:1}.plan .pr small{font-size:16px;color:var(--mute);letter-spacing:0;font-weight:600}
+.plan ul{list-style:none;padding:0;margin:18px 0 22px;color:#d8d5ee}.plan li{padding:6px 0 6px 28px;position:relative}.plan li:before{content:"";position:absolute;left:4px;top:13px;width:11px;height:6px;border:solid var(--teal);border-width:0 0 2.5px 2.5px;transform:rotate(-45deg)}
+/* support */
+.supportband{border-radius:30px;padding:44px;background:linear-gradient(135deg,rgba(78,168,255,.16),rgba(139,92,246,.2));border:1px solid rgba(255,255,255,.2);display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;position:relative;overflow:hidden}@media(max-width:820px){.supportband{grid-template-columns:1fr;padding:30px}}
+.supportband h2{margin-bottom:10px}.supportband p{color:#dcd9ef;margin:0 0 12px}.mailbig{font-size:clamp(18px,3vw,26px);font-weight:800;word-break:break-all}
+/* articles */
+.crumbs{font-size:14px;color:var(--mute);padding-top:22px}.crumbs a{color:var(--mute)}
+article h1{font-size:clamp(32px,5vw,50px);line-height:1.08;letter-spacing:-.035em;margin:30px 0 14px}article h2{margin-top:44px;font-size:clamp(24px,3.4vw,32px)}
+article p,article li{color:#dcd9ee}article ul,article ol{padding-left:22px}article li{margin:7px 0}
+.lead{font-size:20px;color:#e6e3f7}
+.tldr{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:16px;padding:8px 22px 10px;margin:24px 0}.tldr b{display:block;margin:10px 0 2px}
+.vf{background:linear-gradient(135deg,rgba(255,179,71,.14),rgba(255,79,160,.12) 60%,rgba(139,92,246,.16));border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:26px;margin:44px 0}.vf h2{margin-top:0;font-size:24px}
+.aibox{background:var(--card);border:1px solid rgba(139,92,246,.5);border-radius:18px;padding:6px 22px 8px;margin:34px 0}.aibox h2{font-size:23px;margin:16px 0 8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 20px;margin:10px 0}summary{cursor:pointer;font-weight:650}details p{margin:10px 0 2px;color:var(--mute)}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;display:block;overflow-x:auto}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mute);font-weight:600;white-space:nowrap}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--text);transition:transform .2s,border-color .2s}.related a:hover{border-color:rgba(255,255,255,.35);text-decoration:none;transform:translateY(-3px)}
+.related a.th{padding:0;overflow:hidden}.related a.th img{display:block;width:100%;height:130px;object-fit:cover}.related a.th span{display:block;padding:14px 18px}
+.banner{margin:22px 0 8px;border-radius:24px;overflow:hidden;border:1px solid var(--line)}.banner img{display:block;width:100%;height:auto}
+.guides .related{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.toolhead{padding:6px 0 26px}
+.toolhead h1{font-size:clamp(34px,5.4vw,58px);line-height:1.04;letter-spacing:-.04em;margin:26px 0 14px;font-weight:850}.toolhead .lead{max-width:760px}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:26px 0 8px;counter-reset:h}.howto div{border-radius:16px;padding:14px 16px 14px 56px;background:var(--card);border:1px solid var(--line);position:relative;font-size:15px;color:#d8d5ee}
+.howto div:before{counter-increment:h;content:counter(h);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--grad);color:#1a0b16}
+footer{border-top:1px solid var(--line);margin-top:30px;padding:46px 0 34px;color:var(--mute);font-size:14.5px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.25))}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:30px}footer a{color:var(--mute)}footer a:hover{color:var(--text)}footer h4{margin:0 0 10px;color:var(--text);font-size:14px}
+.credit{font-size:12.5px;color:var(--faint);margin:8px 2px 0}.credit a{color:var(--mute)}
+@media(max-width:600px){section{padding:52px 0}.band .in{padding:30px}.hero{padding-top:34px}}
+
+@media(max-width:760px){.pbars,.squig,.cross{display:none}}
+/* live autotune + karaoke */
+.live{position:relative;border-radius:28px;padding:2px;background:linear-gradient(135deg,rgba(255,79,160,.75),rgba(139,92,246,.7) 50%,rgba(46,230,197,.6));box-shadow:0 30px 90px rgba(255,79,160,.22)}
+.live .inner{border-radius:26px;background:linear-gradient(180deg,#14112a,#0d0b1d);padding:24px}
+.drop.small{padding:26px 16px}.drop.small .ic{width:52px;height:52px;border-radius:16px}.drop.small .ic svg{width:26px;height:26px}.drop.small b{font-size:19px}
+.backinfo{margin-top:12px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:15px}.backinfo[hidden]{display:none}
+.startrow{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:18px 0 6px}.startrow .btn{font-size:18px;padding:15px 28px}
+.livemsg{margin:12px 0;padding:12px 14px;border-radius:14px;background:rgba(46,230,197,.1);border:1px solid rgba(46,230,197,.4)}.livemsg.bad{background:rgba(255,107,107,.1);border-color:rgba(255,107,107,.5)}.livemsg[hidden]{display:none}
+.livepanel[hidden],#transport[hidden],#lyrview[hidden]{display:none}
+.pitchbox{position:relative;border-radius:18px;background:rgba(0,0,0,.35);border:1px solid var(--line);overflow:hidden;margin:16px 0}
+.pitchbox canvas{display:block;width:100%;height:auto}
+.pitchread{position:absolute;right:14px;top:10px;text-align:right}.pitchread b{display:block;font-size:42px;line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.pitchread span{font-size:13px;color:var(--mute)}
+.lvlbar{height:6px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden}.lvlbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));border-radius:4px;transition:width .06s}.lvlbar i.hot{background:#ff6b6b}
+.ctrlgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:820px){.ctrlgrid{grid-template-columns:1fr}}
+.cbox{border-radius:18px;padding:16px;background:var(--card);border:1px solid var(--line)}.cbox h3{font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+.fl{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.fl label{font-size:14px;color:var(--mute);min-width:84px}
+.live select,.live textarea{background:#0b0a18;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font:inherit;font-size:15px}.live textarea{width:100%;min-height:90px}
+.live input[type=range]{flex:1;min-width:120px;accent-color:#ff4fa0}.fl output,.fl .v{font-size:13px;color:var(--mute);min-width:56px;text-align:right}
+.presets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.presets button{font:inherit;font-size:14px;border-radius:99px;padding:6px 14px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:pointer}.presets button.on{background:var(--grad);color:#1a0b16;border-color:transparent;font-weight:700}
+.recrow{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:18px 0 6px}
+#rec{font:inherit;font-weight:800;font-size:18px;border:0;border-radius:99px;padding:14px 30px;cursor:pointer;background:#ff4f5e;color:#fff;box-shadow:0 10px 30px rgba(255,79,94,.4)}#rec.live{background:#fff;color:#c4162a;animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{50%{box-shadow:0 0 0 10px rgba(255,79,94,.25)}}
+#timer{font-variant-numeric:tabular-nums;font-size:20px}
+.take{margin-top:14px;border-radius:16px;padding:14px;background:var(--card);border:1px solid var(--line)}.takerow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:10px 0}.takerow span{min-width:170px;font-size:14px;color:var(--mute)}.takerow audio{flex:1;min-width:200px;max-width:100%}
+#lyrview{margin-top:10px;max-height:240px;overflow:auto;white-space:pre-wrap;font-size:28px;line-height:1.5;text-align:center;padding:14px;border-radius:14px;background:rgba(0,0,0,.35);border:1px solid var(--line)}
+.warnrow{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:rgba(255,179,71,.1);border:1px solid rgba(255,179,71,.4);font-size:14.5px;margin-top:12px}
+
+.meters{margin:14px 0 6px;display:grid;gap:8px}.mrow{display:flex;align-items:center;gap:12px}.mrow>span{min-width:92px;font-size:13px;color:var(--mute)}.mrow .lvlbar{flex:1}
+.learnrow{display:flex;gap:14px;align-items:center;margin-top:14px}.learnrow .grow{flex:1;height:8px}.learnrow .lvlbar i{background:var(--grad)}
+.small.ok{color:var(--teal)}.small.bad{color:#ff8a8a}
+#clean select{background:#0b0a18;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:15px}
+
+[hidden]{display:none !important}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Noise-Free Voice Recorder", "url": "https://fuidzy.com/vocalforge/tools/voice-recorder-noise-cancellation", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (web browser)", "description": "Free online voice recorder with noise cancellation. Record voice-overs and content with live noise removal, or clean an existing recording. Private, in your browser.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Fuidzy", "url": "https://fuidzy.com"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is the voice recorder free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No account, no limit on length, and no watermark."}}, {"@type": "Question", "name": "Does it upload my recording?", "acceptedAnswer": {"@type": "Answer", "text": "No. Recording, noise removal and downloads all happen in your browser."}}, {"@type": "Question", "name": "Can I clean a recording I already made?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Drop it into the “Clean an existing recording” box. It works on MP3, WAV, FLAC and OGG files and gives you a cleaned WAV."}}, {"@type": "Question", "name": "What file do I get?", "acceptedAnswer": {"@type": "Answer", "text": "A 16-bit WAV. You also get the original untouched recording from the live recorder."}}, {"@type": "Question", "name": "Why does my voice sound thin?", "acceptedAnswer": {"@type": "Answer", "text": "The reduction is too strong. Lower the Reduction slider or the Sensitivity, and compare with Hear original."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fuidzy", "item": "https://fuidzy.com/"}, {"@type": "ListItem", "position": 2, "name": "VocalForge", "item": "https://fuidzy.com/vocalforge"}, {"@type": "ListItem", "position": 3, "name": "Free tools", "item": "https://fuidzy.com/vocalforge/tools"}, {"@type": "ListItem", "position": 4, "name": "Noise-Free Voice Recorder", "item": "https://fuidzy.com/vocalforge/tools/voice-recorder-noise-cancellation"}]}</script></head><body>
+<header class="top"><div class="wrap"><a class="logo" href="/vocalforge"><img src="/vocalforge/favicon.png" alt="" width="30" height="30"><span>Vocal<b>Forge</b></span></a>
+<nav class="main" aria-label="Main"><a href="/vocalforge/tools">Free tools</a><a href="/vocalforge#features">Features</a><a href="/vocalforge#guides">Guides</a><a href="/vocalforge#pricing">Pricing</a><a href="/vocalforge#support">Support</a></nav><a class="hbtn" href="/vocalforge#pricing">Download free</a></div></header>
+<main><div class="hero" style="padding:0 0 30px"><div class="shapes" aria-hidden="true"><span class="blob b2 fl2"></span><span class="ring r3 fl3"></span><span class="sq s3 fl1"></span><svg class="dots d2" viewBox="0 0 210 140"><defs><pattern id="dpd2" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.8" fill="#fff"/></pattern></defs><rect width="210" height="140" fill="url(#dpd2)"/></svg><svg class="squig q2" viewBox="0 0 210 40"><path d="M3 20 C 20 -2, 36 -2, 52 20 S 84 42, 100 20 S 132 -2, 148 20 S 180 42, 207 20"/></svg></div><div class="wrap"><div class="crumbs"><a href="/">Fuidzy</a> / <a href="/vocalforge">VocalForge</a> / <a href="/vocalforge/tools">Free tools</a> / Noise-Free Voice Recorder</div><div class="toolhead"><h1>Online Voice Recorder With Noise Cancellation for Content and Voice-Overs</h1><p class="lead">Record voice-overs, YouTube and TikTok narration, podcasts and voice notes with live noise cancellation, and download a clean WAV. You can also drop in an existing recording to remove its background noise. Autotune and effects are optional, and nothing is uploaded.</p></div>
+<div style="max-width:900px"><div class="live" id="clean" data-mode="record" data-base="/vocalforge"><div class="inner"><div class="startrow"><select id="mic" aria-label="Microphone" style="min-width:200px"><option value="">Default microphone</option></select><button class="btn primary" id="start" type="button">Turn on microphone</button><span class="small">Use headphones if you hear yourself, to avoid feedback.</span></div><div class="livemsg" id="msg" hidden></div><div class="cbox" style="margin-top:16px"><h3>Noise removal</h3><div class="fl"><label for="reduce">Reduction</label><input type="range" id="reduce" min="6" max="30" value="18"><output class="v" id="reducev">18 dB</output></div><div class="fl"><label for="sens">Sensitivity</label><input type="range" id="sens" min="10" max="30" value="16"><output class="v" id="sensv">1.6</output></div><div class="fl"><label><input type="checkbox" id="gate" checked> Close the gate between words</label></div><p class="small mute" style="margin:0">Higher reduction removes more noise but can thin the voice. Sensitivity makes it hunt noise harder.</p></div><div class="livepanel" id="panel" hidden><div class="meters"><div class="mrow"><span>Before</span><div class="lvlbar"><i id="inbar"></i></div></div><div class="mrow"><span>After</span><div class="lvlbar"><i id="outbar" style="background:linear-gradient(90deg,var(--teal),var(--blue))"></i></div></div><div class="mrow"><span>Room noise</span><b id="noisedb" class="small">measuring...</b></div></div><div class="learnrow"><button class="btn primary" id="learn" type="button">Learn my room noise</button><div class="lvlbar grow"><i id="learnbar"></i></div></div><p class="small mute" id="learnmsg">Stay silent for 3 seconds so it can hear your room. Until you do, it tracks the noise automatically.</p><div class="fl" style="margin-top:6px"><label><input type="checkbox" id="ab"> Hear original (compare)</label><label><input type="checkbox" id="polish"> Voice polish</label></div><div class="ctrlgrid" style="margin-top:16px"><div class="cbox"><h3>Autotune</h3><div class="fl"><label><input type="checkbox" id="at"> Autotune on</label><span class="small mute" id="note">--</span></div><div class="fl"><label for="key">Key</label><select id="key"></select><select id="scale"><option value="major">major</option><option value="minor">minor</option><option value="chromatic">every note</option></select></div><div class="presets"><button type="button" data-preset="natural">Natural</button><button type="button" data-preset="pop">Pop</button><button type="button" data-preset="hard">Hard-tune</button></div><div class="fl"><label for="amount">Strength</label><input type="range" id="amount" min="0" max="100" value="80"><output class="v" id="amountv">80%</output></div><div class="fl"><label for="speed">Retune speed</label><input type="range" id="speed" min="0" max="250" value="50"><output class="v" id="speedv">50 ms</output></div></div><div class="cbox"><h3>Effects</h3><div class="fl"><label for="reverb">Reverb</label><input type="range" id="reverb" min="0" max="80" value="0"><output class="v" id="reverbv">0%</output></div><div class="fl"><label for="echo">Echo</label><input type="range" id="echo" min="0" max="80" value="0"><output class="v" id="echov">0%</output></div><div class="fl"><label for="echotime">Echo time</label><input type="range" id="echotime" min="80" max="700" value="280"><output class="v" id="echotimev">280 ms</output></div><div class="fl"><label for="chorus">Doubler</label><input type="range" id="chorus" min="0" max="100" value="0"><output class="v" id="chorusv">0%</output></div><p class="small mute" style="margin:0">Effects are added after the noise removal, so they sit on a clean voice.</p></div></div><div class="recrow"><button id="rec" type="button">Record</button><span id="timer">0:00</span></div><div id="takes"></div><div class="recrow"><button class="btn small ghost" id="micoff" type="button">Turn off microphone</button><span class="small mute" id="lat"></span></div></div><div class="cbox" style="margin-top:16px"><h3>Clean an existing recording</h3><div class="drop small" id="cdrop" tabindex="0" role="button" aria-label="Choose a recording to clean"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg></div><b>Drop a recording here</b><span>MP3, WAV, FLAC or OGG &middot; the noise settings above are used</span></div><input type="file" id="cfile" accept="audio/*,.mp3,.wav,.flac,.ogg,.m4a" hidden><div class="fl" style="margin-top:12px"><label><input type="checkbox" id="cnorm" checked> Normalize the level</label></div><div id="cresult" hidden></div></div></div></div></div><div class="howto" style="max-width:900px"><div>Click <strong>Turn on microphone</strong>, press <strong>Learn my room noise</strong> and stay quiet for 3 seconds.</div><div>Press <strong>Record</strong>, speak, then <strong>Stop and save</strong>. You get a clean WAV and an untouched original.</div><div>Or skip the mic: drop a recording into <strong>Clean an existing recording</strong> and download the cleaned file.</div></div></div></div>
+<div class="narrow"><article>
+<h2>Record clean audio without a studio</h2>
+<p>Most home recordings are ruined by steady background noise: a fan, a hiss, a hum from the computer. This recorder learns the noise in your room from a few seconds of silence and removes it while you record, so the file you download is already clean. You also get the <strong>original</strong> untouched take, in case you want to process it differently later.</p>
+<h2>Clean a recording you already have</h2>
+<p>Drop a voice note, a phone video&rsquo;s audio or a podcast take into <strong>Clean an existing recording</strong>. The tool looks for the quietest part of the file to learn the noise from. If the recording has no real silence, it tracks the noise level automatically instead. Then it removes the noise and gives you a before-and-after player and a WAV download. Tick <em>Normalize</em> to bring the level up for voice-overs.</p>
+<h2>Autotune and effects for content</h2>
+<p>Optional real-time <strong>autotune</strong>, <strong>reverb</strong>, <strong>echo</strong> and a <strong>doubler</strong> run after the noise removal, so effects are added to a clean voice. Use headphones when monitoring, and leave effects off for plain voice-overs.</p>
+<h2>Tips for the cleanest result</h2>
+<ul>
+<li><strong>Record in a soft room.</strong> Curtains, a sofa or a wardrobe full of clothes beat a bare room. Noise removal cannot take echo out.</li>
+<li><strong>Stay 10 to 20 cm from the mic</strong> and speak across it, not into it.</li>
+<li><strong>Turn off the loudest noise:</strong> fan, air conditioning, notifications.</li>
+<li><strong>Use the gentlest setting that works.</strong> Heavy reduction can make a voice sound thin or watery. Tick <em>Hear original</em> to compare.</li>
+</ul>
+<h2>What it cannot do</h2>
+<p>It cannot remove other voices, music, or sudden sounds like clicks and coughs, and it cannot remove room echo. For that, the <a href="/vocalforge">VocalForge desktop app</a> adds echo reduction, click and mouth-noise repair, levelling and mastering.</p>
+
+<div class="vf"><h2>Like this? Let VocalForge do the fixing.</h2><p>These tools tell you what is going on. VocalForge acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Free to try for 7 days, then $29 once.</p><div class="cta"><a class="btn primary" href="https://downloads.fuidzy.com/vocalforge/VocalForge-Setup-1.0.0.exe" rel="noopener">Download the free trial</a><a class="btn" href="mailto:fuidzy@outlook.com?subject=VocalForge%20support">Ask us a question</a></div></div>
+<h2>Frequently asked questions</h2><details><summary>Is the voice recorder free?</summary><p>Yes. No account, no limit on length, and no watermark.</p></details><details><summary>Does it upload my recording?</summary><p>No. Recording, noise removal and downloads all happen in your browser.</p></details><details><summary>Can I clean a recording I already made?</summary><p>Yes. Drop it into the &ldquo;Clean an existing recording&rdquo; box. It works on MP3, WAV, FLAC and OGG files and gives you a cleaned WAV.</p></details><details><summary>What file do I get?</summary><p>A 16-bit WAV. You also get the original untouched recording from the live recorder.</p></details><details><summary>Why does my voice sound thin?</summary><p>The reduction is too strong. Lower the Reduction slider or the Sensitivity, and compare with Hear original.</p></details>
+<h2>More free tools</h2><div class="tcards"><a class="card cT" href="/vocalforge/tools/clean-streaming-mic" style="padding:18px"><div class="ico cT"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h2l2-5 3 10 3-14 3 12 2-3h3"/><path d="M4 20L20 4"/></svg></div><h3>Clean Streaming Mic</h3><p>Learn your room noise, remove it live and feed OBS, Discord or Zoom.</p></a><a class="card cP" href="/vocalforge/tools/live-autotune" style="padding:18px"><div class="ico cP"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg></div><h3>Live Autotune</h3><p>Sing with real-time autotune and record the take.</p></a><a class="card cB" href="/vocalforge/tools/vocal-checker" style="padding:18px"><div class="ico cB"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Vocal Checker</h3><p>Spot clipping, noise, rumble and level problems.</p></a></div>
+<h2>Related guides</h2><div class="related"><a href="/vocalforge/fix-vocals-recorded-on-phone"><b>How to Make Vocals Recorded on a Phone Sound Professional</b></a><a href="/vocalforge/remove-echo-from-vocal-recording"><b>How to Remove Echo and Room Reverb From a Vocal Recording</b></a></div></article></div></main>
+<footer><div class="wrap"><div class="cols">
+<div><h4>VocalForge</h4><a href="/vocalforge">Overview</a><br><a href="/vocalforge#features">Features</a><br><a href="/vocalforge#pricing">Pricing</a><br><a href="/vocalforge#faq">FAQ</a></div>
+<div><h4>Free tools</h4><a href="/vocalforge/tools/live-autotune">Live Autotune</a><br><a href="/vocalforge/tools/karaoke-autotune">Karaoke Autotune</a><br><a href="/vocalforge/tools/clean-streaming-mic">Clean Streaming Mic</a><br><a href="/vocalforge/tools/voice-recorder-noise-cancellation">Noise-Free Voice Recorder</a><br><a href="/vocalforge/tools/bpm-finder">BPM Finder</a><br><a href="/vocalforge/tools/song-key-finder">Key Finder</a><br><a href="/vocalforge/tools/chord-finder">Chord Finder</a><br><a href="/vocalforge/tools/lufs-meter">LUFS Meter</a><br><a href="/vocalforge/tools/vocal-checker">Vocal Checker</a><br></div>
+<div><h4>Guides</h4><a href="/vocalforge/fix-vocals-recorded-on-phone">How to Make Vocals Recorded on a Phone Sound P</a><br><a href="/vocalforge/ai-vocal-cleanup-explained">AI Vocal Cleanup</a><br><a href="/vocalforge/remove-echo-from-vocal-recording">How to Remove Echo and Room Reverb From a Voca</a><br><a href="/vocalforge/autotune-for-rap-vocals">Autotune for Rap and Melodic Vocals</a><br><a href="/vocalforge/mix-vocals-on-a-beat">How to Mix Vocals on a Beat So They Sit in the</a><br></div>
+<div><h4>Support</h4><a href="mailto:fuidzy@outlook.com?subject=VocalForge%20support">fuidzy@outlook.com</a><br><a href="mailto:fuidzy@outlook.com?subject=VocalForge%20for%20Mac&amp;body=Hi%2C%20I%27d%20like%20a%20Mac%20version%20of%20VocalForge.">Request a Mac version</a><br><a href="/vocalforge/privacy">Privacy</a><br><a href="/vocalforge/terms">Terms</a><br><a href="/vocalforge/refund-policy">Refunds</a></div>
+</div><p class="credit" style="margin-top:26px">VocalForge is a Fuidzy product. It is not affiliated with or endorsed by any artist or plugin company mentioned on this site.</p>
+<p class="credit">Photos: <a href="https://www.pexels.com/photo/a-man-singing-in-front-of-the-microphone-8132797/" rel="noopener">Anna Pou / Pexels</a>, <a href="https://www.pexels.com/photo/a-man-singing-in-the-studio-8133004/" rel="noopener">Anna Pou / Pexels</a>, <a href="https://www.pexels.com/photo/man-singing-into-the-mic-18259198/" rel="noopener">Eduardo López / Pexels</a>, <a href="https://unsplash.com/photos/grayscale-photo-of-condenser-microphone-beside-pop-filter-bG8U3kaZltE" rel="noopener">Leo Wieling / Unsplash</a>, <a href="https://unsplash.com/photos/a-pair-of-headphones-sitting-next-to-a-laptop-Q-raIe-gAOo" rel="noopener">Project 290 / Unsplash</a>. Free to use under the Pexels and Unsplash licenses.</p></div></footer><script id="vfdenoise">/* VocalForge free tools: noise suppression that learns YOUR background noise. Runs in the visitor's browser (AudioWorklet) or offline on a file.
+   Method: short-time Fourier transform (512 samples, 75% overlap), noise spectrum learned from a few seconds of room tone (or tracked
+   automatically), Wiener-style gain with time and frequency smoothing, then an optional noise gate set from the learned noise level.
+   Best on steady noise (fans, hiss, AC, hum, PC noise). It cannot remove voices or keyboard clatter. Nothing is uploaded. */
+(function (root) {
+  'use strict';
+
+  // ---------- radix-2 complex FFT (in place). Kept as a plain function so its source can be copied into the AudioWorklet.
+  function fftInPlace(re, im) {
+    var n = re.length, i, j, k, m, t;
+    for (i = 1, j = 0; i < n; i++) {
+      var bit = n >> 1;
+      for (; j & bit; bit >>= 1) j ^= bit;
+      j ^= bit;
+      if (i < j) { t = re[i]; re[i] = re[j]; re[j] = t; t = im[i]; im[i] = im[j]; im[j] = t; }
+    }
+    for (var len = 2; len <= n; len <<= 1) {
+      var ang = -2 * Math.PI / len, wr = Math.cos(ang), wi = Math.sin(ang), half = len >> 1;
+      for (i = 0; i < n; i += len) {
+        var cr = 1, ci = 0;
+        for (k = 0; k < half; k++) {
+          var a = i + k, b = a + half;
+          var xr = re[b] * cr - im[b] * ci, xi = re[b] * ci + im[b] * cr;
+          re[b] = re[a] - xr; im[b] = im[a] - xi; re[a] += xr; im[a] += xi;
+          m = cr * wr - ci * wi; ci = cr * wi + ci * wr; cr = m;
+        }
+      }
+    }
+  }
+
+  class Denoiser {
+    constructor(sr, N, hop) {
+      this.sr = sr; this.N = N || 512; this.hop = hop || 128;
+      var n = this.N, h = this.hop;
+      this.win = new Float32Array(n); var ws = 0;
+      for (var i = 0; i < n; i++) { this.win[i] = 0.5 - 0.5 * Math.cos(2 * Math.PI * (i + 0.5) / n); ws += this.win[i] * this.win[i]; }
+      this.norm = h / ws;                                         // overlap-add normalisation for the window pair
+      this.winPow = ws;
+      this.inRing = new Float32Array(n); this.inPos = 0; this.cnt = 0;
+      this.acc = new Float32Array(n); this.fifo = new Float32Array(n * 4); this.fh = 0; this.ft = 0; this.fn = 0;
+      this.re = new Float32Array(n); this.im = new Float32Array(n);
+      var K = n / 2 + 1; this.K = K;
+      this.P = new Float32Array(K); this.G = new Float32Array(K).fill(1); this.Gs = new Float32Array(K).fill(1);
+      this.noise = new Float32Array(K); this.hasProfile = false;
+      this.ps = new Float32Array(K); this.nmin = new Float32Array(K).fill(1e-3); this.navg = new Float32Array(K); this.warm = 0;   // automatic tracker
+      this.learning = false; this.learnFrames = 0; this.learnAcc = new Float64Array(K); this.learnCount = 0; this.onLearn = null;
+      this.reduceDb = 18; this.sens = 1.6; this.gateOn = true; this.gateOffsetDb = 6; this.polish = false;
+      this.gateG = 1; this.env = 0; this.bypass = false; this.vad = 1; this.autoSens = 0.65;
+      this.inE = 0; this.outE = 0; this.meterN = 0; this.noiseRms = 0;
+    }
+    setParams(p) { for (var k in p) if (p[k] !== undefined) this[k] = p[k]; }
+    startLearn(seconds) { this.learning = true; this.learnFrames = Math.max(8, Math.round(seconds * this.sr / this.hop)); this.learnAcc.fill(0); this.learnCount = 0; }
+    setProfile(arr) { this.noise.set(arr); this.hasProfile = true; this._updNoiseRms(); }
+    clearProfile() { this.hasProfile = false; }
+    _updNoiseRms() { var s = 0, K = this.K; for (var k = 0; k < K; k++) s += this.noise[k] * (k === 0 || k === K - 1 ? 1 : 2); this.noiseRms = Math.sqrt(s / (this.N * this.winPow)); }
+
+    _frame() {
+      var n = this.N, K = this.K, re = this.re, im = this.im, w = this.win, i, k;
+      for (i = 0; i < n; i++) { re[i] = this.inRing[(this.inPos + i) % n] * w[i]; im[i] = 0; }
+      fftInPlace(re, im);
+      var P = this.P, noise = this.noise;
+      for (k = 0; k < K; k++) P[k] = re[k] * re[k] + im[k] * im[k];
+      if (this.learning) {
+        for (k = 0; k < K; k++) this.learnAcc[k] += P[k];
+        this.learnCount++;
+        if (this.learnCount >= this.learnFrames) {
+          for (k = 0; k < K; k++) noise[k] = this.learnAcc[k] / this.learnCount;
+          this.hasProfile = true; this.learning = false; this._updNoiseRms(); if (this.onLearn) this.onLearn(this.noiseRms);
+        }
+      }
+      var est = noise;
+      if (!this.hasProfile) {                                       // automatic: average the bins that look like noise (near the tracked quiet floor)
+        var ps = this.ps, nm = this.nmin, na = this.navg; this.warm++;
+        for (k = 0; k < K; k++) {
+          ps[k] = 0.85 * ps[k] + 0.15 * P[k];
+          nm[k] = ps[k] < nm[k] ? ps[k] : nm[k] + (ps[k] - nm[k]) * 0.0004;
+          if (this.warm < 24) na[k] += 0.2 * (P[k] - na[k]);       // first frames: assume mostly noise so the estimate starts sensible
+          else if (P[k] < 4 * nm[k] + 1e-12) na[k] += 0.03 * (P[k] - na[k]);
+          this.noise[k] = na[k] * 1.12;
+        }
+        est = this.noise; if (this.warm % 16 === 0) this._updNoiseRms();
+      }
+      var gmin = Math.pow(10, -this.reduceDb / 20), a = this.hasProfile ? this.sens : this.sens * this.autoSens, G = this.G, Gs = this.Gs, g;
+      for (k = 0; k < K; k++) { var p = P[k] + 1e-12; g = 1 - a * est[k] / p; g = g > gmin * gmin ? Math.sqrt(g) : gmin; G[k] = g; }
+      // frame-level voice check: a frame no louder than the learned noise is room tone, so it gets the full reduction
+      var lo = Math.max(1, Math.round(100 * n / this.sr)), hi = Math.min(K - 1, Math.round(5000 * n / this.sr)), sp = 1e-12, se = 1e-12;
+      for (k = lo; k <= hi; k++) { sp += P[k]; se += est[k]; }
+      var ratio = sp / se, v = (ratio - 1.5) / 2.0; v = v < 0 ? 0 : v > 1 ? 1 : v;
+      this.vad += (v > this.vad ? 0.7 : 0.06) * (v - this.vad);
+      var vg = gmin + (1 - gmin) * this.vad;
+      for (k = 0; k < K; k++) G[k] *= vg;
+      for (k = 0; k < K; k++) {                                     // smooth across frequency, then in time (fast open, slower close)
+        var l = G[k > 0 ? k - 1 : 0], r = G[k < K - 1 ? k + 1 : K - 1], f = 0.25 * l + 0.5 * G[k] + 0.25 * r;
+        var b = f > Gs[k] ? 0.75 : 0.22; Gs[k] += b * (f - Gs[k]);
+      }
+      for (k = 0; k < K; k++) { var gg = this.bypass ? 1 : Gs[k]; re[k] *= gg; im[k] *= gg; if (k > 0 && k < K - 1) { re[n - k] *= gg; im[n - k] *= gg; } }
+      for (i = 0; i < n; i++) im[i] = -im[i];                       // inverse FFT via conjugate trick
+      fftInPlace(re, im);
+      var acc = this.acc, nrm = this.norm / n;
+      for (i = 0; i < n; i++) acc[i] += re[i] * nrm * w[i];
+      var fifo = this.fifo, fl = fifo.length;
+      for (i = 0; i < this.hop; i++) { fifo[this.ft] = acc[i]; this.ft = (this.ft + 1) % fl; this.fn++; }
+      acc.copyWithin(0, this.hop); acc.fill(0, n - this.hop);
+    }
+
+    // inp/out: Float32Array of the same length (any length). out is written in place; out may be the same array as inp.
+    process(inp, out) {
+      var n = this.N, hop = this.hop, L = inp.length, i, ie = 0, oe = 0;
+      for (i = 0; i < L; i++) {
+        var x = inp[i]; ie += x * x;
+        this.inRing[this.inPos] = x; this.inPos = (this.inPos + 1) % n;
+        if (++this.cnt === hop) { this.cnt = 0; this._frame(); }
+        var y = 0; if (this.fn > 0) { y = this.fifo[this.fh]; this.fh = (this.fh + 1) % this.fifo.length; this.fn--; }
+        // gate, set from the learned noise level
+        if (this.gateOn && this.noiseRms > 0) {
+          var thr = this.noiseRms * Math.pow(10, this.gateOffsetDb / 20), ay = y < 0 ? -y : y;
+          this.env += (ay > this.env ? 0.03 : 0.0004) * (ay - this.env);
+          var target = this.env > thr * 0.5 ? 1 : 0.06;
+          this.gateG += (target > this.gateG ? 0.004 : 0.00045) * (target - this.gateG); y *= this.bypass ? 1 : this.gateG;
+        }
+        out[i] = y; oe += y * y;
+      }
+      this.inE += ie; this.outE += oe; this.meterN += L;
+    }
+    meter() { var n = this.meterN || 1, r = { inDb: 10 * Math.log10(this.inE / n + 1e-12), outDb: 10 * Math.log10(this.outE / n + 1e-12), noiseDb: this.noiseRms > 0 ? 20 * Math.log10(this.noiseRms) : -120 }; this.inE = this.outE = this.meterN = 0; return r; }
+  }
+
+  // ---------- AudioWorklet source: fftInPlace + Denoiser + a processor
+  function workletSource() {
+    return fftInPlace.toString() + '\n' + Denoiser.toString() + '\n' + [
+      'class VFDenoiseProc extends AudioWorkletProcessor {',
+      '  constructor(){ super(); this.d = new Denoiser(sampleRate, 512, 128); this.t = 0;',
+      '    this.d.onLearn = (rms) => this.port.postMessage({learned: true, noiseRms: rms, profile: Array.from(this.d.noise)});',
+      '    this.port.onmessage = (e) => { const m = e.data;',
+      '      if (m.cmd === "learn") this.d.startLearn(m.seconds || 3);',
+      '      else if (m.cmd === "params") this.d.setParams(m.p);',
+      '      else if (m.cmd === "profile") this.d.setProfile(m.profile);',
+      '      else if (m.cmd === "clear") this.d.clearProfile(); }; }',
+      '  process(inputs, outputs){ const i = inputs[0] && inputs[0][0], o = outputs[0][0]; if (!i){ if (o) o.fill(0); return true; }',
+      '    this.d.process(i, o); this.t += i.length; if (this.t >= sampleRate * 0.06){ this.t = 0; const m = this.d.meter(); m.learning = this.d.learning; m.progress = this.d.learning ? this.d.learnCount / this.d.learnFrames : 0; this.port.postMessage(m); }',
+      '    for (let c = 1; c < outputs[0].length; c++) outputs[0][c].set(o); return true; }',
+      '}',
+      "registerProcessor('vf-denoise', VFDenoiseProc);"
+    ].join('\n');
+  }
+
+  // ---------- offline: clean a whole recording. profile (optional) = noise power spectrum; otherwise learn from the quietest second.
+  // The quietest half-second of the file, if the file really has a steady quiet floor: several windows share (nearly) the same lowest level.
+  // Continuous speech has no such floor, so null is returned and the caller tracks the noise automatically instead.
+  function quietestSecond(x, sr) {
+    var w = Math.min(x.length, Math.round(sr * 0.5)), step = Math.round(sr * 0.05), i, wins = [];
+    for (var s = 0; s + w <= x.length; s += step) {
+      var e = 0; for (i = s; i < s + w; i += 4) e += x[i] * x[i];
+      wins.push({ s: s, e: e / (w / 4) });
+    }
+    if (wins.length < 8) return null;
+    var best = wins[0]; wins.forEach(function (q) { if (q.e > 1e-10 && (best.e <= 1e-10 || q.e < best.e)) best = q; });
+    if (best.e <= 1e-10) return null;
+    var near = 0, sorted = wins.map(function (q) { return q.e; }).sort(function (a, b) { return a - b; }), median = sorted[sorted.length >> 1], top = sorted[sorted.length - 1];
+    wins.forEach(function (q) { if (q.e <= best.e * 1.6) near++; });
+    var stable = near >= Math.max(4, Math.round(wins.length * 0.04)) && top > best.e * 2.5;     // a steady floor with louder material above it
+    var clearlyQuieter = best.e < median * 0.15;                                                // or at least 8 dB under the typical level
+    if (!stable && !clearlyQuieter) return null;
+    return x.subarray(best.s, Math.min(x.length, best.s + w));
+  }
+  function cleanBuffer(x, sr, opts) {
+    opts = opts || {};
+    var d = new Denoiser(sr, 512, 128);
+    d.setParams({ reduceDb: opts.reduceDb != null ? opts.reduceDb : 18, sens: opts.sens != null ? opts.sens : 1.6, gateOn: opts.gateOn !== false, gateOffsetDb: opts.gateOffsetDb != null ? opts.gateOffsetDb : 6 });
+    var learned = false;
+    if (opts.profile) { d.setProfile(opts.profile); learned = true; }
+    else if (!opts.auto) {
+      var q = quietestSecond(x, sr);
+      if (q) {
+        var tmp = new Denoiser(sr, 512, 128), pad = new Float32Array(q.length), o = new Float32Array(q.length);
+        pad.set(q); tmp.startLearn(Math.max(0.25, q.length / sr * 0.8));
+        for (var r = 0; r < 6 && tmp.learning; r++) tmp.process(pad, o);
+        if (tmp.hasProfile) { d.setProfile(tmp.noise); learned = true; }
+      }
+    }
+    if (!learned) {                                                 // no real silence: track the noise over the whole file, average it into one steady profile
+      var tr = new Denoiser(sr, 512, 128), sink = new Float32Array(x.length), mean = new Float32Array(tr.K), cnt = 0, step = 8192;
+      tr.setParams({ gateOn: false });
+      for (var o2 = 0; o2 < x.length; o2 += step) {
+        var seg = x.subarray(o2, Math.min(x.length, o2 + step)); tr.process(seg, sink.subarray(o2, o2 + seg.length));
+        if (tr.warm > 200) { for (var k = 0; k < tr.K; k++) mean[k] += tr.noise[k]; cnt++; }
+      }
+      if (cnt) { for (var k2 = 0; k2 < mean.length; k2++) mean[k2] /= cnt; var sc = opts.trackScale != null ? opts.trackScale : 0.5; for (var k3 = 0; k3 < mean.length; k3++) mean[k3] *= sc; d.setProfile(mean); learned = 'tracked';
+      d.setParams({ reduceDb: Math.min(d.reduceDb, 12), sens: Math.min(d.sens, 1.0) }); }          // gentle: without real silence the estimate is less certain
+    }
+    var out = new Float32Array(x.length), padIn = new Float32Array(x.length + d.N), padOut = new Float32Array(x.length + d.N);
+    padIn.set(x); d.process(padIn, padOut);                         // flush: the output lags the input by N-1 samples
+    var lag = d.N - 1; for (var i = 0; i < x.length; i++) out[i] = padOut[i + lag];
+    return { out: out, noiseRms: d.noiseRms, learned: learned };
+  }
+
+  var api = { Denoiser: Denoiser, fftInPlace: fftInPlace, workletSource: workletSource, cleanBuffer: cleanBuffer, quietestSecond: quietestSecond };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.VFDenoise = api;
+})(typeof window !== 'undefined' ? window : globalThis);
+</script><script>/* VocalForge free tools: live autotune + karaoke engine. Runs entirely in the visitor's browser (Web Audio + AudioWorklet).
+   Mic -> pitch detection (YIN) -> delay-line pitch shifter -> light studio tone + reverb -> headphones, with recording.
+   The same shifter as the VocalForge desktop app's live monitor. Nothing is uploaded. */
+(function (root) {
+  'use strict';
+
+  var WORKLETS = [
+    '// live autotune: YIN pitch detection (decimated) + two-head delay-line pitch shifter',
+    'class LiveTune extends AudioWorkletProcessor {',
+    "  static get parameterDescriptors(){ return [{name:'amount', defaultValue:1, minValue:0, maxValue:1}, {name:'speed', defaultValue:.02, minValue:0, maxValue:.3}]; }",
+    '  constructor(){ super();',
+    '    this.scale = null; this.tonic = 0; this.report = 0;',
+    '    this.port.onmessage = e => { this.scale = e.data.scale; this.tonic = e.data.tonic || 0; };',
+    '    this.dec = 4; this.N = 512; this.ring = new Float32Array(this.N); this.ri = 0; this.acc = 0; this.accN = 0;',
+    '    this.x = new Float32Array(this.N); this.d = new Float32Array(this.N / 2);',
+    '    this.ratio = 1; this.target = 1; this.hop = 0;',
+    '    this.L = 8192; this.dl = new Float32Array(this.L); this.w = 0; this.win = Math.round(.03 * sampleRate); this.ph = 0;',
+    '  }',
+    '  detect(){',
+    '    const N = this.N, W = N / 2, fs = sampleRate / this.dec, x = this.x, d = this.d;',
+    '    let en = 0; for (let i = 0; i < N; i++){ x[i] = this.ring[(this.ri + i) % N]; en += x[i] * x[i]; }',
+    '    if (en / N < 2e-6) return 0;',
+    '    const lo = Math.floor(fs / 1000), hi = Math.min(W - 2, Math.floor(fs / 70)); let run = 0; d[0] = 1;',
+    '    for (let t = 1; t <= hi; t++){ let s = 0; for (let i = 0; i < W; i++){ const v = x[i] - x[i + t]; s += v * v; } run += s; d[t] = run ? s * t / run : 1; }',
+    '    for (let t = Math.max(2, lo); t <= hi; t++){',
+    '      if (d[t] < .15){ while (t + 1 <= hi && d[t + 1] < d[t]) t++;',
+    '        const a = d[t - 1], b = d[t], c = d[t + 1], den = a - 2 * b + c; return fs / (t + (den ? (a - c) / (2 * den) : 0)); }',
+    '    }',
+    '    return 0;',
+    '  }',
+    '  snap(f){',
+    '    const m = 69 + 12 * Math.log2(f / 440); let best = Math.round(m), bd = 99;',
+    '    if (this.scale) for (let n = Math.floor(m) - 2; n <= Math.ceil(m) + 2; n++){',
+    '      if (this.scale.includes(((n - this.tonic) % 12 + 12) % 12) && Math.abs(n - m) < bd){ bd = Math.abs(n - m); best = n; } }',
+    '    return 440 * Math.pow(2, (best - 69) / 12);',
+    '  }',
+    '  process(inputs, outputs, params){',
+    '    const inp = inputs[0] && inputs[0][0], out = outputs[0][0];',
+    '    if (!inp){ out.fill(0); return true; }',
+    '    for (let i = 0; i < inp.length; i++){ this.acc += inp[i]; if (++this.accN === this.dec){ this.ring[this.ri] = this.acc / this.dec; this.ri = (this.ri + 1) % this.N; this.acc = 0; this.accN = 0; } }',
+    '    if ((this.hop += inp.length) >= 256){ this.hop = 0; const f = this.detect(); this.target = f > 70 && f < 1000 ? this.snap(f) / f : 1;',
+    '      if ((this.report++ & 1) === 0) this.port.postMessage({f: f, t: f > 0 ? f * this.target : 0}); }',
+    '    const sp = params.speed[0], k = sp <= .001 ? 1 : 1 - Math.exp(-inp.length / sampleRate / sp);',
+    '    this.ratio += k * ((1 + (this.target - 1) * params.amount[0]) - this.ratio);',
+    '    const L = this.L, W = this.win;',
+    '    for (let i = 0; i < inp.length; i++){',
+    '      this.dl[this.w] = inp[i];',
+    '      this.ph += 1 - this.ratio; if (this.ph >= W) this.ph -= W; if (this.ph < 0) this.ph += W;',
+    '      let y = 0;',
+    '      for (let h = 0; h < 2; h++){',
+    '        let dly = this.ph + h * W / 2; if (dly >= W) dly -= W;',
+    '        const g = Math.sin(Math.PI * dly / W); let r = this.w - dly - 2; while (r < 0) r += L;',
+    '        const r0 = Math.floor(r), fr = r - r0, s0 = this.dl[r0 % L], s1 = this.dl[(r0 + 1) % L];',
+    '        y += g * g * (s0 + (s1 - s0) * fr);',
+    '      }',
+    '      out[i] = y; this.w = (this.w + 1) % L;',
+    '    }',
+    '    return true;',
+    '  }',
+    '}',
+    "registerProcessor('live-tune', LiveTune);",
+    '// recorder tap: hands raw blocks (all input channels) to the page while recording',
+    'class RecTap extends AudioWorkletProcessor {',
+    '  constructor(){ super(); this.on = false; this.port.onmessage = e => { this.on = e.data.on; }; }',
+    '  process(inputs){ const i = inputs[0]; if (this.on && i && i.length){ this.port.postMessage(i.map(c => c.slice(0))); } return true; }',
+    '}',
+    "registerProcessor('rec-tap', RecTap);"
+  ].join('\n');
+
+  function biq(c, type, f, q, gain) { var n = c.createBiquadFilter(); n.type = type; n.frequency.value = f; if (q != null) n.Q.value = q; if (gain != null) n.gain.value = gain; return n; }
+  function makeIR(c, sec) {
+    var n = Math.floor(c.sampleRate * sec), b = c.createBuffer(2, n, c.sampleRate);
+    for (var ch = 0; ch < 2; ch++) {
+      var d = b.getChannelData(ch), e = 0, i;
+      for (i = 0; i < n; i++) { d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / n, 2.6); e += d[i] * d[i]; }
+      var k = 1 / Math.sqrt(e || 1); for (i = 0; i < n; i++) d[i] *= k;               // unit energy: reverb return stays at the send level
+    }
+    return b;
+  }
+  function wav16(chans, sr) {
+    var nch = chans.length, n = chans[0].length, b = new ArrayBuffer(44 + n * nch * 2), v = new DataView(b);
+    function w(o, s) { for (var i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); }
+    w(0, 'RIFF'); v.setUint32(4, 36 + n * nch * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true);
+    v.setUint16(22, nch, true); v.setUint32(24, sr, true); v.setUint32(28, sr * nch * 2, true); v.setUint16(32, nch * 2, true); v.setUint16(34, 16, true);
+    w(36, 'data'); v.setUint32(40, n * nch * 2, true);
+    var o = 44;
+    for (var i = 0; i < n; i++) for (var c = 0; c < nch; c++) { var s = Math.max(-1, Math.min(1, chans[c][i])); v.setInt16(o, s < 0 ? s * 32768 : s * 32767, true); o += 2; }
+    return new Blob([b], { type: 'audio/wav' });
+  }
+  function join(chunks, ch) { var n = 0, i; for (i = 0; i < chunks.length; i++) n += chunks[i][ch] ? chunks[i][ch].length : 0; var o = new Float32Array(n), p = 0; for (i = 0; i < chunks.length; i++) { var a = chunks[i][ch]; if (a) { o.set(a, p); p += a.length; } } return o; }
+
+  var SCALES = { major: [0, 2, 4, 5, 7, 9, 11], minor: [0, 2, 3, 5, 7, 8, 10], chromatic: null };
+
+  function Live() {
+    this.ctx = null; this.stream = null; this.recording = false; this.vchunks = []; this.mchunks = [];
+    this.tuneOn = true; this.reverb = 0.18; this.backing = null; this.src = null; this.startedAt = 0; this.offset = 0; this.playing = false;
+    this.onPitch = function () {}; this.nudgeMs = 0;
+  }
+  // opts.mic (default true) asks for the microphone; opts.source(ctx) is a test hook that supplies an AudioNode instead.
+  Live.prototype.open = async function (opts) {
+    opts = opts || {};
+    if (this.ctx) return;
+    var AC = root.AudioContext || root.webkitAudioContext;
+    this.ctx = new AC({ latencyHint: 'interactive' });
+    var c = this.ctx;
+    await c.audioWorklet.addModule(URL.createObjectURL(new Blob([WORKLETS], { type: 'application/javascript' })));
+    var input;
+    if (opts.source) input = opts.source(c);
+    else {
+      this.stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 } });
+      input = c.createMediaStreamSource(this.stream);
+    }
+    var self = this;
+    this.meter = c.createAnalyser(); this.meter.fftSize = 1024; input.connect(this.meter);
+    var hp0 = biq(c, 'highpass', 80, 0.7); input.connect(hp0);
+    this.tune = new AudioWorkletNode(c, 'live-tune', { outputChannelCount: [1] });
+    this.tune.port.onmessage = function (e) { self.onPitch(e.data); };
+    this.tuned = c.createGain(); this.dry = c.createGain();
+    hp0.connect(this.tune); this.tune.connect(this.tuned); hp0.connect(this.dry);
+    var pres = biq(c, 'peaking', 5500, 0.7, 2), air = biq(c, 'highshelf', 11000, null, 3);
+    var comp = c.createDynamicsCompressor(); comp.threshold.value = -22; comp.ratio.value = 3; comp.attack.value = 0.005; comp.release.value = 0.1;
+    this.tuned.connect(pres); this.dry.connect(pres); pres.connect(air).connect(comp);
+    this.voice = c.createGain(); comp.connect(this.voice);                         // dry-tone voice
+    var conv = c.createConvolver(); conv.normalize = false; conv.buffer = makeIR(c, 0.5);
+    this.revSend = c.createGain(); this.revRet = c.createGain(); this.revRet.gain.value = 1;
+    comp.connect(this.revSend); this.revSend.connect(biq(c, 'highpass', 300, 0.7)).connect(conv).connect(this.revRet);
+    var vb = c.createGain(); this.voice.connect(vb); this.revRet.connect(vb);
+    this.voiceBus = c.createDynamicsCompressor(); this.voiceBus.threshold.value = -3; this.voiceBus.knee.value = 0; this.voiceBus.ratio.value = 20; this.voiceBus.attack.value = 0.002; this.voiceBus.release.value = 0.12;
+    vb.connect(this.voiceBus);                                                       // safety limiter: no clipped recordings
+    // master -> speakers
+    this.master = c.createGain(); this.master.channelCount = 2; this.master.channelCountMode = 'explicit';
+    this.voiceBus.connect(this.master); this.master.connect(c.destination);
+    // backing track path (optional)
+    this.backGain = c.createGain(); this.backGain.gain.value = 0.8;
+    this.backGain.channelCount = 2; this.backGain.channelCountMode = 'explicit';
+    this.direct = c.createGain(); this.reduced = c.createGain(); this.reduced.gain.value = 0;
+    this.backIn = c.createGain(); this.backIn.channelCount = 2; this.backIn.channelCountMode = 'explicit';
+    this.backIn.connect(this.direct).connect(this.backGain);
+    var sp = c.createChannelSplitter(2), sideSum = c.createGain(), bassSum = c.createGain(), mg = c.createChannelMerger(2);
+    var lS = c.createGain(), rS = c.createGain(), lB = c.createGain(), rB = c.createGain();
+    lS.gain.value = 0.5; rS.gain.value = -0.5; lB.gain.value = 0.5; rB.gain.value = 0.5;
+    this.backIn.connect(sp); sp.connect(lS, 0); sp.connect(rS, 1); sp.connect(lB, 0); sp.connect(rB, 1);
+    lS.connect(sideSum); rS.connect(sideSum); lB.connect(bassSum); rB.connect(bassSum);
+    var sideHp = biq(c, 'highpass', 140, 0.7), bassLp = biq(c, 'lowpass', 140, 0.7);
+    sideSum.connect(sideHp); bassSum.connect(bassLp);
+    sideHp.connect(mg, 0, 0); sideHp.connect(mg, 0, 1); bassLp.connect(mg, 0, 0); bassLp.connect(mg, 0, 1);
+    mg.connect(this.reduced).connect(this.backGain);
+    this.backGain.connect(this.master);
+    // recorder taps (kept alive through a silent gain)
+    var silent = c.createGain(); silent.gain.value = 0; silent.connect(c.destination);
+    this.voiceTap = new AudioWorkletNode(c, 'rec-tap', { numberOfInputs: 1, numberOfOutputs: 1, channelCount: 1, channelCountMode: 'explicit' });
+    this.voiceBus.connect(this.voiceTap); this.voiceTap.connect(silent);
+    this.voiceTap.port.onmessage = function (e) { if (self.recording) self.vchunks.push(e.data); };
+    this.mixRec = c.createGain(); this.mixRec.channelCount = 2; this.mixRec.channelCountMode = 'explicit';
+    this.voiceBus.connect(this.mixRec);
+    this.backDelay = c.createDelay(1.0); this.backGain.connect(this.backDelay); this.backDelay.connect(this.mixRec);
+    this.mixTap = new AudioWorkletNode(c, 'rec-tap', { numberOfInputs: 1, numberOfOutputs: 1, channelCount: 2, channelCountMode: 'explicit' });
+    var mixLim = c.createDynamicsCompressor(); mixLim.threshold.value = -3; mixLim.knee.value = 0; mixLim.ratio.value = 20; mixLim.attack.value = 0.002; mixLim.release.value = 0.12;
+    this.mixRec.connect(mixLim); mixLim.connect(this.mixTap); this.mixTap.connect(silent);
+    this.mixTap.port.onmessage = function (e) { if (self.recording) self.mchunks.push(e.data); };
+    this.setKey(0, 'major'); this.setTune(0.8, 0.05); this.setReverb(this.reverb); this.setNudge(0); this.apply();
+    await c.resume();
+  };
+  Live.prototype.estLatencyMs = function () { var c = this.ctx; if (!c) return 0; return Math.round(((c.baseLatency || 0.01) + (c.outputLatency || 0.02) + 0.015) * 1000); };
+  Live.prototype.apply = function () { this.tuned.gain.value = this.tuneOn ? 1 : 0; this.dry.gain.value = this.tuneOn ? 0 : 1; };
+  Live.prototype.setKey = function (tonic, scale) { if (!this.tune) return; this.tune.port.postMessage({ tonic: tonic, scale: SCALES[scale] === undefined ? SCALES.major : SCALES[scale] }); };
+  Live.prototype.setTune = function (amount, speed) { if (!this.tune) return; this.tune.parameters.get('amount').value = amount; this.tune.parameters.get('speed').value = speed; };
+  Live.prototype.setTuneOn = function (on) { this.tuneOn = !!on; if (this.ctx) this.apply(); };
+  Live.prototype.setReverb = function (v) { this.reverb = v; if (this.revSend) this.revSend.gain.value = v; };
+  Live.prototype.setVoiceGain = function (v) { if (this.voice) this.voice.gain.value = v; };
+  Live.prototype.setBackGain = function (v) { if (this.backGain) this.backGain.gain.value = v; };
+  Live.prototype.setReduce = function (on) { if (!this.ctx) return; this.direct.gain.value = on ? 0 : 1; this.reduced.gain.value = on ? 1 : 0; };
+  Live.prototype.setNudge = function (ms) { this.nudgeMs = ms; if (this.backDelay) this.backDelay.delayTime.value = Math.max(0, Math.min(0.9, (this.estLatencyMs() + ms) / 1000)); };
+  Live.prototype.level = function () { if (!this.meter) return 0; var a = new Float32Array(this.meter.fftSize), m = 0; this.meter.getFloatTimeDomainData(a); for (var i = 0; i < a.length; i++) m = Math.max(m, Math.abs(a[i])); return m; };
+
+  // ---- backing track
+  Live.prototype.loadBacking = async function (arrayBuffer) {
+    var c = this.ctx; this.stopBacking(); this.offset = 0;
+    this.backing = await c.decodeAudioData(arrayBuffer); return this.backing;
+  };
+  Live.prototype.setBacking = function (buffer) { this.stopBacking(); this.offset = 0; this.backing = buffer; };
+  Live.prototype.position = function () { if (!this.backing) return 0; var p = this.playing ? this.offset + (this.ctx.currentTime - this.startedAt) : this.offset; return Math.min(p, this.backing.duration); };
+  Live.prototype.play = function (from) {
+    if (!this.backing) return; var c = this.ctx; this.stopBacking();
+    if (typeof from === 'number') this.offset = Math.max(0, Math.min(from, this.backing.duration - 0.05));
+    var s = c.createBufferSource(); s.buffer = this.backing; s.connect(this.backIn);
+    var self = this; s.onended = function () { if (self.src === s && self.playing) { self.playing = false; self.offset = 0; self.src = null; if (self.onEnd) self.onEnd(); } };
+    s.start(0, this.offset); this.src = s; this.startedAt = c.currentTime; this.playing = true;
+  };
+  Live.prototype.pause = function () { if (!this.playing) return; this.offset = this.position(); this.stopBacking(true); };
+  Live.prototype.stopBacking = function (keepOffset) { if (this.src) { var s = this.src; this.src = null; this.playing = false; s.onended = null; try { s.stop(); } catch (e) {} } this.playing = false; if (!keepOffset) { /* offset kept by caller */ } };
+
+  // ---- recording
+  Live.prototype.startRecording = function () { this.vchunks = []; this.mchunks = []; this.recording = true; this.voiceTap.port.postMessage({ on: true }); this.mixTap.port.postMessage({ on: true }); this.recStart = this.ctx.currentTime; };
+  Live.prototype.stopRecording = function () {
+    this.recording = false; this.voiceTap.port.postMessage({ on: false }); this.mixTap.port.postMessage({ on: false });
+    var sr = this.ctx.sampleRate, v = join(this.vchunks, 0), out = { seconds: v.length / sr, voice: v.length ? wav16([v], sr) : null, mix: null };
+    if (this.mchunks.length) { var l = join(this.mchunks, 0), r = join(this.mchunks, 1); if (!r.length) r = l; out.mix = wav16([l, r], sr); }
+    return out;
+  };
+  Live.prototype.close = function () { if (this.stream) this.stream.getTracks().forEach(function (t) { t.stop(); }); this.stopBacking(); if (this.ctx) { try { this.ctx.close(); } catch (e) {} } this.ctx = null; this.stream = null; this.tune = null; this.meter = null; this.recording = false; this.playing = false; };
+
+  var NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+  function noteName(f) { var m = 69 + 12 * Math.log2(f / 440), r = Math.round(m); return { name: NOTES[((r % 12) + 12) % 12] + (Math.floor(r / 12) - 1), midi: m, cents: Math.round((m - r) * 100) }; }
+  var api = { Live: Live, SCALES: SCALES, noteName: noteName, NOTES: NOTES, wav16: wav16, WORKLETS: WORKLETS, makeIR: makeIR };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.VFLive = api;
+})(typeof window !== 'undefined' ? window : globalThis);
+</script><script>/* VocalForge free tools: live noise-cancelling mic pipeline (browser only, nothing uploaded).
+   mic -> noise suppression (learns your room) -> optional voice polish -> chosen output device (e.g. a virtual cable for OBS/Discord/Zoom) + recorder. */
+(function (root) {
+  'use strict';
+
+  var TAP = [
+    'class CleanTap extends AudioWorkletProcessor {',
+    '  constructor(){ super(); this.on = false; this.port.onmessage = e => { this.on = e.data.on; }; }',
+    '  process(inputs){ const i = inputs[0] && inputs[0][0]; if (this.on && i) this.port.postMessage(i.slice(0)); return true; }',
+    '}',
+    "registerProcessor('clean-tap', CleanTap);"
+  ].join('\n');
+
+  function wav16(x, sr) {
+    var n = x.length, b = new ArrayBuffer(44 + n * 2), v = new DataView(b);
+    function w(o, s) { for (var i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); }
+    w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true);
+    v.setUint16(22, 1, true); v.setUint32(24, sr, true); v.setUint32(28, sr * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true);
+    w(36, 'data'); v.setUint32(40, n * 2, true);
+    for (var i = 0, o = 44; i < n; i++, o += 2) { var s = Math.max(-1, Math.min(1, x[i])); v.setInt16(o, s < 0 ? s * 32768 : s * 32767, true); }
+    return new Blob([b], { type: 'audio/wav' });
+  }
+  function wav16n(chs, sr) {
+    var nch = chs.length, n = chs[0].length, b = new ArrayBuffer(44 + n * nch * 2), v = new DataView(b);
+    function w(o, s) { for (var i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); }
+    w(0, 'RIFF'); v.setUint32(4, 36 + n * nch * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true);
+    v.setUint16(22, nch, true); v.setUint32(24, sr, true); v.setUint32(28, sr * nch * 2, true); v.setUint16(32, nch * 2, true); v.setUint16(34, 16, true);
+    w(36, 'data'); v.setUint32(40, n * nch * 2, true);
+    for (var i = 0, o = 44; i < n; i++) for (var c = 0; c < nch; c++, o += 2) { var s = Math.max(-1, Math.min(1, chs[c][i])); v.setInt16(o, s < 0 ? s * 32768 : s * 32767, true); }
+    return new Blob([b], { type: 'audio/wav' });
+  }
+  function join(chunks) { var n = 0, i; for (i = 0; i < chunks.length; i++) n += chunks[i].length; var o = new Float32Array(n), p = 0; for (i = 0; i < chunks.length; i++) { o.set(chunks[i], p); p += chunks[i].length; } return o; }
+  function biq(c, type, f, q, gain) { var n = c.createBiquadFilter(); n.type = type; n.frequency.value = f; if (q != null) n.Q.value = q; if (gain != null) n.gain.value = gain; return n; }
+
+  function Clean() {
+    this.ctx = null; this.stream = null; this.recording = false; this.cchunks = []; this.rchunks = [];
+    this.onMeter = function () {}; this.onLearned = function () {}; this.onPitch = function () {}; this.polishOn = false; this.profile = null; this.tuneOn = false;
+  }
+  Clean.prototype.devices = async function () {
+    var all = await navigator.mediaDevices.enumerateDevices();
+    return { inputs: all.filter(function (d) { return d.kind === 'audioinput'; }), outputs: all.filter(function (d) { return d.kind === 'audiooutput'; }) };
+  };
+  // opts.deviceId: chosen microphone. opts.source(ctx): test hook supplying an AudioNode instead of the microphone.
+  Clean.prototype.open = async function (opts) {
+    opts = opts || {};
+    var AC = root.AudioContext || root.webkitAudioContext, self = this;
+    this.ctx = new AC({ latencyHint: 'interactive' });
+    var c = this.ctx;
+    await c.audioWorklet.addModule(URL.createObjectURL(new Blob([VFDenoise.workletSource() + '\n' + TAP + '\n' + VFLive.WORKLETS], { type: 'application/javascript' })));
+    var input;
+    if (opts.source) input = opts.source(c);
+    else {
+      var audio = { echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 };
+      if (opts.deviceId) audio.deviceId = { exact: opts.deviceId };
+      this.stream = await navigator.mediaDevices.getUserMedia({ audio: audio });
+      input = c.createMediaStreamSource(this.stream);
+    }
+    this.dn = new AudioWorkletNode(c, 'vf-denoise', { outputChannelCount: [1] });
+    this.dn.port.onmessage = function (e) {
+      var m = e.data;
+      if (m.learned) { self.profile = m.profile; self.onLearned(m); } else self.onMeter(m);
+    };
+    input.connect(this.dn);
+    // optional autotune (the same shifter as the VocalForge live monitor); off = straight through
+    this.tune = new AudioWorkletNode(c, 'live-tune', { outputChannelCount: [1] });
+    this.tune.port.onmessage = function (e) { self.onPitch(e.data); };
+    this.tuned = c.createGain(); this.dry = c.createGain(); this.pre = c.createGain();
+    this.dn.connect(this.tune); this.tune.connect(this.tuned); this.dn.connect(this.dry); this.tuned.connect(this.pre); this.dry.connect(this.pre);
+    this.tuned.gain.value = 0; this.dry.gain.value = 1;
+    // voice polish (optional): high-pass, a little presence, gentle compression
+    this.hp = biq(c, 'highpass', 20, 0.7); this.pres = biq(c, 'peaking', 3500, 0.8, 0); this.comp = c.createDynamicsCompressor();
+    this.comp.threshold.value = -26; this.comp.ratio.value = 1; this.comp.attack.value = 0.006; this.comp.release.value = 0.16; this.comp.knee.value = 12;
+    this.pre.connect(this.hp); this.hp.connect(this.pres); this.pres.connect(this.comp);
+    // effects: reverb, echo, doubler (each a send added to the dry voice)
+    this.fx = c.createGain(); this.comp.connect(this.fx);
+    var conv = c.createConvolver(); conv.normalize = false; conv.buffer = VFLive.makeIR(c, 0.9);
+    this.revSend = c.createGain(); this.revSend.gain.value = 0; this.comp.connect(this.revSend); this.revSend.connect(biq(c, 'highpass', 250, 0.7)).connect(conv).connect(this.fx);
+    this.echoSend = c.createGain(); this.echoSend.gain.value = 0; this.echoDel = c.createDelay(1.5); this.echoDel.delayTime.value = 0.28;
+    var fb = c.createGain(), lp = biq(c, 'lowpass', 3200, 0.7); fb.gain.value = 0.38;
+    this.comp.connect(this.echoSend); this.echoSend.connect(this.echoDel); this.echoDel.connect(lp); lp.connect(fb); fb.connect(this.echoDel); lp.connect(this.fx);
+    this.chorusSend = c.createGain(); this.chorusSend.gain.value = 0;
+    [[0.017, 0.31, 0.0022], [0.026, 0.47, 0.0030]].forEach(function (cfg) {
+      var d = c.createDelay(0.1); d.delayTime.value = cfg[0]; var lfo = c.createOscillator(); lfo.frequency.value = cfg[1]; var depth = c.createGain(); depth.gain.value = cfg[2];
+      lfo.connect(depth).connect(d.delayTime); lfo.start(); self.comp.connect(self.chorusSend); self.chorusSend.connect(d); d.connect(self.fx);
+    });
+    this.out = c.createGain(); this.fx.connect(this.out);
+    // output to a chosen device through a media element; monitor through the default output
+    this.dest = c.createMediaStreamDestination(); this.out.connect(this.dest);
+    this.el = new Audio(); this.el.srcObject = this.dest.stream; this.el.muted = true; this.el.autoplay = true; this.el.play().catch(function () {});
+    this.mon = c.createGain(); this.mon.gain.value = 0; this.out.connect(this.mon); this.mon.connect(c.destination);
+    // recorder taps: cleaned output and the untouched mic
+    var silent = c.createGain(); silent.gain.value = 0; silent.connect(c.destination);
+    this.cTap = new AudioWorkletNode(c, 'clean-tap'); this.out.connect(this.cTap); this.cTap.connect(silent);
+    this.rTap = new AudioWorkletNode(c, 'clean-tap'); input.connect(this.rTap); this.rTap.connect(silent);
+    this.cTap.port.onmessage = function (e) { if (self.recording) self.cchunks.push(e.data); };
+    this.rTap.port.onmessage = function (e) { if (self.recording) self.rchunks.push(e.data); };
+    await c.resume();
+  };
+  Clean.prototype.learn = function (seconds) { this.dn.port.postMessage({ cmd: 'learn', seconds: seconds || 3 }); };
+  Clean.prototype.clearProfile = function () { this.profile = null; this.dn.port.postMessage({ cmd: 'clear' }); };
+  Clean.prototype.setParams = function (p) { this.dn.port.postMessage({ cmd: 'params', p: p }); };
+  Clean.prototype.setBypass = function (on) { this.setParams({ bypass: !!on }); };
+  Clean.prototype.setPolish = function (on) {
+    this.polishOn = !!on; var t = this.ctx.currentTime;
+    this.hp.frequency.setTargetAtTime(on ? 85 : 20, t, 0.02); this.pres.gain.setTargetAtTime(on ? 2.5 : 0, t, 0.02); this.comp.ratio.setTargetAtTime(on ? 2.5 : 1, t, 0.02);
+    this.out.gain.setTargetAtTime(on ? 1.25 : 1, t, 0.02);
+  };
+  Clean.prototype.setAutotune = function (on) { this.tuneOn = !!on; var t = this.ctx.currentTime; this.tuned.gain.setTargetAtTime(on ? 1 : 0, t, 0.01); this.dry.gain.setTargetAtTime(on ? 0 : 1, t, 0.01); };
+  Clean.prototype.setKey = function (tonic, scale) { var SC = VFLive.SCALES; this.tune.port.postMessage({ tonic: tonic, scale: SC[scale] === undefined ? SC.major : SC[scale] }); };
+  Clean.prototype.setTune = function (amount, speed) { this.tune.parameters.get('amount').value = amount; this.tune.parameters.get('speed').value = speed; };
+  Clean.prototype.setReverb = function (v) { this.revSend.gain.setTargetAtTime(v * 0.9, this.ctx.currentTime, 0.02); };
+  Clean.prototype.setEcho = function (v, ms) { this.echoSend.gain.setTargetAtTime(v * 0.8, this.ctx.currentTime, 0.02); if (ms) this.echoDel.delayTime.setTargetAtTime(ms / 1000, this.ctx.currentTime, 0.05); };
+  Clean.prototype.setChorus = function (v) { this.chorusSend.gain.setTargetAtTime(v * 0.7, this.ctx.currentTime, 0.02); };
+  Clean.prototype.setMonitor = function (on) { if (this.mon) this.mon.gain.setTargetAtTime(on ? 1 : 0, this.ctx.currentTime, 0.02); };
+  // deviceId: '' = silent (just meters/recording), 'default' = default output, or a device id
+  Clean.prototype.setOutput = async function (deviceId) {
+    if (!this.el) return false;
+    if (!deviceId) { this.el.muted = true; return true; }
+    if (deviceId !== 'default' && typeof this.el.setSinkId === 'function') { try { await this.el.setSinkId(deviceId); } catch (e) { return false; } }
+    else if (deviceId !== 'default') return false;
+    this.el.muted = false; try { await this.el.play(); } catch (e) {} return true;
+  };
+  Clean.prototype.canChooseOutput = function () { return typeof Audio !== 'undefined' && typeof Audio.prototype.setSinkId === 'function'; };
+  Clean.prototype.startRecording = function () { this.cchunks = []; this.rchunks = []; this.recording = true; this.cTap.port.postMessage({ on: true }); this.rTap.port.postMessage({ on: true }); };
+  Clean.prototype.stopRecording = function () {
+    this.recording = false; this.cTap.port.postMessage({ on: false }); this.rTap.port.postMessage({ on: false });
+    var sr = this.ctx.sampleRate, c = join(this.cchunks), r = join(this.rchunks);
+    // the cleaned signal runs about 11 ms behind the raw one: trim so both files start together
+    var lag = 512; if (c.length > lag) c = c.subarray(lag);
+    return { seconds: c.length / sr, clean: c.length ? wav16(c, sr) : null, raw: r.length ? wav16(r, sr) : null };
+  };
+  Clean.prototype.latencyMs = function () { var c = this.ctx; return c ? Math.round(512 / c.sampleRate * 1000 + ((c.baseLatency || 0.01) + (c.outputLatency || 0.02)) * 1000) : 0; };
+  Clean.prototype.close = function () { if (this.stream) this.stream.getTracks().forEach(function (t) { t.stop(); }); if (this.el) { this.el.pause(); this.el.srcObject = null; } if (this.ctx) { try { this.ctx.close(); } catch (e) {} } this.ctx = null; this.stream = null; this.recording = false; };
+
+  var api = { Clean: Clean, wav16: wav16, wav16n: wav16n };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.VFClean = api;
+})(typeof window !== 'undefined' ? window : globalThis);
+</script><script>/* VocalForge free tools: noise-cancelling mic + voice recorder page glue (streaming and recording modes).
+   Nothing is uploaded; there is no network code here. */
+(function () {
+  'use strict';
+  var root = document.getElementById('clean');
+  if (!root) return;
+  var mode = root.getAttribute('data-mode') || 'stream', BASE = root.getAttribute('data-base') || '/vocalforge';
+  var $ = function (s) { return root.querySelector(s); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var clean = new VFClean.Clean(); window.__vfClean = clean;
+  var NOTES = VFLive.NOTES;
+  var st = { key: 0, scale: 'major', preset: 'pop', learned: false, takes: 0, recTimer: null, recStart: 0, pitchT: 0 };
+  function toast(msg, bad) { var t = $('#msg'); t.textContent = msg; t.className = 'livemsg' + (bad ? ' bad' : ''); t.hidden = !msg; }
+  function mmss(t) { t = Math.max(0, Math.floor(t)); return Math.floor(t / 60) + ':' + ('0' + (t % 60)).slice(-2); }
+  function dbw(db) { return Math.max(0, Math.min(100, Math.round((db + 70) / 70 * 100))); }
+
+  // ------------------------------------------------------------------ settings -> engine
+  function applyDenoise() {
+    var red = +$('#reduce').value, sens = +$('#sens').value / 10; $('#reducev').textContent = red + ' dB'; $('#sensv').textContent = sens.toFixed(1);
+    clean.setParams({ reduceDb: red, sens: sens, gateOn: $('#gate').checked });
+  }
+  var PRESETS = { natural: { a: 0.55, s: 0.12 }, pop: { a: 0.8, s: 0.05 }, hard: { a: 1, s: 0 } };
+  function applyTune() { clean.setTune($('#amount').value / 100, $('#speed').value / 1000); $('#amountv').textContent = $('#amount').value + '%'; $('#speedv').textContent = $('#speed').value === '0' ? 'instant' : $('#speed').value + ' ms'; }
+  function setPreset(name) {
+    st.preset = name; root.querySelectorAll('[data-preset]').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-preset') === name); });
+    var p = PRESETS[name]; $('#amount').value = Math.round(p.a * 100); $('#speed').value = Math.round(p.s * 1000); applyTune();
+  }
+  function applyKey() { clean.setKey(st.key, st.scale); }
+  function applyFx() {
+    var r = $('#reverb').value, e = $('#echo').value, t = $('#echotime').value, c = $('#chorus').value;
+    $('#reverbv').textContent = r + '%'; $('#echov').textContent = e + '%'; $('#echotimev').textContent = t + ' ms'; $('#chorusv').textContent = c + '%';
+    clean.setReverb(r / 100); clean.setEcho(e / 100, +t); clean.setChorus(c / 100);
+  }
+  function applyAll() { applyDenoise(); clean.setPolish($('#polish').checked); clean.setBypass($('#ab').checked); applyKey(); setPreset(st.preset); applyFx(); clean.setAutotune($('#at').checked); }
+
+  // ------------------------------------------------------------------ meters + learn
+  clean.onMeter = function (m) {
+    $('#inbar').style.width = dbw(m.inDb) + '%'; $('#outbar').style.width = dbw(m.outDb) + '%';
+    $('#noisedb').textContent = m.noiseDb > -110 ? m.noiseDb.toFixed(0) + ' dBFS' : 'measuring...';
+    if (m.learning) { $('#learnbar').style.width = Math.round(m.progress * 100) + '%'; }
+  };
+  clean.onLearned = function (m) {
+    st.learned = true; $('#learn').disabled = false; $('#learn').textContent = 'Learn again'; $('#learnbar').style.width = '100%';
+    $('#learnmsg').innerHTML = 'Learned your room: <b>' + (20 * Math.log10(m.noiseRms)).toFixed(0) + ' dBFS</b> of background noise is now being removed.';
+  };
+  clean.onPitch = function (m) {
+    var now = performance.now(); if (now - st.pitchT < 120) return; st.pitchT = now;
+    if (m.f > 0) { var n = VFLive.noteName(m.f); $('#note').textContent = n.name + (m.t ? ' > ' + VFLive.noteName(m.t).name : ''); }
+  };
+  function learn() {
+    var b = $('#learn'); b.disabled = true; b.textContent = 'Stay quiet...'; $('#learnmsg').textContent = 'Stay silent for 3 seconds. Do not speak or type.'; $('#learnbar').style.width = '0%';
+    setTimeout(function () { clean.learn(3); }, 500);
+  }
+
+  // ------------------------------------------------------------------ output devices (streaming mode)
+  async function fillDevices() {
+    try {
+      var d = await clean.devices(), mic = $('#mic'); var cur = mic.value;
+      mic.innerHTML = '<option value="">Default microphone</option>' + d.inputs.map(function (x) { return '<option value="' + esc(x.deviceId) + '">' + esc(x.label || 'Microphone') + '</option>'; }).join('');
+      mic.value = cur;
+      var os = $('#outsel'); if (os) {
+        os.innerHTML = '<option value="">Do not play (just clean and meter)</option><option value="default">Default speakers or headphones (hear yourself)</option>' +
+          d.outputs.filter(function (x) { return x.deviceId !== 'default' && x.deviceId !== 'communications'; }).map(function (x) { return '<option value="' + esc(x.deviceId) + '">' + esc(x.label || 'Output') + '</option>'; }).join('');
+      }
+    } catch (e) {}
+  }
+  async function chooseOutput() {
+    var v = $('#outsel').value, s = $('#outstatus');
+    if (v && v !== 'default' && !clean.canChooseOutput()) { s.textContent = 'This browser cannot choose an output device. Use Chrome or Edge on a computer.'; s.className = 'small bad'; return; }
+    var ok = await clean.setOutput(v);
+    if (!v) { s.textContent = 'Nothing is being played. The clean mic is only metered or recorded.'; s.className = 'small mute'; }
+    else if (!ok) { s.textContent = 'Could not use that output device.'; s.className = 'small bad'; }
+    else { var label = $('#outsel').selectedOptions[0].textContent; s.innerHTML = 'Sending your clean mic to: <b>' + esc(label) + '</b>'; s.className = 'small ok'; }
+  }
+
+  // ------------------------------------------------------------------ recording (voice recorder mode)
+  function addTake(res) {
+    st.takes++; var html = '<div class="take"><b>Take ' + st.takes + ' <small>' + mmss(res.seconds) + '</small></b>';
+    function row(label, blob, name) { var url = URL.createObjectURL(blob); return '<div class="takerow"><span>' + label + '</span><audio controls preload="metadata" src="' + url + '"></audio><a class="btn small" download="' + name + '" href="' + url + '">Download WAV</a></div>'; }
+    if (res.clean) html += row('Clean (noise removed)', res.clean, 'vocalforge-take' + st.takes + '-clean.wav');
+    if (res.raw) html += row('Original (untouched)', res.raw, 'vocalforge-take' + st.takes + '-original.wav');
+    html += '<p class="small mute">Want it studio-ready? <a href="' + BASE + '#pricing">VocalForge</a> also fixes echo, tunes, levels and masters a take like this on your PC.</p></div>';
+    $('#takes').insertAdjacentHTML('afterbegin', html);
+  }
+  function recToggle() {
+    var b = $('#rec');
+    if (clean.recording) {
+      clearInterval(st.recTimer); var res = clean.stopRecording(); b.textContent = 'Record'; b.classList.remove('live'); $('#timer').textContent = '0:00';
+      if (res.clean) addTake(res); else toast('Nothing was recorded.', true); return;
+    }
+    clean.startRecording(); b.textContent = 'Stop and save'; b.classList.add('live'); st.recStart = performance.now();
+    st.recTimer = setInterval(function () { $('#timer').textContent = mmss((performance.now() - st.recStart) / 1000); }, 250);
+  }
+
+  // ------------------------------------------------------------------ clean an existing file (record mode)
+  function cleanFile(file) {
+    if (!file) return; var box = $('#cresult'); box.hidden = false; box.innerHTML = '<p>Reading <b>' + esc(file.name) + '</b>...</p>';
+    file.arrayBuffer().then(function (ab) {
+      var AC = window.AudioContext || window.webkitAudioContext, tmp = new AC();
+      return tmp.decodeAudioData(ab).then(function (buf) { try { tmp.close(); } catch (e) {} return buf; });
+    }).then(function (buf) {
+      box.innerHTML = '<p>Cleaning <b>' + esc(file.name) + '</b> (' + mmss(buf.duration) + ')...</p>';
+      var chs = []; for (var c = 0; c < Math.min(2, buf.numberOfChannels); c++) chs.push(new Float32Array(buf.getChannelData(c)));
+      var origBlob = VFClean.wav16n(chs.map(function (x) { return x.slice(); }), buf.sampleRate);
+      var opts = { reduceDb: +$('#reduce').value, sens: +$('#sens').value / 10, gateOn: $('#gate').checked };
+      var src = document.getElementById('vfdenoise').textContent + ';self.onmessage=function(e){try{var d=e.data,o=[];for(var i=0;i<d.chs.length;i++){o.push(VFDenoise.cleanBuffer(d.chs[i],d.sr,d.opts))}self.postMessage({res:o.map(function(r){return{out:r.out,learned:r.learned,noiseRms:r.noiseRms}})},o.map(function(r){return r.out.buffer}))}catch(err){self.postMessage({err:String(err)})}}';
+      var w = new Worker(URL.createObjectURL(new Blob([src], { type: 'text/javascript' })));
+      return new Promise(function (resolve, reject) {
+        w.onmessage = function (m) { w.terminate(); if (m.data.res) resolve(m.data.res); else reject(new Error(m.data.err)); };
+        w.onerror = function (e) { w.terminate(); reject(new Error(e.message || 'failed')); };
+        w.postMessage({ chs: chs, sr: buf.sampleRate, opts: opts }, chs.map(function (x) { return x.buffer; }));
+      }).then(function (res) {
+        var outs = res.map(function (r) { return r.out; });
+        if ($('#cnorm').checked) { var pk = 0; outs.forEach(function (o) { for (var i = 0; i < o.length; i += 1) { var a = Math.abs(o[i]); if (a > pk) pk = a; } }); if (pk > 0) { var g = 0.89 / pk; outs.forEach(function (o) { for (var i = 0; i < o.length; i++) o[i] *= g; }); } }
+        var cleanBlob = VFClean.wav16n(outs, buf.sampleRate), u1 = URL.createObjectURL(origBlob), u2 = URL.createObjectURL(cleanBlob);
+        var base = file.name.replace(/\.[^.]+$/, '');
+        box.innerHTML = '<div class="take"><b>' + esc(file.name) + ' <small>' + mmss(buf.duration) + '</small></b>' +
+          '<p class="small mute">' + (res[0].learned === true ? 'Learned the background noise from a quiet part of your recording (' + (20 * Math.log10(res[0].noiseRms)).toFixed(0) + ' dBFS) and removed it.' : 'No silent part was found, so the noise was estimated from the whole recording and removed gently. For a stronger result, record 1 to 2 seconds of room tone at the start.') + '</p>' +
+          '<div class="takerow"><span>Original</span><audio controls src="' + u1 + '"></audio></div>' +
+          '<div class="takerow"><span>Cleaned</span><audio controls src="' + u2 + '"></audio><a class="btn small" download="' + esc(base) + '-clean.wav" href="' + u2 + '">Download WAV</a></div></div>';
+      });
+    }).catch(function (e) { box.innerHTML = '<p class="livemsg bad">Could not clean that file (' + esc(e.message || e) + '). Try a WAV or MP3.</p>'; });
+  }
+
+  // ------------------------------------------------------------------ start
+  async function start() {
+    var b = $('#start'); b.disabled = true; b.textContent = 'Turning on...';
+    try { await clean.open({ deviceId: $('#mic').value || undefined }); }
+    catch (e) { b.disabled = false; b.textContent = 'Turn on microphone'; toast(e && e.name === 'NotAllowedError' ? 'The browser blocked the microphone. Click the lock icon in the address bar, allow it, and try again.' : 'Could not start the microphone (' + (e && e.message || e) + ').', true); return; }
+    toast(''); b.hidden = true; $('#panel').hidden = false; applyAll(); await fillDevices();
+    $('#lat').textContent = 'Estimated delay: about ' + clean.latencyMs() + ' ms';
+    if ($('#outsel')) chooseOutput();
+  }
+
+  // ------------------------------------------------------------------ events
+  var kSel = $('#key'); NOTES.forEach(function (n, i) { var o = document.createElement('option'); o.value = i; o.textContent = n; kSel.appendChild(o); });
+  $('#start').onclick = start; $('#learn').onclick = learn;
+  ['#reduce', '#sens'].forEach(function (id) { $(id).oninput = applyDenoise; }); $('#gate').onchange = applyDenoise;
+  $('#polish').onchange = function () { clean.setPolish(this.checked); }; $('#ab').onchange = function () { clean.setBypass(this.checked); };
+  $('#at').onchange = function () { clean.setAutotune(this.checked); };
+  $('#key').onchange = function () { st.key = +this.value; applyKey(); }; $('#scale').onchange = function () { st.scale = this.value; applyKey(); };
+  root.querySelectorAll('[data-preset]').forEach(function (b) { b.onclick = function () { setPreset(this.getAttribute('data-preset')); if (!$('#at').checked) { $('#at').checked = true; clean.setAutotune(true); } }; });
+  $('#amount').oninput = applyTune; $('#speed').oninput = applyTune;
+  ['#reverb', '#echo', '#echotime', '#chorus'].forEach(function (id) { $(id).oninput = applyFx; });
+  $('#micoff').onclick = function () { if (clean.recording) recToggle(); clean.close(); $('#panel').hidden = true; var b = $('#start'); b.hidden = false; b.disabled = false; b.textContent = 'Turn on microphone'; toast('Microphone off.'); };
+  if (mode === 'stream') { $('#outsel').onchange = chooseOutput; $('#monitor').onchange = function () { clean.setMonitor(this.checked); }; }
+  if (mode === 'record') {
+    $('#rec').onclick = recToggle;
+    var drop = $('#cdrop'), inp = $('#cfile');
+    drop.onclick = function () { inp.click(); }; drop.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); inp.click(); } };
+    inp.onchange = function () { cleanFile(inp.files[0]); inp.value = ''; };
+    ['dragenter', 'dragover'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add('over'); }); });
+    ['dragleave', 'drop'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove('over'); }); });
+    drop.addEventListener('drop', function (e) { cleanFile(e.dataTransfer && e.dataTransfer.files[0]); });
+  }
+})();
+</script></body></html>

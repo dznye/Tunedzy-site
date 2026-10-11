@@ -202,6 +202,6 @@
 
   var NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
   function noteName(f) { var m = 69 + 12 * Math.log2(f / 440), r = Math.round(m); return { name: NOTES[((r % 12) + 12) % 12] + (Math.floor(r / 12) - 1), midi: m, cents: Math.round((m - r) * 100) }; }
-  var api = { Live: Live, SCALES: SCALES, noteName: noteName, NOTES: NOTES, wav16: wav16 };
+  var api = { Live: Live, SCALES: SCALES, noteName: noteName, NOTES: NOTES, wav16: wav16, WORKLETS: WORKLETS, makeIR: makeIR };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.VFLive = api;
 })(typeof window !== 'undefined' ? window : globalThis);

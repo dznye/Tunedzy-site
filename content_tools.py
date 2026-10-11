@@ -369,4 +369,89 @@ TOOLS['karaoke-autotune'] = dict(
     guide_links=['autotune-for-rap-vocals', 'mix-vocals-on-a-beat'],
 )
 
-TOOL_ORDER = ['live-autotune', 'karaoke-autotune', 'bpm-finder', 'song-key-finder', 'chord-finder', 'lufs-meter', 'vocal-checker']
+
+
+# ------------------------------------------------------------------------------------------------- noise-cancelling mic tools
+TOOLS['clean-streaming-mic'] = dict(
+    title='Noise Cancelling Mic Online for Streaming (Free, Live)',
+    desc='Free live noise cancelling for your mic. Learns your room noise, cleans it in real time and feeds OBS, Discord or Zoom. Private, in your browser.',
+    h1='Clean Streaming Mic: Live Noise Cancellation for OBS, Discord and Zoom',
+    short='Clean Streaming Mic', blurb='Learn your room noise, remove it live and feed OBS, Discord or Zoom.', icon='denoise', color='teal',
+    kind='stream', focus='all', tap=False, kw='noise cancelling mic for streaming',
+    lead=('Turn on your mic, let it learn the background noise in your room, and it removes that noise in real time. '
+          'Add autotune, reverb, echo or a doubler if you like, then send the clean mic to OBS, Discord, Zoom or Teams. It runs in your browser and your voice is never uploaded.'),
+    how=['Click <strong>Turn on microphone</strong>, then <strong>Learn my room noise</strong> and stay silent for 3 seconds.',
+         'Adjust <strong>Noise removal</strong> until the background is gone but your voice still sounds natural. Tick <strong>Hear original</strong> to compare.',
+         'Pick an <strong>output device</strong> (a virtual cable) and choose that cable as the microphone in OBS, Discord or Zoom.'],
+    body=r"""
+<h2>How the noise cancelling works</h2>
+<p>Most mic noise is steady: a PC fan, an air conditioner, a hiss, a hum. When you press <strong>Learn my room noise</strong>, the tool listens to three seconds of that room tone and remembers its sound at every pitch. While you talk, it turns down only the parts of the sound that match that noise, and it closes a gentle gate between words. It adapts to <em>your</em> room, which is why it can beat a generic filter.</p>
+<h2>Connect it to OBS, Discord, Zoom or Teams</h2>
+<p>A web page cannot create a new microphone by itself, so the clean sound needs a path into your other apps. There are two easy ways:</p>
+<ol>
+<li><strong>A virtual audio cable (works with every app).</strong> Install a free one: <em>VB-Cable</em> on Windows or <em>BlackHole</em> on Mac. In this page, set <strong>Send clean mic to</strong> the cable&rsquo;s input (&ldquo;CABLE Input&rdquo;). In OBS, Discord, Zoom or Teams, choose the cable&rsquo;s output (&ldquo;CABLE Output&rdquo;) as your microphone.</li>
+<li><strong>OBS only, no install:</strong> in OBS (version 28 or newer on Windows 10/11) add an <em>Application Audio Capture</em> source and pick your browser window. It captures the browser&rsquo;s audio, which includes this page. Mute other tabs so only this page plays.</li>
+</ol>
+<p>Keep this tab open while you stream. Choosing an output device works in Chrome and Edge on a computer.</p>
+<h2>Good starting settings</h2>
+<table><tr><th>Noise</th><th>Reduction</th><th>Sensitivity</th><th>Notes</th></tr>
+<tr><td>Light hiss or hum</td><td>12&ndash;15 dB</td><td>1.3</td><td>Sounds most natural</td></tr>
+<tr><td>PC fan or air conditioner</td><td>18 dB</td><td>1.6</td><td>The default; keep the gate on</td></tr>
+<tr><td>Loud steady noise</td><td>24&ndash;30 dB</td><td>2.0&ndash;3.0</td><td>Voice may sound slightly thinner</td></tr></table>
+<h2>Autotune and effects for streamers</h2>
+<p>The same page can add real-time <strong>autotune</strong> (pick the key and a Natural, Pop or Hard-tune style), <strong>reverb</strong>, <strong>echo</strong> and a <strong>doubler</strong>. They run after the noise removal, so you add effects to a clean voice. Voice polish adds a gentle high-pass, a touch of presence and light compression.</p>
+<h2>What it cannot do</h2>
+<ul>
+<li>It cannot remove <strong>other voices</strong>, music or a TV, because those sound like speech.</li>
+<li>Sudden sounds such as <strong>keyboard clatter</strong> and mouse clicks are only reduced, not removed.</li>
+<li>If you use it with headphones, set the output so you do not hear yourself twice.</li>
+</ul>
+<p>For recordings that must be perfect, the VocalForge desktop app also removes echo, clicks and mouth noise and masters the result.</p>
+""",
+    faq=[('Is the noise cancelling free?', 'Yes. No account, no time limit and no watermark.'),
+         ('Does it upload my voice?', 'No. Your microphone is processed inside your browser, and nothing is sent to a server.'),
+         ('How do I use it in Discord, Zoom or OBS?', 'Install a free virtual audio cable (VB-Cable on Windows, BlackHole on Mac), send this page&rsquo;s output to the cable, and choose the cable as the microphone in your app. In OBS you can alternatively use Application Audio Capture on your browser.'),
+         ('What kind of noise does it remove?', 'Steady noise: fans, air conditioning, hiss and hum. It cannot remove other people talking or music.'),
+         ('Will it add delay?', 'About 11 milliseconds from the noise removal, plus your browser and audio device. That is small enough for streaming and calls.')],
+    related=['voice-recorder-noise-cancellation', 'live-autotune', 'vocal-checker'],
+    guide_links=['fix-vocals-recorded-on-phone', 'remove-echo-from-vocal-recording'],
+)
+
+TOOLS['voice-recorder-noise-cancellation'] = dict(
+    title='Voice Recorder With Noise Cancellation (Free, Online)',
+    desc='Free online voice recorder with noise cancellation. Record voice-overs and content with live noise removal, or clean an existing recording. Private, in your browser.',
+    h1='Online Voice Recorder With Noise Cancellation for Content and Voice-Overs',
+    short='Noise-Free Voice Recorder', blurb='Record voice-overs with live noise removal, or clean an existing file.', icon='record', color='blue',
+    kind='record', focus='all', tap=False, kw='voice recorder with noise cancellation',
+    lead=('Record voice-overs, YouTube and TikTok narration, podcasts and voice notes with live noise cancellation, and download a clean WAV. '
+          'You can also drop in an existing recording to remove its background noise. Autotune and effects are optional, and nothing is uploaded.'),
+    how=['Click <strong>Turn on microphone</strong>, press <strong>Learn my room noise</strong> and stay quiet for 3 seconds.',
+         'Press <strong>Record</strong>, speak, then <strong>Stop and save</strong>. You get a clean WAV and an untouched original.',
+         'Or skip the mic: drop a recording into <strong>Clean an existing recording</strong> and download the cleaned file.'],
+    body=r"""
+<h2>Record clean audio without a studio</h2>
+<p>Most home recordings are ruined by steady background noise: a fan, a hiss, a hum from the computer. This recorder learns the noise in your room from a few seconds of silence and removes it while you record, so the file you download is already clean. You also get the <strong>original</strong> untouched take, in case you want to process it differently later.</p>
+<h2>Clean a recording you already have</h2>
+<p>Drop a voice note, a phone video&rsquo;s audio or a podcast take into <strong>Clean an existing recording</strong>. The tool looks for the quietest part of the file to learn the noise from. If the recording has no real silence, it tracks the noise level automatically instead. Then it removes the noise and gives you a before-and-after player and a WAV download. Tick <em>Normalize</em> to bring the level up for voice-overs.</p>
+<h2>Autotune and effects for content</h2>
+<p>Optional real-time <strong>autotune</strong>, <strong>reverb</strong>, <strong>echo</strong> and a <strong>doubler</strong> run after the noise removal, so effects are added to a clean voice. Use headphones when monitoring, and leave effects off for plain voice-overs.</p>
+<h2>Tips for the cleanest result</h2>
+<ul>
+<li><strong>Record in a soft room.</strong> Curtains, a sofa or a wardrobe full of clothes beat a bare room. Noise removal cannot take echo out.</li>
+<li><strong>Stay 10 to 20 cm from the mic</strong> and speak across it, not into it.</li>
+<li><strong>Turn off the loudest noise:</strong> fan, air conditioning, notifications.</li>
+<li><strong>Use the gentlest setting that works.</strong> Heavy reduction can make a voice sound thin or watery. Tick <em>Hear original</em> to compare.</li>
+</ul>
+<h2>What it cannot do</h2>
+<p>It cannot remove other voices, music, or sudden sounds like clicks and coughs, and it cannot remove room echo. For that, the <a href="/vocalforge">VocalForge desktop app</a> adds echo reduction, click and mouth-noise repair, levelling and mastering.</p>
+""",
+    faq=[('Is the voice recorder free?', 'Yes. No account, no limit on length, and no watermark.'),
+         ('Does it upload my recording?', 'No. Recording, noise removal and downloads all happen in your browser.'),
+         ('Can I clean a recording I already made?', 'Yes. Drop it into the &ldquo;Clean an existing recording&rdquo; box. It works on MP3, WAV, FLAC and OGG files and gives you a cleaned WAV.'),
+         ('What file do I get?', 'A 16-bit WAV. You also get the original untouched recording from the live recorder.'),
+         ('Why does my voice sound thin?', 'The reduction is too strong. Lower the Reduction slider or the Sensitivity, and compare with Hear original.')],
+    related=['clean-streaming-mic', 'live-autotune', 'vocal-checker'],
+    guide_links=['fix-vocals-recorded-on-phone', 'remove-echo-from-vocal-recording'],
+)
+
+TOOL_ORDER = ['live-autotune', 'karaoke-autotune', 'clean-streaming-mic', 'voice-recorder-noise-cancellation', 'bpm-finder', 'song-key-finder', 'chord-finder', 'lufs-meter', 'vocal-checker']

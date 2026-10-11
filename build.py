@@ -34,6 +34,9 @@ CORE_JS = (ROOT / 'assets' / 'vf-core.js').read_text(encoding='utf-8')
 UI_JS = (ROOT / 'assets' / 'vf-ui.js').read_text(encoding='utf-8')
 LIVE_JS = (ROOT / 'assets' / 'vf-live.js').read_text(encoding='utf-8')
 LIVE_UI_JS = (ROOT / 'assets' / 'vf-live-ui.js').read_text(encoding='utf-8')
+DENOISE_JS = (ROOT / 'assets' / 'vf-denoise.js').read_text(encoding='utf-8')
+CLEAN_JS = (ROOT / 'assets' / 'vf-clean.js').read_text(encoding='utf-8')
+CLEAN_UI_JS = (ROOT / 'assets' / 'vf-clean-ui.js').read_text(encoding='utf-8')
 
 # ---------------------------------------------------------------------------------------------------- photos (free licence, hosted by us)
 # name -> (source file, width, height, focus x, focus y, alt text)
@@ -103,6 +106,8 @@ ICONS = {
     'lock': '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
     'mic': '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/>',
     'karaoke': '<path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2.5"/><circle cx="17" cy="16" r="2.5"/>',
+    'denoise': '<path d="M3 12h2l2-5 3 10 3-14 3 12 2-3h3"/><path d="M4 20L20 4"/>',
+    'record': '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/>',
 }
 TOOL_COLOR = {'amber': 'cA', 'violet': 'cV', 'pink': 'cP', 'teal': 'cT', 'blue': 'cB'}
 
@@ -271,6 +276,51 @@ def live_widget(kind):
             '<div id="takes"></div></div></div></div>')
 
 
+def clean_scripts():
+    return (f'<script id="vfdenoise">{DENOISE_JS}</script><script>{LIVE_JS}</script><script>{CLEAN_JS}</script><script>{CLEAN_UI_JS}</script>')
+
+
+def _slider(id_, label, lo, hi, val, out):
+    return f'<div class="fl"><label for="{id_}">{label}</label><input type="range" id="{id_}" min="{lo}" max="{hi}" value="{val}"><output class="v" id="{id_}v">{out}</output></div>'
+
+
+def clean_widget(kind):
+    stream = kind == 'stream'
+    noise = ('<div class="cbox" style="margin-top:16px"><h3>Noise removal</h3>' + _slider('reduce', 'Reduction', 6, 30, 18, '18 dB') + _slider('sens', 'Sensitivity', 10, 30, 16, '1.6') +
+             '<div class="fl"><label><input type="checkbox" id="gate" checked> Close the gate between words</label></div>'
+             '<p class="small mute" style="margin:0">Higher reduction removes more noise but can thin the voice. Sensitivity makes it hunt noise harder.</p></div>')
+    panel_top = ('<div class="meters"><div class="mrow"><span>Before</span><div class="lvlbar"><i id="inbar"></i></div></div>'
+                 '<div class="mrow"><span>After</span><div class="lvlbar"><i id="outbar" style="background:linear-gradient(90deg,var(--teal),var(--blue))"></i></div></div>'
+                 '<div class="mrow"><span>Room noise</span><b id="noisedb" class="small">measuring...</b></div></div>'
+                 '<div class="learnrow"><button class="btn primary" id="learn" type="button">Learn my room noise</button><div class="lvlbar grow"><i id="learnbar"></i></div></div>'
+                 '<p class="small mute" id="learnmsg">Stay silent for 3 seconds so it can hear your room. Until you do, it tracks the noise automatically.</p>'
+                 '<div class="fl" style="margin-top:6px"><label><input type="checkbox" id="ab"> Hear original (compare)</label><label><input type="checkbox" id="polish"> Voice polish</label></div>')
+    autotune = ('<div class="cbox"><h3>Autotune</h3><div class="fl"><label><input type="checkbox" id="at"> Autotune on</label><span class="small mute" id="note">--</span></div>'
+                '<div class="fl"><label for="key">Key</label><select id="key"></select><select id="scale"><option value="major">major</option><option value="minor">minor</option><option value="chromatic">every note</option></select></div>'
+                '<div class="presets"><button type="button" data-preset="natural">Natural</button><button type="button" data-preset="pop">Pop</button><button type="button" data-preset="hard">Hard-tune</button></div>'
+                + _slider('amount', 'Strength', 0, 100, 80, '80%') + _slider('speed', 'Retune speed', 0, 250, 50, '50 ms') + '</div>')
+    effects = ('<div class="cbox"><h3>Effects</h3>' + _slider('reverb', 'Reverb', 0, 80, 0, '0%') + _slider('echo', 'Echo', 0, 80, 0, '0%') + _slider('echotime', 'Echo time', 80, 700, 280, '280 ms')
+               + _slider('chorus', 'Doubler', 0, 100, 0, '0%') + '<p class="small mute" style="margin:0">Effects are added after the noise removal, so they sit on a clean voice.</p></div>')
+    if stream:
+        extra = ('<div class="cbox" style="margin-top:16px"><h3>Send clean mic to</h3><div class="fl"><label for="outsel" style="min-width:0">Output</label><select id="outsel" style="flex:1;min-width:200px"></select></div>'
+                 '<div class="fl"><label><input type="checkbox" id="monitor"> Also play in my headphones (monitor)</label></div>'
+                 '<p class="small mute" id="outstatus">Choose a virtual cable (for example &ldquo;CABLE Input&rdquo;), then pick the matching &ldquo;CABLE Output&rdquo; as your microphone in OBS, Discord or Zoom.</p></div>')
+    else:
+        extra = ('<div class="recrow"><button id="rec" type="button">Record</button><span id="timer">0:00</span></div><div id="takes"></div>')
+    panel = (f'<div class="livepanel" id="panel" hidden>{panel_top}<div class="ctrlgrid" style="margin-top:16px">{autotune}{effects}</div>{extra}'
+             '<div class="recrow"><button class="btn small ghost" id="micoff" type="button">Turn off microphone</button><span class="small mute" id="lat"></span></div></div>')
+    filebox = ''
+    if not stream:
+        filebox = (f'<div class="cbox" style="margin-top:16px"><h3>Clean an existing recording</h3><div class="drop small" id="cdrop" tabindex="0" role="button" aria-label="Choose a recording to clean">'
+                   f'<div class="ic">{svg_icon("upload")}</div><b>Drop a recording here</b><span>MP3, WAV, FLAC or OGG &middot; the noise settings above are used</span></div>'
+                   '<input type="file" id="cfile" accept="audio/*,.mp3,.wav,.flac,.ogg,.m4a" hidden>'
+                   '<div class="fl" style="margin-top:12px"><label><input type="checkbox" id="cnorm" checked> Normalize the level</label></div><div id="cresult" hidden></div></div>')
+    return (f'<div class="live" id="clean" data-mode="{kind}" data-base="{C.BASE}"><div class="inner">'
+            '<div class="startrow"><select id="mic" aria-label="Microphone" style="min-width:200px"><option value="">Default microphone</option></select><button class="btn primary" id="start" type="button">Turn on microphone</button>'
+            '<span class="small">Use headphones if you hear yourself, to avoid feedback.</span></div><div class="livemsg" id="msg" hidden></div>'
+            f'{noise}{panel}{filebox}</div></div>')
+
+
 # ---------------------------------------------------------------------------------------------------- rack mock (hero)
 def rack():
     mods = [('CLEAN', 'var(--amber)', .72), ('TUNE', 'var(--pink)', .88), ('FIT', 'var(--teal)', .56), ('STYLE', 'var(--violet)', .66), ('MIX', 'var(--blue)', .8), ('MASTER', 'var(--orange)', .92)]
@@ -378,8 +428,12 @@ def tool_page(slug):
     rel = ''.join(f'<a class="card {TOOL_COLOR[T.TOOLS[r]["color"]]}" href="{C.BASE}/tools/{r}" style="padding:18px">{ico(T.TOOLS[r]["icon"], TOOL_COLOR[T.TOOLS[r]["color"]])}<h3>{e(T.TOOLS[r]["short"])}</h3><p>{e(T.TOOLS[r]["blurb"])}</p></a>' for r in t['related'])
     gl = ''.join(f'<a href="{C.BASE}/{g}"><b>{e(C.GUIDES[g]["h1"])}</b></a>' for g in t['guide_links'])
     kind = t.get('kind')
-    widget = live_widget(kind) if kind in ('live', 'karaoke') else tool_widget(t['focus'], tap=t['tap'])
-    scripts = live_scripts(kind) if kind in ('live', 'karaoke') else tool_scripts()
+    if kind in ('live', 'karaoke'):
+        widget, scripts = live_widget(kind), live_scripts(kind)
+    elif kind in ('stream', 'record'):
+        widget, scripts = clean_widget(kind), clean_scripts()
+    else:
+        widget, scripts = tool_widget(t['focus'], tap=t['tap']), tool_scripts()
     action = (f'<a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download the free trial</a>' if LAUNCHED
               else f'<a class="btn primary" href="{C.BASE}">See VocalForge</a>')
     body = f'''<main><div class="hero" style="padding:0 0 30px">{shapes('soft')}<div class="wrap">{crumbs_html}<div class="toolhead"><h1>{t['h1']}</h1><p class="lead">{t['lead']}</p></div>
