@@ -18,6 +18,7 @@ from pathlib import Path
 
 import content as C
 import content_tools as T
+import content_blog as B
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'vocalforge'
@@ -203,7 +204,7 @@ def layout(*, title, desc, path, body, lds, robots='index,follow', og_type='webs
 <footer><div class="wrap"><div class="cols">
 <div><h4>VocalForge</h4><a href="{C.BASE}">Overview</a><br><a href="{C.BASE}#features">Features</a><br><a href="{C.BASE}#pricing">Pricing</a><br><a href="{C.BASE}#faq">FAQ</a></div>
 <div><h4>Free tools</h4>{tools_f}</div>
-<div><h4>Guides</h4>{guides_f}</div>
+<div><h4>Guides</h4>{guides_f}<a href="{C.BASE}/blog">All audio guides</a></div>
 <div><h4>Support</h4><a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a><br><a href="{e(C.MAC_MAIL)}">Request a Mac version</a><br><a href="{C.BASE}/privacy">Privacy</a><br><a href="{C.BASE}/terms">Terms</a><br><a href="{C.BASE}/refund-policy">Refunds</a></div>
 </div><p class="credit" style="margin-top:26px">VocalForge is a Fuidzy product. It is not affiliated with or endorsed by any artist or plugin company mentioned on this site.</p>
 <p class="credit">Photos: {', '.join(f'<a href="{u}" rel="noopener">{n} / {site}</a>' for n, site, u in CREDITS)}. Free to use under the Pexels and Unsplash licenses.</p></div></footer>{scripts}</body></html>'''
@@ -427,6 +428,8 @@ def tool_page(slug):
     how = ''.join(f'<div>{h}</div>' for h in t['how'])
     rel = ''.join(f'<a class="card {TOOL_COLOR[T.TOOLS[r]["color"]]}" href="{C.BASE}/tools/{r}" style="padding:18px">{ico(T.TOOLS[r]["icon"], TOOL_COLOR[T.TOOLS[r]["color"]])}<h3>{e(T.TOOLS[r]["short"])}</h3><p>{e(T.TOOLS[r]["blurb"])}</p></a>' for r in t['related'])
     gl = ''.join(f'<a href="{C.BASE}/{g}"><b>{e(C.GUIDES[g]["h1"])}</b></a>' for g in t['guide_links'])
+    arts = [x for x in B.BLOGS if B.CLUSTERS[x['cluster']]['tool'] == slug]
+    articles = ('<h2>Guides for this tool</h2><div class="related">' + ''.join(f'<a href="{C.BASE}/blog/{x["slug"]}"><b>{e(x["h1"])}</b><br><span class="small">{e(x["desc"][:110])}&hellip;</span></a>' for x in arts) + '</div>') if arts else ''
     kind = t.get('kind')
     if kind in ('live', 'karaoke'):
         widget, scripts = live_widget(kind), live_scripts(kind)
@@ -441,7 +444,7 @@ def tool_page(slug):
 <div class="narrow"><article>{t['body']}
 <div class="vf"><h2>Like this? Let VocalForge do the fixing.</h2><p>These tools tell you what is going on. VocalForge acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Free to try for 7 days, then $29 once.</p><div class="cta">{action}<a class="btn" href="{e(C.HELP_MAIL)}">Ask us a question</a></div></div>
 <h2>Frequently asked questions</h2>{faq_html(t['faq'])}
-<h2>More free tools</h2><div class="tcards">{rel}</div>
+{articles}<h2>More free tools</h2><div class="tcards">{rel}</div>
 <h2>Related guides</h2><div class="related">{gl}</div></article></div></main>'''
     return layout(title=t['title'], desc=t['desc'], path=f'{C.BASE}/tools/{slug}', body=body,
                   lds=[webapp_ld(slug, t['short'], t['desc']), faq_ld(t['faq']), crumbs_ld], scripts=scripts)
@@ -469,6 +472,50 @@ def guide(slug):
 <h2>Frequently asked questions</h2>{faq_html(g['faq'])}
 <h2>Keep going</h2><div class="related">{rel}</div></article></div></main>'''
     return layout(title=g['title'], desc=g['desc'], path=f'{C.BASE}/{slug}', body=body, lds=[article_ld, faq_ld(g['faq']), crumbs_ld], og_type='article')
+
+
+# ---------------------------------------------------------------------------------------------------- blog (SEO articles for the tools)
+def blog_by_slug():
+    return {b['slug']: b for b in B.BLOGS}
+
+
+def blog_related(b):
+    same = [x for x in B.BLOGS if x['cluster'] == b['cluster']]
+    i = same.index(b)
+    rel = [same[(i + k) % len(same)] for k in (1, 2, 3)]
+    return [r for r in rel if r is not b]
+
+
+def blog_page(b):
+    cl = B.CLUSTERS[b['cluster']]
+    tool = T.TOOLS[cl['tool']]
+    path = f"{C.BASE}/blog/{b['slug']}"
+    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('VocalForge', C.BASE), ('Blog', f'{C.BASE}/blog'), (b['h1'], path)])
+    rel = ''.join(f'<a href="{C.BASE}/blog/{r["slug"]}"><b>{e(r["h1"])}</b><br><span class="small">{e(r["desc"][:110])}&hellip;</span></a>' for r in blog_related(b))
+    article_ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': b['h1'], 'description': b['desc'], 'datePublished': C.DATE, 'dateModified': C.DATE,
+                  'image': C.SITE + C.BASE + '/og.png', 'mainEntityOfPage': C.SITE + path, 'keywords': b['kw'],
+                  'author': {'@type': 'Organization', 'name': 'Fuidzy'}, 'publisher': {'@type': 'Organization', 'name': 'Fuidzy', 'url': C.SITE}}
+    action = (f'<a class="btn" href="{e(DOWNLOAD)}" rel="noopener">Get the VocalForge app</a>' if LAUNCHED else f'<a class="btn" href="{C.BASE}">See VocalForge</a>')
+    body = f'''<main><div class="hero" style="padding:0 0 10px">{shapes('soft')}<div class="narrow"><article>{crumbs_html}<h1>{b['h1']}</h1><p class="note">Updated October 2026 &middot; {e(cl['label'])}</p>
+<div class="tldr"><b>Quick answer</b><p style="margin:6px 0 10px">{b['answer']}</p></div></article></div></div>
+<div class="narrow"><article>{b['body']}
+<div class="vf"><h2>Try it free: {e(tool['short'])}</h2><p>{e(tool['blurb'])} Runs in your browser, nothing is uploaded.</p><div class="cta"><a class="btn primary" href="{C.BASE}/tools/{cl['tool']}">Open the free tool</a>{action}</div></div>
+<h2>Frequently asked questions</h2>{faq_html(b['faq'])}
+<h2>Keep reading</h2><div class="related">{rel}</div></article></div></main>'''
+    return layout(title=b['title'], desc=b['desc'], path=path, body=body, lds=[article_ld, faq_ld(b['faq']), crumbs_ld], og_type='article')
+
+
+def blog_index():
+    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('VocalForge', C.BASE), ('Blog', f'{C.BASE}/blog')])
+    secs = ''
+    for key, cl in B.CLUSTERS.items():
+        items = [x for x in B.BLOGS if x['cluster'] == key]
+        cards = ''.join(f'<a href="{C.BASE}/blog/{x["slug"]}"><b>{e(x["h1"])}</b><br><span class="small">{e(x["desc"][:120])}&hellip;</span></a>' for x in items)
+        secs += f'<section style="padding:26px 0"><div class="wrap"><h2>{e(cl["label"])}</h2><p class="sub2" style="text-align:left;margin:0 0 18px">Free tool: <a href="{C.BASE}/tools/{cl["tool"]}">{e(cl["tool_name"])}</a></p><div class="related">{cards}</div></div></section>'
+    body = (f'<main><div class="hero" style="padding:0 0 10px">{shapes("soft")}<div class="wrap">{crumbs_html}<div class="toolhead"><h1>Audio Guides: Clean Mics, Noise Removal and Recording</h1>'
+            '<p class="lead">Practical, step-by-step guides for streamers, creators and voice-over artists: remove background noise, set up your mic, and record clean audio. Each guide links to a free tool that runs in your browser.</p></div></div></div>' + secs + '</main>')
+    desc = 'Step-by-step audio guides for streamers and creators: remove mic noise in OBS, set up a virtual audio cable, record clean voice-overs and set the right loudness.'
+    return layout(title='Audio Guides: Mic Noise, Streaming and Voice Recording', desc=desc, path=f'{C.BASE}/blog', body=body, lds=[crumbs_ld])
 
 
 def policy(slug):
@@ -534,13 +581,17 @@ def main():
         write(f'tools/{s}/index.html', tool_page(s))
     for s in C.POLICIES:
         write(f'{s}/index.html', policy(s))
+    write('blog/index.html', blog_index())
+    for b in B.BLOGS:
+        write(f"blog/{b['slug']}/index.html", blog_page(b))
     write('thanks/index.html', thanks())
     urls = ([(C.BASE, '1.0'), (f'{C.BASE}/tools', '0.9')] + [(f'{C.BASE}/tools/{s}', '0.9') for s in T.TOOL_ORDER]
+            + [(f'{C.BASE}/blog', '0.7')] + [(f"{C.BASE}/blog/{b['slug']}", '0.7') for b in B.BLOGS]
             + [(f'{C.BASE}/{s}', '0.8') for s in C.GUIDE_ORDER] + [(f'{C.BASE}/{s}', '0.3') for s in C.POLICIES])
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
         f'  <url><loc>{C.SITE}{u}</loc><lastmod>{C.DATE}</lastmod><priority>{p}</priority></url>\n' for u, p in urls) + '</urlset>\n'
     (ROOT / 'vocalforge-sitemap.xml').write_text(sm, encoding='utf-8')
-    slugs = list(C.GUIDE_ORDER) + ['tools'] + [f'tools/{s}' for s in T.TOOL_ORDER] + ['thanks'] + list(C.POLICIES)
+    slugs = list(C.GUIDE_ORDER) + ['tools'] + [f'tools/{s}' for s in T.TOOL_ORDER] + ['blog'] + [f"blog/{b['slug']}" for b in B.BLOGS] + ['thanks'] + list(C.POLICIES)
     (ROOT / 'worker-pages.json').write_text(json.dumps(slugs), encoding='utf-8')
     print(f'built {len(urls) + 1} pages ({"LAUNCHED" if LAUNCHED else "pre-launch"}) -> {OUT}')
 
