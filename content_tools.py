@@ -184,7 +184,7 @@ TOOLS['lufs-meter'] = dict(
 
 TOOLS['vocal-checker'] = dict(
     title='Vocal Quality Checker: Is Your Vocal Ready to Post?',
-    desc='Free vocal quality checker. Drop in a vocal recording and see clipping, background noise, rumble and level problems, with plain-English fixes. Private, in your browser.',
+    desc='Free vocal quality checker: drop in a recording to see clipping, noise, rumble and level problems with plain-English fixes. Private, in your browser.',
     h1='Free Vocal Quality Checker: Is Your Recording Ready to Post?',
     short='Vocal Checker', blurb='Spot clipping, noise, rumble and level problems.', icon='check', color='blue',
     focus='check', tap=False, kw='vocal quality checker',
@@ -224,7 +224,7 @@ TOOLS['vocal-checker'] = dict(
 )
 
 HUB = dict(
-    title='Free Music Tools: BPM Finder, Key Finder, Chord Finder, LUFS Meter',
+    title='Free Music Tools: BPM, Key, Chord Finder & LUFS Meter',
     desc='Free in-browser music tools: find the BPM, key and chords of any song, measure LUFS loudness, and check a vocal recording. Private: nothing is uploaded.',
     h1='Free Music Tools That Run in Your Browser',
     lead=('Drop in a song, beat or vocal and see its tempo, key, chords, loudness and vocal health in seconds. '
