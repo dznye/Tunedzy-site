@@ -71,7 +71,9 @@ All guides lead with the answer, give real steps and numbers, admit limits, and 
 - Conversion: Dodo dashboard (test vs live), plus UTM links from ads/social so you can see which source buys.
 - Backlinks (the real ranking lever for a new page): post the guides where bedroom artists are (r/makinghiphop, r/WeAreTheMusicMakers, r/musicproduction: read each sub's self-promo rules first), YouTube walkthroughs, and producer/beatmaker communities.
 
-## 8. Launch flip
+## 8. Launch flip (done 2026-10-11)
+
+The site was flipped with `python build.py --launched --download-url https://downloads.fuidzy.com/vocalforge/VocalForge-Setup-1.0.0.exe`. The notes below describe how.
 
 The page is in **pre-launch** mode: no buy button, download shows "launching soon", schema says `PreOrder`.
 When the installer is hosted and tested: `python build.py --launched --download-url <installer url>`, commit, push. The Worker
