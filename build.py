@@ -193,7 +193,7 @@ def layout(*, title, desc, path, body, lds, robots='index,follow', og_type='webs
 <meta name="robots" content="{robots}">
 <link rel="canonical" href="{e(url)}">
 <link rel="icon" href="{C.BASE}/favicon.png">
-<meta name="theme-color" content="#080713">
+<meta name="theme-color" content="#140a14">
 <meta property="og:type" content="{og_type}"><meta property="og:site_name" content="VocalForge by Fuidzy"><meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{e(url)}"><meta property="og:image" content="{C.SITE}{C.BASE}/og.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(title)}"><meta name="twitter:description" content="{e(desc)}"><meta name="twitter:image" content="{C.SITE}{C.BASE}/og.png">
@@ -327,8 +327,8 @@ def rack():
     mods = [('CLEAN', 'var(--amber)', .72), ('TUNE', 'var(--pink)', .88), ('FIT', 'var(--teal)', .56), ('STYLE', 'var(--violet)', .66), ('MIX', 'var(--blue)', .8), ('MASTER', 'var(--orange)', .92)]
     hs = [10, 18, 30, 46, 54, 44, 60, 66, 52, 36, 56, 68, 62, 46, 30, 50, 64, 70, 58, 40, 26, 46, 62, 66, 54, 34, 22, 42, 58, 64, 50, 32, 20, 36, 52, 60, 46, 28, 16, 30, 48, 56, 42, 26]
     wave = ''.join(f'<rect x="{10 + i * 7.2:.1f}" y="{70 - h}" width="3.6" height="{2 * h}" rx="1.8" fill="url(#rg)"/>' for i, h in enumerate(hs))
-    wavesvg = ('<svg viewBox="0 0 332 140" aria-hidden="true"><defs><linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#ffb347"/><stop offset=".55" stop-color="#ff4fa0"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>'
-               '<rect x="8" y="4" width="92" height="132" rx="10" fill="#ffb347" opacity=".12"/><rect x="200" y="4" width="76" height="132" rx="10" fill="#8b5cf6" opacity=".18"/>'
+    wavesvg = ('<svg viewBox="0 0 332 140" aria-hidden="true"><defs><linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#ffb347"/><stop offset=".55" stop-color="#ff7a3d"/><stop offset="1" stop-color="#ff6a2b"/></linearGradient></defs>'
+               '<rect x="8" y="4" width="92" height="132" rx="10" fill="#ffb347" opacity=".12"/><rect x="200" y="4" width="76" height="132" rx="10" fill="#ff6a2b" opacity=".18"/>'
                '<text x="14" y="130" font-size="10" fill="#a9a5c4" font-family="system-ui">Hook</text><text x="206" y="130" font-size="10" fill="#a9a5c4" font-family="system-ui">Ad-libs</text>'
                + wave + '</svg>')
     mh = ''.join('<div class="mod" style="--c:%s;--v:%s"><span class="mn">%s</span><span class="knob"></span><span class="leds">%s</span></div>' % (
@@ -388,14 +388,14 @@ def hub():
 <section id="new"><div class="wrap"><p class="eyebrow c">New in 2.0</p><h2 class="c">From your mic to the master. <span class="grad">One app.</span></h2><p class="sub2">The tools creators search for most, built in and running on your own PC.</p>
 <div class="grid">{''.join(f'<div class="card {c}">{ico(k, c)}<h3>{n}</h3><p>{d}</p></div>' for k, c, n, d in new2)}</div></div></section>
 <section><div class="wrap"><div class="spot"><div><p class="eyebrow">Studio-ready checks</p><h2>Know it&rsquo;s ready <span class="grad">before you post.</span></h2>
-<p style="color:#d8d5ee">Every export comes with a pass/fail report so you are not guessing: loudness, true peak, tone balance, noise, clipping and more. Fix what&rsquo;s flagged with one slider, then export 24-bit WAV or FLAC for your DAW, your distributor or your socials.</p>
+<p style="color:#f0dfd8">Every export comes with a pass/fail report so you are not guessing: loudness, true peak, tone balance, noise, clipping and more. Fix what&rsquo;s flagged with one slider, then export 24-bit WAV or FLAC for your DAW, your distributor or your socials.</p>
 <ul><li>Works next to any DAW: export a finished vocal and drop it in</li><li>Live sliders and XY pads, with changes you hear instantly</li><li>Your original take is never overwritten</li></ul></div>
 <div class="report"><div class="rh"><b>Studio-ready report</b><span>All checks pass</span></div>
 <div class="row"><i></i>Loudness<span>&minus;14.0 LUFS</span></div><div class="row"><i></i>True peak<span>&minus;1.1 dBTP</span></div><div class="row"><i></i>Noise floor<span>&minus;62 dB</span></div>
 <div class="row"><i></i>Clipping<span>none</span></div><div class="row"><i></i>Tonal balance<span>in range</span></div><div class="row"><i></i>Vocal vs beat<span>balanced</span></div><p class="rn">Example report. Real numbers depend on your track.</p></div></div></div></section>
 <section class="alt">{shapes('soft')}<div class="wrap"><div class="spot"><div class="photo" style="max-width:430px;margin:0 auto">{img('neon')}</div><div>
 <p class="eyebrow">Sound like the records you love</p><h2>Drop in a song. <span class="grad">Get that treatment on your voice.</span></h2>
-<p style="color:#d8d5ee">Pick any track by an artist whose sound you want. VocalForge measures how that vocal was tuned, brightened, spaced, doubled and compressed, then applies a similar treatment to <em>your</em> recording.</p>
+<p style="color:#f0dfd8">Pick any track by an artist whose sound you want. VocalForge measures how that vocal was tuned, brightened, spaced, doubled and compressed, then applies a similar treatment to <em>your</em> recording.</p>
 <ul><li>Learns the autotune style: natural, modern or hard-snapped</li><li>Matches tone, reverb size, width and how tight the flow sits on the beat</li><li>Keeps your voice yours: it changes the processing, not who you are</li><li>Saves each style so you can reuse it on the next song</li></ul>
 <p class="note">Not affiliated with or endorsed by any artist. Artist names are used only to describe styles of processing.</p></div></div></div></section>
 <section><div class="wrap"><div class="band">{img('mic-wide', alt='')}<div class="in"><p class="eyebrow">Private by design</p><h2>Your unreleased songs <span class="grad">never leave your PC.</span></h2>
@@ -553,9 +553,9 @@ def write(rel, text):
 def og():
     from PIL import Image, ImageDraw, ImageFont
     W, H = 1200, 630
-    img_ = Image.new('RGB', (W, H), (8, 7, 19))
+    img_ = Image.new('RGB', (W, H), (20, 10, 20))
     d = ImageDraw.Draw(img_, 'RGBA')
-    for cx, cy, r, col in ((980, 80, 420, (255, 79, 160)), (140, 120, 380, (139, 92, 246)), (700, 700, 340, (46, 230, 197))):
+    for cx, cy, r, col in ((980, 80, 420, (255, 122, 61)), (140, 120, 380, (232, 93, 31)), (700, 700, 340, (255, 193, 94))):
         for k in range(r, 0, -8):
             a = int(46 * (1 - k / r) ** 1.6)
             d.ellipse([cx - k, cy - k, cx + k, cy + k], fill=col + (a,))
@@ -566,14 +566,14 @@ def og():
     small = ImageFont.truetype('C:/Windows/Fonts/segoeuib.ttf', 30)
     icon = Image.open(ROOT / 'assets' / 'icon.png').convert('RGBA').resize((92, 92))
     img_.paste(icon, (70, 62), icon)
-    d.text((180, 78), 'VocalForge', font=small, fill=(244, 242, 252))
-    d.text((70, 200), 'Rough vocal in.', font=bold, fill=(244, 242, 252))
+    d.text((180, 78), 'VocalForge 2.0', font=small, fill=(243, 233, 226))
+    d.text((70, 200), 'Rough vocal in.', font=bold, fill=(243, 233, 226))
     d.text((70, 292), 'Finished track out.', font=bold, fill=(255, 150, 120))
-    d.text((70, 430), 'Vocal workstation for Windows.', font=reg, fill=(190, 186, 214))
-    d.text((70, 476), 'Free to try, then $29 once.', font=reg, fill=(190, 186, 214))
+    d.text((70, 430), 'Vocal workstation for Windows.', font=reg, fill=(212, 190, 186))
+    d.text((70, 476), 'Free to try, then $29 once.', font=reg, fill=(212, 190, 186))
     for i, h in enumerate([30, 54, 86, 64, 100, 70, 44, 78, 50, 28]):
         x = 800 + i * 36
-        d.rounded_rectangle([x, 450 - h, x + 18, 450 + h], radius=9, fill=(255, 179 - i * 10, 71 + i * 16))
+        d.rounded_rectangle([x, 450 - h, x + 18, 450 + h], radius=9, fill=(255, 193 - i * 12, 94 - i * 2))
     img_.save(OUT / 'og.png', optimize=True)
 
 

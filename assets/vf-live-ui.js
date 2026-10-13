@@ -67,7 +67,7 @@
       state.pitch.forEach(function (p) { var f = p[key]; if (!(f > 0)) { started = false; return; } var x = 40 + (W - 40) * (1 - (now - p.t) / 6000), yy = y(69 + 12 * Math.log2(f / 440)); if (!started) { g.moveTo(x, yy); started = true; } else g.lineTo(x, yy); });
       g.stroke();
     }
-    trace('f', 'rgba(255,255,255,.55)', 2); if (state.tuneOn) trace('g', '#ff4fa0', 3);
+    trace('f', 'rgba(255,255,255,.55)', 2); if (state.tuneOn) trace('g', '#ff6a2b', 3);
     var l = live.level(); $('#lvl').style.width = Math.min(100, Math.round(l * 140)) + '%'; $('#lvl').className = l > 0.95 ? 'hot' : '';
     requestAnimationFrame(draw);
   }
