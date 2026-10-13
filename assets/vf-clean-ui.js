@@ -4,7 +4,7 @@
   'use strict';
   var root = document.getElementById('clean');
   if (!root) return;
-  var mode = root.getAttribute('data-mode') || 'stream', BASE = root.getAttribute('data-base') || '/vocalforge';
+  var mode = root.getAttribute('data-mode') || 'stream', BASE = root.getAttribute('data-base') || '/tunedzy';
   var $ = function (s) { return root.querySelector(s); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var clean = new VFClean.Clean(); window.__vfClean = clean;
@@ -77,8 +77,8 @@
   function addTake(res) {
     st.takes++; var html = '<div class="take"><b>Take ' + st.takes + ' <small>' + mmss(res.seconds) + '</small></b>';
     function row(label, blob, name) { var url = URL.createObjectURL(blob); return '<div class="takerow"><span>' + label + '</span><audio controls preload="metadata" src="' + url + '"></audio><a class="btn small" download="' + name + '" href="' + url + '">Download WAV</a></div>'; }
-    if (res.clean) html += row('Clean (noise removed)', res.clean, 'vocalforge-take' + st.takes + '-clean.wav');
-    if (res.raw) html += row('Original (untouched)', res.raw, 'vocalforge-take' + st.takes + '-original.wav');
+    if (res.clean) html += row('Clean (noise removed)', res.clean, 'tunedzy-take' + st.takes + '-clean.wav');
+    if (res.raw) html += row('Original (untouched)', res.raw, 'tunedzy-take' + st.takes + '-original.wav');
     html += '<p class="small mute">Want it studio-ready? <a href="' + BASE + '#pricing">Tunedzy</a> also fixes echo, tunes, levels and masters a take like this on your PC.</p></div>';
     $('#takes').insertAdjacentHTML('afterbegin', html);
   }

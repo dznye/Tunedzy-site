@@ -24,14 +24,14 @@ Positioning line used on the page: *"Make rough vocals sound finished, without a
 
 | URL | Primary query | Search intent | Funnel |
 |---|---|---|---|
-| `/vocalforge` | vocal cleanup / autotune / mastering software, Tunedzy | commercial + brand | convert |
-| `/vocalforge/fix-vocals-recorded-on-phone` | make phone vocals sound professional | informational, problem-aware | top |
-| `/vocalforge/remove-echo-from-vocal-recording` | remove echo from vocal recording | informational, fix-it-now | top/mid |
-| `/vocalforge/autotune-for-rap-vocals` | autotune for rap vocals, free online autotune | informational + tool-seeking | mid |
-| `/vocalforge/mix-vocals-on-a-beat` | how to mix vocals on a beat | informational, beginner | top |
-| `/vocalforge/future-vocal-effect-settings` | Future vocal effect settings | artist/entity style | mid |
-| `/vocalforge/vocal-cleanup-software-compared` | best vocal cleanup software, Nectar alternative | commercial investigation | bottom |
-| `/vocalforge/thanks`, `privacy`, `terms`, `refund-policy` | n/a | trust / post-purchase (thanks is noindex) | |
+| `/tunedzy` | vocal cleanup / autotune / mastering software, Tunedzy | commercial + brand | convert |
+| `/tunedzy/fix-vocals-recorded-on-phone` | make phone vocals sound professional | informational, problem-aware | top |
+| `/tunedzy/remove-echo-from-vocal-recording` | remove echo from vocal recording | informational, fix-it-now | top/mid |
+| `/tunedzy/autotune-for-rap-vocals` | autotune for rap vocals, free online autotune | informational + tool-seeking | mid |
+| `/tunedzy/mix-vocals-on-a-beat` | how to mix vocals on a beat | informational, beginner | top |
+| `/tunedzy/future-vocal-effect-settings` | Future vocal effect settings | artist/entity style | mid |
+| `/tunedzy/vocal-cleanup-software-compared` | best vocal cleanup software, Nectar alternative | commercial investigation | bottom |
+| `/tunedzy/thanks`, `privacy`, `terms`, `refund-policy` | n/a | trust / post-purchase (thanks is noindex) | |
 
 All guides lead with the answer, give real steps and numbers, admit limits, and end with a soft product tie-in, which is what the ranking pages do.
 
@@ -43,7 +43,7 @@ All guides lead with the answer, give real steps and numbers, admit limits, and 
   No fake ratings or reviews anywhere (that risks a manual action). `availability` is `PreOrder` until launch, `InStock` after.
 - Speed: zero JavaScript, inline CSS, WebP photos 20-110 KB with explicit width/height (no layout shift), lazy-loaded below the fold, hero preloaded via `fetchpriority`.
 - Internal links: hub -> all guides (with thumbnails); every guide -> hub + three related guides; footer on every page.
-- Sitemap: `/vocalforge-sitemap.xml` and merged into `fuidzy.com/sitemap-all.xml`.
+- Sitemap: `/tunedzy-sitemap.xml` and merged into `fuidzy.com/sitemap-all.xml`.
 - Trust: policy pages, "not affiliated with any artist or plugin company", honest-limits section, photo credits.
 
 ## 5. Next content (ordered by how directly it matches the product)

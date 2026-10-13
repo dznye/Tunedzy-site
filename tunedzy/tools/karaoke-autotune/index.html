@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Online Karaoke With Autotune (Free): Sing Along to Any Song</title>
+<meta name="description" content="Free online karaoke with live autotune. Add any song or backing track, sing along with autotune on, and record your voice and the mix. Private, in your browser.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://fuidzy.com/tunedzy/tools/karaoke-autotune">
+<link rel="icon" href="/tunedzy/favicon.png">
+<meta name="theme-color" content="#140a14">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Tunedzy by Fuidzy"><meta property="og:title" content="Online Karaoke With Autotune (Free): Sing Along to Any Song">
+<meta property="og:description" content="Free online karaoke with live autotune. Add any song or backing track, sing along with autotune on, and record your voice and the mix. Private, in your browser."><meta property="og:url" content="https://fuidzy.com/tunedzy/tools/karaoke-autotune"><meta property="og:image" content="https://fuidzy.com/tunedzy/og.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Online Karaoke With Autotune (Free): Sing Along to Any Song"><meta name="twitter:description" content="Free online karaoke with live autotune. Add any song or backing track, sing along with autotune on, and record your voice and the mix. Private, in your browser."><meta name="twitter:image" content="https://fuidzy.com/tunedzy/og.png">
+<style>:root{--glass:22px;--bg:#140a14;--bg2:#1b0e1a;--card:rgba(255,255,255,.05);--card2:rgba(255,255,255,.08);--line:rgba(255,255,255,.11);--text:#f3e9e2;--mute:#a8969c;--faint:#735e6a;
+--amber:#ffb347;--orange:#ff7a3d;--pink:#ff6a2b;--violet:#ffc15e;--teal:#ffc15e;--blue:#ff8a3d;--grad:linear-gradient(100deg,#ffc15e,#ffa14a 35%,#ff7a3d 70%,#ff5a2a)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);overflow-x:hidden;
+background-image:radial-gradient(1000px 560px at 88% -12%,rgba(255,122,61,.26),transparent 62%),radial-gradient(800px 460px at 30% -18%,rgba(255,193,94,.12),transparent 60%),radial-gradient(900px 640px at -8% 110%,rgba(232,93,31,.16),transparent 60%);background-attachment:fixed}
+a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
+img{max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px;position:relative}.narrow{max-width:780px;margin:0 auto;padding:0 22px;position:relative}
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(20,10,20,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:20px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text);font-size:19px;letter-spacing:-.01em}.logo:hover{text-decoration:none}.logo img{width:30px;height:30px;border-radius:9px}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav.main{display:flex;gap:22px;margin-left:auto;font-size:15px}nav.main a{color:var(--mute)}nav.main a:hover{color:var(--text);text-decoration:none}
+.hbtn{font-size:14px;padding:8px 16px;border-radius:99px;background:var(--grad);color:#1a0b16;font-weight:700}.hbtn:hover{text-decoration:none;filter:brightness(1.08)}
+@media(max-width:820px){nav.main a:nth-child(n+3){display:none}nav.main{gap:16px}}
+@media(max-width:520px){nav.main{display:none}.hbtn{margin-left:auto}}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:14px;padding:13px 24px;font-weight:700;font-size:16px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:pointer;font-family:inherit;line-height:1.2;transition:transform .15s,box-shadow .15s,filter .15s}
+.btn:hover{text-decoration:none;transform:translateY(-1px);border-color:rgba(255,255,255,.3)}
+.btn.primary{background:linear-gradient(100deg,#ffc15e,#ff8a3d 55%,#ff6a2b);color:#1b0a14;border-color:transparent;box-shadow:0 12px 36px rgba(255,106,43,.34)}
+.btn.primary:hover{filter:brightness(1.07);box-shadow:0 16px 44px rgba(255,106,43,.46)}
+.btn.ghost{background:transparent}.btn.small{padding:8px 14px;font-size:14px;border-radius:10px}.btn.off{opacity:.6;cursor:default;box-shadow:none}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.small{font-size:14px;color:var(--mute)}
+/* type */
+h1,h2,h3{letter-spacing:-.025em}
+section{padding:70px 0;position:relative}
+h2{font-size:clamp(28px,4vw,42px);margin:0 0 14px;line-height:1.12}h3{margin:0 0 6px;font-size:19px;line-height:1.25}
+h2.c,.sub2,.eyebrow.c{text-align:center}.sub2{color:var(--mute);margin:0 auto 34px;max-width:640px;font-size:18px}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:800;margin:0 0 12px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+em.grad{font-style:normal}
+/* decorative shapes */
+.shapes{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.shapes>*{position:absolute;display:block}
+.shapes:after{content:"";position:absolute;inset:0;z-index:1;-webkit-backdrop-filter:blur(var(--glass)) saturate(1.25);backdrop-filter:blur(var(--glass)) saturate(1.25);background:rgba(255,255,255,.025)}
+.blob{border-radius:50%;filter:blur(70px);opacity:.5}
+.b1{width:520px;height:520px;background:radial-gradient(circle,#ff6a2b,transparent 68%);right:-140px;top:-120px}
+.b2{width:460px;height:460px;background:radial-gradient(circle,#e85d1f,transparent 68%);left:-160px;top:120px;opacity:.55}
+.b3{width:380px;height:380px;background:radial-gradient(circle,#ffb347,transparent 68%);right:28%;bottom:-160px;opacity:.28}
+.ring{border-radius:50%;border:2px solid rgba(255,255,255,.14)}
+.r1{width:340px;height:340px;right:-90px;top:70px;border-color:rgba(255,179,71,.35)}
+.r2{width:120px;height:120px;left:46%;top:30px;border:14px solid rgba(232,93,31,.28)}
+.r3{width:220px;height:220px;left:-70px;bottom:20px;border-color:rgba(255,179,71,.28)}
+.sq{border-radius:26px;transform:rotate(18deg)}
+.s1{width:110px;height:110px;left:6%;top:56%;background:linear-gradient(135deg,rgba(255,106,43,.5),rgba(232,93,31,.15));border:1px solid rgba(255,255,255,.18)}
+.s2{width:70px;height:70px;right:7%;bottom:12%;background:linear-gradient(135deg,rgba(255,179,71,.6),rgba(255,106,43,.15));transform:rotate(-14deg)}
+.s3{width:54px;height:54px;left:44%;bottom:6%;border:2px solid rgba(255,122,61,.5);border-radius:14px;transform:rotate(30deg)}
+.tri{width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:52px solid rgba(255,179,71,.35);transform:rotate(14deg)}
+.t1{left:38%;top:7%}
+.dots{width:210px;height:140px;opacity:.22}.d1{right:6%;top:46%}.d2{left:3%;top:8%}
+.squig{width:210px;height:40px;fill:none;stroke:var(--teal);stroke-width:5;stroke-linecap:round;opacity:.3}.q1{left:2%;bottom:14%}.q2{right:5%;top:12%;stroke:var(--amber)}
+.pbars{display:flex;gap:7px;align-items:flex-end;height:90px;opacity:.55}.pbars i{display:block;width:9px;border-radius:5px;background:linear-gradient(180deg,var(--pink),var(--violet))}.p1{left:50%;bottom:4%}
+.cross{width:28px;height:28px;opacity:.7}.cross:before,.cross:after{content:"";position:absolute;background:var(--amber);border-radius:3px}.cross:before{left:12px;top:0;width:4px;height:28px}.cross:after{top:12px;left:0;width:28px;height:4px}
+.x1{left:47%;top:80%}.x2{right:16%;top:6%;transform:rotate(20deg)}
+@media(prefers-reduced-motion:no-preference){.fl1{animation:fl 9s ease-in-out infinite}.fl2{animation:fl 12s ease-in-out -3s infinite}.fl3{animation:fl 7s ease-in-out -2s infinite}.spin{animation:sp 40s linear infinite}
+@keyframes fl{0%,100%{translate:0 0}50%{translate:0 -18px}}@keyframes sp{to{rotate:360deg}}
+.pbars i{animation:eq 1.8s ease-in-out infinite}.pbars i:nth-child(2n){animation-delay:-.6s}.pbars i:nth-child(3n){animation-delay:-1.1s}@keyframes eq{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}}
+.pbars i{transform-origin:bottom}
+section.alt{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* hero */
+.hero{padding:56px 0 70px;position:relative}.hero .wrap{z-index:1}
+.herogrid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}@media(max-width:940px){.herogrid{grid-template-columns:1fr}}
+.pill{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 14px 6px 10px;font-size:13.5px;color:var(--text);margin-bottom:20px}
+.pill i{width:9px;height:9px;border-radius:50%;background:#ffc15e;box-shadow:0 0 0 4px rgba(255,193,94,.22),0 0 12px rgba(255,122,61,.6)}
+.hero h1{font-size:clamp(38px,5.6vw,66px);line-height:1.02;letter-spacing:-.04em;margin:0 0 20px;font-weight:850}
+.hero p.sub{font-size:20px;color:#e2cfc8;max-width:560px;margin:0 0 28px}
+.trust{display:flex;gap:10px 18px;flex-wrap:wrap;margin-top:22px;color:var(--mute);font-size:14.5px}.trust span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff7a3d;margin-right:8px;vertical-align:middle}
+/* rack */
+.rackwrap{position:relative}
+.rack{position:relative;border-radius:24px;background:linear-gradient(180deg,rgba(40,23,39,.92),rgba(27,14,26,.94));border:1px solid rgba(255,255,255,.16);box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 0 8px rgba(255,255,255,.03),0 0 80px rgba(232,93,31,.25);overflow:hidden}
+.rackbar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.03)}
+.rackbar .dts{display:flex;gap:6px}.rackbar .dts i{width:10px;height:10px;border-radius:50%;background:#ff6b6b}.rackbar .dts i:nth-child(2){background:#ffb347}.rackbar .dts i:nth-child(3){background:#ffb347}
+.rackbar b{font-size:14px;letter-spacing:.04em}.rackbar em{font-style:normal;font-size:12px;color:var(--faint);margin-left:auto;letter-spacing:.14em;text-transform:uppercase}
+.rwave{padding:14px 16px 4px}.rwave svg{display:block;width:100%;height:auto}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:10px 14px 16px}
+.mod{border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);padding:12px 10px 10px;text-align:center;position:relative}
+.mod:before{content:"";position:absolute;left:12px;right:12px;top:0;height:2px;background:var(--c);border-radius:2px;box-shadow:0 0 12px var(--c)}
+.mn{display:block;font-size:11px;letter-spacing:.2em;color:var(--mute);font-weight:700;margin-bottom:8px}
+.knob{position:relative;display:block;width:46px;height:46px;border-radius:50%;margin:0 auto 9px;background:radial-gradient(circle at 35% 30%,#452c44,#17142e);border:2px solid rgba(255,255,255,.14);box-shadow:inset 0 2px 6px rgba(255,255,255,.1),0 6px 14px rgba(0,0,0,.4)}
+.knob:after{content:"";position:absolute;left:50%;top:5px;width:3px;height:14px;margin-left:-1.5px;border-radius:2px;background:var(--c);box-shadow:0 0 8px var(--c);transform-origin:50% 18px;transform:rotate(calc(-135deg + var(--v)*270deg))}
+.leds{display:flex;gap:3px;justify-content:center}.leds i{width:7px;height:12px;border-radius:2px;background:rgba(255,255,255,.1)}.leds i.on{background:var(--c);box-shadow:0 0 8px var(--c)}
+.fchip{position:absolute;z-index:3;border-radius:14px;padding:9px 14px;font-size:13.5px;font-weight:650;background:rgba(27,14,26,.86);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);box-shadow:0 14px 40px rgba(0,0,0,.5);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.fchip i{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(255,179,71,.22)}
+.fc1{left:-26px;top:22%}.fc2{right:-16px;top:8%}.fc3{right:-22px;bottom:18%}.fc4{left:-14px;bottom:-14px}
+@media(max-width:600px){.fc1,.fc4{left:-6px}.fc2,.fc3{right:-4px}.fchip{font-size:12px;padding:7px 11px}}
+.rcap{font-size:12.5px;color:var(--faint);text-align:center;margin-top:16px}
+/* tool widget */
+.tool{position:relative;border-radius:28px;padding:2px;background:linear-gradient(135deg,rgba(255,179,71,.7),rgba(255,106,43,.6) 45%,rgba(232,93,31,.7));box-shadow:0 30px 90px rgba(232,93,31,.28)}
+.tool .inner{border-radius:26px;background:linear-gradient(180deg,#211220,#170b16);padding:26px}
+.drop{display:grid;place-items:center;text-align:center;gap:10px;border:2px dashed rgba(255,255,255,.24);border-radius:20px;padding:42px 20px;cursor:pointer;background:radial-gradient(500px 200px at 50% 0,rgba(255,106,43,.12),transparent 70%);transition:border-color .2s,background .2s,transform .2s}
+.drop:hover,.drop:focus-visible,.drop.over{border-color:var(--amber);outline:none;transform:scale(1.01);background:radial-gradient(500px 220px at 50% 0,rgba(255,179,71,.2),transparent 70%)}
+.drop .ic{width:66px;height:66px;border-radius:20px;display:grid;place-items:center;background:var(--grad);color:#1a0b16;box-shadow:0 12px 34px rgba(255,106,43,.4)}
+.drop .ic svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.drop b{font-size:22px;letter-spacing:-.02em}.drop span{color:var(--mute);font-size:15px}
+@media(prefers-reduced-motion:no-preference){.drop .ic{animation:pulse 2.8s ease-in-out infinite}@keyframes pulse{0%,100%{box-shadow:0 12px 34px rgba(255,106,43,.4),0 0 0 0 rgba(255,106,43,.35)}50%{box-shadow:0 12px 34px rgba(255,106,43,.4),0 0 0 16px rgba(255,106,43,0)}}}
+.toolrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:14px;color:var(--mute);font-size:14px}
+.priv{display:inline-flex;align-items:center;gap:8px}.priv svg{width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:2}
+.tool.busy .drop{opacity:.45;pointer-events:none}
+.prog{margin-top:16px;border-radius:14px;background:var(--card);border:1px solid var(--line);padding:14px 16px}.prog[hidden]{display:none}
+.prog .t{font-size:15px;margin-bottom:9px;color:var(--text)}.prog .tr{height:8px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden}.prog .tr i{display:block;height:100%;width:0;background:var(--grad);border-radius:5px;transition:width .35s}
+#results{margin-top:20px}#results[hidden]{display:none}
+.resbar{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:14px}.resbar b{display:block;word-break:break-all}.resbar span{font-size:13.5px;color:var(--mute)}
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}@media(max-width:760px){.tgrid{grid-template-columns:1fr}}
+.tcard{border-radius:20px;padding:20px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.tcard.primary{grid-column:1/-1;background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.04));border-color:rgba(255,255,255,.22)}
+.tcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ac,var(--amber))}
+.tcard.key{--ac:var(--violet)}.tcard.chords{--ac:var(--pink)}.tcard.loud{--ac:var(--teal)}.tcard.check{--ac:var(--blue)}.tcard.bad{--ac:#ff6b6b}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:800;margin-bottom:6px}
+.big{font-size:clamp(42px,7vw,68px);font-weight:850;letter-spacing:-.04em;line-height:1.05;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;word-break:break-word}
+.big small{font-size:.36em;letter-spacing:0;font-weight:700;color:var(--mute);-webkit-text-fill-color:var(--mute)}.big.sm2{font-size:clamp(28px,4.4vw,40px)}
+.tcard p{margin:8px 0 0}.mute{color:var(--mute)}.sm{font-size:13.5px}
+.meter{height:7px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden;margin:12px 0 4px;max-width:340px}.meter i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--amber),var(--pink))}.meter.violet i{background:linear-gradient(90deg,var(--violet),var(--pink))}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.chip{font:inherit;font-size:13.5px;border-radius:99px;padding:5px 13px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:default}button.chip{cursor:pointer}button.chip:hover{border-color:var(--amber);color:var(--amber)}
+.chip.solid{background:var(--violet);border-color:transparent;color:#fff;font-weight:700}.chip.ghost{background:transparent}
+.chordline{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chord{display:flex;flex-direction:column;align-items:center;min-width:62px;padding:8px 10px;border-radius:12px;background:rgba(255,106,43,.1);border:1px solid rgba(255,106,43,.35)}.chord b{font-size:18px}.chord i{font-style:normal;font-size:11.5px;color:var(--mute);min-height:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.stats div{border-radius:12px;background:rgba(255,255,255,.05);padding:10px 12px}.stats b{display:block;font-size:18px}.stats span{font-size:12px;color:var(--mute)}
+table.mini{width:100%;font-size:14px;border-collapse:collapse;display:table}table.mini th,table.mini td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left}table.mini th{color:var(--mute);font-weight:600}
+ul.rows{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}ul.rows li{display:flex;gap:12px;align-items:flex-start}ul.rows i{flex:none;width:12px;height:12px;border-radius:50%;margin-top:6px;background:var(--teal);box-shadow:0 0 0 4px rgba(255,179,71,.2)}
+ul.rows li.warn i{background:var(--amber);box-shadow:0 0 0 4px rgba(255,179,71,.2)}ul.rows li.bad i{background:#ff6b6b;box-shadow:0 0 0 4px rgba(255,107,107,.2)}ul.rows b{display:block}ul.rows span{color:var(--mute);font-size:15px}
+.tcard.check.ok .big{background:linear-gradient(100deg,#ffb347,#ff7a3d);-webkit-background-clip:text;background-clip:text}
+.ctabox{margin-top:18px;border-radius:20px;padding:22px;background:linear-gradient(135deg,rgba(255,179,71,.14),rgba(255,106,43,.14) 55%,rgba(232,93,31,.16));border:1px solid rgba(255,255,255,.2)}.ctabox h3{font-size:21px}.ctabox p{margin:0 0 14px;color:#f0dfd8}
+/* tap tempo */
+.tapbox{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-top:20px;padding:20px;border-radius:20px;background:var(--card);border:1px solid var(--line)}@media(max-width:560px){.tapbox{grid-template-columns:1fr;text-align:center}}
+#tap{width:140px;height:140px;border-radius:50%;border:0;cursor:pointer;font-weight:800;font-size:24px;letter-spacing:.08em;font-family:inherit;color:#1a0b16;background:radial-gradient(circle at 35% 30%,#ffd37a,#ff7a3d 70%);box-shadow:0 14px 40px rgba(255,106,43,.45),inset 0 -6px 14px rgba(0,0,0,.15);transition:transform .08s;touch-action:manipulation;margin:0 auto;user-select:none}
+#tap.hit,#tap:active{transform:scale(.93)}
+.tapout b{font-size:46px;letter-spacing:-.03em;display:block;line-height:1}.tapout span{color:var(--mute);font-size:14.5px}
+/* cards, grids */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.3);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.card p{margin:0;color:var(--mute);font-size:16px}
+.card:before{content:"";position:absolute;right:-50px;top:-50px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,var(--c,var(--pink)),transparent 70%);opacity:.22}
+.ico{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:color-mix(in srgb,var(--c,var(--amber)) 22%,transparent);border:1px solid color-mix(in srgb,var(--c,var(--amber)) 55%,transparent);margin-bottom:16px;color:var(--c,var(--amber));position:relative}
+.ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.cA{--c:var(--amber)}.cP{--c:var(--pink)}.cV{--c:var(--violet)}.cT{--c:var(--teal)}.cB{--c:var(--blue)}.cO{--c:var(--orange)}
+.tcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.tcards a.card{display:block;color:var(--text)}.tcards a.card:hover{text-decoration:none}.tcards a.card h3{margin-bottom:4px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;counter-reset:s}
+.steps .card:after{counter-increment:s;content:counter(s);position:absolute;right:18px;top:6px;font-size:76px;font-weight:900;color:rgba(255,255,255,.07);letter-spacing:-.05em}
+/* report mock */
+.spot{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}@media(max-width:900px){.spot{grid-template-columns:1fr}}
+.report{border-radius:22px;background:linear-gradient(180deg,#17132f,#170b16);border:1px solid rgba(255,255,255,.16);padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.report .rh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.report .rh b{font-size:17px}.report .rh span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:800}
+.report .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}.report .row i{width:22px;height:22px;border-radius:50%;background:rgba(255,179,71,.18);display:grid;place-items:center;flex:none}.report .row i:after{content:"";width:5px;height:10px;border:solid var(--teal);border-width:0 2.4px 2.4px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.report .row span{color:var(--mute);margin-left:auto;font-variant-numeric:tabular-nums;font-size:15px}.report .rn{font-size:12px;color:var(--faint);margin-top:12px}
+.photo{position:relative;border-radius:26px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 40px 90px rgba(0,0,0,.55)}.photo img{display:block;width:100%;height:auto}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,10,20,.6));pointer-events:none}
+.spot ul{padding-left:20px;color:#f0dfd8}.spot li{margin:9px 0}.note{font-size:14px;color:var(--mute)}
+.band{position:relative;border-radius:30px;overflow:hidden;min-height:340px;display:grid;align-items:center;border:1px solid var(--line)}
+.band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(.6)}
+.band:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(20,10,20,.94) 8%,rgba(90,30,50,.55) 60%,rgba(255,106,43,.2))}
+.band .in{position:relative;z-index:2;padding:48px;max-width:640px}.band p{color:#f0e0da;margin:0 0 12px}
+.pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.pcard{border-radius:24px;overflow:hidden;background:var(--card);border:1px solid var(--line);transition:transform .2s,border-color .2s}
+.pcard:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.3)}.pcard img{display:block;width:100%;height:210px;object-fit:cover}.pcard div{padding:18px 22px 22px}.pcard p{margin:0;color:var(--mute);font-size:16px}
+/* pricing */
+.pricegrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:880px;margin:0 auto}@media(max-width:760px){.pricegrid{grid-template-columns:1fr}}
+.plan{border-radius:26px;padding:30px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.plan.hot{background:linear-gradient(160deg,rgba(255,179,71,.16),rgba(255,106,43,.16) 55%,rgba(232,93,31,.2));border-color:rgba(255,255,255,.3);box-shadow:0 30px 80px rgba(255,106,43,.2)}
+.plan .tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--teal);margin-bottom:8px}.plan .pr{font-size:60px;font-weight:850;letter-spacing:-.04em;line-height:1}.plan .pr small{font-size:16px;color:var(--mute);letter-spacing:0;font-weight:600}
+.plan ul{list-style:none;padding:0;margin:18px 0 22px;color:#f0dfd8}.plan li{padding:6px 0 6px 28px;position:relative}.plan li:before{content:"";position:absolute;left:4px;top:13px;width:11px;height:6px;border:solid var(--teal);border-width:0 0 2.5px 2.5px;transform:rotate(-45deg)}
+/* support */
+.supportband{border-radius:30px;padding:44px;background:linear-gradient(135deg,rgba(255,122,61,.16),rgba(232,93,31,.2));border:1px solid rgba(255,255,255,.2);display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;position:relative;overflow:hidden}@media(max-width:820px){.supportband{grid-template-columns:1fr;padding:30px}}
+.supportband h2{margin-bottom:10px}.supportband p{color:#f0dfd8;margin:0 0 12px}.mailbig{font-size:clamp(18px,3vw,26px);font-weight:800;word-break:break-all}
+/* articles */
+.crumbs{font-size:14px;color:var(--mute);padding-top:22px}.crumbs a{color:var(--mute)}
+article h1{font-size:clamp(32px,5vw,50px);line-height:1.08;letter-spacing:-.035em;margin:30px 0 14px}article h2{margin-top:44px;font-size:clamp(24px,3.4vw,32px)}
+article p,article li{color:#f0dfd8}article ul,article ol{padding-left:22px}article li{margin:7px 0}
+.lead{font-size:20px;color:#f3e9e2}
+.tldr{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:16px;padding:8px 22px 10px;margin:24px 0}.tldr b{display:block;margin:10px 0 2px}
+.vf{background:linear-gradient(135deg,rgba(255,179,71,.14),rgba(255,106,43,.12) 60%,rgba(232,93,31,.16));border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:26px;margin:44px 0}.vf h2{margin-top:0;font-size:24px}
+.aibox{background:var(--card);border:1px solid rgba(232,93,31,.5);border-radius:18px;padding:6px 22px 8px;margin:34px 0}.aibox h2{font-size:23px;margin:16px 0 8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 20px;margin:10px 0}summary{cursor:pointer;font-weight:650}details p{margin:10px 0 2px;color:var(--mute)}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;display:block;overflow-x:auto}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mute);font-weight:600;white-space:nowrap}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--text);transition:transform .2s,border-color .2s}.related a:hover{border-color:rgba(255,255,255,.35);text-decoration:none;transform:translateY(-3px)}
+.related a.th{padding:0;overflow:hidden}.related a.th img{display:block;width:100%;height:130px;object-fit:cover}.related a.th span{display:block;padding:14px 18px}
+.banner{margin:22px 0 8px;border-radius:24px;overflow:hidden;border:1px solid var(--line)}.banner img{display:block;width:100%;height:auto}
+.guides .related{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.toolhead{padding:6px 0 26px}
+.toolhead h1{font-size:clamp(34px,5.4vw,58px);line-height:1.04;letter-spacing:-.04em;margin:26px 0 14px;font-weight:850}.toolhead .lead{max-width:760px}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:26px 0 8px;counter-reset:h}.howto div{border-radius:16px;padding:14px 16px 14px 56px;background:var(--card);border:1px solid var(--line);position:relative;font-size:15px;color:#f0dfd8}
+.howto div:before{counter-increment:h;content:counter(h);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--grad);color:#1a0b16}
+footer{border-top:1px solid var(--line);margin-top:30px;padding:46px 0 34px;color:var(--mute);font-size:14.5px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.25))}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:30px}footer a{color:var(--mute)}footer a:hover{color:var(--text)}footer h4{margin:0 0 10px;color:var(--text);font-size:14px}
+.credit{font-size:12.5px;color:var(--faint);margin:8px 2px 0}.credit a{color:var(--mute)}
+@media(max-width:600px){section{padding:52px 0}.band .in{padding:30px}.hero{padding-top:34px}}
+
+@media(max-width:760px){.pbars,.squig,.cross{display:none}}
+/* live autotune + karaoke */
+.live{position:relative;border-radius:28px;padding:2px;background:linear-gradient(135deg,rgba(255,106,43,.75),rgba(232,93,31,.7) 50%,rgba(255,179,71,.6));box-shadow:0 30px 90px rgba(255,106,43,.22)}
+.live .inner{border-radius:26px;background:linear-gradient(180deg,#211220,#170b16);padding:24px}
+.drop.small{padding:26px 16px}.drop.small .ic{width:52px;height:52px;border-radius:16px}.drop.small .ic svg{width:26px;height:26px}.drop.small b{font-size:19px}
+.backinfo{margin-top:12px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:15px}.backinfo[hidden]{display:none}
+.startrow{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:18px 0 6px}.startrow .btn{font-size:18px;padding:15px 28px}
+.livemsg{margin:12px 0;padding:12px 14px;border-radius:14px;background:rgba(255,179,71,.1);border:1px solid rgba(255,179,71,.4)}.livemsg.bad{background:rgba(255,107,107,.1);border-color:rgba(255,107,107,.5)}.livemsg[hidden]{display:none}
+.livepanel[hidden],#transport[hidden],#lyrview[hidden]{display:none}
+.pitchbox{position:relative;border-radius:18px;background:rgba(0,0,0,.35);border:1px solid var(--line);overflow:hidden;margin:16px 0}
+.pitchbox canvas{display:block;width:100%;height:auto}
+.pitchread{position:absolute;right:14px;top:10px;text-align:right}.pitchread b{display:block;font-size:42px;line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.pitchread span{font-size:13px;color:var(--mute)}
+.lvlbar{height:6px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden}.lvlbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));border-radius:4px;transition:width .06s}.lvlbar i.hot{background:#ff6b6b}
+.ctrlgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:820px){.ctrlgrid{grid-template-columns:1fr}}
+.cbox{border-radius:18px;padding:16px;background:var(--card);border:1px solid var(--line)}.cbox h3{font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+.fl{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.fl label{font-size:14px;color:var(--mute);min-width:84px}
+.live select,.live textarea{background:#150913;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font:inherit;font-size:15px}.live textarea{width:100%;min-height:90px}
+.live input[type=range]{flex:1;min-width:120px;accent-color:#ff6a2b}.fl output,.fl .v{font-size:13px;color:var(--mute);min-width:56px;text-align:right}
+.presets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.presets button{font:inherit;font-size:14px;border-radius:99px;padding:6px 14px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:pointer}.presets button.on{background:var(--grad);color:#1a0b16;border-color:transparent;font-weight:700}
+.recrow{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:18px 0 6px}
+#rec{font:inherit;font-weight:800;font-size:18px;border:0;border-radius:99px;padding:14px 30px;cursor:pointer;background:#ff4f5e;color:#fff;box-shadow:0 10px 30px rgba(255,79,94,.4)}#rec.live{background:#fff;color:#c4162a;animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{50%{box-shadow:0 0 0 10px rgba(255,79,94,.25)}}
+#timer{font-variant-numeric:tabular-nums;font-size:20px}
+.take{margin-top:14px;border-radius:16px;padding:14px;background:var(--card);border:1px solid var(--line)}.takerow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:10px 0}.takerow span{min-width:170px;font-size:14px;color:var(--mute)}.takerow audio{flex:1;min-width:200px;max-width:100%}
+#lyrview{margin-top:10px;max-height:240px;overflow:auto;white-space:pre-wrap;font-size:28px;line-height:1.5;text-align:center;padding:14px;border-radius:14px;background:rgba(0,0,0,.35);border:1px solid var(--line)}
+.warnrow{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:rgba(255,179,71,.1);border:1px solid rgba(255,179,71,.4);font-size:14.5px;margin-top:12px}
+
+.meters{margin:14px 0 6px;display:grid;gap:8px}.mrow{display:flex;align-items:center;gap:12px}.mrow>span{min-width:92px;font-size:13px;color:var(--mute)}.mrow .lvlbar{flex:1}
+.learnrow{display:flex;gap:14px;align-items:center;margin-top:14px}.learnrow .grow{flex:1;height:8px}.learnrow .lvlbar i{background:var(--grad)}
+.small.ok{color:var(--teal)}.small.bad{color:#ff8a8a}
+#clean select{background:#150913;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:15px}
+
+[hidden]{display:none !important}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Karaoke Autotune", "url": "https://fuidzy.com/tunedzy/tools/karaoke-autotune", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (web browser)", "description": "Free online karaoke with live autotune. Add any song or backing track, sing along with autotune on, and record your voice and the mix. Private, in your browser.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Fuidzy", "url": "https://fuidzy.com"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is the karaoke free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No account, no limits and no watermark."}}, {"@type": "Question", "name": "Are my songs or my voice uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. The track, your microphone and the recordings all stay in your browser unless you download them."}}, {"@type": "Question", "name": "Can I sing along to any song?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, any audio file your browser can play. Instrumentals work best. For a full song, tick Reduce original vocals."}}, {"@type": "Question", "name": "Why is my voice slightly off from the track in the recording?", "acceptedAnswer": {"@type": "Answer", "text": "Different devices add different delay. Use the sync slider to nudge the voice earlier or later, and record again."}}, {"@type": "Question", "name": "Does it work on a phone?", "acceptedAnswer": {"@type": "Answer", "text": "It can, but phones have more audio delay and fewer controls. A computer with wired headphones works best."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fuidzy", "item": "https://fuidzy.com/"}, {"@type": "ListItem", "position": 2, "name": "Tunedzy", "item": "https://fuidzy.com/tunedzy"}, {"@type": "ListItem", "position": 3, "name": "Free tools", "item": "https://fuidzy.com/tunedzy/tools"}, {"@type": "ListItem", "position": 4, "name": "Karaoke Autotune", "item": "https://fuidzy.com/tunedzy/tools/karaoke-autotune"}]}</script></head><body>
+<header class="top"><div class="wrap"><a class="logo" href="/tunedzy"><img src="/tunedzy/favicon.png" alt="" width="30" height="30"><span>Vocal<b>Forge</b></span></a>
+<nav class="main" aria-label="Main"><a href="/tunedzy/tools">Free tools</a><a href="/tunedzy#features">Features</a><a href="/tunedzy#guides">Guides</a><a href="/tunedzy#pricing">Pricing</a><a href="/tunedzy#support">Support</a></nav><a class="hbtn" href="/tunedzy#pricing">Download free</a></div></header>
+<main><div class="hero" style="padding:0 0 30px"><div class="shapes" aria-hidden="true"><span class="blob b2 fl2"></span><span class="ring r3 fl3"></span><span class="sq s3 fl1"></span><svg class="dots d2" viewBox="0 0 210 140"><defs><pattern id="dpd2" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.8" fill="#fff"/></pattern></defs><rect width="210" height="140" fill="url(#dpd2)"/></svg><svg class="squig q2" viewBox="0 0 210 40"><path d="M3 20 C 20 -2, 36 -2, 52 20 S 84 42, 100 20 S 132 -2, 148 20 S 180 42, 207 20"/></svg></div><div class="wrap"><div class="crumbs"><a href="/">Fuidzy</a> / <a href="/tunedzy">Tunedzy</a> / <a href="/tunedzy/tools">Free tools</a> / Karaoke Autotune</div><div class="toolhead"><h1>Online Karaoke With Autotune: Sing Along to Any Track, Free</h1><p class="lead">Add a backing track, sing along with live autotune, and record your voice and the mix. It finds the key of the track for you, can reduce the original vocals, shows the lyrics, and everything stays in your browser.</p></div>
+<div style="max-width:900px"><div class="live" id="live" data-mode="karaoke" data-base="/tunedzy"><div class="inner"><div class="drop small" id="kdrop" tabindex="0" role="button" aria-label="Choose a backing track"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg></div><b>Add your backing track</b><span>MP3, WAV, FLAC or OGG &middot; an instrumental works best &middot; the key is found for you</span></div><input type="file" id="kfile" accept="audio/*,.mp3,.wav,.flac,.ogg,.m4a" hidden><div class="toolrow"><span class="priv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your files and your voice stay on your device.</span><button class="btn small" id="kdemo" type="button">Try a demo backing</button></div><div class="backinfo" id="backinfo" hidden></div><div class="startrow"><button class="btn primary" id="start" type="button">Turn on microphone</button><span class="small">Wear headphones so the music and your voice do not feed back into the mic.</span></div><div class="livemsg" id="msg" hidden></div><div class="livepanel" id="panel" hidden><div class="pitchbox"><canvas id="pcv" width="900" height="210"></canvas><div class="pitchread"><b id="note">--</b><span id="cents">sing a note</span></div></div><div class="lvlbar" title="Mic level"><i id="lvl"></i></div><div class="ctrlgrid" style="margin-top:16px"><div class="cbox"><h3>Autotune</h3><div class="fl"><label for="key">Key</label><select id="key"></select><select id="scale"><option value="major">major</option><option value="minor">minor</option><option value="chromatic">every note</option></select><span class="small mute" id="keylabel"></span></div><div class="presets"><button type="button" data-preset="natural">Natural</button><button type="button" data-preset="pop">Pop</button><button type="button" data-preset="hard">Hard-tune</button><button type="button" data-preset="off">Off (compare)</button></div><div class="fl"><label for="amount">Strength</label><input type="range" id="amount" min="0" max="100" value="80"><output class="v" id="amountv">80%</output></div><div class="fl"><label for="speed">Retune speed</label><input type="range" id="speed" min="0" max="250" value="50"><output class="v" id="speedv">50 ms</output></div><div class="fl"><label for="reverb">Reverb</label><input type="range" id="reverb" min="0" max="60" value="18"><output class="v" id="reverbv">18%</output></div></div><div><div class="cbox" style="margin-top:16px"><h3>Backing track</h3><div id="transport" hidden><div class="fl"><button class="btn small" id="play" type="button">Play</button><button class="btn small" id="stop" type="button">Stop</button><button class="btn small" id="restart" type="button">Restart</button><span class="v" id="pos">0:00</span><input type="range" id="seek" min="0" max="100" value="0"><span class="v" id="dur">0:00</span></div><div class="fl"><label for="bvol">Track volume</label><input type="range" id="bvol" min="0" max="150" value="80"></div><div class="fl"><label for="vvol">Your voice</label><input type="range" id="vvol" min="0" max="200" value="100"></div><div class="fl"><label><input type="checkbox" id="reduce"> Reduce original vocals</label><span class="v" style="text-align:left;min-width:0">for full songs: removes the centre vocal (and some bass)</span></div><div class="fl"><label for="nudge">Recording sync</label><input type="range" id="nudge" min="-150" max="150" value="0"><output class="v" id="nudgev">0 ms</output></div></div><p class="small mute" id="notrack">Add a backing track above to play along. You can also just sing and record without one.</p></div><div class="warnrow">Tip: this is a real-time browser effect with a small delay. For a final, studio-clean vocal, record dry and tune it afterwards in Tunedzy.</div></div></div><div class="cbox" style="margin-top:16px"><h3>Lyrics</h3><textarea id="lyr" placeholder="Paste your lyrics here"></textarea><div class="fl" style="margin-top:10px"><label><input type="checkbox" id="showlyr"> Show lyrics</label><label for="lyrsize" style="min-width:0">Size</label><input type="range" id="lyrsize" min="18" max="56" value="28"><label for="lyrspeed" style="min-width:0">Auto-scroll</label><input type="range" id="lyrspeed" min="0" max="30" value="8"></div><div id="lyrview" hidden></div></div><div class="recrow"><button id="rec" type="button">Record</button><span id="timer">0:00</span><button class="btn small ghost" id="micoff" type="button">Turn off microphone</button><span class="small mute" id="lat"></span></div><div id="takes"></div></div></div></div></div><div class="howto" style="max-width:900px"><div>Add your backing track (an instrumental works best). The key is detected and autotune is set to it.</div><div>Put on headphones, click <strong>Turn on microphone</strong>, and paste your lyrics if you want them on screen.</div><div>Press <strong>Record</strong>. After a 3-2-1 count the track plays and you sing. Stop to get your voice and the mix as WAV files.</div></div></div></div>
+<div class="narrow"><article>
+<h2>How online karaoke with autotune works</h2>
+<p>Your backing track plays through the browser and your microphone goes through live autotune that is tuned to the track&rsquo;s key. You hear both in your headphones. When you record, you get two files: your autotuned voice on its own, and your voice mixed with the track, lined up to compensate for the audio delay of your device.</p>
+<h2>Using a full song instead of an instrumental</h2>
+<p>If you only have the original song, tick <strong>Reduce original vocals</strong>. It removes whatever is mixed in the centre of the stereo picture, which is where the lead vocal usually sits. This works on many songs but not all, and it also takes some bass and snare with it, so it is a quick karaoke trick, not a studio separation. For a clean vocal-free version, Tunedzy uses an AI separation model on your own PC.</p>
+<h2>Get the best sound</h2>
+<ul>
+<li><strong>Headphones are essential.</strong> Otherwise the track leaks into your mic and the recording gets messy.</li>
+<li><strong>Check the key.</strong> The detected key is shown. If notes feel pulled the wrong way, try the relative major or minor.</li>
+<li><strong>Use the sync slider.</strong> If your voice feels slightly early or late against the track in the saved mix, nudge it a few milliseconds and record again.</li>
+<li><strong>Balance the mix.</strong> Use the voice and track sliders so you can hear yourself clearly without shouting.</li>
+</ul>
+<h2>Use music you have the right to use</h2>
+<p>Your files never leave your device, but copyright still applies to what you publish. For videos you plan to post, use your own beat, licensed instrumentals or royalty-free music.</p>
+<h2>Want a studio version of your take?</h2>
+<p>Record here for fun, then run a clean take through the <a href="/tunedzy">Tunedzy</a> desktop app: it removes noise and echo, tunes to the key of your beat, fits the timing and masters the result.</p>
+
+<div class="vf"><h2>Like this? Let Tunedzy do the fixing.</h2><p>These tools tell you what is going on. Tunedzy acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Free to try for 7 days, then $29 once.</p><div class="cta"><a class="btn primary" href="https://downloads.fuidzy.com/vocalforge/VocalForge-Setup-2.0.0.exe" rel="noopener">Download the free trial</a><a class="btn" href="mailto:fuidzy@outlook.com?subject=Tunedzy%20support">Ask us a question</a></div></div>
+<h2>Frequently asked questions</h2><details><summary>Is the karaoke free?</summary><p>Yes. No account, no limits and no watermark.</p></details><details><summary>Are my songs or my voice uploaded?</summary><p>No. The track, your microphone and the recordings all stay in your browser unless you download them.</p></details><details><summary>Can I sing along to any song?</summary><p>Yes, any audio file your browser can play. Instrumentals work best. For a full song, tick Reduce original vocals.</p></details><details><summary>Why is my voice slightly off from the track in the recording?</summary><p>Different devices add different delay. Use the sync slider to nudge the voice earlier or later, and record again.</p></details><details><summary>Does it work on a phone?</summary><p>It can, but phones have more audio delay and fewer controls. A computer with wired headphones works best.</p></details>
+<h2>More free tools</h2><div class="tcards"><a class="card cP" href="/tunedzy/tools/live-autotune" style="padding:18px"><div class="ico cP"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg></div><h3>Live Autotune</h3><p>Sing with real-time autotune and record the take.</p></a><a class="card cA" href="/tunedzy/tools/bpm-finder" style="padding:18px"><div class="ico cA"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l5 18H7z"/><path d="M12 15l4-7"/></svg></div><h3>BPM Finder</h3><p>Drop in a song or beat, get the tempo. Includes tap tempo.</p></a><a class="card cV" href="/tunedzy/tools/song-key-finder" style="padding:18px"><div class="ico cV"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></svg></div><h3>Key Finder</h3><p>Find the key and Camelot code of any song or beat.</p></a></div>
+<h2>Related guides</h2><div class="related"><a href="/tunedzy/autotune-for-rap-vocals"><b>Autotune for Rap and Melodic Vocals: Settings That Work</b></a><a href="/tunedzy/mix-vocals-on-a-beat"><b>How to Mix Vocals on a Beat So They Sit in the Mix</b></a></div></article></div></main>
+<footer><div class="wrap"><div class="cols">
+<div><h4>Tunedzy</h4><a href="/tunedzy">Overview</a><br><a href="/tunedzy#features">Features</a><br><a href="/tunedzy#pricing">Pricing</a><br><a href="/tunedzy#faq">FAQ</a></div>
+<div><h4>Free tools</h4><a href="/tunedzy/tools/live-autotune">Live Autotune</a><br><a href="/tunedzy/tools/karaoke-autotune">Karaoke Autotune</a><br><a href="/tunedzy/tools/clean-streaming-mic">Clean Streaming Mic</a><br><a href="/tunedzy/tools/voice-recorder-noise-cancellation">Noise-Free Voice Recorder</a><br><a href="/tunedzy/tools/bpm-finder">BPM Finder</a><br><a href="/tunedzy/tools/song-key-finder">Key Finder</a><br><a href="/tunedzy/tools/chord-finder">Chord Finder</a><br><a href="/tunedzy/tools/lufs-meter">LUFS Meter</a><br><a href="/tunedzy/tools/vocal-checker">Vocal Checker</a><br></div>
+<div><h4>Guides</h4><a href="/tunedzy/fix-vocals-recorded-on-phone">How to Make Vocals Recorded on a Phone Sound P</a><br><a href="/tunedzy/ai-vocal-cleanup-explained">AI Vocal Cleanup</a><br><a href="/tunedzy/remove-echo-from-vocal-recording">How to Remove Echo and Room Reverb From a Voca</a><br><a href="/tunedzy/autotune-for-rap-vocals">Autotune for Rap and Melodic Vocals</a><br><a href="/tunedzy/mix-vocals-on-a-beat">How to Mix Vocals on a Beat So They Sit in the</a><br><a href="/tunedzy/blog">All audio guides</a></div>
+<div><h4>Support</h4><a href="mailto:fuidzy@outlook.com?subject=Tunedzy%20support">fuidzy@outlook.com</a><br><a href="mailto:fuidzy@outlook.com?subject=Tunedzy%20for%20Mac&amp;body=Hi%2C%20I%27d%20like%20a%20Mac%20version%20of%20Tunedzy.">Request a Mac version</a><br><a href="/tunedzy/privacy">Privacy</a><br><a href="/tunedzy/terms">Terms</a><br><a href="/tunedzy/refund-policy">Refunds</a></div>
+</div><p class="credit" style="margin-top:26px">Tunedzy is a Fuidzy product. It is not affiliated with or endorsed by any artist or plugin company mentioned on this site.</p>
+<p class="credit">Photos: <a href="https://www.pexels.com/photo/a-man-singing-in-front-of-the-microphone-8132797/" rel="noopener">Anna Pou / Pexels</a>, <a href="https://www.pexels.com/photo/a-man-singing-in-the-studio-8133004/" rel="noopener">Anna Pou / Pexels</a>, <a href="https://www.pexels.com/photo/man-singing-into-the-mic-18259198/" rel="noopener">Eduardo López / Pexels</a>, <a href="https://unsplash.com/photos/grayscale-photo-of-condenser-microphone-beside-pop-filter-bG8U3kaZltE" rel="noopener">Leo Wieling / Unsplash</a>, <a href="https://unsplash.com/photos/a-pair-of-headphones-sitting-next-to-a-laptop-Q-raIe-gAOo" rel="noopener">Project 290 / Unsplash</a>. Free to use under the Pexels and Unsplash licenses.</p></div></footer><script id="vfcore">/* Tunedzy free tools: audio analysis that runs entirely in the visitor's browser (nothing is uploaded).
+   Pure functions on Float32Array so the same code is tested in Node. */
+(function (root) {
+  'use strict';
+
+  // ---------------------------------------------------------------- basics
+  function fft(re, im) {                      // in-place radix-2
+    var n = re.length, i, j, k, m, t;
+    for (i = 1, j = 0; i < n; i++) {
+      var bit = n >> 1;
+      for (; j & bit; bit >>= 1) j ^= bit;
+      j ^= bit;
+      if (i < j) { t = re[i]; re[i] = re[j]; re[j] = t; t = im[i]; im[i] = im[j]; im[j] = t; }
+    }
+    for (var len = 2; len <= n; len <<= 1) {
+      var ang = -2 * Math.PI / len, wr = Math.cos(ang), wi = Math.sin(ang), half = len >> 1;
+      for (i = 0; i < n; i += len) {
+        var cr = 1, ci = 0;
+        for (k = 0; k < half; k++) {
+          var a = i + k, b = a + half;
+          var xr = re[b] * cr - im[b] * ci, xi = re[b] * ci + im[b] * cr;
+          re[b] = re[a] - xr; im[b] = im[a] - xi; re[a] += xr; im[a] += xi;
+          m = cr * wr - ci * wi; ci = cr * wi + ci * wr; cr = m;
+        }
+      }
+    }
+  }
+  function hann(n) { var w = new Float32Array(n); for (var i = 0; i < n; i++) w[i] = 0.5 - 0.5 * Math.cos(2 * Math.PI * i / n); return w; }
+
+  function mixMono(chs) {
+    if (chs.length === 1) return chs[0];
+    var n = chs[0].length, out = new Float32Array(n), c = chs.length;
+    for (var i = 0; i < n; i++) { var s = 0; for (var k = 0; k < c; k++) s += chs[k][i]; out[i] = s / c; }
+    return out;
+  }
+  function decimate(x, sr, target) {          // box-average decimation (cheap low-pass), returns {x, sr}
+    var f = Math.max(1, Math.floor(sr / target));
+    if (f === 1) return { x: x, sr: sr };
+    var n = Math.floor(x.length / f), out = new Float32Array(n);
+    for (var i = 0; i < n; i++) { var s = 0, o = i * f; for (var k = 0; k < f; k++) s += x[o + k]; out[i] = s / f; }
+    return { x: out, sr: sr / f };
+  }
+  function window_(x, sr, maxSec) {           // take up to maxSec from the middle of the file
+    var max = Math.floor(maxSec * sr);
+    if (x.length <= max) return x;
+    var start = Math.floor((x.length - max) / 2);
+    return x.subarray(start, start + max);
+  }
+  function percentile(arr, p) {
+    var a = Array.prototype.slice.call(arr).sort(function (u, v) { return u - v; });
+    if (!a.length) return 0;
+    return a[Math.min(a.length - 1, Math.max(0, Math.round(p * (a.length - 1))))];
+  }
+  var db = function (v) { return 20 * Math.log10(Math.max(v, 1e-10)); };
+
+  // ---------------------------------------------------------------- tempo
+  function onsetEnvelope(x, sr) {
+    var N = 1024, hop = 128, w = hann(N), bins = N / 2, nF = Math.max(0, Math.floor((x.length - N) / hop));
+    var re = new Float32Array(N), im = new Float32Array(N), prev = new Float32Array(bins), env = new Float32Array(nF);
+    var top = Math.min(bins, Math.floor(6000 / (sr / N)));
+    for (var f = 0; f < nF; f++) {
+      var o = f * hop;
+      for (var i = 0; i < N; i++) { re[i] = x[o + i] * w[i]; im[i] = 0; }
+      fft(re, im);
+      var flux = 0;
+      for (var b = 1; b < top; b++) {
+        var m = Math.log(1 + 100 * Math.sqrt(re[b] * re[b] + im[b] * im[b]) / N * 2);
+        var d = m - prev[b]; if (d > 0) flux += d; prev[b] = m;
+      }
+      env[f] = flux;
+    }
+    var fps = sr / hop, win = Math.max(3, Math.round(fps * 0.4)), out = new Float32Array(nF), run = 0;
+    for (var t = 0; t < nF; t++) {              // subtract moving average, half-wave rectify
+      run += env[t]; if (t >= win) run -= env[t - win];
+      var mean = run / Math.min(t + 1, win), v = env[t] - mean;
+      out[t] = v > 0 ? v : 0;
+    }
+    return { env: out, fps: fps };
+  }
+
+  function autocorr(env, maxLag) {
+    var n = env.length, ac = new Float32Array(maxLag + 2), mean = 0, i, l;
+    for (i = 0; i < n; i++) mean += env[i]; mean /= n;
+    var e = new Float32Array(n); for (i = 0; i < n; i++) e[i] = env[i] - mean;
+    for (l = 0; l <= maxLag + 1; l++) { var s = 0; for (i = l; i < n; i++) s += e[i] * e[i - l]; ac[l] = s / (n - l); }
+    var z = ac[0] || 1; for (l = 0; l < ac.length; l++) ac[l] /= z;
+    return ac;
+  }
+  function acAt(ac, lag) {                    // linear interpolation
+    var i = Math.floor(lag), fr = lag - i;
+    if (i + 1 >= ac.length || i < 0) return 0;
+    return ac[i] * (1 - fr) + ac[i + 1] * fr;
+  }
+  function tempoScore(ac, fps, bpm) {
+    var L = fps * 60 / bpm, s = 0, w = 0, mult = [1, 2, 3, 4];
+    for (var k = 0; k < mult.length; k++) { if (L * mult[k] < ac.length - 2) { s += acAt(ac, L * mult[k]) / Math.sqrt(mult[k]); w += 1 / Math.sqrt(mult[k]); } }
+    return w ? s / w : 0;
+  }
+  function estimateTempo(x, sr) {
+    var o = onsetEnvelope(x, sr), fps = o.fps;
+    if (o.env.length < fps * 6) return null;
+    var maxLag = Math.ceil(fps * 60 / 55 * 4) + 4, ac = autocorr(o.env, maxLag), cand = [], bpm;
+    for (bpm = 60; bpm <= 200; bpm += 0.5) {
+      var prior = Math.exp(-0.5 * Math.pow(Math.log2(bpm / 112) / 0.85, 2));
+      cand.push({ bpm: bpm, raw: tempoScore(ac, fps, bpm), score: tempoScore(ac, fps, bpm) * (0.55 + 0.45 * prior) });
+    }
+    var best = cand[0], i;
+    for (i = 1; i < cand.length; i++) if (cand[i].score > best.score) best = cand[i];
+    var fine = best, b;                        // refine in 0.05 steps
+    for (b = best.bpm - 1.5; b <= best.bpm + 1.5; b += 0.05) { var sc = tempoScore(ac, fps, b); if (sc > fine.raw) fine = { bpm: b, raw: sc }; }
+    var tempo = Math.round(fine.bpm * 10) / 10;
+    // downbeat grid phase: the offset (in frames) whose comb sum is largest
+    var period = fps * 60 / fine.bpm, bestPh = 0, bestV = -1, ph;
+    for (ph = 0; ph < period; ph += 0.5) { var v = 0, p = ph, cnt = 0; while (p < o.env.length - 1) { v += o.env[Math.round(p)]; p += period; cnt++; } v /= cnt; if (v > bestV) { bestV = v; bestPh = ph; } }
+    // confidence: how much the peak stands out from the rest of the tempogram
+    var raws = cand.map(function (c) { return c.raw; }), med = percentile(raws, 0.5), top = fine.raw;
+    var conf = Math.max(0, Math.min(1, (top - med) / (Math.abs(top) + 0.2)));
+    var alt = [];
+    [[0.5, 'half'], [2, 'double'], [4 / 3, 'x4/3'], [0.75, 'x3/4'], [1.5, 'x3/2'], [2 / 3, 'x2/3']].forEach(function (m) {
+      var t2 = tempo * m[0]; if (t2 < 55 || t2 > 200) return;
+      var sc2 = tempoScore(ac, fps, t2); if (m[1].charAt(0) === 'x' && sc2 < fine.raw * 0.8) return;
+      alt.push(Math.round(t2 * 10) / 10);
+    });
+    return { bpm: tempo, alt: alt, confidence: conf, beatOffsetSec: bestPh / fps };
+  }
+
+  // ---------------------------------------------------------------- key + chords
+  var NOTES_MAJ = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'];
+  var NOTES_MIN = ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'G#', 'A', 'Bb', 'B'];
+  var CAM_MAJ = [8, 3, 10, 5, 12, 7, 2, 9, 4, 11, 6, 1];
+  var KK_MAJ = [6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88];
+  var KK_MIN = [6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17];
+
+  function chromaFrames(x, sr, N, hop) {
+    var w = hann(N), re = new Float32Array(N), im = new Float32Array(N), frames = [], bw = sr / N;
+    var lo = Math.ceil(65 / bw), hi = Math.min(N / 2 - 1, Math.floor(2000 / bw));
+    var pcOf = new Int8Array(hi + 1), wt = new Float32Array(hi + 1);
+    for (var b = lo; b <= hi; b++) {
+      var midi = 69 + 12 * Math.log2((b * bw) / 440), r = Math.round(midi), dist = Math.abs(midi - r);
+      pcOf[b] = ((r % 12) + 12) % 12; wt[b] = Math.max(0, Math.cos(dist * Math.PI)) ;   // 1 on a note, 0 halfway between
+    }
+    for (var o = 0; o + N <= x.length; o += hop) {
+      for (var i = 0; i < N; i++) { re[i] = x[o + i] * w[i]; im[i] = 0; }
+      fft(re, im);
+      var ch = new Float32Array(12), tot = 0;
+      for (b = lo; b <= hi; b++) { var mag = Math.sqrt(re[b] * re[b] + im[b] * im[b]); var v = Math.sqrt(mag) * wt[b] * (1 / (1 + b * bw / 1500)); ch[pcOf[b]] += v; tot += v; }
+      if (tot > 1e-6) for (var k = 0; k < 12; k++) ch[k] /= tot;
+      frames.push({ t: o / sr, ch: ch, ok: tot > 1e-6 });
+    }
+    return frames;
+  }
+  function pearson(a, b) {
+    var n = a.length, ma = 0, mb = 0, i; for (i = 0; i < n; i++) { ma += a[i]; mb += b[i]; } ma /= n; mb /= n;
+    var s = 0, va = 0, vb = 0; for (i = 0; i < n; i++) { var da = a[i] - ma, db_ = b[i] - mb; s += da * db_; va += da * da; vb += db_ * db_; }
+    return s / Math.sqrt((va * vb) || 1);
+  }
+  function estimateKey(frames) {
+    var sum = new Float32Array(12), n = 0;
+    frames.forEach(function (f) { if (f.ok) { for (var k = 0; k < 12; k++) sum[k] += f.ch[k]; n++; } });
+    if (n < 4) return null;
+    var res = [];
+    for (var tonic = 0; tonic < 12; tonic++) {
+      var maj = [], min = [];
+      for (var k = 0; k < 12; k++) { maj.push(KK_MAJ[(k - tonic + 12) % 12]); min.push(KK_MIN[(k - tonic + 12) % 12]); }
+      res.push({ tonic: tonic, mode: 'major', r: pearson(sum, maj) });
+      res.push({ tonic: tonic, mode: 'minor', r: pearson(sum, min) });
+    }
+    res.sort(function (a, b) { return b.r - a.r; });
+    function label(k) { return k.mode === 'major' ? NOTES_MAJ[k.tonic] + ' major' : NOTES_MIN[k.tonic] + ' minor'; }
+    function camelot(k) { return k.mode === 'major' ? CAM_MAJ[k.tonic] + 'B' : CAM_MAJ[(k.tonic + 3) % 12] + 'A'; }
+    function relative(k) { return k.mode === 'major' ? { tonic: (k.tonic + 9) % 12, mode: 'minor' } : { tonic: (k.tonic + 3) % 12, mode: 'major' }; }
+    var best = res[0], rel = relative(best);
+    var distinct = res.filter(function (k) { return !(k.tonic === rel.tonic && k.mode === rel.mode) && !(k === best); });
+    var second = distinct[0];
+    return { tonic: best.tonic, mode: best.mode, name: label(best), camelot: camelot(best), relative: label(rel), r: best.r,
+             confidence: Math.max(0, Math.min(1, (best.r - second.r) * 8 + (best.r - 0.5))),
+             others: distinct.slice(0, 3).map(function (k) { return { name: label(k), r: k.r }; }), profile: Array.prototype.slice.call(sum) };
+  }
+
+  var TRIADS = (function () {
+    var t = [];
+    for (var root = 0; root < 12; root++) {
+      var maj = new Float32Array(12), min = new Float32Array(12);
+      maj[root] = 1; maj[(root + 4) % 12] = 0.9; maj[(root + 7) % 12] = 0.95;
+      min[root] = 1; min[(root + 3) % 12] = 0.9; min[(root + 7) % 12] = 0.95;
+      t.push({ root: root, q: '', v: maj }); t.push({ root: root, q: 'm', v: min });
+    }
+    return t;
+  })();
+  function cosine(a, b) { var s = 0, na = 0, nb = 0; for (var i = 0; i < 12; i++) { s += a[i] * b[i]; na += a[i] * a[i]; nb += b[i] * b[i]; } return s / Math.sqrt((na * nb) || 1); }
+  function degreeLabel(ch, key) {
+    var iv = (ch.root - key.tonic + 12) % 12, maj = { 0: 'I', 2: 'ii', 4: 'iii', 5: 'IV', 7: 'V', 9: 'vi' }, min = { 0: 'i', 3: 'III', 5: 'iv', 7: 'v', 8: 'VI', 10: 'VII' };
+    var tbl = key.mode === 'major' ? maj : min, s = tbl[iv];
+    if (!s) return '';
+    var isMin = s === s.toLowerCase(); return ((ch.q === 'm') === isMin) ? s : '';
+  }
+  function inKey(ch, key) {
+    var iv = (ch.root - key.tonic + 12) % 12;
+    var tbl = key.mode === 'major' ? { 0: '', 2: 'm', 4: 'm', 5: '', 7: '', 9: 'm' } : { 0: 'm', 3: '', 5: 'm', 7: 'm', 8: '', 10: '' };
+    return tbl[iv] !== undefined && tbl[iv] === ch.q;
+  }
+  function estimateChords(x, sr, tempo, key) {
+    var N = 4096, hop = 1024, frames = chromaFrames(x, sr, N, hop);
+    if (frames.length < 8 || !tempo || !key) return null;
+    var beat = 60 / tempo.bpm, seg = beat * 2, dur = x.length / sr;
+    function run(off) {
+      var out = [], total = 0, t;
+      for (t = off; t + seg * 0.5 < dur; t += seg) {
+        var ch = new Float32Array(12), n = 0;
+        for (var fi = 0; fi < frames.length; fi++) { var f = frames[fi], c = f.t + N / sr / 2; if (f.ok && c >= t && c < t + seg) { for (var k = 0; k < 12; k++) ch[k] += f.ch[k]; n++; } }
+        if (!n) continue;
+        var best = null, bestS = -1;
+        TRIADS.forEach(function (tr) { var sc = cosine(ch, tr.v) * (inKey(tr, key) ? 1 : 0.86); if (sc > bestS) { bestS = sc; best = tr; } });
+        out.push({ t: t, root: best.root, q: best.q, score: bestS, chord: NOTES_MAJ[best.root] + best.q }); total += bestS;
+      }
+      return { out: out, avg: out.length ? total / out.length : 0 };
+    }
+    var bestRun = null, o0 = tempo.beatOffsetSec % seg;
+    for (var j = 0; j < 4; j++) { var r = run((o0 + j * beat / 2) % seg); if (!bestRun || r.avg > bestRun.avg + 0.005) bestRun = r; }
+    var out = bestRun.out;
+    for (var i = 1; i < out.length - 1; i++) if (out[i - 1].chord === out[i + 1].chord && out[i].chord !== out[i - 1].chord && out[i].score < 0.82) { out[i].chord = out[i - 1].chord; out[i].root = out[i - 1].root; out[i].q = out[i - 1].q; }
+    var merged = [];
+    out.forEach(function (c) {
+      var last = merged[merged.length - 1];
+      if (last && last.chord === c.chord) last.len += seg; else merged.push({ t: c.t, chord: c.chord, root: c.root, q: c.q, deg: degreeLabel(c, key), len: seg });
+    });
+    var counts = {}; out.forEach(function (c) { counts[c.chord] = (counts[c.chord] || 0) + 1; });
+    var top = Object.keys(counts).sort(function (u, v) { return counts[v] - counts[u]; }).slice(0, 6).map(function (c) { return { chord: c, n: counts[c] }; });
+    var seq = merged.map(function (c) { return c.chord; }), loops = {}, first = {}, L;
+    for (L = 2; L <= 4; L++) for (i = 0; i + L <= seq.length; i++) {
+      var sl = seq.slice(i, i + L); if (new Set(sl).size < 2) continue;
+      var k2 = sl.join(' '); loops[k2] = (loops[k2] || 0) + L; if (first[k2] === undefined) first[k2] = i;
+    }
+    var loop = Object.keys(loops).sort(function (u, v) { return (loops[v] - loops[u]) || (first[u] - first[v]); })[0] || '';
+    return { timeline: merged, top: top, loop: loop, segment: seg };
+  }
+
+  // ---------------------------------------------------------------- loudness (ITU-R BS.1770 / EBU R128)
+  function biquad(b, a, x) {
+    var y = new Float64Array(x.length), x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+    for (var i = 0; i < x.length; i++) {
+      var xi = x[i], yi = b[0] * xi + b[1] * x1 + b[2] * x2 - a[1] * y1 - a[2] * y2;
+      y[i] = yi; x2 = x1; x1 = xi; y2 = y1; y1 = yi;
+    }
+    return y;
+  }
+  function kCoefs(fs) {
+    var G = 3.999843853973347, f0 = 1681.974450955533, Q = 0.7071752369554196;
+    var A = Math.pow(10, G / 40), w0 = 2 * Math.PI * f0 / fs, al = Math.sin(w0) / (2 * Q), c = Math.cos(w0), sA = 2 * Math.sqrt(A) * al;
+    var a0 = (A + 1) - (A - 1) * c + sA;
+    var s1 = { b: [A * ((A + 1) + (A - 1) * c + sA) / a0, -2 * A * ((A - 1) + (A + 1) * c) / a0, A * ((A + 1) + (A - 1) * c - sA) / a0],
+               a: [1, 2 * ((A - 1) - (A + 1) * c) / a0, ((A + 1) - (A - 1) * c - sA) / a0] };
+    var f1 = 38.13547087602444, Q1 = 0.5003270373238773, w1 = 2 * Math.PI * f1 / fs, al1 = Math.sin(w1) / (2 * Q1), c1 = Math.cos(w1), a01 = 1 + al1;
+    var s2 = { b: [(1 + c1) / 2 / a01, -(1 + c1) / a01, (1 + c1) / 2 / a01], a: [1, -2 * c1 / a01, (1 - al1) / a01] };
+    return [s1, s2];
+  }
+  function measureLoudness(chs, sr) {
+    var co = kCoefs(sr), filt = chs.map(function (c) { var y = c; co.forEach(function (s) { y = biquad(s.b, s.a, y); }); return y; });
+    var blk = Math.round(0.4 * sr), step = Math.round(0.1 * sr), n = chs[0].length, ms = [];
+    for (var s = 0; s + blk <= n; s += step) {
+      var tot = 0; for (var c = 0; c < filt.length; c++) { var acc = 0, f = filt[c]; for (var i = s; i < s + blk; i++) acc += f[i] * f[i]; tot += acc / blk; }
+      ms.push(tot);
+    }
+    var lk = function (z) { return -0.691 + 10 * Math.log10(Math.max(z, 1e-12)); };
+    if (!ms.length) return null;
+    var abs = ms.filter(function (z) { return lk(z) > -70; });
+    if (!abs.length) return { lufs: -Infinity, momentaryMax: -Infinity, shortTermMax: -Infinity, lra: 0 };
+    var mean = abs.reduce(function (a, b) { return a + b; }, 0) / abs.length, rel = lk(mean) - 10;
+    var gated = ms.filter(function (z) { return lk(z) > -70 && lk(z) > rel; });
+    var integ = lk(gated.reduce(function (a, b) { return a + b; }, 0) / gated.length);
+    var mMax = lk(Math.max.apply(null, ms));
+    var st = [], w = 30;                       // short-term = 3 s = 30 steps of 100 ms (mean of block powers)
+    for (var j = 0; j + w <= ms.length; j += 5) { var q = 0; for (var u = j; u < j + w; u++) q += ms[u]; st.push(lk(q / w)); }
+    var stg = st.filter(function (v) { return v > -70; }), lra = 0;
+    if (stg.length > 4) { var m2 = stg.map(function (v) { return Math.pow(10, v / 10); }).reduce(function (a, b) { return a + b; }, 0) / stg.length; var g2 = stg.filter(function (v) { return v > 10 * Math.log10(m2) - 20; }); if (g2.length > 2) lra = percentile(g2, 0.95) - percentile(g2, 0.10); }
+    return { lufs: integ, momentaryMax: mMax, shortTermMax: st.length ? Math.max.apply(null, st) : integ, lra: lra };
+  }
+  function peaks(chs) {
+    var pk = 0, clipRuns = 0, i, c, run;
+    chs.forEach(function (x) {
+      run = 0;
+      for (i = 0; i < x.length; i++) {
+        var a = Math.abs(x[i]); if (a > pk) pk = a;
+        if (a >= 0.995) { run++; if (run === 3) clipRuns++; } else run = 0;
+      }
+    });
+    // true peak estimate: 4x linear-phase sinc interpolation around the loudest samples
+    var tp = pk, thr = pk * 0.7;
+    chs.forEach(function (x) {
+      for (i = 8; i < x.length - 8; i++) {
+        if (Math.abs(x[i]) < thr) continue;
+        for (var ph = 1; ph < 4; ph++) {
+          var t = ph / 4, s = 0;
+          for (var k = -7; k <= 8; k++) { var d = k - t, sinc = Math.abs(d) < 1e-9 ? 1 : Math.sin(Math.PI * d) / (Math.PI * d), win = 0.5 + 0.5 * Math.cos(Math.PI * d / 8.5); s += x[i + k] * sinc * win; }
+          if (Math.abs(s) > tp) tp = Math.abs(s);
+        }
+      }
+    });
+    return { samplePeak: pk, truePeak: tp, clipRuns: clipRuns };
+  }
+
+  // ---------------------------------------------------------------- vocal check-up
+  function frameLevels(x, sr) {
+    var f = Math.round(sr * 0.02), n = Math.floor(x.length / f), out = [];
+    for (var i = 0; i < n; i++) { var s = 0, o = i * f; for (var k = 0; k < f; k++) s += x[o + k] * x[o + k]; out.push(db(Math.sqrt(s / f))); }
+    return out;
+  }
+  function spectrumBands(x, sr) {
+    var N = 4096, w = hann(N), re = new Float32Array(N), im = new Float32Array(N), acc = new Float64Array(N / 2), cnt = 0, bw = sr / N;
+    var step = Math.max(N, Math.floor(x.length / 120));
+    for (var o = 0; o + N <= x.length; o += step) {
+      for (var i = 0; i < N; i++) { re[i] = x[o + i] * w[i]; im[i] = 0; }
+      fft(re, im); for (var b = 1; b < N / 2; b++) acc[b] += re[b] * re[b] + im[b] * im[b]; cnt++;
+    }
+    function band(lo, hi) { var s = 0; for (var b = Math.ceil(lo / bw); b <= Math.min(N / 2 - 1, Math.floor(hi / bw)); b++) s += acc[b]; return s; }
+    var total = band(20, sr / 2 - 1) || 1;
+    return { rumble: band(20, 80) / total, low: band(80, 300) / total, mid: band(300, 3000) / total, presence: band(3000, 8000) / total, air: band(8000, sr / 2 - 1) / total, sibRatio: band(5000, 9500) / (band(500, 5000) || 1) };
+  }
+  function checkVocal(chs, sr, lu) {
+    var mono = mixMono(chs), lv = frameLevels(mono, sr).filter(function (v) { return v > -90; });
+    var pk = peaks(chs), res = {}, loud = percentile(lv, 0.9), floor = percentile(lv, 0.05);
+    res.peakDb = db(pk.samplePeak); res.truePeakDb = db(pk.truePeak); res.clipEvents = pk.clipRuns;
+    res.loudDb = loud; res.noiseFloorDb = floor; res.snr = loud - floor; res.lufs = lu ? lu.lufs : null;
+    var spec = spectrumBands(mono, sr); res.spec = spec;
+    var silent = lv.filter(function (v) { return v < floor + 6; }).length / (lv.length || 1); res.quietShare = silent;
+    return res;
+  }
+
+  // ---------------------------------------------------------------- one call for everything
+  function analyzeAll(chs, sr, opts) {
+    opts = opts || {}; var prog = opts.progress || function () {};
+    var mono = mixMono(chs), seconds = mono.length / sr, r = { seconds: seconds, sampleRate: sr };
+    var d = decimate(window_(mono, sr, 150), sr, 12000);
+    prog('Finding the tempo', 0.15); r.tempo = estimateTempo(d.x, d.sr);
+    prog('Listening for the key', 0.5); var frames = chromaFrames(d.x, d.sr, 8192, 4096); r.key = estimateKey(frames);
+    prog('Reading the chords', 0.7); r.chords = estimateChords(d.x, d.sr, r.tempo, r.key);
+    prog('Measuring loudness', 0.85); r.loudness = measureLoudness(chs, sr);
+    r.check = checkVocal(chs, sr, r.loudness);
+    prog('Done', 1);
+    return r;
+  }
+
+  // ---------------------------------------------------------------- demo loop (synthesised, no copyright)
+  function demoLoop(sr) {
+    sr = sr || 44100; var bpm = 92, beat = 60 / bpm, bars = 16, dur = bars * 4 * beat, n = Math.floor(dur * sr), x = new Float32Array(n);
+    var prog = [[9, 'min'], [5, 'maj'], [0, 'maj'], [7, 'maj']];   // Am F C G
+    var sem = function (m) { return 440 * Math.pow(2, (m - 69) / 12); };
+    for (var bar = 0; bar < bars; bar++) {
+      var ch = prog[bar % 4], root = 48 + ((ch[0] + 12 - 0) % 12), tri = ch[1] === 'min' ? [0, 3, 7] : [0, 4, 7], t0 = bar * 4 * beat;
+      tri.forEach(function (iv) {
+        var f = sem(root + iv + 12), s = Math.floor(t0 * sr), len = Math.floor(4 * beat * sr);
+        for (var i = 0; i < len && s + i < n; i++) { var tt = i / sr, env = Math.min(1, tt * 20) * Math.exp(-tt * 0.5); x[s + i] += 0.07 * env * (Math.sin(2 * Math.PI * f * tt) + 0.4 * Math.sin(4 * Math.PI * f * tt) + 0.2 * Math.sin(6 * Math.PI * f * tt)); }
+      });
+      var bf = sem(root - 12), bs = Math.floor(t0 * sr), bl = Math.floor(4 * beat * sr);
+      for (var j = 0; j < bl && bs + j < n; j++) { var q = j / sr; x[bs + j] += 0.18 * Math.sin(2 * Math.PI * bf * q) * Math.exp(-(q % beat) * 2.5); }
+      for (var b = 0; b < 4; b++) {
+        var st = Math.floor((t0 + b * beat) * sr);
+        if (b % 2 === 0) for (var i2 = 0; i2 < 9000 && st + i2 < n; i2++) { var u = i2 / sr; x[st + i2] += 0.55 * Math.sin(2 * Math.PI * (48 + 90 * Math.exp(-u * 40)) * u) * Math.exp(-u * 14); }
+        else for (var i3 = 0; i3 < 7000 && st + i3 < n; i3++) { var v = i3 / sr; x[st + i3] += 0.3 * (Math.random() * 2 - 1) * Math.exp(-v * 22); }
+        for (var h = 0; h < 2; h++) { var hs = Math.floor((t0 + b * beat + h * beat / 2) * sr); for (var i4 = 0; i4 < 1800 && hs + i4 < n; i4++) x[hs + i4] += 0.08 * (Math.random() * 2 - 1) * Math.exp(-(i4 / sr) * 90); }
+      }
+    }
+    return { channels: [x], sampleRate: sr };
+  }
+
+  var api = { fft: fft, mixMono: mixMono, decimate: decimate, estimateTempo: estimateTempo, chromaFrames: chromaFrames, estimateKey: estimateKey,
+              estimateChords: estimateChords, measureLoudness: measureLoudness, peaks: peaks, checkVocal: checkVocal, analyzeAll: analyzeAll, demoLoop: demoLoop };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.VFCore = api;
+})(typeof window !== 'undefined' ? window : globalThis);
+</script><script>/* Tunedzy free tools: live autotune + karaoke engine. Runs entirely in the visitor's browser (Web Audio + AudioWorklet).
+   Mic -> pitch detection (YIN) -> delay-line pitch shifter -> light studio tone + reverb -> headphones, with recording.
+   The same shifter as the Tunedzy desktop app's live monitor. Nothing is uploaded. */
+(function (root) {
+  'use strict';
+
+  var WORKLETS = [
+    '// live autotune: YIN pitch detection (decimated) + two-head delay-line pitch shifter',
+    'class LiveTune extends AudioWorkletProcessor {',
+    "  static get parameterDescriptors(){ return [{name:'amount', defaultValue:1, minValue:0, maxValue:1}, {name:'speed', defaultValue:.02, minValue:0, maxValue:.3}]; }",
+    '  constructor(){ super();',
+    '    this.scale = null; this.tonic = 0; this.report = 0;',
+    '    this.port.onmessage = e => { this.scale = e.data.scale; this.tonic = e.data.tonic || 0; };',
+    '    this.dec = 4; this.N = 512; this.ring = new Float32Array(this.N); this.ri = 0; this.acc = 0; this.accN = 0;',
+    '    this.x = new Float32Array(this.N); this.d = new Float32Array(this.N / 2);',
+    '    this.ratio = 1; this.target = 1; this.hop = 0;',
+    '    this.L = 8192; this.dl = new Float32Array(this.L); this.w = 0; this.win = Math.round(.03 * sampleRate); this.ph = 0;',
+    '  }',
+    '  detect(){',
+    '    const N = this.N, W = N / 2, fs = sampleRate / this.dec, x = this.x, d = this.d;',
+    '    let en = 0; for (let i = 0; i < N; i++){ x[i] = this.ring[(this.ri + i) % N]; en += x[i] * x[i]; }',
+    '    if (en / N < 2e-6) return 0;',
+    '    const lo = Math.floor(fs / 1000), hi = Math.min(W - 2, Math.floor(fs / 70)); let run = 0; d[0] = 1;',
+    '    for (let t = 1; t <= hi; t++){ let s = 0; for (let i = 0; i < W; i++){ const v = x[i] - x[i + t]; s += v * v; } run += s; d[t] = run ? s * t / run : 1; }',
+    '    for (let t = Math.max(2, lo); t <= hi; t++){',
+    '      if (d[t] < .15){ while (t + 1 <= hi && d[t + 1] < d[t]) t++;',
+    '        const a = d[t - 1], b = d[t], c = d[t + 1], den = a - 2 * b + c; return fs / (t + (den ? (a - c) / (2 * den) : 0)); }',
+    '    }',
+    '    return 0;',
+    '  }',
+    '  snap(f){',
+    '    const m = 69 + 12 * Math.log2(f / 440); let best = Math.round(m), bd = 99;',
+    '    if (this.scale) for (let n = Math.floor(m) - 2; n <= Math.ceil(m) + 2; n++){',
+    '      if (this.scale.includes(((n - this.tonic) % 12 + 12) % 12) && Math.abs(n - m) < bd){ bd = Math.abs(n - m); best = n; } }',
+    '    return 440 * Math.pow(2, (best - 69) / 12);',
+    '  }',
+    '  process(inputs, outputs, params){',
+    '    const inp = inputs[0] && inputs[0][0], out = outputs[0][0];',
+    '    if (!inp){ out.fill(0); return true; }',
+    '    for (let i = 0; i < inp.length; i++){ this.acc += inp[i]; if (++this.accN === this.dec){ this.ring[this.ri] = this.acc / this.dec; this.ri = (this.ri + 1) % this.N; this.acc = 0; this.accN = 0; } }',
+    '    if ((this.hop += inp.length) >= 256){ this.hop = 0; const f = this.detect(); this.target = f > 70 && f < 1000 ? this.snap(f) / f : 1;',
+    '      if ((this.report++ & 1) === 0) this.port.postMessage({f: f, t: f > 0 ? f * this.target : 0}); }',
+    '    const sp = params.speed[0], k = sp <= .001 ? 1 : 1 - Math.exp(-inp.length / sampleRate / sp);',
+    '    this.ratio += k * ((1 + (this.target - 1) * params.amount[0]) - this.ratio);',
+    '    const L = this.L, W = this.win;',
+    '    for (let i = 0; i < inp.length; i++){',
+    '      this.dl[this.w] = inp[i];',
+    '      this.ph += 1 - this.ratio; if (this.ph >= W) this.ph -= W; if (this.ph < 0) this.ph += W;',
+    '      let y = 0;',
+    '      for (let h = 0; h < 2; h++){',
+    '        let dly = this.ph + h * W / 2; if (dly >= W) dly -= W;',
+    '        const g = Math.sin(Math.PI * dly / W); let r = this.w - dly - 2; while (r < 0) r += L;',
+    '        const r0 = Math.floor(r), fr = r - r0, s0 = this.dl[r0 % L], s1 = this.dl[(r0 + 1) % L];',
+    '        y += g * g * (s0 + (s1 - s0) * fr);',
+    '      }',
+    '      out[i] = y; this.w = (this.w + 1) % L;',
+    '    }',
+    '    return true;',
+    '  }',
+    '}',
+    "registerProcessor('live-tune', LiveTune);",
+    '// recorder tap: hands raw blocks (all input channels) to the page while recording',
+    'class RecTap extends AudioWorkletProcessor {',
+    '  constructor(){ super(); this.on = false; this.port.onmessage = e => { this.on = e.data.on; }; }',
+    '  process(inputs){ const i = inputs[0]; if (this.on && i && i.length){ this.port.postMessage(i.map(c => c.slice(0))); } return true; }',
+    '}',
+    "registerProcessor('rec-tap', RecTap);"
+  ].join('\n');
+
+  function biq(c, type, f, q, gain) { var n = c.createBiquadFilter(); n.type = type; n.frequency.value = f; if (q != null) n.Q.value = q; if (gain != null) n.gain.value = gain; return n; }
+  function makeIR(c, sec) {
+    var n = Math.floor(c.sampleRate * sec), b = c.createBuffer(2, n, c.sampleRate);
+    for (var ch = 0; ch < 2; ch++) {
+      var d = b.getChannelData(ch), e = 0, i;
+      for (i = 0; i < n; i++) { d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / n, 2.6); e += d[i] * d[i]; }
+      var k = 1 / Math.sqrt(e || 1); for (i = 0; i < n; i++) d[i] *= k;               // unit energy: reverb return stays at the send level
+    }
+    return b;
+  }
+  function wav16(chans, sr) {
+    var nch = chans.length, n = chans[0].length, b = new ArrayBuffer(44 + n * nch * 2), v = new DataView(b);
+    function w(o, s) { for (var i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); }
+    w(0, 'RIFF'); v.setUint32(4, 36 + n * nch * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true);
+    v.setUint16(22, nch, true); v.setUint32(24, sr, true); v.setUint32(28, sr * nch * 2, true); v.setUint16(32, nch * 2, true); v.setUint16(34, 16, true);
+    w(36, 'data'); v.setUint32(40, n * nch * 2, true);
+    var o = 44;
+    for (var i = 0; i < n; i++) for (var c = 0; c < nch; c++) { var s = Math.max(-1, Math.min(1, chans[c][i])); v.setInt16(o, s < 0 ? s * 32768 : s * 32767, true); o += 2; }
+    return new Blob([b], { type: 'audio/wav' });
+  }
+  function join(chunks, ch) { var n = 0, i; for (i = 0; i < chunks.length; i++) n += chunks[i][ch] ? chunks[i][ch].length : 0; var o = new Float32Array(n), p = 0; for (i = 0; i < chunks.length; i++) { var a = chunks[i][ch]; if (a) { o.set(a, p); p += a.length; } } return o; }
+
+  var SCALES = { major: [0, 2, 4, 5, 7, 9, 11], minor: [0, 2, 3, 5, 7, 8, 10], chromatic: null };
+
+  function Live() {
+    this.ctx = null; this.stream = null; this.recording = false; this.vchunks = []; this.mchunks = [];
+    this.tuneOn = true; this.reverb = 0.18; this.backing = null; this.src = null; this.startedAt = 0; this.offset = 0; this.playing = false;
+    this.onPitch = function () {}; this.nudgeMs = 0;
+  }
+  // opts.mic (default true) asks for the microphone; opts.source(ctx) is a test hook that supplies an AudioNode instead.
+  Live.prototype.open = async function (opts) {
+    opts = opts || {};
+    if (this.ctx) return;
+    var AC = root.AudioContext || root.webkitAudioContext;
+    this.ctx = new AC({ latencyHint: 'interactive' });
+    var c = this.ctx;
+    await c.audioWorklet.addModule(URL.createObjectURL(new Blob([WORKLETS], { type: 'application/javascript' })));
+    var input;
+    if (opts.source) input = opts.source(c);
+    else {
+      this.stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 } });
+      input = c.createMediaStreamSource(this.stream);
+    }
+    var self = this;
+    this.meter = c.createAnalyser(); this.meter.fftSize = 1024; input.connect(this.meter);
+    var hp0 = biq(c, 'highpass', 80, 0.7); input.connect(hp0);
+    this.tune = new AudioWorkletNode(c, 'live-tune', { outputChannelCount: [1] });
+    this.tune.port.onmessage = function (e) { self.onPitch(e.data); };
+    this.tuned = c.createGain(); this.dry = c.createGain();
+    hp0.connect(this.tune); this.tune.connect(this.tuned); hp0.connect(this.dry);
+    var pres = biq(c, 'peaking', 5500, 0.7, 2), air = biq(c, 'highshelf', 11000, null, 3);
+    var comp = c.createDynamicsCompressor(); comp.threshold.value = -22; comp.ratio.value = 3; comp.attack.value = 0.005; comp.release.value = 0.1;
+    this.tuned.connect(pres); this.dry.connect(pres); pres.connect(air).connect(comp);
+    this.voice = c.createGain(); comp.connect(this.voice);                         // dry-tone voice
+    var conv = c.createConvolver(); conv.normalize = false; conv.buffer = makeIR(c, 0.5);
+    this.revSend = c.createGain(); this.revRet = c.createGain(); this.revRet.gain.value = 1;
+    comp.connect(this.revSend); this.revSend.connect(biq(c, 'highpass', 300, 0.7)).connect(conv).connect(this.revRet);
+    var vb = c.createGain(); this.voice.connect(vb); this.revRet.connect(vb);
+    this.voiceBus = c.createDynamicsCompressor(); this.voiceBus.threshold.value = -3; this.voiceBus.knee.value = 0; this.voiceBus.ratio.value = 20; this.voiceBus.attack.value = 0.002; this.voiceBus.release.value = 0.12;
+    vb.connect(this.voiceBus);                                                       // safety limiter: no clipped recordings
+    // master -> speakers
+    this.master = c.createGain(); this.master.channelCount = 2; this.master.channelCountMode = 'explicit';
+    this.voiceBus.connect(this.master); this.master.connect(c.destination);
+    // backing track path (optional)
+    this.backGain = c.createGain(); this.backGain.gain.value = 0.8;
+    this.backGain.channelCount = 2; this.backGain.channelCountMode = 'explicit';
+    this.direct = c.createGain(); this.reduced = c.createGain(); this.reduced.gain.value = 0;
+    this.backIn = c.createGain(); this.backIn.channelCount = 2; this.backIn.channelCountMode = 'explicit';
+    this.backIn.connect(this.direct).connect(this.backGain);
+    var sp = c.createChannelSplitter(2), sideSum = c.createGain(), bassSum = c.createGain(), mg = c.createChannelMerger(2);
+    var lS = c.createGain(), rS = c.createGain(), lB = c.createGain(), rB = c.createGain();
+    lS.gain.value = 0.5; rS.gain.value = -0.5; lB.gain.value = 0.5; rB.gain.value = 0.5;
+    this.backIn.connect(sp); sp.connect(lS, 0); sp.connect(rS, 1); sp.connect(lB, 0); sp.connect(rB, 1);
+    lS.connect(sideSum); rS.connect(sideSum); lB.connect(bassSum); rB.connect(bassSum);
+    var sideHp = biq(c, 'highpass', 140, 0.7), bassLp = biq(c, 'lowpass', 140, 0.7);
+    sideSum.connect(sideHp); bassSum.connect(bassLp);
+    sideHp.connect(mg, 0, 0); sideHp.connect(mg, 0, 1); bassLp.connect(mg, 0, 0); bassLp.connect(mg, 0, 1);
+    mg.connect(this.reduced).connect(this.backGain);
+    this.backGain.connect(this.master);
+    // recorder taps (kept alive through a silent gain)
+    var silent = c.createGain(); silent.gain.value = 0; silent.connect(c.destination);
+    this.voiceTap = new AudioWorkletNode(c, 'rec-tap', { numberOfInputs: 1, numberOfOutputs: 1, channelCount: 1, channelCountMode: 'explicit' });
+    this.voiceBus.connect(this.voiceTap); this.voiceTap.connect(silent);
+    this.voiceTap.port.onmessage = function (e) { if (self.recording) self.vchunks.push(e.data); };
+    this.mixRec = c.createGain(); this.mixRec.channelCount = 2; this.mixRec.channelCountMode = 'explicit';
+    this.voiceBus.connect(this.mixRec);
+    this.backDelay = c.createDelay(1.0); this.backGain.connect(this.backDelay); this.backDelay.connect(this.mixRec);
+    this.mixTap = new AudioWorkletNode(c, 'rec-tap', { numberOfInputs: 1, numberOfOutputs: 1, channelCount: 2, channelCountMode: 'explicit' });
+    var mixLim = c.createDynamicsCompressor(); mixLim.threshold.value = -3; mixLim.knee.value = 0; mixLim.ratio.value = 20; mixLim.attack.value = 0.002; mixLim.release.value = 0.12;
+    this.mixRec.connect(mixLim); mixLim.connect(this.mixTap); this.mixTap.connect(silent);
+    this.mixTap.port.onmessage = function (e) { if (self.recording) self.mchunks.push(e.data); };
+    this.setKey(0, 'major'); this.setTune(0.8, 0.05); this.setReverb(this.reverb); this.setNudge(0); this.apply();
+    await c.resume();
+  };
+  Live.prototype.estLatencyMs = function () { var c = this.ctx; if (!c) return 0; return Math.round(((c.baseLatency || 0.01) + (c.outputLatency || 0.02) + 0.015) * 1000); };
+  Live.prototype.apply = function () { this.tuned.gain.value = this.tuneOn ? 1 : 0; this.dry.gain.value = this.tuneOn ? 0 : 1; };
+  Live.prototype.setKey = function (tonic, scale) { if (!this.tune) return; this.tune.port.postMessage({ tonic: tonic, scale: SCALES[scale] === undefined ? SCALES.major : SCALES[scale] }); };
+  Live.prototype.setTune = function (amount, speed) { if (!this.tune) return; this.tune.parameters.get('amount').value = amount; this.tune.parameters.get('speed').value = speed; };
+  Live.prototype.setTuneOn = function (on) { this.tuneOn = !!on; if (this.ctx) this.apply(); };
+  Live.prototype.setReverb = function (v) { this.reverb = v; if (this.revSend) this.revSend.gain.value = v; };
+  Live.prototype.setVoiceGain = function (v) { if (this.voice) this.voice.gain.value = v; };
+  Live.prototype.setBackGain = function (v) { if (this.backGain) this.backGain.gain.value = v; };
+  Live.prototype.setReduce = function (on) { if (!this.ctx) return; this.direct.gain.value = on ? 0 : 1; this.reduced.gain.value = on ? 1 : 0; };
+  Live.prototype.setNudge = function (ms) { this.nudgeMs = ms; if (this.backDelay) this.backDelay.delayTime.value = Math.max(0, Math.min(0.9, (this.estLatencyMs() + ms) / 1000)); };
+  Live.prototype.level = function () { if (!this.meter) return 0; var a = new Float32Array(this.meter.fftSize), m = 0; this.meter.getFloatTimeDomainData(a); for (var i = 0; i < a.length; i++) m = Math.max(m, Math.abs(a[i])); return m; };
+
+  // ---- backing track
+  Live.prototype.loadBacking = async function (arrayBuffer) {
+    var c = this.ctx; this.stopBacking(); this.offset = 0;
+    this.backing = await c.decodeAudioData(arrayBuffer); return this.backing;
+  };
+  Live.prototype.setBacking = function (buffer) { this.stopBacking(); this.offset = 0; this.backing = buffer; };
+  Live.prototype.position = function () { if (!this.backing) return 0; var p = this.playing ? this.offset + (this.ctx.currentTime - this.startedAt) : this.offset; return Math.min(p, this.backing.duration); };
+  Live.prototype.play = function (from) {
+    if (!this.backing) return; var c = this.ctx; this.stopBacking();
+    if (typeof from === 'number') this.offset = Math.max(0, Math.min(from, this.backing.duration - 0.05));
+    var s = c.createBufferSource(); s.buffer = this.backing; s.connect(this.backIn);
+    var self = this; s.onended = function () { if (self.src === s && self.playing) { self.playing = false; self.offset = 0; self.src = null; if (self.onEnd) self.onEnd(); } };
+    s.start(0, this.offset); this.src = s; this.startedAt = c.currentTime; this.playing = true;
+  };
+  Live.prototype.pause = function () { if (!this.playing) return; this.offset = this.position(); this.stopBacking(true); };
+  Live.prototype.stopBacking = function (keepOffset) { if (this.src) { var s = this.src; this.src = null; this.playing = false; s.onended = null; try { s.stop(); } catch (e) {} } this.playing = false; if (!keepOffset) { /* offset kept by caller */ } };
+
+  // ---- recording
+  Live.prototype.startRecording = function () { this.vchunks = []; this.mchunks = []; this.recording = true; this.voiceTap.port.postMessage({ on: true }); this.mixTap.port.postMessage({ on: true }); this.recStart = this.ctx.currentTime; };
+  Live.prototype.stopRecording = function () {
+    this.recording = false; this.voiceTap.port.postMessage({ on: false }); this.mixTap.port.postMessage({ on: false });
+    var sr = this.ctx.sampleRate, v = join(this.vchunks, 0), out = { seconds: v.length / sr, voice: v.length ? wav16([v], sr) : null, mix: null };
+    if (this.mchunks.length) { var l = join(this.mchunks, 0), r = join(this.mchunks, 1); if (!r.length) r = l; out.mix = wav16([l, r], sr); }
+    return out;
+  };
+  Live.prototype.close = function () { if (this.stream) this.stream.getTracks().forEach(function (t) { t.stop(); }); this.stopBacking(); if (this.ctx) { try { this.ctx.close(); } catch (e) {} } this.ctx = null; this.stream = null; this.tune = null; this.meter = null; this.recording = false; this.playing = false; };
+
+  var NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+  function noteName(f) { var m = 69 + 12 * Math.log2(f / 440), r = Math.round(m); return { name: NOTES[((r % 12) + 12) % 12] + (Math.floor(r / 12) - 1), midi: m, cents: Math.round((m - r) * 100) }; }
+  var api = { Live: Live, SCALES: SCALES, noteName: noteName, NOTES: NOTES, wav16: wav16, WORKLETS: WORKLETS, makeIR: makeIR };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.VFLive = api;
+})(typeof window !== 'undefined' ? window : globalThis);
+</script><script>/* Tunedzy free tools: live autotune + karaoke page glue. Nothing is uploaded; there is no network code here. */
+(function () {
+  'use strict';
+  var root = document.getElementById('live');
+  if (!root) return;
+  var mode = root.getAttribute('data-mode') || 'tune', BASE = root.getAttribute('data-base') || '/tunedzy';
+  var $ = function (s) { return root.querySelector(s); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var live = new VFLive.Live(); window.__vfLive = live;
+  var NOTES = VFLive.NOTES;
+  var state = { key: 0, scale: 'major', preset: 'pop', tuneOn: true, takes: 0, pitch: [], recTimer: null, recStart: 0 };
+
+  function mmss(t) { t = Math.max(0, Math.floor(t)); return Math.floor(t / 60) + ':' + ('0' + (t % 60)).slice(-2); }
+  function toast(msg, bad) { var t = $('#msg'); t.textContent = msg; t.className = 'livemsg' + (bad ? ' bad' : ''); t.hidden = !msg; }
+
+  // ------------------------------------------------------------------ analysis (karaoke: set the key from the backing track)
+  function analyse(buf) {
+    return new Promise(function (resolve, reject) {
+      var chs = []; for (var c = 0; c < Math.min(2, buf.numberOfChannels); c++) chs.push(new Float32Array(buf.getChannelData(c)));
+      var w;
+      try {
+        var src = document.getElementById('vfcore').textContent + ';self.onmessage=function(e){try{var d=e.data;self.postMessage({res:VFCore.analyzeAll(d.chs,d.sr,{})})}catch(err){self.postMessage({err:String(err)})}}';
+        w = new Worker(URL.createObjectURL(new Blob([src], { type: 'text/javascript' })));
+      } catch (e) { try { resolve(VFCore.analyzeAll(chs, buf.sampleRate, {})); } catch (e2) { reject(e2); } return; }
+      w.onmessage = function (m) { w.terminate(); if (m.data.res) resolve(m.data.res); else reject(new Error(m.data.err)); };
+      w.onerror = function (e) { w.terminate(); reject(new Error(e.message || 'analysis failed')); };
+      w.postMessage({ chs: chs, sr: buf.sampleRate }, chs.map(function (x) { return x.buffer; }));
+    });
+  }
+
+  // ------------------------------------------------------------------ controls
+  function applyKey() { live.setKey(state.key, state.scale); drawKeyLabel(); }
+  function drawKeyLabel() { var k = $('#keylabel'); if (k) k.textContent = state.scale === 'chromatic' ? 'Every note (chromatic)' : NOTES[state.key] + ' ' + state.scale; }
+  var PRESETS = { natural: { a: 0.55, s: 0.12 }, pop: { a: 0.8, s: 0.05 }, hard: { a: 1, s: 0 }, off: null };
+  function setPreset(name) {
+    state.preset = name; var p = PRESETS[name];
+    root.querySelectorAll('[data-preset]').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-preset') === name); });
+    if (!p) { state.tuneOn = false; live.setTuneOn(false); return; }
+    state.tuneOn = true; live.setTuneOn(true);
+    $('#amount').value = Math.round(p.a * 100); $('#speed').value = Math.round(p.s * 1000); applyTune();
+  }
+  function applyTune() { var a = $('#amount').value / 100, s = $('#speed').value / 1000; live.setTune(a, s); $('#amountv').textContent = $('#amount').value + '%'; $('#speedv').textContent = $('#speed').value === '0' ? 'instant' : $('#speed').value + ' ms'; }
+
+  // ------------------------------------------------------------------ pitch picture
+  var cv = $('#pcv'), g = cv.getContext('2d'), midiCenter = 60;
+  live.onPitch = function (m) {
+    var now = performance.now(); state.pitch.push({ t: now, f: m.f, g: m.t });
+    while (state.pitch.length && now - state.pitch[0].t > 6000) state.pitch.shift();
+    if (m.f > 0) { var n = VFLive.noteName(m.f); $('#note').textContent = n.name; $('#cents').textContent = (n.cents > 0 ? '+' : '') + n.cents + ' cents' + (state.tuneOn && m.t ? ' > ' + VFLive.noteName(m.t).name : ''); }
+  };
+  var drawing = false;
+  function draw() {
+    if (!live.ctx) { drawing = false; return; }
+    var W = cv.width, H = cv.height, now = performance.now(); g.clearRect(0, 0, W, H);
+    var mids = state.pitch.filter(function (p) { return p.f > 0; }).map(function (p) { return 69 + 12 * Math.log2(p.f / 440); });
+    if (mids.length) { mids.sort(function (a, b) { return a - b; }); var med = mids[Math.floor(mids.length / 2)]; midiCenter += (med - midiCenter) * 0.05; }
+    var lo = midiCenter - 9, hi = midiCenter + 9, y = function (m) { return H - (m - lo) / (hi - lo) * H; };
+    var sc = VFLive.SCALES[state.scale];
+    g.font = '11px system-ui'; g.textBaseline = 'middle';
+    for (var n = Math.floor(lo); n <= Math.ceil(hi); n++) {
+      var inScale = !sc || sc.indexOf(((n - state.key) % 12 + 12) % 12) >= 0; if (!inScale) continue;
+      g.strokeStyle = (((n - state.key) % 12 + 12) % 12 === 0) ? 'rgba(255,179,71,.55)' : 'rgba(255,255,255,.12)'; g.lineWidth = 1;
+      g.beginPath(); g.moveTo(34, y(n)); g.lineTo(W, y(n)); g.stroke(); g.fillStyle = 'rgba(255,255,255,.55)'; g.fillText(NOTES[((n % 12) + 12) % 12], 4, y(n));
+    }
+    function trace(key, color, w) {
+      g.strokeStyle = color; g.lineWidth = w; g.beginPath(); var started = false;
+      state.pitch.forEach(function (p) { var f = p[key]; if (!(f > 0)) { started = false; return; } var x = 40 + (W - 40) * (1 - (now - p.t) / 6000), yy = y(69 + 12 * Math.log2(f / 440)); if (!started) { g.moveTo(x, yy); started = true; } else g.lineTo(x, yy); });
+      g.stroke();
+    }
+    trace('f', 'rgba(255,255,255,.55)', 2); if (state.tuneOn) trace('g', '#ff6a2b', 3);
+    var l = live.level(); $('#lvl').style.width = Math.min(100, Math.round(l * 140)) + '%'; $('#lvl').className = l > 0.95 ? 'hot' : '';
+    requestAnimationFrame(draw);
+  }
+
+  // ------------------------------------------------------------------ recording + takes
+  function addTake(res) {
+    state.takes++;
+    var html = '<div class="take"><b>Take ' + state.takes + ' <small>' + mmss(res.seconds) + '</small></b>';
+    function row(label, blob, name) { var url = URL.createObjectURL(blob); return '<div class="takerow"><span>' + label + '</span><audio controls preload="metadata" src="' + url + '"></audio><a class="btn small" download="' + name + '" href="' + url + '">Download WAV</a></div>'; }
+    if (res.voice) html += row('Your voice (autotuned)', res.voice, 'tunedzy-take' + state.takes + '-voice.wav');
+    if (res.mix && mode === 'karaoke' && backingBuf) html += row('Voice + backing track', res.mix, 'tunedzy-take' + state.takes + '-mix.wav');
+    html += '<p class="small mute">Want it studio-clean? <a href="' + BASE + '#pricing">Tunedzy</a> cleans, tunes and masters a take like this in one pass.</p></div>';
+    var box = $('#takes'); box.insertAdjacentHTML('afterbegin', html);
+  }
+  function timerOn() { state.recStart = performance.now(); state.recTimer = setInterval(function () { $('#timer').textContent = mmss((performance.now() - state.recStart) / 1000); }, 250); }
+  async function record() {
+    var btn = $('#rec');
+    if (live.recording) { stopRec(); return; }
+    btn.disabled = true;
+    if (mode === 'karaoke' && live.backing) {
+      for (var i = 3; i >= 1; i--) { $('#timer').textContent = 'Starting in ' + i; await new Promise(function (r) { setTimeout(r, 900); }); }
+      live.play(0); $('#play').textContent = 'Pause';
+    }
+    live.startRecording(); btn.disabled = false; btn.textContent = 'Stop and save'; btn.classList.add('live'); timerOn(); root.classList.add('rec');
+    if (mode === 'karaoke') startLyrics();
+  }
+  function stopRec() {
+    var btn = $('#rec'); clearInterval(state.recTimer); var res = live.stopRecording();
+    if (mode === 'karaoke') { live.pause(); $('#play').textContent = 'Play'; stopLyrics(); }
+    btn.textContent = 'Record'; btn.classList.remove('live'); root.classList.remove('rec'); $('#timer').textContent = '0:00';
+    if (res.voice) addTake(res); else toast('Nothing was recorded. Sing something first.', true);
+  }
+
+  // ------------------------------------------------------------------ karaoke bits
+  var lyricTimer = null;
+  function startLyrics() { stopLyrics(); var v = $('#lyrview'); if (!v || v.hidden) return; var sp = function () { return $('#lyrspeed').value / 10; }; v.scrollTop = 0; lyricTimer = setInterval(function () { v.scrollTop += sp() / 4; }, 250); }
+  function stopLyrics() { clearInterval(lyricTimer); lyricTimer = null; }
+  async function loadFile(file) {
+    if (!file) return; var info = $('#backinfo'); info.hidden = false; info.innerHTML = 'Loading <b>' + esc(file.name) + '</b>...';
+    try {
+      var ab = await file.arrayBuffer(), AC = window.AudioContext || window.webkitAudioContext, tmp = new AC();
+      var buf = await tmp.decodeAudioData(ab); try { tmp.close(); } catch (e) {}
+      useBacking(buf, file.name);
+    } catch (e) { info.innerHTML = 'That file could not be decoded. Try an MP3 or WAV.'; }
+  }
+  var backingBuf = null;
+  async function useBacking(buf, name) {
+    backingBuf = buf; var info = $('#backinfo'); info.hidden = false;
+    info.innerHTML = '<b>' + esc(name) + '</b> &middot; ' + mmss(buf.duration) + ' &middot; finding its key...';
+    $('#seek').max = Math.floor(buf.duration); $('#dur').textContent = mmss(buf.duration);
+    if (live.ctx) live.setBacking(buf);
+    try {
+      var r = await analyse(buf);
+      if (r.key) {
+        state.key = r.key.tonic; state.scale = r.key.mode; $('#key').value = state.key; $('#scale').value = state.scale; if (live.ctx) applyKey(); else drawKeyLabel();
+        info.innerHTML = '<b>' + esc(name) + '</b> &middot; ' + mmss(buf.duration) + ' &middot; key <b>' + esc(r.key.name) + '</b>' + (r.tempo ? ' &middot; ' + Math.round(r.tempo.bpm) + ' BPM' : '') + ' <span class="mute">(autotune set to this key; change it below if it sounds off)</span>';
+      } else info.innerHTML = '<b>' + esc(name) + '</b> &middot; ' + mmss(buf.duration) + ' &middot; could not find a clear key, pick one below.';
+    } catch (e) { info.innerHTML = '<b>' + esc(name) + '</b> &middot; ' + mmss(buf.duration) + ' &middot; loaded.'; }
+    $('#transport').hidden = false;
+  }
+  var ticking = false;
+  function seekTick() {
+    if (!live.ctx) { ticking = false; return; } if (live.backing) { var p = live.position(); if (!$('#seek').matches(':active')) $('#seek').value = Math.floor(p); $('#pos').textContent = mmss(p); } requestAnimationFrame(function () { setTimeout(seekTick, 250); }); }
+
+  // ------------------------------------------------------------------ start
+  async function start() {
+    var b = $('#start'); b.disabled = true; b.textContent = 'Turning on...';
+    try { await live.open({}); }
+    catch (e) { b.disabled = false; b.textContent = 'Turn on microphone'; toast(e && e.name === 'NotAllowedError' ? 'The browser blocked the microphone. Click the lock icon in the address bar, allow the microphone, and try again.' : 'Could not start the microphone (' + (e && e.message || e) + '). Check that a microphone is connected and that no other app is using it.', true); return; }
+    toast(''); b.hidden = true; $('#panel').hidden = false; $('#lat').textContent = 'Estimated delay: about ' + live.estLatencyMs() + ' ms. Use headphones to avoid feedback.';
+    applyKey(); setPreset(state.preset); live.setReverb($('#reverb').value / 100); if (backingBuf) live.setBacking(backingBuf);
+    live.onEnd = function () { if (live.recording) stopRec(); else $('#play').textContent = 'Play'; };
+    if (!drawing) { drawing = true; requestAnimationFrame(draw); } if (mode === 'karaoke' && !ticking) { ticking = true; seekTick(); }
+  }
+
+  // ------------------------------------------------------------------ events
+  var kSel = $('#key'); NOTES.forEach(function (n, i) { var o = document.createElement('option'); o.value = i; o.textContent = n; kSel.appendChild(o); });
+  $('#start').onclick = start;
+  $('#key').onchange = function () { state.key = +this.value; applyKey(); };
+  $('#scale').onchange = function () { state.scale = this.value; applyKey(); };
+  root.querySelectorAll('[data-preset]').forEach(function (b) { b.onclick = function () { setPreset(this.getAttribute('data-preset')); }; });
+  $('#amount').oninput = applyTune; $('#speed').oninput = applyTune;
+  $('#reverb').oninput = function () { live.setReverb(this.value / 100); $('#reverbv').textContent = this.value + '%'; };
+  $('#rec').onclick = record;
+  $('#micoff').onclick = function () {
+    if (live.recording) stopRec();
+    live.close(); state.pitch = []; $('#panel').hidden = true; $('#note').textContent = '--';
+    var b = $('#start'); b.hidden = false; b.disabled = false; b.textContent = 'Turn on microphone'; toast('Microphone off. Nothing is being recorded.');
+  };
+  if (mode === 'karaoke') {
+    var drop = $('#kdrop'), inp = $('#kfile');
+    drop.onclick = function () { inp.click(); };
+    drop.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); inp.click(); } };
+    inp.onchange = function () { loadFile(inp.files[0]); inp.value = ''; };
+    ['dragenter', 'dragover'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add('over'); }); });
+    ['dragleave', 'drop'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove('over'); }); });
+    drop.addEventListener('drop', function (e) { loadFile(e.dataTransfer && e.dataTransfer.files[0]); });
+    $('#kdemo').onclick = function () { var d = VFCore.demoLoop(44100), AC = window.AudioContext || window.webkitAudioContext, c = new AC(), b = c.createBuffer(1, d.channels[0].length, d.sampleRate); b.getChannelData(0).set(d.channels[0]); try { c.close(); } catch (e) {} useBacking(b, 'Demo loop (made in your browser)'); };
+    $('#play').onclick = function () { if (!live.ctx) { toast('Turn on the microphone first.', true); return; } if (live.playing) { live.pause(); this.textContent = 'Play'; } else { live.play(+$('#seek').value); this.textContent = 'Pause'; } };
+    $('#stop').onclick = function () {
+      if (!live.ctx) return;
+      if (live.recording) stopRec();
+      live.pause(); live.offset = 0; $('#seek').value = 0; $('#pos').textContent = '0:00'; $('#play').textContent = 'Play'; stopLyrics();
+    };
+    $('#restart').onclick = function () { if (!live.ctx) return; live.play(0); $('#play').textContent = 'Pause'; };
+    $('#seek').oninput = function () { if (live.playing) live.play(+this.value); else live.offset = +this.value; };
+    $('#bvol').oninput = function () { live.setBackGain(this.value / 100); };
+    $('#vvol').oninput = function () { live.setVoiceGain(this.value / 100); };
+    $('#reduce').onchange = function () { live.setReduce(this.checked); };
+    $('#nudge').oninput = function () { live.setNudge(+this.value); $('#nudgev').textContent = (this.value > 0 ? '+' : '') + this.value + ' ms'; };
+    $('#showlyr').onchange = function () { var v = $('#lyrview'); v.hidden = !this.checked; v.textContent = $('#lyr').value || 'Paste your lyrics above, then tick "Show lyrics".'; };
+    $('#lyr').oninput = function () { if (!$('#lyrview').hidden) $('#lyrview').textContent = this.value; };
+    $('#lyrsize').oninput = function () { $('#lyrview').style.fontSize = this.value + 'px'; };
+  }
+  drawKeyLabel();
+})();
+</script></body></html>

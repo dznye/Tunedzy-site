@@ -31,7 +31,7 @@ add(slug='remove-background-noise-from-mic-obs', cluster='stream', kw='remove ba
 </ul>
 <p>Menu names change a little between OBS versions, but the idea is the same. Listen in the OBS preview or a local recording, not just the meter.</p>
 <h2>Step 2: Add a Noise Gate after it</h2>
-<p>Suppression turns noise down while you talk. A <strong>Noise Gate</strong> silences the mic between words. Add it below Noise Suppression. The OBS defaults (open around &minus;26 dB, close around &minus;32 dB, attack 25 ms, hold 200 ms, release 150 ms) are a sane starting point; see our guide to <a href="/vocalforge/blog/noise-gate-settings-for-streaming">noise gate settings for streaming</a> for how to tune them to your own noise level.</p>
+<p>Suppression turns noise down while you talk. A <strong>Noise Gate</strong> silences the mic between words. Add it below Noise Suppression. The OBS defaults (open around &minus;26 dB, close around &minus;32 dB, attack 25 ms, hold 200 ms, release 150 ms) are a sane starting point; see our guide to <a href="/tunedzy/blog/noise-gate-settings-for-streaming">noise gate settings for streaming</a> for how to tune them to your own noise level.</p>
 <h2>Step 3: Order your filters correctly</h2>
 <p>Filters run from top to bottom, so order matters. A good order is:</p>
 <ol>
@@ -44,9 +44,9 @@ add(slug='remove-background-noise-from-mic-obs', cluster='stream', kw='remove ba
 </ol>
 <p>Compressing before removing noise makes quiet noise louder, which is the most common reason a mic that &ldquo;should be fine&rdquo; still sounds hissy.</p>
 <h2>Step 4: Fix the noise at the source</h2>
-<p>No filter beats a quieter source. Set the mic gain low in Windows or your audio interface and sit closer instead; every 3&nbsp;dB of gain you remove also removes 3&nbsp;dB of noise. Keep the mic away from the PC and point the dead side of a cardioid mic toward the fan. More ideas are in <a href="/vocalforge/blog/how-to-stop-fan-noise-on-my-microphone">how to stop fan noise on your microphone</a>.</p>
+<p>No filter beats a quieter source. Set the mic gain low in Windows or your audio interface and sit closer instead; every 3&nbsp;dB of gain you remove also removes 3&nbsp;dB of noise. Keep the mic away from the PC and point the dead side of a cardioid mic toward the fan. More ideas are in <a href="/tunedzy/blog/how-to-stop-fan-noise-on-my-microphone">how to stop fan noise on your microphone</a>.</p>
 <h2>When OBS alone is not enough: clean the mic first</h2>
-<p>If the noise is steady (a fan, hiss, hum, air conditioning), a tool that <em>learns your room</em> can remove more than a generic model. The free <a href="/vocalforge/tools/clean-streaming-mic">Clean Streaming Mic</a> listens to three seconds of your room tone, removes that noise live in your browser, and sends the clean mic to OBS through a virtual audio cable. Setup is in our <a href="/vocalforge/blog/virtual-audio-cable-setup-obs-discord-zoom">virtual audio cable guide</a>. In OBS, add the cable as an <em>Audio Input Capture</em>, and keep OBS suppression on low or off so you do not process the voice twice.</p>
+<p>If the noise is steady (a fan, hiss, hum, air conditioning), a tool that <em>learns your room</em> can remove more than a generic model. The free <a href="/tunedzy/tools/clean-streaming-mic">Clean Streaming Mic</a> listens to three seconds of your room tone, removes that noise live in your browser, and sends the clean mic to OBS through a virtual audio cable. Setup is in our <a href="/tunedzy/blog/virtual-audio-cable-setup-obs-discord-zoom">virtual audio cable guide</a>. In OBS, add the cable as an <em>Audio Input Capture</em>, and keep OBS suppression on low or off so you do not process the voice twice.</p>
 <h2>Quick troubleshooting</h2>
 <table><tr><th>Problem</th><th>Likely cause</th><th>Fix</th></tr>
 <tr><td>Words cut off at the start</td><td>Gate opens too late</td><td>Lower the open threshold, shorten attack to 10 ms</td></tr>
@@ -71,7 +71,7 @@ add(slug='virtual-audio-cable-setup-obs-discord-zoom', cluster='stream', kw='vir
 <ol>
 <li>Download the free <em>VB-Cable</em> driver from the official VB-Audio website, unzip it, right-click the setup file and run it as administrator. Restart if asked.</li>
 <li>Open Windows Sound settings. You will now see <strong>CABLE Input</strong> (a playback device) and <strong>CABLE Output</strong> (a recording device).</li>
-<li>In the <a href="/vocalforge/tools/clean-streaming-mic">Clean Streaming Mic</a> page, set <em>Send clean mic to</em> the device called <strong>CABLE Input</strong>.</li>
+<li>In the <a href="/tunedzy/tools/clean-streaming-mic">Clean Streaming Mic</a> page, set <em>Send clean mic to</em> the device called <strong>CABLE Input</strong>.</li>
 <li>In OBS, add an <em>Audio Input Capture</em> source and choose <strong>CABLE Output</strong>. In Discord, Zoom or Teams, set the microphone to <strong>CABLE Output</strong>.</li>
 </ol>
 <h2>Mac: BlackHole</h2>
@@ -91,7 +91,7 @@ add(slug='virtual-audio-cable-setup-obs-discord-zoom', cluster='stream', kw='vir
 <tr><td>You hear an echo or doubling</td><td>Turn off Windows &ldquo;Listen to this device&rdquo; on the cable, and do not monitor in two places</td></tr>
 <tr><td>Crackling or dropouts</td><td>Set the cable and your devices to the same sample rate (usually 48 kHz) and close heavy apps</td></tr>
 <tr><td>App does not list the cable</td><td>Restart the app after installing the driver</td></tr></table>
-<p>Once it works, go through the <a href="/vocalforge/blog/discord-zoom-teams-noise-suppression-settings">Discord, Zoom and Teams noise suppression settings</a> so the app does not process the voice a second time.</p>
+<p>Once it works, go through the <a href="/tunedzy/blog/discord-zoom-teams-noise-suppression-settings">Discord, Zoom and Teams noise suppression settings</a> so the app does not process the voice a second time.</p>
 ''',
     faq=[('Is a virtual audio cable safe?', 'The well-known free ones come from their official websites. Download only from the official site of the project and avoid re-uploads on random download pages.'),
          ('Does a virtual cable add delay?', 'A little: the cable itself adds very little, and the rest comes from your browser and audio devices. Use a wired headset and a 48 kHz sample rate for the lowest delay.'),
@@ -129,7 +129,7 @@ add(slug='noise-gate-settings-for-streaming', cluster='stream', kw='noise gate s
 <li><strong>Noise comes through with every word:</strong> that is normal for a gate. Add noise suppression for noise during speech.</li>
 </ul>
 <h2>Gate versus noise suppression</h2>
-<p>Use both. Suppression reduces noise while you talk; the gate silences the gaps. In the free <a href="/vocalforge/tools/clean-streaming-mic">Clean Streaming Mic</a>, the gate is set automatically from the room noise it learned, so you can start there and fine-tune only if needed. For OBS-specific filter order, see <a href="/vocalforge/blog/remove-background-noise-from-mic-obs">how to remove background noise from your mic in OBS</a>.</p>
+<p>Use both. Suppression reduces noise while you talk; the gate silences the gaps. In the free <a href="/tunedzy/tools/clean-streaming-mic">Clean Streaming Mic</a>, the gate is set automatically from the room noise it learned, so you can start there and fine-tune only if needed. For OBS-specific filter order, see <a href="/tunedzy/blog/remove-background-noise-from-mic-obs">how to remove background noise from your mic in OBS</a>.</p>
 ''',
     faq=[('What is a good noise gate threshold?', 'Set the close threshold a few decibels above your room noise and below your quietest speech, then the open threshold roughly 5&ndash;6 dB higher. Around &minus;32 dB close and &minus;26 dB open is a common starting point in OBS.'),
          ('Why does my noise gate cut off my words?', 'The threshold is too high, the attack is too slow, or hold and release are too short. Lower the thresholds and lengthen hold and release.'),
@@ -155,9 +155,9 @@ add(slug='how-to-stop-fan-noise-on-my-microphone', cluster='stream', kw='stop fa
 <h2>Fix 5: Slow the fans down</h2>
 <p>Many PCs run fans faster than they need to. In your motherboard or fan software, flatten the fan curve so fans stay slow while you are idle. Make sure temperatures are safe before you change anything.</p>
 <h2>Fix 6: Learn the room noise and remove it</h2>
-<p>The Clean Streaming Mic tool asks you to stay quiet for three seconds, learns the fan&rsquo;s sound at every pitch, and then removes it while you talk. Steady fan noise is exactly what it is built for. Start with 18 dB of reduction and the gate on; if the voice sounds thin, lower it. Setup for OBS and Discord is in our <a href="/vocalforge/blog/virtual-audio-cable-setup-obs-discord-zoom">virtual audio cable guide</a>.</p>
+<p>The Clean Streaming Mic tool asks you to stay quiet for three seconds, learns the fan&rsquo;s sound at every pitch, and then removes it while you talk. Steady fan noise is exactly what it is built for. Start with 18 dB of reduction and the gate on; if the voice sounds thin, lower it. Setup for OBS and Discord is in our <a href="/tunedzy/blog/virtual-audio-cable-setup-obs-discord-zoom">virtual audio cable guide</a>.</p>
 <h2>Fix 7: Add a noise gate</h2>
-<p>A gate silences the fan between words. See <a href="/vocalforge/blog/noise-gate-settings-for-streaming">noise gate settings for streaming</a> to tune it.</p>
+<p>A gate silences the fan between words. See <a href="/tunedzy/blog/noise-gate-settings-for-streaming">noise gate settings for streaming</a> to tune it.</p>
 <h2>What software cannot fix</h2>
 <p>Software removes steady noise well, but it cannot remove another person talking, a TV, or a loud keyboard. If you mostly have those problems, change the room, not the filter.</p>
 ''',
@@ -184,13 +184,13 @@ add(slug='discord-zoom-teams-noise-suppression-settings', cluster='stream', kw='
 <h2>Microsoft Teams</h2>
 <p>Open <strong>Settings &rarr; Devices</strong> and look for <strong>Noise suppression</strong>. Typical choices are <em>Auto</em>, <em>Low</em>, <em>High</em> and <em>Off</em>. Auto and High are enough for most home offices; Low suits quiet rooms and keeps your voice more natural.</p>
 <h2>Using a noise canceller before the app</h2>
-<p>If you clean your mic with a tool such as the free <a href="/vocalforge/tools/clean-streaming-mic">Clean Streaming Mic</a> and send it through a virtual audio cable, the app receives a voice that is already clean. Running strong suppression on top can make speech sound thin or choppy.</p>
+<p>If you clean your mic with a tool such as the free <a href="/tunedzy/tools/clean-streaming-mic">Clean Streaming Mic</a> and send it through a virtual audio cable, the app receives a voice that is already clean. Running strong suppression on top can make speech sound thin or choppy.</p>
 <table><tr><th>Setup</th><th>App suppression setting</th></tr>
 <tr><td>App only, noisy room</td><td>Highest suppression the app offers</td></tr>
 <tr><td>App only, quiet room</td><td>Low or Standard</td></tr>
 <tr><td>Pre-cleaned mic via virtual cable</td><td>Low or Off</td></tr>
 <tr><td>Singing or instruments</td><td>Off, use the app&rsquo;s original-sound option</td></tr></table>
-<p>Cable setup steps are in our <a href="/vocalforge/blog/virtual-audio-cable-setup-obs-discord-zoom">virtual audio cable guide</a>.</p>
+<p>Cable setup steps are in our <a href="/tunedzy/blog/virtual-audio-cable-setup-obs-discord-zoom">virtual audio cable guide</a>.</p>
 <h2>Quick checks that fix most call audio</h2>
 <ul>
 <li>Use headphones so the app&rsquo;s echo cancellation has nothing to fight.</li>
@@ -223,9 +223,9 @@ add(slug='how-to-record-a-voice-over-without-background-noise', cluster='record'
 <h2>4. Set the recording level</h2>
 <p>Speak at your normal volume and set the input gain so the loudest peaks reach about <strong>&minus;12 to &minus;6 dB</strong> on the meter. Never let it hit 0 dB; clipped audio cannot be repaired. A quieter-but-clean recording is better than a loud distorted one.</p>
 <h2>5. Record room tone first</h2>
-<p>Before you speak, record 10 to 30 seconds of silence in the same position. This gives noise removal a clean sample of your room. The free <a href="/vocalforge/tools/voice-recorder-noise-cancellation">voice recorder with noise cancellation</a> does this with a three-second &ldquo;Learn my room noise&rdquo; step. See <a href="/vocalforge/blog/what-is-room-tone-and-how-to-record-it">what room tone is and how to record it</a>.</p>
+<p>Before you speak, record 10 to 30 seconds of silence in the same position. This gives noise removal a clean sample of your room. The free <a href="/tunedzy/tools/voice-recorder-noise-cancellation">voice recorder with noise cancellation</a> does this with a three-second &ldquo;Learn my room noise&rdquo; step. See <a href="/tunedzy/blog/what-is-room-tone-and-how-to-record-it">what room tone is and how to record it</a>.</p>
 <h2>6. Record, listen back, then clean</h2>
-<p>Do a short test, listen on headphones, and fix problems at the source. When the recording is good, remove steady leftover noise. Do it once and gently; see <a href="/vocalforge/blog/why-noise-reduction-makes-voice-sound-watery">why noise reduction makes a voice sound watery</a> for how much is too much.</p>
+<p>Do a short test, listen on headphones, and fix problems at the source. When the recording is good, remove steady leftover noise. Do it once and gently; see <a href="/tunedzy/blog/why-noise-reduction-makes-voice-sound-watery">why noise reduction makes a voice sound watery</a> for how much is too much.</p>
 <h2>Before-you-record checklist</h2>
 <table><tr><th>Check</th><th>Done?</th></tr>
 <tr><td>Small, soft room, door closed</td><td>&#9744;</td></tr>
@@ -247,7 +247,7 @@ add(slug='remove-background-noise-from-audio-free', cluster='record', kw='remove
             'Both work best on steady noise such as hiss, hum and fans, and neither can remove other voices.'),
     body='''
 <h2>Way 1: A private in-browser noise remover</h2>
-<p>Open the <a href="/vocalforge/tools/voice-recorder-noise-cancellation">voice recorder with noise cancellation</a> and use <strong>Clean an existing recording</strong>. Drop in your MP3, WAV, FLAC or OGG file. The tool looks for a quiet stretch to learn your noise from, removes it, and gives you a before-and-after player and a WAV download. Because it runs in your browser, the file is never uploaded, which matters for private or unreleased audio.</p>
+<p>Open the <a href="/tunedzy/tools/voice-recorder-noise-cancellation">voice recorder with noise cancellation</a> and use <strong>Clean an existing recording</strong>. Drop in your MP3, WAV, FLAC or OGG file. The tool looks for a quiet stretch to learn your noise from, removes it, and gives you a before-and-after player and a WAV download. Because it runs in your browser, the file is never uploaded, which matters for private or unreleased audio.</p>
 <h2>Way 2: Audacity (free desktop editor)</h2>
 <ol>
 <li>Select 1&ndash;2 seconds of pure background noise (a pause with no speech).</li>
@@ -269,7 +269,7 @@ add(slug='remove-background-noise-from-audio-free', cluster='record', kw='remove
 <li><strong>Does not work:</strong> another person talking, music, room echo, clicks and coughs. Those need a re-record or a more advanced repair.</li>
 </ul>
 <h2>Tips for better results</h2>
-<p>Leave 1&ndash;2 seconds of silence at the start of any recording so noise can be learned, apply noise reduction only once, and work from the original WAV rather than a compressed MP3 whenever you can. If the voice sounds watery, read <a href="/vocalforge/blog/why-noise-reduction-makes-voice-sound-watery">why noise reduction does that and how to fix it</a>.</p>
+<p>Leave 1&ndash;2 seconds of silence at the start of any recording so noise can be learned, apply noise reduction only once, and work from the original WAV rather than a compressed MP3 whenever you can. If the voice sounds watery, read <a href="/tunedzy/blog/why-noise-reduction-makes-voice-sound-watery">why noise reduction does that and how to fix it</a>.</p>
 ''',
     faq=[('How can I remove background noise from audio for free?', 'Use a free in-browser noise remover, Audacity&rsquo;s Noise Reduction, or your video editor&rsquo;s denoise effect. Steady noise responds best.'),
          ('Is it safe to upload audio to online noise removers?', 'Many online tools upload your file to a server. A tool that runs entirely in your browser keeps the audio on your own device.'),
@@ -298,7 +298,7 @@ add(slug='what-is-room-tone-and-how-to-record-it', cluster='record', kw='what is
 <li>Keep each room tone clip with its recording. If you change the room or the gain, record new room tone.</li>
 </ol>
 <h2>How the free recorder uses room tone</h2>
-<p>In the <a href="/vocalforge/tools/voice-recorder-noise-cancellation">voice recorder with noise cancellation</a>, press <strong>Learn my room noise</strong> and stay quiet for three seconds. The tool measures the noise at every pitch and then removes only that sound while you speak. For a file you already recorded, it searches for the quietest steady stretch and learns from that, so leaving a second or two of silence at the start helps a lot.</p>
+<p>In the <a href="/tunedzy/tools/voice-recorder-noise-cancellation">voice recorder with noise cancellation</a>, press <strong>Learn my room noise</strong> and stay quiet for three seconds. The tool measures the noise at every pitch and then removes only that sound while you speak. For a file you already recorded, it searches for the quietest steady stretch and learns from that, so leaving a second or two of silence at the start helps a lot.</p>
 <h2>Common room tone mistakes</h2>
 <table><tr><th>Mistake</th><th>Result</th></tr>
 <tr><td>Recording room tone in a different position</td><td>Noise profile does not match; some noise stays</td></tr>
@@ -306,7 +306,7 @@ add(slug='what-is-room-tone-and-how-to-record-it', cluster='record', kw='what is
 <tr><td>Too short (1 second)</td><td>Less reliable estimate; use at least 3 seconds</td></tr>
 <tr><td>Changing the gain afterwards</td><td>Noise level changes, so the profile no longer fits</td></tr></table>
 <h2>Next step</h2>
-<p>Read <a href="/vocalforge/blog/how-to-record-a-voice-over-without-background-noise">how to record a voice-over without background noise</a> for the whole workflow.</p>
+<p>Read <a href="/tunedzy/blog/how-to-record-a-voice-over-without-background-noise">how to record a voice-over without background noise</a> for the whole workflow.</p>
 ''',
     faq=[('How long should room tone be?', 'Ten to thirty seconds is plenty for editing; for noise learning, even three seconds of clean silence works well.'),
          ('Is room tone the same as silence?', 'No. Room tone is the sound a quiet room actually makes. True digital silence sounds unnatural in a recording.'),
@@ -329,16 +329,16 @@ add(slug='why-noise-reduction-makes-voice-sound-watery', cluster='record', kw='n
 <tr><td>Robotic sound after several tools</td><td>Stacked denoisers</td><td>Use one denoiser, once</td></tr>
 <tr><td>Worse on MP3 files</td><td>Compression artifacts already present</td><td>Start from the original WAV when possible</td></tr></table>
 <h2>How much reduction is enough?</h2>
-<p>A useful rule is to remove only as much noise as you need to stop noticing it. For light hiss, 6&ndash;12 dB is usually enough. For a loud fan, 15&ndash;20 dB may be needed. If you reach for 30 dB, the real fix is a quieter recording. In the free <a href="/vocalforge/tools/voice-recorder-noise-cancellation">noise-cancelling recorder</a>, tick <em>Hear original</em> and compare while you adjust.</p>
+<p>A useful rule is to remove only as much noise as you need to stop noticing it. For light hiss, 6&ndash;12 dB is usually enough. For a loud fan, 15&ndash;20 dB may be needed. If you reach for 30 dB, the real fix is a quieter recording. In the free <a href="/tunedzy/tools/voice-recorder-noise-cancellation">noise-cancelling recorder</a>, tick <em>Hear original</em> and compare while you adjust.</p>
 <h2>Habits that keep it natural</h2>
 <ul>
 <li><strong>Record close to the mic.</strong> A stronger voice means you need less reduction.</li>
-<li><strong>Learn the noise from clean room tone</strong>, not from a sample that contains breaths or words. See <a href="/vocalforge/blog/what-is-room-tone-and-how-to-record-it">what room tone is</a>.</li>
+<li><strong>Learn the noise from clean room tone</strong>, not from a sample that contains breaths or words. See <a href="/tunedzy/blog/what-is-room-tone-and-how-to-record-it">what room tone is</a>.</li>
 <li><strong>Denoise once,</strong> early, and then do EQ and compression.</li>
 <li><strong>Leave a little noise.</strong> A faint natural background sounds better than a perfectly dead one.</li>
 </ul>
 <h2>When to stop and re-record</h2>
-<p>If you need to push the settings to the maximum, the recording itself is the problem. A closer mic, a softer room and noise sources switched off will always sound better than heavy processing. For the full process, read <a href="/vocalforge/blog/how-to-record-a-voice-over-without-background-noise">how to record a voice-over without background noise</a>.</p>
+<p>If you need to push the settings to the maximum, the recording itself is the problem. A closer mic, a softer room and noise sources switched off will always sound better than heavy processing. For the full process, read <a href="/tunedzy/blog/how-to-record-a-voice-over-without-background-noise">how to record a voice-over without background noise</a>.</p>
 ''',
     faq=[('Why does my voice sound underwater after noise reduction?', 'The reduction is too strong or the noise estimate is too high, so parts of the voice are removed with the noise. Lower the reduction and sensitivity.'),
          ('How much noise reduction should I use?', 'Use the least that makes the noise unnoticeable, often 6&ndash;12 dB for hiss and up to about 15&ndash;20 dB for a loud steady fan.'),
@@ -361,7 +361,7 @@ add(slug='what-loudness-should-a-voice-over-be', cluster='record', kw='voice ove
 <tr><td>Audiobook for ACX</td><td>RMS &minus;23 to &minus;18 dB</td><td>under &minus;3 dB, noise floor under &minus;60 dB RMS</td></tr></table>
 <p>Platforms change their guidance, and normalisation can turn very loud audio down, so treat these as sensible targets and check the current rules of the platform you publish on, especially for audiobooks.</p>
 <h2>How to measure your voice-over</h2>
-<p>Drop the file into the free <a href="/vocalforge/tools/lufs-meter">LUFS meter</a>. It shows integrated loudness, an estimated true peak and loudness range, and tells you how streaming platforms would treat the file. The <a href="/vocalforge/tools/vocal-checker">vocal quality checker</a> also flags clipping and noise.</p>
+<p>Drop the file into the free <a href="/tunedzy/tools/lufs-meter">LUFS meter</a>. It shows integrated loudness, an estimated true peak and loudness range, and tells you how streaming platforms would treat the file. The <a href="/tunedzy/tools/vocal-checker">vocal quality checker</a> also flags clipping and noise.</p>
 <h2>How to bring a voice-over to the right level</h2>
 <ol>
 <li>Clean the noise first. Raising the level raises the noise too.</li>
@@ -370,14 +370,14 @@ add(slug='what-loudness-should-a-voice-over-be', cluster='record', kw='voice ove
 <li>Check that peaks stay below the limit; use a limiter if they do not.</li>
 <li>Measure again and listen on headphones and a phone speaker.</li>
 </ol>
-<p>In the free <a href="/vocalforge/tools/voice-recorder-noise-cancellation">voice recorder with noise cancellation</a>, the <em>Normalize the level</em> option raises the peak of a cleaned file to a safe level, and the LUFS meter confirms the result.</p>
+<p>In the free <a href="/tunedzy/tools/voice-recorder-noise-cancellation">voice recorder with noise cancellation</a>, the <em>Normalize the level</em> option raises the peak of a cleaned file to a safe level, and the LUFS meter confirms the result.</p>
 <h2>Common mistakes</h2>
 <ul>
 <li>Normalizing before removing noise, which makes the noise louder.</li>
 <li>Pushing loudness so high that the platform turns the audio down anyway.</li>
 <li>Letting peaks reach 0 dB, which can cause clipping after conversion to MP3 or AAC.</li>
 </ul>
-<p>For the recording stage, see <a href="/vocalforge/blog/how-to-record-a-voice-over-without-background-noise">how to record a voice-over without background noise</a>.</p>
+<p>For the recording stage, see <a href="/tunedzy/blog/how-to-record-a-voice-over-without-background-noise">how to record a voice-over without background noise</a>.</p>
 ''',
     faq=[('What LUFS should a voice-over be?', 'For online video, around &minus;16 to &minus;14 LUFS is a common target. Podcasts often use about &minus;16 LUFS for stereo and about &minus;19 LUFS for mono.'),
          ('What peak level is safe for a voice-over?', 'Keep true peaks below about &minus;1 dBTP for online delivery, and follow a platform&rsquo;s own limits where they exist, such as &minus;3 dB for ACX audiobooks.'),

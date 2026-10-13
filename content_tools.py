@@ -75,8 +75,8 @@ TOOLS['song-key-finder'] = dict(
 <p>DJs label keys on a wheel (1A to 12B) so they can see which songs mix harmonically. Neighbouring numbers, or the same number with the other letter, sound good together. The finder shows the code next to the key so you can sort a crate or a beat folder by it.</p>
 <h2>Using the key with your vocal</h2>
 <ul>
-<li><strong>Autotune:</strong> set the scale to the detected key. Notes outside the scale get pulled to the nearest note inside it. See <a href="/vocalforge/autotune-for-rap-vocals">autotune for rap vocals</a> for settings.</li>
-<li><strong>Toplines and ad-libs:</strong> sing or hum notes from the key, and use the <a href="/vocalforge/tools/chord-finder">chord finder</a> to see what chords the beat plays.</li>
+<li><strong>Autotune:</strong> set the scale to the detected key. Notes outside the scale get pulled to the nearest note inside it. See <a href="/tunedzy/autotune-for-rap-vocals">autotune for rap vocals</a> for settings.</li>
+<li><strong>Toplines and ad-libs:</strong> sing or hum notes from the key, and use the <a href="/tunedzy/tools/chord-finder">chord finder</a> to see what chords the beat plays.</li>
 <li><strong>Harmonies:</strong> stack thirds and fifths above your lead using the same scale.</li>
 </ul>
 <h2>When the result can be wrong</h2>
@@ -124,7 +124,7 @@ TOOLS['chord-finder'] = dict(
 <li>Chord timing is placed on a two-beat grid, so quick changes inside a bar are merged.</li>
 </ul>
 <h2>Using chords with your vocal</h2>
-<p>Aim long notes at the chord tones (the root, third and fifth), let passing words sit on other notes of the scale, and end phrases on a chord tone. Pair this with the <a href="/vocalforge/tools/song-key-finder">key finder</a> to set your autotune to the right scale.</p>
+<p>Aim long notes at the chord tones (the root, third and fifth), let passing words sit on other notes of the scale, and end phrases on a chord tone. Pair this with the <a href="/tunedzy/tools/song-key-finder">key finder</a> to set your autotune to the right scale.</p>
 ''',
     faq=[('Is the chord finder accurate?',
           'It is a good starting point for the main progression, not a transcription. It is strongest on clear chordal music and weakest on busy, distorted or very sparse tracks. The loop is usually right even when a single chord is off.'),
@@ -166,7 +166,7 @@ TOOLS['lufs-meter'] = dict(
 <li><strong>Loudness range (LRA)</strong> shows how much the loudness moves between quiet and loud sections. Dense, modern pop and rap often sit at 3&ndash;6 LU.</li>
 </ul>
 <h2>Measuring a vocal on its own</h2>
-<p>Vocals are not mastered to streaming targets by themselves, but the number is still useful: a vocal that measures far below the beat&rsquo;s section loudness usually needs more level or compression. The <a href="/vocalforge/tools/vocal-checker">vocal checker</a> looks at the other health signs.</p>
+<p>Vocals are not mastered to streaming targets by themselves, but the number is still useful: a vocal that measures far below the beat&rsquo;s section loudness usually needs more level or compression. The <a href="/tunedzy/tools/vocal-checker">vocal checker</a> looks at the other health signs.</p>
 ''',
     faq=[('Is this the same as the loudness meters in mastering software?',
           'It follows the same ITU-R BS.1770 / EBU R128 method: K-weighting, 400 ms blocks and the standard two-stage gate. Results typically agree with professional meters to within about a tenth of a dB. The true peak is an estimate.'),
@@ -207,7 +207,7 @@ TOOLS['vocal-checker'] = dict(
 <li>De-ess, tune and compress.</li>
 <li>Add space (reverb and delay) last.</li>
 </ol>
-<p>The full walkthrough is in <a href="/vocalforge/fix-vocals-recorded-on-phone">how to make phone vocals sound professional</a>, and if the recording is roomy, see <a href="/vocalforge/remove-echo-from-vocal-recording">how to remove echo from a vocal</a>.</p>
+<p>The full walkthrough is in <a href="/tunedzy/fix-vocals-recorded-on-phone">how to make phone vocals sound professional</a>, and if the recording is roomy, see <a href="/tunedzy/remove-echo-from-vocal-recording">how to remove echo from a vocal</a>.</p>
 ''',
     faq=[('Is this vocal checker AI?',
           'No. It uses standard audio measurements (level, noise floor, spectrum, clipping detection), which is why it is fast and private. Tunedzy adds automatic analysis and an optional AI model for separating vocals from songs.'),
@@ -257,8 +257,8 @@ AI_GUIDE = dict(
 <li>Steady background noise, hum and hiss</li>
 <li>Level differences between phrases</li>
 <li>Harsh S sounds and mouth clicks</li>
-<li>Finding the key and tempo of a beat (try the free <a href="/vocalforge/tools/song-key-finder">key finder</a> and <a href="/vocalforge/tools/bpm-finder">BPM finder</a>)</li>
-<li>Loudness and peak checks (see the <a href="/vocalforge/tools/lufs-meter">LUFS meter</a>)</li>
+<li>Finding the key and tempo of a beat (try the free <a href="/tunedzy/tools/song-key-finder">key finder</a> and <a href="/tunedzy/tools/bpm-finder">BPM finder</a>)</li>
+<li>Loudness and peak checks (see the <a href="/tunedzy/tools/lufs-meter">LUFS meter</a>)</li>
 </ul>
 <h2>Where it struggles</h2>
 <ul>
@@ -271,11 +271,11 @@ AI_GUIDE = dict(
 <p>Many free AI vocal tools run on a server, so your recording is uploaded. That is fine for a throwaway test and risky for an unreleased song. Tools that run on your own PC, like Tunedzy, keep the audio local. Always check the privacy page of any online tool before uploading something you care about.</p>
 <h2>A sensible workflow</h2>
 <ol>
-<li>Run the free <a href="/vocalforge/tools/vocal-checker">vocal checker</a> to see what is actually wrong.</li>
+<li>Run the free <a href="/tunedzy/tools/vocal-checker">vocal checker</a> to see what is actually wrong.</li>
 <li>Fix the source if you can (closer mic, softer room).</li>
 <li>Let an automatic tool clean, tune and balance the take.</li>
 <li>Compare to the original, adjust by ear, and export a 24-bit WAV.</li>
-<li>Check loudness with the <a href="/vocalforge/tools/lufs-meter">LUFS meter</a> before you upload.</li>
+<li>Check loudness with the <a href="/tunedzy/tools/lufs-meter">LUFS meter</a> before you upload.</li>
 </ol>
 ''',
     vf_title='AI-assisted cleanup that stays on your PC',
@@ -301,7 +301,7 @@ TOOLS['live-autotune'] = dict(
     lead=('Turn on your microphone, pick a key, and hear yourself with autotune in real time. Record the take and download it as a WAV. '
           'It runs in your browser with no install and no sign-up, and your voice is never uploaded.'),
     how=['Put on headphones, then click <strong>Turn on microphone</strong> and allow access.',
-         'Pick the key of your beat (or let the <a href="/vocalforge/tools/song-key-finder">key finder</a> tell you), then choose Natural, Pop or Hard-tune.',
+         'Pick the key of your beat (or let the <a href="/tunedzy/tools/song-key-finder">key finder</a> tell you), then choose Natural, Pop or Hard-tune.',
          'Press <strong>Record</strong>, sing, press <strong>Stop and save</strong>, then play it back or download the WAV.'],
     body='''
 <h2>How the live autotune works</h2>
@@ -312,7 +312,7 @@ TOOLS['live-autotune'] = dict(
 <tr><td>Pop</td><td>80%</td><td>50 ms</td><td>Modern melodic rap and pop</td></tr>
 <tr><td>Hard-tune</td><td>100%</td><td>instant</td><td>The T-Pain / trap robotic sound</td></tr></table>
 <h2>Set the right key first</h2>
-<p>Autotune pulls every note toward the scale you pick, so a wrong key makes things sound worse, not better. If you do not know the key of your beat, drop it into the <a href="/vocalforge/tools/song-key-finder">song key finder</a>. If you are unsure between major and minor, try the relative key it shows.</p>
+<p>Autotune pulls every note toward the scale you pick, so a wrong key makes things sound worse, not better. If you do not know the key of your beat, drop it into the <a href="/tunedzy/tools/song-key-finder">song key finder</a>. If you are unsure between major and minor, try the relative key it shows.</p>
 <h2>Tips for a clean result</h2>
 <ul>
 <li><strong>Use headphones.</strong> Speakers feed your voice back into the mic and cause howling.</li>
@@ -358,7 +358,7 @@ TOOLS['karaoke-autotune'] = dict(
 <h2>Use music you have the right to use</h2>
 <p>Your files never leave your device, but copyright still applies to what you publish. For videos you plan to post, use your own beat, licensed instrumentals or royalty-free music.</p>
 <h2>Want a studio version of your take?</h2>
-<p>Record here for fun, then run a clean take through the <a href="/vocalforge">Tunedzy</a> desktop app: it removes noise and echo, tunes to the key of your beat, fits the timing and masters the result.</p>
+<p>Record here for fun, then run a clean take through the <a href="/tunedzy">Tunedzy</a> desktop app: it removes noise and echo, tunes to the key of your beat, fits the timing and masters the result.</p>
 ''',
     faq=[('Is the karaoke free?', 'Yes. No account, no limits and no watermark.'),
          ('Are my songs or my voice uploaded?', 'No. The track, your microphone and the recordings all stay in your browser unless you download them.'),
@@ -443,7 +443,7 @@ TOOLS['voice-recorder-noise-cancellation'] = dict(
 <li><strong>Use the gentlest setting that works.</strong> Heavy reduction can make a voice sound thin or watery. Tick <em>Hear original</em> to compare.</li>
 </ul>
 <h2>What it cannot do</h2>
-<p>It cannot remove other voices, music, or sudden sounds like clicks and coughs, and it cannot remove room echo. For that, the <a href="/vocalforge">Tunedzy desktop app</a> adds echo reduction, click and mouth-noise repair, levelling and mastering.</p>
+<p>It cannot remove other voices, music, or sudden sounds like clicks and coughs, and it cannot remove room echo. For that, the <a href="/tunedzy">Tunedzy desktop app</a> adds echo reduction, click and mouth-noise repair, levelling and mastering.</p>
 """,
     faq=[('Is the voice recorder free?', 'Yes. No account, no limit on length, and no watermark.'),
          ('Does it upload my recording?', 'No. Recording, noise removal and downloads all happen in your browser.'),

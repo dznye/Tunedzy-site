@@ -8,7 +8,7 @@
   var $ = function (s, r) { return (r || root).querySelector(s); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var drop = $('#drop'), input = $('#file'), prog = $('#prog'), out = $('#results'), demoBtn = $('#demo');
-  var supportMail = 'fuidzy@outlook.com', BASE = root.getAttribute('data-base') || '/vocalforge';
+  var supportMail = 'fuidzy@outlook.com', BASE = root.getAttribute('data-base') || '/tunedzy';
 
   function mmss(t) { t = Math.max(0, Math.round(t)); return Math.floor(t / 60) + ':' + ('0' + (t % 60)).slice(-2); }
   function f1(v) { return (Math.round(v * 10) / 10).toFixed(1); }

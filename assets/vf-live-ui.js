@@ -3,7 +3,7 @@
   'use strict';
   var root = document.getElementById('live');
   if (!root) return;
-  var mode = root.getAttribute('data-mode') || 'tune', BASE = root.getAttribute('data-base') || '/vocalforge';
+  var mode = root.getAttribute('data-mode') || 'tune', BASE = root.getAttribute('data-base') || '/tunedzy';
   var $ = function (s) { return root.querySelector(s); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var live = new VFLive.Live(); window.__vfLive = live;
@@ -77,8 +77,8 @@
     state.takes++;
     var html = '<div class="take"><b>Take ' + state.takes + ' <small>' + mmss(res.seconds) + '</small></b>';
     function row(label, blob, name) { var url = URL.createObjectURL(blob); return '<div class="takerow"><span>' + label + '</span><audio controls preload="metadata" src="' + url + '"></audio><a class="btn small" download="' + name + '" href="' + url + '">Download WAV</a></div>'; }
-    if (res.voice) html += row('Your voice (autotuned)', res.voice, 'vocalforge-take' + state.takes + '-voice.wav');
-    if (res.mix && mode === 'karaoke' && backingBuf) html += row('Voice + backing track', res.mix, 'vocalforge-take' + state.takes + '-mix.wav');
+    if (res.voice) html += row('Your voice (autotuned)', res.voice, 'tunedzy-take' + state.takes + '-voice.wav');
+    if (res.mix && mode === 'karaoke' && backingBuf) html += row('Voice + backing track', res.mix, 'tunedzy-take' + state.takes + '-mix.wav');
     html += '<p class="small mute">Want it studio-clean? <a href="' + BASE + '#pricing">Tunedzy</a> cleans, tunes and masters a take like this in one pass.</p></div>';
     var box = $('#takes'); box.insertAdjacentHTML('afterbegin', html);
   }

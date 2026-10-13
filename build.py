@@ -1,14 +1,14 @@
-"""Builds the static site for fuidzy.com/vocalforge into this folder (the GitHub repo root).
+"""Builds the static site for fuidzy.com/tunedzy into this folder (the GitHub repo root).
 
   python build.py                         pre-launch: informational CTAs, no buy button, no dead links
   python build.py --launched --download-url https://downloads.fuidzy.com/vocalforge/VocalForge-Setup-2.0.0.exe
 
 Output layout (the Worker maps URL -> file):
-  vocalforge/index.html                      https://fuidzy.com/vocalforge
-  vocalforge/<slug>/index.html               https://fuidzy.com/vocalforge/<slug>
-  vocalforge/tools/index.html + tools/<tool>/index.html
-  vocalforge/og.png, favicon.png, img/*.webp
-  vocalforge-sitemap.xml, worker-pages.json (the slug whitelist the Worker uses)
+  tunedzy/index.html                      https://fuidzy.com/tunedzy
+  tunedzy/<slug>/index.html               https://fuidzy.com/tunedzy/<slug>
+  tunedzy/tools/index.html + tools/<tool>/index.html
+  tunedzy/og.png, favicon.png, img/*.webp
+  tunedzy-sitemap.xml, worker-pages.json (the slug whitelist the Worker uses)
 """
 import argparse
 import html
@@ -21,7 +21,7 @@ import content_tools as T
 import content_blog as B
 
 ROOT = Path(__file__).resolve().parent
-OUT = ROOT / 'vocalforge'
+OUT = ROOT / 'tunedzy'
 ap = argparse.ArgumentParser()
 ap.add_argument('--launched', action='store_true')
 ap.add_argument('--download-url', default='')
@@ -537,7 +537,7 @@ def policy(slug):
 def thanks():
     body = f'''<main><div class="narrow"><article><h1>Thank you for buying Tunedzy</h1>
 <p class="lead">Your license key is on its way to the email you used at checkout. It usually arrives within a minute.</p>
-<h2>Get started</h2><ol><li>Install Tunedzy for Windows (the download link is in your receipt email and on <a href="/vocalforge">the Tunedzy page</a>).</li>
+<h2>Get started</h2><ol><li>Install Tunedzy for Windows (the download link is in your receipt email and on <a href="/tunedzy">the Tunedzy page</a>).</li>
 <li>Open Tunedzy and click the <strong>License</strong> button at the top.</li><li>Paste your key and press <strong>Activate</strong>. One key works on up to 2 of your PCs.</li></ol>
 <p>Didn&rsquo;t get the email? Check spam, then write to <a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a>.</p></article></div></main>'''
     return layout(title='Thanks for buying Tunedzy', desc='Your Tunedzy license key and next steps.', path=f'{C.BASE}/thanks', body=body, lds=[], robots='noindex,nofollow')
@@ -600,7 +600,7 @@ def main():
             + [(f'{C.BASE}/{s}', '0.8') for s in C.GUIDE_ORDER] + [(f'{C.BASE}/{s}', '0.3') for s in C.POLICIES])
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
         f'  <url><loc>{C.SITE}{u}</loc><lastmod>{C.DATE}</lastmod><priority>{p}</priority></url>\n' for u, p in urls) + '</urlset>\n'
-    (ROOT / 'vocalforge-sitemap.xml').write_text(sm, encoding='utf-8')
+    (ROOT / 'tunedzy-sitemap.xml').write_text(sm, encoding='utf-8')
     slugs = list(C.GUIDE_ORDER) + ['tools'] + [f'tools/{s}' for s in T.TOOL_ORDER] + ['blog'] + [f"blog/{b['slug']}" for b in B.BLOGS] + ['thanks'] + list(C.POLICIES)
     (ROOT / 'worker-pages.json').write_text(json.dumps(slugs), encoding='utf-8')
     print(f'built {len(urls) + 1} pages ({"LAUNCHED" if LAUNCHED else "pre-launch"}) -> {OUT}')

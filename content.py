@@ -1,13 +1,13 @@
-"""Page content for fuidzy.com/vocalforge. Plain HTML strings; build.py wraps them in the shared template.
+"""Page content for fuidzy.com/tunedzy. Plain HTML strings; build.py wraps them in the shared template.
 
 Rules every page follows: answer the question first, give real steps, be honest about limits, never invent reviews,
 ratings, customer counts or benchmarks, and keep product claims to what Tunedzy actually does.
 """
 
 SITE = 'https://fuidzy.com'
-BASE = '/vocalforge'
+BASE = '/tunedzy'
 PRODUCT_ID = 'pdt_0NpUhQriM4NqB6qcQZp3d'
-BUY_URL = f'https://checkout.dodopayments.com/buy/{PRODUCT_ID}?quantity=1&redirect_url=https%3A%2F%2Ffuidzy.com%2Fvocalforge%2Fthanks'
+BUY_URL = f'https://checkout.dodopayments.com/buy/{PRODUCT_ID}?quantity=1&redirect_url=https%3A%2F%2Ffuidzy.com%2Ftunedzy%2Fthanks'
 DATE = '2026-10-13'
 SUPPORT_EMAIL = 'fuidzy@outlook.com'
 MAC_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Tunedzy%20for%20Mac&body=Hi%2C%20I%27d%20like%20a%20Mac%20version%20of%20Tunedzy.'
@@ -196,7 +196,7 @@ GUIDES['autotune-for-rap-vocals'] = dict(
           'Yes for the best result. If you do not know it, detect it from the instrumental, or use a chromatic setting as a fallback.'),
          ('Is there a free autotune that works for rap?',
           'Several online tools and free plugins can give a basic melodic effect. Check limits and privacy; they are fine for experiments but may not hold up for a release.')],
-    ai=('Autotune versus &ldquo;AI autotune&rdquo;: what is the difference?', '<p>Classic autotune is pitch correction: detect the note you sang and move it to the nearest note of a scale. It is not generative AI. When people search for &ldquo;AI autotune&rdquo; they usually mean one of two things: pitch correction that picks the key and settings for you automatically, or voice-conversion tools that replace your voice with another one.</p><p>For rap and melodic vocals, automatic key detection plus fast, key-locked pitch correction is what gives the modern sound. Use the free <a href="/vocalforge/tools/song-key-finder">song key finder</a> to get the key from your beat, then set it in your tuner.</p>'),
+    ai=('Autotune versus &ldquo;AI autotune&rdquo;: what is the difference?', '<p>Classic autotune is pitch correction: detect the note you sang and move it to the nearest note of a scale. It is not generative AI. When people search for &ldquo;AI autotune&rdquo; they usually mean one of two things: pitch correction that picks the key and settings for you automatically, or voice-conversion tools that replace your voice with another one.</p><p>For rap and melodic vocals, automatic key detection plus fast, key-locked pitch correction is what gives the modern sound. Use the free <a href="/tunedzy/tools/song-key-finder">song key finder</a> to get the key from your beat, then set it in your tuner.</p>'),
     related=['future-vocal-effect-settings', 'mix-vocals-on-a-beat', 'fix-vocals-recorded-on-phone'],
 )
 
@@ -244,7 +244,7 @@ GUIDES['mix-vocals-on-a-beat'] = dict(
           'Usually too much reverb or too bright without matching compression and EQ. Gentle compression, a touch of shared reverb, and carving space in the beat help them blend.'),
          ('What loudness should I master to?',
           'Streaming services normalise around &minus;14 LUFS, but many hip-hop and pop releases are mastered louder. Keep true peaks below &minus;1&nbsp;dBTP either way.')],
-    ai=('Where AI auto-mixing helps (and where it does not)', '<p>Automatic mixing tools are good at starting points: a sensible vocal level against the beat, a first EQ and a first compression setting. They are less good at taste, such as how bright, how wet or how forward the vocal should sit for your song. Treat the AI result as a first draft and finish by ear, in mono and at low volume.</p><p>Use the free <a href="/vocalforge/tools/lufs-meter">LUFS meter</a> to check your final loudness and the <a href="/vocalforge/tools/vocal-checker">vocal checker</a> to catch clipping and noise before you export.</p>'),
+    ai=('Where AI auto-mixing helps (and where it does not)', '<p>Automatic mixing tools are good at starting points: a sensible vocal level against the beat, a first EQ and a first compression setting. They are less good at taste, such as how bright, how wet or how forward the vocal should sit for your song. Treat the AI result as a first draft and finish by ear, in mono and at low volume.</p><p>Use the free <a href="/tunedzy/tools/lufs-meter">LUFS meter</a> to check your final loudness and the <a href="/tunedzy/tools/vocal-checker">vocal checker</a> to catch clipping and noise before you export.</p>'),
     related=['fix-vocals-recorded-on-phone', 'future-vocal-effect-settings', 'vocal-cleanup-software-compared'],
 )
 
