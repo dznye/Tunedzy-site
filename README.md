@@ -1,4 +1,4 @@
-# VocalForge site
+# Tunedzy site
 
 Static pages for https://fuidzy.com/vocalforge, served by the `vocalforge-pages` Cloudflare Worker (same pattern as the SpaceWise pages).
 

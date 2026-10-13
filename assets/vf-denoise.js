@@ -1,4 +1,4 @@
-/* VocalForge free tools: noise suppression that learns YOUR background noise. Runs in the visitor's browser (AudioWorklet) or offline on a file.
+/* Tunedzy free tools: noise suppression that learns YOUR background noise. Runs in the visitor's browser (AudioWorklet) or offline on a file.
    Method: short-time Fourier transform (512 samples, 75% overlap), noise spectrum learned from a few seconds of room tone (or tracked
    automatically), Wiener-style gain with time and frequency smoothing, then an optional noise gate set from the learned noise level.
    Best on steady noise (fans, hiss, AC, hum, PC noise). It cannot remove voices or keyboard clatter. Nothing is uploaded. */

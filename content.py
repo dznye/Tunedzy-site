@@ -1,7 +1,7 @@
 """Page content for fuidzy.com/vocalforge. Plain HTML strings; build.py wraps them in the shared template.
 
 Rules every page follows: answer the question first, give real steps, be honest about limits, never invent reviews,
-ratings, customer counts or benchmarks, and keep product claims to what VocalForge actually does.
+ratings, customer counts or benchmarks, and keep product claims to what Tunedzy actually does.
 """
 
 SITE = 'https://fuidzy.com'
@@ -10,18 +10,18 @@ PRODUCT_ID = 'pdt_0NpUhQriM4NqB6qcQZp3d'
 BUY_URL = f'https://checkout.dodopayments.com/buy/{PRODUCT_ID}?quantity=1&redirect_url=https%3A%2F%2Ffuidzy.com%2Fvocalforge%2Fthanks'
 DATE = '2026-10-13'
 SUPPORT_EMAIL = 'fuidzy@outlook.com'
-MAC_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=VocalForge%20for%20Mac&body=Hi%2C%20I%27d%20like%20a%20Mac%20version%20of%20VocalForge.'
-HELP_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=VocalForge%20support'
-LAUNCH_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Notify%20me%20when%20VocalForge%20launches&body=Please%20email%20me%20when%20the%20VocalForge%20download%20opens.'
+MAC_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Tunedzy%20for%20Mac&body=Hi%2C%20I%27d%20like%20a%20Mac%20version%20of%20Tunedzy.'
+HELP_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Tunedzy%20support'
+LAUNCH_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Notify%20me%20when%20Tunedzy%20launches&body=Please%20email%20me%20when%20the%20Tunedzy%20download%20opens.'
 
 NAV = [('Free tools', f'{BASE}/tools'), ('Features', f'{BASE}#features'), ('Guides', f'{BASE}#guides'), ('Pricing', f'{BASE}#pricing'), ('Support', f'{BASE}#support')]
 
 # --------------------------------------------------------------------------------------------- shared FAQ
 HUB_FAQ = [
-    ('Is VocalForge free?',
+    ('Is Tunedzy free?',
      'You can download it and use everything free for 7 days. After the trial it is a one-time $29 for a lifetime license on up to two of your PCs. No subscription. '
      'The tools on this site (BPM finder, key finder, chord finder, LUFS meter and vocal checker) are free forever and run in your browser.'),
-    ('Is VocalForge a plugin, a DAW or a standalone app?',
+    ('Is Tunedzy a plugin, a DAW or a standalone app?',
      'It is a standalone vocal workstation: the whole vocal chain (clean, tune, fit to the beat, style, mix and master) in one window, with live sliders and a painted-sections timeline. '
      'It exports 24-bit WAV, FLAC or MP3, and a DAW pack with every stem in sync plus tempo, key and a song map, so you can keep working in FL Studio, Ableton, Logic, Reaper or Pro Tools. It is not a DAW replacement and not a VST/AU plugin yet.'),
     ('Does it need an internet connection?',
@@ -37,16 +37,16 @@ HUB_FAQ = [
     ('What file types can I use?',
      'WAV, FLAC, MP3 and OGG work out of the box. Exports are 24-bit WAV or FLAC, or MP3 320 kbps for quick sharing. M4A and AAC files work if ffmpeg is installed on your PC.'),
     ('What if my recording is really bad?',
-     'VocalForge can repair a lot (noise, clicks, mic pops, harsh S sounds, clipped peaks, level swings, room echo), but it is not magic. A vocal buried in '
+     'Tunedzy can repair a lot (noise, clicks, mic pops, harsh S sounds, clipped peaks, level swings, room echo), but it is not magic. A vocal buried in '
      'reverb, heavily distorted, or recorded far from the mic will improve but not become a studio take. Re-recording closer to the mic is always the best fix.'),
     ('Is this AI?',
      'It uses automatic analysis, so it listens to your recording and picks the settings for you, on top of signal processing that runs locally. '
      'An optional AI model (Demucs) handles one job: separating vocals from a full song, for example to study a reference track or pull a vocal out of a beat you downloaded.'),
     ('Can it make me sound like a specific artist?',
-     'You can drop in any song by an artist whose sound you like. VocalForge measures how that record was tuned, EQ-ed, spaced and mixed and applies a similar '
-     'treatment to your own voice. It changes the processing, not your voice, so you will still sound like you. VocalForge is not affiliated with any artist.'),
+     'You can drop in any song by an artist whose sound you like. Tunedzy measures how that record was tuned, EQ-ed, spaced and mixed and applies a similar '
+     'treatment to your own voice. It changes the processing, not your voice, so you will still sound like you. Tunedzy is not affiliated with any artist.'),
     ('Is there a Mac version?',
-     'Not yet: Windows 10 and 11 (64-bit) only for now. Want one? Email fuidzy@outlook.com with the subject "VocalForge for Mac". Requests decide what we build next.'),
+     'Not yet: Windows 10 and 11 (64-bit) only for now. Want one? Email fuidzy@outlook.com with the subject "Tunedzy for Mac". Requests decide what we build next.'),
     ('How do I get help?',
      'Email fuidzy@outlook.com. Include what you were doing and, if you can, a screenshot. We read every message.'),
 ]
@@ -99,14 +99,14 @@ GUIDES['fix-vocals-recorded-on-phone'] = dict(
 <p>Bounce a 24-bit WAV for the finished vocal and also keep the clean, untreated version. Treat the dry file as your master copy: if you change the beat or the style later you can redo the mix instead of re-recording.</p>
 ''',
     vf_title='Skip the manual chain: do steps 2&ndash;5 in one pass',
-    vf='''<p>VocalForge runs this whole order for you. Drop in the phone recording and your beat and it removes noise, pops and harsh S sounds, repairs clipped peaks, dries up room echo, tunes to your beat&rsquo;s key, nudges words onto the beat, sets the vocal level against the music, and masters the result, then lets you adjust it live. Everything runs on your PC.</p>''',
+    vf='''<p>Tunedzy runs this whole order for you. Drop in the phone recording and your beat and it removes noise, pops and harsh S sounds, repairs clipped peaks, dries up room echo, tunes to your beat&rsquo;s key, nudges words onto the beat, sets the vocal level against the music, and masters the result, then lets you adjust it live. Everything runs on your PC.</p>''',
     faq=[('Can a phone recording really sound professional?',
           'It can sound clean and competitive, especially for rap and melodic tracks that rely on processing. It will not have the detail of a good condenser mic, but good technique and cleanup close most of the gap.'),
          ('Should I use the voice-memo app or a recording app?',
           'Use any app that lets you record uncompressed (WAV) and turn off noise suppression and auto-gain. Voice memos are fine on iPhone if you set the quality to lossless.'),
          ('What is the biggest mistake with phone vocals?',
           'Recording in a hard-walled room or too far from the phone. Echo and distance cannot be fully fixed afterwards.')],
-    ai=('Can AI fix phone vocals automatically?', '<p>Partly, and that is useful. &ldquo;AI vocal cleanup&rdquo; tools listen to your recording and choose the settings for you: how much noise to remove, where the harsh S sounds are, which key to tune to. That removes the guesswork, which is where most beginners go wrong. The repair itself is mostly classic signal processing, with AI models doing the heavy lifting in a few places, such as splitting a voice from music.</p><p>Whatever you use, the order in this guide still applies, and a closer, drier recording beats any AI. If you want the automatic route, VocalForge&rsquo;s analysis picks the settings and its optional AI add-on handles vocal separation.</p>'),
+    ai=('Can AI fix phone vocals automatically?', '<p>Partly, and that is useful. &ldquo;AI vocal cleanup&rdquo; tools listen to your recording and choose the settings for you: how much noise to remove, where the harsh S sounds are, which key to tune to. That removes the guesswork, which is where most beginners go wrong. The repair itself is mostly classic signal processing, with AI models doing the heavy lifting in a few places, such as splitting a voice from music.</p><p>Whatever you use, the order in this guide still applies, and a closer, drier recording beats any AI. If you want the automatic route, Tunedzy&rsquo;s analysis picks the settings and its optional AI add-on handles vocal separation.</p>'),
     related=['remove-echo-from-vocal-recording', 'mix-vocals-on-a-beat', 'autotune-for-rap-vocals'],
 )
 
@@ -143,7 +143,7 @@ GUIDES['remove-echo-from-vocal-recording'] = dict(
 <p>Free editors have noise reduction and gates that help with hiss and some tails but cannot do true de-reverb. Dedicated tools (iZotope RX, sonible prime:vocal, LALAL.AI&rsquo;s echo remover and others) do the heavy lifting, and are worth it for important recordings. Whatever you use, compare before and after at the same loudness, and watch for artifacts.</p>
 ''',
     vf_title='Echo removal built into the finish',
-    vf='''<p>VocalForge measures how roomy your recording is and dries it up automatically, scaled to the room (a closet-quality take is left alone; a bedroom echo gets treated), then continues with tuning, levelling and mastering. It is classic signal processing that runs on your PC. It reduces echo noticeably; for a very roomy recording it will improve it, but a re-record is still the real fix.</p>''',
+    vf='''<p>Tunedzy measures how roomy your recording is and dries it up automatically, scaled to the room (a closet-quality take is left alone; a bedroom echo gets treated), then continues with tuning, levelling and mastering. It is classic signal processing that runs on your PC. It reduces echo noticeably; for a very roomy recording it will improve it, but a re-record is still the real fix.</p>''',
     faq=[('Can you completely remove echo from a vocal?',
           'Not cleanly. You can reduce it a lot on moderate rooms; very roomy recordings can only be improved. Heavy removal causes watery or thin artifacts.'),
          ('Why does my vocal sound thin after removing reverb?',
@@ -189,7 +189,7 @@ GUIDES['autotune-for-rap-vocals'] = dict(
 </ul>
 ''',
     vf_title='Key detection and tuning without fiddling',
-    vf='''<p>VocalForge reads the key and tempo from your beat, tunes your take to it with a style you choose (off, natural, a style learned from a reference song, or hard), keeps the natural movement in long notes if you want it, and nudges words onto the beat. You can also paint a section so one line gets hard-tune while the rest stays natural.</p>''',
+    vf='''<p>Tunedzy reads the key and tempo from your beat, tunes your take to it with a style you choose (off, natural, a style learned from a reference song, or hard), keeps the natural movement in long notes if you want it, and nudges words onto the beat. You can also paint a section so one line gets hard-tune while the rest stays natural.</p>''',
     faq=[('What retune speed is best for rap?',
           'It depends on the sound you want. Slower for natural, around 10&ndash;30&nbsp;ms for a modern melodic sound, and 0 for the hard robotic effect.'),
          ('Do I have to know the key of my beat?',
@@ -237,7 +237,7 @@ GUIDES['mix-vocals-on-a-beat'] = dict(
 </ul>
 ''',
     vf_title='The balance step, automated',
-    vf='''<p>VocalForge sets the vocal level against your beat (using your reference song&rsquo;s balance if you give it one, or the typical balance of finished records), ducks the beat gently under the voice, adds ducked reverb and tempo-synced echo, then masters the mix and runs a pass/fail check on loudness, true peak, punch, low-end mono and tonal balance. Paint hooks and verses on the timeline to give each section its own space and width.</p>''',
+    vf='''<p>Tunedzy sets the vocal level against your beat (using your reference song&rsquo;s balance if you give it one, or the typical balance of finished records), ducks the beat gently under the voice, adds ducked reverb and tempo-synced echo, then masters the mix and runs a pass/fail check on loudness, true peak, punch, low-end mono and tonal balance. Paint hooks and verses on the timeline to give each section its own space and width.</p>''',
     faq=[('How loud should the vocal be on a beat?',
           'Loud enough that every word is clear without sitting on top of the beat. Compare against a finished record in your genre at matching loudness rather than trusting the fader.'),
          ('Why does my vocal sound separate from the beat?',
@@ -275,17 +275,17 @@ GUIDES['future-vocal-effect-settings'] = dict(
 <p>Three things matter more than any plugin: the key is right, the take is clean, and the effects are balanced against the beat rather than stacked on top of it. Copying settings from a preset pack without checking the key is the most common reason it does not sound right.</p>
 <h2>Make it yours</h2>
 <p>Use these numbers as a starting point, then adjust the retune speed, the reverb size and how much of the delay you hear. The goal is a vocal that suits your voice and your beat, not an imitation.</p>
-<p class="note">VocalForge is not affiliated with or endorsed by any artist. Artist names are used only to describe a style of vocal processing.</p>
+<p class="note">Tunedzy is not affiliated with or endorsed by any artist. Artist names are used only to describe a style of vocal processing.</p>
 ''',
     vf_title='Match a style from a song instead of copying settings',
-    vf='''<p>Drop a song by an artist whose sound you like into VocalForge. It separates the vocal, measures how it was tuned, brightened, spaced, doubled and compressed, and applies a similar treatment to your recording: a style, not a copy. You can then adjust every part live. Your voice stays your own.</p>''',
+    vf='''<p>Drop a song by an artist whose sound you like into Tunedzy. It separates the vocal, measures how it was tuned, brightened, spaced, doubled and compressed, and applies a similar treatment to your recording: a style, not a copy. You can then adjust every part live. Your voice stays your own.</p>''',
     faq=[('What retune speed gives the Future sound?',
           'A very fast setting, around 0&ndash;10&nbsp;ms, gives the stepped robotic effect. Some records sound slightly slower; try both against your beat.'),
          ('Do I need Auto-Tune for this sound?',
           'No. The effect comes from fast, key-locked pitch correction, which several tools can do. The key and the clean vocal matter more than the brand.'),
          ('Why does my version sound thin?',
           'Usually a single vocal with no doubles, no saturation and too little reverb. Add a few detuned doubles, light saturation and a long dark reverb on a send.')],
-    ai=('Presets versus AI style matching', '<p>Preset packs give you someone else&rsquo;s settings for someone else&rsquo;s voice. Style matching works the other way round: you point a tool at a finished record, it measures how that vocal was tuned, equalised, spaced and compressed, and applies a similar treatment to your recording. That is the idea behind VocalForge&rsquo;s &ldquo;sound like an artist&rdquo; feature. It changes the processing, not your voice, and it is not affiliated with any artist.</p>'),
+    ai=('Presets versus AI style matching', '<p>Preset packs give you someone else&rsquo;s settings for someone else&rsquo;s voice. Style matching works the other way round: you point a tool at a finished record, it measures how that vocal was tuned, equalised, spaced and compressed, and applies a similar treatment to your recording. That is the idea behind Tunedzy&rsquo;s &ldquo;sound like an artist&rdquo; feature. It changes the processing, not your voice, and it is not affiliated with any artist.</p>'),
     related=['autotune-for-rap-vocals', 'mix-vocals-on-a-beat', 'fix-vocals-recorded-on-phone'],
 )
 
@@ -298,12 +298,12 @@ GUIDES['vocal-cleanup-software-compared'] = dict(
           'Here is how they differ, with the list prices we found in October 2026. Check each vendor&rsquo;s site for today&rsquo;s price.'),
     tldr=['Plugins give you deep control inside a DAW; they need you to know what to do.',
           'One-click and online tools are faster but narrower, and online tools mean uploading your audio.',
-          'VocalForge is a Windows app for the finishing step: clean, tune, fit to the beat, match a style and master, one-time $29.'],
+          'Tunedzy is a Windows app for the finishing step: clean, tune, fit to the beat, match a style and master, one-time $29.'],
     body='''
 <table>
 <thead><tr><th>Tool</th><th>Typical price (US)</th><th>Best at</th><th>Where it falls short for this job</th></tr></thead>
 <tbody>
-<tr><td><strong>VocalForge</strong></td><td>$29 one-time, 7-day trial</td><td>Finishing a rough vocal on a beat: clean, tune, level, style-match, master</td><td>Not a DAW or plugin (yet); Windows only; less manual depth than Melodyne</td></tr>
+<tr><td><strong>Tunedzy</strong></td><td>$29 one-time, 7-day trial</td><td>Finishing a rough vocal on a beat: clean, tune, level, style-match, master</td><td>Not a DAW or plugin (yet); Windows only; less manual depth than Melodyne</td></tr>
 <tr><td>iZotope Nectar 4 (Elements / Standard / Advanced)</td><td>about $55 / $199 / $299</td><td>Full vocal-chain plugin with an assistant</td><td>Needs a DAW and some mixing knowledge</td></tr>
 <tr><td>Celemony Melodyne 5 Essential</td><td>about $99 list (often discounted)</td><td>Precise pitch and timing editing</td><td>Editing only: no cleanup, levelling or mastering</td></tr>
 <tr><td>Antares Auto-Tune Unlimited</td><td>$30 per month or $300 per year for new subscribers</td><td>Industry-standard pitch correction and the classic effect</td><td>Subscription; pitch-focused</td></tr>
@@ -315,21 +315,21 @@ GUIDES['vocal-cleanup-software-compared'] = dict(
 <h2>How to choose</h2>
 <ul>
 <li><strong>You mix in a DAW and want precise control:</strong> a plugin suite (Nectar, prime:vocal) or Melodyne for pitch.</li>
-<li><strong>You just need your track to sound finished and sit on the beat:</strong> a finishing app like VocalForge saves the most time.</li>
+<li><strong>You just need your track to sound finished and sit on the beat:</strong> a finishing app like Tunedzy saves the most time.</li>
 <li><strong>You are experimenting:</strong> free online tools are fine; keep unreleased audio in mind.</li>
 <li><strong>You only need mastering:</strong> an online mastering service.</li>
 </ul>
-<h2>Where VocalForge fits</h2>
-<p>VocalForge is built for the moment between &ldquo;I recorded it&rdquo; and &ldquo;I can post it&rdquo;: a rough phone or bedroom take, a beat, and not enough time or experience to build a vocal chain. It runs locally, so your unreleased songs stay on your PC. If you already live in a DAW and love your plugins, you may only want it for quick drafts, reference matching and the final loudness and quality check.</p>
+<h2>Where Tunedzy fits</h2>
+<p>Tunedzy is built for the moment between &ldquo;I recorded it&rdquo; and &ldquo;I can post it&rdquo;: a rough phone or bedroom take, a beat, and not enough time or experience to build a vocal chain. It runs locally, so your unreleased songs stay on your PC. If you already live in a DAW and love your plugins, you may only want it for quick drafts, reference matching and the final loudness and quality check.</p>
 ''',
     vf_title='Try it on your own track',
     vf='''<p>The best comparison is your own recording. Download the free trial, run a rough take through it, and A/B the result against what you have now. Seven days, everything unlocked.</p>''',
     faq=[('What is the cheapest way to get good vocals?',
-          'Record well first. Then a free editor plus a couple of stock plugins can do a lot; a one-time finishing app like VocalForge is the low-cost way to automate the rest.'),
+          'Record well first. Then a free editor plus a couple of stock plugins can do a lot; a one-time finishing app like Tunedzy is the low-cost way to automate the rest.'),
          ('Do I need a plugin or a standalone app?',
           'If you work inside a DAW and want hands-on control, plugins. If you want a finished result quickly, a standalone finishing app is faster.'),
-         ('Is VocalForge better than Auto-Tune?',
-          'They do different jobs. Auto-Tune is a specialist pitch tool; VocalForge handles cleanup, tuning, levelling, style-matching and mastering together, with less manual control.')],
+         ('Is Tunedzy better than Auto-Tune?',
+          'They do different jobs. Auto-Tune is a specialist pitch tool; Tunedzy handles cleanup, tuning, levelling, style-matching and mastering together, with less manual control.')],
     ai=('Where AI fits in this list', '<p>&ldquo;AI&rdquo; appears on almost every product page now, but it covers very different things: automatic setting selection, learned noise and reverb removal, vocal separation, and generative voice tools. When you compare, ask what the AI actually does, whether it runs on your PC or in the cloud, and what happens to your audio.</p>'),
     related=['fix-vocals-recorded-on-phone', 'autotune-for-rap-vocals', 'remove-echo-from-vocal-recording'],
 )
@@ -339,11 +339,11 @@ GUIDE_ORDER = ['fix-vocals-recorded-on-phone', 'remove-echo-from-vocal-recording
 
 # --------------------------------------------------------------------------------------------- policy pages (drafts for the owner to review)
 POLICIES = {
-    'privacy': dict(title='VocalForge Privacy Policy', desc='How VocalForge handles your audio, license and usage data.', h1='Privacy Policy',
+    'privacy': dict(title='Tunedzy Privacy Policy', desc='How Tunedzy handles your audio, license and usage data.', h1='Privacy Policy',
                     body='''
 <p class="note">Draft for review by the product owner before launch.</p>
 <h2>Your audio stays on your computer</h2>
-<p>VocalForge processes your recordings, beats and reference songs on your own PC. They are not uploaded to our servers.</p>
+<p>Tunedzy processes your recordings, beats and reference songs on your own PC. They are not uploaded to our servers.</p>
 <h2>What does use the internet</h2>
 <ul>
 <li><strong>License checks.</strong> The app contacts our payment provider, Dodo Payments, to activate and validate your license key. This involves your license key and your computer&rsquo;s name.</li>
@@ -351,19 +351,19 @@ POLICIES = {
 <li><strong>Payments.</strong> Purchases are handled by Dodo Payments. We do not see or store your card details.</li>
 </ul>
 <h2>Contact</h2><p>Questions about privacy: use the contact option on fuidzy.com.</p>'''),
-    'terms': dict(title='VocalForge Terms of Use', desc='Terms for using VocalForge software and its license.', h1='Terms of Use',
+    'terms': dict(title='Tunedzy Terms of Use', desc='Terms for using Tunedzy software and its license.', h1='Terms of Use',
                   body='''
 <p class="note">Draft for review by the product owner before launch.</p>
 <h2>License</h2>
-<p>A VocalForge license is for one person and may be activated on up to two of that person&rsquo;s computers. It is a personal, non-transferable license to use the software. You may not resell, redistribute or reverse-engineer it.</p>
+<p>A Tunedzy license is for one person and may be activated on up to two of that person&rsquo;s computers. It is a personal, non-transferable license to use the software. You may not resell, redistribute or reverse-engineer it.</p>
 <h2>Your content</h2>
-<p>You keep all rights to the audio you create. You are responsible for having the rights to any recordings, beats or reference songs you process with VocalForge.</p>
+<p>You keep all rights to the audio you create. You are responsible for having the rights to any recordings, beats or reference songs you process with Tunedzy.</p>
 <h2>No warranty</h2>
 <p>The software is provided as is. Audio results depend on the quality of the source recordings, and we do not guarantee a particular outcome.</p>'''),
-    'refund-policy': dict(title='VocalForge Refund Policy', desc='How refunds work for VocalForge purchases.', h1='Refund Policy',
+    'refund-policy': dict(title='Tunedzy Refund Policy', desc='How refunds work for Tunedzy purchases.', h1='Refund Policy',
                           body='''
 <p class="note">Draft for review by the product owner before launch.</p>
-<p>VocalForge includes a 7-day free trial so you can try it on your own recordings before you buy. If you buy and it does not work for you, contact us within 30 days of purchase and we will refund you.</p>
+<p>Tunedzy includes a 7-day free trial so you can try it on your own recordings before you buy. If you buy and it does not work for you, contact us within 30 days of purchase and we will refund you.</p>
 <p>Refunds are issued to the original payment method through our payment provider.</p>'''),
 }
 

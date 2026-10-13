@@ -1,4 +1,4 @@
-/* VocalForge free tools: audio analysis that runs entirely in the visitor's browser (nothing is uploaded).
+/* Tunedzy free tools: audio analysis that runs entirely in the visitor's browser (nothing is uploaded).
    Pure functions on Float32Array so the same code is tested in Node. */
 (function (root) {
   'use strict';

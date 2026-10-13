@@ -1,4 +1,4 @@
-/* VocalForge free tools: live autotune + karaoke page glue. Nothing is uploaded; there is no network code here. */
+/* Tunedzy free tools: live autotune + karaoke page glue. Nothing is uploaded; there is no network code here. */
 (function () {
   'use strict';
   var root = document.getElementById('live');
@@ -79,7 +79,7 @@
     function row(label, blob, name) { var url = URL.createObjectURL(blob); return '<div class="takerow"><span>' + label + '</span><audio controls preload="metadata" src="' + url + '"></audio><a class="btn small" download="' + name + '" href="' + url + '">Download WAV</a></div>'; }
     if (res.voice) html += row('Your voice (autotuned)', res.voice, 'vocalforge-take' + state.takes + '-voice.wav');
     if (res.mix && mode === 'karaoke' && backingBuf) html += row('Voice + backing track', res.mix, 'vocalforge-take' + state.takes + '-mix.wav');
-    html += '<p class="small mute">Want it studio-clean? <a href="' + BASE + '#pricing">VocalForge</a> cleans, tunes and masters a take like this in one pass.</p></div>';
+    html += '<p class="small mute">Want it studio-clean? <a href="' + BASE + '#pricing">Tunedzy</a> cleans, tunes and masters a take like this in one pass.</p></div>';
     var box = $('#takes'); box.insertAdjacentHTML('afterbegin', html);
   }
   function timerOn() { state.recStart = performance.now(); state.recTimer = setInterval(function () { $('#timer').textContent = mmss((performance.now() - state.recStart) / 1000); }, 250); }

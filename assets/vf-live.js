@@ -1,6 +1,6 @@
-/* VocalForge free tools: live autotune + karaoke engine. Runs entirely in the visitor's browser (Web Audio + AudioWorklet).
+/* Tunedzy free tools: live autotune + karaoke engine. Runs entirely in the visitor's browser (Web Audio + AudioWorklet).
    Mic -> pitch detection (YIN) -> delay-line pitch shifter -> light studio tone + reverb -> headphones, with recording.
-   The same shifter as the VocalForge desktop app's live monitor. Nothing is uploaded. */
+   The same shifter as the Tunedzy desktop app's live monitor. Nothing is uploaded. */
 (function (root) {
   'use strict';
 

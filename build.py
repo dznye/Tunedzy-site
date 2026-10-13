@@ -167,7 +167,7 @@ def software_ld():
     offer = {'@type': 'Offer', 'price': '29.00', 'priceCurrency': 'USD', 'url': C.SITE + C.BASE + '#pricing',
              'description': 'Lifetime license for up to 2 PCs. 7-day free trial.',
              'availability': 'https://schema.org/InStock' if LAUNCHED else 'https://schema.org/PreOrder'}
-    return {'@context': 'https://schema.org', '@type': 'SoftwareApplication', 'name': 'VocalForge', 'applicationCategory': 'MultimediaApplication',
+    return {'@context': 'https://schema.org', '@type': 'SoftwareApplication', 'name': 'Tunedzy', 'applicationCategory': 'MultimediaApplication',
             'applicationSubCategory': 'Vocal processing and mastering workstation',
             'operatingSystem': 'Windows 10, Windows 11', 'url': C.SITE + C.BASE, 'image': C.SITE + C.BASE + '/og.png',
             'description': 'Vocal workstation for Windows that cleans, tunes, fits to the beat, style-matches and masters rough vocal recordings. Runs offline on your PC. Free 7-day trial.',
@@ -194,7 +194,7 @@ def layout(*, title, desc, path, body, lds, robots='index,follow', og_type='webs
 <link rel="canonical" href="{e(url)}">
 <link rel="icon" href="{C.BASE}/favicon.png">
 <meta name="theme-color" content="#140a14">
-<meta property="og:type" content="{og_type}"><meta property="og:site_name" content="VocalForge by Fuidzy"><meta property="og:title" content="{e(title)}">
+<meta property="og:type" content="{og_type}"><meta property="og:site_name" content="Tunedzy by Fuidzy"><meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{e(url)}"><meta property="og:image" content="{C.SITE}{C.BASE}/og.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(title)}"><meta name="twitter:description" content="{e(desc)}"><meta name="twitter:image" content="{C.SITE}{C.BASE}/og.png">
 <style>{CSS}</style>{ld}</head><body>
@@ -202,11 +202,11 @@ def layout(*, title, desc, path, body, lds, robots='index,follow', og_type='webs
 <nav class="main" aria-label="Main">{nav}</nav><a class="hbtn" href="{C.BASE}#pricing">{'Download free' if LAUNCHED else 'Free to try'}</a></div></header>
 {body}
 <footer><div class="wrap"><div class="cols">
-<div><h4>VocalForge</h4><a href="{C.BASE}">Overview</a><br><a href="{C.BASE}#features">Features</a><br><a href="{C.BASE}#pricing">Pricing</a><br><a href="{C.BASE}#faq">FAQ</a></div>
+<div><h4>Tunedzy</h4><a href="{C.BASE}">Overview</a><br><a href="{C.BASE}#features">Features</a><br><a href="{C.BASE}#pricing">Pricing</a><br><a href="{C.BASE}#faq">FAQ</a></div>
 <div><h4>Free tools</h4>{tools_f}</div>
 <div><h4>Guides</h4>{guides_f}<a href="{C.BASE}/blog">All audio guides</a></div>
 <div><h4>Support</h4><a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a><br><a href="{e(C.MAC_MAIL)}">Request a Mac version</a><br><a href="{C.BASE}/privacy">Privacy</a><br><a href="{C.BASE}/terms">Terms</a><br><a href="{C.BASE}/refund-policy">Refunds</a></div>
-</div><p class="credit" style="margin-top:26px">VocalForge is a Fuidzy product. It is not affiliated with or endorsed by any artist or plugin company mentioned on this site.</p>
+</div><p class="credit" style="margin-top:26px">Tunedzy is a Fuidzy product. It is not affiliated with or endorsed by any artist or plugin company mentioned on this site.</p>
 <p class="credit">Photos: {', '.join(f'<a href="{u}" rel="noopener">{n} / {site}</a>' for n, site, u in CREDITS)}. Free to use under the Pexels and Unsplash licenses.</p></div></footer>{scripts}</body></html>'''
 
 
@@ -271,7 +271,7 @@ def live_widget(kind):
             '<div class="fl"><label for="speed">Retune speed</label><input type="range" id="speed" min="0" max="250" value="50"><output class="v" id="speedv">50 ms</output></div>'
             '<div class="fl"><label for="reverb">Reverb</label><input type="range" id="reverb" min="0" max="60" value="18"><output class="v" id="reverbv">18%</output></div></div>'
             f'<div>{transport if karaoke else ""}'
-            '<div class="warnrow">Tip: this is a real-time browser effect with a small delay. For a final, studio-clean vocal, record dry and tune it afterwards in VocalForge.</div></div></div>'
+            '<div class="warnrow">Tip: this is a real-time browser effect with a small delay. For a final, studio-clean vocal, record dry and tune it afterwards in Tunedzy.</div></div></div>'
             f'{lyrics}'
             '<div class="recrow"><button id="rec" type="button">Record</button><span id="timer">0:00</span><button class="btn small ghost" id="micoff" type="button">Turn off microphone</button><span class="small mute" id="lat"></span></div>'
             '<div id="takes"></div></div></div></div>')
@@ -333,8 +333,8 @@ def rack():
                + wave + '</svg>')
     mh = ''.join('<div class="mod" style="--c:%s;--v:%s"><span class="mn">%s</span><span class="knob"></span><span class="leds">%s</span></div>' % (
         c, v, n, ''.join('<i class="on"></i>' if k < round(v * 8) else '<i></i>' for k in range(8))) for n, c, v in mods)
-    return ('<div class="rackwrap"><div class="rack" role="img" aria-label="VocalForge vocal workstation: a waveform with painted sections and six processing modules called Clean, Tune, Fit, Style, Mix and Master">'
-            '<div class="rackbar"><span class="dts"><i></i><i></i><i></i></span><b>VocalForge</b><em>Vocal Workstation</em></div>'
+    return ('<div class="rackwrap"><div class="rack" role="img" aria-label="Tunedzy vocal workstation: a waveform with painted sections and six processing modules called Clean, Tune, Fit, Style, Mix and Master">'
+            '<div class="rackbar"><span class="dts"><i></i><i></i><i></i></span><b>Tunedzy</b><em>Vocal Workstation</em></div>'
             f'<div class="rwave">{wavesvg}</div><div class="mods">{mh}</div></div>'
             '<div class="fchip fc1"><i></i>92 BPM &middot; A minor</div><div class="fchip fc2"><i></i>Noise &minus;62 dB</div>'
             '<div class="fchip fc3"><i></i>&minus;14.0 LUFS</div><div class="fchip fc4"><i></i>True peak &minus;1.1 dB</div>'
@@ -347,7 +347,7 @@ def hub():
         ('clean', 'cA', 'CLEAN', 'Noise, pops, harsh S sounds, loud breaths, clipped peaks and room echo: gone, in one pass.'),
         ('tune', 'cP', 'TUNE', 'Reads the key from your beat and tunes to it. Natural, hard-tune, or a style learned from a reference song.'),
         ('beat', 'cT', 'FIT', 'Finds your beat\u2019s tempo and key, nudges words onto the grid and sets the vocal level against the music.'),
-        ('artist', 'cV', 'STYLE', 'Drop in a song you love. VocalForge measures how it was tuned, spaced and mixed, then applies that treatment to your voice.'),
+        ('artist', 'cV', 'STYLE', 'Drop in a song you love. Tunedzy measures how it was tuned, spaced and mixed, then applies that treatment to your voice.'),
         ('mix', 'cB', 'MIX', 'Paint hooks, verses and ad-libs on the timeline. Each gets its own reverb, echo, doubles and harmony, live.'),
         ('master', 'cO', 'MASTER', 'Loudness, true peak and tone checks with a pass/fail report. Export 24-bit WAV or FLAC.'),
     ]
@@ -373,7 +373,7 @@ def hub():
     status = '' if LAUNCHED else '<p class="small" style="margin-top:14px">Windows download opens at launch. Email us and we will let you know the day it does.</p>'
     body = f'''<main>
 <div class="hero">{shapes('hero')}<div class="wrap"><div class="herogrid"><div>
-<div class="pill"><i></i>New: VocalForge 2.0 &middot; Free to try &middot; Windows</div>
+<div class="pill"><i></i>New: Tunedzy 2.0 &middot; Free to try &middot; Windows</div>
 <h1>Rough vocal in. <em class="grad">Finished track out.</em></h1>
 <p class="sub">The all-in-one vocal app for artists, streamers and podcasters. Make any mic sound expensive live, clean and tune your takes, remove vocals from any song, mix and master, in one window. No plugin hunting.</p>
 <div class="cta">{cta_primary()}<a class="btn" href="#try">Try the free tools</a></div>{status}
@@ -395,15 +395,15 @@ def hub():
 <div class="row"><i></i>Clipping<span>none</span></div><div class="row"><i></i>Tonal balance<span>in range</span></div><div class="row"><i></i>Vocal vs beat<span>balanced</span></div><p class="rn">Example report. Real numbers depend on your track.</p></div></div></div></section>
 <section class="alt">{shapes('soft')}<div class="wrap"><div class="spot"><div class="photo" style="max-width:430px;margin:0 auto">{img('neon')}</div><div>
 <p class="eyebrow">Sound like the records you love</p><h2>Drop in a song. <span class="grad">Get that treatment on your voice.</span></h2>
-<p style="color:#f0dfd8">Pick any track by an artist whose sound you want. VocalForge measures how that vocal was tuned, brightened, spaced, doubled and compressed, then applies a similar treatment to <em>your</em> recording.</p>
+<p style="color:#f0dfd8">Pick any track by an artist whose sound you want. Tunedzy measures how that vocal was tuned, brightened, spaced, doubled and compressed, then applies a similar treatment to <em>your</em> recording.</p>
 <ul><li>Learns the autotune style: natural, modern or hard-snapped</li><li>Matches tone, reverb size, width and how tight the flow sits on the beat</li><li>Keeps your voice yours: it changes the processing, not who you are</li><li>Saves each style so you can reuse it on the next song</li></ul>
 <p class="note">Not affiliated with or endorsed by any artist. Artist names are used only to describe styles of processing.</p></div></div></div></section>
 <section><div class="wrap"><div class="band">{img('mic-wide', alt='')}<div class="in"><p class="eyebrow">Private by design</p><h2>Your unreleased songs <span class="grad">never leave your PC.</span></h2>
-<p>VocalForge processes everything locally. No uploads, no per-minute limits, no watermarks. The only internet use is the license check and the optional AI add-on download. The free tools on this site work the same way, inside your browser.</p></div></div></div></section>
+<p>Tunedzy processes everything locally. No uploads, no per-minute limits, no watermarks. The only internet use is the license check and the optional AI add-on download. The free tools on this site work the same way, inside your browser.</p></div></div></div></section>
 <section class="alt">{shapes('bars')}<div class="wrap"><p class="eyebrow c">How it works</p><h2 class="c">Three steps</h2><div class="steps" style="margin-top:26px">{''.join(f'<div class="card {c}"><h3>{n}</h3><p>{d}</p></div>' for (n, d), c in zip(steps, ('cA', 'cP', 'cV')))}</div></div></section>
 <section><div class="wrap"><p class="eyebrow c">Who it&rsquo;s for</p><h2 class="c">Made for people who record in real rooms</h2><div class="pcards" style="margin-top:26px">{''.join(f'<div class="pcard">{img(k)}<div><h3>{n}</h3><p>{d}</p></div></div>' for k, n, d in who)}</div>
-<p class="note" style="margin-top:20px">Honest limits: VocalForge is a standalone app, not a DAW replacement and not a VST/AU plugin (yet; the DAW pack hands your stems to any DAW), and it is Windows-only for now. Using it as a microphone in other apps needs a free virtual cable such as VB-Cable. It can improve a rough recording a lot, but it can&rsquo;t turn a vocal buried in echo or heavy distortion into a studio take. Re-recording closer to the mic is always the best fix.</p></div></section>
-<section id="guides" class="guides alt">{shapes('soft')}<div class="wrap"><p class="eyebrow c">Free guides</p><h2 class="c">Get better vocals today</h2><p class="sub2">Practical, and useful with or without VocalForge.</p><div class="related">{guides}</div></div></section>
+<p class="note" style="margin-top:20px">Honest limits: Tunedzy is a standalone app, not a DAW replacement and not a VST/AU plugin (yet; the DAW pack hands your stems to any DAW), and it is Windows-only for now. Using it as a microphone in other apps needs a free virtual cable such as VB-Cable. It can improve a rough recording a lot, but it can&rsquo;t turn a vocal buried in echo or heavy distortion into a studio take. Re-recording closer to the mic is always the best fix.</p></div></section>
+<section id="guides" class="guides alt">{shapes('soft')}<div class="wrap"><p class="eyebrow c">Free guides</p><h2 class="c">Get better vocals today</h2><p class="sub2">Practical, and useful with or without Tunedzy.</p><div class="related">{guides}</div></div></section>
 <section id="pricing">{shapes('hero')}<div class="wrap"><p class="eyebrow c">Pricing</p><h2 class="c">Free to try. <span class="grad">$29 once</span> when you love it.</h2><p class="sub2">No subscription, no per-export fees, no watermark.</p>
 <div class="pricegrid"><div class="plan"><span class="tag">Start here</span><div class="pr">Free<small> for 7 days</small></div><ul><li>Everything unlocked</li><li>Your full project, your own music</li><li>No card needed to download</li></ul><div class="cta">{price_cta}</div></div>
 <div class="plan hot"><span class="tag">Lifetime license</span><div class="pr">$29<small> one-time</small></div><ul><li>Use on up to 2 of your PCs</li><li>Updates for this version</li><li>Your audio never leaves your PC</li><li>30-day refund</li></ul><div class="cta">{buy2 or '<span class="small">Opens at launch</span>'}</div></div></div></div></section>
@@ -411,30 +411,30 @@ def hub():
 <p>Questions, bugs, feature ideas or a Mac request: send a note and we will get back to you. Requests decide what we build next.</p><div class="cta"><a class="btn primary" href="{e(C.HELP_MAIL)}">Email support</a><a class="btn" href="{e(C.MAC_MAIL)}">Request a Mac version</a></div></div>
 <div style="position:relative"><div class="mailbig"><a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a></div><p class="small" style="margin-top:8px">Include what you were doing and a screenshot if you can.</p></div></div></div></section>
 <section id="faq"><div class="narrow"><h2 class="c">Questions</h2>{faq_html(C.HUB_FAQ)}</div></section></main>'''
-    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('VocalForge', C.BASE)])
-    title = 'VocalForge: Free-to-Try Vocal Workstation for Windows'
-    desc = 'All-in-one vocal workstation: clean, tune, fit to your beat, match an artist and master rough vocals, offline on Windows. Free 7-day trial, then $29 once.'
+    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('Tunedzy', C.BASE)])
+    title = 'Tunedzy: Autotune, Vocal Cleanup and Vocal Remover for Windows (No DAW)'
+    desc = 'Tune, clean and polish your vocals for music and streams. Autotune, vocal cleanup and vocal remover in one private, offline Windows app. No DAW needed. Free 7-day trial, then $29 once.'
     return layout(title=title, desc=desc, path=C.BASE, body=body,
-                  lds=[software_ld(), faq_ld(C.HUB_FAQ), crumbs_ld, webapp_ld('', 'VocalForge free music tools', 'Free BPM, key, chord and loudness finder that runs in your browser.')], scripts=tool_scripts())
+                  lds=[software_ld(), faq_ld(C.HUB_FAQ), crumbs_ld, webapp_ld('', 'Tunedzy free music tools', 'Free BPM, key, chord and loudness finder that runs in your browser.')], scripts=tool_scripts())
 
 
 def tools_hub():
     t = T.HUB
-    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('VocalForge', C.BASE), ('Free tools', f'{C.BASE}/tools')])
+    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('Tunedzy', C.BASE), ('Free tools', f'{C.BASE}/tools')])
     cards = ''.join(f'<a class="card {TOOL_COLOR[T.TOOLS[s]["color"]]}" href="{C.BASE}/tools/{s}">{ico(T.TOOLS[s]["icon"], TOOL_COLOR[T.TOOLS[s]["color"]])}<h3>{e(T.TOOLS[s]["short"])}</h3><p>{e(T.TOOLS[s]["blurb"])}</p></a>' for s in T.TOOL_ORDER)
     body = f'''<main><div class="hero" style="padding:0 0 30px">{shapes('hero')}<div class="wrap">{crumbs_html}<div class="toolhead"><h1>Free music tools that <em class="grad">run in your browser</em></h1><p class="lead">{t['lead']}</p></div>
 <div style="max-width:900px">{tool_widget('all')}</div></div></div>
 <section style="padding-top:20px">{shapes('soft')}<div class="wrap"><h2 class="c">Pick a tool</h2><p class="sub2">Each one is also available on its own page, with tips and a guide.</p><div class="tcards">{cards}</div></div></section>
 <section class="alt"><div class="narrow"><h2>What these tools are for</h2><p>When you record a vocal over a beat, the first questions are always the same: how fast is the beat, what key is it in, what chords are under it, and is my vocal clean and loud enough? These tools answer them in seconds so you can set your project tempo, your autotune scale and your levels before you start mixing.</p>
-<p>They are the same kinds of checks <a href="{C.BASE}">VocalForge</a> runs automatically before it cleans, tunes and masters a rough vocal for you, and the app is free to try for 7 days.</p></div></section>
+<p>They are the same kinds of checks <a href="{C.BASE}">Tunedzy</a> runs automatically before it cleans, tunes and masters a rough vocal for you, and the app is free to try for 7 days.</p></div></section>
 <section><div class="narrow"><h2>Questions</h2>{faq_html(t['faq'])}</div></section></main>'''
     return layout(title=t['title'], desc=t['desc'], path=f'{C.BASE}/tools', body=body,
-                  lds=[webapp_ld('', 'VocalForge free music tools', t['desc']), faq_ld(t['faq']), crumbs_ld], scripts=tool_scripts())
+                  lds=[webapp_ld('', 'Tunedzy free music tools', t['desc']), faq_ld(t['faq']), crumbs_ld], scripts=tool_scripts())
 
 
 def tool_page(slug):
     t = T.TOOLS[slug]
-    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('VocalForge', C.BASE), ('Free tools', f'{C.BASE}/tools'), (t['short'], f'{C.BASE}/tools/{slug}')])
+    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('Tunedzy', C.BASE), ('Free tools', f'{C.BASE}/tools'), (t['short'], f'{C.BASE}/tools/{slug}')])
     how = ''.join(f'<div>{h}</div>' for h in t['how'])
     rel = ''.join(f'<a class="card {TOOL_COLOR[T.TOOLS[r]["color"]]}" href="{C.BASE}/tools/{r}" style="padding:18px">{ico(T.TOOLS[r]["icon"], TOOL_COLOR[T.TOOLS[r]["color"]])}<h3>{e(T.TOOLS[r]["short"])}</h3><p>{e(T.TOOLS[r]["blurb"])}</p></a>' for r in t['related'])
     gl = ''.join(f'<a href="{C.BASE}/{g}"><b>{e(C.GUIDES[g]["h1"])}</b></a>' for g in t['guide_links'])
@@ -448,11 +448,11 @@ def tool_page(slug):
     else:
         widget, scripts = tool_widget(t['focus'], tap=t['tap']), tool_scripts()
     action = (f'<a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download the free trial</a>' if LAUNCHED
-              else f'<a class="btn primary" href="{C.BASE}">See VocalForge</a>')
+              else f'<a class="btn primary" href="{C.BASE}">See Tunedzy</a>')
     body = f'''<main><div class="hero" style="padding:0 0 30px">{shapes('soft')}<div class="wrap">{crumbs_html}<div class="toolhead"><h1>{t['h1']}</h1><p class="lead">{t['lead']}</p></div>
 <div style="max-width:900px">{widget}</div><div class="howto" style="max-width:900px">{how}</div></div></div>
 <div class="narrow"><article>{t['body']}
-<div class="vf"><h2>Like this? Let VocalForge do the fixing.</h2><p>These tools tell you what is going on. VocalForge acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Free to try for 7 days, then $29 once.</p><div class="cta">{action}<a class="btn" href="{e(C.HELP_MAIL)}">Ask us a question</a></div></div>
+<div class="vf"><h2>Like this? Let Tunedzy do the fixing.</h2><p>These tools tell you what is going on. Tunedzy acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Free to try for 7 days, then $29 once.</p><div class="cta">{action}<a class="btn" href="{e(C.HELP_MAIL)}">Ask us a question</a></div></div>
 <h2>Frequently asked questions</h2>{faq_html(t['faq'])}
 {articles}<h2>More free tools</h2><div class="tcards">{rel}</div>
 <h2>Related guides</h2><div class="related">{gl}</div></article></div></main>'''
@@ -462,7 +462,7 @@ def tool_page(slug):
 
 def guide(slug):
     g = C.GUIDES[slug]
-    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('VocalForge', C.BASE), (g['h1'], f'{C.BASE}/{slug}')])
+    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('Tunedzy', C.BASE), (g['h1'], f'{C.BASE}/{slug}')])
     rel = ''.join(f'<a class="th" href="{C.BASE}/{r}">{img(THUMB.get(GUIDE_PHOTO[r], GUIDE_PHOTO[r]), alt="")}<span><b>{e(C.GUIDES[r]["h1"])}</b></span></a>' for r in g['related'])
     tools = ''.join(f'<a href="{C.BASE}/tools/{s}"><b>{e(T.TOOLS[s]["short"])}</b><br><span class="small">{e(T.TOOLS[s]["blurb"])}</span></a>' for s in GUIDE_TOOLS[slug])
     pk = GUIDE_PHOTO[slug]
@@ -471,7 +471,7 @@ def guide(slug):
     ai = g.get('ai')
     ai_html = f'<div class="aibox"><h2>{ai[0]}</h2>{ai[1]}</div>' if ai else ''
     action = (f'<p><a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download the free trial</a></p>' if LAUNCHED
-              else f'<p><a class="btn primary" href="{C.BASE}">See what VocalForge does</a></p>')
+              else f'<p><a class="btn primary" href="{C.BASE}">See what Tunedzy does</a></p>')
     article_ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': g['h1'], 'description': g['desc'], 'datePublished': C.DATE, 'dateModified': C.DATE,
                   'image': C.SITE + C.BASE + '/og.png', 'mainEntityOfPage': C.SITE + f'{C.BASE}/{slug}',
                   'author': {'@type': 'Organization', 'name': 'Fuidzy'}, 'publisher': {'@type': 'Organization', 'name': 'Fuidzy', 'url': C.SITE}}
@@ -500,12 +500,12 @@ def blog_page(b):
     cl = B.CLUSTERS[b['cluster']]
     tool = T.TOOLS[cl['tool']]
     path = f"{C.BASE}/blog/{b['slug']}"
-    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('VocalForge', C.BASE), ('Blog', f'{C.BASE}/blog'), (b['h1'], path)])
+    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('Tunedzy', C.BASE), ('Blog', f'{C.BASE}/blog'), (b['h1'], path)])
     rel = ''.join(f'<a href="{C.BASE}/blog/{r["slug"]}"><b>{e(r["h1"])}</b><br><span class="small">{e(r["desc"][:110])}&hellip;</span></a>' for r in blog_related(b))
     article_ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': b['h1'], 'description': b['desc'], 'datePublished': C.DATE, 'dateModified': C.DATE,
                   'image': C.SITE + C.BASE + '/og.png', 'mainEntityOfPage': C.SITE + path, 'keywords': b['kw'],
                   'author': {'@type': 'Organization', 'name': 'Fuidzy'}, 'publisher': {'@type': 'Organization', 'name': 'Fuidzy', 'url': C.SITE}}
-    action = (f'<a class="btn" href="{e(DOWNLOAD)}" rel="noopener">Get the VocalForge app</a>' if LAUNCHED else f'<a class="btn" href="{C.BASE}">See VocalForge</a>')
+    action = (f'<a class="btn" href="{e(DOWNLOAD)}" rel="noopener">Get the Tunedzy app</a>' if LAUNCHED else f'<a class="btn" href="{C.BASE}">See Tunedzy</a>')
     body = f'''<main><div class="hero" style="padding:0 0 10px">{shapes('soft')}<div class="narrow"><article>{crumbs_html}<h1>{b['h1']}</h1><p class="note">Updated October 2026 &middot; {e(cl['label'])}</p>
 <div class="tldr"><b>Quick answer</b><p style="margin:6px 0 10px">{b['answer']}</p></div></article></div></div>
 <div class="narrow"><article>{b['body']}
@@ -516,7 +516,7 @@ def blog_page(b):
 
 
 def blog_index():
-    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('VocalForge', C.BASE), ('Blog', f'{C.BASE}/blog')])
+    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('Tunedzy', C.BASE), ('Blog', f'{C.BASE}/blog')])
     secs = ''
     for key, cl in B.CLUSTERS.items():
         items = [x for x in B.BLOGS if x['cluster'] == key]
@@ -535,12 +535,12 @@ def policy(slug):
 
 
 def thanks():
-    body = f'''<main><div class="narrow"><article><h1>Thank you for buying VocalForge</h1>
+    body = f'''<main><div class="narrow"><article><h1>Thank you for buying Tunedzy</h1>
 <p class="lead">Your license key is on its way to the email you used at checkout. It usually arrives within a minute.</p>
-<h2>Get started</h2><ol><li>Install VocalForge for Windows (the download link is in your receipt email and on <a href="/vocalforge">the VocalForge page</a>).</li>
-<li>Open VocalForge and click the <strong>License</strong> button at the top.</li><li>Paste your key and press <strong>Activate</strong>. One key works on up to 2 of your PCs.</li></ol>
+<h2>Get started</h2><ol><li>Install Tunedzy for Windows (the download link is in your receipt email and on <a href="/vocalforge">the Tunedzy page</a>).</li>
+<li>Open Tunedzy and click the <strong>License</strong> button at the top.</li><li>Paste your key and press <strong>Activate</strong>. One key works on up to 2 of your PCs.</li></ol>
 <p>Didn&rsquo;t get the email? Check spam, then write to <a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a>.</p></article></div></main>'''
-    return layout(title='Thanks for buying VocalForge', desc='Your VocalForge license key and next steps.', path=f'{C.BASE}/thanks', body=body, lds=[], robots='noindex,nofollow')
+    return layout(title='Thanks for buying Tunedzy', desc='Your Tunedzy license key and next steps.', path=f'{C.BASE}/thanks', body=body, lds=[], robots='noindex,nofollow')
 
 
 # ---------------------------------------------------------------------------------------------------- write everything
@@ -566,7 +566,7 @@ def og():
     small = ImageFont.truetype('C:/Windows/Fonts/segoeuib.ttf', 30)
     icon = Image.open(ROOT / 'assets' / 'icon.png').convert('RGBA').resize((92, 92))
     img_.paste(icon, (70, 62), icon)
-    d.text((180, 78), 'VocalForge 2.0', font=small, fill=(243, 233, 226))
+    d.text((180, 78), 'Tunedzy 2.0', font=small, fill=(243, 233, 226))
     d.text((70, 200), 'Rough vocal in.', font=bold, fill=(243, 233, 226))
     d.text((70, 292), 'Finished track out.', font=bold, fill=(255, 150, 120))
     d.text((70, 430), 'Vocal workstation for Windows.', font=reg, fill=(212, 190, 186))

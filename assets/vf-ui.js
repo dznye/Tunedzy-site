@@ -1,4 +1,4 @@
-/* VocalForge free tools: page glue. Decodes the dropped file in the browser, analyses it in a Web Worker, renders the cards.
+/* Tunedzy free tools: page glue. Decodes the dropped file in the browser, analyses it in a Web Worker, renders the cards.
    Nothing is uploaded: there is no network code in this file. */
 (function () {
   'use strict';
@@ -131,12 +131,12 @@
     if (r.chords && r.chords.loop) summary += ' | ' + r.chords.loop;
     if (r.loudness && isFinite(r.loudness.lufs)) summary += ' | ' + f1(r.loudness.lufs) + ' LUFS';
     var cta = (r.check && (r.check.clipEvents > 0 || r.check.noiseFloorDb > -55 || r.check.spec.rumble > 0.05))
-      ? '<h3>Want that vocal fixed in one pass?</h3><p>VocalForge removes noise, rumble, clicks and harsh S sounds, repairs clipping, tunes to the key above and masters the result. Free 7-day trial.</p>'
-      : '<h3>Make the vocal match this track</h3><p>VocalForge tunes your vocal to this key and tempo, sets its level against the beat and masters the result. Free 7-day trial.</p>';
+      ? '<h3>Want that vocal fixed in one pass?</h3><p>Tunedzy removes noise, rumble, clicks and harsh S sounds, repairs clipping, tunes to the key above and masters the result. Free 7-day trial.</p>'
+      : '<h3>Make the vocal match this track</h3><p>Tunedzy tunes your vocal to this key and tempo, sets its level against the beat and masters the result. Free 7-day trial.</p>';
     out.hidden = false;
     out.innerHTML = '<div class="resbar"><div><b>' + esc(r.name) + '</b><span>' + mmss(r.seconds) + ' &middot; ' + Math.round(r.sampleRate / 100) / 10 + ' kHz &middot; analysed on your device</span></div>' +
       '<button class="btn small" id="copy" type="button">Copy results</button></div><div class="tgrid">' + order.map(function (id) { return make[id](r); }).join('') + '</div>' +
-      '<div class="ctabox">' + cta + '<div class="cta"><a class="btn primary" href="' + BASE + '#try">Try VocalForge free</a><a class="btn ghost" href="mailto:' + supportMail + '?subject=VocalForge%20question">Ask us anything</a></div></div>';
+      '<div class="ctabox">' + cta + '<div class="cta"><a class="btn primary" href="' + BASE + '#try">Try Tunedzy free</a><a class="btn ghost" href="mailto:' + supportMail + '?subject=Tunedzy%20question">Ask us anything</a></div></div>';
     var cp = $('#copy'); if (cp) cp.onclick = function () { try { navigator.clipboard.writeText(summary); cp.textContent = 'Copied'; setTimeout(function () { cp.textContent = 'Copy results'; }, 1600); } catch (e) { cp.textContent = summary; } };
     out.onclick = function (e) {
       var b = e.target.closest ? e.target.closest('[data-bpm]') : null; if (!b) return;

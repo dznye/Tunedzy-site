@@ -1,4 +1,4 @@
-/* VocalForge free tools: live noise-cancelling mic pipeline (browser only, nothing uploaded).
+/* Tunedzy free tools: live noise-cancelling mic pipeline (browser only, nothing uploaded).
    mic -> noise suppression (learns your room) -> optional voice polish -> chosen output device (e.g. a virtual cable for OBS/Discord/Zoom) + recorder. */
 (function (root) {
   'use strict';
@@ -61,7 +61,7 @@
       if (m.learned) { self.profile = m.profile; self.onLearned(m); } else self.onMeter(m);
     };
     input.connect(this.dn);
-    // optional autotune (the same shifter as the VocalForge live monitor); off = straight through
+    // optional autotune (the same shifter as the Tunedzy live monitor); off = straight through
     this.tune = new AudioWorkletNode(c, 'live-tune', { outputChannelCount: [1] });
     this.tune.port.onmessage = function (e) { self.onPitch(e.data); };
     this.tuned = c.createGain(); this.dry = c.createGain(); this.pre = c.createGain();

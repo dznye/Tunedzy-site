@@ -1,4 +1,4 @@
-# VocalForge SEO study (US, October 2026)
+# Tunedzy SEO study (US, October 2026)
 
 **Honest caveat:** real Google search volumes need Keyword Planner / Ahrefs / Semrush (logged-in tools), so the keyword
 priorities below come from *who ranks and what the results look like*, not from volume numbers. Section 6 is how to add the numbers.
@@ -24,7 +24,7 @@ Positioning line used on the page: *"Make rough vocals sound finished, without a
 
 | URL | Primary query | Search intent | Funnel |
 |---|---|---|---|
-| `/vocalforge` | vocal cleanup / autotune / mastering software, VocalForge | commercial + brand | convert |
+| `/vocalforge` | vocal cleanup / autotune / mastering software, Tunedzy | commercial + brand | convert |
 | `/vocalforge/fix-vocals-recorded-on-phone` | make phone vocals sound professional | informational, problem-aware | top |
 | `/vocalforge/remove-echo-from-vocal-recording` | remove echo from vocal recording | informational, fix-it-now | top/mid |
 | `/vocalforge/autotune-for-rap-vocals` | autotune for rap vocals, free online autotune | informational + tool-seeking | mid |

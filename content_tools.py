@@ -186,10 +186,10 @@ TOOLS['vocal-checker'] = dict(
     short='Vocal Checker', blurb='Spot clipping, noise, rumble and level problems.', icon='check', color='blue',
     focus='check', tap=False, kw='vocal quality checker',
     lead=('Drop in a vocal recording and get a quick health check: clipping, background noise, low rumble and level problems, each with a plain-English fix. '
-          'It is the same kind of analysis VocalForge runs before it cleans a take, and it runs in your browser so your recording stays private.'),
+          'It is the same kind of analysis Tunedzy runs before it cleans a take, and it runs in your browser so your recording stays private.'),
     how=['Drop in your vocal take (an acapella, voice memo or phone recording works best).',
          'Read the verdict and the five checks. Green is fine, amber is worth a look, red is worth fixing.',
-         'Fix what is flagged (the tips below), or let VocalForge fix it for you in one pass.'],
+         'Fix what is flagged (the tips below), or let Tunedzy fix it for you in one pass.'],
     body='''
 <h2>What the checker looks for</h2>
 <table><tr><th>Check</th><th>What it means</th><th>How to fix it</th></tr>
@@ -210,7 +210,7 @@ TOOLS['vocal-checker'] = dict(
 <p>The full walkthrough is in <a href="/vocalforge/fix-vocals-recorded-on-phone">how to make phone vocals sound professional</a>, and if the recording is roomy, see <a href="/vocalforge/remove-echo-from-vocal-recording">how to remove echo from a vocal</a>.</p>
 ''',
     faq=[('Is this vocal checker AI?',
-          'No. It uses standard audio measurements (level, noise floor, spectrum, clipping detection), which is why it is fast and private. VocalForge adds automatic analysis and an optional AI model for separating vocals from songs.'),
+          'No. It uses standard audio measurements (level, noise floor, spectrum, clipping detection), which is why it is fast and private. Tunedzy adds automatic analysis and an optional AI model for separating vocals from songs.'),
          ('Why does my clean take show a warning?',
           'Thresholds are deliberately cautious. Treat amber as &ldquo;take a look&rdquo;. If the recording sounds good to you, trust your ears.'),
          ('Can it check a full song?',
@@ -228,7 +228,7 @@ HUB = dict(
           'No sign-up, no upload: your audio is analysed on your own device.'),
     faq=[('Are these tools really free?', 'Yes. No sign-up, no limits and no watermarks. They are free forever.'),
          ('Do you keep my audio?', 'No. Files are decoded and analysed by your own browser. Nothing is sent to our servers.'),
-         ('Why is it free?', 'These are the same kinds of checks VocalForge runs before it fixes a vocal. If they are useful, the Windows app does the fixing for you, with a free 7-day trial.'),
+         ('Why is it free?', 'These are the same kinds of checks Tunedzy runs before it fixes a vocal. If they are useful, the Windows app does the fixing for you, with a free 7-day trial.'),
          ('Which browsers work?', 'Current Chrome, Edge, Firefox and Safari. Very old browsers may not support the audio features.')],
 )
 
@@ -268,7 +268,7 @@ AI_GUIDE = dict(
 <li><strong>Performance.</strong> No tool fixes a flat note delivered with no confidence. Tuning helps, a better take helps more.</li>
 </ul>
 <h2>Privacy: where does your audio go?</h2>
-<p>Many free AI vocal tools run on a server, so your recording is uploaded. That is fine for a throwaway test and risky for an unreleased song. Tools that run on your own PC, like VocalForge, keep the audio local. Always check the privacy page of any online tool before uploading something you care about.</p>
+<p>Many free AI vocal tools run on a server, so your recording is uploaded. That is fine for a throwaway test and risky for an unreleased song. Tools that run on your own PC, like Tunedzy, keep the audio local. Always check the privacy page of any online tool before uploading something you care about.</p>
 <h2>A sensible workflow</h2>
 <ol>
 <li>Run the free <a href="/vocalforge/tools/vocal-checker">vocal checker</a> to see what is actually wrong.</li>
@@ -279,7 +279,7 @@ AI_GUIDE = dict(
 </ol>
 ''',
     vf_title='AI-assisted cleanup that stays on your PC',
-    vf='''<p>VocalForge analyses your recording, picks the settings, cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style if you give it a reference, and masters the result. It runs on your own PC, and the optional AI model handles vocal separation. Free 7-day trial.</p>''',
+    vf='''<p>Tunedzy analyses your recording, picks the settings, cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style if you give it a reference, and masters the result. It runs on your own PC, and the optional AI model handles vocal separation. Free 7-day trial.</p>''',
     faq=[('Is AI vocal cleanup better than manual cleanup?',
           'It is faster and more consistent for routine problems, and a skilled engineer still wins on taste and difficult recordings. Many people use the automatic result as a first draft.'),
          ('Can AI make a bad vocal sound studio quality?',
@@ -321,7 +321,7 @@ TOOLS['live-autotune'] = dict(
 <li><strong>Keep the dry take if it matters.</strong> This tool records the autotuned sound. For a final track, record clean and tune it afterwards with better settings.</li>
 </ul>
 <h2>Browser versus a full studio tool</h2>
-<p>This is a fast, free, real-time effect, great for practising, writing and trying ideas. The VocalForge desktop app does the same job offline with higher quality: it analyses the whole take, tunes it to the key of your beat, cleans noise and echo, fits the timing and masters the result.</p>
+<p>This is a fast, free, real-time effect, great for practising, writing and trying ideas. The Tunedzy desktop app does the same job offline with higher quality: it analyses the whole take, tunes it to the key of your beat, cleans noise and echo, fits the timing and masters the result.</p>
 ''',
     faq=[('Is the live autotune free?', 'Yes. No sign-up, no time limit and no watermark.'),
          ('Does it upload my voice?', 'No. The microphone is processed inside your browser and recordings stay on your device until you download them.'),
@@ -347,7 +347,7 @@ TOOLS['karaoke-autotune'] = dict(
 <h2>How online karaoke with autotune works</h2>
 <p>Your backing track plays through the browser and your microphone goes through live autotune that is tuned to the track&rsquo;s key. You hear both in your headphones. When you record, you get two files: your autotuned voice on its own, and your voice mixed with the track, lined up to compensate for the audio delay of your device.</p>
 <h2>Using a full song instead of an instrumental</h2>
-<p>If you only have the original song, tick <strong>Reduce original vocals</strong>. It removes whatever is mixed in the centre of the stereo picture, which is where the lead vocal usually sits. This works on many songs but not all, and it also takes some bass and snare with it, so it is a quick karaoke trick, not a studio separation. For a clean vocal-free version, VocalForge uses an AI separation model on your own PC.</p>
+<p>If you only have the original song, tick <strong>Reduce original vocals</strong>. It removes whatever is mixed in the centre of the stereo picture, which is where the lead vocal usually sits. This works on many songs but not all, and it also takes some bass and snare with it, so it is a quick karaoke trick, not a studio separation. For a clean vocal-free version, Tunedzy uses an AI separation model on your own PC.</p>
 <h2>Get the best sound</h2>
 <ul>
 <li><strong>Headphones are essential.</strong> Otherwise the track leaks into your mic and the recording gets messy.</li>
@@ -358,7 +358,7 @@ TOOLS['karaoke-autotune'] = dict(
 <h2>Use music you have the right to use</h2>
 <p>Your files never leave your device, but copyright still applies to what you publish. For videos you plan to post, use your own beat, licensed instrumentals or royalty-free music.</p>
 <h2>Want a studio version of your take?</h2>
-<p>Record here for fun, then run a clean take through the <a href="/vocalforge">VocalForge</a> desktop app: it removes noise and echo, tunes to the key of your beat, fits the timing and masters the result.</p>
+<p>Record here for fun, then run a clean take through the <a href="/vocalforge">Tunedzy</a> desktop app: it removes noise and echo, tunes to the key of your beat, fits the timing and masters the result.</p>
 ''',
     faq=[('Is the karaoke free?', 'Yes. No account, no limits and no watermark.'),
          ('Are my songs or my voice uploaded?', 'No. The track, your microphone and the recordings all stay in your browser unless you download them.'),
@@ -406,7 +406,7 @@ TOOLS['clean-streaming-mic'] = dict(
 <li>Sudden sounds such as <strong>keyboard clatter</strong> and mouse clicks are only reduced, not removed.</li>
 <li>If you use it with headphones, set the output so you do not hear yourself twice.</li>
 </ul>
-<p>For recordings that must be perfect, the VocalForge desktop app also removes echo, clicks and mouth noise and masters the result.</p>
+<p>For recordings that must be perfect, the Tunedzy desktop app also removes echo, clicks and mouth noise and masters the result.</p>
 """,
     faq=[('Is the noise cancelling free?', 'Yes. No account, no time limit and no watermark.'),
          ('Does it upload my voice?', 'No. Your microphone is processed inside your browser, and nothing is sent to a server.'),
@@ -443,7 +443,7 @@ TOOLS['voice-recorder-noise-cancellation'] = dict(
 <li><strong>Use the gentlest setting that works.</strong> Heavy reduction can make a voice sound thin or watery. Tick <em>Hear original</em> to compare.</li>
 </ul>
 <h2>What it cannot do</h2>
-<p>It cannot remove other voices, music, or sudden sounds like clicks and coughs, and it cannot remove room echo. For that, the <a href="/vocalforge">VocalForge desktop app</a> adds echo reduction, click and mouth-noise repair, levelling and mastering.</p>
+<p>It cannot remove other voices, music, or sudden sounds like clicks and coughs, and it cannot remove room echo. For that, the <a href="/vocalforge">Tunedzy desktop app</a> adds echo reduction, click and mouth-noise repair, levelling and mastering.</p>
 """,
     faq=[('Is the voice recorder free?', 'Yes. No account, no limit on length, and no watermark.'),
          ('Does it upload my recording?', 'No. Recording, noise removal and downloads all happen in your browser.'),

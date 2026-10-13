@@ -1,4 +1,4 @@
-/* VocalForge free tools: noise-cancelling mic + voice recorder page glue (streaming and recording modes).
+/* Tunedzy free tools: noise-cancelling mic + voice recorder page glue (streaming and recording modes).
    Nothing is uploaded; there is no network code here. */
 (function () {
   'use strict';
@@ -79,7 +79,7 @@
     function row(label, blob, name) { var url = URL.createObjectURL(blob); return '<div class="takerow"><span>' + label + '</span><audio controls preload="metadata" src="' + url + '"></audio><a class="btn small" download="' + name + '" href="' + url + '">Download WAV</a></div>'; }
     if (res.clean) html += row('Clean (noise removed)', res.clean, 'vocalforge-take' + st.takes + '-clean.wav');
     if (res.raw) html += row('Original (untouched)', res.raw, 'vocalforge-take' + st.takes + '-original.wav');
-    html += '<p class="small mute">Want it studio-ready? <a href="' + BASE + '#pricing">VocalForge</a> also fixes echo, tunes, levels and masters a take like this on your PC.</p></div>';
+    html += '<p class="small mute">Want it studio-ready? <a href="' + BASE + '#pricing">Tunedzy</a> also fixes echo, tunes, levels and masters a take like this on your PC.</p></div>';
     $('#takes').insertAdjacentHTML('afterbegin', html);
   }
   function recToggle() {
