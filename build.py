@@ -198,13 +198,14 @@ def layout(*, title, desc, path, body, lds, robots='index,follow', og_type='webs
 <meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{e(url)}"><meta property="og:image" content="{C.SITE}{C.BASE}/og.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(title)}"><meta name="twitter:description" content="{e(desc)}"><meta name="twitter:image" content="{C.SITE}{C.BASE}/og.png">
 <style>{CSS}</style>{ld}</head><body>
-<header class="top"><div class="wrap"><a class="logo" href="{C.BASE}"><img src="{C.BASE}/favicon.png" alt="" width="30" height="30"><span>Vocal<b>Forge</b></span></a>
+<header class="top"><div class="wrap"><a class="logo" href="{C.BASE}"><img src="{C.BASE}/favicon.png" alt="" width="30" height="30"><span>Tuned<b>zy</b></span></a>
 <nav class="main" aria-label="Main">{nav}</nav><a class="hbtn" href="{C.BASE}#pricing">{'Download free' if LAUNCHED else 'Free to try'}</a></div></header>
 {body}
 <footer><div class="wrap"><div class="cols">
 <div><h4>Tunedzy</h4><a href="{C.BASE}">Overview</a><br><a href="{C.BASE}#features">Features</a><br><a href="{C.BASE}#pricing">Pricing</a><br><a href="{C.BASE}#faq">FAQ</a></div>
 <div><h4>Free tools</h4>{tools_f}</div>
 <div><h4>Guides</h4>{guides_f}<a href="{C.BASE}/blog">All audio guides</a></div>
+<div><h4>More apps by Fuidzy</h4><a href="https://fuidzy.com/">Fuidzy planner</a><br><a href="https://fuidzy.com/deep-clean-pc-or-mac-storage">SpaceWise: clean up PC storage</a><br><a href="https://tradzy.net/" rel="noopener">Tradzy</a><br><a href="https://dznye.github.io/Androidzy/" rel="noopener">Androidzy</a></div>
 <div><h4>Support</h4><a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a><br><a href="{e(C.MAC_MAIL)}">Request a Mac version</a><br><a href="{C.BASE}/privacy">Privacy</a><br><a href="{C.BASE}/terms">Terms</a><br><a href="{C.BASE}/refund-policy">Refunds</a></div>
 </div><p class="credit" style="margin-top:26px">Tunedzy is a Fuidzy product. It is not affiliated with or endorsed by any artist or plugin company mentioned on this site.</p>
 <p class="credit">Photos: {', '.join(f'<a href="{u}" rel="noopener">{n} / {site}</a>' for n, site, u in CREDITS)}. Free to use under the Pexels and Unsplash licenses.</p></div></footer>{scripts}</body></html>'''
