@@ -8,7 +8,7 @@ SITE = 'https://fuidzy.com'
 BASE = '/vocalforge'
 PRODUCT_ID = 'pdt_0NpUhQriM4NqB6qcQZp3d'
 BUY_URL = f'https://checkout.dodopayments.com/buy/{PRODUCT_ID}?quantity=1&redirect_url=https%3A%2F%2Ffuidzy.com%2Fvocalforge%2Fthanks'
-DATE = '2026-10-11'
+DATE = '2026-10-13'
 SUPPORT_EMAIL = 'fuidzy@outlook.com'
 MAC_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=VocalForge%20for%20Mac&body=Hi%2C%20I%27d%20like%20a%20Mac%20version%20of%20VocalForge.'
 HELP_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=VocalForge%20support'
@@ -23,10 +23,10 @@ HUB_FAQ = [
      'The tools on this site (BPM finder, key finder, chord finder, LUFS meter and vocal checker) are free forever and run in your browser.'),
     ('Is VocalForge a plugin, a DAW or a standalone app?',
      'It is a standalone vocal workstation: the whole vocal chain (clean, tune, fit to the beat, style, mix and master) in one window, with live sliders and a painted-sections timeline. '
-     'It exports 24-bit WAV or FLAC that you can drop into any DAW. It is not a DAW replacement and it is not a VST/AU plugin yet; it is the finishing station before you post.'),
+     'It exports 24-bit WAV, FLAC or MP3, and a DAW pack with every stem in sync plus tempo, key and a song map, so you can keep working in FL Studio, Ableton, Logic, Reaper or Pro Tools. It is not a DAW replacement and not a VST/AU plugin yet.'),
     ('Does it need an internet connection?',
      'Your audio is processed on your own PC, so your unreleased songs are not uploaded anywhere. The app checks your license online and '
-     'works offline for up to 14 days after a successful check. The optional AI vocal-separation add-on is a one-time download.'),
+     'keeps working for up to 60 days without internet after a successful check. The optional AI vocal-separation add-on is a one-time download.'),
     ('What happens when the free trial ends?',
      'You can still open projects and listen. Processing and exporting need a license key.'),
     ('How many computers can I use one license on?',
@@ -35,7 +35,7 @@ HUB_FAQ = [
      'No. Cleaning, tuning, mixing and mastering run on a normal Windows 10 or 11 PC with 8 GB of RAM or more. A recent NVIDIA graphics card only makes '
      'the optional AI vocal-separation step much faster; without one it still works, just slower.'),
     ('What file types can I use?',
-     'WAV, FLAC, MP3 and OGG work out of the box. Exports are 24-bit WAV or FLAC. M4A and AAC files work if ffmpeg is installed on your PC.'),
+     'WAV, FLAC, MP3 and OGG work out of the box. Exports are 24-bit WAV or FLAC, or MP3 320 kbps for quick sharing. M4A and AAC files work if ffmpeg is installed on your PC.'),
     ('What if my recording is really bad?',
      'VocalForge can repair a lot (noise, clicks, mic pops, harsh S sounds, clipped peaks, level swings, room echo), but it is not magic. A vocal buried in '
      'reverb, heavily distorted, or recorded far from the mic will improve but not become a studio take. Re-recording closer to the mic is always the best fix.'),

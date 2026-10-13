@@ -1,7 +1,7 @@
 """Builds the static site for fuidzy.com/vocalforge into this folder (the GitHub repo root).
 
   python build.py                         pre-launch: informational CTAs, no buy button, no dead links
-  python build.py --launched --download-url https://downloads.fuidzy.com/vocalforge/VocalForge-Setup-1.0.0.exe
+  python build.py --launched --download-url https://downloads.fuidzy.com/vocalforge/VocalForge-Setup-2.0.0.exe
 
 Output layout (the Worker maps URL -> file):
   vocalforge/index.html                      https://fuidzy.com/vocalforge
@@ -351,9 +351,17 @@ def hub():
         ('mix', 'cB', 'MIX', 'Paint hooks, verses and ad-libs on the timeline. Each gets its own reverb, echo, doubles and harmony, live.'),
         ('master', 'cO', 'MASTER', 'Loudness, true peak and tone checks with a pass/fail report. Export 24-bit WAV or FLAC.'),
     ]
+    new2 = [
+        ('mic', 'cA', 'LIVE STUDIO', 'Background noise removal, a crisp filter and 9 mic characters on any mic, live. Send it to OBS, Discord or Zoom through a virtual cable.'),
+        ('karaoke', 'cP', 'VOCAL REMOVER', 'Any song in: acapella, karaoke instrumental, drums, bass and melody out, with tempo and key. AI on your own PC.'),
+        ('meter', 'cT', 'MASTERING STUDIO', 'Tone, glue, warmth, width and loudness for Spotify, Apple, YouTube or the club, compared level-matched with your reference.'),
+        ('record', 'cV', 'VOICE EFFECTS', 'Deeper, higher, robot, radio, phone and more for streams and content, plus a pitch slider.'),
+        ('upload', 'cB', 'DAW PACK', 'Every stem as 24-bit WAV, in sync, with tempo, key and a song map. Opens in FL Studio, Ableton, Logic, Reaper or Pro Tools.'),
+        ('mix', 'cO', 'PADS &amp; PRESETS', 'Four-way sound pads with saved spots, and presets you can export as files and take to any PC.'),
+    ]
     who = [('hero', 'Bedroom rappers and singers', 'Recorded on a phone or USB mic and want it to sound finished next to the beat.'),
            ('booth', 'Producers finishing demos', 'Turn a rough artist take into something you can send back or release.'),
-           ('desk', 'Anyone whose vocal feels &ldquo;off&rdquo;', 'Timing that drifts, words that sound cut, levels that jump: fixed before you post.')]
+           ('desk', 'Streamers and podcasters', 'A clean, broadcast-sounding voice live, and podcast-ready files at the right loudness.')]
     steps = [('Drop in your files', 'Your recording, your beat or song, and optionally a song by an artist whose sound you want.'),
              ('Press Forge it', 'It cleans, tunes, fits and styles your vocal and maps the song into hooks and verses.'),
              ('Tweak and export', 'Use live sliders or painted sections, check the master, and export WAV or FLAC.')]
@@ -365,9 +373,9 @@ def hub():
     status = '' if LAUNCHED else '<p class="small" style="margin-top:14px">Windows download opens at launch. Email us and we will let you know the day it does.</p>'
     body = f'''<main>
 <div class="hero">{shapes('hero')}<div class="wrap"><div class="herogrid"><div>
-<div class="pill"><i></i>Free to try &middot; Windows &middot; Vocal workstation</div>
+<div class="pill"><i></i>New: VocalForge 2.0 &middot; Free to try &middot; Windows</div>
 <h1>Rough vocal in. <em class="grad">Finished track out.</em></h1>
-<p class="sub">The all-in-one vocal workstation for bedroom artists. Clean it, tune it, fit it to your beat, borrow an artist&rsquo;s sound and master it, in one window. No plugin hunting.</p>
+<p class="sub">The all-in-one vocal app for artists, streamers and podcasters. Make any mic sound expensive live, clean and tune your takes, remove vocals from any song, mix and master, in one window. No plugin hunting.</p>
 <div class="cta">{cta_primary()}<a class="btn" href="#try">Try the free tools</a></div>{status}
 <div class="trust"><span>7-day free trial</span><span>Then $29 once, no subscription</span><span>Runs on your PC</span></div></div>
 {rack()}</div></div></div>
@@ -377,6 +385,8 @@ def hub():
 <div class="tcards" style="margin-top:30px">{tool_cards}</div></div></section>
 <section id="features" class="alt">{shapes('bars')}<div class="wrap"><p class="eyebrow c">The vocal rack</p><h2 class="c">Your whole vocal chain. One window.</h2><p class="sub2">Everything you would chain by hand across a stack of plugins, in the right order, with live control.</p>
 <div class="grid">{''.join(f'<div class="card {c}">{ico(k, c)}<h3>{n}</h3><p>{d}</p></div>' for k, c, n, d in feats)}</div></div></section>
+<section id="new"><div class="wrap"><p class="eyebrow c">New in 2.0</p><h2 class="c">From your mic to the master. <span class="grad">One app.</span></h2><p class="sub2">The tools creators search for most, built in and running on your own PC.</p>
+<div class="grid">{''.join(f'<div class="card {c}">{ico(k, c)}<h3>{n}</h3><p>{d}</p></div>' for k, c, n, d in new2)}</div></div></section>
 <section><div class="wrap"><div class="spot"><div><p class="eyebrow">Studio-ready checks</p><h2>Know it&rsquo;s ready <span class="grad">before you post.</span></h2>
 <p style="color:#d8d5ee">Every export comes with a pass/fail report so you are not guessing: loudness, true peak, tone balance, noise, clipping and more. Fix what&rsquo;s flagged with one slider, then export 24-bit WAV or FLAC for your DAW, your distributor or your socials.</p>
 <ul><li>Works next to any DAW: export a finished vocal and drop it in</li><li>Live sliders and XY pads, with changes you hear instantly</li><li>Your original take is never overwritten</li></ul></div>
@@ -392,7 +402,7 @@ def hub():
 <p>VocalForge processes everything locally. No uploads, no per-minute limits, no watermarks. The only internet use is the license check and the optional AI add-on download. The free tools on this site work the same way, inside your browser.</p></div></div></div></section>
 <section class="alt">{shapes('bars')}<div class="wrap"><p class="eyebrow c">How it works</p><h2 class="c">Three steps</h2><div class="steps" style="margin-top:26px">{''.join(f'<div class="card {c}"><h3>{n}</h3><p>{d}</p></div>' for (n, d), c in zip(steps, ('cA', 'cP', 'cV')))}</div></div></section>
 <section><div class="wrap"><p class="eyebrow c">Who it&rsquo;s for</p><h2 class="c">Made for people who record in real rooms</h2><div class="pcards" style="margin-top:26px">{''.join(f'<div class="pcard">{img(k)}<div><h3>{n}</h3><p>{d}</p></div></div>' for k, n, d in who)}</div>
-<p class="note" style="margin-top:20px">Honest limits: VocalForge is a standalone workstation, not a DAW replacement and not a VST/AU plugin (yet), and it is Windows-only for now. It can improve a rough recording a lot, but it can&rsquo;t turn a vocal buried in echo or heavy distortion into a studio take. Re-recording closer to the mic is always the best fix.</p></div></section>
+<p class="note" style="margin-top:20px">Honest limits: VocalForge is a standalone app, not a DAW replacement and not a VST/AU plugin (yet; the DAW pack hands your stems to any DAW), and it is Windows-only for now. Using it as a microphone in other apps needs a free virtual cable such as VB-Cable. It can improve a rough recording a lot, but it can&rsquo;t turn a vocal buried in echo or heavy distortion into a studio take. Re-recording closer to the mic is always the best fix.</p></div></section>
 <section id="guides" class="guides alt">{shapes('soft')}<div class="wrap"><p class="eyebrow c">Free guides</p><h2 class="c">Get better vocals today</h2><p class="sub2">Practical, and useful with or without VocalForge.</p><div class="related">{guides}</div></div></section>
 <section id="pricing">{shapes('hero')}<div class="wrap"><p class="eyebrow c">Pricing</p><h2 class="c">Free to try. <span class="grad">$29 once</span> when you love it.</h2><p class="sub2">No subscription, no per-export fees, no watermark.</p>
 <div class="pricegrid"><div class="plan"><span class="tag">Start here</span><div class="pr">Free<small> for 7 days</small></div><ul><li>Everything unlocked</li><li>Your full project, your own music</li><li>No card needed to download</li></ul><div class="cta">{price_cta}</div></div>
