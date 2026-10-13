@@ -1,7 +1,7 @@
 """Builds the static site for fuidzy.com/tunedzy into this folder (the GitHub repo root).
 
   python build.py                         pre-launch: informational CTAs, no buy button, no dead links
-  python build.py --launched --download-url https://downloads.fuidzy.com/vocalforge/VocalForge-Setup-2.0.0.exe
+  python build.py --launched --download-url https://downloads.fuidzy.com/vocalforge/Tunedzy-Setup.exe
 
 Output layout (the Worker maps URL -> file):
   tunedzy/index.html                      https://fuidzy.com/tunedzy
@@ -353,12 +353,12 @@ def hub():
         ('master', 'cO', 'MASTER', 'Loudness, true peak and tone checks with a pass/fail report. Export 24-bit WAV or FLAC.'),
     ]
     new2 = [
-        ('mic', 'cA', 'LIVE STUDIO', 'Background noise removal, a crisp filter and 9 mic characters on any mic, live. Send it to OBS, Discord or Zoom through a virtual cable.'),
-        ('karaoke', 'cP', 'VOCAL REMOVER', 'Any song in: acapella, karaoke instrumental, drums, bass and melody out, with tempo and key. AI on your own PC.'),
-        ('meter', 'cT', 'MASTERING STUDIO', 'Tone, glue, warmth, width and loudness for Spotify, Apple, YouTube or the club, compared level-matched with your reference.'),
-        ('record', 'cV', 'VOICE EFFECTS', 'Deeper, higher, robot, radio, phone and more for streams and content, plus a pitch slider.'),
-        ('upload', 'cB', 'DAW PACK', 'Every stem as 24-bit WAV, in sync, with tempo, key and a song map. Opens in FL Studio, Ableton, Logic, Reaper or Pro Tools.'),
-        ('mix', 'cO', 'PADS &amp; PRESETS', 'Four-way sound pads with saved spots, and presets you can export as files and take to any PC.'),
+        ('mic', 'cA', 'AI NOISE CLEANUP', 'A small neural model removes fans, keyboards and hiss around your words, on top of the learned-room filter. Runs on your own PC.'),
+        ('record', 'cV', 'PROFILES FOR EVERY SITUATION', 'Streaming, gaming, calls, podcast, voice-over, radio, ASMR and singing, plus a correction for the mic you actually have.'),
+        ('upload', 'cB', 'OBS WITHOUT A CABLE', 'Add one browser source and your cleaned voice appears in the OBS mixer. Discord and Zoom still use a free virtual cable.'),
+        ('mix', 'cO', 'CONTROL IT YOUR WAY', 'Hotkeys, Stream Deck buttons and scripts, and an AI-assistant connection (MCP) that can measure, master and change your files.'),
+        ('meter', 'cT', 'EFFECTS YOU HEAR AS YOU MOVE THEM', 'Play any file through the live chain, or hear a key and speed change while you drag. Settings apply by themselves; nothing to wait for.'),
+        ('karaoke', 'cP', 'VOCAL REMOVER &amp; STEM MIXER', 'Acapella, karaoke and stems from any song, then your own mix with faders, solo and mute. Quick edit trims, cuts and fades with a spectrogram.'),
     ]
     who = [('hero', 'Bedroom rappers and singers', 'Recorded on a phone or USB mic and want it to sound finished next to the beat.'),
            ('booth', 'Producers finishing demos', 'Turn a rough artist take into something you can send back or release.'),
@@ -386,7 +386,7 @@ def hub():
 <div class="tcards" style="margin-top:30px">{tool_cards}</div></div></section>
 <section id="features" class="alt">{shapes('bars')}<div class="wrap"><p class="eyebrow c">The vocal rack</p><h2 class="c">Your whole vocal chain. One window.</h2><p class="sub2">Everything you would chain by hand across a stack of plugins, in the right order, with live control.</p>
 <div class="grid">{''.join(f'<div class="card {c}">{ico(k, c)}<h3>{n}</h3><p>{d}</p></div>' for k, c, n, d in feats)}</div></div></section>
-<section id="new"><div class="wrap"><p class="eyebrow c">New in 2.0</p><h2 class="c">From your mic to the master. <span class="grad">One app.</span></h2><p class="sub2">The tools creators search for most, built in and running on your own PC.</p>
+<section id="new"><div class="wrap"><p class="eyebrow c">New in 3</p><h2 class="c">From your mic to the master. <span class="grad">One app.</span></h2><p class="sub2">The tools creators search for most, built in and running on your own PC.</p>
 <div class="grid">{''.join(f'<div class="card {c}">{ico(k, c)}<h3>{n}</h3><p>{d}</p></div>' for k, c, n, d in new2)}</div></div></section>
 <section><div class="wrap"><div class="spot"><div><p class="eyebrow">Studio-ready checks</p><h2>Know it&rsquo;s ready <span class="grad">before you post.</span></h2>
 <p style="color:#f0dfd8">Every export comes with a pass/fail report so you are not guessing: loudness, true peak, tone balance, noise, clipping and more. Fix what&rsquo;s flagged with one slider, then export 24-bit WAV or FLAC for your DAW, your distributor or your socials.</p>
@@ -403,7 +403,7 @@ def hub():
 <p>Tunedzy processes everything locally. No uploads, no per-minute limits, no watermarks. The only internet use is the license check and the optional AI add-on download. The free tools on this site work the same way, inside your browser.</p></div></div></div></section>
 <section class="alt">{shapes('bars')}<div class="wrap"><p class="eyebrow c">How it works</p><h2 class="c">Three steps</h2><div class="steps" style="margin-top:26px">{''.join(f'<div class="card {c}"><h3>{n}</h3><p>{d}</p></div>' for (n, d), c in zip(steps, ('cA', 'cP', 'cV')))}</div></div></section>
 <section><div class="wrap"><p class="eyebrow c">Who it&rsquo;s for</p><h2 class="c">Made for people who record in real rooms</h2><div class="pcards" style="margin-top:26px">{''.join(f'<div class="pcard">{img(k)}<div><h3>{n}</h3><p>{d}</p></div></div>' for k, n, d in who)}</div>
-<p class="note" style="margin-top:20px">Honest limits: Tunedzy is a standalone app, not a DAW replacement and not a VST/AU plugin (yet; the DAW pack hands your stems to any DAW), and it is Windows-only for now. Using it as a microphone in other apps needs a free virtual cable such as VB-Cable. It can improve a rough recording a lot, but it can&rsquo;t turn a vocal buried in echo or heavy distortion into a studio take. Re-recording closer to the mic is always the best fix.</p></div></section>
+<p class="note" style="margin-top:20px">Honest limits: Tunedzy is a standalone app, not a DAW replacement and not a VST/AU plugin (yet; the DAW pack hands your stems to any DAW), and it is Windows-only for now. Using it as a microphone in Discord, Zoom or games needs a free virtual cable such as VB-Cable (OBS can take it directly, no cable). It can improve a rough recording a lot, but it can&rsquo;t turn a vocal buried in echo or heavy distortion into a studio take. Re-recording closer to the mic is always the best fix.</p></div></section>
 <section id="guides" class="guides alt">{shapes('soft')}<div class="wrap"><p class="eyebrow c">Free guides</p><h2 class="c">Get better vocals today</h2><p class="sub2">Practical, and useful with or without Tunedzy.</p><div class="related">{guides}</div></div></section>
 <section id="pricing">{shapes('hero')}<div class="wrap"><p class="eyebrow c">Pricing</p><h2 class="c">Free to try. <span class="grad">$29 once</span> when you love it.</h2><p class="sub2">No subscription, no per-export fees, no watermark.</p>
 <div class="pricegrid"><div class="plan"><span class="tag">Start here</span><div class="pr">Free<small> for 7 days</small></div><ul><li>Everything unlocked</li><li>Your full project, your own music</li><li>No card needed to download</li></ul><div class="cta">{price_cta}</div></div>

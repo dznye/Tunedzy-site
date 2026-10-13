@@ -25,7 +25,7 @@ HUB_FAQ = [
      'It is a standalone vocal workstation: the whole vocal chain (clean, tune, fit to the beat, style, mix and master) in one window, with live sliders and a painted-sections timeline. '
      'It exports 24-bit WAV, FLAC or MP3, and a DAW pack with every stem in sync plus tempo, key and a song map, so you can keep working in FL Studio, Ableton, Logic, Reaper or Pro Tools. It is not a DAW replacement and not a VST/AU plugin yet.'),
     ('Does it need an internet connection?',
-     'Your audio is processed on your own PC, so your unreleased songs are not uploaded anywhere. The app checks your license online and '
+     'Your audio is processed on your own PC, so your unreleased songs are not uploaded anywhere. The app checks your license online about once a week, quietly in the background, and '
      'keeps working for up to 60 days without internet after a successful check. The optional AI vocal-separation add-on is a one-time download.'),
     ('What happens when the free trial ends?',
      'You can still open projects and listen. Processing and exporting need a license key.'),
@@ -346,7 +346,7 @@ POLICIES = {
 <p>Tunedzy processes your recordings, beats and reference songs on your own PC. They are not uploaded to our servers.</p>
 <h2>What does use the internet</h2>
 <ul>
-<li><strong>License checks.</strong> The app contacts our payment provider, Dodo Payments, to activate and validate your license key. This involves your license key and your computer&rsquo;s name.</li>
+<li><strong>License checks.</strong> The app contacts our payment provider, Dodo Payments, to activate your license key (your key and your computer&rsquo;s name). About once a week it also asks a small server we run on Cloudflare, at downloads.fuidzy.com, whether the key is still valid; it sends the key, the activation ID, a one-way hash of your PC&rsquo;s identifier and the app version. That server forwards the question to Dodo and signs the answer. We do not store any of it and keep no logs of it.</li>
 <li><strong>Downloads.</strong> The installer, updates and the optional AI add-on are downloaded from our own servers.</li>
 <li><strong>Payments.</strong> Purchases are handled by Dodo Payments. We do not see or store your card details.</li>
 </ul>

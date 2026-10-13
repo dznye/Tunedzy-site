@@ -239,7 +239,7 @@ footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr
 <p>Tunedzy processes your recordings, beats and reference songs on your own PC. They are not uploaded to our servers.</p>
 <h2>What does use the internet</h2>
 <ul>
-<li><strong>License checks.</strong> The app contacts our payment provider, Dodo Payments, to activate and validate your license key. This involves your license key and your computer&rsquo;s name.</li>
+<li><strong>License checks.</strong> The app contacts our payment provider, Dodo Payments, to activate your license key (your key and your computer&rsquo;s name). About once a week it also asks a small server we run on Cloudflare, at downloads.fuidzy.com, whether the key is still valid; it sends the key, the activation ID, a one-way hash of your PC&rsquo;s identifier and the app version. That server forwards the question to Dodo and signs the answer. We do not store any of it and keep no logs of it.</li>
 <li><strong>Downloads.</strong> The installer, updates and the optional AI add-on are downloaded from our own servers.</li>
 <li><strong>Payments.</strong> Purchases are handled by Dodo Payments. We do not see or store your card details.</li>
 </ul>
