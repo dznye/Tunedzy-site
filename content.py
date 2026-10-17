@@ -19,18 +19,14 @@ NAV = [('Free tools', f'{BASE}/tools'), ('Features', f'{BASE}#features'), ('Guid
 # --------------------------------------------------------------------------------------------- shared FAQ
 HUB_FAQ = [
     ('Is Tunedzy free?',
-     'You can download it and use everything free for 7 days. After the trial it is a one-time $29 for a lifetime license on up to two of your PCs. No subscription. '
+     'Yes, completely: every feature, no trial, no account, no licence key, no watermark, on as many PCs as you like. '
      'The tools on this site (BPM finder, key finder, chord finder, LUFS meter and vocal checker) are free forever and run in your browser.'),
     ('Is Tunedzy a plugin, a DAW or a standalone app?',
      'It is a standalone vocal workstation: the whole vocal chain (clean, tune, fit to the beat, style, mix and master) in one window, with live sliders and a painted-sections timeline. '
      'It exports 24-bit WAV, FLAC or MP3, and a DAW pack with every stem in sync plus tempo, key and a song map, so you can keep working in FL Studio, Ableton, Logic, Reaper or Pro Tools. It is not a DAW replacement and not a VST/AU plugin yet.'),
     ('Does it need an internet connection?',
-     'Your audio is processed on your own PC, so your unreleased songs are not uploaded anywhere. The app checks your license online about once a week, quietly in the background, and '
-     'keeps working for up to 60 days without internet after a successful check. The optional AI vocal-separation add-on is a one-time download.'),
-    ('What happens when the free trial ends?',
-     'You can still open projects and listen. Processing and exporting need a license key.'),
-    ('How many computers can I use one license on?',
-     'Two. If you get a new PC, deactivate the old one from the License screen to free the slot.'),
+     'No. Your audio is processed on your own PC, so your unreleased songs are not uploaded anywhere, and the app works fully offline. '
+     'The internet is only used for updates and the optional AI vocal-separation add-on (a one-time download).'),
     ('Do I need a powerful computer or a GPU?',
      'No. Cleaning, tuning, mixing and mastering run on a normal Windows 10 or 11 PC with 8 GB of RAM or more. A recent NVIDIA graphics card only makes '
      'the optional AI vocal-separation step much faster; without one it still works, just slower.'),
@@ -298,12 +294,12 @@ GUIDES['vocal-cleanup-software-compared'] = dict(
           'Here is how they differ, with the list prices we found in October 2026. Check each vendor&rsquo;s site for today&rsquo;s price.'),
     tldr=['Plugins give you deep control inside a DAW; they need you to know what to do.',
           'One-click and online tools are faster but narrower, and online tools mean uploading your audio.',
-          'Tunedzy is a Windows app for the finishing step: clean, tune, fit to the beat, match a style and master, one-time $29.'],
+          'Tunedzy is a free Windows app for the finishing step: clean, tune, fit to the beat, match a style and master.'],
     body='''
 <table>
 <thead><tr><th>Tool</th><th>Typical price (US)</th><th>Best at</th><th>Where it falls short for this job</th></tr></thead>
 <tbody>
-<tr><td><strong>Tunedzy</strong></td><td>$29 one-time, 7-day trial</td><td>Finishing a rough vocal on a beat: clean, tune, level, style-match, master</td><td>Not a DAW or plugin (yet); Windows only; less manual depth than Melodyne</td></tr>
+<tr><td><strong>Tunedzy</strong></td><td>Free</td><td>Finishing a rough vocal on a beat: clean, tune, level, style-match, master</td><td>Not a DAW or plugin (yet); Windows only; less manual depth than Melodyne</td></tr>
 <tr><td>iZotope Nectar 4 (Elements / Standard / Advanced)</td><td>about $55 / $199 / $299</td><td>Full vocal-chain plugin with an assistant</td><td>Needs a DAW and some mixing knowledge</td></tr>
 <tr><td>Celemony Melodyne 5 Essential</td><td>about $99 list (often discounted)</td><td>Precise pitch and timing editing</td><td>Editing only: no cleanup, levelling or mastering</td></tr>
 <tr><td>Antares Auto-Tune Unlimited</td><td>$30 per month or $300 per year for new subscribers</td><td>Industry-standard pitch correction and the classic effect</td><td>Subscription; pitch-focused</td></tr>
@@ -323,9 +319,9 @@ GUIDES['vocal-cleanup-software-compared'] = dict(
 <p>Tunedzy is built for the moment between &ldquo;I recorded it&rdquo; and &ldquo;I can post it&rdquo;: a rough phone or bedroom take, a beat, and not enough time or experience to build a vocal chain. It runs locally, so your unreleased songs stay on your PC. If you already live in a DAW and love your plugins, you may only want it for quick drafts, reference matching and the final loudness and quality check.</p>
 ''',
     vf_title='Try it on your own track',
-    vf='''<p>The best comparison is your own recording. Download the free trial, run a rough take through it, and A/B the result against what you have now. Seven days, everything unlocked.</p>''',
+    vf='''<p>The best comparison is your own recording. Download Tunedzy (free), run a rough take through it, and A/B the result against what you have now. Everything is unlocked, for free.</p>''',
     faq=[('What is the cheapest way to get good vocals?',
-          'Record well first. Then a free editor plus a couple of stock plugins can do a lot; a one-time finishing app like Tunedzy is the low-cost way to automate the rest.'),
+          'Record well first. Then a free editor plus a couple of stock plugins can do a lot; a free finishing app like Tunedzy is the no-cost way to automate the rest.'),
          ('Do I need a plugin or a standalone app?',
           'If you work inside a DAW and want hands-on control, plugins. If you want a finished result quickly, a standalone finishing app is faster.'),
          ('Is Tunedzy better than Auto-Tune?',
@@ -339,32 +335,30 @@ GUIDE_ORDER = ['fix-vocals-recorded-on-phone', 'remove-echo-from-vocal-recording
 
 # --------------------------------------------------------------------------------------------- policy pages (drafts for the owner to review)
 POLICIES = {
-    'privacy': dict(title='Tunedzy Privacy Policy', desc='How Tunedzy handles your audio, license and usage data.', h1='Privacy Policy',
+    'privacy': dict(title='Tunedzy Privacy Policy', desc='How Tunedzy handles your audio and usage data.', h1='Privacy Policy',
                     body='''
 <p class="note">Draft for review by the product owner before launch.</p>
 <h2>Your audio stays on your computer</h2>
 <p>Tunedzy processes your recordings, beats and reference songs on your own PC. They are not uploaded to our servers.</p>
 <h2>What does use the internet</h2>
 <ul>
-<li><strong>License checks.</strong> The app contacts our payment provider, Dodo Payments, to activate your license key (your key and your computer&rsquo;s name). About once a week it also asks a small server we run on Cloudflare, at downloads.fuidzy.com, whether the key is still valid; it sends the key, the activation ID, a one-way hash of your PC&rsquo;s identifier and the app version. That server forwards the question to Dodo and signs the answer. We do not store any of it and keep no logs of it.</li>
+<li><strong>No licence checks.</strong> Tunedzy is free: it does not contact a licence or payment server and needs no account.</li>
 <li><strong>Downloads.</strong> The installer, updates and the optional AI add-on are downloaded from our own servers.</li>
-<li><strong>Payments.</strong> Purchases are handled by Dodo Payments. We do not see or store your card details.</li>
 </ul>
 <h2>Contact</h2><p>Questions about privacy: use the contact option on fuidzy.com.</p>'''),
-    'terms': dict(title='Tunedzy Terms of Use', desc='Terms for using Tunedzy software and its license.', h1='Terms of Use',
+    'terms': dict(title='Tunedzy Terms of Use', desc='Terms for using the free Tunedzy software.', h1='Terms of Use',
                   body='''
 <p class="note">Draft for review by the product owner before launch.</p>
 <h2>License</h2>
-<p>A Tunedzy license is for one person and may be activated on up to two of that person&rsquo;s computers. It is a personal, non-transferable license to use the software. You may not resell, redistribute or reverse-engineer it.</p>
+<p>Tunedzy is free to use, for personal and commercial work, on as many of your computers as you like. You may not resell it, pass it off as your own, or redistribute modified copies.</p>
 <h2>Your content</h2>
 <p>You keep all rights to the audio you create. You are responsible for having the rights to any recordings, beats or reference songs you process with Tunedzy.</p>
 <h2>No warranty</h2>
 <p>The software is provided as is. Audio results depend on the quality of the source recordings, and we do not guarantee a particular outcome.</p>'''),
-    'refund-policy': dict(title='Tunedzy Refund Policy', desc='How refunds work for Tunedzy purchases.', h1='Refund Policy',
+    'refund-policy': dict(title='Tunedzy Refund Policy', desc='Tunedzy is free, so there is nothing to refund.', h1='Refund Policy',
                           body='''
 <p class="note">Draft for review by the product owner before launch.</p>
-<p>Tunedzy includes a 7-day free trial so you can try it on your own recordings before you buy. If you buy and it does not work for you, contact us within 30 days of purchase and we will refund you.</p>
-<p>Refunds are issued to the original payment method through our payment provider.</p>'''),
+<p>Tunedzy is free: there is nothing to buy and nothing to refund. If paid options are ever added, this page will say how refunds work before anything is sold.</p>'''),
 }
 
 

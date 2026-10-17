@@ -131,8 +131,8 @@
     if (r.chords && r.chords.loop) summary += ' | ' + r.chords.loop;
     if (r.loudness && isFinite(r.loudness.lufs)) summary += ' | ' + f1(r.loudness.lufs) + ' LUFS';
     var cta = (r.check && (r.check.clipEvents > 0 || r.check.noiseFloorDb > -55 || r.check.spec.rumble > 0.05))
-      ? '<h3>Want that vocal fixed in one pass?</h3><p>Tunedzy removes noise, rumble, clicks and harsh S sounds, repairs clipping, tunes to the key above and masters the result. Free 7-day trial.</p>'
-      : '<h3>Make the vocal match this track</h3><p>Tunedzy tunes your vocal to this key and tempo, sets its level against the beat and masters the result. Free 7-day trial.</p>';
+      ? '<h3>Want that vocal fixed in one pass?</h3><p>Tunedzy removes noise, rumble, clicks and harsh S sounds, repairs clipping, tunes to the key above and masters the result. Free.</p>'
+      : '<h3>Make the vocal match this track</h3><p>Tunedzy tunes your vocal to this key and tempo, sets its level against the beat and masters the result. Free.</p>';
     out.hidden = false;
     out.innerHTML = '<div class="resbar"><div><b>' + esc(r.name) + '</b><span>' + mmss(r.seconds) + ' &middot; ' + Math.round(r.sampleRate / 100) / 10 + ' kHz &middot; analysed on your device</span></div>' +
       '<button class="btn small" id="copy" type="button">Copy results</button></div><div class="tgrid">' + order.map(function (id) { return make[id](r); }).join('') + '</div>' +

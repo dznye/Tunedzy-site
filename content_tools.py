@@ -228,7 +228,7 @@ HUB = dict(
           'No sign-up, no upload: your audio is analysed on your own device.'),
     faq=[('Are these tools really free?', 'Yes. No sign-up, no limits and no watermarks. They are free forever.'),
          ('Do you keep my audio?', 'No. Files are decoded and analysed by your own browser. Nothing is sent to our servers.'),
-         ('Why is it free?', 'These are the same kinds of checks Tunedzy runs before it fixes a vocal. If they are useful, the Windows app does the fixing for you, with a free 7-day trial.'),
+         ('Why is it free?', 'These are the same kinds of checks Tunedzy runs before it fixes a vocal. If they are useful, the Windows app (also free) does the fixing for you.'),
          ('Which browsers work?', 'Current Chrome, Edge, Firefox and Safari. Very old browsers may not support the audio features.')],
 )
 
@@ -279,7 +279,7 @@ AI_GUIDE = dict(
 </ol>
 ''',
     vf_title='AI-assisted cleanup that stays on your PC',
-    vf='''<p>Tunedzy analyses your recording, picks the settings, cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style if you give it a reference, and masters the result. It runs on your own PC, and the optional AI model handles vocal separation. Free 7-day trial.</p>''',
+    vf='''<p>Tunedzy analyses your recording, picks the settings, cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style if you give it a reference, and masters the result. It runs on your own PC, and the optional AI model handles vocal separation. Free.</p>''',
     faq=[('Is AI vocal cleanup better than manual cleanup?',
           'It is faster and more consistent for routine problems, and a skilled engineer still wins on taste and difficult recordings. Many people use the automatic result as a first draft.'),
          ('Can AI make a bad vocal sound studio quality?',

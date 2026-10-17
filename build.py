@@ -1,7 +1,7 @@
 """Builds the static site for fuidzy.com/tunedzy into this folder (the GitHub repo root).
 
-  python build.py                         pre-launch: informational CTAs, no buy button, no dead links
-  python build.py --launched --download-url https://downloads.fuidzy.com/vocalforge/Tunedzy-Setup.exe
+  python build.py                         pre-launch: informational CTAs, no dead links
+  python build.py --launched --download-url https://downloads.fuidzy.com/tunedzy/Tunedzy-Setup.exe
 
 Output layout (the Worker maps URL -> file):
   tunedzy/index.html                      https://fuidzy.com/tunedzy
@@ -164,13 +164,13 @@ def faq_ld(faq):
 
 
 def software_ld():
-    offer = {'@type': 'Offer', 'price': '29.00', 'priceCurrency': 'USD', 'url': C.SITE + C.BASE + '#pricing',
-             'description': 'Lifetime license for up to 2 PCs. 7-day free trial.',
+    offer = {'@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'url': C.SITE + C.BASE + '#pricing',
+             'description': 'Free: every feature, no trial, no licence key.',
              'availability': 'https://schema.org/InStock' if LAUNCHED else 'https://schema.org/PreOrder'}
     return {'@context': 'https://schema.org', '@type': 'SoftwareApplication', 'name': 'Tunedzy', 'applicationCategory': 'MultimediaApplication',
             'applicationSubCategory': 'Vocal processing and mastering workstation',
             'operatingSystem': 'Windows 10, Windows 11', 'url': C.SITE + C.BASE, 'image': C.SITE + C.BASE + '/og.png',
-            'description': 'Vocal workstation for Windows that cleans, tunes, fits to the beat, style-matches and masters rough vocal recordings. Runs offline on your PC. Free 7-day trial.',
+            'description': 'Vocal workstation for Windows that cleans, tunes, fits to the beat, style-matches and masters rough vocal recordings. Runs offline on your PC. Free.', 'isAccessibleForFree': True,
             'offers': offer, 'publisher': {'@type': 'Organization', 'name': 'Fuidzy', 'url': C.SITE, 'email': C.SUPPORT_EMAIL}}
 
 
@@ -199,7 +199,7 @@ def layout(*, title, desc, path, body, lds, robots='index,follow', og_type='webs
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(title)}"><meta name="twitter:description" content="{e(desc)}"><meta name="twitter:image" content="{C.SITE}{C.BASE}/og.png">
 <style>{CSS}</style>{ld}</head><body>
 <header class="top"><div class="wrap"><a class="logo" href="{C.BASE}"><img src="{C.BASE}/favicon.png" alt="" width="30" height="30"><span>Tuned<b>zy</b></span></a>
-<nav class="main" aria-label="Main">{nav}</nav><a class="hbtn" href="{C.BASE}#pricing">{'Download free' if LAUNCHED else 'Free to try'}</a></div></header>
+<nav class="main" aria-label="Main">{nav}</nav><a class="hbtn" href="{C.BASE}#pricing">{'Download free' if LAUNCHED else 'Free'}</a></div></header>
 {body}
 <footer><div class="wrap"><div class="cols">
 <div><h4>Tunedzy</h4><a href="{C.BASE}">Overview</a><br><a href="{C.BASE}#features">Features</a><br><a href="{C.BASE}#pricing">Pricing</a><br><a href="{C.BASE}#faq">FAQ</a></div>
@@ -370,15 +370,14 @@ def hub():
     guides = ''.join(f'<a class="th" href="{C.BASE}/{s}">{img(THUMB.get(GUIDE_PHOTO[s], GUIDE_PHOTO[s]), alt="")}<span><b>{e(C.GUIDES[s]["h1"])}</b><br><span class="small">{e(C.GUIDES[s]["desc"][:96])}&hellip;</span></span></a>' for s in C.GUIDE_ORDER)
     price_cta = (f'<a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download free for Windows</a>' if LAUNCHED
                  else f'<a class="btn primary" href="{e(C.LAUNCH_MAIL)}">Email me when it opens</a>')
-    buy2 = (f'<a class="btn primary" href="{e(C.BUY_URL)}" rel="noopener">Buy now, $29</a>' if LAUNCHED else '')
     status = '' if LAUNCHED else '<p class="small" style="margin-top:14px">Windows download opens at launch. Email us and we will let you know the day it does.</p>'
     body = f'''<main>
 <div class="hero">{shapes('hero')}<div class="wrap"><div class="herogrid"><div>
-<div class="pill"><i></i>New: Tunedzy 2.0 &middot; Free to try &middot; Windows</div>
+<div class="pill"><i></i>New: Tunedzy 4 &middot; Free &middot; Windows</div>
 <h1>Rough vocal in. <em class="grad">Finished track out.</em></h1>
 <p class="sub">The all-in-one vocal app for artists, streamers and podcasters. Make any mic sound expensive live, clean and tune your takes, remove vocals from any song, mix and master, in one window. No plugin hunting.</p>
 <div class="cta">{cta_primary()}<a class="btn" href="#try">Try the free tools</a></div>{status}
-<div class="trust"><span>7-day free trial</span><span>Then $29 once, no subscription</span><span>Runs on your PC</span></div></div>
+<div class="trust"><span>Free, every feature</span><span>No account, no licence key</span><span>Runs on your PC</span></div></div>
 {rack()}</div></div></div>
 <section id="try" style="padding-top:40px">{shapes('soft')}<div class="wrap"><p class="eyebrow c">Try it right now</p><h2 class="c">Drop a track. See what it&rsquo;s made of.</h2>
 <p class="sub2">Free BPM, key, chords and loudness in seconds, right in your browser. Nothing is uploaded.</p>
@@ -400,21 +399,20 @@ def hub():
 <ul><li>Learns the autotune style: natural, modern or hard-snapped</li><li>Matches tone, reverb size, width and how tight the flow sits on the beat</li><li>Keeps your voice yours: it changes the processing, not who you are</li><li>Saves each style so you can reuse it on the next song</li></ul>
 <p class="note">Not affiliated with or endorsed by any artist. Artist names are used only to describe styles of processing.</p></div></div></div></section>
 <section><div class="wrap"><div class="band">{img('mic-wide', alt='')}<div class="in"><p class="eyebrow">Private by design</p><h2>Your unreleased songs <span class="grad">never leave your PC.</span></h2>
-<p>Tunedzy processes everything locally. No uploads, no per-minute limits, no watermarks. The only internet use is the license check and the optional AI add-on download. The free tools on this site work the same way, inside your browser.</p></div></div></div></section>
+<p>Tunedzy processes everything locally. No uploads, no per-minute limits, no watermarks. The only internet use is updates and the optional AI add-on download. The free tools on this site work the same way, inside your browser.</p></div></div></div></section>
 <section class="alt">{shapes('bars')}<div class="wrap"><p class="eyebrow c">How it works</p><h2 class="c">Three steps</h2><div class="steps" style="margin-top:26px">{''.join(f'<div class="card {c}"><h3>{n}</h3><p>{d}</p></div>' for (n, d), c in zip(steps, ('cA', 'cP', 'cV')))}</div></div></section>
 <section><div class="wrap"><p class="eyebrow c">Who it&rsquo;s for</p><h2 class="c">Made for people who record in real rooms</h2><div class="pcards" style="margin-top:26px">{''.join(f'<div class="pcard">{img(k)}<div><h3>{n}</h3><p>{d}</p></div></div>' for k, n, d in who)}</div>
 <p class="note" style="margin-top:20px">Honest limits: Tunedzy is a standalone app, not a DAW replacement and not a VST/AU plugin (yet; the DAW pack hands your stems to any DAW), and it is Windows-only for now. Using it as a microphone in Discord, Zoom or games needs a free virtual cable such as VB-Cable (OBS can take it directly, no cable). It can improve a rough recording a lot, but it can&rsquo;t turn a vocal buried in echo or heavy distortion into a studio take. Re-recording closer to the mic is always the best fix.</p></div></section>
 <section id="guides" class="guides alt">{shapes('soft')}<div class="wrap"><p class="eyebrow c">Free guides</p><h2 class="c">Get better vocals today</h2><p class="sub2">Practical, and useful with or without Tunedzy.</p><div class="related">{guides}</div></div></section>
-<section id="pricing">{shapes('hero')}<div class="wrap"><p class="eyebrow c">Pricing</p><h2 class="c">Free to try. <span class="grad">$29 once</span> when you love it.</h2><p class="sub2">No subscription, no per-export fees, no watermark.</p>
-<div class="pricegrid"><div class="plan"><span class="tag">Start here</span><div class="pr">Free<small> for 7 days</small></div><ul><li>Everything unlocked</li><li>Your full project, your own music</li><li>No card needed to download</li></ul><div class="cta">{price_cta}</div></div>
-<div class="plan hot"><span class="tag">Lifetime license</span><div class="pr">$29<small> one-time</small></div><ul><li>Use on up to 2 of your PCs</li><li>Updates for this version</li><li>Your audio never leaves your PC</li><li>30-day refund</li></ul><div class="cta">{buy2 or '<span class="small">Opens at launch</span>'}</div></div></div></div></section>
+<section id="pricing">{shapes('hero')}<div class="wrap"><p class="eyebrow c">Price</p><h2 class="c">Free. <span class="grad">Everything.</span></h2><p class="sub2">No trial, no subscription, no licence key, no watermark, no per-export fees.</p>
+<div class="pricegrid" style="grid-template-columns:minmax(0,460px);justify-content:center"><div class="plan hot"><span class="tag">Tunedzy</span><div class="pr">Free<small> for everyone</small></div><ul><li>Every feature unlocked</li><li>Use it on as many of your PCs as you like</li><li>Your audio never leaves your PC</li><li>Free updates</li></ul><div class="cta">{price_cta}</div></div></div></div></section>
 <section id="support" class="alt"><div class="wrap"><div class="supportband">{shapes('soft')}<div style="position:relative"><p class="eyebrow">Real people</p><h2>Stuck? Want a Mac version? <span class="grad">Just email us.</span></h2>
 <p>Questions, bugs, feature ideas or a Mac request: send a note and we will get back to you. Requests decide what we build next.</p><div class="cta"><a class="btn primary" href="{e(C.HELP_MAIL)}">Email support</a><a class="btn" href="{e(C.MAC_MAIL)}">Request a Mac version</a></div></div>
 <div style="position:relative"><div class="mailbig"><a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a></div><p class="small" style="margin-top:8px">Include what you were doing and a screenshot if you can.</p></div></div></div></section>
 <section id="faq"><div class="narrow"><h2 class="c">Questions</h2>{faq_html(C.HUB_FAQ)}</div></section></main>'''
     crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('Tunedzy', C.BASE)])
     title = 'Tunedzy: Autotune, Vocal Cleanup and Vocal Remover for Windows (No DAW)'
-    desc = 'Tune, clean and polish your vocals for music and streams. Autotune, vocal cleanup and vocal remover in one private, offline Windows app. No DAW needed. Free 7-day trial, then $29 once.'
+    desc = 'Tune, clean and polish your vocals for music and streams. Autotune, vocal cleanup and vocal remover in one private, offline Windows app. No DAW needed. Free.'
     return layout(title=title, desc=desc, path=C.BASE, body=body,
                   lds=[software_ld(), faq_ld(C.HUB_FAQ), crumbs_ld, webapp_ld('', 'Tunedzy free music tools', 'Free BPM, key, chord and loudness finder that runs in your browser.')], scripts=tool_scripts())
 
@@ -448,12 +446,12 @@ def tool_page(slug):
         widget, scripts = clean_widget(kind), clean_scripts()
     else:
         widget, scripts = tool_widget(t['focus'], tap=t['tap']), tool_scripts()
-    action = (f'<a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download the free trial</a>' if LAUNCHED
+    action = (f'<a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download Tunedzy free</a>' if LAUNCHED
               else f'<a class="btn primary" href="{C.BASE}">See Tunedzy</a>')
     body = f'''<main><div class="hero" style="padding:0 0 30px">{shapes('soft')}<div class="wrap">{crumbs_html}<div class="toolhead"><h1>{t['h1']}</h1><p class="lead">{t['lead']}</p></div>
 <div style="max-width:900px">{widget}</div><div class="howto" style="max-width:900px">{how}</div></div></div>
 <div class="narrow"><article>{t['body']}
-<div class="vf"><h2>Like this? Let Tunedzy do the fixing.</h2><p>These tools tell you what is going on. Tunedzy acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Free to try for 7 days, then $29 once.</p><div class="cta">{action}<a class="btn" href="{e(C.HELP_MAIL)}">Ask us a question</a></div></div>
+<div class="vf"><h2>Like this? Let Tunedzy do the fixing.</h2><p>These tools tell you what is going on. Tunedzy acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Free.</p><div class="cta">{action}<a class="btn" href="{e(C.HELP_MAIL)}">Ask us a question</a></div></div>
 <h2>Frequently asked questions</h2>{faq_html(t['faq'])}
 {articles}<h2>More free tools</h2><div class="tcards">{rel}</div>
 <h2>Related guides</h2><div class="related">{gl}</div></article></div></main>'''
@@ -471,7 +469,7 @@ def guide(slug):
     tl = ''.join(f'<li>{t}</li>' for t in g['tldr'])
     ai = g.get('ai')
     ai_html = f'<div class="aibox"><h2>{ai[0]}</h2>{ai[1]}</div>' if ai else ''
-    action = (f'<p><a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download the free trial</a></p>' if LAUNCHED
+    action = (f'<p><a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download Tunedzy free</a></p>' if LAUNCHED
               else f'<p><a class="btn primary" href="{C.BASE}">See what Tunedzy does</a></p>')
     article_ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': g['h1'], 'description': g['desc'], 'datePublished': C.DATE, 'dateModified': C.DATE,
                   'image': C.SITE + C.BASE + '/og.png', 'mainEntityOfPage': C.SITE + f'{C.BASE}/{slug}',
@@ -536,12 +534,12 @@ def policy(slug):
 
 
 def thanks():
-    body = f'''<main><div class="narrow"><article><h1>Thank you for buying Tunedzy</h1>
-<p class="lead">Your license key is on its way to the email you used at checkout. It usually arrives within a minute.</p>
-<h2>Get started</h2><ol><li>Install Tunedzy for Windows (the download link is in your receipt email and on <a href="/tunedzy">the Tunedzy page</a>).</li>
-<li>Open Tunedzy and click the <strong>License</strong> button at the top.</li><li>Paste your key and press <strong>Activate</strong>. One key works on up to 2 of your PCs.</li></ol>
-<p>Didn&rsquo;t get the email? Check spam, then write to <a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a>.</p></article></div></main>'''
-    return layout(title='Thanks for buying Tunedzy', desc='Your Tunedzy license key and next steps.', path=f'{C.BASE}/thanks', body=body, lds=[], robots='noindex,nofollow')
+    body = f'''<main><div class="narrow"><article><h1>Thanks for trying Tunedzy</h1>
+<p class="lead">Tunedzy is free: there is no licence key to wait for.</p>
+<h2>Get started</h2><ol><li>Install Tunedzy for Windows from <a href="/tunedzy">the Tunedzy page</a>.</li>
+<li>Open it and drop a recording on Start, or open Live Studio and press Start.</li></ol>
+<p>Questions? Write to <a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a>.</p></article></div></main>'''
+    return layout(title='Thanks for trying Tunedzy', desc='Next steps with Tunedzy.', path=f'{C.BASE}/thanks', body=body, lds=[], robots='noindex,nofollow')
 
 
 # ---------------------------------------------------------------------------------------------------- write everything
@@ -562,16 +560,21 @@ def og():
             d.ellipse([cx - k, cy - k, cx + k, cy + k], fill=col + (a,))
     d.ellipse([860, 60, 1160, 360], outline=(255, 179, 71, 110), width=3)
     d.rounded_rectangle([90, 470, 190, 570], radius=26, outline=(255, 255, 255, 60), width=2)
-    bold = ImageFont.truetype('C:/Windows/Fonts/segoeuib.ttf', 78)
-    reg = ImageFont.truetype('C:/Windows/Fonts/segoeui.ttf', 34)
-    small = ImageFont.truetype('C:/Windows/Fonts/segoeuib.ttf', 30)
+    def font(name, size):                       # Segoe UI on Windows; DejaVu Sans elsewhere (Linux build machines)
+        for f in (f'C:/Windows/Fonts/{name}.ttf', '/usr/share/fonts/truetype/dejavu/' + ('DejaVuSans-Bold.ttf' if name.endswith('b') else 'DejaVuSans.ttf')):
+            try:
+                return ImageFont.truetype(f, size)
+            except OSError:
+                pass
+        return ImageFont.load_default()
+    bold, reg, small = font('segoeuib', 78), font('segoeui', 34), font('segoeuib', 30)
     icon = Image.open(ROOT / 'assets' / 'icon.png').convert('RGBA').resize((92, 92))
     img_.paste(icon, (70, 62), icon)
-    d.text((180, 78), 'Tunedzy 2.0', font=small, fill=(243, 233, 226))
+    d.text((180, 78), 'Tunedzy 4', font=small, fill=(243, 233, 226))
     d.text((70, 200), 'Rough vocal in.', font=bold, fill=(243, 233, 226))
     d.text((70, 292), 'Finished track out.', font=bold, fill=(255, 150, 120))
     d.text((70, 430), 'Vocal workstation for Windows.', font=reg, fill=(212, 190, 186))
-    d.text((70, 476), 'Free to try, then $29 once.', font=reg, fill=(212, 190, 186))
+    d.text((70, 476), 'Free for everyone.', font=reg, fill=(212, 190, 186))
     for i, h in enumerate([30, 54, 86, 64, 100, 70, 44, 78, 50, 28]):
         x = 800 + i * 36
         d.rounded_rectangle([x, 450 - h, x + 18, 450 + h], radius=9, fill=(255, 193 - i * 12, 94 - i * 2))
