@@ -663,6 +663,8 @@ def main():
     OUT.mkdir(parents=True)
     process_photos()
     shutil.copy2(ROOT / 'assets' / 'icon.png', OUT / 'favicon.png')
+    indexnow_key = (ROOT / 'assets' / 'indexnow.txt').read_text(encoding='utf-8').strip()
+    (OUT / f'{indexnow_key}.txt').write_text(indexnow_key, encoding='utf-8')
     og()
     write('index.html', hub())
     for s in C.GUIDE_ORDER:
