@@ -1,6 +1,6 @@
 /* Tunedzy Go service worker: everything is cached on the first visit, so the app opens and works with no connection. The cache name carries a hash of
  * the files (tools/build_go.py), so a new build replaces the old cache by itself. */
-const VERSION = '5.0.0-cf1ac1aebd';
+const VERSION = '5.0.0-9520be908b';
 const CACHE = 'tunedzy-go-' + VERSION;
 const FILES = ["./", "index.html", "go.css", "go.js", "dfn-web.js", "manifest.webmanifest", "tz-engine.js", "rnnoise-worklet.js", "rnnoise-polyfill.js", "rnnoise-sync.js", "icon-192.png", "icon-512.png", "icon-maskable.png"];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
