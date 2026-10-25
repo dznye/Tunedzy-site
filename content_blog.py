@@ -382,3 +382,256 @@ add(slug='what-loudness-should-a-voice-over-be', cluster='record', kw='voice ove
     faq=[('What LUFS should a voice-over be?', 'For online video, around &minus;16 to &minus;14 LUFS is a common target. Podcasts often use about &minus;16 LUFS for stereo and about &minus;19 LUFS for mono.'),
          ('What peak level is safe for a voice-over?', 'Keep true peaks below about &minus;1 dBTP for online delivery, and follow a platform&rsquo;s own limits where they exist, such as &minus;3 dB for ACX audiobooks.'),
          ('Does normalizing make a voice-over louder?', 'It raises the level based on the loudest peak, not the average loudness, so check LUFS as well and use compression if the loudness is still too low.')])
+
+# ============================================================================================== VOCAL CLEANUP CLUSTER (Tunedzy 5)
+CLUSTERS['vocal'] = dict(tool='vocal-checker', label='Vocal recording fixes', tool_name='Vocal Checker')
+CLUSTERS['compare'] = dict(tool='vocal-checker', label='Vocal tools compared', tool_name='Vocal Checker')
+
+add(slug='fix-clipped-vocal-recording', cluster='vocal', kw='fix clipped vocal recording',
+    title='How to Fix a Clipped Vocal Recording: What Can Be Saved',
+    desc='Clipped vocals sound crackly and flat-topped. Check for clipping, see what declipping can rebuild, and learn how to record so it never happens.',
+    h1='How to Fix a Clipped Vocal Recording',
+    answer=('Clipping happens when the signal goes past the maximum the recorder can store, so the top of each waveform is cut flat and the sound turns harsh. '
+            'Light clipping can be partly rebuilt by a declipper; heavy clipping cannot be undone, so re-record if you can.'),
+    body='''
+<h2>Step 1: Check whether it is clipped</h2>
+<p>Zoom in on the waveform. Clipped audio has rows of samples sitting exactly at the top or bottom of the scale, looking like flat-topped peaks. Listen for crackle or a buzzy edge on loud words.</p>
+<h2>Step 2: Try a declipper on a light clip</h2>
+<p>A few brief flat tops can be estimated and rebuilt from the shape around them. Run the declipper on a copy, keep the original, and listen to the loud words in particular. Tunedzy&rsquo;s repair tools include declipping for light clipping.</p>
+<h2>Step 3: Know when to stop</h2>
+<p>If the flat tops run for milliseconds at a time across the whole take, a declipper can only guess. It will remove some harshness and leave the rest. Re-record at a lower level instead.</p>
+<h2>How to avoid clipping next time</h2>
+<ol>
+<li>Set the input gain so your loudest words peak around &minus;12 to &minus;6 dBFS, not at 0.</li>
+<li>Sing or speak at your loud moments at your real distance from the mic, and set the level for those, not for a quiet line.</li>
+<li>Turn off automatic gain control, and any &ldquo;boost&rdquo; in the phone or laptop, while recording.</li>
+<li>Leave headroom: a recording at &minus;12 dBFS is easy to raise later, a clipped one is not.</li>
+</ol>
+<h2>Limits</h2>
+<p>Declipping estimates missing peaks. It works best on short, isolated clips and gets worse as the damage spreads. Treat the result as a rescue, not a replacement for a clean take.</p>
+''',
+    faq=[('Can clipping be fixed completely?', 'No. Light clipping can be partly rebuilt. Heavy clipping cannot be restored to what the microphone heard.'),
+         ('What level should I record at?', 'Aim for loudest words around &minus;12 to &minus;6 dBFS, leaving room above them.'),
+         ('Does a limiter fix clipping?', 'A limiter can make clipped audio quieter, but it does not restore the lost peaks. Fix the level at the source.')])
+
+add(slug='remove-mic-pops-plosives', cluster='vocal', kw='remove mic pops plosives',
+    title='How to Remove Mic Pops and Plosives From a Vocal',
+    desc='Plosives are the thumps from P and B sounds. Fix them with mic placement, a pop filter, a high-pass filter and careful editing.',
+    h1='How to Remove Mic Pops and Plosives From a Vocal',
+    answer=('Plosives are bursts of air that hit the microphone on P, B, T and K sounds. Prevent them with a pop filter and an angled microphone. '
+            'In the edit, a high-pass filter around 80 to 100 Hz removes most of the thump, and a short volume dip or a cut on the worst word fixes the rest.'),
+    body='''
+<h2>Step 1: Prevent them at the mic</h2>
+<p>Place a pop filter a few centimetres in front of the capsule. Angle the mic a little off-axis so the air goes past it rather than into it. Keep the same distance for the whole take.</p>
+<h2>Step 2: High-pass filter</h2>
+<p>Voice has little useful content below about 80 Hz. A high-pass filter in that range removes most of the low thump while keeping the body of the voice. Raise the cutoff only if the voice sounds thin.</p>
+<h2>Step 3: Fix the worst words by hand</h2>
+<ol>
+<li>Zoom in on the pop: it is a short low burst at the start of the word.</li>
+<li>Cut the burst or lower the volume for a few milliseconds, then fade back in.</li>
+<li>Listen at normal speed. A fix that you can only hear when zoomed in is good enough.</li>
+</ol>
+<h2>Limits</h2>
+<p>Pops that hit hard enough to clip cannot be fixed well. Some plosives overlap with the note itself, so over-cutting makes the word sound clipped. Stop when the speech sounds natural.</p>
+''',
+    faq=[('What causes mic pops?', 'Bursts of breath on P, B, T and K sounds hitting the diaphragm of the microphone.'),
+         ('Does a high-pass filter change the voice?', 'It removes low rumble and thump. Keep the cutoff gentle so the voice does not lose its warmth.'),
+         ('Is a pop filter needed?', 'It is the simplest fix. It costs little and saves a lot of editing.')])
+
+add(slug='how-to-de-ess-vocals', cluster='vocal', kw='how to de-ess vocals',
+    title='How to De-Ess Vocals: Taming Harsh S and T Sounds',
+    desc='How to de-ess vocals: find the sibilance, set a de-esser on the right frequency, and avoid the dull, lisping sound that over-processing causes.',
+    h1='How to De-Ess Vocals',
+    answer=('De-essing reduces the harsh hiss of S, SH and T sounds (sibilance). Find the frequency where the hiss is strongest, set a compressor-style de-esser to reduce only when that band gets loud, '
+            'then listen in context. Sibilance often sits roughly between 4 and 9 kHz, but it depends on the voice and the mic.'),
+    body='''
+<h2>Step 1: Find the sibilance</h2>
+<p>Solo the vocal and loop a phrase with several S sounds. Sweep a narrow EQ boost across the top of the voice until the hiss jumps out. That frequency is where the de-esser should work.</p>
+<h2>Step 2: Set the de-esser</h2>
+<ol>
+<li>Set the frequency to the hiss you found.</li>
+<li>Lower the threshold until the de-esser reduces only the S sounds, usually a few dB.</li>
+<li>Keep the attack fast enough to catch the sound and the release quick so the vowels are not affected.</li>
+</ol>
+<h2>Step 3: Check it in context</h2>
+<p>Bypass the de-esser and compare. If the vocal sounds lisped or dull, you are reducing too much or the wrong frequency. Check on phone speakers too, where sibilance is easy to miss.</p>
+<h2>Limits</h2>
+<p>A de-esser cannot fix a bad recording. If the mic is too close or the singer is very bright, reduce the top end a little more gently and record with the mic placed off-axis next time.</p>
+''',
+    faq=[('What frequency does de-essing use?', 'Often roughly 4 to 9 kHz, but find yours by listening. The exact number depends on the voice and the microphone.'),
+         ('Can I de-ess too much?', 'Yes. Over-processed sibilance sounds dull and lisped. Reduce the amount until the words still sound clear.'),
+         ('Do I need a de-esser plugin?', 'Any de-esser works. What matters is setting the frequency and threshold by ear.')])
+
+add(slug='how-loud-should-vocals-be-on-a-beat', cluster='vocal', kw='how loud should vocals be on a beat',
+    title='How Loud Should Vocals Be on a Beat? A Practical Answer',
+    desc='How loud should vocals sit on a beat: there is no fixed number, but a practical method and a loudness check on several speakers give a balance that holds up.',
+    h1='How Loud Should Vocals Be on a Beat?',
+    answer=('There is no fixed number. Set the vocal so the words are clear over the loudest part of the beat, then check the balance on phone speakers, earphones and a car or a laptop. '
+            'Many producers keep vocals a few decibels above the beat in the chorus, but the right level is the one that carries the lyric.'),
+    body='''
+<h2>A method that works on any beat</h2>
+<ol>
+<li>Play the loudest section of the beat, then bring the vocal up until the words sit clearly on top without feeling shouted.</li>
+<li>Check the lyric. If you have to strain to hear a word, the vocal is too low or buried in the low mids.</li>
+<li>Check the peaks: the loudest words should not clip. Use the <a href="/tunedzy/tools/lufs-meter">LUFS meter</a> to see the overall level of the finished mix.</li>
+</ol>
+<h2>Test it where people will listen</h2>
+<p>Most listeners use phone speakers or earphones. A vocal that sounds right on monitors can disappear on a phone, so play the mix on at least two other devices and adjust.</p>
+<h2>Limits</h2>
+<p>Genre, tempo and the singer change the balance. A fast rap verse and a slow ballad need different levels. Use the method, not a number from a chart.</p>
+''',
+    faq=[('Is there a standard dB level for vocals?', 'No. The balance depends on the song. Set it by the lyric, then check it on several speakers.'),
+         ('Should the vocal be louder than the beat?', 'Usually the vocal sits on top of the beat for clarity, but the exact difference depends on the mix.'),
+         ('What is the first thing to check?', 'Whether you can hear every word over the loudest part of the beat, on a phone speaker.')])
+
+add(slug='what-lufs-for-spotify-and-youtube', cluster='vocal', kw='what LUFS for Spotify and YouTube',
+    title='What LUFS for Spotify and YouTube? Targets and Why',
+    desc='What LUFS should a mix hit for Spotify and YouTube: the common loudness targets, why platforms turn loud tracks down, and how to measure your own mix.',
+    h1='What LUFS for Spotify and YouTube?',
+    answer=('Both Spotify and YouTube turn loud audio down to a standard loudness, about &minus;14 LUFS integrated for Spotify. '
+            'Mixing louder than that does not make your track sound louder on the platform; it only makes it more squashed. Aim near &minus;14 LUFS and keep the true peaks below about &minus;1 dBTP.'),
+    body='''
+<h2>What the platforms do</h2>
+<p>Streaming services use loudness normalisation: they measure each track and adjust its playback level to a target. Spotify&rsquo;s own guidance uses about &minus;14 LUFS. YouTube also normalises, so very loud uploads are turned down.</p>
+<h2>Why louder is not better</h2>
+<p>If you push a track far above the target, the platform lowers it again, and the extra compression you used to get there leaves the mix dull. A track that lands near the target keeps its dynamics.</p>
+<h2>How to check your mix</h2>
+<ol>
+<li>Export the mix without a limiter that pushes beyond your target.</li>
+<li>Measure the integrated loudness with the <a href="/tunedzy/tools/lufs-meter">LUFS meter</a>.</li>
+<li>Check the true peak. Keep it below about &minus;1 dBTP so conversion to lossy formats does not clip.</li>
+</ol>
+<h2>Limits</h2>
+<p>Platforms change their guidance and the rules differ between music, podcasts and video. Check the current documentation of the platform you publish on before you master for it.</p>
+''',
+    faq=[('What is LUFS?', 'A measure of perceived loudness over a whole track. Platforms use it to set playback levels.'),
+         ('Should I master to -14 LUFS exactly?', 'Aim close to it. A few tenths of a dB do not matter.'),
+         ('Why does my track sound quieter on Spotify?', 'The platform normalises loud masters down to its target. Compare with a louder master and you will hear that it is squashed.')])
+
+add(slug='vocal-chain-for-rap-in-order', cluster='vocal', kw='vocal chain order for rap',
+    title='Vocal Chain for Rap: The Right Order and Why It Matters',
+    desc='The vocal chain for rap in order: clean up, filter, de-ess, tune, compress, add colour, then space. Why the order changes the result and what each step is for.',
+    h1='The Vocal Chain for Rap, in Order',
+    answer=('A rap vocal chain works best in this order: clean up noise, high-pass filter, de-ess, EQ, compression, pitch correction if needed, saturation for colour, then reverb and delay on sends. '
+            'Order matters because each step reacts to what came before: compressing before de-essing makes the sibilance louder.'),
+    body='''
+<h2>The order</h2>
+<ol>
+<li><strong>Clean up.</strong> Remove hum, hiss and room noise first, so later steps do not amplify them.</li>
+<li><strong>High-pass filter.</strong> Around 80 to 100 Hz, to remove thump.</li>
+<li><strong>De-ess.</strong> Before compression, so it reacts to the real sibilance.</li>
+<li><strong>EQ.</strong> Remove mud around 200 to 400 Hz and add presence where the words need clarity.</li>
+<li><strong>Compression.</strong> Even out the loud and quiet words so the lyric stays clear.</li>
+<li><strong>Pitch correction</strong>, only if the performance needs it, and set to be transparent.</li>
+<li><strong>Saturation</strong> for warmth, lightly.</li>
+<li><strong>Reverb and delay on sends</strong>, so the space sits behind the voice and the dry vocal stays clear.</li>
+</ol>
+<h2>Why the order matters</h2>
+<p>Put the compressor before the de-esser and it lifts the S sounds along with everything else, so the de-esser has to work harder and sounds worse. Put reverb before compression and the tail gets squashed. Keep the chain in order and each step has a clean input.</p>
+<h2>Limits</h2>
+<p>This is a starting point, not a rule. Some voices need less processing, and some styles use more. Change one step at a time, and bypass each to hear what it does.</p>
+''',
+    faq=[('Do I need every step?', 'No. Many rap vocals need only cleanup, de-essing, compression and a little reverb.'),
+         ('Where should pitch correction go?', 'After compression and before the colour and space, so it works on a clean, even signal.'),
+         ('Should reverb be on the vocal track?', 'Usually on a send, so you can control how much space sits behind the voice.')])
+
+add(slug='ai-voice-cover-vocals-sound-robotic', cluster='vocal', kw='AI voice cover vocals sound robotic',
+    title='Why AI Voice Covers Sound Robotic and How to Fix It',
+    desc='Why AI voice cover vocals sound robotic, what causes the stiff timing and flat breaths, and the editing steps that make them more natural.',
+    h1='Why AI Voice Covers Sound Robotic (and How to Fix It)',
+    answer=('AI vocals often sound robotic because the timing is too exact, the breaths are missing or too clean, the tone is too even and the room is too dry. '
+            'Fixing them means loosening the timing, adding breath and air where a singer would take one, de-essing harsh sounds, and adding a small amount of room.'),
+    body='''
+<h2>What makes it sound robotic</h2>
+<ul>
+<li><strong>Exact timing.</strong> Real singers drift a few milliseconds ahead or behind the beat.</li>
+<li><strong>No breaths.</strong> Breaths in the wrong places, or none at all, make a line feel unreal.</li>
+<li><strong>Too dry.</strong> A bone-dry vocal in an unnatural space sounds like a voice in a box.</li>
+<li><strong>Harsh sibilance.</strong> AI voices often over-sharpen S and T sounds.</li>
+</ul>
+<h2>What to do</h2>
+<ol>
+<li>Move a few phrase starts slightly, and nudge the loudest notes so they land a little differently from the beat.</li>
+<li>Add breaths from a clean recording where a singer would take one, at a low level.</li>
+<li>De-ess, then check that the words are still clear.</li>
+<li>Add a small amount of room reverb so the voice sits in a space, not on top of the beat.</li>
+</ol>
+<h2>Limits</h2>
+<p>Editing can make an AI vocal sound more natural, but it cannot give it a real singer&rsquo;s expression. Check the rights to the voice model before you publish a cover, and say clearly that it is an AI voice.</p>
+''',
+    faq=[('Why does an AI vocal sound flat?', 'Usually because its tone and timing are too even, and it has no natural room or breath.'),
+         ('Can editing fix every AI vocal?', 'No. It improves many, but a poor source model will still sound artificial.'),
+         ('Do I need to label AI vocals?', 'Be clear with your audience that the vocal is AI-made, and check the rules of the platform you publish on.')])
+
+add(slug='auto-tune-alternative-one-time-price', cluster='compare', kw='auto tune alternative one time price',
+    title='Auto-Tune Alternatives With a One-Time Price (2026)',
+    desc='Auto-Tune alternatives with a one-time price, compared by what they cost and what they do, plus a free option and a finishing app.',
+    h1='Auto-Tune Alternatives With a One-Time Price',
+    answer=('Several pitch tools sell for a one-time price: Waves Tune Real-Time, Synchro Arts RePitch and Celemony Melodyne are common examples. Prices change and differ by version, so check each vendor page. '
+            'If you do not run a DAW and want to finish a rough vocal in one app, Tunedzy is a different kind of tool: it cleans, tunes, fits and masters a recording.'),
+    body='''
+<h2>The main options</h2>
+<table><tr><th>Tool</th><th>Type</th><th>Price (check the vendor)</th><th>Best for</th></tr>
+<tr><td>Waves Tune Real-Time</td><td>Plugin, real-time</td><td>listed at about $40 one-time</td><td>fast tracking and tuning in a DAW</td></tr>
+<tr><td>Synchro Arts RePitch</td><td>Plugin, post-edit</td><td>listed from about $69 one-time</td><td>natural tuning after recording</td></tr>
+<tr><td>Celemony Melodyne</td><td>Plugin, note editor</td><td>listed from about $99 one-time</td><td>note-by-note editing</td></tr>
+<tr><td>BandLab AutoPitch</td><td>Free, in BandLab</td><td>free</td><td>beginners and mobile</td></tr>
+<tr><td>Tunedzy</td><td>Standalone Windows app</td><td>free to start: 30 credits in the first month, then packs from $0.99 or a plan with no counting from $1.99 a month</td><td>finishing a rough vocal without a DAW</td></tr></table>
+<h2>How to choose</h2>
+<ul>
+<li>Working in a DAW and tuning live? A real-time plugin fits.</li>
+<li>Editing note by note? Melodyne is the tool people use for that.</li>
+<li>No DAW, and you want the whole finish in one place? Use Tunedzy, and keep your own DAW for beats.</li>
+</ul>
+<h2>Limits</h2>
+<p>Prices in this table were read from public pages in October 2026 and vary by version and sale. We do not claim any tool is better than another for every job. Try the free trial or the free option on one of your own recordings before you buy.</p>
+''',
+    faq=[('Is there a free Auto-Tune alternative?', 'BandLab AutoPitch is free within BandLab. Tunedzy also starts free with credits.'),
+         ('Does Tunedzy replace a DAW?', 'No. It finishes a recording. Keep your DAW for writing and arranging beats.'),
+         ('Why are prices in this article not exact?', 'Vendors change prices and sales often. Always check the current price on the vendor site.')])
+
+add(slug='melodyne-alternative-for-beginners', cluster='compare', kw='melodyne alternative for beginners',
+    title='Melodyne Alternative for Beginners: What to Use Instead',
+    desc='A Melodyne alternative for beginners: when Melodyne is too much, the simpler tools to try first, and how to finish a vocal without learning note editing.',
+    h1='A Melodyne Alternative for Beginners',
+    answer=('Melodyne is a powerful note-by-note editor, and it has a learning curve. Beginners who need a clean vocal can start with simpler real-time pitch tools, a free option such as BandLab AutoPitch, '
+            'or an app that finishes the vocal from start to end.'),
+    body='''
+<h2>When Melodyne is more than you need</h2>
+<p>If you need to fix a few notes in one song, a note editor is slow to learn. A real-time tuner or a finishing app gets you to a usable vocal faster.</p>
+<h2>Simpler options</h2>
+<ul>
+<li><strong>BandLab AutoPitch</strong>: free, simple, aimed at beginners.</li>
+<li><strong>Waves Tune Real-Time</strong>: a one-time plugin for tracking and fast tuning.</li>
+<li><strong>Tunedzy</strong>: a finishing app for a rough recording, with cleanup, tuning, fitting to the beat and mastering in one window. Free to start with credits.</li>
+</ul>
+<h2>When to keep Melodyne</h2>
+<p>If you need precise control over timing and pitch of each note, a note editor is the right tool. Learning it takes time, and that is normal.</p>
+<h2>Limits</h2>
+<p>Simpler tools do less. They will not replace detailed note editing on a demanding vocal. Check each tool on one of your own recordings before you choose.</p>
+''',
+    faq=[('Is Melodyne hard to learn?', 'It has more controls than most beginners need. Start with the basic pitch and timing tools.'),
+         ('Can I finish a vocal without learning note editing?', 'Yes, for many rough recordings a finishing app or real-time tuner is enough.'),
+         ('Which free option should I try?', 'BandLab AutoPitch is free and simple. Tunedzy starts free with credits.')])
+
+add(slug='nectar-alternative-without-a-daw', cluster='compare', kw='vocal chain plugin alternative without a DAW',
+    title='A Vocal Chain Without a DAW: Nectar Alternatives',
+    desc='A vocal chain without a DAW: what iZotope Nectar does, the alternatives for people who do not run one, and how to finish a rough vocal in a single app.',
+    h1='A Vocal Chain Without a DAW: Nectar Alternatives',
+    answer=('iZotope Nectar is a plugin vocal chain: it runs inside a DAW and has an assistant that suggests settings. '
+            'If you do not run a DAW, or you want one window that cleans, tunes and masters a rough vocal, a finishing app is the alternative to look at.'),
+    body='''
+<h2>What Nectar is for</h2>
+<p>Nectar puts the common vocal steps in one plugin: tuning, EQ, compression and effects, with an assistant. It needs a DAW and some mixing knowledge to use well.</p>
+<h2>Alternatives by situation</h2>
+<ul>
+<li><strong>You have a DAW and want separate tools:</strong> a de-esser, an EQ, a compressor and a reverb you already own, in the order on the <a href="/tunedzy/blog/vocal-chain-for-rap-in-order">rap vocal chain guide</a>.</li>
+<li><strong>You have no DAW:</strong> Tunedzy takes a rough recording through cleanup, tuning, fitting to a beat and mastering in one app, on Windows, with free credits to start.</li>
+<li><strong>You want a phone app:</strong> Tunedzy Go runs on your phone for quick finishing.</li>
+</ul>
+<h2>Limits</h2>
+<p>A finishing app is not a full DAW. Use it to finish a vocal, and do the writing and arranging in the tool you already know. Check the current price of Nectar on iZotope&rsquo;s site, since it changes.</p>
+''',
+    faq=[('Is Nectar a DAW plugin?', 'Yes. It runs inside a digital audio workstation.'),
+         ('Can I use Tunedzy with my DAW?', 'Yes. Finish the vocal in Tunedzy and bring the file into your DAW for the mix.'),
+         ('Does Tunedzy need an internet connection?', 'Processing runs on your own PC or phone. The app checks your credits online.')])
