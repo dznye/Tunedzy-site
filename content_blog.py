@@ -635,3 +635,478 @@ add(slug='nectar-alternative-without-a-daw', cluster='compare', kw='vocal chain 
     faq=[('Is Nectar a DAW plugin?', 'Yes. It runs inside a digital audio workstation.'),
          ('Can I use Tunedzy with my DAW?', 'Yes. Finish the vocal in Tunedzy and bring the file into your DAW for the mix.'),
          ('Does Tunedzy need an internet connection?', 'Processing runs on your own PC or phone. The app checks your credits online.')])
+
+# ============================================================================================== BATCH 3: 20 pages (artist style, vocal sound, music tools, comparisons)
+CLUSTERS['artist'] = dict(tool='vocal-checker', label='Vocal sound by style', tool_name='Vocal Checker')
+CLUSTERS['music'] = dict(tool='song-key-finder', label='Key, tempo and your voice', tool_name='Song Key Finder')
+
+# ---------- vocal sound by style (5)
+add(slug='how-to-sound-like-the-weeknd-vocals', cluster='artist', kw='how to sound like The Weeknd vocals',
+    title='How to Get a Weeknd-Style Vocal Sound at Home',
+    desc='A Weeknd-style vocal sound comes from a bright, close lead, doubles, long reverb and delay. Here is a step-by-step approach, and what it cannot copy.',
+    h1='How to Get a Weeknd-Style Vocal Sound at Home',
+    answer=('The sound people mean is a bright, close, airy lead vocal, thickened with doubles, with a long reverb and a delay behind it. '
+            'You can get the same kind of sound with a clean recording, light tuning, a high-shelf lift, doubled choruses and a reverb and delay sent in parallel. It will sound like that style, not like the person.'),
+    body='''
+<h2>Step 1: Start with a clean, close take</h2>
+<p>Record close to the mic, with a pop filter, in a quiet room. A dry, clean take gives every later step something to work with. Remove noise and room echo before adding effects.</p>
+<h2>Step 2: Brighten and open the top</h2>
+<p>A gentle high-shelf boost above roughly 8 to 10 kHz adds air. Do it after de-essing, or the S sounds will jump out.</p>
+<h2>Step 3: Double the chorus</h2>
+<p>Record the chorus twice more and pan them a little left and right, quieter than the lead. The doubles give width without making the lead louder.</p>
+<h2>Step 4: Add space on sends</h2>
+<ol>
+<li>Send the vocal to a long, dark reverb and keep the return low, so it sits behind the voice.</li>
+<li>Send it to a delay set to a rhythmic value, such as a quarter or eighth note, and filter the low end of the echoes.</li>
+<li>Duck the reverb and delay slightly while the singer is singing, so words stay clear.</li>
+</ol>
+<h2>Limits</h2>
+<p>This describes the general style, not any artist&rsquo;s actual settings, which we do not know. A voice, a performance and a mix cannot be copied by a chain. Tunedzy is not affiliated with any artist.</p>
+''',
+    faq=[('Do I need pitch correction for this sound?', 'Light, transparent tuning helps keep the lead steady, but the style is mostly tone, doubles and space.'),
+         ('Which reverb should I use?', 'A long, dark reverb on a send, mixed low. Try a plate or hall and shorten it if the words get blurry.'),
+         ('Can a tool copy an artist exactly?', 'No. You can get close to a style, not to a person.')])
+
+add(slug='how-to-sound-like-drake-vocals', cluster='artist', kw='how to sound like Drake vocals',
+    title='How to Get a Drake-Style Vocal Sound at Home',
+    desc='The sound of a close, smooth melodic-rap vocal: tight compression, a gentle lift, light tuning and a short, subtle space. A practical, honest approach.',
+    h1='How to Get a Drake-Style Vocal Sound at Home',
+    answer=('A smooth melodic-rap vocal sits close and even: moderate compression so the words stay level, a small lift in presence, light pitch correction on the sung parts and a short, restrained space around the voice. '
+            'It is a style you can approach with a clean recording and careful settings, not a preset you can copy.'),
+    body='''
+<h2>Step 1: Keep the take close and even</h2>
+<p>Record with a steady distance from the mic. An even take needs less compression, and less compression keeps it natural.</p>
+<h2>Step 2: Compress for control, not squash</h2>
+<p>Use a moderate ratio and a medium attack, so the start of each word still comes through. Aim for a few dB of gain reduction on the loud words.</p>
+<h2>Step 3: Shape the tone</h2>
+<ol>
+<li>High-pass at about 80 to 100 Hz to remove thump.</li>
+<li>Cut a little mud around 200 to 400 Hz.</li>
+<li>Add a gentle lift in the presence region, roughly 3 to 5 kHz, then de-ess.</li>
+</ol>
+<h2>Step 4: Tune lightly, add a short space</h2>
+<p>For sung hooks use transparent pitch correction with a moderate retune speed. Add a short room or plate reverb and a quiet delay, so the voice stays upfront.</p>
+<h2>Limits</h2>
+<p>This is the general character of the style, not a recipe from the artist. The voice and the writing are most of what you hear. Tunedzy is not affiliated with any artist.</p>
+''',
+    faq=[('Is the sound mostly tuning?', 'No. It is mostly a clean take, even level and tasteful space. Tuning is light.'),
+         ('How much compression should I use?', 'A few dB of reduction on the loud words. Increase only if the words still jump around.'),
+         ('Can I get this sound on a phone recording?', 'You can get closer by cleaning the recording first, but a good microphone and room help the most.')])
+
+add(slug='how-to-sound-like-travis-scott-vocals', cluster='artist', kw='how to sound like Travis Scott vocals',
+    title='How to Get a Travis Scott-Style Vocal Sound',
+    desc='A heavy, layered, pitch-shifted vocal sound: strong tuning, stacked doubles, wide effects and a lot of ad-libs. Here is the approach, and its limits.',
+    h1='How to Get a Travis Scott-Style Vocal Sound',
+    answer=('This style is layered and heavily processed: strongly tuned leads, stacked doubles and octave layers, wide delays and reverbs, and plenty of ad-libs. '
+            'You can build the character of it with fast pitch correction, doubles and wide, filtered effects, but it takes careful mixing to keep the words understandable.'),
+    body='''
+<h2>Step 1: Record several takes</h2>
+<p>Record the lead, then two or three doubles, and a set of ad-libs in different tones. Layers are what give the style its width and weight.</p>
+<h2>Step 2: Use stronger pitch correction on the leads</h2>
+<p>Set a fast retune speed and the correct key and scale. Use a key finder on the beat first, so the notes snap to the right scale. The <a href="/tunedzy/tools/song-key-finder">key finder</a> gives you the key.</p>
+<h2>Step 3: Stack and spread</h2>
+<ol>
+<li>Pan the doubles left and right at a lower level than the lead.</li>
+<li>Add an octave-down layer under a few lines for weight, and an octave up for air, very quietly.</li>
+<li>Filter the effects so they do not fight the beat: cut the low end of the reverb and delay returns.</li>
+</ol>
+<h2>Step 4: Protect the words</h2>
+<p>Automate the effects to turn down while the lead is singing a key word. A mix full of effects still has to be clear on a phone speaker.</p>
+<h2>Limits</h2>
+<p>This is a general description of the style. A recipe does not give you the performance or the production. Tunedzy is not affiliated with any artist.</p>
+''',
+    faq=[('Do I need a lot of plugins?', 'No. Doubles, fast tuning, and a filtered reverb and delay get most of the character.'),
+         ('How do I keep the words clear?', 'Lower the effects while the lead sings important words, and check on a phone speaker.'),
+         ('What key should I tune to?', 'Find the beat&rsquo;s key first with the free key finder, then set the pitch tool to it.')])
+
+add(slug='how-to-get-radio-ready-vocals-at-home', cluster='vocal', kw='how to get radio ready vocals at home',
+    title='How to Get Radio-Ready Vocals at Home: A Checklist',
+    desc='A checklist for radio-ready vocals from a home recording: a clean take, cleanup, tone, control, space and a final loudness check on several speakers.',
+    h1='How to Get Radio-Ready Vocals at Home',
+    answer=('Radio-ready vocals come from a clean take, careful cleanup, shaped tone, controlled level, a little space and a check on several speakers. '
+            'Work in that order, change one thing at a time, and keep the original take so you can compare.'),
+    body='''
+<h2>The checklist</h2>
+<ol>
+<li><strong>Record clean.</strong> Close mic, pop filter, quiet room, level peaking around &minus;12 to &minus;6 dBFS.</li>
+<li><strong>Clean up.</strong> Remove noise and echo, then fix clicks and pops. See the guide on <a href="/tunedzy/remove-echo-from-vocal-recording">removing echo</a>.</li>
+<li><strong>Shape the tone.</strong> High-pass, then cut mud, then lift presence, then de-ess.</li>
+<li><strong>Control the level.</strong> Compress gently so every word is heard.</li>
+<li><strong>Add space.</strong> Short reverb and delay on sends.</li>
+<li><strong>Balance with the beat.</strong> See <a href="/tunedzy/mix-vocals-on-a-beat">mixing vocals on a beat</a>.</li>
+<li><strong>Check loudness.</strong> Measure with the <a href="/tunedzy/tools/lufs-meter">LUFS meter</a> and listen on a phone, earphones and a car or laptop.</li>
+</ol>
+<h2>Limits</h2>
+<p>Radio-ready also depends on the song and the performance. A good chain on a weak take will still sound weak. Re-record the parts that need it.</p>
+''',
+    faq=[('Do I need expensive gear?', 'No. A clean take on a modest mic in a quiet room beats a noisy take on expensive gear.'),
+         ('What should I check last?', 'The loudness and the balance on three different speakers.'),
+         ('Can software replace a good take?', 'It helps, but it cannot add a performance that was not recorded.')])
+
+add(slug='how-to-fix-off-key-vocals-without-sounding-robotic', cluster='vocal', kw='fix off key vocals without sounding robotic',
+    title='Fix Off-Key Vocals Without Sounding Robotic',
+    desc='How to fix off-key notes while keeping the voice natural: find the key, correct only the notes that need it, slow the retune speed and keep the vibrato.',
+    h1='How to Fix Off-Key Vocals Without Sounding Robotic',
+    answer=('Correct only the notes that are wrong, set the pitch tool to the song&rsquo;s key and scale, use a slower retune speed for natural phrases and keep the singer&rsquo;s vibrato. '
+            'The robotic sound comes from a very fast retune speed on every note.'),
+    body='''
+<h2>Step 1: Find the key</h2>
+<p>Use the <a href="/tunedzy/tools/song-key-finder">key finder</a> on the beat, so the pitch tool knows which notes are allowed.</p>
+<h2>Step 2: Set a natural retune speed</h2>
+<p>A slow to medium speed lets the note glide into place. A very fast speed snaps notes instantly, which gives the hard, robotic effect people hear on purpose in some styles.</p>
+<h2>Step 3: Fix the worst notes, not every note</h2>
+<ol>
+<li>Listen for the notes that sound clearly wrong.</li>
+<li>Correct those, and leave the rest as sung.</li>
+<li>Keep the vibrato: lower the amount of correction on held notes.</li>
+</ol>
+<h2>Step 4: Listen in the mix</h2>
+<p>Judge the result with the beat playing. A small error that no one hears in the mix does not need fixing.</p>
+<h2>Limits</h2>
+<p>Pitch correction cannot fix a performance that is far off or a note sung in a wrong rhythm. Re-record the line if it is very far from the key.</p>
+''',
+    faq=[('Why does tuned vocal sound robotic?', 'Usually a very fast retune speed on every note. Slow it down and fix only what needs fixing.'),
+         ('What if I do not know the key?', 'Use the free key finder on the beat, then set the pitch tool to it.'),
+         ('Does tuning change my voice?', 'Used lightly, it moves notes into pitch without changing the tone.')])
+
+# ---------- more vocal craft (5)
+add(slug='how-to-double-track-vocals-and-ad-libs', cluster='vocal', kw='how to double track vocals',
+    title='How to Double-Track Vocals and Ad-Libs',
+    desc='How to double-track vocals: record a second take, tighten the timing, pan and level the doubles, and place ad-libs so they add energy without clutter.',
+    h1='How to Double-Track Vocals and Ad-Libs',
+    answer=('Record the same line a second time, line it up with the lead, pan the double to one side or split two doubles left and right, and keep it quieter than the lead. '
+            'Place ad-libs in the gaps and keep them lower and more filtered, so they add energy without hiding the words.'),
+    body='''
+<h2>Double-tracking</h2>
+<ol>
+<li>Record the lead, then the same line again with the same energy.</li>
+<li>Nudge the start of words so both takes land together. Tight timing sounds big; loose timing sounds like a mistake.</li>
+<li>Pan two doubles a little left and right, and set them several dB below the lead.</li>
+<li>High-pass the doubles higher than the lead so the low end stays clear.</li>
+</ol>
+<h2>Ad-libs</h2>
+<p>Record ad-libs at a different tone from the lead. Place them in the spaces at the end of lines. Filter them, and add more reverb than the lead, so they sit behind it.</p>
+<h2>Limits</h2>
+<p>Too many layers make a mix muddy. Add them for the chorus first, and only keep layers that you can hear improving the part.</p>
+''',
+    faq=[('Should doubles be exactly the same?', 'No. Close, but not identical. The small differences give the thicker sound.'),
+         ('How loud should doubles be?', 'A few dB below the lead. Raise them until you notice them, then lower them a little.'),
+         ('Do ad-libs need pitch correction?', 'Only if they are clearly out of tune. Many ad-libs sound better a bit loose.')])
+
+add(slug='how-to-add-reverb-to-vocals-without-making-them-muddy', cluster='vocal', kw='how to add reverb to vocals without muddy',
+    title='Add Reverb to Vocals Without Making Them Muddy',
+    desc='How to add reverb to vocals and keep them clear: use a send, cut the low end of the reverb, set a short pre-delay and choose a time that fits the tempo.',
+    h1='How to Add Reverb to Vocals Without Making Them Muddy',
+    answer=('Put the reverb on a send, cut the low end of the reverb return, add a short pre-delay so the dry word lands first and keep the level low enough that you only miss it when it is gone. '
+            'Choose a decay time that fits the tempo, so the tail ends before the next line.'),
+    body='''
+<h2>Set it up</h2>
+<ol>
+<li>Create a send from the vocal to a reverb. Keep the vocal itself dry.</li>
+<li>High-pass the reverb return around 200 to 400 Hz, so the low mids stay clean.</li>
+<li>Add a pre-delay of roughly 20 to 60 ms so the word is heard before the space.</li>
+<li>Set the decay so it fades before the next phrase begins.</li>
+</ol>
+<h2>Check it</h2>
+<p>Mute the reverb and un-mute it. If the vocal seems smaller or lost without it, the level is about right. If you notice the reverb as a separate sound, lower it.</p>
+<h2>Limits</h2>
+<p>Dense, slow music can take more space, and fast rap takes less. Start short, then lengthen only if the song needs it.</p>
+''',
+    faq=[('What is pre-delay?', 'A short gap before the reverb starts, so the dry word is heard clearly first.'),
+         ('Why is my reverb muddy?', 'Usually too much low-mid content in the tail, or a decay that is too long. Filter the return and shorten the time.'),
+         ('Should I use a send or insert?', 'A send is easier to control and keeps the dry vocal clear.')])
+
+add(slug='how-to-use-delay-on-vocals', cluster='vocal', kw='how to use delay on vocals',
+    title='How to Use Delay on Vocals: Slapback and Echo Settings',
+    desc='How to use delay on vocals: slapback for thickness, a tempo-matched echo for space, and the filtering and feedback settings that keep it clean.',
+    h1='How to Use Delay on Vocals',
+    answer=('Use a short slapback delay of roughly 60 to 120 ms for thickness, or a tempo-matched delay (a quarter or an eighth note) for space. '
+            'Send it from the vocal, filter the echoes so they are not bright or boomy, and keep the feedback low so only a few repeats are heard.'),
+    body='''
+<h2>Two common uses</h2>
+<ul>
+<li><strong>Slapback</strong> (about 60 to 120 ms, one repeat): thickens the voice without an obvious echo.</li>
+<li><strong>Tempo delay</strong> (a quarter or eighth note): adds rhythm and space behind the lead.</li>
+</ul>
+<h2>Settings</h2>
+<ol>
+<li>Send the vocal to the delay and keep the delay return below the lead.</li>
+<li>Set the time from the tempo. The <a href="/tunedzy/tools/bpm-finder">BPM finder</a> gives you the beat&rsquo;s tempo.</li>
+<li>Filter the echoes: high-pass to remove low rumble, low-pass to soften the top.</li>
+<li>Use low feedback for a few repeats, more for a trail at the end of a phrase.</li>
+</ol>
+<h2>Limits</h2>
+<p>Too many repeats on a busy part blur the words. Automate the delay to open on the last word of a line instead of leaving it on all the time.</p>
+''',
+    faq=[('What delay time should I start with?', 'A quarter or eighth note of the song&rsquo;s tempo, or about 80 to 100 ms for slapback.'),
+         ('How do I get the tempo?', 'Use the free BPM finder on the beat.'),
+         ('Should delay be on the vocal track?', 'Usually on a send, so the dry vocal stays clear.')])
+
+add(slug='what-is-vocal-compression-and-what-settings-to-use', cluster='vocal', kw='vocal compression settings',
+    title='Vocal Compression Settings: Ratio, Attack, Release',
+    desc='What compression does to a vocal and the starting settings for ratio, threshold, attack and release, plus how to hear when it is helping or hurting.',
+    h1='Vocal Compression Settings: A Starting Point',
+    answer=('A compressor turns down the loud parts so quiet and loud words sit closer together. A common starting point for a vocal is a ratio of about 3:1 to 4:1, '
+            'a medium attack, a fast to medium release and a threshold that gives roughly 3 to 6 dB of reduction on the loudest words. Adjust by ear.'),
+    body='''
+<h2>The settings</h2>
+<table><tr><th>Setting</th><th>Starting point</th><th>What it does</th></tr>
+<tr><td>Ratio</td><td>3:1 to 4:1</td><td>How strongly the signal above the threshold is reduced</td></tr>
+<tr><td>Threshold</td><td>to get 3&ndash;6 dB of reduction</td><td>The level where compression starts</td></tr>
+<tr><td>Attack</td><td>medium (about 10&ndash;30 ms)</td><td>Slower lets the start of each word through</td></tr>
+<tr><td>Release</td><td>fast to medium</td><td>How quickly the level returns</td></tr></table>
+<h2>How to check it</h2>
+<ol>
+<li>Bypass the compressor and compare at the same loudness.</li>
+<li>Listen for the words: they should be easier to hear, not squashed.</li>
+<li>If the voice sounds flat or breathes, reduce the ratio or raise the threshold.</li>
+</ol>
+<h2>Limits</h2>
+<p>These are starting points. The right settings depend on the voice, the take and the genre. If you are chasing heavy compression to fix a poor take, record it again.</p>
+''',
+    faq=[('What ratio is best for vocals?', 'Often 3:1 to 4:1 as a start. Move up for a more controlled sound, down for a natural one.'),
+         ('How much gain reduction is normal?', 'About 3 to 6 dB on the loudest words is a common starting range.'),
+         ('Do I need two compressors?', 'Some mixers use two gentle ones instead of one heavy one. It is optional.')])
+
+add(slug='how-to-fix-boomy-vocals-proximity-effect', cluster='vocal', kw='fix boomy vocals proximity effect',
+    title='How to Fix Boomy Vocals: The Proximity Effect',
+    desc='Boomy, bassy vocals are often the proximity effect: the mic is too close. Fix it with distance, angle, a high-pass filter and a small cut in the low mids.',
+    h1='How to Fix Boomy Vocals (the Proximity Effect)',
+    answer=('Directional microphones boost bass when you sing very close, which is called the proximity effect. Move a little further back or angle the mic, then high-pass around 80 to 100 Hz '
+            'and cut a few dB around 200 to 300 Hz if the voice still sounds boomy.'),
+    body='''
+<h2>Fix it at the mic first</h2>
+<p>Move back a few centimetres and use a pop filter to keep a steady distance. Record a short test line at different distances and listen to which sounds clearest.</p>
+<h2>Fix it in the edit</h2>
+<ol>
+<li>High-pass at about 80 to 100 Hz.</li>
+<li>Sweep a narrow EQ cut through 150 to 400 Hz until the boom drops, then widen the cut a little.</li>
+<li>Keep the cut small, a few dB. Too much makes the voice thin.</li>
+</ol>
+<h2>Limits</h2>
+<p>A room that adds bass makes it worse. If the booming is in the room, treat the room or move to a place with soft surfaces. Boom is easier to prevent than to fix.</p>
+''',
+    faq=[('What causes the proximity effect?', 'Singing very close to a directional microphone raises the bass in the sound.'),
+         ('Can EQ fix it fully?', 'It can reduce it. Distance and mic angle work better than any EQ.'),
+         ('Will a pop filter help?', 'A pop filter helps keep a steady distance, which helps control the bass.')])
+
+# ---------- key, tempo and your voice (5)
+add(slug='how-to-find-the-key-of-a-song', cluster='music', kw='how to find the key of a song',
+    title='How to Find the Key of a Song (Free Tool and By Ear)',
+    desc='Find the key of any song with a free key finder on the audio file, or by ear using the root note and the major or minor sound. Why it matters for singing.',
+    h1='How to Find the Key of a Song',
+    answer=('The fastest way is to drop the audio into a key finder, such as the free <a href="/tunedzy/tools/song-key-finder">Song Key Finder</a>. By ear, find the note that feels like home, then decide if the song sounds major (bright) or minor (darker).'),
+    body='''
+<h2>Option 1: A key finder</h2>
+<p>Drop the file into the <a href="/tunedzy/tools/song-key-finder">Song Key Finder</a>. It analyses the audio in your browser and shows the likely key. Nothing is uploaded.</p>
+<h2>Option 2: By ear</h2>
+<ol>
+<li>Play the song and hum along until you find the note that feels like the resting place. That is the root.</li>
+<li>Play that note on a keyboard and compare. Check if the song sounds bright (major) or darker (minor).</li>
+<li>Check the first and last chords of the song. They are often the key&rsquo;s chord.</li>
+</ol>
+<h2>Why it matters</h2>
+<p>A pitch tool needs the key to tell wrong notes from right ones. Singers also need the key to check if a song fits their voice.</p>
+<h2>Limits</h2>
+<p>Songs that change key or use unusual scales confuse key finders. Treat the result as a strong suggestion and confirm by ear.</p>
+''',
+    faq=[('Can I find a key from a beat?', 'Yes. Drop the beat file into the key finder.'),
+         ('What if the song changes key?', 'A key finder gives the main key. Check the sections by ear.'),
+         ('Is the key finder free?', 'Yes. It runs in your browser and nothing is uploaded.')])
+
+add(slug='how-to-find-the-bpm-of-a-song', cluster='music', kw='how to find the BPM of a song',
+    title='How to Find the BPM of a Song (Free Tool and Tap Method)',
+    desc='Find the tempo of any song: use a free BPM finder, or tap along with the beat. Why the tempo matters for delays, tuning and timing your vocal.',
+    h1='How to Find the BPM of a Song',
+    answer=('Drop the audio into the free <a href="/tunedzy/tools/bpm-finder">BPM finder</a>, or tap along to the beat for 20 or 30 seconds and read the average. '
+            'The tempo tells you how to set delays and how fast to retune a vocal.'),
+    body='''
+<h2>Option 1: A BPM finder</h2>
+<p>Use the <a href="/tunedzy/tools/bpm-finder">BPM finder</a>. It analyses the file in your browser and shows the tempo.</p>
+<h2>Option 2: Tap it</h2>
+<ol>
+<li>Play the song and tap a key on every beat for 20 to 30 seconds.</li>
+<li>Use the average of the taps, not the first few.</li>
+<li>Check against half-time and double-time: 70 and 140 BPM can feel the same.</li>
+</ol>
+<h2>Why it matters</h2>
+<p>Delay times, pre-delay and the speed of auto-tune retune all come from the tempo. A delay that matches the beat sounds like part of the music.</p>
+<h2>Limits</h2>
+<p>Songs with tempo changes or loose live timing give less reliable results. For those, tap by section.</p>
+''',
+    faq=[('What is half-time?', 'The same music felt at half the speed. A tempo finder may show 140 when you feel 70.'),
+         ('Does the BPM change the key?', 'No. Tempo and key are separate.'),
+         ('Is the BPM finder free?', 'Yes. It runs in your browser and nothing is uploaded.')])
+
+add(slug='what-is-the-camelot-wheel-and-how-to-use-it', cluster='music', kw='camelot wheel how to use',
+    title='The Camelot Wheel Explained: Match Keys Simply',
+    desc='The Camelot wheel numbers the 24 musical keys so you can see which keys blend well. A short, honest guide to using it for mixing and matching vocals.',
+    h1='The Camelot Wheel Explained',
+    answer=('The Camelot wheel gives each of the 24 major and minor keys a number from 1 to 12 and a letter (A for minor, B for major). Keys with the same number or one step apart on the wheel usually blend well, '
+            'so it is a quick way to choose a compatible key for a vocal or a second track.'),
+    body='''
+<h2>How to read it</h2>
+<ul>
+<li>The number is the position on the wheel, 1 to 12.</li>
+<li>The letter shows minor (A) or major (B).</li>
+<li>The same number with the other letter is the relative major or minor, which shares the same notes.</li>
+<li>Moving one number up or down goes to a neighbouring key that blends well.</li>
+</ul>
+<h2>How to use it</h2>
+<ol>
+<li>Find the key of your beat with the <a href="/tunedzy/tools/song-key-finder">key finder</a>.</li>
+<li>Look up its Camelot number.</li>
+<li>Use the same key, or one step either way, for a track or sample you want to blend.</li>
+</ol>
+<h2>Limits</h2>
+<p>It is a shortcut, not a rule. Some matches that are close on the wheel still clash, and some that are far apart work well. Always listen.</p>
+''',
+    faq=[('Is the Camelot wheel only for DJs?', 'It started in DJ mixing, but anyone matching keys can use it.'),
+         ('What is a relative key?', 'The major and minor key that share the same notes.'),
+         ('How do I find my key?', 'Use the free key finder.')])
+
+add(slug='how-to-pick-a-key-for-your-vocal-range', cluster='music', kw='how to pick a key for your vocal range',
+    title='How to Pick the Right Key for Your Vocal Range',
+    desc='Pick a key that suits your voice: find your comfortable range, check the highest and lowest notes and shift the key a few semitones until it fits.',
+    h1='How to Pick the Right Key for Your Vocal Range',
+    answer=('Find the highest and lowest notes of the melody, then shift the song up or down in semitones until both fit your comfortable range, with the highest notes just inside your reach. '
+            'Check the chorus especially: it is usually the highest and most demanding part.'),
+    body='''
+<h2>Step 1: Find your comfortable range</h2>
+<p>Sing up and down a scale on an easy vowel until the notes start to strain, then back off a little. Use a keyboard or a tuner app to see the notes.</p>
+<h2>Step 2: Check the song</h2>
+<ol>
+<li>Find the song&rsquo;s key with the <a href="/tunedzy/tools/song-key-finder">key finder</a>.</li>
+<li>Sing the highest line, usually the chorus, and note if it strains.</li>
+<li>Shift the beat down or up one or two semitones and try again.</li>
+</ol>
+<h2>Step 3: Re-check the low notes</h2>
+<p>Lowering the key helps the high notes but can push the low notes too low. Find the middle where both are comfortable.</p>
+<h2>Limits</h2>
+<p>A change of key changes the sound of the beat and some samples. Try small shifts first, and listen to the beat after moving it.</p>
+''',
+    faq=[('What is a semitone?', 'The smallest step on a keyboard, one key to the next.'),
+         ('Does shifting the key hurt the beat?', 'Small shifts are usually fine. Large shifts can change the character of samples.'),
+         ('Can software shift the key?', 'Yes, most editors can shift key. Check the result by ear.')])
+
+add(slug='how-to-match-vocal-pitch-to-a-beat-key', cluster='music', kw='match vocal pitch to beat key',
+    title='How to Match Vocal Pitch to the Key of Your Beat',
+    desc='Match a vocal to the key of a beat: find the beat key, set your pitch tool to the same key and scale, and fix only the notes that fall outside it.',
+    h1='How to Match Vocal Pitch to the Key of Your Beat',
+    answer=('Find the key of the beat, set your pitch tool to that key and scale, then correct only the sung notes that fall outside it. '
+            'If the whole vocal sits in a different key, shift the beat or the vocal by a few semitones instead of forcing every note.'),
+    body='''
+<h2>Step 1: Find the key</h2>
+<p>Use the <a href="/tunedzy/tools/song-key-finder">key finder</a> on the beat file. Note the key and whether it is major or minor.</p>
+<h2>Step 2: Set the pitch tool</h2>
+<p>Choose the same key and scale. Notes outside the scale are then treated as errors and pulled to the nearest allowed note.</p>
+<h2>Step 3: Check the result</h2>
+<ol>
+<li>Listen with the beat playing.</li>
+<li>If many notes are being moved a long way, the vocal is in the wrong key. Shift the vocal or the beat.</li>
+<li>If a note sounds wrong after tuning, the key or scale may not match: try the relative major or minor.</li>
+</ol>
+<h2>Limits</h2>
+<p>Songs that use blue notes or change key need a looser scale or manual correction. A tool works with the scale you give it, so a wrong key gives wrong results.</p>
+''',
+    faq=[('What if the beat has no clear key?', 'Try the key finder, then confirm by ear. Some beats are ambiguous.'),
+         ('Should I use a chromatic scale?', 'Use it when the song does not follow a single key.'),
+         ('Why do some tuned notes sound wrong?', 'The key or scale is probably set wrong. Check the relative major or minor.')])
+
+# ---------- comparisons and marketing (5)
+add(slug='best-free-vocal-tools-compared', cluster='compare', kw='best free vocal tools',
+    title='Best Free Vocal Tools Compared (2026): What Each Does',
+    desc='Free vocal tools compared by what they do: noise cleanup, pitch correction, key and BPM finding, loudness checks. Where Tunedzy fits and where others do better.',
+    h1='Best Free Vocal Tools Compared',
+    answer=('Free tools split into jobs: browser cleaners for noise, free pitch tools for tuning, key and tempo finders for analysis, and meters for loudness. '
+            'No single free tool does all of it, so pick by the job. Tunedzy&rsquo;s free tools cover key, tempo, loudness and noise in your browser, and its app starts with free credits.'),
+    body='''
+<h2>By job</h2>
+<table><tr><th>Job</th><th>Free options</th><th>Notes</th></tr>
+<tr><td>Remove noise from speech</td><td>Adobe Podcast (browser), AudioCleaner, Audacity (slower), <a href="/tunedzy/tools/voice-recorder-noise-cancellation">Tunedzy&rsquo;s free voice recorder</a></td><td>Some upload your audio; check each tool&rsquo;s privacy terms</td></tr>
+<tr><td>Tune pitch</td><td>BandLab AutoPitch, <a href="/tunedzy/tools/live-autotune">Tunedzy Live Autotune</a></td><td>Free tools are simpler than paid plugins</td></tr>
+<tr><td>Find key, tempo, chords</td><td><a href="/tunedzy/tools/song-key-finder">Key finder</a>, <a href="/tunedzy/tools/bpm-finder">BPM finder</a>, <a href="/tunedzy/tools/chord-finder">chord finder</a></td><td>Run in the browser</td></tr>
+<tr><td>Measure loudness</td><td><a href="/tunedzy/tools/lufs-meter">LUFS meter</a></td><td>Shows platform targets</td></tr></table>
+<h2>How to choose</h2>
+<p>Match the tool to the job, test it on a short piece of your own audio, and keep the original. Free tools are a good start; a finishing app helps when you want the whole chain in one place.</p>
+<h2>Limits</h2>
+<p>Features and terms change. This table was read from public pages in October 2026; check each tool before relying on it.</p>
+''',
+    faq=[('Is there one free tool that does everything?', 'Not really. Different tools do different jobs, so use a few.'),
+         ('Are free online tools private?', 'It depends. Some upload your audio. Tunedzy&rsquo;s browser tools run on your device and upload nothing.'),
+         ('When do I need a paid tool?', 'When you want more control or the whole chain in one place.')])
+
+add(slug='tunedzy-vs-adobe-podcast-for-vocals', cluster='compare', kw='Tunedzy vs Adobe Podcast',
+    title='Tunedzy vs Adobe Podcast for Vocals: Which Fits You',
+    desc='Adobe Podcast is a free browser tool for speech cleanup. Tunedzy finishes music vocals on your PC. A plain comparison of what each is good at.',
+    h1='Tunedzy vs Adobe Podcast for Vocals',
+    answer=('Adobe Podcast is a free browser tool aimed at cleaning speech. Tunedzy is a Windows app for finishing music vocals: cleanup, tuning, fitting to a beat and mastering, '
+            'with free credits to start. Use Adobe Podcast for spoken-word cleanup in a browser, and Tunedzy when the recording is a vocal for a song.'),
+    body='''
+<h2>The short comparison</h2>
+<table><tr><th></th><th>Adobe Podcast</th><th>Tunedzy</th></tr>
+<tr><td>Made for</td><td>Speech and podcasts</td><td>Music vocals and voice-over</td></tr>
+<tr><td>Runs</td><td>In a browser</td><td>On your PC (Windows) and phone (Tunedzy Go)</td></tr>
+<tr><td>Price</td><td>Free for basic use (check the current terms)</td><td>Free credits to start, packs from $0.99, plans from $1.99 a month</td></tr>
+<tr><td>Your audio</td><td>Processed online (check the privacy terms)</td><td>Processed on your device</td></tr></table>
+<h2>Which to pick</h2>
+<ul>
+<li>A podcast or voice-over cleaned in a browser: try Adobe Podcast.</li>
+<li>A sung or rapped vocal that needs tuning, fitting and mastering: try Tunedzy.</li>
+</ul>
+<h2>Limits</h2>
+<p>Features and terms of other products change. Check each product before you decide, and test both on a short clip of your own.</p>
+''',
+    faq=[('Can I use both?', 'Yes. Clean speech in one and finish a music vocal in the other.'),
+         ('Is Tunedzy free?', 'It starts free with credits: 30 in your first month, then about 12 a month, with packs from $0.99.'),
+         ('Does Tunedzy upload my audio?', 'No. Processing runs on your own PC or phone.')])
+
+add(slug='why-finish-a-vocal-in-one-app-instead-of-many-plugins', cluster='compare', kw='finish a vocal in one app',
+    title='Finish a Vocal in One App or Many Plugins? An Honest Look',
+    desc='A chain of plugins gives control; a finishing app gives speed. When each is the right choice for a home-recorded vocal, and how to decide in five minutes.',
+    h1='Finish a Vocal in One App or Many Plugins?',
+    answer=('Many plugins give you control and a lot to learn. One finishing app gives you speed and fewer decisions. If you already mix in a DAW and know your chain, keep it. '
+            'If you want a clean, balanced vocal quickly from a rough recording, a finishing app saves time.'),
+    body='''
+<h2>The trade-off</h2>
+<table><tr><th></th><th>Many plugins</th><th>One finishing app</th></tr>
+<tr><td>Control</td><td>Very high</td><td>Fewer settings, faster result</td></tr>
+<tr><td>Learning</td><td>Takes time</td><td>Quick to start</td></tr>
+<tr><td>Cost</td><td>Often several purchases</td><td>One app</td></tr>
+<tr><td>Best for</td><td>People who mix a lot</td><td>People who want a finished vocal quickly</td></tr></table>
+<h2>How to decide in five minutes</h2>
+<ol>
+<li>Take a rough 30-second vocal.</li>
+<li>Process it your usual way, and time it.</li>
+<li>Run it through a finishing app, and time that too.</li>
+<li>Compare the two by ear, on a phone speaker and on headphones.</li>
+</ol>
+<h2>Limits</h2>
+<p>A finishing app does not replace mixing a whole song. Use it for the vocal, and keep your DAW for arrangement and the final mix.</p>
+''',
+    faq=[('Do I lose quality using one app?', 'Not necessarily. Compare the results on your own recording.'),
+         ('Can I still use my plugins?', 'Yes. Finish the vocal in the app and keep your plugins for the mix.'),
+         ('Which is cheaper?', 'It depends on the plugins you already own.')])
+
+add(slug='how-to-finish-a-song-in-one-evening', cluster='compare', kw='how to finish a song in one evening',
+    title='How to Finish a Song in One Evening: A Realistic Plan',
+    desc='A realistic plan to finish a song in one evening: lock the beat, record, clean, tune, balance, check loudness and export. With the free tools you need.',
+    h1='How to Finish a Song in One Evening',
+    answer=('Decide the beat first, record the vocal in a few passes, clean and tune it, balance it with the beat, check loudness and export. '
+            'Keep each step short and stop fixing small things. Finishing is a skill: a finished song teaches more than a perfect unfinished one.'),
+    body='''
+<h2>A plan for about three to four hours</h2>
+<ol>
+<li><strong>Beat (20 min).</strong> Choose it. Find the key and tempo with the free <a href="/tunedzy/tools/song-key-finder">key finder</a> and <a href="/tunedzy/tools/bpm-finder">BPM finder</a>.</li>
+<li><strong>Record (60 min).</strong> A few full takes, then fix the lines that need it.</li>
+<li><strong>Clean and tune (30 min).</strong> Remove noise, fix the worst notes, and de-ess.</li>
+<li><strong>Balance (30 min).</strong> Set the vocal against the beat and add a little space.</li>
+<li><strong>Check loudness (15 min).</strong> Use the <a href="/tunedzy/tools/lufs-meter">LUFS meter</a> and listen on a phone.</li>
+<li><strong>Export and stop (10 min).</strong> Save the file. Listen the next morning before changing anything.</li>
+</ol>
+<h2>Limits</h2>
+<p>Time depends on the song and your experience. Stopping on time matters more than any one setting.</p>
+''',
+    faq=[('What if I run out of time?', 'Export what you have. A rough, finished version beats a perfect unfinished one.'),
+         ('Should I mix the beat too?', 'If the beat is finished, leave it. Focus on the vocal and the balance.'),
+         ('What is the first thing to fix?', 'Noise and the worst notes. Small details come last.')])
