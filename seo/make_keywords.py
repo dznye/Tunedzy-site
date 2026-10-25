@@ -17,7 +17,7 @@ import content_blog as B  # noqa: E402
 import content_tools as T  # noqa: E402
 
 OUT = Path(__file__).resolve().parent / 'keywords.csv'
-LIVE = set(C.GUIDE_ORDER) | {'guides', 'pricing'} | {b['slug'] for b in B.BLOGS} | {'tools/' + s for s in T.TOOL_ORDER}
+LIVE = set(C.GUIDE_ORDER) | {'guides', 'pricing'} | {'blog/' + b['slug'] for b in B.BLOGS} | {'tools/' + s for s in T.TOOL_ORDER}
 
 PROBLEMS = {  # problem -> the guide that answers it
     'background noise': 'remove-background-noise-from-a-voice-recording',
@@ -26,16 +26,16 @@ PROBLEMS = {  # problem -> the guide that answers it
     'hiss': 'remove-background-noise-from-a-voice-recording',
     'fan noise': 'remove-background-noise-from-a-voice-recording',
     'traffic noise': 'remove-background-noise-from-a-voice-recording',
-    'keyboard noise': 'remove-background-noise-from-a-voice-recording',
-    'wind noise': 'remove-background-noise-from-a-voice-recording',
+    'keyboard noise': 'how-to-remove-keyboard-and-desk-noise-from-a-recording',
+    'wind noise': 'how-to-remove-wind-noise-from-audio',
     'rumble': 'remove-background-noise-from-a-voice-recording',
     'clipping': 'fix-clipped-distorted-audio',
     'distortion': 'fix-clipped-distorted-audio',
     'muffled': 'fix-a-muffled-voice-recording',
     'clicks': 'clean-up-a-phone-voice-recording',
     'crackle': 'clean-up-a-phone-voice-recording',
-    'mic pops': 'clean-up-a-phone-voice-recording',
-    'breath noise': 'clean-up-a-phone-voice-recording',
+    'mic pops': 'blog/remove-mic-pops-plosives',
+    'breath noise': 'how-to-remove-breath-noise-from-a-voice-recording',
     'sibilance': 'fix-a-muffled-voice-recording',
     'low volume': 'loudness-for-youtube-podcasts-and-spotify',
     'uneven volume': 'loudness-for-youtube-podcasts-and-spotify',
@@ -60,8 +60,8 @@ SOURCES = {  # source -> the page that answers it best when the problem is about
     'podcast episode': 'podcast-sound-professional-on-a-budget',
     'interview recording': 'edit-a-podcast-by-its-words',
     'zoom recording': None,
-    'obs stream mic': 'remove-background-noise-from-mic-obs',
-    'discord voice': 'virtual-audio-cable-setup-obs-discord-zoom',
+    'obs stream mic': 'blog/remove-background-noise-from-mic-obs',
+    'discord voice': 'blog/virtual-audio-cable-setup-obs-discord-zoom',
     'webcam mic': None,
     'usb mic': 'podcast-sound-professional-on-a-budget',
     'laptop mic': None,
@@ -93,6 +93,38 @@ TOOL_QUERIES = {  # query -> tool page slug
     'voice recorder noise cancellation': 'voice-recorder-noise-cancellation',
 }
 
+RESEARCH_QUERIES = {  # query (from the research in seo/RESEARCH.md) -> the page that answers it
+    'what is a noise gate': 'what-is-a-noise-gate',
+    'what is a noise gate in audio': 'what-is-a-noise-gate',
+    'what is lufs': 'what-is-lufs',
+    'what is lufs in audio': 'what-is-lufs',
+    'what is true peak dbtp': 'what-is-true-peak-dbtp',
+    'what is dbtp': 'what-is-true-peak-dbtp',
+    'what is an equalizer eq': 'what-is-an-equalizer',
+    'what is a high pass filter': 'what-is-a-high-pass-filter',
+    'how to remove breath noise from voice recording': 'how-to-remove-breath-noise-from-a-voice-recording',
+    'how to remove echo from phone voice recording': 'remove-echo-from-vocal-recording',
+    'clean up zoom recording audio': 'how-to-clean-up-a-zoom-or-video-call-recording',
+    'how to clean up zoom recording': 'how-to-clean-up-a-zoom-or-video-call-recording',
+    'how to remove keyboard noise from recording': 'how-to-remove-keyboard-and-desk-noise-from-a-recording',
+    'how to make audio louder without distortion': 'how-to-make-audio-louder-without-distortion',
+    'export audio for spotify': 'how-to-export-audio-for-spotify-and-apple-podcasts',
+    'export audio for apple podcasts': 'how-to-export-audio-for-spotify-and-apple-podcasts',
+    'how to make voice sound warmer': 'how-to-make-a-voice-sound-warmer',
+    'isolate voice from background music': 'how-to-isolate-a-voice-from-background-music',
+    'record voice on laptop microphone': 'how-to-record-a-voice-on-a-laptop-microphone',
+    'record remote podcast guest': 'how-to-record-a-remote-podcast-guest',
+    'clean up interview recording': 'how-to-clean-up-an-interview-recording',
+    'remove wind noise from audio': 'how-to-remove-wind-noise-from-audio',
+    'remove plosives from voice recording': 'blog/remove-mic-pops-plosives',
+    'how to remove plosives mic pops': 'blog/remove-mic-pops-plosives',
+    'clean up audio for podcast': 'podcast-sound-professional-on-a-budget',
+    'how to remove ums from audio': 'edit-a-podcast-by-its-words',
+    'how to make a podcast sound better': 'podcast-sound-professional-on-a-budget',
+    'phone voiceover sounds professional': 'record-a-voiceover-on-your-phone',
+    'what lufs for podcast': 'loudness-for-youtube-podcasts-and-spotify',
+}
+
 
 def main():
     rows, seen = [], set()
@@ -119,6 +151,8 @@ def main():
     for s, spage in SOURCES.items():
         for tpl in HOWTO:
             add(tpl.format(s=s), 'informational', 'awareness', spage or 'clean-up-a-phone-voice-recording', 'how to: ' + s)
+    for q, path in RESEARCH_QUERIES.items():
+        add(q, 'informational' if q.startswith(('what', 'how')) else 'commercial', 'awareness' if q.startswith(('what', 'how')) else 'consideration', path, 'research')
     for q, slug in TOOL_QUERIES.items():
         add(q, 'transactional', 'decision', 'tools/' + slug, 'free tool')
     rows.sort(key=lambda r: (r['stage'], r['cluster'], r['query']))

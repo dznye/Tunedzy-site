@@ -202,7 +202,7 @@ def layout(*, title, desc, path, body, lds, robots='index,follow', og_type='webs
 <meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{e(url)}"><meta property="og:image" content="{C.SITE}{C.BASE}/og.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(title)}"><meta name="twitter:description" content="{e(desc)}"><meta name="twitter:image" content="{C.SITE}{C.BASE}/og.png">
 <style>{CSS}</style>{ld}</head><body>
-<header class="top"><div class="wrap"><a class="logo" href="{C.BASE}"><img src="{C.BASE}/favicon.png" alt="" width="30" height="30"><span>Tuned<b>zy</b></span></a>
+<header class="top"><div class="wrap"><a class="logo" href="{C.BASE}"><img src="{C.BASE}/favicon.png" alt="" width="30" height="30"><span>Tune<b>dzy</b></span></a>
 <nav class="main" aria-label="Main">{nav}</nav><a class="hbtn" href="{C.BASE}#pricing">{'Download free' if LAUNCHED else 'Free'}</a></div></header>
 {body}
 <footer><div class="wrap"><div class="cols">
@@ -539,10 +539,11 @@ def guides_hub():
 
     def cards(slugs):
         return ''.join(f'<a class="th" href="{C.BASE}/{s}">{img(THUMB.get(GUIDE_PHOTO[s], GUIDE_PHOTO[s]), alt="")}<span><b>{e(C.GUIDES[s]["h1"])}</b><br><span class="small">{e(C.GUIDES[s]["desc"][:110])}&hellip;</span></span></a>' for s in slugs)
-    how = [s for s in C.GUIDE_ORDER if s not in C.COMPARE_SLUGS]
+    how = [s for s in C.GUIDE_ORDER if s not in C.COMPARE_SLUGS and s not in C.GLOSSARY_SLUGS]
     body = (f'<main><div class="hero" style="padding:0 0 10px">{shapes("soft")}<div class="wrap">{crumbs_html}<div class="toolhead"><h1>Audio guides, comparisons and how-tos</h1>'
             '<p class="lead">Practical steps for cleaning a voice, fixing a recording and getting a finished sound, on a phone or a PC. Each guide says what works without any tool, and where Tunedzy helps.</p></div></div></div>'
             f'<section><div class="wrap"><h2>How to</h2><div class="related">{cards(how)}</div></div></section>'
+            f'<section><div class="wrap"><h2>Glossary</h2><p class="sub2" style="text-align:left;margin:0 0 18px">Plain definitions of the terms in the guides: noise gate, LUFS, true peak, EQ and the high-pass filter.</p><div class="related">{cards(C.GLOSSARY_SLUGS)}</div></div></section>'
             f'<section class="alt"><div class="wrap"><h2>Compare</h2><p class="sub2" style="text-align:left;margin:0 0 18px">Honest comparisons: where each tool is the better choice, and the cases where Tunedzy is.</p><div class="related">{cards(C.COMPARE_SLUGS)}</div></div></section>'
             f'<section><div class="narrow"><h2>Free and on your phone</h2><p>Tunedzy Go cleans a recording on your phone for free. The free tools on this site (LUFS meter, vocal checker, key and BPM finders) run in your browser. <a href="{C.GO_URL}">Open Tunedzy Go</a> &middot; <a href="{C.BASE}/tools">All free tools</a> &middot; <a href="{C.BASE}/pricing">Pricing</a></p></div></section></main>')
     return layout(title='Audio Guides and Comparisons: Clean Voice, Noise, Loudness', desc='Free audio guides: clean a phone voice recording, remove noise and hum, fix clipping, set loudness, and honest comparisons of voice cleaners.', path=f'{C.BASE}/guides', body=body, lds=[crumbs_ld])

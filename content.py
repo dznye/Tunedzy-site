@@ -430,3 +430,14 @@ GUIDE_ORDER += _sh.ORDER + _sc.ORDER
 GUIDE_PHOTO_EXTRA = {**_sh.PHOTO, **_sc.PHOTO}
 GUIDE_TOOLS_EXTRA = {**_sh.TOOLS, **_sc.TOOLS}
 COMPARE_SLUGS = list(_sc.ORDER)
+
+import content_seo_more_how as _sm  # noqa: E402
+import content_seo_glossary as _sg  # noqa: E402
+
+GUIDES.update(_sm.GUIDES)
+GUIDES.update(_sg.GUIDES)
+GUIDE_ORDER += _sm.ORDER + _sg.ORDER
+GUIDE_PHOTO_EXTRA.update({**_sm.PHOTO, **_sg.PHOTO})
+GUIDE_TOOLS_EXTRA.update({**_sm.TOOLS, **_sg.TOOLS})
+GLOSSARY_SLUGS = list(_sg.ORDER)
+HOW_SLUGS = list(_sm.ORDER)
