@@ -1,0 +1,17 @@
+{
+  "name": "Tunedzy Go",
+  "short_name": "Tunedzy Go",
+  "description": "Studio sound for any voice recording or video, on your phone. Free, private, nothing is uploaded.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#060607",
+  "theme_color": "#060607",
+  "categories": ["music", "productivity", "utilities"],
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

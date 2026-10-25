@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060607">
+<meta name="description" content="Tunedzy Go: record or pick any voice recording or video and make it sound like a studio, on your phone. Free, private, nothing is uploaded.">
+<title>Tunedzy Go: studio sound on your phone</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Tunedzy Go">
+<link rel="stylesheet" href="go.css">
+</head>
+<body>
+<main id="app">
+  <header class="top">
+    <div class="brand"><img src="icon-192.png" alt="" width="28" height="28"><b>Tune<span>dzy</span> <i>Go</i></b></div>
+    <button class="chip ghost" id="installBtn" hidden>Add to Home Screen</button>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="screen on">
+    <div class="seg" id="modeSeg" role="group" aria-label="What to record">
+      <button data-v="audio" aria-pressed="true">Audio</button><button data-v="video" aria-pressed="false">Video</button>
+    </div>
+    <div class="stage" id="stage">
+      <video id="preview" playsinline muted hidden></video>
+      <canvas id="meter" width="600" height="160" aria-label="Level"></canvas>
+      <div id="timer" class="timer" aria-live="polite">0:00</div>
+    </div>
+    <button id="recBtn" class="rec" aria-label="Start recording"><span></span></button>
+    <p id="recHint" class="hint">Tap to record. Nothing leaves your phone.</p>
+    <div class="row center wrap" id="presetRow" role="group" aria-label="What are you recording">
+      <button class="chip" data-p="auto" aria-pressed="true">Auto</button><button class="chip" data-p="voice" aria-pressed="false">Voice</button><button class="chip" data-p="podcast" aria-pressed="false">Podcast</button>
+      <button class="chip" data-p="vlog" aria-pressed="false">Vlog</button><button class="chip" data-p="music" aria-pressed="false">Singing</button><button class="chip" data-p="bad" aria-pressed="false">Bad mic rescue</button>
+    </div>
+    <label class="ai" id="aiRow"><input type="checkbox" id="aiBox" checked> <span>Studio sound (AI) <small id="aiNote">best for noisy rooms · 22 MB the first time</small></span></label>
+    <div class="row center">
+      <button class="btn" id="pickBtn">Choose a recording or video</button>
+      <input type="file" id="fileIn" accept="audio/*,video/*,.m4a,.mp3,.wav,.aac,.ogg,.opus,.mp4,.mov" hidden>
+    </div>
+    <div id="recent" class="recent"></div>
+  </section>
+
+  <!-- WORKING -->
+  <section id="work" class="screen">
+    <div class="ring" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" class="rt"/><circle cx="50" cy="50" r="44" class="rv" id="ringV"/></svg><b id="ringT">0%</b></div>
+    <h2 id="workTitle">Making it sound like a studio…</h2>
+    <p class="hint" id="workStep" aria-live="polite"></p>
+  </section>
+
+  <!-- RESULT -->
+  <section id="result" class="screen">
+    <h2 id="resName"></h2>
+    <video id="resVideo" playsinline controls hidden></video>
+    <canvas id="resWave" width="600" height="140" aria-label="Waveform"></canvas>
+    <div class="row center">
+      <button class="play" id="playBtn" aria-label="Play"><svg viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></svg></button>
+      <div class="seg" id="abSeg" role="group" aria-label="Compare"><button data-v="before" aria-pressed="false">Before</button><button data-v="after" aria-pressed="true">After</button></div>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="row center wrap">
+      <div class="seg" id="lvlSeg" role="group" aria-label="How much"><button data-v="gentle" aria-pressed="false">Gentle</button><button data-v="balanced" aria-pressed="true">Balanced</button><button data-v="max" aria-pressed="false">Max</button></div>
+    </div>
+    <div class="row center wrap">
+      <button class="btn primary" id="shareBtn">Share or save</button>
+      <a class="btn" id="dlBtn" download>Download</a>
+    </div>
+    <details class="more"><summary>What was done</summary><ul id="did"></ul></details>
+    <div class="row center"><button class="btn ghost" id="againBtn">Make another</button></div>
+    <p class="hint">Want to edit, mix and master with many tracks, remove ums or put the sound back into a video? <a href="https://fuidzy.com/tunedzy" target="_blank" rel="noopener">Get Tunedzy for your computer</a>.</p>
+  </section>
+</main>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script>window.TZ_RNN_URL = './rnnoise-worklet.js';</script>
+<script src="tz-engine.js"></script>
+<script src="dfn-web.js"></script>
+<script src="go.js"></script>
+</body>
+</html>

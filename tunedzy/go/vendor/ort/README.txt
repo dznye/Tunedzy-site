@@ -1,0 +1,1 @@
+ONNX Runtime Web 1.30.0 (MIT), https://github.com/microsoft/onnxruntime; files from https://cdn.jsdelivr.net/npm/onnxruntime-web@1.30.0/dist/ (sha256 of the wasm: 3398c10d07d229bd91b364548e130e0e51a8e5704b88c7c083ebbeb78842dee2)

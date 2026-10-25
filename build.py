@@ -13,6 +13,7 @@ Output layout (the Worker maps URL -> file):
 import argparse
 import html
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -25,6 +26,7 @@ OUT = ROOT / 'tunedzy'
 ap = argparse.ArgumentParser()
 ap.add_argument('--launched', action='store_true')
 ap.add_argument('--download-url', default='')
+ap.add_argument('--go', default='', help='a built Tunedzy Go folder (python tools/build_go.py in the app repo) to publish at /tunedzy/go/')
 args = ap.parse_args()
 LAUNCHED = args.launched and bool(args.download_url)
 DOWNLOAD = args.download_url
@@ -158,19 +160,19 @@ def faq_html(faq):
 
 
 def faq_ld(faq):
-    strip = lambda s: html.unescape(s.replace('<br>', ' ')).replace('\u2019', "'")
+    strip = lambda s: html.unescape(re.sub(r'<[^>]+>', '', s.replace('<br>', ' '))).replace('\u2019', "'")
     return {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
         {'@type': 'Question', 'name': strip(q), 'acceptedAnswer': {'@type': 'Answer', 'text': strip(a)}} for q, a in faq]}
 
 
 def software_ld():
-    offer = {'@type': 'Offer', 'price': '29.00', 'priceCurrency': 'USD', 'url': C.SITE + C.BASE + '#pricing',
-             'description': 'Lifetime license for up to 2 PCs. 7-day free trial.',
+    offer = {'@type': 'AggregateOffer', 'lowPrice': '0', 'highPrice': C.PRICES['year']['usd'], 'priceCurrency': 'USD', 'offerCount': 7, 'url': C.SITE + C.BASE + '/pricing',
+             'description': 'Free to start (30 credits in the first month, about 12 a month after). Credit packs from $0.99, plans from $1.99 a month.',
              'availability': 'https://schema.org/InStock' if LAUNCHED else 'https://schema.org/PreOrder'}
     return {'@context': 'https://schema.org', '@type': 'SoftwareApplication', 'name': 'Tunedzy', 'applicationCategory': 'MultimediaApplication',
-            'applicationSubCategory': 'Vocal processing and mastering workstation',
+            'applicationSubCategory': 'Audio studio for voice, podcasts, streams and songs',
             'operatingSystem': 'Windows 10, Windows 11', 'url': C.SITE + C.BASE, 'image': C.SITE + C.BASE + '/og.png',
-            'description': 'Vocal workstation for Windows that cleans, tunes, fits to the beat, style-matches and masters rough vocal recordings. Runs offline on your PC. Free 7-day trial.',
+            'description': 'Audio studio for Windows that turns rough voice recordings into studio sound, with a multitrack editor, editing by transcript, mastering and live voice cleaning. Runs on your PC; nothing is uploaded. Free credits every month.',
             'offers': offer, 'publisher': {'@type': 'Organization', 'name': 'Fuidzy', 'url': C.SITE, 'email': C.SUPPORT_EMAIL}}
 
 
@@ -202,7 +204,7 @@ def layout(*, title, desc, path, body, lds, robots='index,follow', og_type='webs
 <nav class="main" aria-label="Main">{nav}</nav><a class="hbtn" href="{C.BASE}#pricing">{'Download free' if LAUNCHED else 'Free to try'}</a></div></header>
 {body}
 <footer><div class="wrap"><div class="cols">
-<div><h4>Tunedzy</h4><a href="{C.BASE}">Overview</a><br><a href="{C.BASE}#features">Features</a><br><a href="{C.BASE}#pricing">Pricing</a><br><a href="{C.BASE}#faq">FAQ</a></div>
+<div><h4>Tunedzy</h4><a href="{C.BASE}">Overview</a><br><a href="{C.BASE}#features">Features</a><br><a href="{C.GO_URL}">Tunedzy Go (phone)</a><br><a href="{C.BASE}/pricing">Pricing and credits</a><br><a href="{C.BASE}#faq">FAQ</a></div>
 <div><h4>Free tools</h4>{tools_f}</div>
 <div><h4>Guides</h4>{guides_f}<a href="{C.BASE}/blog">All audio guides</a></div>
 <div><h4>More apps by Fuidzy</h4><a href="https://fuidzy.com/">Fuidzy planner</a><br><a href="https://fuidzy.com/deep-clean-pc-or-mac-storage">SpaceWise: clean up PC storage</a><br><a href="https://tradzy.net/" rel="noopener">Tradzy</a><br><a href="https://dznye.github.io/Androidzy/" rel="noopener">Androidzy</a></div>
@@ -343,14 +345,57 @@ def rack():
 
 
 # ---------------------------------------------------------------------------------------------------- pages
+def plan_card(key, hot=False):
+    pr = C.PRICES[key]
+    per = f'<small> {pr["per"]}</small>' if pr.get('per') else '<small> once</small>'
+    return f'<div class="plan{" hot" if hot else ""}"><span class="tag">{e(pr["label"])}</span><div class="pr">${pr["usd"]}{per}</div><ul><li>{e(pr["note"])}</li></ul></div>'
+
+
+def pricing_summary():
+    return f'''<section id="pricing">{shapes('hero')}<div class="wrap"><p class="eyebrow c">Pricing</p><h2 class="c">Free to start. <span class="grad">Pay only for more.</span></h2><p class="sub2">Everything is free to look at. Using it takes a credit, and a credit covers 24 hours of Tunedzy and Streamdzy. No watermark, no per-export fees.</p>
+<div class="pricegrid three"><div class="plan hot"><span class="tag">Free credits</span><div class="pr">$0</div><ul><li>At least 30 credits in your first month</li><li>About 12 free credits a month after that</li><li>Invite friends and you both get credits</li><li>Tunedzy Go on your phone is always free</li></ul><div class="cta">{cta_primary()}</div></div>
+<div class="plan"><span class="tag">Credit packs</span><div class="pr">$0.99<small> for 8</small></div><ul><li>20 credits for $2.49</li><li>Credits never expire</li><li>Your first pack counts double</li></ul><div class="cta"><a class="btn" href="{C.BASE}/pricing">See all prices</a></div></div>
+<div class="plan"><span class="tag">No counting</span><div class="pr">$1.99<small> a month</small></div><ul><li>$8.99 for 6 months, $13.99 a year</li><li>Or unlimited for 30 days for $0.99 (once)</li><li>The same account works in Streamdzy</li></ul><div class="cta"><a class="btn" href="{C.BASE}/pricing">See all prices</a></div></div></div></div></section>'''
+
+
+PRICING_FAQ = [
+    ('What is a credit?', 'A credit pays for 24 hours of use of both Tunedzy and Streamdzy. The first time you use the app in a day it takes one credit, and then everything is open until the 24 hours end, however little or much you do. Looking around costs nothing.'),
+    ('What do I get for free?', 'Your first month gives at least 30 credits: you start with a pass of 14 to 30, and if you run out, another arrives a day later (up to three) until the month has paid 30 in all. After that you get a monthly pass of 2 to 12 credits, and if you still run out, a small weekly pass of 1 to 3 credits seven days later (at most three a month). Someone who uses the app every day receives about 43 credits in the first 50 days.'),
+    ('How is it the same as Streamdzy?', 'It is one Fuidzy account. Make a login (a name and a PIN) in either app and sign in with it in the other: the credits, the passes and the 24-hour window are shared. One PC gets one welcome month across both apps.'),
+    ('Do credits expire?', 'Credits you buy never expire. Free passes belong to the month they are given. Plans last for the period you paid for.'),
+    ('Do I need an account to try it?', 'No. An anonymous account is made in the background the first time a credit is needed. You need a login to buy, to invite friends and to use your credits on another PC (up to five).'),
+    ('I have an old lifetime key.', 'It still unlocks everything, forever, with no credits. It is no longer sold.'),
+    ('What if I cannot reach the internet?', 'If the credit server cannot be reached and it never said you were out of credits, your work goes on. A bad connection never stops you.'),
+    ('Can I get a refund?', 'Yes, within 30 days of a purchase. See the <a href="/tunedzy/refund-policy">refund policy</a>.'),
+    ('Who takes the payment?', 'Dodo Payments. We never see your card details.'),
+]
+
+
+def pricing_page():
+    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('Tunedzy', C.BASE), ('Pricing', f'{C.BASE}/pricing')])
+    every = ''.join(f'<li>{e(x)}</li>' for x in C.EVERYTHING)
+    how = ''.join(f'<li>{e(x)}</li>' for x in C.HOW_CREDITS)
+    body = f'''<main><div class="hero" style="padding:0 0 30px">{shapes('hero')}<div class="wrap">{crumbs_html}<div class="toolhead"><h1>Free to start. <em class="grad">Pay only for more.</em></h1>
+<p class="lead">Everything in Tunedzy is free to look at. Using it takes a credit, and a credit covers 24 hours. You get free credits every month, and you can buy more, or take a plan with no counting. Tunedzy and Streamdzy share one account and one pool of credits.</p></div></div></div>
+<section style="padding-top:10px"><div class="wrap"><div class="pricegrid three"><div class="plan hot"><span class="tag">Free credits</span><div class="pr">$0</div><ul><li>At least 30 credits in your first month</li><li>About 12 free credits a month after that</li><li>Invite friends: 7 to 20 credits each, for both of you</li><li>Tunedzy Go on your phone is always free</li></ul><div class="cta">{cta_primary()}</div></div>
+{plan_card('first30')}{plan_card('pack8')}{plan_card('pack20')}{plan_card('monthly')}{plan_card('half')}{plan_card('year')}</div>
+<p class="note c" style="margin-top:18px">Prices in US dollars. Taxes may be added at checkout. You buy in the app (Credits screen), so the credits land on your account at once.</p></div></section>
+<section class="alt"><div class="narrow"><h2>How credits work</h2><ol>{how}</ol>
+<h2>Everything is included</h2><p>There is no feature that costs extra. A credit opens all of this:</p><ul>{every}</ul>
+<p class="note">Looking at the Credits screen costs nothing, and neither does Tunedzy Go or any free tool on this site. The numbers above are the ones the account server really uses; the server owns the rules, so what you see in the app is always right.</p></div></section>
+<section><div class="narrow"><h2>Questions about credits</h2>{faq_html(PRICING_FAQ)}</div></section></main>'''
+    return layout(title='Tunedzy Pricing: Free Credits Every Month, Packs from $0.99', desc='Tunedzy is free to look at. A credit covers 24 hours. 30 free credits in your first month, about 12 a month after, packs from $0.99 and plans from $1.99 a month.',
+                  path=f'{C.BASE}/pricing', body=body, lds=[faq_ld(PRICING_FAQ), crumbs_ld, software_ld()])
+
+
 def hub():
     feats = [
-        ('clean', 'cA', 'CLEAN', 'Noise, pops, harsh S sounds, loud breaths, clipped peaks and room echo: gone, in one pass.'),
-        ('tune', 'cP', 'TUNE', 'Reads the key from your beat and tunes to it. Natural, hard-tune, or a style learned from a reference song.'),
-        ('beat', 'cT', 'FIT', 'Finds your beat\u2019s tempo and key, nudges words onto the grid and sets the vocal level against the music.'),
-        ('artist', 'cV', 'STYLE', 'Drop in a song you love. Tunedzy measures how it was tuned, spaced and mixed, then applies that treatment to your voice.'),
-        ('mix', 'cB', 'MIX', 'Paint hooks, verses and ad-libs on the timeline. Each gets its own reverb, echo, doubles and harmony, live.'),
-        ('master', 'cO', 'MASTER', 'Loudness, true peak and tone checks with a pass/fail report. Export 24-bit WAV or FLAC.'),
+        ('clean', 'cA', 'STUDIO SOUND', 'Noise, hum, clicks, clipping and room sound out of any voice recording, with one tap. A small AI model on your own PC keeps the voice natural.'),
+        ('mix', 'cB', 'MULTITRACK STUDIO', 'Record and arrange tracks for voices, music and effects. Fades, volume lines, pan, EQ and compression on every track, auto-duck, undo and saved projects.'),
+        ('record', 'cV', 'EDIT BY WORDS', 'Write out what was said on your PC, then delete words to cut the audio. Remove ums and long pauses in one click. Captions (SRT, VTT) and chapters come out too.'),
+        ('upload', 'cP', 'VIDEO TOO', 'A phone video with bad sound? Fix the sound and put it back into the video. MP4 and MOV in.'),
+        ('meter', 'cT', 'LOUDNESS AND MASTERING', 'Match every voice to the same loudness, aim for podcast, YouTube, audiobook or broadcast, and get a pass or fail report on loudness, true peak and tone.'),
+        ('tune', 'cO', 'TUNE AND VOCAL TOOLS', 'Autotune in your key, a style learned from a reference song, vocal remover and stems, and key and speed changes.'),
     ]
     new2 = [
         ('mic', 'cA', 'AI NOISE CLEANUP', 'A small neural model removes fans, keyboards and hiss around your words, on top of the learned-room filter. Runs on your own PC.'),
@@ -360,33 +405,37 @@ def hub():
         ('meter', 'cT', 'EFFECTS YOU HEAR AS YOU MOVE THEM', 'Play any file through the live chain, or hear a key and speed change while you drag. Settings apply by themselves; nothing to wait for.'),
         ('karaoke', 'cP', 'VOCAL REMOVER &amp; STEM MIXER', 'Acapella, karaoke and stems from any song, then your own mix with faders, solo and mute. Quick edit trims, cuts and fades with a spectrogram.'),
     ]
-    who = [('hero', 'Bedroom rappers and singers', 'Recorded on a phone or USB mic and want it to sound finished next to the beat.'),
-           ('booth', 'Producers finishing demos', 'Turn a rough artist take into something you can send back or release.'),
-           ('desk', 'Streamers and podcasters', 'A clean, broadcast-sounding voice live, and podcast-ready files at the right loudness.')]
-    steps = [('Drop in your files', 'Your recording, your beat or song, and optionally a song by an artist whose sound you want.'),
-             ('Press Forge it', 'It cleans, tunes, fits and styles your vocal and maps the song into hooks and verses.'),
-             ('Tweak and export', 'Use live sliders or painted sections, check the master, and export WAV or FLAC.')]
+    who = [('hero', 'Singers and rappers', 'Recorded on a phone or USB mic and want it to sound finished next to the beat.'),
+           ('booth', 'Podcasters and interviewers', 'Several voices into one balanced mix, ums removed, loudness set, captions and chapters out.'),
+           ('desk', 'Streamers and video makers', 'A clean, broadcast-sounding voice live, and a phone video with its sound put right.')]
+    steps = [('Record or drop in a file', 'Record in Tunedzy or on your phone, or bring any recording or video, however bad.'),
+             ('Press Perfect it', 'It repairs clipping, clicks and hum, takes out noise and room sound, levels the voice and sets the tone.'),
+             ('Edit, mix and export', 'Cut by words, add tracks and music, check the loudness, and export WAV, FLAC or MP3 (or the video).')]
     tool_cards = ''.join(f'<a class="card {TOOL_COLOR[T.TOOLS[s]["color"]]}" href="{C.BASE}/tools/{s}">{ico(T.TOOLS[s]["icon"], TOOL_COLOR[T.TOOLS[s]["color"]])}<h3>{e(T.TOOLS[s]["short"])}</h3><p>{e(T.TOOLS[s]["blurb"])}</p></a>' for s in T.TOOL_ORDER)
     guides = ''.join(f'<a class="th" href="{C.BASE}/{s}">{img(THUMB.get(GUIDE_PHOTO[s], GUIDE_PHOTO[s]), alt="")}<span><b>{e(C.GUIDES[s]["h1"])}</b><br><span class="small">{e(C.GUIDES[s]["desc"][:96])}&hellip;</span></span></a>' for s in C.GUIDE_ORDER)
-    price_cta = (f'<a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download free for Windows</a>' if LAUNCHED
-                 else f'<a class="btn primary" href="{e(C.LAUNCH_MAIL)}">Email me when it opens</a>')
-    buy2 = (f'<a class="btn primary" href="{e(C.BUY_URL)}" rel="noopener">Buy now, $29</a>' if LAUNCHED else '')
     status = '' if LAUNCHED else '<p class="small" style="margin-top:14px">Windows download opens at launch. Email us and we will let you know the day it does.</p>'
     body = f'''<main>
 <div class="hero">{shapes('hero')}<div class="wrap"><div class="herogrid"><div>
-<div class="pill"><i></i>New: Tunedzy 2.0 &middot; Free to try &middot; Windows</div>
-<h1>Rough vocal in. <em class="grad">Finished track out.</em></h1>
-<p class="sub">The all-in-one vocal app for artists, streamers and podcasters. Make any mic sound expensive live, clean and tune your takes, remove vocals from any song, mix and master, in one window. No plugin hunting.</p>
-<div class="cta">{cta_primary()}<a class="btn" href="#try">Try the free tools</a></div>{status}
-<div class="trust"><span>7-day free trial</span><span>Then $29 once, no subscription</span><span>Runs on your PC</span></div></div>
+<div class="pill"><i></i>New: Tunedzy 5 &middot; Free credits every month &middot; Windows and phone</div>
+<h1>Bad recording in. <em class="grad">Studio sound out.</em></h1>
+<p class="sub">The audio studio for voices, podcasts, streams and songs. Record, clean, edit by words, mix and master in one app that runs on your own PC, and fix a take on your phone with Tunedzy Go. Everything except making beats.</p>
+<div class="cta">{cta_primary()}<a class="btn" href="{C.GO_URL}">Open Tunedzy Go on your phone</a></div>{status}
+<div class="trust"><span>30 free credits in your first month</span><span>Then about 12 free a month</span><span>Nothing is uploaded</span></div></div>
 {rack()}</div></div></div>
 <section id="try" style="padding-top:40px">{shapes('soft')}<div class="wrap"><p class="eyebrow c">Try it right now</p><h2 class="c">Drop a track. See what it&rsquo;s made of.</h2>
 <p class="sub2">Free BPM, key, chords and loudness in seconds, right in your browser. Nothing is uploaded.</p>
 <div style="max-width:880px;margin:0 auto">{tool_widget('all')}</div>
 <div class="tcards" style="margin-top:30px">{tool_cards}</div></div></section>
-<section id="features" class="alt">{shapes('bars')}<div class="wrap"><p class="eyebrow c">The vocal rack</p><h2 class="c">Your whole vocal chain. One window.</h2><p class="sub2">Everything you would chain by hand across a stack of plugins, in the right order, with live control.</p>
+<section id="features" class="alt">{shapes('bars')}<div class="wrap"><p class="eyebrow c">The studio</p><h2 class="c">Record it. Fix it. Edit it. Finish it.</h2><p class="sub2">What you would do across a recorder, a noise plugin, an editor, a mixer and a mastering tool, in one window, with live control.</p>
 <div class="grid">{''.join(f'<div class="card {c}">{ico(k, c)}<h3>{n}</h3><p>{d}</p></div>' for k, c, n, d in feats)}</div></div></section>
-<section id="new"><div class="wrap"><p class="eyebrow c">New in 3</p><h2 class="c">From your mic to the master. <span class="grad">One app.</span></h2><p class="sub2">The tools creators search for most, built in and running on your own PC.</p>
+<section id="go"><div class="wrap"><div class="spot"><div class="report"><div class="rh"><b>Tunedzy Go</b><span>on your phone</span></div>
+<div class="row"><i></i>Record audio or video<span>or pick a file</span></div><div class="row"><i></i>Studio sound (AI)<span>on the phone</span></div><div class="row"><i></i>Before and after<span>tap to compare</span></div>
+<div class="row"><i></i>Share or save<span>audio or video</span></div><div class="row"><i></i>After the first visit<span>works offline</span></div><p class="rn">Free. A web app: nothing to install from a store.</p></div>
+<div><p class="eyebrow">Tunedzy Go</p><h2>Fix it right where you <span class="grad">recorded it.</span></h2>
+<p style="color:#f0dfd8">Open it in your phone&rsquo;s browser and add it to your home screen. Record a voice note or a video, or pick one from your phone, and it comes back sounding like a studio: noise and room sound taken out, the level evened out, the tone set. Your recording never leaves the phone.</p>
+<ul><li>Free, with no sign-up</li><li>Same voice engine as the desktop app</li><li>Works without a connection after the first visit (Studio sound downloads a 22 MB model once)</li></ul>
+<div class="cta"><a class="btn primary" href="{C.GO_URL}">Open Tunedzy Go</a></div></div></div></div></section>
+<section id="new" class="alt">{shapes('soft')}<div class="wrap"><p class="eyebrow c">For streamers and creators</p><h2 class="c">From your mic to the master. <span class="grad">One app.</span></h2><p class="sub2">The tools creators search for most, built in and running on your own PC.</p>
 <div class="grid">{''.join(f'<div class="card {c}">{ico(k, c)}<h3>{n}</h3><p>{d}</p></div>' for k, c, n, d in new2)}</div></div></section>
 <section><div class="wrap"><div class="spot"><div><p class="eyebrow">Studio-ready checks</p><h2>Know it&rsquo;s ready <span class="grad">before you post.</span></h2>
 <p style="color:#f0dfd8">Every export comes with a pass/fail report so you are not guessing: loudness, true peak, tone balance, noise, clipping and more. Fix what&rsquo;s flagged with one slider, then export 24-bit WAV or FLAC for your DAW, your distributor or your socials.</p>
@@ -400,21 +449,19 @@ def hub():
 <ul><li>Learns the autotune style: natural, modern or hard-snapped</li><li>Matches tone, reverb size, width and how tight the flow sits on the beat</li><li>Keeps your voice yours: it changes the processing, not who you are</li><li>Saves each style so you can reuse it on the next song</li></ul>
 <p class="note">Not affiliated with or endorsed by any artist. Artist names are used only to describe styles of processing.</p></div></div></div></section>
 <section><div class="wrap"><div class="band">{img('mic-wide', alt='')}<div class="in"><p class="eyebrow">Private by design</p><h2>Your unreleased songs <span class="grad">never leave your PC.</span></h2>
-<p>Tunedzy processes everything locally. No uploads, no per-minute limits, no watermarks. The only internet use is the license check and the optional AI add-on download. The free tools on this site work the same way, inside your browser.</p></div></div></div></section>
+<p>Tunedzy processes everything locally. No uploads, no per-minute limits, no watermarks. The only internet use is counting your credits, updates, and the optional AI model downloads. Tunedzy Go and the free tools on this site work the same way, inside your browser.</p></div></div></div></section>
 <section class="alt">{shapes('bars')}<div class="wrap"><p class="eyebrow c">How it works</p><h2 class="c">Three steps</h2><div class="steps" style="margin-top:26px">{''.join(f'<div class="card {c}"><h3>{n}</h3><p>{d}</p></div>' for (n, d), c in zip(steps, ('cA', 'cP', 'cV')))}</div></div></section>
 <section><div class="wrap"><p class="eyebrow c">Who it&rsquo;s for</p><h2 class="c">Made for people who record in real rooms</h2><div class="pcards" style="margin-top:26px">{''.join(f'<div class="pcard">{img(k)}<div><h3>{n}</h3><p>{d}</p></div></div>' for k, n, d in who)}</div>
-<p class="note" style="margin-top:20px">Honest limits: Tunedzy is a standalone app, not a DAW replacement and not a VST/AU plugin (yet; the DAW pack hands your stems to any DAW), and it is Windows-only for now. Using it as a microphone in Discord, Zoom or games needs a free virtual cable such as VB-Cable (OBS can take it directly, no cable). It can improve a rough recording a lot, but it can&rsquo;t turn a vocal buried in echo or heavy distortion into a studio take. Re-recording closer to the mic is always the best fix.</p></div></section>
+<p class="note" style="margin-top:20px">Honest limits: Tunedzy replaces a DAW for recording, cleaning, editing, mixing and mastering voices, podcasts, streams and vocal songs, but it is not for making beats (no step sequencer, virtual instruments or MIDI composing) and it does not host VST or AU plugins. The DAW pack hands your stems to any DAW. The app to download today is for Windows; Mac and Linux builds are being prepared, and Tunedzy Go runs in any phone or computer browser. Using it as a microphone in Discord, Zoom or games needs a free virtual cable such as VB-Cable (OBS can take it directly, no cable). It can improve a rough recording a lot, but it can&rsquo;t turn a voice buried in echo or heavy distortion into a studio take. Re-recording closer to the mic is always the best fix.</p></div></section>
 <section id="guides" class="guides alt">{shapes('soft')}<div class="wrap"><p class="eyebrow c">Free guides</p><h2 class="c">Get better vocals today</h2><p class="sub2">Practical, and useful with or without Tunedzy.</p><div class="related">{guides}</div></div></section>
-<section id="pricing">{shapes('hero')}<div class="wrap"><p class="eyebrow c">Pricing</p><h2 class="c">Free to try. <span class="grad">$29 once</span> when you love it.</h2><p class="sub2">No subscription, no per-export fees, no watermark.</p>
-<div class="pricegrid"><div class="plan"><span class="tag">Start here</span><div class="pr">Free<small> for 7 days</small></div><ul><li>Everything unlocked</li><li>Your full project, your own music</li><li>No card needed to download</li></ul><div class="cta">{price_cta}</div></div>
-<div class="plan hot"><span class="tag">Lifetime license</span><div class="pr">$29<small> one-time</small></div><ul><li>Use on up to 2 of your PCs</li><li>Updates for this version</li><li>Your audio never leaves your PC</li><li>30-day refund</li></ul><div class="cta">{buy2 or '<span class="small">Opens at launch</span>'}</div></div></div></div></section>
+{pricing_summary()}
 <section id="support" class="alt"><div class="wrap"><div class="supportband">{shapes('soft')}<div style="position:relative"><p class="eyebrow">Real people</p><h2>Stuck? Want a Mac version? <span class="grad">Just email us.</span></h2>
 <p>Questions, bugs, feature ideas or a Mac request: send a note and we will get back to you. Requests decide what we build next.</p><div class="cta"><a class="btn primary" href="{e(C.HELP_MAIL)}">Email support</a><a class="btn" href="{e(C.MAC_MAIL)}">Request a Mac version</a></div></div>
 <div style="position:relative"><div class="mailbig"><a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a></div><p class="small" style="margin-top:8px">Include what you were doing and a screenshot if you can.</p></div></div></div></section>
 <section id="faq"><div class="narrow"><h2 class="c">Questions</h2>{faq_html(C.HUB_FAQ)}</div></section></main>'''
     crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('Tunedzy', C.BASE)])
-    title = 'Tunedzy: Autotune, Vocal Cleanup and Vocal Remover for Windows (No DAW)'
-    desc = 'Tune, clean and polish your vocals for music and streams. Autotune, vocal cleanup and vocal remover in one private, offline Windows app. No DAW needed. Free 7-day trial, then $29 once.'
+    title = 'Tunedzy: Studio Sound for Any Recording, Multitrack Editor and Phone App'
+    desc = 'Turn a bad recording into studio sound. AI voice cleanup, multitrack editing, edit by transcript, mastering and a free phone app. Private: nothing is uploaded. Free credits every month.'
     return layout(title=title, desc=desc, path=C.BASE, body=body,
                   lds=[software_ld(), faq_ld(C.HUB_FAQ), crumbs_ld, webapp_ld('', 'Tunedzy free music tools', 'Free BPM, key, chord and loudness finder that runs in your browser.')], scripts=tool_scripts())
 
@@ -427,7 +474,7 @@ def tools_hub():
 <div style="max-width:900px">{tool_widget('all')}</div></div></div>
 <section style="padding-top:20px">{shapes('soft')}<div class="wrap"><h2 class="c">Pick a tool</h2><p class="sub2">Each one is also available on its own page, with tips and a guide.</p><div class="tcards">{cards}</div></div></section>
 <section class="alt"><div class="narrow"><h2>What these tools are for</h2><p>When you record a vocal over a beat, the first questions are always the same: how fast is the beat, what key is it in, what chords are under it, and is my vocal clean and loud enough? These tools answer them in seconds so you can set your project tempo, your autotune scale and your levels before you start mixing.</p>
-<p>They are the same kinds of checks <a href="{C.BASE}">Tunedzy</a> runs automatically before it cleans, tunes and masters a rough vocal for you, and the app is free to try for 7 days.</p></div></section>
+<p>They are the same kinds of checks <a href="{C.BASE}">Tunedzy</a> runs automatically before it cleans, tunes and masters a rough vocal for you, and your first month comes with free credits.</p></div></section>
 <section><div class="narrow"><h2>Questions</h2>{faq_html(t['faq'])}</div></section></main>'''
     return layout(title=t['title'], desc=t['desc'], path=f'{C.BASE}/tools', body=body,
                   lds=[webapp_ld('', 'Tunedzy free music tools', t['desc']), faq_ld(t['faq']), crumbs_ld], scripts=tool_scripts())
@@ -448,12 +495,12 @@ def tool_page(slug):
         widget, scripts = clean_widget(kind), clean_scripts()
     else:
         widget, scripts = tool_widget(t['focus'], tap=t['tap']), tool_scripts()
-    action = (f'<a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download the free trial</a>' if LAUNCHED
+    action = (f'<a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download Tunedzy</a>' if LAUNCHED
               else f'<a class="btn primary" href="{C.BASE}">See Tunedzy</a>')
     body = f'''<main><div class="hero" style="padding:0 0 30px">{shapes('soft')}<div class="wrap">{crumbs_html}<div class="toolhead"><h1>{t['h1']}</h1><p class="lead">{t['lead']}</p></div>
 <div style="max-width:900px">{widget}</div><div class="howto" style="max-width:900px">{how}</div></div></div>
 <div class="narrow"><article>{t['body']}
-<div class="vf"><h2>Like this? Let Tunedzy do the fixing.</h2><p>These tools tell you what is going on. Tunedzy acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Free to try for 7 days, then $29 once.</p><div class="cta">{action}<a class="btn" href="{e(C.HELP_MAIL)}">Ask us a question</a></div></div>
+<div class="vf"><h2>Like this? Let Tunedzy do the fixing.</h2><p>These tools tell you what is going on. Tunedzy acts on it: it cleans, tunes to your beat&rsquo;s key, fits the flow, matches an artist&rsquo;s style and masters the result on your own PC. Your first month comes with free credits.</p><div class="cta">{action}<a class="btn" href="{e(C.HELP_MAIL)}">Ask us a question</a></div></div>
 <h2>Frequently asked questions</h2>{faq_html(t['faq'])}
 {articles}<h2>More free tools</h2><div class="tcards">{rel}</div>
 <h2>Related guides</h2><div class="related">{gl}</div></article></div></main>'''
@@ -471,7 +518,7 @@ def guide(slug):
     tl = ''.join(f'<li>{t}</li>' for t in g['tldr'])
     ai = g.get('ai')
     ai_html = f'<div class="aibox"><h2>{ai[0]}</h2>{ai[1]}</div>' if ai else ''
-    action = (f'<p><a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download the free trial</a></p>' if LAUNCHED
+    action = (f'<p><a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download Tunedzy</a></p>' if LAUNCHED
               else f'<p><a class="btn primary" href="{C.BASE}">See what Tunedzy does</a></p>')
     article_ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': g['h1'], 'description': g['desc'], 'datePublished': C.DATE, 'dateModified': C.DATE,
                   'image': C.SITE + C.BASE + '/og.png', 'mainEntityOfPage': C.SITE + f'{C.BASE}/{slug}',
@@ -536,12 +583,11 @@ def policy(slug):
 
 
 def thanks():
-    body = f'''<main><div class="narrow"><article><h1>Thank you for buying Tunedzy</h1>
-<p class="lead">Your license key is on its way to the email you used at checkout. It usually arrives within a minute.</p>
-<h2>Get started</h2><ol><li>Install Tunedzy for Windows (the download link is in your receipt email and on <a href="/tunedzy">the Tunedzy page</a>).</li>
-<li>Open Tunedzy and click the <strong>License</strong> button at the top.</li><li>Paste your key and press <strong>Activate</strong>. One key works on up to 2 of your PCs.</li></ol>
-<p>Didn&rsquo;t get the email? Check spam, then write to <a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a>.</p></article></div></main>'''
-    return layout(title='Thanks for buying Tunedzy', desc='Your Tunedzy license key and next steps.', path=f'{C.BASE}/thanks', body=body, lds=[], robots='noindex,nofollow')
+    body = f'''<main><div class="narrow"><article><h1>Thank you</h1>
+<p class="lead">Your credits or plan are added to your Fuidzy account as soon as the payment clears, usually within a minute.</p>
+<h2>See them in the app</h2><ol><li>Open Tunedzy (or Streamdzy: the account and the credits are shared).</li><li>Open <strong>Credits</strong>. If the new credits are not there yet, wait a moment and open it again.</li></ol>
+<p>Bought a pack or a plan with a different login than the one in the app? Sign in with the same login in the app first. Questions or a refund: <a href="{e(C.HELP_MAIL)}">{C.SUPPORT_EMAIL}</a>.</p></article></div></main>'''
+    return layout(title='Thanks: your credits are on the way', desc='Where to find your Tunedzy credits after a purchase.', path=f'{C.BASE}/thanks', body=body, lds=[], robots='noindex,nofollow')
 
 
 # ---------------------------------------------------------------------------------------------------- write everything
@@ -567,11 +613,11 @@ def og():
     small = ImageFont.truetype('C:/Windows/Fonts/segoeuib.ttf', 30)
     icon = Image.open(ROOT / 'assets' / 'icon.png').convert('RGBA').resize((92, 92))
     img_.paste(icon, (70, 62), icon)
-    d.text((180, 78), 'Tunedzy 2.0', font=small, fill=(243, 233, 226))
+    d.text((180, 78), 'Tunedzy 5', font=small, fill=(243, 233, 226))
     d.text((70, 200), 'Rough vocal in.', font=bold, fill=(243, 233, 226))
     d.text((70, 292), 'Finished track out.', font=bold, fill=(255, 150, 120))
     d.text((70, 430), 'Vocal workstation for Windows.', font=reg, fill=(212, 190, 186))
-    d.text((70, 476), 'Free to try, then $29 once.', font=reg, fill=(212, 190, 186))
+    d.text((70, 476), 'Free credits every month.', font=reg, fill=(212, 190, 186))
     for i, h in enumerate([30, 54, 86, 64, 100, 70, 44, 78, 50, 28]):
         x = 800 + i * 36
         d.rounded_rectangle([x, 450 - h, x + 18, 450 + h], radius=9, fill=(255, 193 - i * 12, 94 - i * 2))
@@ -596,13 +642,16 @@ def main():
     for b in B.BLOGS:
         write(f"blog/{b['slug']}/index.html", blog_page(b))
     write('thanks/index.html', thanks())
-    urls = ([(C.BASE, '1.0'), (f'{C.BASE}/tools', '0.9')] + [(f'{C.BASE}/tools/{s}', '0.9') for s in T.TOOL_ORDER]
+    write('pricing/index.html', pricing_page())
+    if args.go:
+        shutil.copytree(args.go, OUT / 'go')
+    urls = ([(C.BASE, '1.0'), (f'{C.BASE}/pricing', '0.9'), (C.BASE + '/go/', '0.8'), (f'{C.BASE}/tools', '0.9')] + [(f'{C.BASE}/tools/{s}', '0.9') for s in T.TOOL_ORDER]
             + [(f'{C.BASE}/blog', '0.7')] + [(f"{C.BASE}/blog/{b['slug']}", '0.7') for b in B.BLOGS]
             + [(f'{C.BASE}/{s}', '0.8') for s in C.GUIDE_ORDER] + [(f'{C.BASE}/{s}', '0.3') for s in C.POLICIES])
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
         f'  <url><loc>{C.SITE}{u}</loc><lastmod>{C.DATE}</lastmod><priority>{p}</priority></url>\n' for u, p in urls) + '</urlset>\n'
     (ROOT / 'tunedzy-sitemap.xml').write_text(sm, encoding='utf-8')
-    slugs = list(C.GUIDE_ORDER) + ['tools'] + [f'tools/{s}' for s in T.TOOL_ORDER] + ['blog'] + [f"blog/{b['slug']}" for b in B.BLOGS] + ['thanks'] + list(C.POLICIES)
+    slugs = list(C.GUIDE_ORDER) + ['tools'] + [f'tools/{s}' for s in T.TOOL_ORDER] + ['blog'] + [f"blog/{b['slug']}" for b in B.BLOGS] + ['thanks', 'pricing'] + list(C.POLICIES)
     (ROOT / 'worker-pages.json').write_text(json.dumps(slugs), encoding='utf-8')
     print(f'built {len(urls) + 1} pages ({"LAUNCHED" if LAUNCHED else "pre-launch"}) -> {OUT}')
 

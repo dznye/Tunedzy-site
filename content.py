@@ -6,47 +6,83 @@ ratings, customer counts or benchmarks, and keep product claims to what Tunedzy 
 
 SITE = 'https://fuidzy.com'
 BASE = '/tunedzy'
-PRODUCT_ID = 'pdt_0NpUhQriM4NqB6qcQZp3d'
-BUY_URL = f'https://checkout.dodopayments.com/buy/{PRODUCT_ID}?quantity=1&redirect_url=https%3A%2F%2Ffuidzy.com%2Ftunedzy%2Fthanks'
-DATE = '2026-10-13'
+DATE = '2026-10-25'
+GO_URL = f'{BASE}/go/'
 SUPPORT_EMAIL = 'fuidzy@outlook.com'
 MAC_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Tunedzy%20for%20Mac&body=Hi%2C%20I%27d%20like%20a%20Mac%20version%20of%20Tunedzy.'
 HELP_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Tunedzy%20support'
 LAUNCH_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Notify%20me%20when%20Tunedzy%20launches&body=Please%20email%20me%20when%20the%20Tunedzy%20download%20opens.'
 
-NAV = [('Free tools', f'{BASE}/tools'), ('Features', f'{BASE}#features'), ('Guides', f'{BASE}#guides'), ('Pricing', f'{BASE}#pricing'), ('Support', f'{BASE}#support')]
+NAV = [('Free tools', f'{BASE}/tools'), ('Features', f'{BASE}#features'), ('Tunedzy Go', GO_URL), ('Guides', f'{BASE}#guides'), ('Pricing', f'{BASE}/pricing'), ('Support', f'{BASE}#support')]
+
+# --------------------------------------------------------------------------------------------- what it costs (the numbers are the shared Fuidzy server's: Streamdzy cloud/control-worker)
+# One account, one credit pool and one login for Tunedzy and Streamdzy. Keep these in step with docs/CREDITS.md in the app repo and Streamdzy's site/plans.js.
+PRICES = {
+    'first30': dict(usd='0.99', label='Unlimited for 30 days', note='One payment. It does not renew. Once per account, in the first 50 days.'),
+    'pack8': dict(usd='0.99', label='8 credits', note='8 days of use. Credits never expire.'),
+    'pack20': dict(usd='2.49', label='20 credits', note='20 days of use. Never expire. Your first pack counts double.'),
+    'monthly': dict(usd='1.99', label='Monthly', per='a month', note='No counting. Cancel any time.'),
+    'half': dict(usd='8.99', label='6 months', per='for 6 months', note='About $1.50 a month. No counting.'),
+    'year': dict(usd='13.99', label='Yearly', per='a year', note='About $1.17 a month. No counting.'),
+}
+HOW_CREDITS = [
+    'Looking at Tunedzy is always free. Your first use in a day takes one credit, and that credit keeps everything open for 24 hours, however much or little you do.',
+    'Your first month pays at least 30 credits. Run out, wait a day, and another pass arrives.',
+    'After that, about 12 free credits a month: a monthly pass, plus a small weekly pass once you have waited a week.',
+    'Invite friends: you both get credits when they start.',
+    'Need more? Unlimited for 30 days for $0.99 (once), a pack of credits, or a plan with no counting.',
+]
+EVERYTHING = [
+    'Studio sound and Perfect it: bad mic or noisy room in, clean voice out',
+    'The Multitrack studio: record, arrange, fade, duck, mix and export',
+    'Transcripts you edit like text: cut ums, shorten pauses, captions and chapters',
+    'Put the repaired sound back into your video',
+    'Live voice cleaning for streams and calls, vocal remover and stems, mastering with a pass or fail report',
+    'Tunedzy Go on your phone, and every free tool on this site',
+]
 
 # --------------------------------------------------------------------------------------------- shared FAQ
 HUB_FAQ = [
     ('Is Tunedzy free?',
-     'You can download it and use everything free for 7 days. After the trial it is a one-time $29 for a lifetime license on up to two of your PCs. No subscription. '
-     'The tools on this site (BPM finder, key finder, chord finder, LUFS meter and vocal checker) are free forever and run in your browser.'),
-    ('Is Tunedzy a plugin, a DAW or a standalone app?',
-     'It is a standalone vocal workstation: the whole vocal chain (clean, tune, fit to the beat, style, mix and master) in one window, with live sliders and a painted-sections timeline. '
-     'It exports 24-bit WAV, FLAC or MP3, and a DAW pack with every stem in sync plus tempo, key and a song map, so you can keep working in FL Studio, Ableton, Logic, Reaper or Pro Tools. It is not a DAW replacement and not a VST/AU plugin yet.'),
+     'Looking at Tunedzy is always free, and so are Tunedzy Go on your phone and the tools on this site (BPM finder, key finder, chord finder, LUFS meter, vocal checker). '
+     'In the Windows app, the first use in a day takes one credit and that credit keeps everything open for 24 hours. Your first month gives at least 30 credits and then about 12 free credits arrive each month. '
+     'If you want more: 8 credits for $0.99, 20 for $2.49, or a plan with no counting from $1.99 a month. See the <a href="/tunedzy/pricing">pricing page</a>.'),
+    ('Is it the same account as Streamdzy?',
+     'Yes. Tunedzy and Streamdzy (our live-streaming app) share one Fuidzy login, one pool of credits and one 24-hour window: a day opened in one app is a day in the other. '
+     'You make the login (a name and a PIN) in either app and choose &ldquo;I already have one&rdquo; in the other.'),
+    ('What can I do with it? Does it replace my DAW?',
+     'For everything that is not making beats: recording a voice, cleaning it, fixing a bad recording, editing a podcast or interview by its words, mixing voices with music, '
+     'setting the loudness and mastering, and exporting WAV, FLAC or MP3 with a pass or fail report. It is not for making beats: there is no step sequencer, no virtual instruments and no MIDI composing, '
+     'and it does not host VST or AU plugins. If you make beats, keep your beat maker and use Tunedzy for the voice, the mix and the finish; the DAW pack hands every stem to FL Studio, Ableton, Logic, Reaper or Pro Tools.'),
+    ('What is Studio sound?',
+     'A small AI model (DeepFilterNet 3) that removes noise, hum and a lot of room sound from speech while keeping the voice natural. It runs on your own PC, and on your phone in Tunedzy Go. '
+     'It is the one-tap clean-up behind &ldquo;Perfect it&rdquo;, which first repairs clipping, clicks and hum, then cleans, levels and finishes the sound.'),
+    ('Is there a phone app?',
+     'Yes: <a href="/tunedzy/go/">Tunedzy Go</a>. Open it in your phone&rsquo;s browser, add it to your home screen, record audio or video (or pick a file) and get studio sound in a minute. '
+     'It is free, it works without a connection after the first visit, and nothing is uploaded. It is a web app (not in the app stores), and the first time you use Studio sound it downloads a 22 MB model once.'),
     ('Does it need an internet connection?',
-     'Your audio is processed on your own PC, so your unreleased songs are not uploaded anywhere. The app checks your license online about once a week, quietly in the background, and '
-     'keeps working for up to 60 days without internet after a successful check. The optional AI vocal-separation add-on is a one-time download.'),
-    ('What happens when the free trial ends?',
-     'You can still open projects and listen. Processing and exporting need a license key.'),
-    ('How many computers can I use one license on?',
-     'Two. If you get a new PC, deactivate the old one from the License screen to free the slot.'),
+     'Your audio is processed on your own PC or phone and is never uploaded. The Windows app talks to our credit server (control.fuidzy.com) to count your credits and to the download server for updates and optional AI models. '
+     'If the credit server cannot be reached, your work goes on.'),
+    ('What happens when I run out of credits?',
+     'You can still open projects and listen. To process or export, wait for the next free pass (a day, then a week, then a month, as above), buy a few credits, or take a plan. Nothing is deleted.'),
+    ('I bought the $29 lifetime key. What happens to it?',
+     'It keeps working forever and unlocks everything, with no credits. Lifetime keys are no longer sold; credits replaced them in October 2026.'),
     ('Do I need a powerful computer or a GPU?',
-     'No. Cleaning, tuning, mixing and mastering run on a normal Windows 10 or 11 PC with 8 GB of RAM or more. A recent NVIDIA graphics card only makes '
-     'the optional AI vocal-separation step much faster; without one it still works, just slower.'),
+     'No. Cleaning, studio sound, mixing and mastering run on a normal Windows 10 or 11 PC with 8 GB of RAM or more, with no graphics card. A recent NVIDIA card only makes the optional AI vocal-separation step much faster.'),
     ('What file types can I use?',
-     'WAV, FLAC, MP3 and OGG work out of the box. Exports are 24-bit WAV or FLAC, or MP3 320 kbps for quick sharing. M4A and AAC files work if ffmpeg is installed on your PC.'),
+     'WAV, FLAC, MP3, OGG, M4A and AAC audio, and MP4 and MOV video (the sound is taken from the video and can be put back). Exports are 24-bit WAV or FLAC, or MP3 at 320 kbps, with the loudness set for podcasts, YouTube, audiobooks or broadcast.'),
+    ('What is transcription, and is anything uploaded?',
+     'Tunedzy can write out what is said, with the time of every word, using the Whisper model (a 145 MB download, once) on your own PC. You can then delete words to cut the audio, remove ums and uhs, shorten long pauses and export captions (SRT, VTT). Nothing is uploaded.'),
     ('What if my recording is really bad?',
-     'Tunedzy can repair a lot (noise, clicks, mic pops, harsh S sounds, clipped peaks, level swings, room echo), but it is not magic. A vocal buried in '
-     'reverb, heavily distorted, or recorded far from the mic will improve but not become a studio take. Re-recording closer to the mic is always the best fix.'),
+     'Tunedzy can repair a lot (noise, hum, clicks, mic pops, harsh S sounds, clipped peaks, level swings, some room echo), but it is not magic. A voice buried in reverb, heavily distorted, or recorded far from the mic will improve a lot but not become a studio take. Re-recording closer to the mic is always the best fix.'),
     ('Is this AI?',
-     'It uses automatic analysis, so it listens to your recording and picks the settings for you, on top of signal processing that runs locally. '
-     'An optional AI model (Demucs) handles one job: separating vocals from a full song, for example to study a reference track or pull a vocal out of a beat you downloaded.'),
+     'Partly, and we say which part: automatic analysis picks the settings; Studio sound (DeepFilterNet 3) cleans speech; Whisper writes the transcript; Demucs (optional) splits a song into vocals and instruments. All of them run on your own PC. There is no generative voice that invents sounds or changes who you are.'),
     ('Can it make me sound like a specific artist?',
      'You can drop in any song by an artist whose sound you like. Tunedzy measures how that record was tuned, EQ-ed, spaced and mixed and applies a similar '
      'treatment to your own voice. It changes the processing, not your voice, so you will still sound like you. Tunedzy is not affiliated with any artist.'),
-    ('Is there a Mac version?',
-     'Not yet: Windows 10 and 11 (64-bit) only for now. Want one? Email fuidzy@outlook.com with the subject "Tunedzy for Mac". Requests decide what we build next.'),
+    ('Is there a Mac or Linux version?',
+     'The Windows app is the one to download today (Windows 10 and 11, 64-bit). Mac (Apple Silicon) and Linux builds are made from the same code and are being prepared; email fuidzy@outlook.com with the subject &ldquo;Tunedzy for Mac&rdquo; to say you want one. '
+     'In the meantime Tunedzy Go works in the browser on any phone, Mac or PC.'),
     ('How do I get help?',
      'Email fuidzy@outlook.com. Include what you were doing and, if you can, a screenshot. We read every message.'),
 ]
@@ -298,12 +334,12 @@ GUIDES['vocal-cleanup-software-compared'] = dict(
           'Here is how they differ, with the list prices we found in October 2026. Check each vendor&rsquo;s site for today&rsquo;s price.'),
     tldr=['Plugins give you deep control inside a DAW; they need you to know what to do.',
           'One-click and online tools are faster but narrower, and online tools mean uploading your audio.',
-          'Tunedzy is a Windows app for the finishing step: clean, tune, fit to the beat, match a style and master, one-time $29.'],
+          'Tunedzy is a Windows app for the finishing step: clean, tune, fit to the beat, match a style and master. Its credits start free (30 in the first month), then from $0.99.'],
     body='''
 <table>
 <thead><tr><th>Tool</th><th>Typical price (US)</th><th>Best at</th><th>Where it falls short for this job</th></tr></thead>
 <tbody>
-<tr><td><strong>Tunedzy</strong></td><td>$29 one-time, 7-day trial</td><td>Finishing a rough vocal on a beat: clean, tune, level, style-match, master</td><td>Not a DAW or plugin (yet); Windows only; less manual depth than Melodyne</td></tr>
+<tr><td><strong>Tunedzy</strong></td><td>Free credits (30 in the first month, then about 12 a month); from $0.99 for more or $1.99 a month with no counting</td><td>Rescuing and finishing a recording: studio sound, clean, tune, level, edit by words, multitrack mix, master</td><td>Not for making beats; not a plugin (yet); Windows app today; less manual depth than Melodyne</td></tr>
 <tr><td>iZotope Nectar 4 (Elements / Standard / Advanced)</td><td>about $55 / $199 / $299</td><td>Full vocal-chain plugin with an assistant</td><td>Needs a DAW and some mixing knowledge</td></tr>
 <tr><td>Celemony Melodyne 5 Essential</td><td>about $99 list (often discounted)</td><td>Precise pitch and timing editing</td><td>Editing only: no cleanup, levelling or mastering</td></tr>
 <tr><td>Antares Auto-Tune Unlimited</td><td>$30 per month or $300 per year for new subscribers</td><td>Industry-standard pitch correction and the classic effect</td><td>Subscription; pitch-focused</td></tr>
@@ -323,9 +359,9 @@ GUIDES['vocal-cleanup-software-compared'] = dict(
 <p>Tunedzy is built for the moment between &ldquo;I recorded it&rdquo; and &ldquo;I can post it&rdquo;: a rough phone or bedroom take, a beat, and not enough time or experience to build a vocal chain. It runs locally, so your unreleased songs stay on your PC. If you already live in a DAW and love your plugins, you may only want it for quick drafts, reference matching and the final loudness and quality check.</p>
 ''',
     vf_title='Try it on your own track',
-    vf='''<p>The best comparison is your own recording. Download the free trial, run a rough take through it, and A/B the result against what you have now. Seven days, everything unlocked.</p>''',
+    vf='''<p>The best comparison is your own recording. Run a rough take through Tunedzy Go on your phone (free, nothing uploaded) or through the Windows app (your first month has at least 30 free credits), and A/B the result against what you have now.</p>''',
     faq=[('What is the cheapest way to get good vocals?',
-          'Record well first. Then a free editor plus a couple of stock plugins can do a lot; a one-time finishing app like Tunedzy is the low-cost way to automate the rest.'),
+          'Record well first. Then a free editor plus a couple of stock plugins can do a lot; a finishing app like Tunedzy, which starts free, is the low-cost way to automate the rest.'),
          ('Do I need a plugin or a standalone app?',
           'If you work inside a DAW and want hands-on control, plugins. If you want a finished result quickly, a standalone finishing app is faster.'),
          ('Is Tunedzy better than Auto-Tune?',
@@ -339,32 +375,42 @@ GUIDE_ORDER = ['fix-vocals-recorded-on-phone', 'remove-echo-from-vocal-recording
 
 # --------------------------------------------------------------------------------------------- policy pages (drafts for the owner to review)
 POLICIES = {
-    'privacy': dict(title='Tunedzy Privacy Policy', desc='How Tunedzy handles your audio, license and usage data.', h1='Privacy Policy',
+    'privacy': dict(title='Tunedzy Privacy Policy', desc='How Tunedzy handles your audio, your Fuidzy account and your credits.', h1='Privacy Policy',
                     body='''
-<p class="note">Draft for review by the product owner before launch.</p>
-<h2>Your audio stays on your computer</h2>
-<p>Tunedzy processes your recordings, beats and reference songs on your own PC. They are not uploaded to our servers.</p>
+<p class="note">Draft for review by the product owner. Updated 25 October 2026.</p>
+<h2>Your audio stays on your device</h2>
+<p>Tunedzy (the Windows app and Tunedzy Go) processes your recordings, videos, beats and reference songs on your own PC or phone. They are not uploaded to our servers. The tools on this site also run inside your browser.</p>
 <h2>What does use the internet</h2>
 <ul>
-<li><strong>License checks.</strong> The app contacts our payment provider, Dodo Payments, to activate your license key (your key and your computer&rsquo;s name). About once a week it also asks a small server we run on Cloudflare, at downloads.fuidzy.com, whether the key is still valid; it sends the key, the activation ID, a one-way hash of your PC&rsquo;s identifier and the app version. That server forwards the question to Dodo and signs the answer. We do not store any of it and keep no logs of it.</li>
-<li><strong>Downloads.</strong> The installer, updates and the optional AI add-on are downloaded from our own servers.</li>
-<li><strong>Payments.</strong> Purchases are handled by Dodo Payments. We do not see or store your card details.</li>
+<li><strong>Credits and your Fuidzy account.</strong> The Windows app asks our credit server (control.fuidzy.com, a Cloudflare service shared with Streamdzy) whether you have a credit, and tells it when you use one. It sends a device token, the app name and version, and a one-way hash of your PC&rsquo;s identifier (so one PC gets one welcome month; the identifier itself never leaves your PC). The server keeps your account: the name you chose, your PIN or password (stored hashed), your email only if you gave one, your credits and passes, your purchases and your invited friends. An account is made quietly in the background the first time a credit is needed. No audio, file names or project contents are sent.</li>
+<li><strong>Payments.</strong> Purchases are handled by Dodo Payments. We do not see or store your card details. Dodo tells our server what you bought so the credits can be added.</li>
+<li><strong>Old lifetime keys.</strong> If you bought a lifetime key before October 2026, the app checks it about once a week through downloads.fuidzy.com (it sends the key, the activation ID, a hash of your PC&rsquo;s identifier and the app version) and keeps working for up to 60 days without internet. We keep no logs of those checks.</li>
+<li><strong>Downloads.</strong> The installer, updates and the optional AI models (Studio sound, transcription, vocal separation) are downloaded from our own servers or from the model&rsquo;s publisher, once.</li>
+<li><strong>Tunedzy Go.</strong> The page and its models are cached on your phone after the first visit. It sends nothing about your recordings. Recent items you choose to keep are stored in your browser only.</li>
 </ul>
-<h2>Contact</h2><p>Questions about privacy: use the contact option on fuidzy.com.</p>'''),
-    'terms': dict(title='Tunedzy Terms of Use', desc='Terms for using Tunedzy software and its license.', h1='Terms of Use',
+<h2>Deleting your account</h2><p>Write to <a href="mailto:fuidzy@outlook.com">fuidzy@outlook.com</a> from the email on the account, or tell us the account name, and we will delete the account and its data.</p>
+<h2>Contact</h2><p>Questions about privacy: <a href="mailto:fuidzy@outlook.com">fuidzy@outlook.com</a>.</p>'''),
+    'terms': dict(title='Tunedzy Terms of Use', desc='Terms for using Tunedzy, its credits and plans.', h1='Terms of Use',
                   body='''
-<p class="note">Draft for review by the product owner before launch.</p>
-<h2>License</h2>
-<p>A Tunedzy license is for one person and may be activated on up to two of that person&rsquo;s computers. It is a personal, non-transferable license to use the software. You may not resell, redistribute or reverse-engineer it.</p>
+<p class="note">Draft for review by the product owner. Updated 25 October 2026.</p>
+<h2>Using Tunedzy and credits</h2>
+<p>Tunedzy is free to look at. Using it to process or export takes a credit, and a credit keeps the Fuidzy apps (Tunedzy and Streamdzy) open for 24 hours. Free credits, passes, packs and plans are described on the <a href="/tunedzy/pricing">pricing page</a>. We may change the free credits we give in future; credits you have already bought do not expire, and a plan you have paid for runs to the end of the period you paid for.</p>
+<h2>Your account</h2>
+<p>You are responsible for keeping your PIN and recovery key safe. An account may be used on up to five of your own devices. Accounts, credits and passes cannot be sold or transferred. We may close an account used to cheat the credit system.</p>
+<h2>Lifetime keys</h2>
+<p>A Tunedzy lifetime key bought before October 2026 is a personal license for one person on up to two of their computers and keeps unlocking everything.</p>
 <h2>Your content</h2>
-<p>You keep all rights to the audio you create. You are responsible for having the rights to any recordings, beats or reference songs you process with Tunedzy.</p>
+<p>You keep all rights to the audio you create. You are responsible for having the rights to any recordings, videos, beats or reference songs you process with Tunedzy. You may not resell, redistribute or reverse-engineer the software.</p>
+<h2>Open-source parts</h2>
+<p>Tunedzy includes open-source components (for example FFmpeg, Whisper, DeepFilterNet and RNNoise); their licenses are listed in the app (Help, Open-source notices).</p>
 <h2>No warranty</h2>
 <p>The software is provided as is. Audio results depend on the quality of the source recordings, and we do not guarantee a particular outcome.</p>'''),
-    'refund-policy': dict(title='Tunedzy Refund Policy', desc='How refunds work for Tunedzy purchases.', h1='Refund Policy',
+    'refund-policy': dict(title='Tunedzy Refund Policy', desc='How refunds work for Tunedzy credits and plans.', h1='Refund Policy',
                           body='''
-<p class="note">Draft for review by the product owner before launch.</p>
-<p>Tunedzy includes a 7-day free trial so you can try it on your own recordings before you buy. If you buy and it does not work for you, contact us within 30 days of purchase and we will refund you.</p>
-<p>Refunds are issued to the original payment method through our payment provider.</p>'''),
+<p class="note">Draft for review by the product owner. Updated 25 October 2026.</p>
+<p>Everything in Tunedzy is free to look at, and your first month comes with free credits, so you can try it on your own recordings before you pay. If you buy credits or a plan and it does not work for you, write to us within 30 days of the purchase and we will refund it.</p>
+<p>Refunds are issued to the original payment method through our payment provider, and the credits or plan from that purchase are removed. Lifetime keys bought before October 2026 keep their 30-day refund window from the day of purchase.</p>
+<p>Contact: <a href="mailto:fuidzy@outlook.com">fuidzy@outlook.com</a>.</p>'''),
 }
 
 

@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tunedzy Privacy Policy</title>
-<meta name="description" content="How Tunedzy handles your audio, license and usage data.">
+<meta name="description" content="How Tunedzy handles your audio, your Fuidzy account and your credits.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://fuidzy.com/tunedzy/privacy">
 <link rel="icon" href="/tunedzy/favicon.png">
 <meta name="theme-color" content="#140a14">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Tunedzy by Fuidzy"><meta property="og:title" content="Tunedzy Privacy Policy">
-<meta property="og:description" content="How Tunedzy handles your audio, license and usage data."><meta property="og:url" content="https://fuidzy.com/tunedzy/privacy"><meta property="og:image" content="https://fuidzy.com/tunedzy/og.png">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tunedzy Privacy Policy"><meta name="twitter:description" content="How Tunedzy handles your audio, license and usage data."><meta name="twitter:image" content="https://fuidzy.com/tunedzy/og.png">
+<meta property="og:description" content="How Tunedzy handles your audio, your Fuidzy account and your credits."><meta property="og:url" content="https://fuidzy.com/tunedzy/privacy"><meta property="og:image" content="https://fuidzy.com/tunedzy/og.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tunedzy Privacy Policy"><meta name="twitter:description" content="How Tunedzy handles your audio, your Fuidzy account and your credits."><meta name="twitter:image" content="https://fuidzy.com/tunedzy/og.png">
 <style>:root{--glass:22px;--bg:#140a14;--bg2:#1b0e1a;--card:rgba(255,255,255,.05);--card2:rgba(255,255,255,.08);--line:rgba(255,255,255,.11);--text:#f3e9e2;--mute:#a8969c;--faint:#735e6a;
 --amber:#ffb347;--orange:#ff7a3d;--pink:#ff6a2b;--violet:#ffc15e;--teal:#ffc15e;--blue:#ff8a3d;--grad:linear-gradient(100deg,#ffc15e,#ffa14a 35%,#ff7a3d 70%,#ff5a2a)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -230,22 +230,27 @@ footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr
 #clean select{background:#150913;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:15px}
 
 [hidden]{display:none !important}
+
+.pricegrid.three{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));max-width:1080px}.plan .pr{font-size:44px}.plan .pr small{font-size:15px}
 </style></head><body>
 <header class="top"><div class="wrap"><a class="logo" href="/tunedzy"><img src="/tunedzy/favicon.png" alt="" width="30" height="30"><span>Tuned<b>zy</b></span></a>
-<nav class="main" aria-label="Main"><a href="/tunedzy/tools">Free tools</a><a href="/tunedzy#features">Features</a><a href="/tunedzy#guides">Guides</a><a href="/tunedzy#pricing">Pricing</a><a href="/tunedzy#support">Support</a></nav><a class="hbtn" href="/tunedzy#pricing">Download free</a></div></header>
+<nav class="main" aria-label="Main"><a href="/tunedzy/tools">Free tools</a><a href="/tunedzy#features">Features</a><a href="/tunedzy/go/">Tunedzy Go</a><a href="/tunedzy#guides">Guides</a><a href="/tunedzy/pricing">Pricing</a><a href="/tunedzy#support">Support</a></nav><a class="hbtn" href="/tunedzy#pricing">Download free</a></div></header>
 <main><div class="narrow"><article><h1>Privacy Policy</h1>
-<p class="note">Draft for review by the product owner before launch.</p>
-<h2>Your audio stays on your computer</h2>
-<p>Tunedzy processes your recordings, beats and reference songs on your own PC. They are not uploaded to our servers.</p>
+<p class="note">Draft for review by the product owner. Updated 25 October 2026.</p>
+<h2>Your audio stays on your device</h2>
+<p>Tunedzy (the Windows app and Tunedzy Go) processes your recordings, videos, beats and reference songs on your own PC or phone. They are not uploaded to our servers. The tools on this site also run inside your browser.</p>
 <h2>What does use the internet</h2>
 <ul>
-<li><strong>License checks.</strong> The app contacts our payment provider, Dodo Payments, to activate your license key (your key and your computer&rsquo;s name). About once a week it also asks a small server we run on Cloudflare, at downloads.fuidzy.com, whether the key is still valid; it sends the key, the activation ID, a one-way hash of your PC&rsquo;s identifier and the app version. That server forwards the question to Dodo and signs the answer. We do not store any of it and keep no logs of it.</li>
-<li><strong>Downloads.</strong> The installer, updates and the optional AI add-on are downloaded from our own servers.</li>
-<li><strong>Payments.</strong> Purchases are handled by Dodo Payments. We do not see or store your card details.</li>
+<li><strong>Credits and your Fuidzy account.</strong> The Windows app asks our credit server (control.fuidzy.com, a Cloudflare service shared with Streamdzy) whether you have a credit, and tells it when you use one. It sends a device token, the app name and version, and a one-way hash of your PC&rsquo;s identifier (so one PC gets one welcome month; the identifier itself never leaves your PC). The server keeps your account: the name you chose, your PIN or password (stored hashed), your email only if you gave one, your credits and passes, your purchases and your invited friends. An account is made quietly in the background the first time a credit is needed. No audio, file names or project contents are sent.</li>
+<li><strong>Payments.</strong> Purchases are handled by Dodo Payments. We do not see or store your card details. Dodo tells our server what you bought so the credits can be added.</li>
+<li><strong>Old lifetime keys.</strong> If you bought a lifetime key before October 2026, the app checks it about once a week through downloads.fuidzy.com (it sends the key, the activation ID, a hash of your PC&rsquo;s identifier and the app version) and keeps working for up to 60 days without internet. We keep no logs of those checks.</li>
+<li><strong>Downloads.</strong> The installer, updates and the optional AI models (Studio sound, transcription, vocal separation) are downloaded from our own servers or from the model&rsquo;s publisher, once.</li>
+<li><strong>Tunedzy Go.</strong> The page and its models are cached on your phone after the first visit. It sends nothing about your recordings. Recent items you choose to keep are stored in your browser only.</li>
 </ul>
-<h2>Contact</h2><p>Questions about privacy: use the contact option on fuidzy.com.</p></article></div></main>
+<h2>Deleting your account</h2><p>Write to <a href="mailto:fuidzy@outlook.com">fuidzy@outlook.com</a> from the email on the account, or tell us the account name, and we will delete the account and its data.</p>
+<h2>Contact</h2><p>Questions about privacy: <a href="mailto:fuidzy@outlook.com">fuidzy@outlook.com</a>.</p></article></div></main>
 <footer><div class="wrap"><div class="cols">
-<div><h4>Tunedzy</h4><a href="/tunedzy">Overview</a><br><a href="/tunedzy#features">Features</a><br><a href="/tunedzy#pricing">Pricing</a><br><a href="/tunedzy#faq">FAQ</a></div>
+<div><h4>Tunedzy</h4><a href="/tunedzy">Overview</a><br><a href="/tunedzy#features">Features</a><br><a href="/tunedzy/go/">Tunedzy Go (phone)</a><br><a href="/tunedzy/pricing">Pricing and credits</a><br><a href="/tunedzy#faq">FAQ</a></div>
 <div><h4>Free tools</h4><a href="/tunedzy/tools/live-autotune">Live Autotune</a><br><a href="/tunedzy/tools/karaoke-autotune">Karaoke Autotune</a><br><a href="/tunedzy/tools/clean-streaming-mic">Clean Streaming Mic</a><br><a href="/tunedzy/tools/voice-recorder-noise-cancellation">Noise-Free Voice Recorder</a><br><a href="/tunedzy/tools/bpm-finder">BPM Finder</a><br><a href="/tunedzy/tools/song-key-finder">Key Finder</a><br><a href="/tunedzy/tools/chord-finder">Chord Finder</a><br><a href="/tunedzy/tools/lufs-meter">LUFS Meter</a><br><a href="/tunedzy/tools/vocal-checker">Vocal Checker</a><br></div>
 <div><h4>Guides</h4><a href="/tunedzy/fix-vocals-recorded-on-phone">How to Make Vocals Recorded on a Phone Sound P</a><br><a href="/tunedzy/ai-vocal-cleanup-explained">AI Vocal Cleanup</a><br><a href="/tunedzy/remove-echo-from-vocal-recording">How to Remove Echo and Room Reverb From a Voca</a><br><a href="/tunedzy/autotune-for-rap-vocals">Autotune for Rap and Melodic Vocals</a><br><a href="/tunedzy/mix-vocals-on-a-beat">How to Mix Vocals on a Beat So They Sit in the</a><br><a href="/tunedzy/blog">All audio guides</a></div>
 <div><h4>More apps by Fuidzy</h4><a href="https://fuidzy.com/">Fuidzy planner</a><br><a href="https://fuidzy.com/deep-clean-pc-or-mac-storage">SpaceWise: clean up PC storage</a><br><a href="https://tradzy.net/" rel="noopener">Tradzy</a><br><a href="https://dznye.github.io/Androidzy/" rel="noopener">Androidzy</a></div>
