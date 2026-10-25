@@ -441,3 +441,25 @@ GUIDE_PHOTO_EXTRA.update({**_sm.PHOTO, **_sg.PHOTO})
 GUIDE_TOOLS_EXTRA.update({**_sm.TOOLS, **_sg.TOOLS})
 GLOSSARY_SLUGS = list(_sg.ORDER)
 HOW_SLUGS = list(_sm.ORDER)
+
+# --------------------------------------------------------------------------------------------- batch 4: 50 more pages (25 October 2026)
+import content_batch4_a as _b4a  # noqa: E402
+import content_batch4_b as _b4b  # noqa: E402
+import content_batch4_c as _b4c  # noqa: E402
+import content_batch4_d as _b4d  # noqa: E402
+import content_batch4_e as _b4e  # noqa: E402
+
+_B4 = [_b4a, _b4b, _b4c, _b4d, _b4e]
+for _m in _B4:
+    GUIDES.update(_m.GUIDES)
+    GUIDE_ORDER += _m.ORDER
+    GUIDE_PHOTO_EXTRA.update(_m.PHOTO)
+    GUIDE_TOOLS_EXTRA.update(_m.TOOLS)
+
+# which section of the guides hub each page belongs to
+GUIDE_GROUP = {s_: 'how' for s_ in GUIDE_ORDER}
+GUIDE_GROUP.update({s_: 'compare' for s_ in COMPARE_SLUGS})
+GUIDE_GROUP.update({s_: 'glossary' for s_ in GLOSSARY_SLUGS})
+for _m in _B4:
+    for s_ in _m.ORDER:
+        GUIDE_GROUP[s_] = _m.GROUP_OF.get(s_, getattr(_m, 'GROUP', 'how')) if hasattr(_m, 'GROUP_OF') else getattr(_m, 'GROUP', 'how')

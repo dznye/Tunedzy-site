@@ -101,6 +101,71 @@ soundcloud loudness target,loudness,informational,awareness,/tunedzy/loudness-fo
 spotify loudness target,loudness,informational,awareness,/tunedzy/loudness-for-youtube-podcasts-and-spotify,live,unmeasured
 tiktok loudness target,loudness,informational,awareness,/tunedzy/loudness-for-youtube-podcasts-and-spotify,live,unmeasured
 youtube loudness target,loudness,informational,awareness,/tunedzy/loudness-for-youtube-podcasts-and-spotify,live,unmeasured
+audio cleanup for journalists,page target: audience,informational,awareness,/tunedzy/audio-cleanup-for-journalists,live,unmeasured
+audio cleanup for podcasters,page target: audience,informational,awareness,/tunedzy/voice-cleanup-for-podcasters,live,unmeasured
+audio cleanup for teachers,page target: audience,informational,awareness,/tunedzy/audio-cleanup-for-teachers,live,unmeasured
+audio cleanup for tiktok creators,page target: audience,informational,awareness,/tunedzy/audio-cleanup-for-tiktok-creators,live,unmeasured
+audio cleanup for voice actors,page target: audience,informational,awareness,/tunedzy/voice-cleanup-for-voice-actors,live,unmeasured
+audio cleanup for youtube creators,page target: audience,informational,awareness,/tunedzy/voice-cleanup-for-youtube-creators,live,unmeasured
+vocal cleanup for singers and rappers,page target: audience,informational,awareness,/tunedzy/vocal-cleanup-for-singers-and-rappers,live,unmeasured
+voice cleanup for streamers,page target: audience,informational,awareness,/tunedzy/voice-cleanup-for-streamers,live,unmeasured
+adobe audition alternative,page target: compare,informational,awareness,/tunedzy/tunedzy-vs-adobe-audition,live,unmeasured
+izotope rx alternative,page target: compare,informational,awareness,/tunedzy/tunedzy-vs-izotope-rx,live,unmeasured
+krisp alternative recording,page target: compare,informational,awareness,/tunedzy/tunedzy-vs-krisp,live,unmeasured
+tunedzy vs garageband,page target: compare,informational,awareness,/tunedzy/tunedzy-vs-garageband,live,unmeasured
+condenser vs dynamic microphone voice,page target: glossary,informational,awareness,/tunedzy/what-is-a-condenser-vs-dynamic-microphone,live,unmeasured
+what is a compressor audio,page target: glossary,informational,awareness,/tunedzy/what-is-a-compressor,live,unmeasured
+what is a de-esser,page target: glossary,informational,awareness,/tunedzy/what-is-a-de-esser,live,unmeasured
+what is a limiter audio,page target: glossary,informational,awareness,/tunedzy/what-is-a-limiter,live,unmeasured
+what is bit depth audio,page target: glossary,informational,awareness,/tunedzy/what-is-bit-depth,live,unmeasured
+what is dynamic range audio,page target: glossary,informational,awareness,/tunedzy/what-is-dynamic-range,live,unmeasured
+what is headroom audio,page target: glossary,informational,awareness,/tunedzy/what-is-headroom,live,unmeasured
+what is sample rate audio,page target: glossary,informational,awareness,/tunedzy/what-is-sample-rate,live,unmeasured
+ai vocal cleanup,page target: how,informational,awareness,/tunedzy/ai-vocal-cleanup-explained,live,unmeasured
+autotune for rap vocals,page target: how,informational,awareness,/tunedzy/autotune-for-rap-vocals,live,unmeasured
+clean audio from smartphone video,page target: how,informational,awareness,/tunedzy/how-to-clean-audio-from-a-smartphone-video,live,unmeasured
+clean song vocal recorded on phone,page target: how,informational,awareness,/tunedzy/how-to-clean-a-song-vocal-recorded-on-a-phone,live,unmeasured
+clean up phone voice recording,page target: how,informational,awareness,/tunedzy/clean-up-a-phone-voice-recording,live,unmeasured
+clean up voice recording in audacity,page target: how,informational,awareness,/tunedzy/how-to-clean-up-a-voice-recording-in-audacity,live,unmeasured
+edit podcast by words remove ums,page target: how,informational,awareness,/tunedzy/edit-a-podcast-by-its-words,live,unmeasured
+export audio for spotify apple podcasts,page target: how,informational,awareness,/tunedzy/how-to-export-audio-for-spotify-and-apple-podcasts,live,unmeasured
+fix clipped audio,page target: how,informational,awareness,/tunedzy/fix-clipped-distorted-audio,live,unmeasured
+fix crackling recording,page target: how,informational,awareness,/tunedzy/how-to-fix-a-crackling-recording,live,unmeasured
+fix muffled voice recording,page target: how,informational,awareness,/tunedzy/fix-a-muffled-voice-recording,live,unmeasured
+future vocal effect,page target: how,informational,awareness,/tunedzy/future-vocal-effect-settings,live,unmeasured
+how to add voiceover to screen recording,page target: how,informational,awareness,/tunedzy/how-to-add-a-voiceover-to-a-screen-recording,live,unmeasured
+how to choose a microphone for voice recording,page target: how,informational,awareness,/tunedzy/how-to-choose-a-microphone-for-voice-recording,live,unmeasured
+how to make a voice sound close intimate,page target: how,informational,awareness,/tunedzy/how-to-make-a-voice-sound-close-and-intimate,live,unmeasured
+how to record a podcast on your phone,page target: how,informational,awareness,/tunedzy/how-to-record-a-podcast-on-your-phone,live,unmeasured
+how to record audio for youtube videos,page target: how,informational,awareness,/tunedzy/how-to-record-audio-for-youtube-videos,live,unmeasured
+how to record with a usb microphone,page target: how,informational,awareness,/tunedzy/how-to-record-with-a-usb-microphone,live,unmeasured
+iphone voice memo sound better,page target: how,informational,awareness,/tunedzy/voice-note-sounds-better-on-an-iphone,live,unmeasured
+level voices between speakers,page target: how,informational,awareness,/tunedzy/how-to-level-voices-between-speakers,live,unmeasured
+lufs for youtube podcast spotify,page target: how,informational,awareness,/tunedzy/loudness-for-youtube-podcasts-and-spotify,live,unmeasured
+make audio louder without distortion,page target: how,informational,awareness,/tunedzy/how-to-make-audio-louder-without-distortion,live,unmeasured
+make voice sound warmer,page target: how,informational,awareness,/tunedzy/how-to-make-a-voice-sound-warmer,live,unmeasured
+mix vocals on a beat,page target: how,informational,awareness,/tunedzy/mix-vocals-on-a-beat,live,unmeasured
+phone vocals sound professional,page target: how,informational,awareness,/tunedzy/fix-vocals-recorded-on-phone,live,unmeasured
+podcast sound professional budget,page target: how,informational,awareness,/tunedzy/podcast-sound-professional-on-a-budget,live,unmeasured
+quiet recording corner on a budget,page target: how,informational,awareness,/tunedzy/how-to-set-up-a-quiet-recording-corner-on-a-budget,live,unmeasured
+record audiobook at home,page target: how,informational,awareness,/tunedzy/how-to-record-an-audiobook-at-home,live,unmeasured
+record lecture voice at home,page target: how,informational,awareness,/tunedzy/how-to-record-a-lecture-or-tutorial-voice,live,unmeasured
+record vocal at home,page target: how,informational,awareness,/tunedzy/record-a-vocal-at-home-for-a-song,live,unmeasured
+record voiceover on phone tiktok,page target: how,informational,awareness,/tunedzy/record-a-voiceover-on-your-phone,live,unmeasured
+reduce background talking in recording,page target: how,informational,awareness,/tunedzy/how-to-reduce-people-talking-in-the-background,live,unmeasured
+remove background noise from voice recording,page target: how,informational,awareness,/tunedzy/remove-background-noise-from-a-voice-recording,live,unmeasured
+remove breath noise from voice recording,page target: how,informational,awareness,/tunedzy/how-to-remove-breath-noise-from-a-voice-recording,live,unmeasured
+remove echo from vocal recording,page target: how,informational,awareness,/tunedzy/remove-echo-from-vocal-recording,live,unmeasured
+remove hum from audio,page target: how,informational,awareness,/tunedzy/remove-hum-from-audio,live,unmeasured
+remove keyboard noise from recording,page target: how,informational,awareness,/tunedzy/how-to-remove-keyboard-and-desk-noise-from-a-recording,live,unmeasured
+replace audio in video,page target: how,informational,awareness,/tunedzy/put-clean-audio-back-into-a-video,live,unmeasured
+trim silence from recording,page target: how,informational,awareness,/tunedzy/how-to-trim-silence-from-a-recording,live,unmeasured
+vocal cleanup software,page target: how,informational,awareness,/tunedzy/vocal-cleanup-software-compared,live,unmeasured
+wav vs mp3 vs flac,page target: how,informational,awareness,/tunedzy/how-to-choose-wav-mp3-or-flac,live,unmeasured
+my recording is too quiet,page target: problem,informational,awareness,/tunedzy/my-recording-is-too-quiet,live,unmeasured
+podcast sounds different on spotify,page target: problem,informational,awareness,/tunedzy/my-podcast-sounds-different-on-spotify,live,unmeasured
+voice sounds robotic after cleanup,page target: problem,informational,awareness,/tunedzy/my-voice-sounds-robotic-after-cleanup,live,unmeasured
+why does my phone recording sound far away,page target: problem,informational,awareness,/tunedzy/why-does-my-phone-recording-sound-far-away,live,unmeasured
 fix background noise in android recording,problem: background noise,informational,awareness,/tunedzy/remove-background-noise-from-a-voice-recording,live,unmeasured
 fix background noise in discord voice,problem: background noise,informational,awareness,/tunedzy/blog/virtual-audio-cable-setup-obs-discord-zoom,live,unmeasured
 fix background noise in home vocal,problem: background noise,informational,awareness,/tunedzy/record-a-vocal-at-home-for-a-song,live,unmeasured
@@ -1547,6 +1612,10 @@ tunedzy for podcasts,compare: tunedzy,informational,consideration,/tunedzy/voice
 tunedzy for voice recording,compare: tunedzy,informational,consideration,/tunedzy/voice-cleaner-alternatives,live,unmeasured
 tunedzy review,compare: tunedzy,informational,consideration,/tunedzy/voice-cleaner-alternatives,live,unmeasured
 tunedzy vs tunedzy,compare: tunedzy,commercial,consideration,/tunedzy/voice-cleaner-alternatives,live,unmeasured
+audacity alternative voice cleanup,page target: compare,informational,consideration,/tunedzy/tunedzy-vs-audacity,live,unmeasured
+auphonic alternative podcast,page target: compare,informational,consideration,/tunedzy/tunedzy-vs-auphonic,live,unmeasured
+descript alternative podcast editing,page target: compare,informational,consideration,/tunedzy/tunedzy-vs-descript,live,unmeasured
+voice cleaner alternatives,page target: compare,informational,consideration,/tunedzy/voice-cleaner-alternatives,live,unmeasured
 best free background noise remover for android recording,problem: background noise,commercial,consideration,/tunedzy/remove-background-noise-from-a-voice-recording,live,unmeasured
 best free background noise remover for discord voice,problem: background noise,commercial,consideration,/tunedzy/blog/virtual-audio-cable-setup-obs-discord-zoom,live,unmeasured
 best free background noise remover for home vocal,problem: background noise,commercial,consideration,/tunedzy/record-a-vocal-at-home-for-a-song,live,unmeasured
@@ -2029,6 +2098,14 @@ free lufs meter,free tool,transactional,decision,/tunedzy/tools/lufs-meter,live,
 free song key finder,free tool,transactional,decision,/tunedzy/tools/song-key-finder,live,unmeasured
 free vocal checker,free tool,transactional,decision,/tunedzy/tools/vocal-checker,live,unmeasured
 voice recorder noise cancellation,free tool,transactional,decision,/tunedzy/tools/voice-recorder-noise-cancellation,live,unmeasured
+does ai cleanup change your voice,page target: ethics,informational,decision,/tunedzy/does-ai-cleanup-change-your-voice,live,unmeasured
+recording consent before you record,page target: ethics,informational,decision,/tunedzy/recording-consent-before-you-record,live,unmeasured
+how to install tunedzy on windows,page target: help,informational,decision,/tunedzy/install-tunedzy-on-windows,live,unmeasured
+tunedzy go faq,page target: help,informational,decision,/tunedzy/tunedzy-go-faq,live,unmeasured
+tunedzy privacy,page target: help,informational,decision,/tunedzy/tunedzy-privacy-explained,live,unmeasured
+tunedzy system requirements,page target: help,informational,decision,/tunedzy/tunedzy-system-requirements,live,unmeasured
+tunedzy troubleshooting,page target: help,informational,decision,/tunedzy/tunedzy-troubleshooting,live,unmeasured
+what happens when tunedzy credits run out,page target: help,informational,decision,/tunedzy/what-happens-when-tunedzy-credits-run-out,live,unmeasured
 android recording background noise fix online free,problem: background noise,transactional,decision,/tunedzy/remove-background-noise-from-a-voice-recording,live,unmeasured
 background noise removal app for android recording,problem: background noise,transactional,decision,/tunedzy/remove-background-noise-from-a-voice-recording,live,unmeasured
 background noise removal app for discord voice,problem: background noise,transactional,decision,/tunedzy/blog/virtual-audio-cable-setup-obs-discord-zoom,live,unmeasured

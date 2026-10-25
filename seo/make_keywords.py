@@ -155,6 +155,10 @@ def main():
         add(q, 'informational' if q.startswith(('what', 'how')) else 'commercial', 'awareness' if q.startswith(('what', 'how')) else 'consideration', path, 'research')
     for q, slug in TOOL_QUERIES.items():
         add(q, 'transactional', 'decision', 'tools/' + slug, 'free tool')
+    for slug in C.GUIDE_ORDER:
+        g = C.GUIDES[slug]
+        stage = 'consideration' if slug in C.COMPARE_SLUGS else ('decision' if C.GUIDE_GROUP.get(slug) in ('help', 'ethics') else 'awareness')
+        add(g['kw'], 'informational', stage, slug, 'page target: ' + C.GUIDE_GROUP.get(slug, 'how'))
     rows.sort(key=lambda r: (r['stage'], r['cluster'], r['query']))
     with OUT.open('w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
