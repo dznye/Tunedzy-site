@@ -118,7 +118,7 @@ add(slug='do-i-need-an-audio-interface-for-voice', cluster='gear', kw='do I need
          ('Can I record a second person on a USB mic?', 'It is harder. Two microphones usually need an interface with two inputs.'),
          ('What should I buy first?', 'Usually a good microphone position, a quiet room and a simple setup. An interface can wait.')])
 
-add(slug='what-is-phantom-power-and-when-you-need-it', cluster='gear', kw='what is phantom power',
+add(slug='what-is-phantom-power-and-when-you-need-it', cluster='gear', kw='when to switch on phantom power',
     title='What Is Phantom Power and When Do You Need It?',
     desc='What is phantom power: the 48-volt supply that some microphones need, how to tell whether your microphone needs it, and the safety checks before you switch it on.',
     h1='What Is Phantom Power and When Do You Need It?',
