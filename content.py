@@ -463,3 +463,18 @@ GUIDE_GROUP.update({s_: 'glossary' for s_ in GLOSSARY_SLUGS})
 for _m in _B4:
     for s_ in _m.ORDER:
         GUIDE_GROUP[s_] = _m.GROUP_OF.get(s_, getattr(_m, 'GROUP', 'how')) if hasattr(_m, 'GROUP_OF') else getattr(_m, 'GROUP', 'how')
+
+# --------------------------------------------------------------------------------------------- batch 5: 50 more pages (25 October 2026)
+import content_batch5_a as _b5a  # noqa: E402
+import content_batch5_b as _b5b  # noqa: E402
+import content_batch5_c as _b5c  # noqa: E402
+import content_batch5_d as _b5d  # noqa: E402
+import content_batch5_e as _b5e  # noqa: E402
+
+_B5 = [_b5a, _b5b, _b5c, _b5d, _b5e]
+for _m in _B5:
+    GUIDES.update(_m.GUIDES)
+    GUIDE_ORDER += _m.ORDER
+    GUIDE_PHOTO_EXTRA.update(_m.PHOTO)
+    GUIDE_TOOLS_EXTRA.update(_m.TOOLS)
+    GUIDE_GROUP.update({s_: _m.GROUP_OF[s_] for s_ in _m.ORDER})
