@@ -13,7 +13,7 @@ MAC_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Tunedzy%20for%20Mac&body=Hi%2C%20I%2
 HELP_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Tunedzy%20support'
 LAUNCH_MAIL = f'mailto:{SUPPORT_EMAIL}?subject=Notify%20me%20when%20Tunedzy%20launches&body=Please%20email%20me%20when%20the%20Tunedzy%20download%20opens.'
 
-NAV = [('Free tools', f'{BASE}/tools'), ('Features', f'{BASE}#features'), ('Tunedzy Go', GO_URL), ('Guides', f'{BASE}#guides'), ('Pricing', f'{BASE}/pricing'), ('Support', f'{BASE}#support')]
+NAV = [('Free tools', f'{BASE}/tools'), ('Features', f'{BASE}#features'), ('Tunedzy Go', GO_URL), ('Guides', f'{BASE}/guides'), ('Pricing', f'{BASE}/pricing'), ('Support', f'{BASE}#support')]
 
 # --------------------------------------------------------------------------------------------- what it costs (the numbers are the shared Fuidzy server's: Streamdzy cloud/control-worker)
 # One account, one credit pool and one login for Tunedzy and Streamdzy. Keep these in step with docs/CREDITS.md in the app repo and Streamdzy's site/plans.js.
@@ -419,3 +419,14 @@ import content_tools as T  # noqa: E402
 
 GUIDES['ai-vocal-cleanup-explained'] = T.AI_GUIDE
 GUIDE_ORDER.insert(1, 'ai-vocal-cleanup-explained')
+
+# --------------------------------------------------------------------------------------------- batch 2: how-tos and comparisons (25 October 2026)
+import content_seo_how as _sh  # noqa: E402
+import content_seo_compare as _sc  # noqa: E402
+
+GUIDES.update(_sh.GUIDES)
+GUIDES.update(_sc.GUIDES)
+GUIDE_ORDER += _sh.ORDER + _sc.ORDER
+GUIDE_PHOTO_EXTRA = {**_sh.PHOTO, **_sc.PHOTO}
+GUIDE_TOOLS_EXTRA = {**_sh.TOOLS, **_sc.TOOLS}
+COMPARE_SLUGS = list(_sc.ORDER)

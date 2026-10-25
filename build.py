@@ -68,6 +68,8 @@ GUIDE_TOOLS = {'fix-vocals-recorded-on-phone': ['vocal-checker', 'bpm-finder'], 
                'remove-echo-from-vocal-recording': ['vocal-checker', 'lufs-meter'], 'autotune-for-rap-vocals': ['song-key-finder', 'bpm-finder'],
                'mix-vocals-on-a-beat': ['bpm-finder', 'lufs-meter'], 'future-vocal-effect-settings': ['bpm-finder', 'song-key-finder'],
                'vocal-cleanup-software-compared': ['vocal-checker', 'lufs-meter']}
+GUIDE_PHOTO.update(C.GUIDE_PHOTO_EXTRA)
+GUIDE_TOOLS.update(C.GUIDE_TOOLS_EXTRA)
 SIZES = {}
 THUMB = {'neon-wide': 'neon-th'}
 
@@ -412,7 +414,7 @@ def hub():
              ('Press Perfect it', 'It repairs clipping, clicks and hum, takes out noise and room sound, levels the voice and sets the tone.'),
              ('Edit, mix and export', 'Cut by words, add tracks and music, check the loudness, and export WAV, FLAC or MP3 (or the video).')]
     tool_cards = ''.join(f'<a class="card {TOOL_COLOR[T.TOOLS[s]["color"]]}" href="{C.BASE}/tools/{s}">{ico(T.TOOLS[s]["icon"], TOOL_COLOR[T.TOOLS[s]["color"]])}<h3>{e(T.TOOLS[s]["short"])}</h3><p>{e(T.TOOLS[s]["blurb"])}</p></a>' for s in T.TOOL_ORDER)
-    guides = ''.join(f'<a class="th" href="{C.BASE}/{s}">{img(THUMB.get(GUIDE_PHOTO[s], GUIDE_PHOTO[s]), alt="")}<span><b>{e(C.GUIDES[s]["h1"])}</b><br><span class="small">{e(C.GUIDES[s]["desc"][:96])}&hellip;</span></span></a>' for s in C.GUIDE_ORDER)
+    guides = ''.join(f'<a class="th" href="{C.BASE}/{s}">{img(THUMB.get(GUIDE_PHOTO[s], GUIDE_PHOTO[s]), alt="")}<span><b>{e(C.GUIDES[s]["h1"])}</b><br><span class="small">{e(C.GUIDES[s]["desc"][:96])}&hellip;</span></span></a>' for s in C.GUIDE_ORDER[:6]) + f'<a class="th" href="{C.BASE}/guides"><span><b>All guides and comparisons</b><br><span class="small">How-tos, honest comparisons and alternatives.</span></span></a>'
     status = '' if LAUNCHED else '<p class="small" style="margin-top:14px">Windows download opens at launch. Email us and we will let you know the day it does.</p>'
     body = f'''<main>
 <div class="hero">{shapes('hero')}<div class="wrap"><div class="herogrid"><div>
@@ -518,8 +520,8 @@ def guide(slug):
     tl = ''.join(f'<li>{t}</li>' for t in g['tldr'])
     ai = g.get('ai')
     ai_html = f'<div class="aibox"><h2>{ai[0]}</h2>{ai[1]}</div>' if ai else ''
-    action = (f'<p><a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download Tunedzy</a></p>' if LAUNCHED
-              else f'<p><a class="btn primary" href="{C.BASE}">See what Tunedzy does</a></p>')
+    buy = (f'<a class="btn primary" href="{e(DOWNLOAD)}" rel="noopener">Download Tunedzy</a>' if LAUNCHED else f'<a class="btn primary" href="{C.BASE}/pricing">See pricing</a>')
+    action = f'<p>{buy} <a class="btn" href="{C.GO_URL}">Try it on your phone, free</a></p>'
     article_ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': g['h1'], 'description': g['desc'], 'datePublished': C.DATE, 'dateModified': C.DATE,
                   'image': C.SITE + C.BASE + '/og.png', 'mainEntityOfPage': C.SITE + f'{C.BASE}/{slug}',
                   'author': {'@type': 'Organization', 'name': 'Fuidzy'}, 'publisher': {'@type': 'Organization', 'name': 'Fuidzy', 'url': C.SITE}}
@@ -528,8 +530,22 @@ def guide(slug):
 <div class="vf"><h2>{g['vf_title']}</h2>{g['vf']}{action}</div>
 <h2>Free tools for this</h2><div class="related">{tools}</div>
 <h2>Frequently asked questions</h2>{faq_html(g['faq'])}
-<h2>Keep going</h2><div class="related">{rel}</div></article></div></main>'''
+<h2>Keep going</h2><div class="related">{rel}</div><p><a href="{C.BASE}/guides">All guides and comparisons</a> &middot; <a href="{C.GO_URL}">Tunedzy Go on your phone</a> &middot; <a href="{C.BASE}/pricing">Pricing</a></p></article></div></main>'''
     return layout(title=g['title'], desc=g['desc'], path=f'{C.BASE}/{slug}', body=body, lds=[article_ld, faq_ld(g['faq']), crumbs_ld], og_type='article')
+
+
+def guides_hub():
+    crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('Tunedzy', C.BASE), ('Guides', f'{C.BASE}/guides')])
+
+    def cards(slugs):
+        return ''.join(f'<a class="th" href="{C.BASE}/{s}">{img(THUMB.get(GUIDE_PHOTO[s], GUIDE_PHOTO[s]), alt="")}<span><b>{e(C.GUIDES[s]["h1"])}</b><br><span class="small">{e(C.GUIDES[s]["desc"][:110])}&hellip;</span></span></a>' for s in slugs)
+    how = [s for s in C.GUIDE_ORDER if s not in C.COMPARE_SLUGS]
+    body = (f'<main><div class="hero" style="padding:0 0 10px">{shapes("soft")}<div class="wrap">{crumbs_html}<div class="toolhead"><h1>Audio guides, comparisons and how-tos</h1>'
+            '<p class="lead">Practical steps for cleaning a voice, fixing a recording and getting a finished sound, on a phone or a PC. Each guide says what works without any tool, and where Tunedzy helps.</p></div></div></div>'
+            f'<section><div class="wrap"><h2>How to</h2><div class="related">{cards(how)}</div></div></section>'
+            f'<section class="alt"><div class="wrap"><h2>Compare</h2><p class="sub2" style="text-align:left;margin:0 0 18px">Honest comparisons: where each tool is the better choice, and the cases where Tunedzy is.</p><div class="related">{cards(C.COMPARE_SLUGS)}</div></div></section>'
+            f'<section><div class="narrow"><h2>Free and on your phone</h2><p>Tunedzy Go cleans a recording on your phone for free. The free tools on this site (LUFS meter, vocal checker, key and BPM finders) run in your browser. <a href="{C.GO_URL}">Open Tunedzy Go</a> &middot; <a href="{C.BASE}/tools">All free tools</a> &middot; <a href="{C.BASE}/pricing">Pricing</a></p></div></section></main>')
+    return layout(title='Audio Guides and Comparisons: Clean Voice, Noise, Loudness', desc='Free audio guides: clean a phone voice recording, remove noise and hum, fix clipping, set loudness, and honest comparisons of voice cleaners.', path=f'{C.BASE}/guides', body=body, lds=[crumbs_ld])
 
 
 # ---------------------------------------------------------------------------------------------------- blog (SEO articles for the tools)
@@ -648,15 +664,16 @@ def main():
         write(f"blog/{b['slug']}/index.html", blog_page(b))
     write('thanks/index.html', thanks())
     write('pricing/index.html', pricing_page())
+    write('guides/index.html', guides_hub())
     if args.go:
         shutil.copytree(args.go, OUT / 'go')
     urls = ([(C.BASE, '1.0'), (f'{C.BASE}/pricing', '0.9'), (C.BASE + '/go/', '0.8'), (f'{C.BASE}/tools', '0.9')] + [(f'{C.BASE}/tools/{s}', '0.9') for s in T.TOOL_ORDER]
             + [(f'{C.BASE}/blog', '0.7')] + [(f"{C.BASE}/blog/{b['slug']}", '0.7') for b in B.BLOGS]
-            + [(f'{C.BASE}/{s}', '0.8') for s in C.GUIDE_ORDER] + [(f'{C.BASE}/{s}', '0.3') for s in C.POLICIES])
+            + [(f'{C.BASE}/{s}', '0.8') for s in C.GUIDE_ORDER] + [(f'{C.BASE}/guides', '0.9'), (f'{C.BASE}/pricing', '0.9')] + [(f'{C.BASE}/{s}', '0.3') for s in C.POLICIES])
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
         f'  <url><loc>{C.SITE}{u}</loc><lastmod>{C.DATE}</lastmod><priority>{p}</priority></url>\n' for u, p in urls) + '</urlset>\n'
     (ROOT / 'tunedzy-sitemap.xml').write_text(sm, encoding='utf-8')
-    slugs = list(C.GUIDE_ORDER) + ['tools'] + [f'tools/{s}' for s in T.TOOL_ORDER] + ['blog'] + [f"blog/{b['slug']}" for b in B.BLOGS] + ['thanks', 'pricing'] + list(C.POLICIES)
+    slugs = list(C.GUIDE_ORDER) + ['guides', 'tools'] + [f'tools/{s}' for s in T.TOOL_ORDER] + ['blog'] + [f"blog/{b['slug']}" for b in B.BLOGS] + ['thanks', 'pricing'] + list(C.POLICIES)
     (ROOT / 'worker-pages.json').write_text(json.dumps(slugs), encoding='utf-8')
     print(f'built {len(urls) + 1} pages ({"LAUNCHED" if LAUNCHED else "pre-launch"}) -> {OUT}')
 
