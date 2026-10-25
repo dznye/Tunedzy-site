@@ -1,7 +1,7 @@
 """Builds the static site for fuidzy.com/tunedzy into this folder (the GitHub repo root).
 
-  python build.py                         pre-launch: informational CTAs, no buy button, no dead links
-  python build.py --launched --download-url https://downloads.fuidzy.com/vocalforge/Tunedzy-Setup.exe
+  python build.py                         pre-launch: informational CTAs, no dead links
+  python build.py --launched --download-url https://downloads.fuidzy.com/tunedzy/Tunedzy-Setup.exe
 
 Output layout (the Worker maps URL -> file):
   tunedzy/index.html                      https://fuidzy.com/tunedzy
@@ -201,7 +201,7 @@ def layout(*, title, desc, path, body, lds, robots='index,follow', og_type='webs
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(title)}"><meta name="twitter:description" content="{e(desc)}"><meta name="twitter:image" content="{C.SITE}{C.BASE}/og.png">
 <style>{CSS}</style>{ld}</head><body>
 <header class="top"><div class="wrap"><a class="logo" href="{C.BASE}"><img src="{C.BASE}/favicon.png" alt="" width="30" height="30"><span>Tuned<b>zy</b></span></a>
-<nav class="main" aria-label="Main">{nav}</nav><a class="hbtn" href="{C.BASE}#pricing">{'Download free' if LAUNCHED else 'Free to try'}</a></div></header>
+<nav class="main" aria-label="Main">{nav}</nav><a class="hbtn" href="{C.BASE}#pricing">{'Download free' if LAUNCHED else 'Free'}</a></div></header>
 {body}
 <footer><div class="wrap"><div class="cols">
 <div><h4>Tunedzy</h4><a href="{C.BASE}">Overview</a><br><a href="{C.BASE}#features">Features</a><br><a href="{C.GO_URL}">Tunedzy Go (phone)</a><br><a href="{C.BASE}/pricing">Pricing and credits</a><br><a href="{C.BASE}#faq">FAQ</a></div>
@@ -608,9 +608,14 @@ def og():
             d.ellipse([cx - k, cy - k, cx + k, cy + k], fill=col + (a,))
     d.ellipse([860, 60, 1160, 360], outline=(255, 179, 71, 110), width=3)
     d.rounded_rectangle([90, 470, 190, 570], radius=26, outline=(255, 255, 255, 60), width=2)
-    bold = ImageFont.truetype('C:/Windows/Fonts/segoeuib.ttf', 78)
-    reg = ImageFont.truetype('C:/Windows/Fonts/segoeui.ttf', 34)
-    small = ImageFont.truetype('C:/Windows/Fonts/segoeuib.ttf', 30)
+    def font(name, size):                       # Segoe UI on Windows; DejaVu Sans elsewhere (Linux build machines)
+        for f in (f'C:/Windows/Fonts/{name}.ttf', '/usr/share/fonts/truetype/dejavu/' + ('DejaVuSans-Bold.ttf' if name.endswith('b') else 'DejaVuSans.ttf')):
+            try:
+                return ImageFont.truetype(f, size)
+            except OSError:
+                pass
+        return ImageFont.load_default()
+    bold, reg, small = font('segoeuib', 78), font('segoeui', 34), font('segoeuib', 30)
     icon = Image.open(ROOT / 'assets' / 'icon.png').convert('RGBA').resize((92, 92))
     img_.paste(icon, (70, 62), icon)
     d.text((180, 78), 'Tunedzy 5', font=small, fill=(243, 233, 226))
