@@ -1110,3 +1110,20 @@ add(slug='how-to-finish-a-song-in-one-evening', cluster='compare', kw='how to fi
     faq=[('What if I run out of time?', 'Export what you have. A rough, finished version beats a perfect unfinished one.'),
          ('Should I mix the beat too?', 'If the beat is finished, leave it. Focus on the vocal and the balance.'),
          ('What is the first thing to fix?', 'Noise and the worst notes. Small details come last.')])
+
+# ============================================================================================== FURTHER BATCHES
+# Each content_blog_ext_N.py adds its own CLUSTERS and BLOGS; they join here, after the posts above.
+import content_blog_ext_1 as _ext1  # noqa: E402
+import content_blog_ext_2 as _ext2  # noqa: E402
+import content_blog_ext_3 as _ext3  # noqa: E402
+import content_blog_ext_4 as _ext4  # noqa: E402
+import content_blog_ext_5 as _ext5  # noqa: E402
+import content_blog_ext_6 as _ext6  # noqa: E402
+import content_blog_ext_7 as _ext7  # noqa: E402
+import content_blog_ext_8 as _ext8  # noqa: E402
+import content_blog_ext_9 as _ext9  # noqa: E402
+import content_blog_ext_10 as _ext10  # noqa: E402
+
+for _m in (_ext1, _ext2, _ext3, _ext4, _ext5, _ext6, _ext7, _ext8, _ext9, _ext10):
+    CLUSTERS.update(_m.CLUSTERS)
+    BLOGS.extend(_m.BLOGS)
