@@ -526,7 +526,7 @@ def guide(slug):
                   'image': C.SITE + C.BASE + '/og.png', 'mainEntityOfPage': C.SITE + f'{C.BASE}/{slug}',
                   'author': {'@type': 'Organization', 'name': 'Fuidzy'}, 'publisher': {'@type': 'Organization', 'name': 'Fuidzy', 'url': C.SITE}}
     body = f'''<main><div class="hero" style="padding:0 0 10px">{shapes('soft')}<div class="narrow"><article>{crumbs_html}<h1>{g['h1']}</h1><p class="note">Updated October 2026</p><p class="lead">{g['lead']}</p>{banner}</article></div></div>
-<div class="narrow"><article><div class="tldr"><b>The short version</b><ul>{tl}</ul></div>{g['body']}{ai_html}
+<div class="narrow"><article><div class="tldr"><b>The short version</b><ul>{tl}</ul></div>{g['body'].replace('<table>', '<div class="tablewrap"><table>').replace('</table>', '</table></div>')}{ai_html}
 <div class="vf"><h2>{g['vf_title']}</h2>{g['vf']}{action}</div>
 <h2>Free tools for this</h2><div class="related">{tools}</div>
 <h2>Frequently asked questions</h2>{faq_html(g['faq'])}
