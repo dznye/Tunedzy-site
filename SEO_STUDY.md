@@ -78,3 +78,36 @@ The site was flipped with `python build.py --launched --download-url https://dow
 The page is in **pre-launch** mode: no buy button, download shows "launching soon", schema says `PreOrder`.
 When the installer is hosted and tested: `python build.py --launched --download-url <installer url>`, commit, push. The Worker
 caches pages for ~10 minutes, so it updates by itself.
+
+## 9. Batch 2 (2026-10-25): vocal fixes and comparisons, and the funnel
+
+**Published in the repo (live once the Worker list is updated, see below):** `blog/fix-clipped-vocal-recording`, `remove-mic-pops-plosives`, `how-to-de-ess-vocals`,
+`how-loud-should-vocals-be-on-a-beat`, `what-lufs-for-spotify-and-youtube`, `vocal-chain-for-rap-in-order`, `ai-voice-cover-vocals-sound-robotic`,
+`auto-tune-alternative-one-time-price`, `melodyne-alternative-for-beginners`, `nectar-alternative-without-a-daw`. Each links to a free tool and to two or three neighbours.
+
+**The funnel (one path per reader):**
+1. Search: a how-to (clipped vocal, mic pops, de-esser, LUFS) -> the guide answers in the first paragraph.
+2. Guide: the box "Try it free" -> the free tool (Vocal Checker, LUFS meter, Clean Streaming Mic, Voice Recorder).
+3. Tool: runs in the browser, nothing uploaded; the result points to Tunedzy Go (phone) and the Windows app.
+4. Pricing: 30 free credits in the first month, packs from $0.99, a plan with no counting from $1.99 a month.
+5. Comparison pages (Auto-Tune, Melodyne, Nectar alternatives) catch the buying search and point to the free start.
+
+**Publishing gap (must do):** the live Worker `vocalforge-pages` serves only the slugs in its own page list, and that list is written into the
+deployed script (it is not read from `worker-pages.json`). Until the list is updated, the ten new pages return 404. The fix: in the
+Cloudflare dashboard, open Workers, `vocalforge-pages`, Edit code, add the ten `blog/...` slugs above to the `PAGES` set (the list ends with
+`"refund-policy"`), and Deploy. The Worker caches pages for about ten minutes after that.
+
+**Communities (where bedroom artists and beatmakers ask these questions).** Rules were not confirmed by search. Read each sub's sidebar and
+self-promotion rule before any post, and post a guide only when someone asks the question in a thread:
+- r/WeAreTheMusicMakers (production and feedback threads), r/audioengineering (recording and mixing), r/makinghiphop (rap production; no
+  current rule found, check it), r/musicproduction, r/podcasting and r/voiceacting (voice-over and noise questions), r/Twitch and r/streamers
+  (mic noise on stream, OBS), r/homestudio.
+- YouTube comments on tutorials about the same topics; short-form video (TikTok, Shorts) answering one question each, with the free tool link.
+- Rule for every community: answer first, link only where a link helps, disclose the affiliation, never ask for upvotes.
+
+**Search volume is still unknown.** Keyword Planner needs a logged-in Google Ads account (no spend needed). Until those numbers are in,
+the order of batches is by how directly a page matches the product, not by volume.
+
+**Next batches (ordered):** the artist-style cluster (Weeknd, Drake, Travis Scott vocal sounds), mic and room fixes for phone recordings,
+a free "find the key of my beat" explainer, and the alternatives pages (Nectar, prime:vocal). Target: 1,000 unique pages over several batches,
+each with its own answer and a tool or a comparison behind it. Thin, repeated pages are not added.
