@@ -86,6 +86,10 @@ add(slug='cutting-audio-on-the-breath', cluster='evergreen-edit', kw='cut audio 
 </ul>
 <h2>Practise on a short piece</h2>
 <p>A short piece of speech, with several breaths, is the best practice material. Make a few cuts on breath points, then listen to them back to back. The differences will teach you more than any written rule, and the skill grows quickly.</p>
+<h2>Use a short fade at the join</h2>
+<p>Even when the cut lands on a breath, a very short fade on each side can stop a click. Keep the fade brief, so the transition stays hidden. If the fade is long enough to be heard as a smooth change in the room, the edit has become a blur, and the breath will sound unnatural.</p>
+<h2>Fill gaps with room tone</h2>
+<p>Removing a pause can leave the room suddenly silent, which sounds unnatural. Keep a short sample of the room's background, and place it under the join to keep the sound continuous. Room tone makes the edit disappear, and it is one of the simplest ways to make an edited voice sound like a single take.</p>
 <h2>Limits</h2>
 <p>Breath cuts work best for speech with a clear rhythm. Fast speakers, overlapping speech and emotional moments can make breath points hard to find or wrong to use. Judge each cut by ear, and accept that some joins will need a different solution.</p>
 <h2>Listen for the breath, not the cut</h2>
@@ -133,6 +137,8 @@ add(slug='editing-laughter-and-reactions-in-podcasts', cluster='evergreen-edit',
 <li>Keeping a laugh that is loud and distracting for no reason.</li>
 <li>Removing all the overlap between speakers, which makes the talk sound scripted.</li>
 </ul>
+<h2>Reactions from more than one guest</h2>
+<p>When two guests laugh together, the sounds overlap, and the edit can look tidy while sounding strange. Keep the overlap natural, and avoid cutting one guest's laugh so the other's appears to come from nowhere. Listen to the join with both voices at the same level, and keep the reaction that belongs to the moment.</p>
 <h2>Limits</h2>
 <p>There is no single right amount of laughter to keep. Some shows are light and playful, and others are serious and focused. The guiding question is whether the reaction helps the listener feel the conversation, and the answer depends on the show and the people in it. Discuss sensitive moments with the guests before publishing.</p>
 <h2>Keep the consent and the context</h2>
@@ -184,6 +190,10 @@ add(slug='shortening-pauses-without-sounding-rushed', cluster='evergreen-edit', 
 <li>Relying on automatic silence removal without listening.</li>
 <li>Making the speaker sound faster than they naturally speak.</li>
 </ul>
+<h2>Pauses that signal a change</h2>
+<p>A longer pause often marks a new idea, a change of topic or a moment of reflection. Those pauses carry meaning, and cutting them can make the speaker sound as if they are rushing through a thought. Keep the pauses that follow a question or a turn, and reduce only the gaps that are simply dead air.</p>
+<h2>Listen at speaking pace</h2>
+<p>Edit with the speech playing in real time, not only by looking at the waveform. Your ear notices a rhythm the eye can miss. If the shortened version sounds clipped or hurried at normal speed, restore some of the gap until the pace feels natural again.</p>
 <h2>Limits</h2>
 <p>How much to shorten depends on the speaker, the content and the audience. A fast-paced news summary may take many pauses, while a reflective interview may need almost all of them. Judge each recording by how it feels, and keep the speaker’s natural rhythm as the guide.</p>
 <h2>Keep the speaker’s voice</h2>
@@ -231,6 +241,8 @@ add(slug='removing-filler-words-carefully', cluster='evergreen-edit', kw='remove
 <li>Trusting the transcript without listening to the audio.</li>
 <li>Removing the speaker’s whole conversational style.</li>
 </ul>
+<h2>Keep the speaker in the decision</h2>
+<p>Some speakers want the fillers gone, and others feel that their natural voice is part of the show. Ask before you start, and agree on a level of editing that suits the speaker and the audience. A short note of the agreed approach at the top of the project keeps later edits consistent with what the speaker expects. Playback at the speaker's own pace is the best final check.</p>
 <h2>Limits</h2>
 <p>How much to cut depends on the format and the audience. A tightly produced show may cut more than a relaxed conversation, and a formal interview may cut more than a casual chat. There is no fixed number of fillers to remove. The aim is clear speech that still sounds like the speaker.</p>
 <h2>Fillers and the speaker’s consent</h2>
@@ -279,6 +291,10 @@ add(slug='editing-music-to-fit-speech', cluster='evergreen-edit', kw='edit music
 <li>Choosing music whose energy does not suit the section.</li>
 <li>Checking the balance only on good headphones.</li>
 </ul>
+<h2>Handle vocals in the music</h2>
+<p>A music bed with its own vocal competes with the speaker, even at a low level. Choose instrumental versions for speech-heavy sections, or use a bed with the vocal removed where you have the right to do so. If the only version has a vocal, keep it well below the speech and place the speech where the music is most open.</p>
+<h2>Cut the music with the words in mind</h2>
+<p>When you shorten a track, cut at phrase boundaries in the music, not in the middle of a chord change. Listen for places where the music rises just as the speaker starts, and move the cut so the two do not compete. A well-chosen cut makes the edit feel like a musical decision rather than a patch.</p>
 <h2>Limits</h2>
 <p>Music editing depends on taste and genre, and there is no single right way to time a sting or shape an ending. Some styles call for a dramatic stop, and others for a long fade. Trust your ear, and use the principles as guides.</p>
 <h2>Licence the music first</h2>
@@ -326,6 +342,10 @@ add(slug='timeline-markers-for-audio-editing', cluster='evergreen-edit', kw='mar
 <li>Using too many colours, so the colours mean nothing.</li>
 <li>Forgetting to remove markers before exporting the final file.</li>
 </ul>
+<h2>Markers for problems you have not yet fixed</h2>
+<p>A marker can flag a noise, a clipped word or a passage that needs a second opinion, so you do not lose track of it while you work on other sections. Use one word for the problem, such as click, level or breath, and remove the marker once it is solved. A list of open markers makes a simple checklist for the end of the edit.</p>
+<h2>Marker names for a series</h2>
+<p>For a podcast or a course, keep the same marker names across episodes. A marker called intro or ad break means the same thing each time, which speeds up the work for anyone who edits the next episode. Write the names in a short note at the top of the project, so new collaborators see them straight away.</p>
 <h2>Limits</h2>
 <p>Marker features differ between editors, and some do not offer colours or exportable lists. The principle is the same across editors: a marker is a note attached to a point in time. Use the features your editor offers, and keep the naming and the cleanup habits simple.</p>
 <h2>Keep the edit on track</h2>
@@ -372,6 +392,12 @@ add(slug='audio-editing-shortcuts-explained', cluster='evergreen-edit', kw='audi
 <li>Working at a single zoom level throughout.</li>
 <li>Relying on shortcuts without checking the final result by ear.</li>
 </ul>
+<h2>Make a one-page shortcut sheet</h2>
+<p>Write down the ten shortcuts you use most, and keep the sheet beside your screen for the first few weeks. Add one new shortcut each time you notice yourself reaching for the mouse to do something repeatable. A short, steady list is far easier to learn than a long reference card you never open.</p>
+<h2>Practise on a short file</h2>
+<p>Choose a clip of a minute or two and edit it using only the keyboard. Time yourself the first time, and again the next day. The aim is not speed for its own sake. It is to make the basic moves automatic, so your attention stays on the sound rather than on the menus.</p>
+<h2>Using a template for repeat jobs</h2>
+<p>If you repeat the same jobs for every file, such as trimming the opening, applying a level change and exporting in one format, save those steps as a template or a macro if your editor allows it. A template removes the small decisions that slow you down and invites fewer mistakes. Test it on a copy first, and check the first few results by ear, since a template that worked on one kind of recording may not suit another. Review it every few months, because your equipment and your files change over time.</p>
 <h2>Limits</h2>
 <p>Shortcuts differ between editors, and some features have no default key. Check your editor’s reference, and consider customising the keys you use most. The principles are the same across editors, and the speed comes from practice rather than from memorising a long list.</p>
 <h2>Check the result carefully</h2>
@@ -422,6 +448,12 @@ add(slug='non-destructive-editing-explained', cluster='evergreen-edit', kw='non 
 <li>Assuming the export is the same as the project, when it may not be.</li>
 <li>Forgetting that a project depends on the original files it points to.</li>
 </ul>
+<h2>Name and version your files</h2>
+<p>Name your versions clearly. A file name that records the stage, such as raw, rough cut, levelled and final, makes it easy to find the right version later. Save a new version at each milestone rather than overwriting the last one. A small habit like this costs seconds, and it protects you when a client asks for a change to an early stage.</p>
+<h2>Make a checkpoint before risky work</h2>
+<p>Before a large edit, such as a pass of silence removal or a noise reduction pass across the whole file, save a copy with a clear name. If the result disappoints, you can return to the checkpoint without rebuilding the session from scratch. Checkpoints work best when they are made at logical points in the process, not at random.</p>
+<h2>Keeping edit lists readable</h2>
+<p>Non-destructive edits are only as useful as your ability to read them later. Give each effect or clip a name that says what it does, and group related changes so that a later editor can follow them. Remove edits that no longer do anything, since a long list of dead changes hides the ones that matter. A tidy project is easier to revise, hand over and trust months after the work was done.</p>
 <h2>Limits</h2>
 <p>The benefits of non-destructive editing depend on good file management. A project with a missing original cannot be rebuilt, and a project with a corrupted file may lose its edits. Treat the project and the originals as a single unit, and back them up together.</p>
 <h2>Keep the original safe</h2>
@@ -478,6 +510,8 @@ add(slug='audio-quality-check-before-publishing', cluster='evergreen-edit', kw='
 <li>Relying on headphones alone.</li>
 <li>Rushing the check because the episode is late.</li>
 </ul>
+<h2>Check the file details</h2>
+<p>Check the file itself as well as the sound. Confirm that the sample rate, the channel layout, the length and the format match what the platform asks for. A mismatch can cause a rejected upload or a playback problem that only appears on some devices. Open the file in a second player to confirm that it plays from start to finish without a gap or a stutter.</p>
 <h2>Limits</h2>
 <p>The checklist catches common problems, but it cannot guarantee a perfect episode. Some issues appear only on specific devices, and some are a matter of taste. Use the checklist to remove the obvious mistakes, then trust your judgement about the rest.</p>
 <h2>Check the sound one more time</h2>

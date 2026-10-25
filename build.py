@@ -20,6 +20,7 @@ from pathlib import Path
 import content as C
 import content_tools as T
 import content_blog as B
+from cover_art import COVER_CSS, cover_svg
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'tunedzy'
@@ -32,7 +33,7 @@ LAUNCHED = args.launched and bool(args.download_url)
 DOWNLOAD = args.download_url
 
 e = html.escape
-CSS = (ROOT / 'assets' / 'site.css').read_text(encoding='utf-8')
+CSS = (ROOT / 'assets' / 'site.css').read_text(encoding='utf-8') + COVER_CSS
 CORE_JS = (ROOT / 'assets' / 'vf-core.js').read_text(encoding='utf-8')
 UI_JS = (ROOT / 'assets' / 'vf-ui.js').read_text(encoding='utf-8')
 LIVE_JS = (ROOT / 'assets' / 'vf-live.js').read_text(encoding='utf-8')
@@ -577,13 +578,13 @@ def blog_page(b):
     tool = T.TOOLS[cl['tool']]
     path = f"{C.BASE}/blog/{b['slug']}"
     crumbs_html, crumbs_ld = breadcrumbs([('Fuidzy', '/'), ('Tunedzy', C.BASE), ('Blog', f'{C.BASE}/blog'), (b['h1'], path)])
-    rel = ''.join(f'<a href="{C.BASE}/blog/{r["slug"]}"><b>{e(r["h1"])}</b><br><span class="small">{e(r["desc"][:110])}&hellip;</span></a>' for r in blog_related(b))
+    rel = ''.join(f'<a class="th" href="{C.BASE}/blog/{r["slug"]}">{cover_svg(r["slug"], r["cluster"], "cover-th")}<span><b>{e(r["h1"])}</b><br><span class="small">{e(r["desc"][:110])}&hellip;</span></span></a>' for r in blog_related(b))
     article_ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': b['h1'], 'description': b['desc'], 'datePublished': C.DATE, 'dateModified': C.DATE,
                   'image': C.SITE + C.BASE + '/og.png', 'mainEntityOfPage': C.SITE + path, 'keywords': b['kw'],
                   'author': {'@type': 'Organization', 'name': 'Fuidzy'}, 'publisher': {'@type': 'Organization', 'name': 'Fuidzy', 'url': C.SITE}}
     action = (f'<a class="btn" href="{e(DOWNLOAD)}" rel="noopener">Get the Tunedzy app</a>' if LAUNCHED else f'<a class="btn" href="{C.BASE}">See Tunedzy</a>')
     body = f'''<main><div class="hero" style="padding:0 0 10px">{shapes('soft')}<div class="narrow"><article>{crumbs_html}<h1>{b['h1']}</h1><p class="note">Updated October 2026 &middot; {e(cl['label'])}</p>
-<div class="tldr"><b>Quick answer</b><p style="margin:6px 0 10px">{b['answer']}</p></div></article></div></div>
+<div class="tldr"><b>Quick answer</b><p style="margin:6px 0 10px">{b['answer']}</p></div><figure class="cover-art">{cover_svg(b['slug'], b['cluster'])}</figure></article></div></div>
 <div class="narrow"><article>{b['body']}
 <div class="vf"><h2>Try it free: {e(tool['short'])}</h2><p>{e(tool['blurb'])} Runs in your browser, nothing is uploaded.</p><div class="cta"><a class="btn primary" href="{C.BASE}/tools/{cl['tool']}">Open the free tool</a>{action}</div></div>
 <h2>Frequently asked questions</h2>{faq_html(b['faq'])}
@@ -596,7 +597,7 @@ def blog_index():
     secs = ''
     for key, cl in B.CLUSTERS.items():
         items = [x for x in B.BLOGS if x['cluster'] == key]
-        cards = ''.join(f'<a href="{C.BASE}/blog/{x["slug"]}"><b>{e(x["h1"])}</b><br><span class="small">{e(x["desc"][:120])}&hellip;</span></a>' for x in items)
+        cards = ''.join(f'<a class="th" href="{C.BASE}/blog/{x["slug"]}">{cover_svg(x["slug"], x["cluster"], "cover-th")}<span><b>{e(x["h1"])}</b><br><span class="small">{e(x["desc"][:120])}&hellip;</span></span></a>' for x in items)
         secs += f'<section style="padding:26px 0"><div class="wrap"><h2>{e(cl["label"])}</h2><p class="sub2" style="text-align:left;margin:0 0 18px">Free tool: <a href="{C.BASE}/tools/{cl["tool"]}">{e(cl["tool_name"])}</a></p><div class="related">{cards}</div></div></section>'
     body = (f'<main><div class="hero" style="padding:0 0 10px">{shapes("soft")}<div class="wrap">{crumbs_html}<div class="toolhead"><h1>Audio Guides: Clean Mics, Noise Removal and Recording</h1>'
             '<p class="lead">Practical, step-by-step guides for streamers, creators and voice-over artists: remove background noise, set up your mic, and record clean audio. Each guide links to a free tool that runs in your browser.</p></div></div></div>' + secs + '</main>')

@@ -49,6 +49,10 @@ add(slug='how-to-check-a-vocal-recording-online', cluster='app-how-to', kw='chec
 <li>Checking an early rough edit and publishing a different version.</li>
 <li>Treating the report as a score rather than a set of things to listen for.</li>
 </ul>
+<h2>Using the results to plan the next recording</h2>
+<p>A check on one file can reveal a pattern across several files, such as clipping at the start of each take, or a noise floor that rises late in a session. Use those patterns to change the setup for the next recording, rather than fixing the same problem at the editing stage every time.</p>
+<h2>Checking a take against the project</h2>
+<p>Compare the level and the noise of the file with the others in the same project. A take that sits clearly louder or quieter than the rest will stand out in the final mix, even when it passes the basic checks. Use the same clip length and position in the check, so the comparison is fair.</p>
 <h2>Limits</h2>
 <p>A check is only as good as the file it reads, and the tool cannot judge taste, timing or performance. Results describe what is measurable, and your ears decide what matters. If a recording has serious problems, the best fix is usually a new take, placed closer to the microphone in a quieter room.</p>
 <h2>Try the Vocal Checker</h2>
@@ -95,6 +99,10 @@ add(slug='how-to-check-song-loudness-online', cluster='app-how-to', kw='check so
 <li>Comparing your number with a track from a different genre.</li>
 <li>Judging the master by the meter alone, without listening.</li>
 </ul>
+<h2>Compare with a reference track</h2>
+<p>Measure a commercial track you know well, in the same style, and compare its loudness and peak with your mix. The numbers will not decide the balance for you, but the comparison shows whether your mix sits in a similar range. Play both tracks at the same level in your monitoring, and listen for differences in the vocal and the low end.</p>
+<h2>Check a rough mix as well as the final</h2>
+<p>Measuring a rough mix early shows whether the balance is heading in a sensible direction. A rough mix with very high loudness and clipping peaks often needs gain staging before the mastering stage, and that is far easier to correct at the start than at the end.</p>
 <h2>Limits</h2>
 <p>The meter measures what can be measured, and it cannot judge the arrangement, the performance or the feel of the track. Platform behaviour can change, so check the current guidance before a release. Use the figures as a guide, and trust the listening test on several devices.</p>
 <h2>Try the LUFS Meter</h2>
@@ -139,6 +147,10 @@ add(slug='how-to-find-a-songs-key-in-your-browser', cluster='app-how-to', kw='so
 <li>Assuming a song has one key throughout, when it may modulate.</li>
 <li>Forgetting that a key suits a voice only if the melody sits in range.</li>
 </ul>
+<h2>Check the key against the chords</h2>
+<p>Play the chords of the song, or a simple progression you can hear, and listen for the note the song settles on. The home note is usually the key, although some songs move between centres. If the tool gives a key that does not match what you hear, look at the chord shapes and the bass line before deciding which to trust.</p>
+<h2>When the key is unclear</h2>
+<p>Some tracks, such as ambient pieces, modal music or songs with a long intro, do not have one clear centre. In these cases the tool may return an answer that is technically possible but musically weak. Note the uncertainty, and choose a key by the sound that suits the singer or the instrument rather than by the number alone.</p>
 <h2>Limits</h2>
 <p>A key reading describes the harmony as the tool hears it, and some music is ambiguous or changes key partway through. The tool cannot judge whether a key suits a voice, and it cannot tell you the best key for a performance. Use the reading as a starting point, and let your ear and your voice make the final choice.</p>
 <h2>Try the Song Key Finder</h2>
@@ -179,6 +191,12 @@ add(slug='how-to-record-a-voice-over-in-your-browser', cluster='app-how-to', kw=
 <li>Using heavy noise removal that makes the voice sound artificial.</li>
 <li>Skipping the check on headphones and a phone before delivery.</li>
 </ul>
+<h2>Read the script aloud first</h2>
+<p>Read the script once at speaking pace before you record, and mark any word or phrase that trips you. Rewrite awkward sentences, add a breath mark where you will need one and check the pronunciation of any name. A script that is easy to say produces a smoother take and reduces the number of retakes you need.</p>
+<h2>Save and name each take</h2>
+<p>Give each take a short name that records the section and the take number, such as intro-2. Keep the best take in a separate folder, and note its number in the script. A clear system makes editing faster, and it stops you losing the take you wanted in a pile of similar files.</p>
+<h2>Checking the take before moving on</h2>
+<p>After each take, listen back for a moment before recording the next line. Check that the level was steady, that the words were clear and that no sound from the room intruded. A quick listen catches a problem while the script is still fresh, which is far quicker than discovering it during editing.</p>
 <h2>Limits</h2>
 <p>A browser recording is limited by the microphone and the room. A very noisy space or a distant microphone will produce a noisier voice-over than a close recording in a quiet room, whatever the tool does. For a professional release, a higher quality setup may be worth the investment.</p>
 <h2>Try the Noise-Free Voice Recorder</h2>
@@ -217,6 +235,12 @@ add(slug='how-to-clean-a-noisy-recording-online', cluster='app-how-to', kw='clea
 <li>Overwriting the original, and losing the chance to try again.</li>
 <li>Expecting cleanup to recover words that the noise has covered.</li>
 </ul>
+<h2>Choose a short section to test first</h2>
+<p>Pick ten or fifteen seconds that contain both speech and the noise you want to remove, such as a pause with a hum or a passage with traffic. Try the settings on that section before applying them to the whole file. A short test shows whether the voice survives, and it saves time if the first attempt is too heavy.</p>
+<h2>Know when to stop</h2>
+<p>If each step makes the voice sound more distant or more processed, the file has reached its limit. At that point the most useful option may be to accept some background, or to re-record the part that matters. Pushing the cleanup further usually damages the speech more than it improves the noise.</p>
+<h2>Judging the cleaned file on a second device</h2>
+<p>A cleaned file can sound fine on the device used to make it and worse on another. Listen to the result on headphones, on a laptop speaker and on a phone, at the same level as the original. Pay attention to the voice first, then the background. If the voice sounds hollow or thin on any device, the cleanup has gone too far, and a lighter setting is the better choice. Keep notes on the setting that worked, so the next recording starts from a known point.</p>
 <h2>Limits</h2>
 <p>Browser cleanup is quick and convenient, but it is limited by the recording. A very noisy or distant recording will stay noisy, and the best result comes from a better recording. The tool reduces noise; it does not make a poor recording into a studio one.</p>
 <h2>Try the cleanup on your recording</h2>
@@ -263,6 +287,12 @@ add(slug='free-audio-tools-that-run-in-the-browser', cluster='app-how-to', kw='f
 <li>Sessions that must run offline, or with very large files.</li>
 <li>Mixing and mastering that needs a full signal chain.</li>
 </ul>
+<h2>Keeping files private</h2>
+<p>The tools described here run in your browser, and the file stays on your device. That makes them useful for unreleased material, private recordings and work under a client's confidentiality. Check the page of any tool before you rely on it for sensitive work, and keep your own backup, since a browser tab is not a storage system.</p>
+<h2>Combining tools in a sensible order</h2>
+<p>A common route is to check a recording for problems first, clean it lightly if needed, check the loudness of the finished file, and then look at the key and tempo if you are working with music. Each step answers one question. Working in that order keeps the decisions clear, and it avoids fixing a problem that a later step would create.</p>
+<h2>Checking that a tool is working as expected</h2>
+<p>Before you trust a result from any browser tool, check it against a file where you already know the answer. Use a recording with a known level, or a simple tone at a set frequency, and see whether the tool reports what you expect. A quick known-answer check takes a minute and catches a misreading before it reaches a finished file. A short note of the result keeps the check easy to repeat, and it is worth repeating when the tool changes.</p>
 <h2>Limits</h2>
 <p>Browser tools have limits in size, control and speed, and their features change over time. Use them for the jobs they do well, and move to a fuller editor when the work demands it. Check each tool’s own description for the current details.</p>
 <h2>Start with a quick check</h2>
@@ -310,6 +340,12 @@ add(slug='tunedzy-go-on-your-phone-explained', cluster='app-how-to', kw='audio a
 <li>Judging the result only in a quiet room.</li>
 <li>Expecting cleanup to fix a recording made too far from the microphone.</li>
 </ul>
+<h2>Record well in the first place</h2>
+<p>Hold the phone steady, keep it a comfortable distance from the mouth and turn off notifications before you begin. A closer and steadier recording gives the cleanup less to do, and it keeps more of the voice. Most of the improvement comes from the recording habit, not from the processing afterwards.</p>
+<h2>Share the cleaned file carefully</h2>
+<p>Check the cleaned version on headphones and a phone speaker before you send it on. Keep the original alongside it, and name the cleaned version so the difference is clear. If a colleague or client needs the file, say which version it is and what cleanup was applied.</p>
+<h2>Working in a noisy place</h2>
+<p>If you must record in a busy place, such as a café or a street, move the phone closer to the voice and turn your back to the noise where you can. Shield the microphone from wind with a cloth or a foam cover. A closer recording of the voice gives the cleanup a better starting point than a distant one.</p>
 <h2>Limits</h2>
 <p>Tunedzy Go is limited by the phone’s microphone and the recording conditions. It cleans what is there; it cannot restore speech that was never captured clearly. Results depend on the recording, the device and the browser, so test on your own material. Check the Tunedzy Go page for the current features and any requirements.</p>
 <h2>Start with your next phone recording</h2>
@@ -354,6 +390,13 @@ add(slug='how-to-check-a-podcast-loudness-online', cluster='app-how-to', kw='che
 <li>Judging the loudness only on headphones.</li>
 <li>Forgetting to re-measure after a change.</li>
 </ul>
+<h2>Check the intro, the adverts and the segments</h2>
+<p>Check each part of the episode, not only the whole file. An intro with music, a host-read advert and an interview segment can each sit at a different level, even when the total seems right. Export the segments separately if you can, or check the full episode and listen closely at the joins. A loud advert after a quiet interview is one of the most common complaints listeners notice.</p>
+<p>Music under speech needs its own check. Play the bed at the level you intend, then listen to the voice on top. If the voice has to strain to be heard, lower the music rather than raising the voice until it clips.</p>
+<h2>Compare episodes over time</h2>
+<p>Keep a short log of the integrated loudness and the true peak for each episode. The numbers help you see drift, such as a guest who was recorded quietly, or an edit that added a louder section. A log lets you set a target for the series and check new episodes against it, rather than judging each one from memory. Use the numbers as a guide and your ear as the final check.</p>
+<h2>Listening on other devices</h2>
+<p>Play the finished episode on a phone and, if you can, in a car, and listen for places where the speech is hard to follow. A level that works on studio headphones can sound thin or harsh on a small speaker. Use these device checks to decide whether the speech needs more presence, not only whether the loudness number is correct.</p>
 <h2>Limits</h2>
 <p>The meter reports measurements, and it cannot judge the warmth, clarity or pacing of the episode. Platform behaviour can change, so check the current guidance before publishing. Use the figures as a guide, and trust the listening check on the devices your listeners use.</p>
 <h2>Check your next episode</h2>
@@ -392,6 +435,12 @@ add(slug='bpm-finder-for-workout-playlists', cluster='app-how-to', kw='bpm for w
 <li>Choosing tracks by BPM alone, and ignoring how they feel.</li>
 <li>Leaving the playlist unchecked at the workout pace.</li>
 </ul>
+<h2>Tap tempo for tracks the finder misreads</h2>
+<p>Some tracks have a loose groove, a slow intro or a tempo that shifts. If the reading does not match what you hear, tap along to the beat for a few bars and compare the two. Use the tapped value when it fits the feel of the track, and note any track where the tempo is unclear, so you can check it before a workout.</p>
+<h2>Build the playlist around the session</h2>
+<p>Start with the warm-up pace, move through the main block and finish with the cool-down. A playlist shaped around the plan keeps the energy where you want it. Test the order once on a short run or a walk before you rely on it, since a track that feels right on the sofa may not suit the pace of a run.</p>
+<h2>Keeping the playlist current</h2>
+<p>Playlists drift as tastes change and new tracks arrive. Review the list every few weeks, remove tracks that no longer suit the session and add new ones with a known tempo. Note the BPM beside each track, so the next update takes minutes rather than an afternoon.</p>
 <h2>Limits</h2>
 <p>A tempo reading is a measurement, and some tracks have changing tempos or a loose beat that does not suit a single number. The reading also says nothing about how a track will feel during a session. Use the BPM as a guide, and test the playlist during an actual workout before relying on it.</p>
 <h2>Try the BPM Finder</h2>
@@ -432,6 +481,10 @@ add(slug='chord-finder-for-songwriters', cluster='app-how-to', kw='chord finder 
 <li>Studying only one song, and missing the variety of progressions.</li>
 <li>Writing a progression that reads well but does not suit the melody.</li>
 </ul>
+<h2>Using the finder to learn a song</h2>
+<p>When you want to play a song you love, the chord reading gives you a starting point, and the loop shows which part repeats. Play the progression slowly, then at tempo, and listen for changes the reading may have missed, such as a passing chord or a short turnaround. The finder is a map, and your ear makes the final corrections.</p>
+<h2>Changing the progression on purpose</h2>
+<p>Once you can hear a progression clearly, change one chord at a time and listen to how the mood shifts. Swapping a chord for its relative, or moving the last chord of a loop, can give a new feeling without losing the song's structure. Record each version so you can compare them later.</p>
 <h2>Limits</h2>
 <p>A reading describes the harmony as the tool hears it, and some chords are ambiguous or sit between two labels. Songs can use inversions, passing chords and modal colours that a simple reading does not show. Use the reading as a starting point, and learn the detail by ear.</p>
 <h2>Try the Chord Finder</h2>

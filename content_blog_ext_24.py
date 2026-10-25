@@ -146,6 +146,8 @@ add(slug='ambience-and-room-tone-for-film', cluster='sound-design', kw='ambience
 <li>Change the ambience only when the setting changes.</li>
 <li>Check the space on a phone speaker and on headphones.</li>
 </ol>
+<h2>Logging the location</h2>
+<p>Note where each ambience and each room tone recording was made, along with the time and the weather. A simple note lets you match a new shot to the right background later, and it stops a park recording from turning up in an office scene. Keep the notes with the files, not in a separate document that may be lost.</p>
 <h2>Limits</h2>
 <p>Ambience and room tone depend on the location, the equipment and the weather, and some places are difficult to record cleanly. Recording in a busy city or a windy field requires patience and sometimes a second attempt. The goal is a believable space, not a perfect recording.</p>
 <h2>Check the space on real devices</h2>
@@ -190,6 +192,12 @@ add(slug='sound-effects-licences-explained', cluster='sound-design', kw='sound e
 <p>A sound offered for free may still have terms. It may require credit, forbid commercial use or restrict redistribution. Check the terms of every free sound, and treat “free” as the start of a check rather than the end of one.</p>
 <h2>Recording your own sounds</h2>
 <p>Recording your own sound effects removes the licence question entirely, because you own the recording. It is also a creative advantage, since your sounds are unlike anyone else’s. The next post in this series covers that approach, as set out in the <a href="/tunedzy/blog/making-your-own-sound-effects-at-home">home recording post</a>.</p>
+<h2>Attribution and where it appears</h2>
+<p>Some free licences ask for a credit, and the credit may need to appear in the description, the end credits or the sleeve notes, depending on the project. Read the wording of the licence and the platform's own rules, since they may require the credit in a particular place. Add the credit to the project file as soon as you add the sound, so it is not forgotten at delivery.</p>
+<h2>Licences change, and downloads can be out of date</h2>
+<p>A sound downloaded years ago may have come with a different licence from the one that applies now. Keep the page, the date and the licence text you saw when you downloaded it, and check the source again before a major release. The record protects you if the rules are questioned later.</p>
+<h2>Keeping proof of permission</h2>
+<p>When a licence depends on a purchase or a sign-up, keep the receipt, the account page or the email that confirms it. Store that proof with the project, not in a folder that gets cleared at the end of a job. If a client asks later whether a sound was cleared for their use, a quick answer is worth far more than a long search.</p>
 <h2>Limits</h2>
 <p>Licence terms vary widely, and this post cannot cover every licence. Where a project has significant value or risk, take advice from a professional who understands the local rules. Treat the terms as binding, and read them before you rely on a sound.</p>
 <h2>Check every sound before publishing</h2>
@@ -238,6 +246,8 @@ add(slug='making-your-own-sound-effects-at-home', cluster='sound-design', kw='ma
 <li>Label the files and store them in a folder by type.</li>
 <li>Use one of the sounds in a short video, and note how it worked.</li>
 </ol>
+<h2>Recording safely at home</h2>
+<p>Some household sounds involve hot surfaces, sharp tools or heavy objects. Record with care, keep children and pets away from the work area, and never force an object to make a sound. A sound that needs a risky action is rarely worth it, and a safer alternative is usually easy to find.</p>
 <h2>Limits</h2>
 <p>Home recordings will not match a professional library in every respect, and some sounds, such as large vehicles or explosions, are not practical to record at home. Focus on the sounds you can capture well, and use purchased or licensed sounds for the rest, with the licence checks described in the <a href="/tunedzy/blog/sound-effects-licences-explained">licences post</a>.</p>
 <h2>Keep the recordings clean</h2>
@@ -286,6 +296,8 @@ add(slug='whoosh-and-impact-sounds-explained', cluster='sound-design', kw='how t
 <li>Align the peak with the fastest moment of the action.</li>
 <li>Check the balance with the dialogue, and tame any harsh top end.</li>
 </ol>
+<h2>Keeping the low end controlled</h2>
+<p>Impacts often carry a strong low end that can overload small speakers and phones. Filter the very lowest frequencies out where they are not needed, and check the result on a laptop speaker as well as on headphones. A sound that feels big on studio monitors can disappear or distort on the devices most viewers use.</p>
 <h2>Limits</h2>
 <p>These sounds are a matter of taste and of the picture, and what works for one edit may fail for another. A whoosh that suits a sci-fi scene may feel out of place in a documentary. Use the principles as a guide, and let the action tell you how big the effect should be.</p>
 <h2>Check the impact on real devices</h2>
@@ -334,6 +346,10 @@ add(slug='sound-design-for-games-basics', cluster='sound-design', kw='game sound
 <li>Plan music transitions for each change of state.</li>
 <li>Test the mix over a long session, on several devices.</li>
 </ol>
+<h2>Sounds that signal information</h2>
+<p>In many games a sound tells the player something important, such as a warning, a pickup or a change of state. Those sounds need a clear identity and a consistent place in the mix, so the player learns to trust them. Plan a small set of signal sounds early, and avoid using the same character for both signals and background texture.</p>
+<h2>Working with the game team</h2>
+<p>Sound designers usually depend on programmers and designers to trigger sounds at the right moment. Agree on naming, on which events need a sound and on how many variations each one needs before you begin. A shared list of events prevents the common problem of a sound that exists but is never played in the game.</p>
 <h2>Limits</h2>
 <p>Game audio tools and engines differ, and the techniques vary by genre and platform. This post describes the basic principles. A project with a large sound list will need a more detailed plan, and a specialist may be worth consulting for the technical implementation.</p>
 <h2>Keep the sounds clean at the source</h2>
@@ -379,6 +395,10 @@ add(slug='audio-branding-explained', cluster='sound-design', kw='audio branding'
 <li>Designing the identity without rules for its use.</li>
 <li>Testing only in the studio, and not on the devices people use.</li>
 </ul>
+<h2>Make the identity from the content</h2>
+<p>The strongest identities usually come from what the content already does well, such as a distinctive voice, a recurring theme or a particular pace. Listen to your best episodes and note what they share. Those features can become the basis of the identity, so that it feels natural rather than borrowed from another brand.</p>
+<h2>Ask listeners what they notice</h2>
+<p>Include a simple, open question in your feedback channel, such as asking which opening or closing sound people remember. The answers show whether the identity is noticed and whether it fits the tone you want. Do not lead listeners toward the answer you hope to hear.</p>
 <h2>Limits</h2>
 <p>Audio branding is a long-term investment, and its effect depends on how consistently it is used. It cannot rescue a poor product or a weak message. The sound should support the brand, not replace the qualities that make it worth hearing. Adapt the ideas to your scale, and keep the identity honest.</p>
 <h2>Check the identity on real devices</h2>
@@ -423,6 +443,12 @@ add(slug='sonic-logo-what-it-is', cluster='sound-design', kw='sonic logo',
 <li>Choosing a sound that is too close to a familiar one, so it is confused.</li>
 <li>Using it so often that it becomes tiring.</li>
 </ul>
+<h2>Where a sonic logo appears</h2>
+<p>A sonic logo can open a video, mark the end of a podcast, play as a notification or sit in the background of a product demo. Each place has its own limits. A short sound at the start of an episode needs to work alongside speech, while a notification has to be heard in a noisy room. Test the sound in every place it will appear before you adopt it.</p>
+<h2>Protecting the sound from copying</h2>
+<p>A distinctive sound can be copied, so keep the original files, the session notes and any licences in one place. If you commission the sound, agree in writing who owns it and how it may be used. Clear ownership avoids a dispute later, when the sound has become part of the brand.</p>
+<h2>Choosing the length</h2>
+<p>Most sonic logos are measured in seconds, and the right length depends on where the sound will play. A notification may need less than a second, while an opening sting can be longer, provided it does not hold up the content. Make a short version and a longer version from the same idea, so the brand can use the right one in each place without changing the character of the sound.</p>
 <h2>Limits</h2>
 <p>A sonic logo cannot make an unknown show famous, and it cannot replace good content. It works as a consistent signal, and its value grows with repetition and with the quality of what follows it. Keep the expectations realistic, and judge the sound by how well it serves the show.</p>
 <h2>Test the sound before you commit</h2>
@@ -463,6 +489,10 @@ add(slug='sound-for-short-form-ads', cluster='sound-design', kw='sound for ads',
 <li>Forgetting that many viewers watch with the sound off.</li>
 <li>Ending abruptly, so the call to action is lost.</li>
 </ul>
+<h2>Testing the first two seconds</h2>
+<p>In short advertising the opening moment decides whether the viewer stays. Play the first two seconds to a friend who has not seen the ad, and ask what they heard and what they expected. If the answer is vague, the opening sound needs a clearer role, such as a strong voice line, a recognisable effect or a visual cue with a matching sound.</p>
+<h2>Keeping the brand sound consistent</h2>
+<p>If the ad uses a sonic logo or a familiar voice, keep the level and tone close to the rest of the brand's audio. A sudden change can feel like a different company, even when the message is the same. Check the ad alongside other material from the brand before it goes out.</p>
 <h2>Limits</h2>
 <p>Advertising rules differ by country and sector, and claims in an ad must be accurate and fair. Sound can make a claim feel stronger than the facts support, so check every line of the script against the rules that apply. This post covers the craft of sound, not the legal approval of the content. For an ad with significant spend, take advice on the rules.</p>
 <h2>Check the ad on the screens people use</h2>

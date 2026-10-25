@@ -51,6 +51,10 @@ add(slug='small-home-studio-budget-plan', cluster='future-home-studio', kw='smal
 <li>Judging the setup on headphones alone.</li>
 <li>Upgrading several things at once, so the cause of a change is unclear.</li>
 </ul>
+<h2>Buying second-hand</h2>
+<p>Used microphones, stands and headphones can offer good value, especially when the item is well known and the seller will let you test it. Check the condition of cables, grilles and connectors, and ask about the return policy. A second-hand purchase needs the same test as a new one, in your room with your voice, before you commit.</p>
+<h2>Budgeting for the unexpected</h2>
+<p>Cables fail, stands loosen and treatment may need moving. Keep a small part of the budget aside for repairs and replacements, so a single fault does not stop your work. A plan with a reserve is easier to live with than one that leaves no room for ordinary wear.</p>
 <h2>Limits</h2>
 <p>A budget studio will not match a professional one, and that is not the goal. The aim is clear, honest recordings that suit the work. Priorities depend on your voice, your room and your output, so adapt the order to your situation.</p>
 <h2>Start with what you have</h2>
@@ -88,6 +92,12 @@ add(slug='room-treatment-priorities', cluster='future-home-studio', kw='room tre
 <li>Address bass only if it is a clear problem for the work.</li>
 <li>Keep notes of what helped, and what did not.</li>
 </ol>
+<h2>Choosing the first piece to buy</h2>
+<p>If you can afford only one piece, choose the one that covers the strongest reflection point near your microphone, and make sure it is thick enough to matter. A thin cover placed in the wrong spot will do less than a modest piece in the right place. Test before and after with a clap, so the purchase is backed by a result you have heard.</p>
+<h2>Living with the room day to day</h2>
+<p>Treatment needs to survive ordinary life. Keep soft items away from heaters, check that blankets are not sagging into the microphone's view, and keep a simple record of where each piece sits. A room that is treated and then rearranged will drift back toward its original sound quickly.</p>
+<h2>Choosing where not to treat</h2>
+<p>Some surfaces should stay hard. A window, a bookcase and a wooden floor can add useful character and diffusion, and covering every surface can make the room lifeless. Treat the points that cause problems, and leave the rest alone. A room with a mix of soft and hard surfaces is usually easier to work in than a fully padded one.</p>
 <h2>Limits</h2>
 <p>Room treatment has limits. A small, irregular room will never sound like a large, purpose-built studio, and some problems cannot be solved with treatment alone. The aim is a room that sounds drier and more controlled for your work, not a perfect acoustic. Judge the result by listening.</p>
 <h2>Test the room with a clap first</h2>
@@ -120,6 +130,13 @@ add(slug='acoustic-panels-vs-blankets', cluster='future-home-studio', kw='acoust
 <p>Blankets cost little and can be hidden or removed easily. Panels cost more, and they are a visible part of the room, although many are designed to look neat. If the room is shared with others, the appearance of the treatment may matter as much as its effect. Choose what you are happy to live with for the years you will use the room.</p>
 <h2>Placement matters more</h2>
 <p>A small number of well-placed panels or blankets can do more than a large number placed at random. Start with the reflection points near the microphone, and then add material across the room. Test each change with a clap and a short recording, and keep the placement that gives the clearest voice.</p>
+<h2>Mounting and spacing</h2>
+<p>Mounting changes the result. A panel mounted flat against a wall absorbs differently from one held off the wall with a gap behind it. The gap lets more of the low frequencies reach the material, which matters in boomy rooms. Use the same mounting for a fair comparison, and avoid changing two things at once when you test.</p>
+<p>Spacing matters too. Two pieces placed at the reflection points near a microphone will often do more than several placed at random across a wall. Measure those points before you buy, and keep the spacing the same when you move a piece to test another position.</p>
+<h2>Keeping the treatment in use</h2>
+<p>Treatment has to fit the way you work. If a panel or a blanket gets in the way of a door, a window or a desk drawer, it will soon be moved or removed. Choose positions you can maintain. Blankets need checking for dust and sagging, and panels need their fixings checked from time to time. A plan that survives daily life is worth more than an ideal one that comes down after a month.</p>
+<h2>Hanging a blanket safely</h2>
+<p>A blanket hung on a wall needs a secure, safe fixing that will not fall or damage the wall. Use proper hooks or a rail, and check the fixing regularly. Keep the blanket away from heat sources, since a hot lamp or a radiator can be a fire risk. A simple mounting that is safe and easy to remove is better than a neat one that is hard to maintain.</p>
 <h2>Limits</h2>
 <p>Neither panels nor blankets solve every acoustic problem. Blankets in particular vary widely in effect, and claims about any product should be tested in your own room. Very low-frequency problems need a different approach, and no soft material fully removes the room’s character. Judge the result by listening.</p>
 <h2>A simple choice</h2>
@@ -172,6 +189,12 @@ add(slug='home-studio-noise-sources', cluster='future-home-studio', kw='home stu
 <li>Recording at the busiest time of day.</li>
 <li>Forgetting that the computer itself can be a source.</li>
 </ul>
+<h2>Noise from the equipment itself</h2>
+<p>Power supplies, laptops, monitors and cooling fans can all add noise you do not hear in the room. A recording of the empty room with all the equipment switched on shows what the microphone picks up. If the noise is steady, try moving the equipment, tidying the cables or changing a power supply. Check each change with the same silence test.</p>
+<h2>Timing the sessions around the noise</h2>
+<p>Noise often follows a pattern, such as traffic at the school run, a fridge that cycles every few minutes or a neighbour who works with a drill at the weekend. Use the noise log to plan recordings for quieter periods. A small change to the schedule can remove a problem that no amount of cleanup would fix as well.</p>
+<h2>Making the silence test repeatable</h2>
+<p>Keep the silence test in your session notes, with the steps written out in full: which equipment was on, which door was closed, what time it was and how long the recording lasted. A repeatable test lets you compare results from week to week, and it stops you changing two things and forgetting which one made the difference. Repeat it after any change to the room, the equipment or the cables.</p>
 <h2>Limits</h2>
 <p>Some noise will always reach a home studio, and the aim is to reduce it below the voice rather than to remove it entirely. Some sources, such as building noise, need time and patience to manage. Judge the room by the recordings you make, and keep improving the setup over time.</p>
 <h2>Check the noise on the recording</h2>
@@ -210,6 +233,12 @@ add(slug='recording-and-gaming-in-one-room', cluster='future-home-studio', kw='r
 <li>Moving the microphone each time the room changes use.</li>
 <li>Recording without checking the room in its current mode.</li>
 </ul>
+<h2>Choose a microphone for a shared room</h2>
+<p>A close, cardioid microphone picks up less of the room and the game than an open pattern does, which helps in a shared space. Keep it close to the mouth, and position it so the voice is louder at the microphone than the computer's noise and the game's sound. A simple test with the game running will show quickly whether the setup holds up.</p>
+<h2>Clean up after each session</h2>
+<p>Save the session settings, note the game audio levels and close the windows that were open during the recording. A clear end to each session keeps the next recording consistent, and it stops the room from slowly reverting to its gaming setup. If the room is shared with other people, agree on the same routine with them so the handover is clean.</p>
+<h2>Agreeing the rules with others</h2>
+<p>If other people share the room or the computer, agree the rules in writing: when recording happens, how the game audio is handled, who clears the desk and who checks the levels. A short written routine avoids arguments and keeps the room usable for both purposes. A visible note near the desk helps everyone follow the plan. Keep the note short and specific, and review it if the schedule or the equipment changes.</p>
 <h2>Limits</h2>
 <p>A shared room will never match a dedicated studio, and some sessions will suffer from the noise of the other activity. The aim is to make the room work well enough for the recordings you need. Where the conflict is serious, a separate space, even a small one, may be the better answer over time.</p>
 <h2>Check the sound in both modes</h2>
@@ -250,6 +279,12 @@ add(slug='studio-desk-setup-for-voice', cluster='future-home-studio', kw='studio
 <li>Leaving the cables loose, so they tug and add noise.</li>
 <li>Moving the microphone between sessions without marking the position.</li>
 </ul>
+<h2>Posture and breathing at the desk</h2>
+<p>A speaker who hunches over the microphone breathes differently and can sound tight. Sit upright with the chest open, and set the microphone at a height that does not make you lean. Relaxed shoulders and a steady breath make the voice sound more natural, and they make the recording easier to edit.</p>
+<h2>Place the screen and the notes out of the way</h2>
+<p>A monitor directly in front of the microphone can reflect sound and pull the eyes down, while paper notes rustle. Put the screen slightly to one side, and use a script stand that does not sit on the desk. Keep the desk clear of anything that will be moved or knocked during a take.</p>
+<h2>Keeping the desk consistent between sessions</h2>
+<p>Consistency is the aim. Photograph the desk layout once it is right, and use the photo to restore the setup after cleaning or moving. Record the chair height, the microphone distance and the monitor position, so a new session does not start from a guess. A small amount of care at the start of each session saves more time than any adjustment made in the middle of a take.</p>
 <h2>Limits</h2>
 <p>A home desk has limits, and a small space will shape the sound. The aim is a layout that is consistent and controlled, not a perfect studio. Adjust the arrangement as you learn what works, and keep the habits that keep it working.</p>
 <h2>Check the desk setup with a test</h2>
@@ -278,6 +313,14 @@ add(slug='monitor-speakers-in-a-small-room', cluster='future-home-studio', kw='m
 <p>In a small room, the bass is often exaggerated or cancelled at certain frequencies. Learn the room by playing a familiar track that you know well, and noting how the bass and the vocals sound. A reference track helps you calibrate your ear to the room, even when the room is not ideal.</p>
 <h2>Check the mix on other systems</h2>
 <p>Check every mix on a phone speaker, headphones and at least one other system, such as a car or a laptop. A mix that sounds balanced in the room may be too bright, too bass-heavy or too quiet elsewhere. Make changes based on what sounds right across systems, not only on the monitors.</p>
+<h2>Setting up the first session</h2>
+<p>Before you judge any mix, run the same setup routine each time. Put the speakers on their stands or the desk, measure the distance from each speaker to your ears, and make sure the two distances match. Point each speaker at the listening position, and sit so that your ears form the top of the triangle. Play a mono test tone or a familiar mono track, and check that the centre stays steady as you move your head slightly. If the image pulls to one side, check the cables, the balance control and your seat position before you blame the room.</p>
+<p>A short routine like this takes a few minutes, and it prevents most of the drift that small rooms cause. Write the speaker positions in your session notes, or mark them with tape on the floor and the desk, so that the next session starts from exactly the same place.</p>
+<h2>Using the speakers on real material</h2>
+<p>Choose three or four tracks you know well, across different styles and levels of loudness. Play them through the monitors at a moderate level, then on headphones and on a phone. Notice where the bass feels heavy or thin, where the vocals sit and how the top end behaves. Those reference tracks become your ruler. When a mix sounds wrong, check it against them rather than against your memory of how the room usually sounds.</p>
+<p>Speech needs its own test. Play a spoken recording of your own voice at the level you intend to publish. If the words are clear, and the room does not add a boom or a hollow ring to the voice, the monitoring is serving the work. If the voice sounds muddy, the problem may be the room near the speakers rather than the recording itself.</p>
+<h2>Checking the bass with a simple walk</h2>
+<p>Play a steady bass tone, or a track with a strong bass line, and walk slowly around the room while listening from a few points. Notice where the bass feels loudest and where it fades. Those points show how the room shapes the low end, and they help you decide where the speakers and the listening seat should sit.</p>
 <h2>Limits</h2>
 <p>A small room will always colour the sound, and no speaker placement fixes every problem. Treatment helps, as described in the room treatment post in this series, but it cannot remove the room entirely. Judge your mixes by how they translate, not by how impressive they sound in the room.</p>
 <h2>Check the mix on the devices people use</h2>
@@ -316,6 +359,12 @@ add(slug='acoustic-treatment-myths', cluster='future-home-studio', kw='acoustic 
 <li>Try cheap, sensible materials before expensive products.</li>
 <li>Judge the result by the recordings and by listening on several devices.</li>
 </ol>
+<h2>Myth: more treatment is always better</h2>
+<p>More treatment is not always better. Heavy absorption everywhere can leave a room dull, lifeless and hard to judge, which makes mixing harder rather than easier. Some reflection and diffusion are part of what makes a room sound natural. The goal is a balanced space you can work in, not one that sounds like a booth at every point.</p>
+<p>Adding treatment without a clear reason is a common way to spend money with little gain. Each piece should answer a problem you have identified, such as a flutter echo near the microphone or a long tail after a clap. If you cannot name the problem a piece solves, leave it off the list until you can.</p>
+<h2>Myth: a clap test is too crude to bother with</h2>
+<p>The clap test is simple, but it is revealing. A sharp sound from a hand clap decays quickly in a treated space and rings for longer in a bare one. Record the clap before and after each change, and listen on headphones. You will hear the difference in the tail, and in the clarity of a voice recorded in the same place. It costs nothing, and it is a fair check on whether a change helped.</p>
+<p>A clap test does not replace measurement, and it will not tell you about every frequency. For voice recording it is usually enough to decide the next step, which is why it is the best place to start for most home studios.</p>
 <h2>Limits</h2>
 <p>There is no universal rule for every room, and some advice depends on the room and the work. Treat these points as a way to avoid common mistakes, not as a complete guide. Test your own room, and keep the changes that improve your recordings.</p>
 <h2>Test your room before you spend</h2>
@@ -354,6 +403,13 @@ add(slug='audio-cable-management', cluster='future-home-studio', kw='audio cable
 <li>Failing to label cables, so the wrong one is pulled.</li>
 <li>Relying on a cable that crackles, rather than replacing it.</li>
 </ul>
+<h2>Route the cables for the way you move</h2>
+<p>Plan the route before you fix cables in place. Think about where you sit, where you stand and what you reach for during a session. A cable that crosses your path will be stepped on or caught on a chair, and a cable routed under the desk may be pulled when you move your feet. Run the cables along the edges of the desk, keep them off the floor where people walk, and leave enough length to reach the microphone without strain.</p>
+<p>Use a single point for the power. A power strip with surge protection, placed on the floor away from the desk, keeps the mains cables tidy and separate from the audio. If you add a new device, check that it does not share a route with the microphone lead.</p>
+<h2>Cable checks before each session</h2>
+<p>Before recording, run a short check. Move the microphone stand gently and listen for crackle. Flex the cable at the connector, since that is where wear often starts. Check that the plugs sit firmly and that any latch or clip holds. A quick check takes less time than one lost take, and it catches the faults that appear only when something moves.</p>
+<h2>Labelling the connectors, not only the cables</h2>
+<p>Labels on the ends of the cables help, but labels on the connectors where they meet the equipment help more. A label at each socket shows which device the cable belongs to and which socket it should be in, so a cable is never swapped when a device is moved. Use simple tape or a sleeve, and check the labels when you tidy the setup.</p>
 <h2>Limits</h2>
 <p>Cable management cannot remove every noise source, and some hum comes from the equipment or the building. Good routing reduces the common problems, and the rest may need other fixes. Keep the setup tidy, and treat cables as part of the recording chain.</p>
 <h2>Check the setup with a test</h2>
@@ -394,6 +450,13 @@ add(slug='growing-a-home-studio-over-years', cluster='future-home-studio', kw='g
 <li>Not keeping records, so lessons are lost.</li>
 <li>Letting the studio drift without an annual review.</li>
 </ul>
+<h2>Set a standard you can hear</h2>
+<p>Choose a short reference recording that you think sounds right, and keep it. Each year, compare new work with it. A reference gives you a fixed point, so that changes in the studio move the sound in a direction you can judge, rather than drifting toward whatever you heard most recently.</p>
+<p>Make room for the work you do not yet do. A studio built around one type of recording often struggles when the work changes, such as a new video format or a live session. Leave space in the plan for a second setup, even a simple one, so that a new kind of work does not force a full rebuild.</p>
+<h2>Passing the studio on</h2>
+<p>A studio can outlive its first owner. Keep the notes, the reference recordings, the cable labels and the room measurements together in one place. A new user, or your future self, can then pick up the setup without starting from zero. Good records are one of the most valuable parts of any studio, and they cost very little to keep.</p>
+<h2>Reviewing the budget against the work</h2>
+<p>At each annual review, compare the money spent with the work actually produced. If a purchase was never used, record why, so the next decision is better informed. If a piece of equipment solved a problem well, note that too. A review that looks at outcomes, not only at spending, keeps the budget tied to what the studio is for.</p>
 <h2>Limits</h2>
 <p>A plan is a guide, and the studio will change in ways no plan predicts. Circumstances, budgets and goals change, and the plan should change with them. The principles of steady, deliberate improvement are the constant.</p>
 <h2>Keep the studio consistent</h2>

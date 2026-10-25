@@ -103,6 +103,10 @@ add(slug='recording-nature-sounds-at-home', cluster='nature-sounds', kw='record 
 <li>Record for an hour, with a windscreen in place.</li>
 <li>Label the file with the date, the time and the weather.</li>
 </ol>
+<h2>Recording through a window</h2>
+<p>A window can be a useful location, since it gives access to outside sound without going outdoors. Glass reflects and muffles, so the sound will differ from an open-air recording. Open the window a little, keep the microphone inside and away from the frame, and record a short test to hear how much the glass changes the sound.</p>
+<h2>Using the garden well</h2>
+<p>A garden is often the easiest place for a first recording. Choose a quiet corner away from household systems, and listen for the sounds the garden already contains. Record at different times of day to hear how the sound shifts, and keep notes on what you hear, so you can return to the most interesting moments.</p>
 <h2>Limits</h2>
 <p>A home garden has limits: it may be noisy, small or dominated by a few species. Recordings made at home will not capture the full range of a wild landscape, and that is fine. The aim is to listen closely to the place you have, and to record it honestly.</p>
 <h2>Clean the recordings with restraint</h2>
@@ -153,6 +157,8 @@ add(slug='how-to-record-birdsong', cluster='nature-sounds', kw='how to record bi
 <li>Record for an hour with a windscreen in place.</li>
 <li>Label the file with the date, the time, the place and any species you identified.</li>
 </ol>
+<h2>Log what you hear</h2>
+<p>Keep a notebook or a simple file alongside the recordings. Note the time, the weather, the species you think you hear and the moments you are unsure of. Birdsong is easy to mistake, and an honest log means you can revisit uncertain identifications later, with a field guide or a knowledgeable local recordist.</p>
 <h2>Limits</h2>
 <p>Birdsong recording depends on the season, the weather and the local birds. Some days will be quiet, and some species may be rare. The aim is to capture the place honestly, and to respect the birds throughout. A quiet session is still a session, and it teaches you the place.</p>
 <h2>Keep the cleanup light</h2>
@@ -199,6 +205,12 @@ add(slug='recording-rain-and-water-sounds', cluster='nature-sounds', kw='record 
 <li>Record for a long period, to capture the changes in intensity.</li>
 <li>Label the file with the weather, the surface and the time.</li>
 </ol>
+<h2>Record the quiet between the drops</h2>
+<p>Rain can be loud, and it is easy to set the level for the peak and lose the quiet between the sounds. Listen for the spaces, since they carry the sense of distance and the air around the recording. A level that keeps the gaps audible usually makes a better recording than one that captures only the loudest moments.</p>
+<h2>Protect the gear in wet weather</h2>
+<p>A cover or bag that lets the microphone breathe will keep water out without trapping moisture around the capsule. Wipe the equipment after each session, and dry the windshield before storing it. Water left on a microphone can cause faults that are difficult to repair later.</p>
+<h2>Keeping the level steady over time</h2>
+<p>Long rain recordings can drift if a gust of wind or a change in the downpour shifts the level. Set the gain before the recording starts, and avoid touching it during the session. If you must adjust it, note the time, so you can see where the change happens during editing and decide whether it matters.</p>
 <h2>Limits</h2>
 <p>Weather is unpredictable, and a planned recording may be spoiled by a sudden gust or a change in the rain. Some storms are dangerous, and recording in them should never put you or your equipment at risk. Choose safe, sheltered positions, and accept that the weather decides the outcome.</p>
 <h2>Keep the recording honest</h2>
@@ -240,6 +252,10 @@ add(slug='wildlife-recording-ethics', cluster='nature-sounds', kw='wildlife reco
 <li>Presenting an edited recording as a single, unedited capture.</li>
 <li>Publishing the exact location of a sensitive nest or rare species.</li>
 </ul>
+<h2>Local rules and landowners</h2>
+<p>Access to a site may depend on local rules or on the permission of the landowner. Check before you go, and keep to any paths or restrictions that apply. A respectful approach protects the animals and the people who manage the land, and it keeps the opportunity to record there open for others.</p>
+<h2>Sharing recordings responsibly</h2>
+<p>A precise location can attract people who may disturb a sensitive site. Share the general area rather than the exact spot where a rare species was recorded, and avoid photo tags that give away a nest or a roost. The notes you keep for yourself can be detailed, while the public version stays general.</p>
 <h2>Limits</h2>
 <p>Ethical guidance can differ between species, places and purposes, and it is not a substitute for local rules. Consult the relevant wildlife authority or a local expert when you are unsure. The principle that animals come first applies in every case.</p>
 <h2>Keep the recording honest</h2>
@@ -288,6 +304,10 @@ add(slug='recording-city-sounds', cluster='nature-sounds', kw='record city sound
 <li>Avoid identifiable people, and check the rules before publishing.</li>
 <li>Label the file with the location, the time and the main sounds.</li>
 </ol>
+<h2>Record the quiet hours</h2>
+<p>A city at dawn or late at night has a different character from the same street at midday. Quieter hours can reveal sounds that are masked during the day, such as a distant tram, a fountain or a particular bird. Plan some recordings for those times, and compare them with busy ones to hear how the city changes.</p>
+<h2>Listen for the layers</h2>
+<p>A city recording is made of several layers, such as close footsteps, traffic at mid distance and a far-off siren. Listen to each layer separately before you decide what to keep. The most useful recordings are often the ones where the layers balance, so no single sound takes over the picture.</p>
 <h2>Limits</h2>
 <p>City recordings are unpredictable, and a sudden event can spoil a take or raise a question. Expect some sessions to produce little, and treat each one as practice in listening. The aim is to capture the city honestly and respectfully.</p>
 <h2>Clean lightly</h2>
@@ -334,6 +354,12 @@ add(slug='recording-outdoors-in-cold-weather', cluster='nature-sounds', kw='reco
 <li>Protect the recorder from condensation when you come indoors.</li>
 <li>Plan breaks, and check the recording at each one.</li>
 </ol>
+<h2>Dress for the session</h2>
+<p>Warm hands are the most useful thing a field recordist can bring. Choose gloves that still let you press small buttons, and layers you can add or remove as you walk and as you sit still. Sweat in cold air can chill quickly, so avoid heavy clothing that you will wear through a long session.</p>
+<h2>Store the recorder properly at the end of the day</h2>
+<p>Bring the equipment indoors gradually, in a sealed bag, so that condensation forms on the bag rather than inside the recorder. Let it reach room temperature before you open it. Dry the cards and the cables, and check the microphone for moisture before you put it away.</p>
+<h2>Warming the microphone gently</h2>
+<p>A microphone brought from a warm car into a cold field can fog or collect condensation on the capsule. Let it adjust in a sealed bag first, and keep it inside your jacket until you need it. Check the sound on a short test before you commit to a long take, since cold can change how the capsule responds during the first few minutes.</p>
 <h2>Limits</h2>
 <p>Extreme cold can damage equipment, and some recorders are not rated for low temperatures. Check the manufacturer’s operating range, and do not push equipment beyond it. Safety comes first: never stay out in dangerous conditions for the sake of a recording.</p>
 <h2>Keep the recording reliable</h2>
@@ -380,6 +406,12 @@ add(slug='field-recorder-battery-and-storage', cluster='nature-sounds', kw='fiel
 <li>Name files as you go, and check them at breaks.</li>
 <li>Keep the device warm, and watch for warnings.</li>
 </ol>
+<h2>Test the full chain before you leave</h2>
+<p>Charge the recorder, insert the card, record a short test and play it back on the device you will use for editing. Check the file names, the levels and the time stamp. A problem found at home takes minutes to fix. The same problem found in the field can cost the whole session.</p>
+<h2>Back up on location</h2>
+<p>If you can, copy the files to a second card or a small drive before you leave the site. A bag can be lost, a card can fail and a transfer can go wrong. A copy made in the field costs little, and it protects a recording that cannot be repeated.</p>
+<h2>Planning the cards for the day</h2>
+<p>Decide before you leave how much recording you expect, and bring cards that cover that time with some margin. Label each card with its capacity and the date it was formatted, so you can see at a glance which card is ready. If a card shows errors, stop using it and check it at home before reusing it, since a card you are unsure of should not be relied on for a session that cannot be repeated.</p>
 <h2>Limits</h2>
 <p>Battery and storage estimates are approximate, and conditions vary. Plan with a margin, and accept that a long session may need an extra battery or card. The aim is to prevent avoidable failures, not to remove every risk.</p>
 <h2>Keep the files safe</h2>
@@ -426,6 +458,12 @@ add(slug='labelling-field-recordings', cluster='nature-sounds', kw='label field 
 <li>Store the files and notes in a simple folder structure.</li>
 <li>Review the archive every few months, and fix any gaps.</li>
 </ol>
+<h2>Labels for the people who use the archive</h2>
+<p>An archive is often used by someone else, such as a collaborator, an editor or you, years later. Write labels a stranger could follow: the place, the date, the subject, the equipment and a short description of anything unusual. A label that only makes sense to you will not help once your memory of the trip has faded.</p>
+<h2>Check the labels at the end of each trip</h2>
+<p>Before you put the cards away, look through the files and confirm that each folder and each name matches your notes. Fix any gaps while you still remember the sounds. A ten-minute check after each trip prevents a much longer search later.</p>
+<h2>Recording a short voice note on site</h2>
+<p>Speak a short note into the recorder at the start of each file, saying the place, the date and the subject. The spoken note travels with the audio, and it survives when a written label is lost or a folder is renamed. Keep it short and speak clearly, since a mumbled note is hard to use later. Repeat the note when the scene changes.</p>
 <h2>Limits</h2>
 <p>A labelling system is only as good as its consistency. The best system is one you will actually use, so keep it simple enough to apply every time. Adjust the pattern if you find it awkward, but change it early, before the archive grows too large to rename.</p>
 <h2>Keep the archive safe</h2>
@@ -474,6 +512,10 @@ add(slug='building-a-sound-library', cluster='nature-sounds', kw='build a sound 
 <li>Record the rights and conditions in a note for each sound.</li>
 <li>Review the library every few months, and remove the weak sounds.</li>
 </ol>
+<h2>Test sounds in a project before you keep them</h2>
+<p>A sound may work well on its own and fail in a mix. Put a candidate sound into a real project, play it with the other elements and listen at the level it will be used. Keep the sounds that work in context, and note how you used them, so the next project starts with a clear example.</p>
+<h2>Retire the sounds you no longer use</h2>
+<p>A library can grow until it is hard to search. Each year, review the files and move the ones you never use to an archive. A smaller, well-labelled library is quicker to work from than a large one full of near-duplicates, and it keeps your best material easy to find.</p>
 <h2>Limits</h2>
 <p>A personal library will be smaller and more specific than a commercial one, and that is part of its value. It will not contain every sound you might need, and some sounds will still need to be bought or licensed. Use the library for what it does well, and fill the gaps with care.</p>
 <h2>Keep the library clean at the source</h2>
