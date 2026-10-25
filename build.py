@@ -546,6 +546,9 @@ def guides_hub():
         ('audience', 'For who you make audio', 'Routines for YouTube, TikTok, podcasts, streams, voiceover, singing, teaching and journalism.', 'alt'),
         ('glossary', 'Glossary', 'Plain definitions of the terms used in the guides.', ''),
         ('ethics', 'Before you record', 'Consent and what cleanup does to a voice.', 'alt'),
+        ('roundup', 'Best tools for each job', 'Roundups that compare real tools by what they do best, with Tunedzy placed honestly among them.', 'alt'),
+        ('alternative', 'Alternatives', 'Looking for another tool? Each page describes the alternative fairly and says where Tunedzy fits.', ''),
+        ('feature', 'Tunedzy features', 'What each Tunedzy feature does, checked against the app, with its limits.', 'alt'),
         ('help', 'Help', 'Install, requirements, privacy, credits, troubleshooting and the phone app.', ''),
     ]
     parts = []

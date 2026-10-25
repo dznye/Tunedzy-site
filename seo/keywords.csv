@@ -101,6 +101,19 @@ soundcloud loudness target,loudness,informational,awareness,/tunedzy/loudness-fo
 spotify loudness target,loudness,informational,awareness,/tunedzy/loudness-for-youtube-podcasts-and-spotify,live,unmeasured
 tiktok loudness target,loudness,informational,awareness,/tunedzy/loudness-for-youtube-podcasts-and-spotify,live,unmeasured
 youtube loudness target,loudness,informational,awareness,/tunedzy/loudness-for-youtube-podcasts-and-spotify,live,unmeasured
+alitu alternative,page target: alternative,informational,awareness,/tunedzy/alitu-alternative,live,unmeasured
+free alternative to adobe audition,page target: alternative,informational,awareness,/tunedzy/free-alternative-to-adobe-audition,live,unmeasured
+free alternative to izotope rx,page target: alternative,informational,awareness,/tunedzy/free-alternative-to-izotope-rx,live,unmeasured
+garageband alternative for windows,page target: alternative,informational,awareness,/tunedzy/garageband-alternative-for-windows,live,unmeasured
+hindenburg alternative,page target: alternative,informational,awareness,/tunedzy/hindenburg-alternative,live,unmeasured
+lalal ai alternative,page target: alternative,informational,awareness,/tunedzy/lalal-ai-alternative,live,unmeasured
+moises alternative,page target: alternative,informational,awareness,/tunedzy/moises-alternative,live,unmeasured
+podcastle alternative,page target: alternative,informational,awareness,/tunedzy/podcastle-alternative,live,unmeasured
+riverside alternative,page target: alternative,informational,awareness,/tunedzy/riverside-alternative,live,unmeasured
+uvr alternative,page target: alternative,informational,awareness,/tunedzy/uvr-alternative,live,unmeasured
+vb cable alternative,page target: alternative,informational,awareness,/tunedzy/vb-cable-alternative,live,unmeasured
+voicemeeter alternative,page target: alternative,informational,awareness,/tunedzy/voicemeeter-alternative,live,unmeasured
+audio cleanup for church,page target: audience,informational,awareness,/tunedzy/church-and-worship-team-audio,live,unmeasured
 audio cleanup for journalists,page target: audience,informational,awareness,/tunedzy/audio-cleanup-for-journalists,live,unmeasured
 audio cleanup for podcasters,page target: audience,informational,awareness,/tunedzy/voice-cleanup-for-podcasters,live,unmeasured
 audio cleanup for students,page target: audience,informational,awareness,/tunedzy/audio-cleanup-for-students,live,unmeasured
@@ -108,6 +121,13 @@ audio cleanup for teachers,page target: audience,informational,awareness,/tunedz
 audio cleanup for tiktok creators,page target: audience,informational,awareness,/tunedzy/audio-cleanup-for-tiktok-creators,live,unmeasured
 audio cleanup for voice actors,page target: audience,informational,awareness,/tunedzy/voice-cleanup-for-voice-actors,live,unmeasured
 audio cleanup for youtube creators,page target: audience,informational,awareness,/tunedzy/voice-cleanup-for-youtube-creators,live,unmeasured
+audio for language tutors,page target: audience,informational,awareness,/tunedzy/language-tutor-audio,live,unmeasured
+audio for online course creators,page target: audience,informational,awareness,/tunedzy/course-creator-audio,live,unmeasured
+karaoke host audio setup,page target: audience,informational,awareness,/tunedzy/karaoke-host-audio-setup,live,unmeasured
+real estate voiceover recording,page target: audience,informational,awareness,/tunedzy/real-estate-voiceovers,live,unmeasured
+record dj voice intro,page target: audience,informational,awareness,/tunedzy/dj-voice-intro-recording,live,unmeasured
+record song demo at home,page target: audience,informational,awareness,/tunedzy/musicians-making-demos,live,unmeasured
+record wedding speech,page target: audience,informational,awareness,/tunedzy/wedding-speech-recording,live,unmeasured
 recording pronunciation for language learning,page target: audience,informational,awareness,/tunedzy/pronunciation-recording-for-language-learners,live,unmeasured
 vocal cleanup for singers and rappers,page target: audience,informational,awareness,/tunedzy/vocal-cleanup-for-singers-and-rappers,live,unmeasured
 voice cleanup for gamers,page target: audience,informational,awareness,/tunedzy/voice-cleanup-for-gamers,live,unmeasured
@@ -123,20 +143,48 @@ tunedzy vs garageband,page target: compare,informational,awareness,/tunedzy/tune
 tunedzy vs logic pro,page target: compare,informational,awareness,/tunedzy/tunedzy-vs-logic-pro,live,unmeasured
 tunedzy vs otter ai,page target: compare,informational,awareness,/tunedzy/tunedzy-vs-otter-ai,live,unmeasured
 tunedzy vs reaper,page target: compare,informational,awareness,/tunedzy/tunedzy-vs-reaper,live,unmeasured
+tunedzy auto duck,page target: feature,informational,awareness,/tunedzy/tunedzy-auto-duck,live,unmeasured
+tunedzy export stems,page target: feature,informational,awareness,/tunedzy/tunedzy-export-stems,live,unmeasured
+tunedzy go,page target: feature,informational,awareness,/tunedzy/tunedzy-go,live,unmeasured
+tunedzy key and speed,page target: feature,informational,awareness,/tunedzy/tunedzy-key-and-speed,live,unmeasured
+tunedzy live studio,page target: feature,informational,awareness,/tunedzy/tunedzy-live-studio,live,unmeasured
+tunedzy match loudness,page target: feature,informational,awareness,/tunedzy/tunedzy-match-loudness,live,unmeasured
+tunedzy multitrack,page target: feature,informational,awareness,/tunedzy/tunedzy-multitrack,live,unmeasured
+tunedzy perfect it,page target: feature,informational,awareness,/tunedzy/tunedzy-perfect-it,live,unmeasured
+tunedzy repair audio,page target: feature,informational,awareness,/tunedzy/tunedzy-repair,live,unmeasured
+tunedzy replace audio in video,page target: feature,informational,awareness,/tunedzy/tunedzy-replace-audio-in-video,live,unmeasured
+tunedzy studio sound,page target: feature,informational,awareness,/tunedzy/tunedzy-studio-sound,live,unmeasured
+tunedzy transcript editor,page target: feature,informational,awareness,/tunedzy/tunedzy-transcript-editor,live,unmeasured
+tunedzy vocal remover,page target: feature,informational,awareness,/tunedzy/tunedzy-vocal-remover,live,unmeasured
 condenser vs dynamic microphone voice,page target: glossary,informational,awareness,/tunedzy/what-is-a-condenser-vs-dynamic-microphone,live,unmeasured
+mono vs stereo for voice,page target: glossary,informational,awareness,/tunedzy/what-is-mono-vs-stereo,live,unmeasured
+reverb vs echo difference,page target: glossary,informational,awareness,/tunedzy/what-is-reverb-vs-echo,live,unmeasured
 what is a compressor audio,page target: glossary,informational,awareness,/tunedzy/what-is-a-compressor,live,unmeasured
+what is a crossfade,page target: glossary,informational,awareness,/tunedzy/what-is-crossfade,live,unmeasured
+what is a daw,page target: glossary,informational,awareness,/tunedzy/what-is-a-daw,live,unmeasured
 what is a de-esser,page target: glossary,informational,awareness,/tunedzy/what-is-a-de-esser,live,unmeasured
 what is a limiter audio,page target: glossary,informational,awareness,/tunedzy/what-is-a-limiter,live,unmeasured
+what is a plosive,page target: glossary,informational,awareness,/tunedzy/what-is-a-plosive,live,unmeasured
 what is a pop filter,page target: glossary,informational,awareness,/tunedzy/what-is-a-pop-filter,live,unmeasured
 what is a shock mount,page target: glossary,informational,awareness,/tunedzy/what-is-a-shock-mount,live,unmeasured
+what is a vst plugin,page target: glossary,informational,awareness,/tunedzy/what-is-a-vst-plugin,live,unmeasured
+what is an audio codec,page target: glossary,informational,awareness,/tunedzy/what-is-an-audio-codec,live,unmeasured
 what is bit depth audio,page target: glossary,informational,awareness,/tunedzy/what-is-bit-depth,live,unmeasured
+what is bitrate audio,page target: glossary,informational,awareness,/tunedzy/what-is-bitrate,live,unmeasured
 what is clipping in audio,page target: glossary,informational,awareness,/tunedzy/what-is-clipping,live,unmeasured
+what is dither audio,page target: glossary,informational,awareness,/tunedzy/what-is-dither,live,unmeasured
 what is ducking in audio,page target: glossary,informational,awareness,/tunedzy/what-is-ducking,live,unmeasured
 what is dynamic range audio,page target: glossary,informational,awareness,/tunedzy/what-is-dynamic-range,live,unmeasured
 what is gain staging,page target: glossary,informational,awareness,/tunedzy/what-is-gain-staging,live,unmeasured
 what is headroom audio,page target: glossary,informational,awareness,/tunedzy/what-is-headroom,live,unmeasured
+what is lossless audio,page target: glossary,informational,awareness,/tunedzy/what-is-lossless-audio,live,unmeasured
+what is normalisation audio,page target: glossary,informational,awareness,/tunedzy/what-is-normalisation,live,unmeasured
 what is phantom power,page target: glossary,informational,awareness,/tunedzy/what-is-phantom-power,live,unmeasured
+what is rms level audio,page target: glossary,informational,awareness,/tunedzy/what-is-rms,live,unmeasured
 what is sample rate audio,page target: glossary,informational,awareness,/tunedzy/what-is-sample-rate,live,unmeasured
+what is sibilance,page target: glossary,informational,awareness,/tunedzy/what-is-sibilance,live,unmeasured
+what is spectral editing,page target: glossary,informational,awareness,/tunedzy/what-is-spectral-editing,live,unmeasured
+what is stem separation,page target: glossary,informational,awareness,/tunedzy/what-is-stem-separation,live,unmeasured
 what is the noise floor,page target: glossary,informational,awareness,/tunedzy/what-is-a-noise-floor,live,unmeasured
 what is the proximity effect,page target: glossary,informational,awareness,/tunedzy/what-is-the-proximity-effect,live,unmeasured
 ai vocal cleanup,page target: how,informational,awareness,/tunedzy/ai-vocal-cleanup-explained,live,unmeasured
@@ -144,6 +192,7 @@ autotune for rap vocals,page target: how,informational,awareness,/tunedzy/autotu
 clean audio from smartphone video,page target: how,informational,awareness,/tunedzy/how-to-clean-audio-from-a-smartphone-video,live,unmeasured
 clean song vocal recorded on phone,page target: how,informational,awareness,/tunedzy/how-to-clean-a-song-vocal-recorded-on-a-phone,live,unmeasured
 clean up phone voice recording,page target: how,informational,awareness,/tunedzy/clean-up-a-phone-voice-recording,live,unmeasured
+clean up speech recorded in hall,page target: how,informational,awareness,/tunedzy/how-to-clean-up-a-speech-recorded-in-a-hall,live,unmeasured
 clean up voice recording in audacity,page target: how,informational,awareness,/tunedzy/how-to-clean-up-a-voice-recording-in-audacity,live,unmeasured
 edit podcast by words remove ums,page target: how,informational,awareness,/tunedzy/edit-a-podcast-by-its-words,live,unmeasured
 export audio for spotify apple podcasts,page target: how,informational,awareness,/tunedzy/how-to-export-audio-for-spotify-and-apple-podcasts,live,unmeasured
@@ -152,28 +201,56 @@ fix crackling recording,page target: how,informational,awareness,/tunedzy/how-to
 fix muffled voice recording,page target: how,informational,awareness,/tunedzy/fix-a-muffled-voice-recording,live,unmeasured
 future vocal effect,page target: how,informational,awareness,/tunedzy/future-vocal-effect-settings,live,unmeasured
 how to add background music to voiceover,page target: how,informational,awareness,/tunedzy/how-to-add-background-music-to-a-voiceover,live,unmeasured
+how to add captions to video from audio,page target: how,informational,awareness,/tunedzy/how-to-add-captions-to-a-video-from-audio,live,unmeasured
 how to add fades to a recording,page target: how,informational,awareness,/tunedzy/how-to-add-fades-to-a-recording,live,unmeasured
+how to add sound effects to voiceover,page target: how,informational,awareness,/tunedzy/how-to-add-sound-effects-to-a-voiceover,live,unmeasured
 how to add voiceover to screen recording,page target: how,informational,awareness,/tunedzy/how-to-add-a-voiceover-to-a-screen-recording,live,unmeasured
+how to back up recordings,page target: how,informational,awareness,/tunedzy/how-to-back-up-your-recordings,live,unmeasured
 how to change key of vocal,page target: how,informational,awareness,/tunedzy/how-to-change-the-key-of-a-vocal,live,unmeasured
 how to change speed without changing pitch,page target: how,informational,awareness,/tunedzy/how-to-change-speed-without-changing-pitch,live,unmeasured
+how to check audio quality before publishing,page target: how,informational,awareness,/tunedzy/how-to-check-audio-quality-before-publishing,live,unmeasured
 how to choose a microphone for voice recording,page target: how,informational,awareness,/tunedzy/how-to-choose-a-microphone-for-voice-recording,live,unmeasured
+how to clean up recorded phone call,page target: how,informational,awareness,/tunedzy/how-to-clean-up-a-recorded-phone-call,live,unmeasured
+how to compress audio file for email,page target: how,informational,awareness,/tunedzy/how-to-compress-an-audio-file-for-email,live,unmeasured
+how to convert audio to mp3 without losing quality,page target: how,informational,awareness,/tunedzy/how-to-convert-audio-to-mp3-without-losing-quality,live,unmeasured
 how to crossfade two recordings,page target: how,informational,awareness,/tunedzy/how-to-crossfade-two-recordings,live,unmeasured
 how to duck music under voiceover,page target: how,informational,awareness,/tunedzy/how-to-duck-music-under-a-voiceover,live,unmeasured
+how to export captions srt vtt,page target: how,informational,awareness,/tunedzy/how-to-export-captions-srt-and-vtt,live,unmeasured
 how to export stems for daw,page target: how,informational,awareness,/tunedzy/how-to-export-stems-for-a-daw,live,unmeasured
+how to fix cut in middle of word audio,page target: how,informational,awareness,/tunedzy/how-to-fix-a-cut-in-the-middle-of-a-word,live,unmeasured
+how to make a podcast trailer,page target: how,informational,awareness,/tunedzy/how-to-make-a-podcast-trailer,live,unmeasured
+how to make a vocal comp,page target: how,informational,awareness,/tunedzy/how-to-make-a-vocal-comp-from-several-takes,live,unmeasured
 how to make a voice sound close intimate,page target: how,informational,awareness,/tunedzy/how-to-make-a-voice-sound-close-and-intimate,live,unmeasured
 how to make karaoke track from song,page target: how,informational,awareness,/tunedzy/how-to-make-a-karaoke-track-from-a-song,live,unmeasured
 how to make podcast intro and outro,page target: how,informational,awareness,/tunedzy/how-to-make-a-podcast-intro-and-outro,live,unmeasured
+how to make voiceover sound natural,page target: how,informational,awareness,/tunedzy/how-to-make-a-voiceover-sound-natural,live,unmeasured
+how to name and organise audio files,page target: how,informational,awareness,/tunedzy/how-to-name-and-organise-audio-files,live,unmeasured
 how to normalize audio,page target: how,informational,awareness,/tunedzy/how-to-normalize-audio-the-right-way,live,unmeasured
+how to record a live q and a,page target: how,informational,awareness,/tunedzy/how-to-record-a-live-q-and-a,live,unmeasured
 how to record a meeting clearly,page target: how,informational,awareness,/tunedzy/how-to-record-a-meeting-clearly,live,unmeasured
 how to record a podcast on your phone,page target: how,informational,awareness,/tunedzy/how-to-record-a-podcast-on-your-phone,live,unmeasured
 how to record audio for youtube videos,page target: how,informational,awareness,/tunedzy/how-to-record-audio-for-youtube-videos,live,unmeasured
+how to record audio in noisy office,page target: how,informational,awareness,/tunedzy/how-to-record-audio-in-a-noisy-office,live,unmeasured
+how to record outdoor interviews,page target: how,informational,awareness,/tunedzy/how-to-record-outdoor-interviews,live,unmeasured
+how to record spoken word poem,page target: how,informational,awareness,/tunedzy/how-to-record-a-spoken-word-poem,live,unmeasured
+how to record voice for vlog,page target: how,informational,awareness,/tunedzy/how-to-record-a-vlog-voice,live,unmeasured
 how to record voice in a car,page target: how,informational,awareness,/tunedzy/how-to-record-voice-in-a-car,live,unmeasured
+how to record voice in bedroom,page target: how,informational,awareness,/tunedzy/how-to-record-a-voice-in-a-bedroom,live,unmeasured
 how to record voice lines for a game,page target: how,informational,awareness,/tunedzy/how-to-record-voice-lines-for-a-game,live,unmeasured
+how to record voice note for client brief,page target: how,informational,awareness,/tunedzy/how-to-record-a-voice-note-for-a-client-brief,live,unmeasured
+how to record voice on train,page target: how,informational,awareness,/tunedzy/how-to-record-a-voice-on-a-train,live,unmeasured
+how to record voice over for slideshow,page target: how,informational,awareness,/tunedzy/how-to-record-a-voice-over-for-a-slideshow,live,unmeasured
 how to record voicemail greeting,page target: how,informational,awareness,/tunedzy/how-to-record-a-voicemail-greeting,live,unmeasured
 how to record with a usb microphone,page target: how,informational,awareness,/tunedzy/how-to-record-with-a-usb-microphone,live,unmeasured
 how to record with headset microphone,page target: how,informational,awareness,/tunedzy/how-to-record-with-a-headset-microphone,live,unmeasured
+how to remove reverb from recording,page target: how,informational,awareness,/tunedzy/how-to-remove-reverb-from-a-recording,live,unmeasured
 how to set gain on microphone,page target: how,informational,awareness,/tunedzy/how-to-set-the-gain-on-a-microphone,live,unmeasured
+how to set levels for livestream,page target: how,informational,awareness,/tunedzy/how-to-set-levels-for-a-livestream,live,unmeasured
+how to test room for echo,page target: how,informational,awareness,/tunedzy/how-to-test-your-room-for-echo,live,unmeasured
+how to test your microphone,page target: how,informational,awareness,/tunedzy/how-to-test-your-microphone,live,unmeasured
+how to turn voice memo into song,page target: how,informational,awareness,/tunedzy/how-to-turn-a-voice-memo-into-a-song-idea,live,unmeasured
 how to use a lavalier microphone,page target: how,informational,awareness,/tunedzy/how-to-use-a-lavalier-microphone,live,unmeasured
+how to write podcast script sounds natural,page target: how,informational,awareness,/tunedzy/how-to-write-a-podcast-script-that-sounds-natural,live,unmeasured
 iphone voice memo sound better,page target: how,informational,awareness,/tunedzy/voice-note-sounds-better-on-an-iphone,live,unmeasured
 level voices between speakers,page target: how,informational,awareness,/tunedzy/how-to-level-voices-between-speakers,live,unmeasured
 lufs for youtube podcast spotify,page target: how,informational,awareness,/tunedzy/loudness-for-youtube-podcasts-and-spotify,live,unmeasured
@@ -181,6 +258,7 @@ make audio louder without distortion,page target: how,informational,awareness,/t
 make voice sound warmer,page target: how,informational,awareness,/tunedzy/how-to-make-a-voice-sound-warmer,live,unmeasured
 mix vocals on a beat,page target: how,informational,awareness,/tunedzy/mix-vocals-on-a-beat,live,unmeasured
 phone vocals sound professional,page target: how,informational,awareness,/tunedzy/fix-vocals-recorded-on-phone,live,unmeasured
+podcast episode checklist,page target: how,informational,awareness,/tunedzy/how-to-make-a-podcast-episode-checklist,live,unmeasured
 podcast sound professional budget,page target: how,informational,awareness,/tunedzy/podcast-sound-professional-on-a-budget,live,unmeasured
 quiet recording corner on a budget,page target: how,informational,awareness,/tunedzy/how-to-set-up-a-quiet-recording-corner-on-a-budget,live,unmeasured
 record audiobook at home,page target: how,informational,awareness,/tunedzy/how-to-record-an-audiobook-at-home,live,unmeasured
@@ -211,6 +289,28 @@ my voice sounds too bright,page target: problem,informational,awareness,/tunedzy
 podcast sounds different on spotify,page target: problem,informational,awareness,/tunedzy/my-podcast-sounds-different-on-spotify,live,unmeasured
 voice sounds robotic after cleanup,page target: problem,informational,awareness,/tunedzy/my-voice-sounds-robotic-after-cleanup,live,unmeasured
 why does my phone recording sound far away,page target: problem,informational,awareness,/tunedzy/why-does-my-phone-recording-sound-far-away,live,unmeasured
+best ai noise remover for voice,page target: roundup,informational,awareness,/tunedzy/best-ai-noise-remover-for-voice,live,unmeasured
+best ai stem splitter,page target: roundup,informational,awareness,/tunedzy/best-ai-stem-splitter,live,unmeasured
+best app to clean phone audio,page target: roundup,informational,awareness,/tunedzy/best-app-to-clean-phone-audio,live,unmeasured
+best audio cleanup software windows,page target: roundup,informational,awareness,/tunedzy/best-audio-cleanup-software-for-windows,live,unmeasured
+best audio converter for creators,page target: roundup,informational,awareness,/tunedzy/best-audio-converter-for-creators,live,unmeasured
+best audio editor for mac,page target: roundup,informational,awareness,/tunedzy/best-audio-editor-for-mac,live,unmeasured
+best audio software for beginners,page target: roundup,informational,awareness,/tunedzy/best-audio-software-for-beginners,live,unmeasured
+best autotune alternatives,page target: roundup,informational,awareness,/tunedzy/best-autotune-alternatives,live,unmeasured
+best daw for vocal recording,page target: roundup,informational,awareness,/tunedzy/best-daw-for-vocal-recording,live,unmeasured
+best free audio editor for beginners,page target: roundup,informational,awareness,/tunedzy/best-free-audio-editor-for-beginners,live,unmeasured
+best free lufs meter,page target: roundup,informational,awareness,/tunedzy/best-free-lufs-meter,live,unmeasured
+best karaoke maker app,page target: roundup,informational,awareness,/tunedzy/best-karaoke-maker-app,live,unmeasured
+best podcast editing software,page target: roundup,informational,awareness,/tunedzy/best-podcast-editing-software,live,unmeasured
+best podcast recording software,page target: roundup,informational,awareness,/tunedzy/best-podcast-recording-software,live,unmeasured
+best transcription app for podcasts,page target: roundup,informational,awareness,/tunedzy/best-transcription-app-for-podcasts,live,unmeasured
+best virtual audio mixer for streamers,page target: roundup,informational,awareness,/tunedzy/best-virtual-audio-mixer-for-streamers,live,unmeasured
+best vocal remover app,page target: roundup,informational,awareness,/tunedzy/best-vocal-remover-apps,live,unmeasured
+best voice cleaner for zoom,page target: roundup,informational,awareness,/tunedzy/best-voice-cleaner-for-zoom-calls,live,unmeasured
+best voiceover recording app,page target: roundup,informational,awareness,/tunedzy/best-voiceover-recording-app,live,unmeasured
+free online audio enhancer,page target: roundup,informational,awareness,/tunedzy/best-online-audio-enhancer-free,live,unmeasured
+free vocal remover,page target: roundup,informational,awareness,/tunedzy/best-free-vocal-remover,live,unmeasured
+remove background noise from video,page target: roundup,informational,awareness,/tunedzy/best-tool-to-remove-background-noise-from-video,live,unmeasured
 fix background noise in android recording,problem: background noise,informational,awareness,/tunedzy/remove-background-noise-from-a-voice-recording,live,unmeasured
 fix background noise in discord voice,problem: background noise,informational,awareness,/tunedzy/blog/virtual-audio-cable-setup-obs-discord-zoom,live,unmeasured
 fix background noise in home vocal,problem: background noise,informational,awareness,/tunedzy/record-a-vocal-at-home-for-a-song,live,unmeasured

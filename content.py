@@ -478,3 +478,18 @@ for _m in _B5:
     GUIDE_PHOTO_EXTRA.update(_m.PHOTO)
     GUIDE_TOOLS_EXTRA.update(_m.TOOLS)
     GUIDE_GROUP.update({s_: _m.GROUP_OF[s_] for s_ in _m.ORDER})
+
+# --------------------------------------------------------------------------------------------- batch 6: 100 more pages (25 October 2026)
+import content_batch6_a as _b6a  # noqa: E402
+import content_batch6_b as _b6b  # noqa: E402
+import content_batch6_c as _b6c  # noqa: E402
+import content_batch6_d as _b6d  # noqa: E402
+import content_batch6_e as _b6e  # noqa: E402
+
+_B6 = [_b6a, _b6b, _b6c, _b6d, _b6e]
+for _m in _B6:
+    GUIDES.update(_m.GUIDES)
+    GUIDE_ORDER += _m.ORDER
+    GUIDE_PHOTO_EXTRA.update(_m.PHOTO)
+    GUIDE_TOOLS_EXTRA.update(_m.TOOLS)
+    GUIDE_GROUP.update({s_: _m.GROUP_OF[s_] for s_ in _m.ORDER})
