@@ -1,7 +1,8 @@
 """Builds the static site for fuidzy.com/tunedzy into this folder (the GitHub repo root).
 
-  python build.py                         pre-launch: informational CTAs, no dead links
-  python build.py --launched --download-url https://downloads.fuidzy.com/tunedzy/Tunedzy-Setup.exe
+  python build.py                         the live site: download link, pricing, the existing /tunedzy/go/ kept as it is
+  python build.py --go ../Tunedzy/dist/go replaces /tunedzy/go/ with a fresh build of the phone app (python tools/build_go.py in the app repo)
+  python build.py --prelaunch             the old pre-launch variant: informational buttons, no download link
 
 Output layout (the Worker maps URL -> file):
   tunedzy/index.html                      https://fuidzy.com/tunedzy
@@ -15,6 +16,7 @@ import html
 import json
 import re
 import shutil
+import tempfile
 from pathlib import Path
 
 import content as C
@@ -25,11 +27,13 @@ from cover_art import COVER_CSS, cover_svg
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'tunedzy'
 ap = argparse.ArgumentParser()
-ap.add_argument('--launched', action='store_true')
-ap.add_argument('--download-url', default='')
-ap.add_argument('--go', default='', help='a built Tunedzy Go folder (python tools/build_go.py in the app repo) to publish at /tunedzy/go/')
+ap.add_argument('--launched', action='store_true', help='accepted for old command lines; the live site is the default now')
+ap.add_argument('--prelaunch', action='store_true', help='build the pre-launch variant (informational buttons, no download link)')
+ap.add_argument('--download-url', default='https://downloads.fuidzy.com/tunedzy/Tunedzy-Setup.exe',
+                help='the stable installer link; downloads.fuidzy.com redirects it to the installer named in the published manifest')
+ap.add_argument('--go', default='', help='a built Tunedzy Go folder (python tools/build_go.py in the app repo) to publish at /tunedzy/go/; without it the existing tunedzy/go is kept')
 args = ap.parse_args()
-LAUNCHED = args.launched and bool(args.download_url)
+LAUNCHED = not args.prelaunch and bool(args.download_url)
 DOWNLOAD = args.download_url
 
 e = html.escape
@@ -659,6 +663,10 @@ def og():
 
 
 def main():
+    kept_go = None
+    if not args.go and (OUT / 'go').is_dir():
+        kept_go = Path(tempfile.mkdtemp()) / 'go'
+        shutil.copytree(OUT / 'go', kept_go)
     shutil.rmtree(OUT, ignore_errors=True)
     OUT.mkdir(parents=True)
     process_photos()
@@ -682,6 +690,9 @@ def main():
     write('guides/index.html', guides_hub())
     if args.go:
         shutil.copytree(args.go, OUT / 'go')
+    elif kept_go:
+        shutil.copytree(kept_go, OUT / 'go')
+        shutil.rmtree(kept_go.parent, ignore_errors=True)
     urls = ([(C.BASE, '1.0'), (f'{C.BASE}/pricing', '0.9'), (C.BASE + '/go/', '0.8'), (f'{C.BASE}/tools', '0.9')] + [(f'{C.BASE}/tools/{s}', '0.9') for s in T.TOOL_ORDER]
             + [(f'{C.BASE}/blog', '0.7')] + [(f"{C.BASE}/blog/{b['slug']}", '0.7') for b in B.BLOGS]
             + [(f'{C.BASE}/{s}', '0.8') for s in C.GUIDE_ORDER] + [(f'{C.BASE}/guides', '0.9'), (f'{C.BASE}/pricing', '0.9')] + [(f'{C.BASE}/{s}', '0.3') for s in C.POLICIES])
